@@ -1,11 +1,12 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowRight, BadgeCheck, BarChart3, BriefcaseBusiness, CalendarDays, CheckCircle2, ClipboardList, Globe2, LayoutDashboard, MessageCircle, PenLine, Rocket, Smartphone, Sparkles, UsersRound } from 'lucide-react'
+import { ArrowRight, BadgeCheck, BarChart3, BriefcaseBusiness, CalendarDays, CheckCircle2, ClipboardList, Globe2, LayoutDashboard, MessageCircle, PenLine, Rocket, Smartphone, Sparkles, UsersRound, Euro, ShieldCheck } from 'lucide-react'
 import './styles.css'
 
 const navItems = [
   ['Start', '#start'],
   ['Leistungen', '#leistungen'],
+  ['Preise', '#preise'],
   ['App-Lösungen', '#apps'],
   ['Für wen', '#zielgruppen'],
   ['Ablauf', '#ablauf'],
@@ -30,6 +31,130 @@ const appModules = [
   ['Digitale Dashboards', BarChart3],
   ['Bewertungsprozesse', BadgeCheck],
   ['Kundenkommunikation', MessageCircle],
+]
+
+
+const pricePackages = [
+  {
+    title: 'Sichtbarkeits-Starter',
+    price: '249 €',
+    description: 'Für kleine Unternehmen, die online professioneller wirken möchten.',
+    features: [
+      'kurze Analyse der aktuellen Außenwirkung',
+      'optimierter Google-Unternehmenstext',
+      '10 Social-Media-Texte',
+      '5 WhatsApp-Business-Vorlagen',
+      'Bewertungsanfrage für Kunden',
+      'konkrete Empfehlungen für bessere Sichtbarkeit',
+    ],
+    cta: 'Starterpaket anfragen',
+    highlight: false,
+  },
+  {
+    title: 'Google & WhatsApp Business',
+    price: '349 €',
+    description: 'Für lokale Betriebe, die besser gefunden werden und professioneller kommunizieren möchten.',
+    features: [
+      'optimierte Google-Unternehmensbeschreibung',
+      '10 Google-Beiträge',
+      'FAQ-Texte für Google',
+      'Bewertungsanfrage-Text',
+      '10 WhatsApp-Schnellantworten',
+      'Begrüßungs- und Abwesenheitsnachricht',
+      'Terminbestätigungs- und Nachfass-Texte',
+    ],
+    cta: 'Google & WhatsApp anfragen',
+    highlight: false,
+  },
+  {
+    title: 'Social-Media & Content Paket',
+    price: '399 €',
+    description: 'Für Unternehmen, die regelmäßig bessere Inhalte veröffentlichen möchten.',
+    features: [
+      '30 Tage Contentplan',
+      '20 Social-Media-Texte',
+      '20 starke Hooks',
+      '10 Story-Ideen',
+      'Titel, Beschreibungen und Hashtags',
+      'Ideen für TikTok, Instagram, YouTube Shorts und Pinterest',
+    ],
+    cta: 'Content-Paket anfragen',
+    highlight: false,
+  },
+  {
+    title: 'STRUKTIVA Business Struktur',
+    price: '749 €',
+    description: 'Für Unternehmen, die Werbung, Kundenkommunikation und interne Abläufe klarer aufbauen möchten.',
+    features: [
+      '30-Tage-Contentplan',
+      'Landingpage-Text oder Angebotsseite',
+      'Google-Beiträge',
+      'WhatsApp-Business-System',
+      'Bewertungsprozess',
+      'Kundenkommunikations-Vorlagen',
+      'interne Checklisten',
+      'Ablaufstruktur für den Unternehmensalltag',
+    ],
+    cta: 'Business Struktur anfragen',
+    highlight: true,
+  },
+  {
+    title: 'App-Konzept Paket',
+    price: '499 €',
+    description: 'Für Unternehmen, die prüfen möchten, ob eine eigene Unternehmens-App sinnvoll ist.',
+    features: [
+      'Analyse der aktuellen Abläufe',
+      'App-Idee passend zum Unternehmen',
+      'Funktionsliste',
+      'Seitenstruktur',
+      'Nutzerrollen',
+      'UI-Konzept',
+      'Umsetzungsplan',
+      'Preisrahmen für die Entwicklung',
+    ],
+    cta: 'App-Konzept anfragen',
+    highlight: false,
+  },
+  {
+    title: 'Professionelle Unternehmens-App',
+    price: 'ab 1.990 €',
+    subtitle: 'Monatliche Betreuung ab 79 € / Monat',
+    description: 'Für Betriebe, die eine individuelle digitale Lösung für ihre Abläufe brauchen.',
+    features: [
+      'Kundenverwaltung',
+      'Terminübersicht',
+      'Mitarbeiterorganisation',
+      'Aufgabensteuerung',
+      'interne Checklisten',
+      'Tages- und Wochenplanung',
+      'Admin-Bereich',
+      'mobile und Desktop-Ansicht',
+      'digitale Unternehmensprozesse',
+    ],
+    careTitle: 'Die monatliche Betreuung beinhaltet:',
+    care: [
+      'Hosting',
+      'technische Bereitstellung',
+      'kleinere Anpassungen',
+      'Pflege und Funktionsprüfung',
+      'Support bei Bedienfragen',
+    ],
+    cta: 'App-Lösung anfragen',
+    highlight: true,
+    wide: true,
+  },
+  {
+    title: 'Monatliche STRUKTIVA Betreuung',
+    price: 'ab 149 € / Monat',
+    description: 'Für Unternehmen, die dauerhaft Unterstützung bei Sichtbarkeit, Texten, Struktur oder digitalen Anpassungen möchten.',
+    features: [
+      'Basic – 149 € / Monat',
+      'Standard – 299 € / Monat',
+      'Premium – 499 € / Monat',
+    ],
+    cta: 'Betreuung anfragen',
+    highlight: false,
+  },
 ]
 
 const targets = ['Friseursalons', 'Kosmetikstudios', 'Fußpflege', 'Nagelstudios', 'Handwerksbetriebe', 'Cafés', 'Lokale Dienstleister', 'Kleine Einzelhändler', 'Coaches & Berater', 'Praxen & Studios']
@@ -179,6 +304,82 @@ function Services() {
   )
 }
 
+
+function Pricing() {
+  return (
+    <section id="preise" className="px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader
+          eyebrow="Angebote & Preise"
+          title="Klare Pakete für Sichtbarkeit, Struktur und digitale Lösungen."
+          text="STRUKTIVA bietet verschiedene Leistungen für kleine Unternehmen, Selbstständige und lokale Betriebe. Je nach Bedarf geht es um bessere Sichtbarkeit, professionelle Texte, klare Kundenkommunikation, strukturierte Abläufe oder individuelle App-Lösungen."
+        />
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {pricePackages.map((pkg) => (
+            <article
+              key={pkg.title}
+              className={`relative flex h-full flex-col rounded-[1.75rem] border p-7 shadow-premium transition hover:-translate-y-1 ${
+                pkg.highlight
+                  ? 'border-struktivaGold/45 bg-gradient-to-br from-struktivaGold/[0.14] via-white/[0.06] to-blue-500/[0.08] shadow-gold'
+                  : 'border-white/10 bg-white/[0.04] hover:border-struktivaGold/30'
+              } ${pkg.wide ? 'xl:col-span-2' : ''}`}
+            >
+              {pkg.highlight && (
+                <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-struktivaGold/35 bg-struktivaGold/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-struktivaGold">
+                  <ShieldCheck className="h-4 w-4" /> Empfehlung
+                </div>
+              )}
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl font-semibold text-white">{pkg.title}</h3>
+                  <p className="mt-3 leading-7 text-white/64">{pkg.description}</p>
+                </div>
+                <div className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-struktivaGold/12 text-struktivaGold sm:flex">
+                  <Euro className="h-6 w-6" />
+                </div>
+              </div>
+              <div className="mt-7">
+                <p className="text-4xl font-semibold tracking-tight text-struktivaGold">{pkg.price}</p>
+                {pkg.subtitle && <p className="mt-2 text-sm font-medium text-white/68">{pkg.subtitle}</p>}
+              </div>
+              <ul className="mt-7 space-y-3 text-sm leading-6 text-white/68">
+                {pkg.features.map((feature) => (
+                  <li key={feature} className="flex gap-3">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-struktivaGold" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              {pkg.care && (
+                <div className="mt-7 rounded-2xl border border-white/10 bg-struktivaDark/45 p-5">
+                  <p className="font-semibold text-white">{pkg.careTitle}</p>
+                  <ul className="mt-4 space-y-2 text-sm text-white/65">
+                    {pkg.care.map((item) => (
+                      <li key={item} className="flex gap-2">
+                        <span className="text-struktivaGold">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              <a
+                href={`mailto:info.struktiva@gmail.com?subject=${encodeURIComponent(pkg.title + ' anfragen')}`}
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-struktivaGold/40 px-5 py-3 text-sm font-semibold text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark"
+              >
+                {pkg.cta} <ArrowRight className="h-4 w-4" />
+              </a>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6 text-center text-sm leading-7 text-white/62">
+          Alle Preise verstehen sich als Einstiegspreise. Der genaue Umfang hängt vom jeweiligen Unternehmen, den gewünschten Leistungen und dem technischen Aufwand ab. Nach einer kurzen Analyse erhältst du ein klares Angebot.
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Apps() {
   return (
     <section id="apps" className="px-5 py-24 lg:px-8">
@@ -259,14 +460,14 @@ function Contact() {
         <h2 className="mt-6 text-3xl font-semibold text-white md:text-5xl">Lass uns dein Unternehmen digital stärker machen.</h2>
         <p className="mx-auto mt-6 max-w-3xl leading-8 text-white/70">Du möchtest bessere Sichtbarkeit, klarere Abläufe oder eine professionelle App-Lösung für dein Unternehmen? Dann stelle jetzt eine Anfrage.</p>
         <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-          <a href="mailto:kontakt@struktiva.de" className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark transition hover:scale-[1.02]">
+          <a href="mailto:info.struktiva@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark transition hover:scale-[1.02]">
             Anfrage senden <ArrowRight className="h-5 w-5" />
           </a>
-          <a href="https://wa.me/491234567890" className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold">
+          <a href="https://wa.me/49DEINENUMMER" className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold">
             Per WhatsApp kontaktieren
           </a>
         </div>
-        <p className="mt-5 text-sm text-white/45">Hinweis: E-Mail-Adresse und WhatsApp-Nummer bitte vor Veröffentlichung anpassen.</p>
+        <p className="mt-5 text-sm text-white/45">E-Mail: info.struktiva@gmail.com · Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen</p>
       </div>
     </section>
   )
@@ -295,6 +496,7 @@ function App() {
       <Hero />
       <ProblemSolution />
       <Services />
+      <Pricing />
       <Apps />
       <Targets />
       <Process />
