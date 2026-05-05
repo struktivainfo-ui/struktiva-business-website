@@ -26,6 +26,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 a {
   text-decoration: none;
 }
@@ -37,4 +41,40 @@ img {
 
 * {
   box-sizing: border-box;
+}
+
+.hero-orb {
+  position: absolute;
+  z-index: -1;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+  animation: orbFloat 18s ease-in-out infinite;
+}
+
+.hero-orb-left {
+  top: 6rem;
+  left: 6%;
+  width: 15rem;
+  height: 15rem;
+  background: rgba(232, 194, 94, 0.12);
+}
+
+.hero-orb-right {
+  right: 8%;
+  bottom: 3rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(93, 140, 213, 0.12);
+  animation-delay: -8s;
+}
+
+@keyframes orbFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) scale(1.04);
+  }
 }

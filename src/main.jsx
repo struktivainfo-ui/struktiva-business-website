@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import { AnimatePresence, motion } from 'framer-motion'
 import {
   ArrowRight,
   BadgeCheck,
@@ -10,6 +11,7 @@ import {
   ClipboardList,
   Globe2,
   LayoutDashboard,
+  Menu,
   MessageCircle,
   PenLine,
   Rocket,
@@ -17,6 +19,7 @@ import {
   Sparkles,
   Smartphone,
   UsersRound,
+  X,
 } from 'lucide-react'
 import './styles.css'
 
@@ -58,22 +61,10 @@ const navItems = [
 ]
 
 const trustCards = [
-  {
-    title: 'Klarer Auftritt',
-    text: 'Professionelle Texte, Webseiten und Inhalte, damit dein Unternehmen verständlicher wirkt.',
-  },
-  {
-    title: 'Bessere Kommunikation',
-    text: 'Google, WhatsApp und Social Media werden strukturierter und kundenfreundlicher aufgebaut.',
-  },
-  {
-    title: 'Digitale Abläufe',
-    text: 'Abläufe, Checklisten, Kundenprozesse und App-Systeme werden übersichtlich gedacht.',
-  },
-  {
-    title: 'Praxisnah umgesetzt',
-    text: 'Keine komplizierte Theorie, sondern Lösungen, die kleine Unternehmen wirklich nutzen können.',
-  },
+  ['Klarer Auftritt', 'Professionelle Texte, Webseiten und Inhalte, damit dein Unternehmen verständlicher wirkt.'],
+  ['Bessere Kommunikation', 'Google, WhatsApp und Social Media werden strukturierter und kundenfreundlicher aufgebaut.'],
+  ['Digitale Abläufe', 'Abläufe, Checklisten, Kundenprozesse und App-Systeme werden übersichtlich gedacht.'],
+  ['Praxisnah umgesetzt', 'Keine komplizierte Theorie, sondern Lösungen, die kleine Unternehmen wirklich nutzen können.'],
 ]
 
 const problemCards = [
@@ -84,61 +75,20 @@ const problemCards = [
 ]
 
 const solutionPillars = [
-  {
-    title: 'Sichtbarkeit',
-    text: 'Klare Außenwirkung durch Webseiten, Inhalte, Google-Texte und professionell aufgebaute Angebotsseiten.',
-  },
-  {
-    title: 'Kommunikation',
-    text: 'WhatsApp, Social Media und Kundenansprache werden verständlicher, strukturierter und vertrauenswürdiger.',
-  },
-  {
-    title: 'Struktur',
-    text: 'Interne Abläufe, Checklisten, Kundenprozesse und digitale Ordnung werden praxisnah aufgebaut.',
-  },
-  {
-    title: 'App-Systeme',
-    text: 'Individuelle App-Lösungen schaffen Übersicht für Termine, Aufgaben, Kunden und interne Prozesse.',
-  },
+  ['Sichtbarkeit', 'Klare Außenwirkung durch Webseiten, Inhalte, Google-Texte und professionell aufgebaute Angebotsseiten.'],
+  ['Kommunikation', 'WhatsApp, Social Media und Kundenansprache werden verständlicher, strukturierter und vertrauenswürdiger.'],
+  ['Struktur', 'Interne Abläufe, Checklisten, Kundenprozesse und digitale Ordnung werden praxisnah aufgebaut.'],
+  ['App-Systeme', 'Individuelle App-Lösungen schaffen Übersicht für Termine, Aufgaben, Kunden und interne Prozesse.'],
 ]
 
 const services = [
-  {
-    icon: LayoutDashboard,
-    title: 'Webseiten & Landingpages',
-    text: 'Professionelle Webseiten, Landingpages und Angebotsseiten mit klarer Struktur, Texten und Kontaktführung.',
-    featured: true,
-  },
-  {
-    icon: PenLine,
-    title: 'Werbung & Content',
-    text: 'Texte für Social Media, Google, Beiträge, Reels, Shorts, Pinterest und lokale Werbung.',
-  },
-  {
-    icon: Globe2,
-    title: 'Google & lokale Sichtbarkeit',
-    text: 'Optimierte Google-Unternehmensdarstellung, Beiträge, FAQ-Texte und Bewertungsprozesse.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'WhatsApp-Business-Systeme',
-    text: 'Schnellantworten, Begrüßungen, Termintexte, Nachfass-Texte und professionelle Kundenkommunikation.',
-  },
-  {
-    icon: ClipboardList,
-    title: 'Digitale Struktur-Systeme',
-    text: 'Checklisten, Wochenpläne, Kundenprozesse, interne Abläufe und Organisationsstrukturen.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Professionelle Unternehmens-Apps',
-    text: 'Individuelle App-Lösungen für Kundenverwaltung, Termine, Aufgaben, Mitarbeiterorganisation und interne Prozesse.',
-  },
-  {
-    icon: BriefcaseBusiness,
-    title: 'Digitale Produkte & Verkaufsseiten',
-    text: 'PDFs, Angebotskonzepte, Produktseiten und Verkaufsstrukturen für Selbstständige und Unternehmen.',
-  },
+  [LayoutDashboard, 'Webseiten & Landingpages', 'Professionelle Webseiten, Landingpages und Angebotsseiten mit klarer Struktur, Texten und Kontaktführung.', true],
+  [PenLine, 'Werbung & Content', 'Texte für Social Media, Google, Beiträge, Reels, Shorts, Pinterest und lokale Werbung.', false],
+  [Globe2, 'Google & lokale Sichtbarkeit', 'Optimierte Google-Unternehmensdarstellung, Beiträge, FAQ-Texte und Bewertungsprozesse.', false],
+  [MessageCircle, 'WhatsApp-Business-Systeme', 'Schnellantworten, Begrüßungen, Termintexte, Nachfass-Texte und professionelle Kundenkommunikation.', false],
+  [ClipboardList, 'Digitale Struktur-Systeme', 'Checklisten, Wochenpläne, Kundenprozesse, interne Abläufe und Organisationsstrukturen.', false],
+  [Smartphone, 'Professionelle Unternehmens-Apps', 'Individuelle App-Lösungen für Kundenverwaltung, Termine, Aufgaben, Mitarbeiterorganisation und interne Prozesse.', false],
+  [BriefcaseBusiness, 'Digitale Produkte & Verkaufsseiten', 'PDFs, Angebotskonzepte, Produktseiten und Verkaufsstrukturen für Selbstständige und Unternehmen.', false],
 ]
 
 const appModules = [
@@ -153,26 +103,16 @@ const appModules = [
 ]
 
 const websiteFocusCards = [
-  {
-    title: 'Webseiten',
-    text: 'Für Unternehmen, die eine saubere digitale Basis brauchen.',
-  },
-  {
-    title: 'Landingpages',
-    text: 'Für Angebote, Aktionen, Produkte oder Dienstleistungen mit klarer Handlungsaufforderung.',
-  },
-  {
-    title: 'Angebotsseiten',
-    text: 'Für einzelne Leistungen, Pakete oder digitale Produkte, die verständlich erklärt werden sollen.',
-  },
+  ['Webseiten', 'Digitale Basis für einen professionellen Unternehmensauftritt.'],
+  ['Landingpages', 'Fokussierte Seiten für Angebote, Aktionen, Produkte oder Dienstleistungen.'],
+  ['Angebotsseiten', 'Klare Seiten für Leistungen, Pakete und digitale Produkte.'],
 ]
 
 const pricePackages = [
   {
     title: 'Sichtbarkeits-Starter',
     price: 'ab 99 €',
-    description:
-      'Für kleine Unternehmen, die online professioneller wirken und erste konkrete Verbesserungen umsetzen möchten.',
+    description: 'Für kleine Unternehmen, die online professioneller wirken und erste konkrete Verbesserungen umsetzen möchten.',
     features: [
       'kurze Analyse der aktuellen Außenwirkung',
       'Optimierung der grundlegenden Unternehmensdarstellung',
@@ -187,8 +127,7 @@ const pricePackages = [
   {
     title: 'Google & WhatsApp Business',
     price: 'ab 149 €',
-    description:
-      'Für lokale Betriebe, die besser gefunden werden und professioneller mit Kunden kommunizieren möchten.',
+    description: 'Für lokale Betriebe, die besser gefunden werden und professioneller mit Kunden kommunizieren möchten.',
     features: [
       'optimierte Google-Unternehmensbeschreibung',
       'Google-Beiträge nach Bedarf',
@@ -205,8 +144,7 @@ const pricePackages = [
   {
     title: 'Social-Media & Content',
     price: 'ab 179 €',
-    description:
-      'Für Unternehmen, die regelmäßig bessere Inhalte veröffentlichen und professioneller sichtbar werden möchten.',
+    description: 'Für Unternehmen, die regelmäßig bessere Inhalte veröffentlichen und professioneller sichtbar werden möchten.',
     features: [
       'individueller Contentplan',
       'Social-Media-Texte passend zum Unternehmen',
@@ -224,8 +162,7 @@ const pricePackages = [
     title: 'Webseiten & Landingpages',
     price: 'ab 299 €',
     badge: 'Wichtige Leistung',
-    description:
-      'Für Unternehmen, die eine professionelle Webseite, Landingpage oder Angebotsseite benötigen.',
+    description: 'Für Unternehmen, die eine professionelle Webseite, Landingpage oder Angebotsseite benötigen.',
     features: [
       'Seitenstruktur und Aufbau',
       'professionelle Texte',
@@ -251,8 +188,7 @@ const pricePackages = [
   {
     title: 'App-Konzept Paket',
     price: '299 €',
-    description:
-      'Für Unternehmen, die prüfen möchten, ob eine eigene Unternehmens-App sinnvoll ist.',
+    description: 'Für Unternehmen, die prüfen möchten, ob eine eigene Unternehmens-App sinnvoll ist.',
     features: [
       'Analyse der aktuellen Abläufe',
       'App-Idee passend zum Unternehmen',
@@ -271,8 +207,7 @@ const pricePackages = [
     price: 'ab 1.490 €',
     subtitle: 'Monatliche Betreuung ab 49 € / Monat',
     badge: 'Premium App-Lösung',
-    description:
-      'Für Betriebe, die eine individuelle digitale Lösung für ihre Abläufe brauchen.',
+    description: 'Für Betriebe, die eine individuelle digitale Lösung für ihre Abläufe brauchen.',
     features: [
       'Kundenverwaltung',
       'Terminübersicht',
@@ -301,8 +236,7 @@ const pricePackages = [
   {
     title: 'Monatliche STRUKTIVA Betreuung',
     price: 'ab 99 € / Monat',
-    description:
-      'Für Unternehmen, die dauerhaft Unterstützung bei Sichtbarkeit, Texten, Webseiten, Struktur oder digitalen Anpassungen möchten.',
+    description: 'Für Unternehmen, die dauerhaft Unterstützung bei Sichtbarkeit, Texten, Webseiten, Struktur oder digitalen Anpassungen möchten.',
     features: [
       'neue Google- oder Social-Media-Texte',
       'kleine Webseiten- oder Landingpage-Anpassungen',
@@ -345,145 +279,265 @@ const whyPoints = [
   'digitale Lösungen mit Struktur',
 ]
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0 },
+}
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 32 },
+  visible: { opacity: 1, x: 0 },
+}
+
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
+    },
+  },
+}
+
+function Reveal({ children, className = '', delay = 0, amount = 0.2 }) {
+  return (
+    <motion.div
+      className={className}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
 function SectionHeader({ eyebrow, title, text, centered = true }) {
   return (
     <div className={centered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">{eyebrow}</p>
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-struktivaGold md:text-sm">{eyebrow}</p>
       <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">{title}</h2>
       {text && <p className="mt-5 text-base leading-8 text-white/72 md:text-lg">{text}</p>}
     </div>
   )
 }
 
+function useHeaderState() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  return isScrolled
+}
+
 function Header() {
+  const [isOpen, setIsOpen] = useState(false)
+  const isScrolled = useHeaderState()
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setIsOpen(false)
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-struktivaDark/72 backdrop-blur-2xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
+    <motion.header
+      initial={{ opacity: 0, y: -18 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className={`fixed left-0 right-0 top-0 z-50 border-b transition-all duration-300 ${
+        isScrolled
+          ? 'border-white/10 bg-[rgba(12,18,33,0.86)] shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl'
+          : 'border-white/8 bg-[rgba(12,18,33,0.64)] backdrop-blur-xl'
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
         <a href={siteLinks.home} className="flex min-w-0 items-center gap-3" aria-label="STRUKTIVA Unternehmensarchitektur Startseite">
           <img
             src="/struktiva-logo.jpeg"
             alt="STRUKTIVA Unternehmensarchitektur"
             className="h-[38px] w-auto max-w-[190px] rounded-xl object-contain md:h-12 md:max-w-[240px]"
           />
-          <span className="hidden text-sm font-medium tracking-[0.2em] text-white/72 md:inline">
+          <span className="hidden text-xs font-medium uppercase tracking-[0.26em] text-white/68 md:inline">
             Unternehmensarchitektur
           </span>
         </a>
-        <nav className="hidden items-center gap-6 lg:flex">
+
+        <nav className="hidden items-center gap-5 lg:flex">
           {navItems.map(([label, href]) => (
-            <a key={label} href={href} className="text-sm text-white/76 transition hover:text-struktivaGold">
+            <a key={label} href={href} className="text-sm text-white/74 transition hover:text-struktivaGold">
               {label}
             </a>
           ))}
         </nav>
-        <a
-          href={siteLinks.contact}
-          className="hidden rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark md:inline-flex"
-        >
-          Kostenlose Anfrage stellen
-        </a>
+
+        <div className="flex items-center gap-3">
+          <a
+            href={siteLinks.contact}
+            className="hidden rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:-translate-y-0.5 hover:bg-struktivaGold hover:text-struktivaDark md:inline-flex"
+          >
+            Kostenlose Anfrage stellen
+          </a>
+          <button
+            type="button"
+            aria-label={isOpen ? 'Menü schließen' : 'Menü öffnen'}
+            onClick={() => setIsOpen((value) => !value)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white transition hover:border-struktivaGold/35 hover:text-struktivaGold lg:hidden"
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
-      <div className="border-t border-white/8 lg:hidden">
-        <nav className="mx-auto flex max-w-7xl gap-3 overflow-x-auto px-5 py-3 text-sm text-white/72 [scrollbar-width:none]">
-          {navItems.map(([label, href]) => (
-            <a
-              key={label}
-              href={href}
-              className="shrink-0 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 transition hover:border-struktivaGold/40 hover:text-struktivaGold"
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </header>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-white/8 lg:hidden"
+          >
+            <nav className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-4">
+              {navItems.map(([label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/76 transition hover:border-struktivaGold/30 hover:text-struktivaGold"
+                >
+                  {label}
+                </a>
+              ))}
+              <a
+                href={siteLinks.contact}
+                onClick={() => setIsOpen(false)}
+                className="rounded-2xl border border-struktivaGold/30 px-4 py-3 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark"
+              >
+                Kostenlose Anfrage stellen
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   )
 }
 
 function Hero() {
   return (
-    <section id="start" className="relative overflow-hidden px-5 pb-24 pt-40 lg:px-8 lg:pb-32 lg:pt-44">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_10%,rgba(246,217,160,0.20),transparent_30%),radial-gradient(circle_at_80%_16%,rgba(75,112,173,0.28),transparent_28%),linear-gradient(135deg,#0e1527,#14203a_52%,#1a2744)]" />
-      <div className="absolute left-1/2 top-20 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-struktivaGold/10 blur-3xl" />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
-        <div>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-struktivaGold/25 bg-white/6 px-4 py-2 text-sm text-white/82 backdrop-blur">
+    <section id="start" className="relative overflow-hidden px-5 pb-18 pt-32 lg:px-8 lg:pb-24 lg:pt-36">
+      <div className="hero-orb hero-orb-left" />
+      <div className="hero-orb hero-orb-right" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_10%,rgba(246,217,160,0.18),transparent_28%),radial-gradient(circle_at_82%_16%,rgba(72,104,158,0.24),transparent_24%),linear-gradient(135deg,#10182c,#16233e_56%,#1a2946)]" />
+      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+        <motion.div initial="hidden" animate="visible" variants={stagger}>
+          <motion.div
+            variants={fadeUp}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-struktivaGold/25 bg-white/[0.06] px-4 py-2 text-sm text-white/82 backdrop-blur"
+          >
             <Sparkles className="h-4 w-4 text-struktivaGold" /> {brand.name}
-          </div>
-          <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-6xl lg:text-[4.4rem] lg:leading-[1.04]">
-            Digitale Systeme für Sichtbarkeit, Struktur und professionelle Unternehmensabläufe.
-          </h1>
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-white/82 md:text-2xl md:leading-10">
-            Ich unterstütze kleine Unternehmen, Selbstständige und lokale Betriebe dabei, online professioneller aufzutreten, klarer zu kommunizieren und digitale Systeme aufzubauen, die im Alltag wirklich helfen.
-          </p>
-          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaCream/88">
-            {brand.line}
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3 text-sm text-white/72">
-            {['Webseiten & Landingpages', 'Google, Social Media & WhatsApp', 'Professionelle Unternehmens-Apps'].map((item) => (
-              <span key={item} className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2">
-                {item}
-              </span>
-            ))}
-          </div>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+          </motion.div>
+          <motion.h1
+            variants={fadeUp}
+            transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-6xl lg:leading-[1.06]"
+          >
+            Digitale Architektur für Sichtbarkeit, Struktur und App-Systeme.
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-6 max-w-2xl text-base leading-8 text-white/80 md:text-xl md:leading-9"
+          >
+            Professionelle Webseiten, Landingpages, klare Kundenkommunikation und digitale Unternehmenssysteme für kleine Unternehmen, Selbstständige und lokale Betriebe.
+          </motion.p>
+          <motion.p
+            variants={fadeUp}
+            transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-5 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaCream/86"
+          >
+            Webseiten. Struktur. Kommunikation. App-Lösungen.
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap"
+          >
             <a
               href={siteLinks.contact}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark shadow-gold transition hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark shadow-gold transition hover:-translate-y-0.5 hover:scale-[1.01]"
             >
               Kostenlose Anfrage stellen <ArrowRight className="h-5 w-5" />
             </a>
             <a
               href={siteLinks.pricing}
-              className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold"
+              className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:border-struktivaGold hover:text-struktivaGold"
             >
               Angebote ansehen
             </a>
-            <a href={siteLinks.apps} className="inline-flex items-center justify-center px-2 py-4 text-sm font-semibold text-struktivaCream transition hover:text-struktivaGold">
+            <a
+              href={siteLinks.apps}
+              className="inline-flex items-center justify-center px-2 py-4 text-sm font-semibold text-struktivaCream transition hover:text-struktivaGold"
+            >
               App-Lösungen entdecken
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="relative">
-          <div className="absolute -left-6 top-10 h-32 w-32 rounded-full bg-struktivaCream/10 blur-3xl" />
-          <div className="absolute -right-4 bottom-4 h-40 w-40 rounded-full bg-blue-400/10 blur-3xl" />
-          <div className="relative overflow-hidden rounded-[2.2rem] border border-white/12 bg-[linear-gradient(160deg,rgba(255,255,255,0.11),rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-5 shadow-premium backdrop-blur-xl md:p-6">
-            <div className="rounded-[1.7rem] border border-struktivaGold/20 bg-[#111a30]/95 p-6">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeRight}
+          transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto w-full max-w-[32rem]"
+        >
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(160deg,rgba(255,255,255,0.10),rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-4 shadow-premium backdrop-blur-xl md:p-5">
+            <div className="rounded-[1.55rem] border border-struktivaGold/20 bg-[#111a30]/96 p-5 md:p-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-sm font-medium text-white/62">STRUKTIVA System</p>
-                  <p className="mt-2 text-2xl font-semibold text-white">Digitale Architektur für Unternehmen</p>
+                  <p className="text-sm font-medium text-white/60">STRUKTIVA System</p>
+                  <p className="mt-2 text-xl font-semibold text-white md:text-2xl">Digitale Struktur für Unternehmen</p>
                 </div>
                 <span className="rounded-full border border-struktivaGold/30 bg-struktivaGold/10 px-3 py-1 text-xs font-semibold text-struktivaGold">
                   Startklar
                 </span>
               </div>
-              <div className="mt-8 grid gap-3">
+
+              <div className="mt-7 grid gap-3">
                 {[
-                  ['Sichtbarkeit', 'klar aufgebaut'],
-                  ['Struktur', 'geordnet gedacht'],
-                  ['App-Lösung', 'alltagstauglich'],
-                  ['Webseite', 'vertrauenswürdig'],
+                  ['Webseite', 'klar'],
+                  ['Sichtbarkeit', 'sichtbar'],
+                  ['Struktur', 'geordnet'],
+                  ['App-System', 'digital'],
                 ].map(([item, status]) => (
-                  <div key={item} className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/[0.05] px-4 py-4">
+                  <div key={item} className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/[0.05] px-4 py-3.5">
                     <div className="flex items-center gap-3">
-                      <div className="h-2.5 w-2.5 rounded-full bg-struktivaGold shadow-[0_0_18px_rgba(232,194,94,0.35)]" />
-                      <span className="text-sm font-medium text-white/88 md:text-base">{item}</span>
+                      <div className="h-2.5 w-2.5 rounded-full bg-struktivaGold shadow-[0_0_16px_rgba(232,194,94,0.35)]" />
+                      <span className="text-sm font-medium text-white/86 md:text-base">{item}</span>
                     </div>
-                    <span className="text-right text-xs font-medium text-white/52 md:text-sm">{status}</span>
+                    <span className="text-right text-xs font-medium text-white/54 md:text-sm">{status}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 rounded-2xl bg-gradient-to-br from-struktivaGold/14 to-blue-500/10 p-5">
+
+              <div className="mt-5 rounded-2xl bg-gradient-to-br from-struktivaGold/14 to-blue-500/10 p-4 md:p-5">
                 <p className="text-sm font-medium text-white/60">Ergebnis</p>
-                <p className="mt-2 text-base font-semibold leading-7 text-white md:text-lg">
-                  Ein klarer digitaler Auftritt für dein Unternehmen.
+                <p className="mt-2 text-base font-semibold leading-7 text-white">
+                  Ein professioneller digitaler Auftritt mit klaren Abläufen.
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
@@ -491,38 +545,64 @@ function Hero() {
 
 function TrustSection() {
   return (
-    <section className="px-5 pb-10 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-4">
-        {trustCards.map((item) => (
-          <div key={item.title} className="rounded-[1.6rem] border border-white/10 bg-white/[0.06] p-6 shadow-premium">
-            <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-            <p className="mt-3 text-sm leading-7 text-white/70">{item.text}</p>
-          </div>
+    <section className="px-5 pb-8 lg:px-8">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={stagger}
+        className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 xl:grid-cols-4"
+      >
+        {trustCards.map(([title, text]) => (
+          <motion.div
+            key={title}
+            variants={fadeUp}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="rounded-[1.5rem] border border-white/10 bg-white/[0.055] p-5 shadow-premium transition hover:-translate-y-1"
+          >
+            <h3 className="text-lg font-semibold text-white">{title}</h3>
+            <p className="mt-3 text-sm leading-7 text-white/68">{text}</p>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }
 
 function ProblemSection() {
   return (
-    <section className="px-5 py-24 lg:px-8">
+    <section className="px-5 py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Problem"
-          title="Viele Unternehmen leisten gute Arbeit – aber digital sieht man davon zu wenig."
-          text="Viele kleine Unternehmen haben keine klare digitale Außenwirkung. Die Webseite wirkt unvollständig oder veraltet, Social Media läuft unregelmäßig, Google wird nicht aktiv genutzt, WhatsApp-Kommunikation ist unsortiert und interne Abläufe sind oft nicht sauber dokumentiert."
-        />
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Problem"
+            title="Viele Unternehmen leisten gute Arbeit – aber digital sieht man davon zu wenig."
+            text="Viele kleine Unternehmen haben keine klare digitale Außenwirkung. Die Webseite wirkt unvollständig oder veraltet, Social Media läuft unregelmäßig, Google wird nicht aktiv genutzt, WhatsApp-Kommunikation ist unsortiert und interne Abläufe sind oft nicht sauber dokumentiert."
+          />
+        </Reveal>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.12 }}
+          variants={stagger}
+          className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+        >
           {problemCards.map((item) => (
-            <div key={item} className="rounded-[1.6rem] border border-white/10 bg-struktivaDark/35 p-6">
+            <motion.div
+              key={item}
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-[1.5rem] border border-white/10 bg-struktivaDark/35 p-5 transition hover:-translate-y-1"
+            >
               <p className="text-lg font-semibold text-white">{item}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <div className="mt-8 rounded-[1.7rem] border border-struktivaGold/18 bg-struktivaGold/[0.08] p-6 text-center text-base leading-8 text-white/78">
-          STRUKTIVA setzt genau dort an: bei Sichtbarkeit, Kommunikation, Struktur und digitalen Lösungen.
-        </div>
+        </motion.div>
+        <Reveal className="mt-8">
+          <div className="rounded-[1.6rem] border border-struktivaGold/18 bg-struktivaGold/[0.08] p-6 text-center text-base leading-8 text-white/78">
+            STRUKTIVA setzt genau dort an: bei Sichtbarkeit, Kommunikation, Struktur und digitalen Lösungen.
+          </div>
+        </Reveal>
       </div>
     </section>
   )
@@ -530,21 +610,34 @@ function ProblemSection() {
 
 function SolutionSection() {
   return (
-    <section className="px-5 py-24 lg:px-8">
+    <section className="px-5 py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Lösung"
-          title="STRUKTIVA verbindet Sichtbarkeit, Struktur und digitale Systeme."
-          text="STRUKTIVA erstellt nicht nur einzelne Texte oder einzelne Posts. Der Fokus liegt auf einem klaren digitalen Gesamtbild: professionelle Außenwirkung, bessere Kundenkommunikation, strukturierte Abläufe und auf Wunsch individuelle App-Lösungen für das Unternehmen."
-        />
-        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {solutionPillars.map((pillar) => (
-            <div key={pillar.title} className="rounded-[1.7rem] border border-white/10 bg-white/[0.055] p-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-struktivaGold">{pillar.title}</p>
-              <p className="mt-4 leading-7 text-white/72">{pillar.text}</p>
-            </div>
+        <Reveal>
+          <SectionHeader
+            eyebrow="Lösung"
+            title="STRUKTIVA verbindet Sichtbarkeit, Struktur und digitale Systeme."
+            text="STRUKTIVA erstellt nicht nur einzelne Texte oder einzelne Posts. Der Fokus liegt auf einem klaren digitalen Gesamtbild: professionelle Außenwirkung, bessere Kundenkommunikation, strukturierte Abläufe und auf Wunsch individuelle App-Lösungen für das Unternehmen."
+          />
+        </Reveal>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+        >
+          {solutionPillars.map(([title, text]) => (
+            <motion.div
+              key={title}
+              variants={fadeUp}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-[1.7rem] border border-white/10 bg-white/[0.055] p-6 transition hover:-translate-y-1"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-struktivaGold">{title}</p>
+              <p className="mt-4 leading-7 text-white/70">{text}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
@@ -552,31 +645,41 @@ function SolutionSection() {
 
 function ServicesSection() {
   return (
-    <section id="leistungen" className="px-5 py-24 lg:px-8">
+    <section id="leistungen" className="px-5 py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Leistungen"
-          title="Alles, was kleine Unternehmen für einen professionelleren digitalen Auftritt brauchen."
-          text=""
-        />
-        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {services.map(({ icon: Icon, title, text, featured }) => (
-            <div
+        <Reveal>
+          <SectionHeader
+            eyebrow="Leistungen"
+            title="Alles, was kleine Unternehmen für einen professionelleren digitalen Auftritt brauchen."
+            text=""
+          />
+        </Reveal>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.08 }}
+          variants={stagger}
+          className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3"
+        >
+          {services.map(([Icon, title, text, featured]) => (
+            <motion.div
               key={title}
-              className={`rounded-[1.8rem] border p-7 transition hover:-translate-y-1 ${
+              variants={fadeUp}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className={`rounded-[1.7rem] border p-6 transition hover:-translate-y-1 ${
                 featured
-                  ? 'border-struktivaGold/30 bg-[linear-gradient(160deg,rgba(232,194,94,0.12),rgba(255,255,255,0.06),rgba(37,99,235,0.08))] shadow-gold'
+                  ? 'border-struktivaGold/28 bg-[linear-gradient(160deg,rgba(232,194,94,0.10),rgba(255,255,255,0.06),rgba(37,99,235,0.06))] shadow-gold'
                   : 'border-white/12 bg-white/[0.055] hover:border-struktivaGold/24'
               }`}
             >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-struktivaGold/12 text-struktivaGold">
-                <Icon className="h-6 w-6" />
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-struktivaGold/12 text-struktivaGold">
+                <Icon className="h-5 w-5" />
               </div>
               <h3 className="text-xl font-semibold text-white">{title}</h3>
-              <p className="mt-4 leading-7 text-white/72">{text}</p>
-            </div>
+              <p className="mt-3 text-sm leading-7 text-white/70">{text}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
@@ -584,12 +687,14 @@ function ServicesSection() {
 
 function PricingCard({ pkg }) {
   return (
-    <article
-      className={`relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border p-6 shadow-premium transition hover:-translate-y-1 md:p-7 ${
+    <motion.article
+      variants={fadeUp}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className={`relative flex h-full flex-col overflow-hidden rounded-[1.8rem] border p-5 shadow-premium transition hover:-translate-y-1 md:p-6 ${
         pkg.premium
-          ? 'border-struktivaGold/50 bg-[linear-gradient(160deg,rgba(232,194,94,0.18),rgba(255,255,255,0.08),rgba(59,130,246,0.12))] shadow-gold'
+          ? 'border-struktivaGold/50 bg-[linear-gradient(160deg,rgba(232,194,94,0.17),rgba(255,255,255,0.08),rgba(59,130,246,0.11))] shadow-gold'
           : pkg.highlight
-            ? 'border-struktivaGold/30 bg-[linear-gradient(160deg,rgba(232,194,94,0.10),rgba(255,255,255,0.06),rgba(37,99,235,0.08))]'
+            ? 'border-struktivaGold/30 bg-[linear-gradient(160deg,rgba(232,194,94,0.10),rgba(255,255,255,0.06),rgba(37,99,235,0.07))]'
             : 'border-white/12 bg-white/[0.055] hover:border-struktivaGold/28'
       }`}
     >
@@ -597,10 +702,10 @@ function PricingCard({ pkg }) {
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="mb-3 flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-struktivaCream/10 px-3 py-1 text-xs font-medium text-struktivaCream">Startangebot</span>
+            <span className="rounded-full bg-struktivaCream/10 px-3 py-1 text-[11px] font-medium text-struktivaCream">Startangebot</span>
             {pkg.badge && (
               <span
-                className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                className={`rounded-full px-3 py-1 text-[11px] font-semibold ${
                   pkg.premium
                     ? 'border border-struktivaGold/35 bg-struktivaGold/12 text-struktivaGold'
                     : 'border border-white/12 bg-white/[0.05] text-white/70'
@@ -610,26 +715,26 @@ function PricingCard({ pkg }) {
               </span>
             )}
           </div>
-          <h3 className="max-w-[22rem] text-2xl font-semibold leading-tight text-white">{pkg.title}</h3>
-          <p className="mt-3 max-w-2xl leading-7 text-white/68">{pkg.description}</p>
+          <h3 className="max-w-[22rem] text-xl font-semibold leading-tight text-white md:text-2xl">{pkg.title}</h3>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-white/68">{pkg.description}</p>
         </div>
-        <div className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-struktivaGold/12 text-struktivaGold sm:flex">
-          {pkg.premium ? <ShieldCheck className="h-6 w-6" /> : <BadgeCheck className="h-6 w-6" />}
+        <div className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-struktivaGold/12 text-struktivaGold sm:flex">
+          {pkg.premium ? <ShieldCheck className="h-5 w-5" /> : <BadgeCheck className="h-5 w-5" />}
         </div>
       </div>
 
-      <div className="mt-7 rounded-[1.4rem] border border-white/10 bg-struktivaDark/34 p-5">
-        <p className="text-3xl font-semibold tracking-tight text-struktivaGold md:text-4xl">{pkg.price}</p>
+      <div className="mt-6 rounded-[1.3rem] border border-white/10 bg-struktivaDark/34 p-4">
+        <p className="text-3xl font-semibold tracking-tight text-struktivaGold md:text-[2rem]">{pkg.price}</p>
         {pkg.subtitle && <p className="mt-2 text-sm font-medium text-white/74">{pkg.subtitle}</p>}
       </div>
 
-      <div className={`mt-7 grid gap-4 ${pkg.premium ? 'xl:grid-cols-[1fr_0.92fr]' : ''}`}>
+      <div className={`mt-6 grid gap-4 ${pkg.premium ? 'xl:grid-cols-[1fr_0.92fr]' : ''}`}>
         <div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-white/52">Enthalten</p>
-          <ul className="space-y-3 text-sm leading-6 text-white/74">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/52">Enthalten</p>
+          <ul className="space-y-2.5 text-sm leading-6 text-white/74">
             {pkg.features.map((feature) => (
               <li key={feature} className="flex gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-struktivaGold" />
+                <CheckCircle2 className="mt-0.5 h-4.5 w-4.5 shrink-0 text-struktivaGold" />
                 <span>{feature}</span>
               </li>
             ))}
@@ -637,12 +742,12 @@ function PricingCard({ pkg }) {
         </div>
 
         {pkg.extras && (
-          <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.045] p-5">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/52">{pkg.extraTitle}</p>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-white/74">
+          <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.045] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/52">{pkg.extraTitle}</p>
+            <ul className="mt-4 space-y-2.5 text-sm leading-6 text-white/74">
               {pkg.extras.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-struktivaGold" />
+                  <CheckCircle2 className="mt-0.5 h-4.5 w-4.5 shrink-0 text-struktivaGold" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -651,47 +756,55 @@ function PricingCard({ pkg }) {
         )}
       </div>
 
-      <div
-        className={`mt-7 rounded-[1.35rem] border p-4 text-sm leading-7 ${
-          pkg.premium ? 'border-struktivaGold/20 bg-struktivaDark/42 text-white/76' : 'border-white/10 bg-white/[0.04] text-white/68'
-        }`}
-      >
+      <div className={`mt-6 rounded-[1.3rem] border p-4 text-sm leading-7 ${
+        pkg.premium ? 'border-struktivaGold/18 bg-struktivaDark/42 text-white/76' : 'border-white/10 bg-white/[0.04] text-white/68'
+      }`}>
         {pkg.note}
       </div>
 
       <a
         href={siteLinks.contact}
-        className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition ${
+        className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition ${
           pkg.premium
-            ? 'bg-struktivaGold text-struktivaDark shadow-gold hover:scale-[1.02]'
-            : 'border border-struktivaGold/40 text-struktivaGold hover:bg-struktivaGold hover:text-struktivaDark'
+            ? 'bg-struktivaGold text-struktivaDark shadow-gold hover:-translate-y-0.5 hover:scale-[1.01]'
+            : 'border border-struktivaGold/40 text-struktivaGold hover:-translate-y-0.5 hover:bg-struktivaGold hover:text-struktivaDark'
         }`}
       >
         {pkg.cta} <ArrowRight className="h-4 w-4" />
       </a>
-    </article>
+    </motion.article>
   )
 }
 
 function PricingSection() {
   return (
-    <section id="preise" className="px-5 py-24 lg:px-8">
+    <section id="preise" className="px-5 py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Startangebote & Preise"
-          title="Faire Einstiegspakete für Sichtbarkeit, Webseiten, Struktur und digitale Lösungen."
-          text="STRUKTIVA bietet bewusst schlanke Einstiegspakete, damit kleine Unternehmen unkompliziert starten können. Der genaue Umfang wird im persönlichen Gespräch festgelegt und an den Bedarf des Unternehmens angepasst."
-        />
-        <div className="mt-12 grid gap-6 xl:grid-cols-6">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Startangebote & Preise"
+            title="Faire Einstiegspakete für Sichtbarkeit, Webseiten, Struktur und digitale Lösungen."
+            text="STRUKTIVA bietet bewusst schlanke Einstiegspakete, damit kleine Unternehmen unkompliziert starten können. Der genaue Umfang wird im persönlichen Gespräch festgelegt und an den Bedarf des Unternehmens angepasst."
+          />
+        </Reveal>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.05 }}
+          variants={stagger}
+          className="mt-12 grid gap-6 xl:grid-cols-6"
+        >
           {pricePackages.map((pkg) => (
             <div key={pkg.title} className={pkg.premium || pkg.highlight ? 'xl:col-span-3' : 'xl:col-span-2'}>
               <PricingCard pkg={pkg} />
             </div>
           ))}
-        </div>
-        <div className="mt-8 rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-6 text-center text-sm leading-7 text-white/72">
-          Alle Preise verstehen sich als Einführungspreise zum Start von STRUKTIVA Unternehmensarchitektur. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach dem Bedarf des Unternehmens, den gewünschten Leistungen und dem technischen Aufwand. Nach einer kurzen Analyse erhältst du ein klares Angebot.
-        </div>
+        </motion.div>
+        <Reveal className="mt-8">
+          <div className="rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-6 text-center text-sm leading-7 text-white/72">
+            Alle Preise verstehen sich als Einführungspreise zum Start von STRUKTIVA Unternehmensarchitektur. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach dem Bedarf des Unternehmens, den gewünschten Leistungen und dem technischen Aufwand. Nach einer kurzen Analyse erhältst du ein klares Angebot.
+          </div>
+        </Reveal>
       </div>
     </section>
   )
@@ -699,64 +812,84 @@ function PricingSection() {
 
 function AppSection() {
   return (
-    <section id="apps" className="px-5 py-24 lg:px-8">
-      <div className="mx-auto max-w-7xl rounded-[2.6rem] border border-struktivaGold/20 bg-gradient-to-br from-white/[0.07] to-struktivaGold/[0.07] p-7 shadow-gold md:p-12 lg:p-16">
-        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div>
+    <section id="apps" className="px-5 py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2.4rem] border border-struktivaGold/20 bg-gradient-to-br from-white/[0.07] to-struktivaGold/[0.07] p-7 shadow-gold md:p-10 lg:p-12">
+        <div className="grid gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
+          <Reveal>
             <SectionHeader
               centered={false}
               eyebrow="App-Lösungen"
               title="Professionelle Unternehmens-Apps für bessere Abläufe."
-              text="STRUKTIVA entwickelt individuelle App-Systeme für Unternehmen, die Kunden, Termine, Aufgaben, Checklisten und interne Abläufe digital abbilden möchten. Der Fokus liegt auf Übersicht, Alltagstauglichkeit und professioneller Bedienung."
+              text="Individuelle App-Systeme für Kundenverwaltung, Termine, Aufgaben, Checklisten und interne Prozesse – klar aufgebaut, alltagstauglich und passend zum Unternehmen."
             />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={stagger}
+              className="mt-8 grid gap-4 sm:grid-cols-2"
+            >
               {appModules.map(([label, Icon]) => (
-                <div key={label} className="flex items-center gap-3 rounded-2xl border border-white/12 bg-struktivaDark/45 p-4">
+                <motion.div
+                  key={label}
+                  variants={fadeUp}
+                  transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex items-center gap-3 rounded-2xl border border-white/12 bg-struktivaDark/45 p-4 transition hover:-translate-y-1"
+                >
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-struktivaGold/13 text-struktivaGold">
                     <Icon className="h-5 w-5" />
                   </div>
                   <span className="font-medium text-white/82">{label}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
-          <div className="rounded-[2rem] border border-white/12 bg-white/[0.07] p-5 shadow-premium backdrop-blur-xl">
-            <div className="rounded-[1.6rem] border border-struktivaGold/20 bg-struktivaDark/88 p-5 md:p-6">
-              <div className="mb-6">
-                <p className="text-xl font-semibold text-white md:text-2xl">So kann eine STRUKTIVA App-Lösung aussehen</p>
-                <p className="mt-3 text-sm leading-7 text-white/68 md:text-base">
-                  Individuelle App-Systeme können Kunden, Termine, Aufgaben, Checklisten und interne Abläufe übersichtlich an einem Ort bündeln.
-                </p>
-              </div>
-              <div className="mb-6 flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-sm font-medium text-white/68">App-Beispiel für Unternehmen</p>
-                  <p className="mt-1 text-xl font-semibold text-white">STRUKTIVA Business App</p>
+            </motion.div>
+          </Reveal>
+
+          <Reveal>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
+              className="mx-auto w-full max-w-[31rem] rounded-[1.9rem] border border-white/12 bg-white/[0.07] p-4 shadow-premium backdrop-blur-xl"
+            >
+              <div className="rounded-[1.5rem] border border-struktivaGold/20 bg-struktivaDark/88 p-5 md:p-6">
+                <div className="mb-5">
+                  <p className="text-xl font-semibold text-white md:text-2xl">So kann eine STRUKTIVA App-Lösung aussehen</p>
+                  <p className="mt-3 text-sm leading-7 text-white/68 md:text-base">
+                    Individuelle App-Systeme können Kunden, Termine, Aufgaben, Checklisten und interne Abläufe übersichtlich an einem Ort bündeln.
+                  </p>
                 </div>
-                <div className="shrink-0 rounded-full bg-struktivaGold/15 px-3 py-1 text-xs font-semibold text-struktivaGold">Vorschau</div>
-              </div>
-              <div className="grid gap-3">
-                {[
-                  ['Kundenverwaltung', 'übersichtlich'],
-                  ['Terminübersicht', 'strukturiert'],
-                  ['Aufgabensteuerung', 'klar'],
-                  ['Bewertungsprozess', 'integriert'],
-                ].map(([item, status]) => (
-                  <div key={item} className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/[0.055] p-4">
-                    <div className="flex items-center gap-3">
-                      <div className="h-2.5 w-2.5 rounded-full bg-struktivaGold shadow-[0_0_18px_rgba(232,194,94,0.35)]" />
-                      <span className="text-sm font-medium text-white/86 md:text-base">{item}</span>
-                    </div>
-                    <span className="text-right text-xs font-medium text-white/55 md:text-sm">{status}</span>
+                <div className="mb-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-medium text-white/68">App-Beispiel für Unternehmen</p>
+                    <p className="mt-1 text-xl font-semibold text-white">STRUKTIVA Business App</p>
                   </div>
-                ))}
+                  <div className="shrink-0 rounded-full bg-struktivaGold/15 px-3 py-1 text-xs font-semibold text-struktivaGold">Vorschau</div>
+                </div>
+                <div className="grid gap-3">
+                  {[
+                    ['Kundenverwaltung', 'übersichtlich'],
+                    ['Terminübersicht', 'strukturiert'],
+                    ['Aufgabensteuerung', 'klar'],
+                    ['Bewertungsprozess', 'integriert'],
+                  ].map(([item, status]) => (
+                    <div key={item} className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/[0.055] p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-2.5 w-2.5 rounded-full bg-struktivaGold shadow-[0_0_18px_rgba(232,194,94,0.35)]" />
+                        <span className="text-sm font-medium text-white/86 md:text-base">{item}</span>
+                      </div>
+                      <span className="text-right text-xs font-medium text-white/55 md:text-sm">{status}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 rounded-2xl bg-gradient-to-br from-struktivaGold/18 to-blue-500/10 p-4 md:p-5">
+                  <p className="text-sm font-medium text-white/64">Ergebnis</p>
+                  <p className="mt-2 text-base font-semibold leading-7 text-white">Ein digitaler Ort für Kunden, Termine, Aufgaben und interne Abläufe.</p>
+                </div>
               </div>
-              <div className="mt-6 rounded-2xl bg-gradient-to-br from-struktivaGold/18 to-blue-500/10 p-5">
-                <p className="text-sm font-medium text-white/64">Ergebnis</p>
-                <p className="mt-2 text-base font-semibold leading-7 text-white md:text-lg">Ein digitaler Ort für Kunden, Termine, Aufgaben und interne Abläufe.</p>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -765,31 +898,43 @@ function AppSection() {
 
 function WebsiteFocusSection() {
   return (
-    <section id="webseiten" className="px-5 py-24 lg:px-8">
-      <div className="mx-auto max-w-7xl rounded-[2.4rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.04))] p-8 shadow-premium md:p-12">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
+    <section id="webseiten" className="px-5 py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2.3rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.04))] p-8 shadow-premium md:p-10">
+        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <Reveal>
             <SectionHeader
               centered={false}
               eyebrow="Webseiten"
-              title="Webseiten & Landingpages für einen professionellen ersten Eindruck."
-              text="Eine gute Webseite muss nicht kompliziert sein. Sie muss klar zeigen, was ein Unternehmen anbietet, warum es vertrauenswürdig ist und wie Kunden Kontakt aufnehmen können. STRUKTIVA erstellt Webseiten, Landingpages und Angebotsseiten mit klarer Struktur, professionellen Texten und einer verständlichen Kundenführung."
+              title="Webseiten & Landingpages mit klarer Wirkung."
+              text="Eine gute Webseite erklärt schnell, was ein Unternehmen anbietet, warum es vertrauenswürdig ist und wie Kunden Kontakt aufnehmen können. STRUKTIVA entwickelt Webseiten, Landingpages und Angebotsseiten mit klarer Struktur, professionellen Texten und sauberer Kundenführung."
             />
             <a
               href={siteLinks.contact}
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-struktivaGold/40 px-6 py-3 font-semibold text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-struktivaGold/40 px-6 py-3 font-semibold text-struktivaGold transition hover:-translate-y-0.5 hover:bg-struktivaGold hover:text-struktivaDark"
             >
               Webseite oder Landingpage anfragen <ArrowRight className="h-4 w-4" />
             </a>
-          </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {websiteFocusCards.map((item) => (
-              <div key={item.title} className="rounded-[1.7rem] border border-white/12 bg-struktivaDark/38 p-6">
-                <p className="text-xl font-semibold text-white">{item.title}</p>
-                <p className="mt-4 leading-7 text-white/70">{item.text}</p>
-              </div>
+          </Reveal>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.08 }}
+            variants={stagger}
+            className="grid gap-5 md:grid-cols-3"
+          >
+            {websiteFocusCards.map(([title, text]) => (
+              <motion.div
+                key={title}
+                variants={fadeUp}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="rounded-[1.6rem] border border-white/12 bg-struktivaDark/38 p-6 transition hover:-translate-y-1"
+              >
+                <p className="text-xl font-semibold text-white">{title}</p>
+                <p className="mt-4 text-sm leading-7 text-white/70">{text}</p>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -798,20 +943,33 @@ function WebsiteFocusSection() {
 
 function TargetSection() {
   return (
-    <section id="zielgruppen" className="px-5 py-24 lg:px-8">
+    <section id="zielgruppen" className="px-5 py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Für wen"
-          title="Für wen ist STRUKTIVA geeignet?"
-          text="STRUKTIVA richtet sich an kleine Unternehmen, Selbstständige und lokale Betriebe, die professioneller sichtbar und digital besser organisiert sein möchten."
-        />
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Für wen"
+            title="Für wen ist STRUKTIVA geeignet?"
+            text="STRUKTIVA richtet sich an kleine Unternehmen, Selbstständige und lokale Betriebe, die professioneller sichtbar und digital besser organisiert sein möchten."
+          />
+        </Reveal>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.08 }}
+          variants={stagger}
+          className="mt-12 flex flex-wrap justify-center gap-3"
+        >
           {targetGroups.map((target) => (
-            <span key={target} className="rounded-full border border-white/12 bg-white/[0.055] px-5 py-3 text-white/72">
+            <motion.span
+              key={target}
+              variants={fadeUp}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-full border border-white/12 bg-white/[0.055] px-5 py-3 text-white/72"
+            >
               {target}
-            </span>
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
@@ -819,22 +977,35 @@ function TargetSection() {
 
 function ProcessSection() {
   return (
-    <section id="ablauf" className="px-5 py-24 lg:px-8">
+    <section id="ablauf" className="px-5 py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Ablauf"
-          title="So läuft die Zusammenarbeit ab"
-          text="Die Zusammenarbeit ist klar aufgebaut, damit aus Ideen nutzbare Ergebnisse werden."
-        />
-        <div className="mt-14 grid gap-5 lg:grid-cols-5">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Ablauf"
+            title="So läuft die Zusammenarbeit ab"
+            text="Die Zusammenarbeit ist klar aufgebaut, damit aus Ideen nutzbare Ergebnisse werden."
+          />
+        </Reveal>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.08 }}
+          variants={stagger}
+          className="mt-14 grid gap-5 lg:grid-cols-5"
+        >
           {processSteps.map(([number, title, text]) => (
-            <div key={number} className="rounded-[1.6rem] border border-white/12 bg-white/[0.055] p-6">
+            <motion.div
+              key={number}
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-[1.55rem] border border-white/12 bg-white/[0.055] p-6 transition hover:-translate-y-1"
+            >
               <p className="text-3xl font-semibold text-struktivaGold">{number}</p>
               <h3 className="mt-5 text-lg font-semibold text-white">{title}</h3>
               <p className="mt-3 text-sm leading-6 text-white/60">{text}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
@@ -842,25 +1013,41 @@ function ProcessSection() {
 
 function WhySection() {
   return (
-    <section className="px-5 py-24 lg:px-8">
-      <div className="mx-auto max-w-7xl rounded-[2.3rem] border border-white/12 bg-white/[0.055] p-8 shadow-premium md:p-12">
+    <section className="px-5 py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2.2rem] border border-white/12 bg-white/[0.055] p-8 shadow-premium md:p-10">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">Warum STRUKTIVA?</p>
-            <h2 className="text-3xl font-semibold text-white md:text-5xl">Ein klarer digitaler Auftritt statt einzelner lose verbundener Maßnahmen.</h2>
-          </div>
-          <div>
-            <p className="leading-8 text-white/72">
-              STRUKTIVA verbindet Werbung, Webseiten, Kundenkommunikation, Struktur und App-Systeme zu einem klaren digitalen Gesamtbild. Dadurch entsteht nicht nur ein einzelner Post oder eine einzelne Seite, sondern ein professionellerer Auftritt und bessere Übersicht im Unternehmensalltag.
-            </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {whyPoints.map((point) => (
-                <div key={point} className="rounded-[1.4rem] border border-white/10 bg-struktivaDark/35 p-5 text-sm font-medium text-white/82">
-                  {point}
-                </div>
-              ))}
+          <Reveal>
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">Warum STRUKTIVA?</p>
+              <h2 className="text-3xl font-semibold text-white md:text-5xl">Ein klarer digitaler Auftritt statt einzelner lose verbundener Maßnahmen.</h2>
             </div>
-          </div>
+          </Reveal>
+
+          <Reveal delay={0.06}>
+            <div>
+              <p className="leading-8 text-white/72">
+                STRUKTIVA verbindet Werbung, Webseiten, Kundenkommunikation, Struktur und App-Systeme zu einem klaren digitalen Gesamtbild. Dadurch entsteht nicht nur ein einzelner Post oder eine einzelne Seite, sondern ein professionellerer Auftritt und bessere Übersicht im Unternehmensalltag.
+              </p>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+                variants={stagger}
+                className="mt-8 grid gap-4 sm:grid-cols-3"
+              >
+                {whyPoints.map((point) => (
+                  <motion.div
+                    key={point}
+                    variants={fadeUp}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                    className="rounded-[1.35rem] border border-white/10 bg-struktivaDark/35 p-5 text-sm font-medium text-white/82"
+                  >
+                    {point}
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -869,30 +1056,32 @@ function WhySection() {
 
 function ContactSection() {
   return (
-    <section id="kontakt" className="px-5 py-24 lg:px-8">
-      <div className="mx-auto max-w-5xl rounded-[2.5rem] border border-struktivaGold/25 bg-gradient-to-br from-struktivaGold/15 via-white/[0.06] to-blue-500/10 p-8 text-center shadow-gold md:p-14">
-        <Rocket className="mx-auto h-12 w-12 text-struktivaGold" />
-        <h2 className="mt-6 text-3xl font-semibold text-white md:text-5xl">Lass uns dein Unternehmen digital stärker machen.</h2>
-        <p className="mx-auto mt-6 max-w-3xl leading-8 text-white/74">
-          Du möchtest eine bessere Webseite, klarere Texte, mehr Sichtbarkeit oder eine professionelle App-Lösung für dein Unternehmen? Dann stelle jetzt eine Anfrage.
-        </p>
-        <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-white/62">
-          E-Mail: {contactDetails.email} · Telefon / WhatsApp: {contactDetails.phone}
-        </p>
-        <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-          <a
-            href={siteLinks.contact}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark transition hover:scale-[1.02]"
-          >
-            Anfrage senden <ArrowRight className="h-5 w-5" />
-          </a>
-          <a
-            href={contactDetails.whatsapp}
-            className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold"
-          >
-            Per WhatsApp kontaktieren
-          </a>
-        </div>
+    <section id="kontakt" className="px-5 py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-5xl rounded-[2.5rem] border border-struktivaGold/22 bg-gradient-to-br from-struktivaGold/14 via-white/[0.06] to-blue-500/10 p-8 text-center shadow-gold md:p-12">
+        <Reveal>
+          <Rocket className="mx-auto h-12 w-12 text-struktivaGold" />
+          <h2 className="mt-6 text-3xl font-semibold text-white md:text-5xl">Bereit für einen professionelleren digitalen Auftritt?</h2>
+          <p className="mx-auto mt-6 max-w-3xl leading-8 text-white/74">
+            Schreibe kurz, wobei dein Unternehmen Unterstützung braucht – Webseite, Sichtbarkeit, Struktur oder App-Lösung. Danach erhältst du eine klare Einschätzung, welches Paket sinnvoll ist.
+          </p>
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-white/62">
+            {contactDetails.email} · Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen
+          </p>
+          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+            <a
+              href={siteLinks.contact}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark transition hover:-translate-y-0.5 hover:scale-[1.01]"
+            >
+              Anfrage senden <ArrowRight className="h-5 w-5" />
+            </a>
+            <a
+              href={contactDetails.whatsapp}
+              className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:border-struktivaGold hover:text-struktivaGold"
+            >
+              Per WhatsApp kontaktieren
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
@@ -909,14 +1098,14 @@ function Footer() {
             className="h-12 w-fit max-w-[230px] rounded-xl object-contain opacity-90"
           />
           <p>© {new Date().getFullYear()} STRUKTIVA Unternehmensarchitektur. Alle Rechte vorbehalten.</p>
-          <p className="text-white/55">STRUKTIVA Unternehmensarchitektur</p>
+          <p className="text-white/55">{brand.name}</p>
           <p className="text-white/55">{contactDetails.email}</p>
         </div>
         <div className="flex flex-wrap gap-5">
-          <a href={siteLinks.impressum} className="hover:text-struktivaGold">Impressum</a>
-          <a href={siteLinks.datenschutz} className="hover:text-struktivaGold">Datenschutz</a>
-          <a href={siteLinks.widerruf} className="hover:text-struktivaGold">Widerruf</a>
-          <a href={siteLinks.contact} className="hover:text-struktivaGold">Kontakt</a>
+          <a href={siteLinks.impressum} className="transition hover:text-struktivaGold">Impressum</a>
+          <a href={siteLinks.datenschutz} className="transition hover:text-struktivaGold">Datenschutz</a>
+          <a href={siteLinks.widerruf} className="transition hover:text-struktivaGold">Widerruf</a>
+          <a href={siteLinks.contact} className="transition hover:text-struktivaGold">Kontakt</a>
         </div>
       </div>
     </footer>
@@ -968,8 +1157,8 @@ function LegalHeader() {
 
 function LegalSection({ title, children }) {
   return (
-    <section className="rounded-[1.7rem] border border-white/12 bg-white/[0.05] p-6 md:p-8">
-      <h2 className="text-2xl font-semibold text-white">{title}</h2>
+    <section className="rounded-[1.6rem] border border-white/12 bg-white/[0.05] p-6 md:p-8">
+      <h2 className="text-xl font-semibold text-white md:text-2xl">{title}</h2>
       <div className="mt-5 space-y-4 text-sm leading-7 text-white/74 md:text-base">{children}</div>
     </section>
   )
@@ -979,12 +1168,14 @@ function LegalLayout({ eyebrow, title, intro, children }) {
   return (
     <main className="min-h-screen bg-struktivaDark text-white selection:bg-struktivaGold selection:text-struktivaDark">
       <LegalHeader />
-      <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-8 lg:pb-24 lg:pt-24">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(246,217,160,0.14),transparent_30%),radial-gradient(circle_at_84%_18%,rgba(58,92,154,0.28),transparent_30%),linear-gradient(135deg,#0b1020,#111a2e_46%,#17213a)]" />
-        <div className="mx-auto max-w-4xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">{eyebrow}</p>
-          <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl">{title}</h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-white/72 md:text-lg">{intro}</p>
+      <section className="relative overflow-hidden px-5 pb-16 pt-18 lg:px-8 lg:pb-24 lg:pt-20">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(246,217,160,0.12),transparent_28%),radial-gradient(circle_at_84%_18%,rgba(58,92,154,0.22),transparent_26%),linear-gradient(135deg,#0f172a,#15213b_48%,#192846)]" />
+        <div className="mx-auto max-w-[56rem]">
+          <Reveal>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-struktivaGold md:text-sm">{eyebrow}</p>
+            <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">{title}</h1>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-white/72 md:text-lg">{intro}</p>
+          </Reveal>
           <div className="mt-12 space-y-6">{children}</div>
         </div>
       </section>
@@ -1007,35 +1198,28 @@ function ImpressumPage() {
         <p>[PLZ und Ort eintragen]</p>
         <p>Deutschland</p>
       </LegalSection>
-
       <LegalSection title="Kontakt">
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
         <p>Telefon / WhatsApp: [Telefonnummer eintragen oder „auf Anfrage“]</p>
       </LegalSection>
-
       <LegalSection title="Vertreten durch">
         <p>Jessica Wacker</p>
       </LegalSection>
-
       <LegalSection title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
         <p>Jessica Wacker</p>
         <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
         <p>[PLZ und Ort eintragen]</p>
       </LegalSection>
-
       <LegalSection title="Umsatzsteuer">
         <p>[Falls vorhanden: Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz eintragen]</p>
         <p>[Falls nicht vorhanden: Diesen Abschnitt entfernen oder später ergänzen]</p>
       </LegalSection>
-
       <LegalSection title="Haftung für Inhalte">
         <p>Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
       </LegalSection>
-
       <LegalSection title="Haftung für Links">
         <p>Diese Webseite kann Links zu externen Webseiten Dritter enthalten. Auf deren Inhalte habe ich keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
       </LegalSection>
-
       <LegalSection title="Urheberrecht">
         <p>Die auf dieser Webseite erstellten Inhalte, Texte, Grafiken und Designs unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung oder Verbreitung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.</p>
       </LegalSection>
@@ -1054,7 +1238,6 @@ function DatenschutzPage() {
         <p>Der Schutz personenbezogener Daten ist mir wichtig. Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Webseite und bei einer Kontaktaufnahme verarbeitet werden.</p>
         <p>Personenbezogene Daten sind alle Daten, mit denen eine Person direkt oder indirekt identifiziert werden kann, zum Beispiel Name, E-Mail-Adresse, Telefonnummer oder IP-Adresse.</p>
       </LegalSection>
-
       <LegalSection title="2. Verantwortlicher">
         <p>Verantwortlich für die Datenverarbeitung auf dieser Webseite ist:</p>
         <p>STRUKTIVA Unternehmensarchitektur</p>
@@ -1065,7 +1248,6 @@ function DatenschutzPage() {
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
         <p>Telefon / WhatsApp: [Telefonnummer eintragen oder „auf Anfrage“]</p>
       </LegalSection>
-
       <LegalSection title="3. Hosting der Webseite">
         <p>Diese Webseite wird über Vercel bereitgestellt.</p>
         <p>Anbieter:</p>
@@ -1085,7 +1267,6 @@ function DatenschutzPage() {
         <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt in der sicheren und technisch fehlerfreien Bereitstellung dieser Webseite.</p>
         <p>Hinweis: Falls später weitere Dienste wie Analyse-Tools, Tracking, Newsletter, externe Formulare oder Zahlungsanbieter eingebunden werden, muss diese Datenschutzerklärung entsprechend erweitert werden.</p>
       </LegalSection>
-
       <LegalSection title="4. Kontaktaufnahme per E-Mail">
         <p>Wenn du mich per E-Mail kontaktierst, werden die von dir übermittelten Daten verarbeitet, um deine Anfrage zu beantworten.</p>
         <p>Dazu können gehören:</p>
@@ -1095,13 +1276,11 @@ function DatenschutzPage() {
         <p>- weitere freiwillig übermittelte Angaben</p>
         <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit einem möglichen Vertrag oder einer Leistung zusammenhängt. In anderen Fällen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO, da ein berechtigtes Interesse an der Beantwortung von Anfragen besteht.</p>
       </LegalSection>
-
       <LegalSection title="5. Kontaktaufnahme per WhatsApp">
         <p>Wenn du über WhatsApp Kontakt aufnimmst, werden die von dir übermittelten Daten verarbeitet, um deine Anfrage zu beantworten. Dazu können insbesondere Telefonnummer, Name, Profilinformationen und Nachrichteninhalte gehören.</p>
         <p>Bitte beachte, dass bei der Nutzung von WhatsApp auch Daten durch den Anbieter von WhatsApp verarbeitet werden können. Auf diese Datenverarbeitung habe ich keinen vollständigen Einfluss.</p>
         <p>Wenn du dies nicht möchtest, kannst du alternativ per E-Mail Kontakt aufnehmen: {contactDetails.email}</p>
       </LegalSection>
-
       <LegalSection title="6. Kontaktformular">
         {/* Nur verwenden, wenn ein Kontaktformular aktiv eingebunden ist. */}
         <p>Falls auf der Webseite ein Kontaktformular verwendet wird, werden die dort eingegebenen Daten verarbeitet, um die Anfrage zu beantworten.</p>
@@ -1114,17 +1293,14 @@ function DatenschutzPage() {
         <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO oder Art. 6 Abs. 1 lit. f DSGVO.</p>
         <p>Falls aktuell kein Kontaktformular verwendet wird, diesen Abschnitt im Code mit einem klaren Kommentar markieren: "Nur verwenden, wenn ein Kontaktformular aktiv eingebunden ist."</p>
       </LegalSection>
-
       <LegalSection title="7. Cookies und Tracking">
         <p>Diese Webseite verwendet derzeit keine eigenen Analyse- oder Marketing-Cookies.</p>
         <p>Falls später Tools wie Google Analytics, Meta Pixel, Vercel Analytics, Newsletter-Tools, Zahlungsanbieter, eingebettete Videos, externe Karten oder andere Tracking-/Analyse-Dienste eingebunden werden, muss diese Datenschutzerklärung entsprechend angepasst werden.</p>
       </LegalSection>
-
       <LegalSection title="8. Speicherdauer">
         <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
         <p>Anfragen per E-Mail oder WhatsApp werden gelöscht, sobald sie nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
       </LegalSection>
-
       <LegalSection title="9. Deine Rechte">
         <p>Du hast im Rahmen der gesetzlichen Vorgaben folgende Rechte:</p>
         <p>- Recht auf Auskunft</p>
@@ -1136,11 +1312,9 @@ function DatenschutzPage() {
         <p>- Recht auf Widerruf einer erteilten Einwilligung</p>
         <p>- Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde</p>
       </LegalSection>
-
       <LegalSection title="10. Beschwerderecht bei der Aufsichtsbehörde">
         <p>Wenn du der Ansicht bist, dass die Verarbeitung deiner personenbezogenen Daten gegen Datenschutzrecht verstößt, hast du das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren.</p>
       </LegalSection>
-
       <LegalSection title="11. Änderung dieser Datenschutzerklärung">
         <p>Diese Datenschutzerklärung kann angepasst werden, wenn sich technische, rechtliche oder organisatorische Änderungen ergeben.</p>
         <p>Stand: [Monat Jahr eintragen]</p>
@@ -1160,11 +1334,9 @@ function WiderrufPage() {
         <p>Verbraucher haben grundsätzlich das Recht, binnen vierzehn Tagen ohne Angabe von Gründen einen Vertrag zu widerrufen, sofern ein gesetzliches Widerrufsrecht besteht.</p>
         <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses.</p>
       </LegalSection>
-
       <LegalSection title="Ausübung des Widerrufs">
         <p>Um dein Widerrufsrecht auszuüben, musst du mich mittels einer eindeutigen Erklärung über deinen Entschluss informieren, diesen Vertrag zu widerrufen.</p>
       </LegalSection>
-
       <LegalSection title="Kontakt für Widerruf">
         <p>STRUKTIVA Unternehmensarchitektur</p>
         <p>Jessica Wacker</p>
@@ -1173,25 +1345,20 @@ function WiderrufPage() {
         <p>Deutschland</p>
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
       </LegalSection>
-
       <LegalSection title="Hinweis zur Frist">
         <p>Du kannst dafür das unten stehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.</p>
         <p>Zur Wahrung der Widerrufsfrist reicht es aus, dass du die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absendest.</p>
       </LegalSection>
-
       <LegalSection title="Folgen des Widerrufs">
         <p>Wenn du diesen Vertrag widerrufst, werden alle Zahlungen, die ich von dir erhalten habe, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückgezahlt, an dem die Mitteilung über deinen Widerruf eingegangen ist.</p>
         <p>Für diese Rückzahlung wird dasselbe Zahlungsmittel verwendet, das du bei der ursprünglichen Zahlung eingesetzt hast, sofern nicht ausdrücklich etwas anderes vereinbart wurde.</p>
       </LegalSection>
-
       <LegalSection title="Widerruf bei Dienstleistungen">
         <p>Hast du verlangt, dass die Dienstleistung bereits während der Widerrufsfrist beginnen soll, so ist für bereits erbrachte Leistungen ein angemessener Betrag zu zahlen, sofern dies gesetzlich vorgesehen ist.</p>
       </LegalSection>
-
       <LegalSection title="Widerruf bei digitalen Inhalten">
         <p>Bei digitalen Inhalten oder digitalen Leistungen kann das Widerrufsrecht unter bestimmten gesetzlichen Voraussetzungen vorzeitig erlöschen, wenn mit der Ausführung begonnen wurde und der Verbraucher ausdrücklich zugestimmt hat, dass mit der Ausführung vor Ablauf der Widerrufsfrist begonnen wird.</p>
       </LegalSection>
-
       <LegalSection title="Muster-Widerrufsformular">
         <p>Wenn du den Vertrag widerrufen möchtest, kannst du dieses Formular ausfüllen und per E-Mail senden.</p>
         <p>An:</p>
@@ -1213,7 +1380,6 @@ function WiderrufPage() {
         <p>Unterschrift nur bei Mitteilung auf Papier:</p>
         <p>__________________________________________________</p>
       </LegalSection>
-
       <LegalSection title="Hinweis">
         <p>Diese Widerrufsbelehrung ist eine allgemeine Vorlage und muss je nach konkretem Angebot, Zahlungsweg und Leistungsart angepasst werden.</p>
       </LegalSection>
@@ -1232,7 +1398,6 @@ function ContactPage() {
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
         <p>Telefon / WhatsApp: [Telefonnummer eintragen oder „auf Anfrage“]</p>
       </LegalSection>
-
       <LegalSection title="Mögliche Themen">
         <p>- Webseite oder Landingpage</p>
         <p>- Social-Media-Texte</p>
@@ -1244,15 +1409,12 @@ function ContactPage() {
         <p>- professionelle Unternehmens-App</p>
         <p>- monatliche Betreuung</p>
       </LegalSection>
-
       <LegalSection title="WhatsApp-Link">
         <p><a href={contactDetails.whatsapp} className="text-struktivaGold">{contactDetails.whatsapp}</a></p>
       </LegalSection>
-
       <LegalSection title="Kurzer Anfragehinweis">
         <p>Bitte beschreibe kurz dein Unternehmen und wobei du Unterstützung brauchst. Danach kann ich besser einschätzen, welches Paket oder welche Lösung sinnvoll ist.</p>
       </LegalSection>
-
       <LegalSection title="Optionaler Kontaktformular-Text, falls ein Formular eingebaut wird">
         <p>Felder:</p>
         <p>- Name</p>
