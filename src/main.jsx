@@ -235,29 +235,40 @@ function Hero() {
           </div>
         </div>
         <div className="relative">
+          <div className="mb-6 rounded-[1.6rem] border border-white/10 bg-white/[0.055] p-5 shadow-premium backdrop-blur">
+            <p className="text-xl font-semibold text-white md:text-2xl">So kann eine STRUKTIVA App-Lösung aussehen</p>
+            <p className="mt-3 text-sm leading-7 text-white/68 md:text-base">
+              Individuelle App-Systeme können Kunden, Termine, Aufgaben, Checklisten und interne Abläufe übersichtlich an einem Ort bündeln.
+            </p>
+          </div>
           <div className="rounded-[2rem] border border-white/12 bg-white/[0.075] p-5 shadow-premium backdrop-blur-xl">
-            <div className="rounded-[1.5rem] border border-struktivaGold/20 bg-struktivaDark/88 p-6">
-              <div className="mb-6 flex items-center justify-between">
+            <div className="rounded-[1.5rem] border border-struktivaGold/20 bg-struktivaDark/88 p-5 md:p-6">
+              <div className="mb-6 flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-sm text-white/50">Digitales Unternehmenssystem</p>
-                  <p className="text-xl font-semibold text-white">STRUKTIVA Control</p>
+                  <p className="text-sm font-medium text-white/68">App-Beispiel für Unternehmen</p>
+                  <p className="mt-1 text-xl font-semibold text-white">STRUKTIVA Business App</p>
                 </div>
-                <div className="rounded-full bg-struktivaGold/15 px-3 py-1 text-xs font-medium text-struktivaGold">Premium</div>
+                <div className="shrink-0 rounded-full bg-struktivaGold/15 px-3 py-1 text-xs font-semibold text-struktivaGold">Vorschau</div>
               </div>
-              <div className="grid gap-4">
-                {['Kunden', 'Termine', 'Aufgaben', 'Bewertungen'].map((item, index) => (
-                  <div key={item} className="flex items-center justify-between rounded-2xl border border-white/8 bg-white/[0.055] p-4">
+              <div className="grid gap-3 md:gap-4">
+                {[
+                  ['Kundenverwaltung', 'übersichtlich'],
+                  ['Terminübersicht', 'strukturiert'],
+                  ['Aufgabensteuerung', 'klar'],
+                  ['Bewertungsprozess', 'integriert'],
+                ].map(([item, status]) => (
+                  <div key={item} className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/[0.055] p-4">
                     <div className="flex items-center gap-3">
-                      <div className="h-3 w-3 rounded-full bg-struktivaGold" />
-                      <span className="text-white/82">{item}</span>
+                      <div className="h-2.5 w-2.5 rounded-full bg-struktivaGold shadow-[0_0_18px_rgba(232,194,94,0.35)]" />
+                      <span className="text-sm font-medium text-white/86 md:text-base">{item}</span>
                     </div>
-                    <span className="text-sm text-white/45">{index === 0 ? 'aktiv' : 'geplant'}</span>
+                    <span className="text-right text-xs font-medium text-white/55 md:text-sm">{status}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 rounded-2xl bg-gradient-to-br from-struktivaGold/20 to-blue-500/10 p-5">
-                <p className="text-sm text-white/60">Ziel</p>
-                <p className="mt-2 text-lg font-semibold text-white">Mehr Übersicht. Mehr Ruhe. Bessere Abläufe.</p>
+              <div className="mt-6 rounded-2xl bg-gradient-to-br from-struktivaGold/18 to-blue-500/10 p-5">
+                <p className="text-sm font-medium text-white/64">Ergebnis</p>
+                <p className="mt-2 text-base font-semibold leading-7 text-white md:text-lg">Ein digitaler Ort für Kunden, Termine, Aufgaben und interne Abläufe.</p>
               </div>
             </div>
           </div>
