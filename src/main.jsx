@@ -171,14 +171,12 @@ function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/12 bg-struktivaDark/88 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <a href="#start" className="group flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-struktivaGold/40 bg-struktivaGold/10 text-struktivaGold shadow-gold">
-            S
-          </div>
-          <div>
-            <p className="text-sm font-semibold tracking-[0.28em] text-white">STRUKTIVA</p>
-            <p className="text-xs text-white/55">Business-Service</p>
-          </div>
+        <a href="#start" className="group flex items-center gap-3" aria-label="STRUKTIVA Startseite">
+          <img
+            src="/struktiva-logo.jpeg"
+            alt="STRUKTIVA Unternehmerarchitektur"
+            className="h-[38px] w-auto max-w-[190px] rounded-xl object-contain shadow-[0_0_22px_rgba(232,194,94,0.14)] md:h-12 md:max-w-[240px]"
+          />
         </a>
         <nav className="hidden items-center gap-6 lg:flex">
           {navItems.map(([label, href]) => (
@@ -210,11 +208,16 @@ function Hero() {
       <div className="absolute left-1/2 top-28 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-struktivaGold/10 blur-3xl" />
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
         <div>
+          <img
+            src="/struktiva-logo.jpeg"
+            alt="STRUKTIVA Unternehmerarchitektur"
+            className="mb-8 w-[260px] max-w-full rounded-3xl object-contain shadow-[0_0_45px_rgba(232,194,94,0.18)] md:w-[360px]"
+          />
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-struktivaGold/25 bg-white/5 px-4 py-2 text-sm text-white/82 backdrop-blur">
             <Sparkles className="h-4 w-4 text-struktivaGold" /> Sichtbarkeit. Struktur. App-Systeme.
           </div>
           <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl lg:text-7xl">
-            STRUKTIVA <span className="block bg-gradient-to-r from-struktivaGold to-struktivaCream bg-clip-text text-transparent">Business-Service</span>
+            Digitaler <span className="block bg-gradient-to-r from-struktivaGold to-struktivaCream bg-clip-text text-transparent">Business-Service</span>
           </h1>
           <p className="mt-7 max-w-2xl text-xl leading-9 text-white/82 md:text-2xl">
             Werbung, Struktur & professionelle digitale Lösungen für kleine Unternehmen.
@@ -481,7 +484,11 @@ function Footer() {
   return (
     <footer className="border-t border-white/12 px-5 py-10 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 text-sm text-white/48 md:flex-row md:items-center md:justify-between">
-        <p>© {new Date().getFullYear()} STRUKTIVA Business-Service. Alle Rechte vorbehalten.</p>
+        <div className="flex flex-col gap-3">
+          <img src="/struktiva-logo.jpeg" alt="STRUKTIVA Unternehmerarchitektur" className="h-12 w-fit max-w-[230px] rounded-xl object-contain opacity-90" />
+          <p>© {new Date().getFullYear()} STRUKTIVA Business-Service. Alle Rechte vorbehalten.</p>
+          <p className="text-white/55">Kontakt: info.struktiva@gmail.com</p>
+        </div>
         <div className="flex flex-wrap gap-5">
           <a href="#" className="hover:text-struktivaGold">Impressum</a>
           <a href="#" className="hover:text-struktivaGold">Datenschutz</a>
