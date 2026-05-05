@@ -1,6 +1,6 @@
-# STRUKTIVA Business Website
+# STRUKTIVA Unternehmensarchitektur Website
 
-Professionelle Onepage-Webseite für STRUKTIVA Business-Service.
+Professionelle Onepage-Webseite für STRUKTIVA Unternehmensarchitektur.
 
 ## Technik
 
@@ -12,7 +12,7 @@ Professionelle Onepage-Webseite für STRUKTIVA Business-Service.
 ## Lokal starten
 
 ```bash
-npm install
+npm install --no-package-lock
 npm run dev
 ```
 
@@ -27,19 +27,16 @@ npm run preview
 
 ## Deployment mit GitHub + Vercel
 
-1. Neues GitHub-Repository erstellen, z. B. `struktiva-business-website`.
-2. Projektdateien hochladen oder per Git pushen.
-3. Bei Vercel einloggen.
-4. `Add New Project` auswählen.
-5. GitHub-Repository importieren.
-6. Framework wird normalerweise als `Vite` erkannt.
-7. Build Command: `npm run build`
-8. Output Directory: `dist`
-9. Deploy starten.
+1. GitHub-Repository verbinden.
+2. Projekt in Vercel importieren.
+3. Framework als `Vite` verwenden.
+4. Build Command: `npm run build`
+5. Output Directory: `dist`
+6. Deployment starten.
 
 ## Vor Veröffentlichung anpassen
 
-- E-Mail-Adresse in `src/main.jsx` ersetzen: `kontakt@struktiva.de`
-- WhatsApp-Link ersetzen: `https://wa.me/491234567890`
-- Impressum, Datenschutz und Widerruf mit echten Seiten oder Links verbinden
-- Optional eigene Domain in Vercel verbinden
+- rechtliche Platzhalter in `src/main.jsx` mit echten Angaben ergänzen
+- WhatsApp-Link bei Bedarf durch die echte Nummer ersetzen
+- Impressum, Datenschutz und Widerruf final juristisch prüfen
+- optional eigene Domain in Vercel verbinden

@@ -21,6 +21,7 @@ body {
   min-width: 320px;
   background: transparent;
   color: #f5f7fb;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
