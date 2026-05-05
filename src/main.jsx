@@ -956,7 +956,7 @@ function WiderrufPage() {
         <p>Wenn du den Vertrag widerrufen möchtest, kannst du dieses Formular ausfüllen und per E-Mail senden.</p>
         <p>An:</p>
         <p>STRUKTIVA Business-Service</p>
-        <p>Sven Wacker</p>
+        <p>Jessica Wacker</p>
         <p>E-Mail: {contactDetails.email}</p>
         <p>Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung:</p>
         <p>__________________________________________________</p>
