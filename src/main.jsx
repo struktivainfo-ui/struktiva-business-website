@@ -39,7 +39,7 @@ const siteLinks = {
 const contactDetails = {
   email: 'info.struktiva@gmail.com',
   whatsapp: 'https://wa.me/49DEINENUMMER',
-  phoneText: 'Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen',
+  phoneText: 'Telefon / WhatsApp: 070518162292',
 }
 
 const navItems = [
@@ -770,30 +770,25 @@ function ImpressumPage() {
     >
       <LegalSection title="Angaben gemäß § 5 DDG">
         <p>STRUKTIVA Business-Service</p>
-        <p>Sven Wacker</p>
-        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
-        <p>[PLZ und Ort eintragen]</p>
+        <p>Jessica Wacker</p>
+        <p>Ostlandstraße 3</p>
+        <p>75365 Calw</p>
         <p>Deutschland</p>
       </LegalSection>
 
       <LegalSection title="Kontakt">
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
-        <p>Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen</p>
+        <p>Telefon / WhatsApp: 070518162292</p>
       </LegalSection>
 
       <LegalSection title="Vertreten durch">
-        <p>Sven Wacker</p>
+        <p>Jessica Wacker</p>
       </LegalSection>
 
       <LegalSection title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
-        <p>Sven Wacker</p>
-        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
-        <p>[PLZ und Ort eintragen]</p>
-      </LegalSection>
-
-      <LegalSection title="Umsatzsteuer">
-        <p>[Falls vorhanden: Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz eintragen]</p>
-        <p>[Falls nicht vorhanden: Diesen Abschnitt entfernen oder später ergänzen]</p>
+        <p>Jessica Wacker</p>
+        <p>Ostlandstraße 3</p>
+        <p>75365 Calw</p>
       </LegalSection>
 
       <LegalSection title="Hinweis">
@@ -826,12 +821,12 @@ function DatenschutzPage() {
       <LegalSection title="2. Verantwortlicher">
         <p>Verantwortlich für die Datenverarbeitung auf dieser Webseite ist:</p>
         <p>STRUKTIVA Business-Service</p>
-        <p>Sven Wacker</p>
-        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
-        <p>[PLZ und Ort eintragen]</p>
+        <p>Jessica Wacker</p>
+        <p>Ostlandstraße 3</p>
+        <p>75365 Calw</p>
         <p>Deutschland</p>
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
-        <p>Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen</p>
+        <p>Telefon / WhatsApp: 070518162292</p>
       </LegalSection>
 
       <LegalSection title="3. Hosting der Webseite">
@@ -932,9 +927,9 @@ function WiderrufPage() {
 
       <LegalSection title="Kontakt für Widerruf">
         <p>STRUKTIVA Business-Service</p>
-        <p>Sven Wacker</p>
-        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
-        <p>[PLZ und Ort eintragen]</p>
+        <p>Jessica Wacker</p>
+        <p>Ostlandstraße 3</p>
+        <p>75365 Calw</p>
         <p>Deutschland</p>
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
       </LegalSection>
@@ -1013,7 +1008,7 @@ function ContactPage() {
         <p>E-Mail:</p>
         <p><a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
         <p>Telefon / WhatsApp:</p>
-        <p>auf Anfrage oder echte Nummer eintragen</p>
+        <p>070518162292</p>
         <p>WhatsApp-Link:</p>
         <p><a href={contactDetails.whatsapp} className="text-struktivaGold">{contactDetails.whatsapp}</a></p>
       </LegalSection>
