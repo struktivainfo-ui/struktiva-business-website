@@ -21,25 +21,24 @@ import {
 } from 'lucide-react'
 import './styles.css'
 
-const baseUrl = '/'
 const siteLinks = {
-  home: `${baseUrl}#start`,
-  services: `${baseUrl}#leistungen`,
-  pricing: `${baseUrl}#preise`,
-  apps: `${baseUrl}#apps`,
-  targets: `${baseUrl}#zielgruppen`,
-  process: `${baseUrl}#ablauf`,
-  contactSection: `${baseUrl}#kontakt`,
-  impressum: `${baseUrl}impressum`,
-  datenschutz: `${baseUrl}datenschutz`,
-  widerruf: `${baseUrl}widerruf`,
-  contact: `${baseUrl}kontakt`,
+  home: '/#start',
+  services: '/#leistungen',
+  pricing: '/#preise',
+  apps: '/#apps',
+  targets: '/#zielgruppen',
+  process: '/#ablauf',
+  contactSection: '/#kontakt',
+  impressum: '/impressum',
+  datenschutz: '/datenschutz',
+  widerruf: '/widerruf',
+  contact: '/kontakt',
 }
 
 const contactDetails = {
   email: 'info.struktiva@gmail.com',
+  phoneText: 'Telefon / WhatsApp: [Telefonnummer eintragen oder „auf Anfrage“]',
   whatsapp: 'https://wa.me/49DEINENUMMER',
-  phoneText: 'Telefon / WhatsApp: 070518162292',
 }
 
 const navItems = [
@@ -56,7 +55,7 @@ const services = [
   {
     icon: PenLine,
     title: 'Texte, Sichtbarkeit & Positionierung',
-    text: 'Professionelle Inhalte für Social Media, Google, WhatsApp, Webseiten und klare Unternehmensdarstellung.',
+    text: 'Professionelle Inhalte für Social Media, Google, WhatsApp, Webseiten und eine klare Unternehmensdarstellung.',
   },
   {
     icon: Globe2,
@@ -226,7 +225,6 @@ const pricePackages = [
     note: 'Der genaue Preis hängt vom Funktionsumfang, den gewünschten Modulen und dem technischen Aufwand ab.',
     cta: 'App-Lösung anfragen',
     premium: true,
-    wide: true,
   },
   {
     title: 'Monatliche STRUKTIVA Betreuung',
@@ -272,7 +270,7 @@ function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/12 bg-struktivaDark/88 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
-        <a href="#start" className="group flex min-w-0 items-center gap-3" aria-label="STRUKTIVA Startseite">
+        <a href={siteLinks.home} className="group flex min-w-0 items-center gap-3" aria-label="STRUKTIVA Startseite">
           <img
             src="/struktiva-logo.jpeg"
             alt="STRUKTIVA Unternehmerarchitektur"
@@ -286,7 +284,10 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a href={siteLinks.contactSection} className="hidden rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark md:inline-flex">
+        <a
+          href={siteLinks.contact}
+          className="hidden rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark md:inline-flex"
+        >
           Anfrage stellen
         </a>
       </div>
@@ -342,10 +343,16 @@ function Hero() {
             STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Betriebe dabei, sichtbarer, organisierter und digital besser aufgestellt zu sein.
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a href={siteLinks.contactSection} className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark shadow-gold transition hover:scale-[1.02]">
-              Unverbindlich anfragen <ArrowRight className="h-5 w-5" />
+            <a
+              href={siteLinks.contact}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark shadow-gold transition hover:scale-[1.02]"
+            >
+              Anfrage senden <ArrowRight className="h-5 w-5" />
             </a>
-            <a href={siteLinks.pricing} className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold">
+            <a
+              href={siteLinks.pricing}
+              className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold"
+            >
               Startangebote ansehen
             </a>
           </div>
@@ -446,8 +453,6 @@ function Services() {
 }
 
 function PricingCard({ pkg }) {
-  const mailSubject = encodeURIComponent(`${pkg.title} anfragen`)
-
   return (
     <article
       className={`relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border p-6 shadow-premium transition hover:-translate-y-1 md:p-7 ${
@@ -525,7 +530,7 @@ function PricingCard({ pkg }) {
       </div>
 
       <a
-        href={`mailto:info.struktiva@gmail.com?subject=${mailSubject}`}
+        href={siteLinks.contact}
         className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition ${
           pkg.premium
             ? 'bg-struktivaGold text-struktivaDark shadow-gold hover:scale-[1.02]'
@@ -550,10 +555,7 @@ function Pricing() {
 
         <div className="mt-12 grid gap-6 xl:grid-cols-6">
           {pricePackages.map((pkg) => (
-            <div
-              key={pkg.title}
-              className={pkg.premium || pkg.highlight ? 'xl:col-span-3' : 'xl:col-span-2'}
-            >
+            <div key={pkg.title} className={pkg.premium || pkg.highlight ? 'xl:col-span-3' : 'xl:col-span-2'}>
               <PricingCard pkg={pkg} />
             </div>
           ))}
@@ -657,13 +659,19 @@ function Contact() {
         <Rocket className="mx-auto h-12 w-12 text-struktivaGold" />
         <h2 className="mt-6 text-3xl font-semibold text-white md:text-5xl">Lass uns dein Unternehmen professioneller aufstellen.</h2>
         <p className="mx-auto mt-6 max-w-3xl leading-8 text-white/74">
-          Du möchtest bessere Sichtbarkeit, klarere Abläufe, eine überzeugende Webseite oder eine professionelle digitale Lösung für dein Unternehmen? Dann stelle jetzt eine unverbindliche Anfrage.
+          Du möchtest bessere Sichtbarkeit, klarere Abläufe, eine überzeugende Webseite oder eine professionelle digitale Lösung für dein Unternehmen? Dann starte mit einer kurzen Anfrage.
         </p>
         <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-          <a href={`mailto:${contactDetails.email}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark transition hover:scale-[1.02]">
+          <a
+            href={siteLinks.contact}
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark transition hover:scale-[1.02]"
+          >
             Anfrage senden <ArrowRight className="h-5 w-5" />
           </a>
-          <a href={contactDetails.whatsapp} className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold">
+          <a
+            href={contactDetails.whatsapp}
+            className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold"
+          >
             Per WhatsApp kontaktieren
           </a>
         </div>
@@ -684,7 +692,8 @@ function Footer() {
             className="h-12 w-fit max-w-[230px] rounded-xl object-contain opacity-90"
           />
           <p>© {new Date().getFullYear()} STRUKTIVA Business-Service. Alle Rechte vorbehalten.</p>
-          <p className="text-white/55">Kontakt: {contactDetails.email}</p>
+          <p className="text-white/55">STRUKTIVA Business-Service</p>
+          <p className="text-white/55">{contactDetails.email}</p>
         </div>
         <div className="flex flex-wrap gap-5">
           <a href={siteLinks.impressum} className="hover:text-struktivaGold">Impressum</a>
@@ -718,15 +727,18 @@ function HomePage() {
 function LegalHeader() {
   return (
     <header className="border-b border-white/12 bg-struktivaDark/92 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
-        <a href={siteLinks.home} className="flex min-w-0 items-center gap-3">
+      <div className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
+        <a href={siteLinks.home} className="flex min-w-0 items-center gap-3" aria-label="STRUKTIVA Startseite">
           <img
             src="/struktiva-logo.jpeg"
             alt="STRUKTIVA Unternehmerarchitektur"
             className="h-[38px] w-auto max-w-[190px] rounded-xl object-contain shadow-[0_0_22px_rgba(232,194,94,0.14)] md:h-12 md:max-w-[240px]"
           />
         </a>
-        <a href={siteLinks.home} className="rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark">
+        <a
+          href={siteLinks.home}
+          className="rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark"
+        >
           Zur Startseite
         </a>
       </div>
@@ -749,7 +761,7 @@ function LegalLayout({ eyebrow, title, intro, children }) {
       <LegalHeader />
       <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-8 lg:pb-24 lg:pt-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(246,217,160,0.14),transparent_30%),radial-gradient(circle_at_84%_18%,rgba(58,92,154,0.28),transparent_30%),linear-gradient(135deg,#0b1020,#111a2e_46%,#17213a)]" />
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-4xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">{eyebrow}</p>
           <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl">{title}</h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-white/72 md:text-lg">{intro}</p>
@@ -770,28 +782,33 @@ function ImpressumPage() {
     >
       <LegalSection title="Angaben gemäß § 5 DDG">
         <p>STRUKTIVA Business-Service</p>
-        <p>Jessica Wacker</p>
-        <p>Ostlandstraße 3</p>
-        <p>75365 Calw</p>
+        <p>Sven Wacker</p>
+        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
+        <p>[PLZ und Ort eintragen]</p>
         <p>Deutschland</p>
       </LegalSection>
 
       <LegalSection title="Kontakt">
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
-        <p>Telefon / WhatsApp: 070518162292</p>
+        <p>{contactDetails.phoneText}</p>
       </LegalSection>
 
       <LegalSection title="Vertreten durch">
-        <p>Jessica Wacker</p>
+        <p>Sven Wacker</p>
       </LegalSection>
 
       <LegalSection title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
-        <p>Jessica Wacker</p>
-        <p>Ostlandstraße 3</p>
-        <p>75365 Calw</p>
+        <p>Sven Wacker</p>
+        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
+        <p>[PLZ und Ort eintragen]</p>
       </LegalSection>
 
-      <LegalSection title="Hinweis">
+      <LegalSection title="Umsatzsteuer">
+        <p>[Falls vorhanden: Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz eintragen]</p>
+        <p>[Falls nicht vorhanden: Diesen Abschnitt entfernen oder später ergänzen]</p>
+      </LegalSection>
+
+      <LegalSection title="Haftung für Inhalte">
         <p>Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
       </LegalSection>
 
@@ -811,7 +828,7 @@ function DatenschutzPage() {
     <LegalLayout
       eyebrow="Datenschutz"
       title="Datenschutzerklärung"
-      intro="Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Website und bei der Kontaktaufnahme verarbeitet werden."
+      intro="Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Webseite und bei einer Kontaktaufnahme verarbeitet werden."
     >
       <LegalSection title="1. Datenschutz auf einen Blick">
         <p>Der Schutz personenbezogener Daten ist mir wichtig. Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Webseite und bei einer Kontaktaufnahme verarbeitet werden.</p>
@@ -821,12 +838,12 @@ function DatenschutzPage() {
       <LegalSection title="2. Verantwortlicher">
         <p>Verantwortlich für die Datenverarbeitung auf dieser Webseite ist:</p>
         <p>STRUKTIVA Business-Service</p>
-        <p>Jessica Wacker</p>
-        <p>Ostlandstraße 3</p>
-        <p>75365 Calw</p>
+        <p>Sven Wacker</p>
+        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
+        <p>[PLZ und Ort eintragen]</p>
         <p>Deutschland</p>
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
-        <p>Telefon / WhatsApp: 070518162292</p>
+        <p>{contactDetails.phoneText}</p>
       </LegalSection>
 
       <LegalSection title="3. Hosting der Webseite">
@@ -846,6 +863,7 @@ function DatenschutzPage() {
         <p>- technische Logdaten</p>
         <p>Die Verarbeitung erfolgt, um die Webseite sicher, stabil und zuverlässig bereitzustellen.</p>
         <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt in der sicheren und technisch fehlerfreien Bereitstellung dieser Webseite.</p>
+        <p>Hinweis: Falls später weitere Dienste wie Analyse-Tools, Tracking, Newsletter, externe Formulare oder Zahlungsanbieter eingebunden werden, muss diese Datenschutzerklärung entsprechend erweitert werden.</p>
       </LegalSection>
 
       <LegalSection title="4. Kontaktaufnahme per E-Mail">
@@ -865,6 +883,7 @@ function DatenschutzPage() {
       </LegalSection>
 
       <LegalSection title="6. Kontaktformular">
+        {/* Nur verwenden, wenn ein Kontaktformular aktiv eingebunden ist. */}
         <p>Falls auf der Webseite ein Kontaktformular verwendet wird, werden die dort eingegebenen Daten verarbeitet, um die Anfrage zu beantworten.</p>
         <p>Dazu können gehören:</p>
         <p>- Name</p>
@@ -873,12 +892,12 @@ function DatenschutzPage() {
         <p>- Unternehmensname</p>
         <p>- Nachrichtentext</p>
         <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO oder Art. 6 Abs. 1 lit. f DSGVO.</p>
-        <p>Falls aktuell kein Kontaktformular verwendet wird, diesen Abschnitt ausblenden oder entfernen.</p>
+        <p>Falls aktuell kein Kontaktformular verwendet wird, diesen Abschnitt im Code mit einem klaren Kommentar markieren: "Nur verwenden, wenn ein Kontaktformular aktiv eingebunden ist."</p>
       </LegalSection>
 
       <LegalSection title="7. Cookies und Tracking">
         <p>Diese Webseite verwendet derzeit keine eigenen Analyse- oder Marketing-Cookies.</p>
-        <p>Falls später Tools wie Google Analytics, Meta Pixel, Vercel Analytics, Newsletter-Tools oder andere Tracking-/Analyse-Dienste eingebunden werden, muss diese Datenschutzerklärung entsprechend angepasst werden.</p>
+        <p>Falls später Tools wie Google Analytics, Meta Pixel, Vercel Analytics, Newsletter-Tools, Zahlungsanbieter, eingebettete Videos, externe Karten oder andere Tracking-/Analyse-Dienste eingebunden werden, muss diese Datenschutzerklärung entsprechend angepasst werden.</p>
       </LegalSection>
 
       <LegalSection title="8. Speicherdauer">
@@ -894,6 +913,7 @@ function DatenschutzPage() {
         <p>- Recht auf Einschränkung der Verarbeitung</p>
         <p>- Recht auf Datenübertragbarkeit</p>
         <p>- Recht auf Widerspruch gegen die Verarbeitung</p>
+        <p>- Recht auf Widerruf einer erteilten Einwilligung</p>
         <p>- Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde</p>
       </LegalSection>
 
@@ -914,7 +934,7 @@ function WiderrufPage() {
     <LegalLayout
       eyebrow="Widerruf"
       title="Widerrufsbelehrung"
-      intro="Diese Widerrufsbelehrung ist für Verbraucher als eigene Unterseite dargestellt und kann je nach konkretem Angebot weiter angepasst werden."
+      intro="Diese Widerrufsbelehrung ist eine allgemeine Vorlage und muss je nach konkretem Angebot, Zahlungsweg und Leistungsart angepasst werden."
     >
       <LegalSection title="Widerrufsrecht für Verbraucher">
         <p>Verbraucher haben grundsätzlich das Recht, binnen vierzehn Tagen ohne Angabe von Gründen einen Vertrag zu widerrufen, sofern ein gesetzliches Widerrufsrecht besteht.</p>
@@ -927,9 +947,9 @@ function WiderrufPage() {
 
       <LegalSection title="Kontakt für Widerruf">
         <p>STRUKTIVA Business-Service</p>
-        <p>Jessica Wacker</p>
-        <p>Ostlandstraße 3</p>
-        <p>75365 Calw</p>
+        <p>Sven Wacker</p>
+        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
+        <p>[PLZ und Ort eintragen]</p>
         <p>Deutschland</p>
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
       </LegalSection>
@@ -956,7 +976,7 @@ function WiderrufPage() {
         <p>Wenn du den Vertrag widerrufen möchtest, kannst du dieses Formular ausfüllen und per E-Mail senden.</p>
         <p>An:</p>
         <p>STRUKTIVA Business-Service</p>
-        <p>Jessica Wacker</p>
+        <p>Sven Wacker</p>
         <p>E-Mail: {contactDetails.email}</p>
         <p>Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung:</p>
         <p>__________________________________________________</p>
@@ -986,7 +1006,7 @@ function ContactPage() {
     <LegalLayout
       eyebrow="Kontakt"
       title="Kontakt"
-      intro="Du möchtest dein Unternehmen sichtbarer, strukturierter oder digital professioneller aufstellen? Dann schreibe mir kurz, wobei du Unterstützung brauchst."
+      intro="Du möchtest dein Unternehmen sichtbarer, strukturierter oder digital professioneller aufstellen?"
     >
       <LegalSection title="Kontakt zu STRUKTIVA">
         <p>Dann schreibe mir kurz, wobei du Unterstützung brauchst.</p>
@@ -1008,7 +1028,7 @@ function ContactPage() {
         <p>E-Mail:</p>
         <p><a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
         <p>Telefon / WhatsApp:</p>
-        <p>070518162292</p>
+        <p>[Telefonnummer eintragen oder „auf Anfrage“]</p>
         <p>WhatsApp-Link:</p>
         <p><a href={contactDetails.whatsapp} className="text-struktivaGold">{contactDetails.whatsapp}</a></p>
       </LegalSection>
@@ -1049,32 +1069,17 @@ function NotFoundPage() {
 }
 
 function getCurrentPath() {
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
-  return pathname
+  return window.location.pathname.replace(/\/+$/, '') || '/'
 }
 
 function AppRouter() {
   const currentPath = getCurrentPath()
 
-  if (currentPath === '/impressum') {
-    return <ImpressumPage />
-  }
-
-  if (currentPath === '/datenschutz') {
-    return <DatenschutzPage />
-  }
-
-  if (currentPath === '/widerruf') {
-    return <WiderrufPage />
-  }
-
-  if (currentPath === '/kontakt') {
-    return <ContactPage />
-  }
-
-  if (currentPath === '/') {
-    return <HomePage />
-  }
+  if (currentPath === '/impressum') return <ImpressumPage />
+  if (currentPath === '/datenschutz') return <DatenschutzPage />
+  if (currentPath === '/widerruf') return <WiderrufPage />
+  if (currentPath === '/kontakt') return <ContactPage />
+  if (currentPath === '/') return <HomePage />
 
   return <NotFoundPage />
 }
