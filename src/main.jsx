@@ -110,8 +110,9 @@ const websiteFocusCards = [
 
 const pricePackages = [
   {
+    group: 'visibility',
     title: 'Sichtbarkeits-Starter',
-    price: 'ab 99 €',
+    price: 'ab 149 €',
     description: 'Für kleine Unternehmen, die online professioneller wirken und erste konkrete Verbesserungen umsetzen möchten.',
     features: [
       'kurze Analyse der aktuellen Außenwirkung',
@@ -125,8 +126,9 @@ const pricePackages = [
     cta: 'Starterpaket anfragen',
   },
   {
+    group: 'visibility',
     title: 'Google & WhatsApp Business',
-    price: 'ab 149 €',
+    price: 'ab 199 €',
     description: 'Für lokale Betriebe, die besser gefunden werden und professioneller mit Kunden kommunizieren möchten.',
     features: [
       'optimierte Google-Unternehmensbeschreibung',
@@ -142,8 +144,9 @@ const pricePackages = [
     cta: 'Google & WhatsApp anfragen',
   },
   {
+    group: 'visibility',
     title: 'Social-Media & Content',
-    price: 'ab 179 €',
+    price: 'ab 249 €',
     description: 'Für Unternehmen, die regelmäßig bessere Inhalte veröffentlichen und professioneller sichtbar werden möchten.',
     features: [
       'individueller Contentplan',
@@ -159,8 +162,9 @@ const pricePackages = [
     cta: 'Content-Paket anfragen',
   },
   {
+    group: 'visibility',
     title: 'Webseiten & Landingpages',
-    price: 'ab 299 €',
+    price: 'ab 499 €',
     badge: 'Wichtige Leistung',
     description: 'Für Unternehmen, die eine professionelle Webseite, Landingpage oder Angebotsseite benötigen.',
     features: [
@@ -180,15 +184,17 @@ const pricePackages = [
       'Verlinkung zu Digistore24, Systeme.io oder externen Angeboten',
       'einfache SEO-Grundstruktur',
       'Angebotsseiten für Produkte oder Dienstleistungen',
+      'technische Veröffentlichung über GitHub/Vercel oder passende Plattform',
     ],
-    note: 'Landingpages starten ab 299 €. Komplette Webseiten werden je nach Umfang individuell kalkuliert.',
+    note: 'Landingpages starten ab 499 €. Komplette Webseiten werden je nach Umfang, Seitenanzahl, Designaufwand und technischer Umsetzung individuell kalkuliert.',
     cta: 'Webseite anfragen',
     highlight: true,
   },
   {
+    group: 'systems',
     title: 'App-Konzept Paket',
-    price: '299 €',
-    description: 'Für Unternehmen, die prüfen möchten, ob eine eigene Unternehmens-App sinnvoll ist.',
+    price: '399 €',
+    description: 'Für Unternehmen, die prüfen möchten, ob eine eigene Unternehmens-App oder ein internes digitales System sinnvoll ist.',
     features: [
       'Analyse der aktuellen Abläufe',
       'App-Idee passend zum Unternehmen',
@@ -203,9 +209,10 @@ const pricePackages = [
     cta: 'App-Konzept anfragen',
   },
   {
+    group: 'systems',
     title: 'Professionelle Unternehmens-App',
-    price: 'ab 1.490 €',
-    subtitle: 'Monatliche Betreuung ab 49 € / Monat',
+    price: 'ab 1.990 €',
+    subtitle: 'Monatliche App-Betreuung ab 89 € / Monat',
     badge: 'Premium App-Lösung',
     description: 'Für Betriebe, die eine individuelle digitale Lösung für ihre Abläufe brauchen.',
     features: [
@@ -220,7 +227,7 @@ const pricePackages = [
       'digitale Unternehmensprozesse',
       'branchenspezifische App-Module',
     ],
-    extraTitle: 'Die monatliche Betreuung beinhaltet',
+    extraTitle: 'Die monatliche App-Betreuung beinhaltet',
     extras: [
       'Hosting',
       'technische Bereitstellung',
@@ -229,13 +236,14 @@ const pricePackages = [
       'Support bei Bedienfragen',
       'technische Grundbetreuung der App',
     ],
-    note: 'Der genaue Preis hängt vom Funktionsumfang, den gewünschten Modulen und dem technischen Aufwand ab.',
+    note: 'Der genaue Preis hängt vom Funktionsumfang, den gewünschten Modulen, Hosting-Anforderungen, Speicherbedarf und technischem Aufwand ab.',
     cta: 'App-Lösung anfragen',
     premium: true,
   },
   {
+    group: 'systems',
     title: 'Monatliche STRUKTIVA Betreuung',
-    price: 'ab 99 € / Monat',
+    price: 'ab 149 € / Monat',
     description: 'Für Unternehmen, die dauerhaft Unterstützung bei Sichtbarkeit, Texten, Webseiten, Struktur oder digitalen Anpassungen möchten.',
     features: [
       'neue Google- oder Social-Media-Texte',
@@ -246,9 +254,35 @@ const pricePackages = [
       'monatlicher Struktur-Check',
       'Empfehlungen für die nächsten digitalen Schritte',
     ],
+    plans: [
+      'Basic – ab 149 € / Monat',
+      'Standard – ab 299 € / Monat',
+      'Premium – ab 499 € / Monat',
+    ],
     note: 'Die monatliche Betreuung wird passend zum Bedarf des Unternehmens zusammengestellt.',
     cta: 'Betreuung anfragen',
   },
+]
+
+const pricingGroups = [
+  {
+    key: 'visibility',
+    title: 'Sichtbarkeit & Webseiten',
+    text: 'Für den professionellen Außenauftritt, klarere Kommunikation und eine digitale Basis, die hochwertig wirkt.',
+  },
+  {
+    key: 'systems',
+    title: 'App-Systeme & Betreuung',
+    text: 'Für Unternehmen, die interne Abläufe digital abbilden und dauerhaft technisch begleitet werden möchten.',
+  },
+]
+
+const appCareReasons = [
+  'Hosting und Serverkosten',
+  'technische Pflege',
+  'kleinere Anpassungen',
+  'Funktionsprüfung',
+  'Support bei Bedienfragen',
 ]
 
 const targetGroups = [
@@ -756,6 +790,19 @@ function PricingCard({ pkg }) {
         )}
       </div>
 
+      {pkg.plans && (
+        <div className="mt-6 rounded-[1.3rem] border border-white/10 bg-white/[0.04] p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/52">Betreuungsstufen</p>
+          <ul className="mt-4 grid gap-2.5 text-sm leading-6 text-white/76">
+            {pkg.plans.map((plan) => (
+              <li key={plan} className="rounded-2xl border border-white/8 bg-struktivaDark/32 px-3.5 py-2.5">
+                {plan}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div className={`mt-6 rounded-[1.3rem] border p-4 text-sm leading-7 ${
         pkg.premium ? 'border-struktivaGold/18 bg-struktivaDark/42 text-white/76' : 'border-white/10 bg-white/[0.04] text-white/68'
       }`}>
@@ -783,26 +830,70 @@ function PricingSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Startangebote & Preise"
-            title="Faire Einstiegspakete für Sichtbarkeit, Webseiten, Struktur und digitale Lösungen."
-            text="STRUKTIVA bietet bewusst schlanke Einstiegspakete, damit kleine Unternehmen unkompliziert starten können. Der genaue Umfang wird im persönlichen Gespräch festgelegt und an den Bedarf des Unternehmens angepasst."
+            title="Professionelle Einstiegspakete für Sichtbarkeit, Webseiten, Struktur und digitale Systeme."
+            text="STRUKTIVA Unternehmensarchitektur bietet klare Einstiegspakete für kleine Unternehmen, Selbstständige und lokale Betriebe. Die Preise berücksichtigen nicht nur die Umsetzung, sondern auch Konzeption, technische Arbeit, laufende Tools, Hosting, Betreuung und Arbeitszeit. Der genaue Umfang wird im persönlichen Gespräch festgelegt."
           />
         </Reveal>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.05 }}
-          variants={stagger}
-          className="mt-12 grid gap-6 xl:grid-cols-6"
-        >
-          {pricePackages.map((pkg) => (
-            <div key={pkg.title} className={pkg.premium || pkg.highlight ? 'xl:col-span-3' : 'xl:col-span-2'}>
-              <PricingCard pkg={pkg} />
+        <div className="mt-12 space-y-8">
+          {pricingGroups.map((group) => {
+            const packages = pricePackages.filter((pkg) => pkg.group === group.key)
+
+            return (
+              <Reveal key={group.key}>
+                <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-5 shadow-premium md:p-7">
+                  <div className="mb-6 flex flex-col gap-3 border-b border-white/8 pb-5 md:flex-row md:items-end md:justify-between">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-struktivaGold/78">{group.title}</p>
+                      <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">
+                        {group.key === 'visibility' ? 'Leistungen für Auftritt und Sichtbarkeit' : 'Digitale Systeme mit laufender Betreuung'}
+                      </h3>
+                    </div>
+                    <p className="max-w-2xl text-sm leading-7 text-white/68">{group.text}</p>
+                  </div>
+
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.05 }}
+                    variants={stagger}
+                    className="grid gap-6 xl:grid-cols-6"
+                  >
+                    {packages.map((pkg) => (
+                      <div key={pkg.title} className={pkg.premium || pkg.highlight ? 'xl:col-span-3' : 'xl:col-span-2'}>
+                        <PricingCard pkg={pkg} />
+                      </div>
+                    ))}
+                  </motion.div>
+                </div>
+              </Reveal>
+            )
+          })}
+        </div>
+        <Reveal className="mt-8">
+          <div className="grid gap-6 lg:grid-cols-[1.12fr_0.88fr]">
+            <div className="rounded-[1.6rem] border border-struktivaGold/18 bg-[linear-gradient(160deg,rgba(232,194,94,0.09),rgba(255,255,255,0.05),rgba(37,99,235,0.05))] p-6 shadow-premium md:p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-struktivaGold/80">App-Betreuung</p>
+              <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Warum gibt es eine monatliche App-Betreuung?</h3>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/72 md:text-base">
+                Damit eine Unternehmens-App dauerhaft nutzbar bleibt, entstehen laufende Kosten für Hosting, technische Bereitstellung, Speicher, Wartung, kleinere Anpassungen und Support. Deshalb wird die App-Erstellung einmalig berechnet und die laufende technische Betreuung separat monatlich abgerechnet.
+              </p>
             </div>
-          ))}
-        </motion.div>
+            <div className="rounded-[1.6rem] border border-white/10 bg-white/[0.045] p-6 md:p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/52">Enthalten in der laufenden Betreuung</p>
+              <ul className="mt-4 grid gap-3 text-sm leading-6 text-white/76">
+                {appCareReasons.map((item) => (
+                  <li key={item} className="flex items-center gap-3 rounded-2xl border border-white/8 bg-struktivaDark/32 px-4 py-3">
+                    <CheckCircle2 className="h-4.5 w-4.5 shrink-0 text-struktivaGold" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Reveal>
         <Reveal className="mt-8">
           <div className="rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-6 text-center text-sm leading-7 text-white/72">
-            Alle Preise verstehen sich als Einführungspreise zum Start von STRUKTIVA Unternehmensarchitektur. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach dem Bedarf des Unternehmens, den gewünschten Leistungen und dem technischen Aufwand. Nach einer kurzen Analyse erhältst du ein klares Angebot.
+            Alle Preise verstehen sich als Einstiegspreise. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach Bedarf, Projektumfang, technischer Umsetzung, Hosting, Speicherbedarf, Betreuungsaufwand und Arbeitszeit. Nach einer kurzen Analyse erhältst du ein klares Angebot.
           </div>
         </Reveal>
       </div>
