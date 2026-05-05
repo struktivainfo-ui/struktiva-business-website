@@ -655,7 +655,7 @@ function Contact() {
             Anfrage senden <ArrowRight className="h-5 w-5" />
           </a>
           <a
-            href="https://wa.me/49DEINENUMMER"
+            href="https://wa.me/49070518162292"
             className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold"
           >
             Per WhatsApp kontaktieren
