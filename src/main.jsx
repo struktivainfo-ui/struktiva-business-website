@@ -21,14 +21,35 @@ import {
 } from 'lucide-react'
 import './styles.css'
 
+const baseUrl = '/'
+const siteLinks = {
+  home: `${baseUrl}#start`,
+  services: `${baseUrl}#leistungen`,
+  pricing: `${baseUrl}#preise`,
+  apps: `${baseUrl}#apps`,
+  targets: `${baseUrl}#zielgruppen`,
+  process: `${baseUrl}#ablauf`,
+  contactSection: `${baseUrl}#kontakt`,
+  impressum: `${baseUrl}impressum`,
+  datenschutz: `${baseUrl}datenschutz`,
+  widerruf: `${baseUrl}widerruf`,
+  contact: `${baseUrl}kontakt`,
+}
+
+const contactDetails = {
+  email: 'info.struktiva@gmail.com',
+  whatsapp: 'https://wa.me/49070518162292',
+  phoneText: 'Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen',
+}
+
 const navItems = [
-  ['Start', '#start'],
-  ['Leistungen', '#leistungen'],
-  ['Preise', '#preise'],
-  ['App-Lösungen', '#apps'],
-  ['Für wen', '#zielgruppen'],
-  ['Ablauf', '#ablauf'],
-  ['Kontakt', '#kontakt'],
+  ['Start', siteLinks.home],
+  ['Leistungen', siteLinks.services],
+  ['Preise', siteLinks.pricing],
+  ['App-Lösungen', siteLinks.apps],
+  ['Für wen', siteLinks.targets],
+  ['Ablauf', siteLinks.process],
+  ['Kontakt', siteLinks.contactSection],
 ]
 
 const services = [
@@ -265,10 +286,7 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a
-          href="#kontakt"
-          className="hidden rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark md:inline-flex"
-        >
+        <a href={siteLinks.contactSection} className="hidden rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark md:inline-flex">
           Anfrage stellen
         </a>
       </div>
@@ -324,16 +342,10 @@ function Hero() {
             STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Betriebe dabei, sichtbarer, organisierter und digital besser aufgestellt zu sein.
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="#kontakt"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark shadow-gold transition hover:scale-[1.02]"
-            >
+            <a href={siteLinks.contactSection} className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark shadow-gold transition hover:scale-[1.02]">
               Unverbindlich anfragen <ArrowRight className="h-5 w-5" />
             </a>
-            <a
-              href="#preise"
-              className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold"
-            >
+            <a href={siteLinks.pricing} className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold">
               Startangebote ansehen
             </a>
           </div>
@@ -648,20 +660,14 @@ function Contact() {
           Du möchtest bessere Sichtbarkeit, klarere Abläufe, eine überzeugende Webseite oder eine professionelle digitale Lösung für dein Unternehmen? Dann stelle jetzt eine unverbindliche Anfrage.
         </p>
         <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-          <a
-            href="mailto:info.struktiva@gmail.com"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark transition hover:scale-[1.02]"
-          >
+          <a href={`mailto:${contactDetails.email}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark transition hover:scale-[1.02]">
             Anfrage senden <ArrowRight className="h-5 w-5" />
           </a>
-          <a
-            href="https://wa.me/49070518162292"
-            className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold"
-          >
+          <a href={contactDetails.whatsapp} className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold">
             Per WhatsApp kontaktieren
           </a>
         </div>
-        <p className="mt-5 text-sm text-white/45">E-Mail: info.struktiva@gmail.com · Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen</p>
+        <p className="mt-5 text-sm text-white/45">E-Mail: {contactDetails.email} · {contactDetails.phoneText}</p>
       </div>
     </section>
   )
@@ -678,20 +684,20 @@ function Footer() {
             className="h-12 w-fit max-w-[230px] rounded-xl object-contain opacity-90"
           />
           <p>© {new Date().getFullYear()} STRUKTIVA Business-Service. Alle Rechte vorbehalten.</p>
-          <p className="text-white/55">Kontakt: info.struktiva@gmail.com</p>
+          <p className="text-white/55">Kontakt: {contactDetails.email}</p>
         </div>
         <div className="flex flex-wrap gap-5">
-          <a href="#" className="hover:text-struktivaGold">Impressum</a>
-          <a href="#" className="hover:text-struktivaGold">Datenschutz</a>
-          <a href="#" className="hover:text-struktivaGold">Widerruf</a>
-          <a href="#kontakt" className="hover:text-struktivaGold">Kontakt</a>
+          <a href={siteLinks.impressum} className="hover:text-struktivaGold">Impressum</a>
+          <a href={siteLinks.datenschutz} className="hover:text-struktivaGold">Datenschutz</a>
+          <a href={siteLinks.widerruf} className="hover:text-struktivaGold">Widerruf</a>
+          <a href={siteLinks.contact} className="hover:text-struktivaGold">Kontakt</a>
         </div>
       </div>
     </footer>
   )
 }
 
-function App() {
+function HomePage() {
   return (
     <main className="min-h-screen bg-struktivaDark text-white selection:bg-struktivaGold selection:text-struktivaDark">
       <Header />
@@ -709,4 +715,222 @@ function App() {
   )
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+function LegalHeader() {
+  return (
+    <header className="border-b border-white/12 bg-struktivaDark/92 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
+        <a href={siteLinks.home} className="flex min-w-0 items-center gap-3">
+          <img
+            src="/struktiva-logo.jpeg"
+            alt="STRUKTIVA Unternehmerarchitektur"
+            className="h-[38px] w-auto max-w-[190px] rounded-xl object-contain shadow-[0_0_22px_rgba(232,194,94,0.14)] md:h-12 md:max-w-[240px]"
+          />
+        </a>
+        <a href={siteLinks.home} className="rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark">
+          Zur Startseite
+        </a>
+      </div>
+    </header>
+  )
+}
+
+function LegalSection({ title, children }) {
+  return (
+    <section className="rounded-[1.7rem] border border-white/12 bg-white/[0.05] p-6 md:p-8">
+      <h2 className="text-2xl font-semibold text-white">{title}</h2>
+      <div className="mt-5 space-y-4 text-sm leading-7 text-white/74 md:text-base">{children}</div>
+    </section>
+  )
+}
+
+function LegalLayout({ eyebrow, title, intro, children }) {
+  return (
+    <main className="min-h-screen bg-struktivaDark text-white selection:bg-struktivaGold selection:text-struktivaDark">
+      <LegalHeader />
+      <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-8 lg:pb-24 lg:pt-24">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(246,217,160,0.14),transparent_30%),radial-gradient(circle_at_84%_18%,rgba(58,92,154,0.28),transparent_30%),linear-gradient(135deg,#0b1020,#111a2e_46%,#17213a)]" />
+        <div className="mx-auto max-w-5xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">{eyebrow}</p>
+          <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl">{title}</h1>
+          <p className="mt-6 max-w-3xl text-base leading-8 text-white/72 md:text-lg">{intro}</p>
+          <div className="mt-12 space-y-6">{children}</div>
+        </div>
+      </section>
+      <Footer />
+    </main>
+  )
+}
+
+function ImpressumPage() {
+  return (
+    <LegalLayout
+      eyebrow="Impressum"
+      title="Impressum"
+      intro="Diese Seite enthält die Anbieterkennzeichnung für STRUKTIVA Business-Service. Bitte ergänze vor dem endgültigen Livegang insbesondere die vollständige ladungsfähige Anschrift."
+    >
+      <LegalSection title="Angaben gemäß § 5 TMG">
+        <p>STRUKTIVA Business-Service</p>
+        <p>Inhaber: Sven Matzke</p>
+        <p>Vollständige Anschrift bitte vor Livegang ergänzen</p>
+      </LegalSection>
+
+      <LegalSection title="Kontakt">
+        <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
+        <p>{contactDetails.phoneText}</p>
+        <p>WhatsApp: <a href={contactDetails.whatsapp} className="text-struktivaGold">{contactDetails.whatsapp}</a></p>
+      </LegalSection>
+
+      <LegalSection title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
+        <p>Sven Matzke</p>
+        <p>STRUKTIVA Business-Service</p>
+        <p>Vollständige Anschrift bitte vor Livegang ergänzen</p>
+      </LegalSection>
+
+      <LegalSection title="Hinweis">
+        <p>Die auf dieser Website angebotenen Leistungen richten sich an Unternehmen, Selbstständige und lokale Betriebe. Individuelle Angebote, Projektumfänge und technische Leistungen werden vor Umsetzung persönlich abgestimmt.</p>
+      </LegalSection>
+    </LegalLayout>
+  )
+}
+
+function DatenschutzPage() {
+  return (
+    <LegalLayout
+      eyebrow="Datenschutz"
+      title="Datenschutzerklärung"
+      intro="Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Website und bei der Kontaktaufnahme verarbeitet werden."
+    >
+      <LegalSection title="1. Verantwortliche Stelle">
+        <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist STRUKTIVA Business-Service.</p>
+        <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
+        <p>Bitte ergänze vor Livegang die vollständige ladungsfähige Anschrift.</p>
+      </LegalSection>
+
+      <LegalSection title="2. Hosting über Vercel">
+        <p>Diese Website wird über Vercel bereitgestellt. Beim Aufruf der Website können technisch erforderliche Daten wie IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Dateien, Browserinformationen und Referrer durch den Hosting-Anbieter verarbeitet werden, um die Website sicher und stabil auszuliefern.</p>
+        <p>Die Verarbeitung erfolgt auf Grundlage des berechtigten Interesses an einer sicheren und zuverlässigen Bereitstellung der Website.</p>
+      </LegalSection>
+
+      <LegalSection title="3. Kontaktaufnahme">
+        <p>Wenn du per E-Mail oder über den WhatsApp-Link Kontakt aufnimmst, werden die von dir übermittelten Angaben zur Bearbeitung deiner Anfrage und für mögliche Anschlussfragen verarbeitet.</p>
+        <p>Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen sowie zur Kommunikation mit Interessenten und Kunden.</p>
+      </LegalSection>
+
+      <LegalSection title="4. Speicherdauer">
+        <p>Personenbezogene Daten werden nur so lange gespeichert, wie dies für die Bearbeitung deiner Anfrage, für laufende Geschäftsprozesse oder aufgrund gesetzlicher Aufbewahrungspflichten erforderlich ist.</p>
+      </LegalSection>
+
+      <LegalSection title="5. Deine Rechte">
+        <p>Du hast das Recht auf Auskunft über die von dir gespeicherten personenbezogenen Daten, auf Berichtigung unrichtiger Daten, auf Löschung, auf Einschränkung der Verarbeitung sowie auf Widerspruch gegen die Verarbeitung im Rahmen der gesetzlichen Vorgaben.</p>
+        <p>Außerdem besteht ein Beschwerderecht bei einer zuständigen Datenschutzaufsichtsbehörde.</p>
+      </LegalSection>
+
+      <LegalSection title="6. Externe Links">
+        <p>Diese Website enthält Links zu externen Diensten, insbesondere zu WhatsApp. Beim Anklicken solcher Links gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+      </LegalSection>
+    </LegalLayout>
+  )
+}
+
+function WiderrufPage() {
+  return (
+    <LegalLayout
+      eyebrow="Widerruf"
+      title="Widerrufsbelehrung"
+      intro="Diese Widerrufsbelehrung gilt für Verbraucher im Sinne des § 13 BGB. Leistungen von STRUKTIVA richten sich überwiegend an Unternehmen; für B2B-Verträge besteht regelmäßig kein gesetzliches Widerrufsrecht."
+    >
+      <LegalSection title="Widerrufsrecht">
+        <p>Wenn im Einzelfall ein Verbrauchervertrag vorliegt, hast du das Recht, binnen vierzehn Tagen ohne Angabe von Gründen den Vertrag zu widerrufen.</p>
+        <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.</p>
+      </LegalSection>
+
+      <LegalSection title="Ausübung des Widerrufs">
+        <p>Um dein Widerrufsrecht auszuüben, kannst du STRUKTIVA Business-Service per eindeutiger Erklärung über deinen Entschluss informieren, den Vertrag zu widerrufen.</p>
+        <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
+      </LegalSection>
+
+      <LegalSection title="Folgen des Widerrufs">
+        <p>Wenn du diesen Vertrag widerrufst, werden dir alle Zahlungen, die im Rahmen des widerrufbaren Vertrags geleistet wurden, unverzüglich und spätestens binnen vierzehn Tagen ab Eingang des Widerrufs zurückgezahlt, soweit nicht bereits vollständig erbrachte oder ausdrücklich begonnene Leistungen hiervon ausgenommen sind.</p>
+      </LegalSection>
+
+      <LegalSection title="Vorzeitiges Erlöschen">
+        <p>Bei digitalen Dienstleistungen kann das Widerrufsrecht vorzeitig erlöschen, wenn STRUKTIVA mit der Ausführung der Leistung bereits begonnen hat, nachdem du ausdrücklich zugestimmt hast, dass mit der Ausführung vor Ablauf der Widerrufsfrist begonnen werden soll, und du bestätigt hast, dass dir bekannt ist, dass du dadurch dein Widerrufsrecht verlierst.</p>
+      </LegalSection>
+    </LegalLayout>
+  )
+}
+
+function ContactPage() {
+  return (
+    <LegalLayout
+      eyebrow="Kontakt"
+      title="Kontakt"
+      intro="Hier erreichst du STRUKTIVA direkt für Anfragen zu Sichtbarkeit, Webseiten, Landingpages, Struktur oder App-Lösungen."
+    >
+      <div className="grid gap-6 md:grid-cols-2">
+        <LegalSection title="E-Mail">
+          <p>Für Anfragen, Angebote und Rückfragen erreichst du STRUKTIVA direkt per E-Mail.</p>
+          <p><a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
+        </LegalSection>
+
+        <LegalSection title="WhatsApp">
+          <p>Für eine schnelle erste Kontaktaufnahme kannst du auch den WhatsApp-Link nutzen.</p>
+          <p><a href={contactDetails.whatsapp} className="text-struktivaGold">{contactDetails.whatsapp}</a></p>
+          <p>{contactDetails.phoneText}</p>
+        </LegalSection>
+      </div>
+
+      <LegalSection title="Anfragen zu Leistungen">
+        <p>STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Betriebe mit professionellen Texten, Webseiten, Landingpages, digitaler Struktur und individuellen App-Lösungen.</p>
+        <p>Der genaue Leistungsumfang wird im persönlichen Gespräch abgestimmt und an den Bedarf des Unternehmens angepasst.</p>
+      </LegalSection>
+    </LegalLayout>
+  )
+}
+
+function NotFoundPage() {
+  return (
+    <LegalLayout
+      eyebrow="Seite nicht gefunden"
+      title="Diese Seite wurde nicht gefunden"
+      intro="Die gewünschte Seite ist nicht verfügbar. Über den folgenden Link kommst du direkt zurück zur STRUKTIVA Startseite."
+    >
+      <LegalSection title="Zurück zur Website">
+        <p><a href={siteLinks.home} className="text-struktivaGold">Zur Startseite von STRUKTIVA</a></p>
+      </LegalSection>
+    </LegalLayout>
+  )
+}
+
+function getCurrentPath() {
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
+  return pathname
+}
+
+function AppRouter() {
+  const currentPath = getCurrentPath()
+
+  if (currentPath === '/impressum') {
+    return <ImpressumPage />
+  }
+
+  if (currentPath === '/datenschutz') {
+    return <DatenschutzPage />
+  }
+
+  if (currentPath === '/widerruf') {
+    return <WiderrufPage />
+  }
+
+  if (currentPath === '/kontakt') {
+    return <ContactPage />
+  }
+
+  if (currentPath === '/') {
+    return <HomePage />
+  }
+
+  return <NotFoundPage />
+}
+
+createRoot(document.getElementById('root')).render(<AppRouter />)
