@@ -38,7 +38,7 @@ const siteLinks = {
 
 const contactDetails = {
   email: 'info.struktiva@gmail.com',
-  whatsapp: 'https://wa.me/49070518162292',
+  whatsapp: 'https://wa.me/49DEINENUMMER',
   phoneText: 'Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen',
 }
 
@@ -766,28 +766,46 @@ function ImpressumPage() {
     <LegalLayout
       eyebrow="Impressum"
       title="Impressum"
-      intro="Diese Seite enthält die Anbieterkennzeichnung für STRUKTIVA Business-Service. Bitte ergänze vor dem endgültigen Livegang insbesondere die vollständige ladungsfähige Anschrift."
+      intro="Diese Seite enthält die Anbieterkennzeichnung für STRUKTIVA Business-Service."
     >
-      <LegalSection title="Angaben gemäß § 5 TMG">
+      <LegalSection title="Angaben gemäß § 5 DDG">
         <p>STRUKTIVA Business-Service</p>
-        <p>Inhaber: Sven Matzke</p>
-        <p>Vollständige Anschrift bitte vor Livegang ergänzen</p>
+        <p>Sven Wacker</p>
+        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
+        <p>[PLZ und Ort eintragen]</p>
+        <p>Deutschland</p>
       </LegalSection>
 
       <LegalSection title="Kontakt">
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
-        <p>{contactDetails.phoneText}</p>
-        <p>WhatsApp: <a href={contactDetails.whatsapp} className="text-struktivaGold">{contactDetails.whatsapp}</a></p>
+        <p>Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen</p>
+      </LegalSection>
+
+      <LegalSection title="Vertreten durch">
+        <p>Sven Wacker</p>
       </LegalSection>
 
       <LegalSection title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
-        <p>Sven Matzke</p>
-        <p>STRUKTIVA Business-Service</p>
-        <p>Vollständige Anschrift bitte vor Livegang ergänzen</p>
+        <p>Sven Wacker</p>
+        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
+        <p>[PLZ und Ort eintragen]</p>
+      </LegalSection>
+
+      <LegalSection title="Umsatzsteuer">
+        <p>[Falls vorhanden: Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz eintragen]</p>
+        <p>[Falls nicht vorhanden: Diesen Abschnitt entfernen oder später ergänzen]</p>
       </LegalSection>
 
       <LegalSection title="Hinweis">
-        <p>Die auf dieser Website angebotenen Leistungen richten sich an Unternehmen, Selbstständige und lokale Betriebe. Individuelle Angebote, Projektumfänge und technische Leistungen werden vor Umsetzung persönlich abgestimmt.</p>
+        <p>Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
+      </LegalSection>
+
+      <LegalSection title="Haftung für Links">
+        <p>Diese Webseite kann Links zu externen Webseiten Dritter enthalten. Auf deren Inhalte habe ich keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+      </LegalSection>
+
+      <LegalSection title="Urheberrecht">
+        <p>Die auf dieser Webseite erstellten Inhalte, Texte, Grafiken und Designs unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung oder Verbreitung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.</p>
       </LegalSection>
     </LegalLayout>
   )
@@ -800,33 +818,97 @@ function DatenschutzPage() {
       title="Datenschutzerklärung"
       intro="Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Website und bei der Kontaktaufnahme verarbeitet werden."
     >
-      <LegalSection title="1. Verantwortliche Stelle">
-        <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist STRUKTIVA Business-Service.</p>
+      <LegalSection title="1. Datenschutz auf einen Blick">
+        <p>Der Schutz personenbezogener Daten ist mir wichtig. Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Webseite und bei einer Kontaktaufnahme verarbeitet werden.</p>
+        <p>Personenbezogene Daten sind alle Daten, mit denen eine Person direkt oder indirekt identifiziert werden kann, zum Beispiel Name, E-Mail-Adresse, Telefonnummer oder IP-Adresse.</p>
+      </LegalSection>
+
+      <LegalSection title="2. Verantwortlicher">
+        <p>Verantwortlich für die Datenverarbeitung auf dieser Webseite ist:</p>
+        <p>STRUKTIVA Business-Service</p>
+        <p>Sven Wacker</p>
+        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
+        <p>[PLZ und Ort eintragen]</p>
+        <p>Deutschland</p>
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
-        <p>Bitte ergänze vor Livegang die vollständige ladungsfähige Anschrift.</p>
+        <p>Telefon / WhatsApp: auf Anfrage oder echte Nummer eintragen</p>
       </LegalSection>
 
-      <LegalSection title="2. Hosting über Vercel">
-        <p>Diese Website wird über Vercel bereitgestellt. Beim Aufruf der Website können technisch erforderliche Daten wie IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Dateien, Browserinformationen und Referrer durch den Hosting-Anbieter verarbeitet werden, um die Website sicher und stabil auszuliefern.</p>
-        <p>Die Verarbeitung erfolgt auf Grundlage des berechtigten Interesses an einer sicheren und zuverlässigen Bereitstellung der Website.</p>
+      <LegalSection title="3. Hosting der Webseite">
+        <p>Diese Webseite wird über Vercel bereitgestellt.</p>
+        <p>Anbieter:</p>
+        <p>Vercel Inc.</p>
+        <p>440 N Barranca Ave #4133</p>
+        <p>Covina, CA 91723</p>
+        <p>USA</p>
+        <p>Beim Aufruf der Webseite können durch den Hosting-Anbieter technische Daten verarbeitet werden. Dazu gehören insbesondere:</p>
+        <p>- IP-Adresse</p>
+        <p>- Datum und Uhrzeit des Zugriffs</p>
+        <p>- Browsertyp und Browserversion</p>
+        <p>- verwendetes Betriebssystem</p>
+        <p>- aufgerufene Seiten</p>
+        <p>- Referrer-URL</p>
+        <p>- technische Logdaten</p>
+        <p>Die Verarbeitung erfolgt, um die Webseite sicher, stabil und zuverlässig bereitzustellen.</p>
+        <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt in der sicheren und technisch fehlerfreien Bereitstellung dieser Webseite.</p>
       </LegalSection>
 
-      <LegalSection title="3. Kontaktaufnahme">
-        <p>Wenn du per E-Mail oder über den WhatsApp-Link Kontakt aufnimmst, werden die von dir übermittelten Angaben zur Bearbeitung deiner Anfrage und für mögliche Anschlussfragen verarbeitet.</p>
-        <p>Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen sowie zur Kommunikation mit Interessenten und Kunden.</p>
+      <LegalSection title="4. Kontaktaufnahme per E-Mail">
+        <p>Wenn du mich per E-Mail kontaktierst, werden die von dir übermittelten Daten verarbeitet, um deine Anfrage zu beantworten.</p>
+        <p>Dazu können gehören:</p>
+        <p>- Name</p>
+        <p>- E-Mail-Adresse</p>
+        <p>- Inhalt der Nachricht</p>
+        <p>- weitere freiwillig übermittelte Angaben</p>
+        <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit einem möglichen Vertrag oder einer Leistung zusammenhängt. In anderen Fällen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO, da ein berechtigtes Interesse an der Beantwortung von Anfragen besteht.</p>
       </LegalSection>
 
-      <LegalSection title="4. Speicherdauer">
-        <p>Personenbezogene Daten werden nur so lange gespeichert, wie dies für die Bearbeitung deiner Anfrage, für laufende Geschäftsprozesse oder aufgrund gesetzlicher Aufbewahrungspflichten erforderlich ist.</p>
+      <LegalSection title="5. Kontaktaufnahme per WhatsApp">
+        <p>Wenn du über WhatsApp Kontakt aufnimmst, werden die von dir übermittelten Daten verarbeitet, um deine Anfrage zu beantworten. Dazu können insbesondere Telefonnummer, Name, Profilinformationen und Nachrichteninhalte gehören.</p>
+        <p>Bitte beachte, dass bei der Nutzung von WhatsApp auch Daten durch den Anbieter von WhatsApp verarbeitet werden können. Auf diese Datenverarbeitung habe ich keinen vollständigen Einfluss.</p>
+        <p>Wenn du dies nicht möchtest, kannst du alternativ per E-Mail Kontakt aufnehmen: {contactDetails.email}</p>
       </LegalSection>
 
-      <LegalSection title="5. Deine Rechte">
-        <p>Du hast das Recht auf Auskunft über die von dir gespeicherten personenbezogenen Daten, auf Berichtigung unrichtiger Daten, auf Löschung, auf Einschränkung der Verarbeitung sowie auf Widerspruch gegen die Verarbeitung im Rahmen der gesetzlichen Vorgaben.</p>
-        <p>Außerdem besteht ein Beschwerderecht bei einer zuständigen Datenschutzaufsichtsbehörde.</p>
+      <LegalSection title="6. Kontaktformular">
+        <p>Falls auf der Webseite ein Kontaktformular verwendet wird, werden die dort eingegebenen Daten verarbeitet, um die Anfrage zu beantworten.</p>
+        <p>Dazu können gehören:</p>
+        <p>- Name</p>
+        <p>- E-Mail-Adresse</p>
+        <p>- Telefonnummer</p>
+        <p>- Unternehmensname</p>
+        <p>- Nachrichtentext</p>
+        <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO oder Art. 6 Abs. 1 lit. f DSGVO.</p>
+        <p>Falls aktuell kein Kontaktformular verwendet wird, diesen Abschnitt ausblenden oder entfernen.</p>
       </LegalSection>
 
-      <LegalSection title="6. Externe Links">
-        <p>Diese Website enthält Links zu externen Diensten, insbesondere zu WhatsApp. Beim Anklicken solcher Links gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+      <LegalSection title="7. Cookies und Tracking">
+        <p>Diese Webseite verwendet derzeit keine eigenen Analyse- oder Marketing-Cookies.</p>
+        <p>Falls später Tools wie Google Analytics, Meta Pixel, Vercel Analytics, Newsletter-Tools oder andere Tracking-/Analyse-Dienste eingebunden werden, muss diese Datenschutzerklärung entsprechend angepasst werden.</p>
+      </LegalSection>
+
+      <LegalSection title="8. Speicherdauer">
+        <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
+        <p>Anfragen per E-Mail oder WhatsApp werden gelöscht, sobald sie nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+      </LegalSection>
+
+      <LegalSection title="9. Deine Rechte">
+        <p>Du hast im Rahmen der gesetzlichen Vorgaben folgende Rechte:</p>
+        <p>- Recht auf Auskunft</p>
+        <p>- Recht auf Berichtigung</p>
+        <p>- Recht auf Löschung</p>
+        <p>- Recht auf Einschränkung der Verarbeitung</p>
+        <p>- Recht auf Datenübertragbarkeit</p>
+        <p>- Recht auf Widerspruch gegen die Verarbeitung</p>
+        <p>- Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde</p>
+      </LegalSection>
+
+      <LegalSection title="10. Beschwerderecht bei der Aufsichtsbehörde">
+        <p>Wenn du der Ansicht bist, dass die Verarbeitung deiner personenbezogenen Daten gegen Datenschutzrecht verstößt, hast du das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren.</p>
+      </LegalSection>
+
+      <LegalSection title="11. Änderung dieser Datenschutzerklärung">
+        <p>Diese Datenschutzerklärung kann angepasst werden, wenn sich technische, rechtliche oder organisatorische Änderungen ergeben.</p>
+        <p>Stand: [Monat Jahr eintragen]</p>
       </LegalSection>
     </LegalLayout>
   )
@@ -837,24 +919,68 @@ function WiderrufPage() {
     <LegalLayout
       eyebrow="Widerruf"
       title="Widerrufsbelehrung"
-      intro="Diese Widerrufsbelehrung gilt für Verbraucher im Sinne des § 13 BGB. Leistungen von STRUKTIVA richten sich überwiegend an Unternehmen; für B2B-Verträge besteht regelmäßig kein gesetzliches Widerrufsrecht."
+      intro="Diese Widerrufsbelehrung ist für Verbraucher als eigene Unterseite dargestellt und kann je nach konkretem Angebot weiter angepasst werden."
     >
-      <LegalSection title="Widerrufsrecht">
-        <p>Wenn im Einzelfall ein Verbrauchervertrag vorliegt, hast du das Recht, binnen vierzehn Tagen ohne Angabe von Gründen den Vertrag zu widerrufen.</p>
-        <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.</p>
+      <LegalSection title="Widerrufsrecht für Verbraucher">
+        <p>Verbraucher haben grundsätzlich das Recht, binnen vierzehn Tagen ohne Angabe von Gründen einen Vertrag zu widerrufen, sofern ein gesetzliches Widerrufsrecht besteht.</p>
+        <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses.</p>
       </LegalSection>
 
       <LegalSection title="Ausübung des Widerrufs">
-        <p>Um dein Widerrufsrecht auszuüben, kannst du STRUKTIVA Business-Service per eindeutiger Erklärung über deinen Entschluss informieren, den Vertrag zu widerrufen.</p>
+        <p>Um dein Widerrufsrecht auszuüben, musst du mich mittels einer eindeutigen Erklärung über deinen Entschluss informieren, diesen Vertrag zu widerrufen.</p>
+      </LegalSection>
+
+      <LegalSection title="Kontakt für Widerruf">
+        <p>STRUKTIVA Business-Service</p>
+        <p>Sven Wacker</p>
+        <p>[Deine vollständige Straße und Hausnummer eintragen]</p>
+        <p>[PLZ und Ort eintragen]</p>
+        <p>Deutschland</p>
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
       </LegalSection>
 
-      <LegalSection title="Folgen des Widerrufs">
-        <p>Wenn du diesen Vertrag widerrufst, werden dir alle Zahlungen, die im Rahmen des widerrufbaren Vertrags geleistet wurden, unverzüglich und spätestens binnen vierzehn Tagen ab Eingang des Widerrufs zurückgezahlt, soweit nicht bereits vollständig erbrachte oder ausdrücklich begonnene Leistungen hiervon ausgenommen sind.</p>
+      <LegalSection title="Hinweis zur Frist">
+        <p>Du kannst dafür das unten stehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.</p>
+        <p>Zur Wahrung der Widerrufsfrist reicht es aus, dass du die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absendest.</p>
       </LegalSection>
 
-      <LegalSection title="Vorzeitiges Erlöschen">
-        <p>Bei digitalen Dienstleistungen kann das Widerrufsrecht vorzeitig erlöschen, wenn STRUKTIVA mit der Ausführung der Leistung bereits begonnen hat, nachdem du ausdrücklich zugestimmt hast, dass mit der Ausführung vor Ablauf der Widerrufsfrist begonnen werden soll, und du bestätigt hast, dass dir bekannt ist, dass du dadurch dein Widerrufsrecht verlierst.</p>
+      <LegalSection title="Folgen des Widerrufs">
+        <p>Wenn du diesen Vertrag widerrufst, werden alle Zahlungen, die ich von dir erhalten habe, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückgezahlt, an dem die Mitteilung über deinen Widerruf eingegangen ist.</p>
+        <p>Für diese Rückzahlung wird dasselbe Zahlungsmittel verwendet, das du bei der ursprünglichen Zahlung eingesetzt hast, sofern nicht ausdrücklich etwas anderes vereinbart wurde.</p>
+      </LegalSection>
+
+      <LegalSection title="Widerruf bei Dienstleistungen">
+        <p>Hast du verlangt, dass die Dienstleistung bereits während der Widerrufsfrist beginnen soll, so ist für bereits erbrachte Leistungen ein angemessener Betrag zu zahlen, sofern dies gesetzlich vorgesehen ist.</p>
+      </LegalSection>
+
+      <LegalSection title="Widerruf bei digitalen Inhalten">
+        <p>Bei digitalen Inhalten oder digitalen Leistungen kann das Widerrufsrecht unter bestimmten gesetzlichen Voraussetzungen vorzeitig erlöschen, wenn mit der Ausführung begonnen wurde und der Verbraucher ausdrücklich zugestimmt hat, dass mit der Ausführung vor Ablauf der Widerrufsfrist begonnen wird.</p>
+      </LegalSection>
+
+      <LegalSection title="Muster-Widerrufsformular">
+        <p>Wenn du den Vertrag widerrufen möchtest, kannst du dieses Formular ausfüllen und per E-Mail senden.</p>
+        <p>An:</p>
+        <p>STRUKTIVA Business-Service</p>
+        <p>Sven Wacker</p>
+        <p>E-Mail: {contactDetails.email}</p>
+        <p>Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung:</p>
+        <p>__________________________________________________</p>
+        <p>Bestellt am:</p>
+        <p>__________________________________________________</p>
+        <p>Name des Verbrauchers:</p>
+        <p>__________________________________________________</p>
+        <p>Anschrift des Verbrauchers:</p>
+        <p>__________________________________________________</p>
+        <p>E-Mail-Adresse:</p>
+        <p>__________________________________________________</p>
+        <p>Datum:</p>
+        <p>__________________________________________________</p>
+        <p>Unterschrift nur bei Mitteilung auf Papier:</p>
+        <p>__________________________________________________</p>
+      </LegalSection>
+
+      <LegalSection title="Hinweis">
+        <p>Diese Widerrufsbelehrung ist eine allgemeine Vorlage und muss je nach konkretem Angebot, Zahlungsweg und Leistungsart angepasst werden.</p>
       </LegalSection>
     </LegalLayout>
   )
@@ -865,24 +991,49 @@ function ContactPage() {
     <LegalLayout
       eyebrow="Kontakt"
       title="Kontakt"
-      intro="Hier erreichst du STRUKTIVA direkt für Anfragen zu Sichtbarkeit, Webseiten, Landingpages, Struktur oder App-Lösungen."
+      intro="Du möchtest dein Unternehmen sichtbarer, strukturierter oder digital professioneller aufstellen? Dann schreibe mir kurz, wobei du Unterstützung brauchst."
     >
-      <div className="grid gap-6 md:grid-cols-2">
-        <LegalSection title="E-Mail">
-          <p>Für Anfragen, Angebote und Rückfragen erreichst du STRUKTIVA direkt per E-Mail.</p>
-          <p><a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
-        </LegalSection>
+      <LegalSection title="Kontakt zu STRUKTIVA">
+        <p>Dann schreibe mir kurz, wobei du Unterstützung brauchst.</p>
+      </LegalSection>
 
-        <LegalSection title="WhatsApp">
-          <p>Für eine schnelle erste Kontaktaufnahme kannst du auch den WhatsApp-Link nutzen.</p>
-          <p><a href={contactDetails.whatsapp} className="text-struktivaGold">{contactDetails.whatsapp}</a></p>
-          <p>{contactDetails.phoneText}</p>
-        </LegalSection>
-      </div>
+      <LegalSection title="Mögliche Themen">
+        <p>- Webseite oder Landingpage</p>
+        <p>- Social-Media-Texte</p>
+        <p>- Google-Unternehmensprofil</p>
+        <p>- WhatsApp-Business-Vorlagen</p>
+        <p>- Kundenkommunikation</p>
+        <p>- digitale Struktur-Systeme</p>
+        <p>- App-Konzept</p>
+        <p>- professionelle Unternehmens-App</p>
+        <p>- monatliche Betreuung</p>
+      </LegalSection>
 
-      <LegalSection title="Anfragen zu Leistungen">
-        <p>STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Betriebe mit professionellen Texten, Webseiten, Landingpages, digitaler Struktur und individuellen App-Lösungen.</p>
-        <p>Der genaue Leistungsumfang wird im persönlichen Gespräch abgestimmt und an den Bedarf des Unternehmens angepasst.</p>
+      <LegalSection title="Kontaktmöglichkeiten">
+        <p>E-Mail:</p>
+        <p><a href={`mailto:${contactDetails.email}`} className="text-struktivaGold">{contactDetails.email}</a></p>
+        <p>Telefon / WhatsApp:</p>
+        <p>auf Anfrage oder echte Nummer eintragen</p>
+        <p>WhatsApp-Link:</p>
+        <p><a href={contactDetails.whatsapp} className="text-struktivaGold">{contactDetails.whatsapp}</a></p>
+      </LegalSection>
+
+      <LegalSection title="Kurzer Anfragehinweis">
+        <p>Bitte beschreibe kurz dein Unternehmen und wobei du Unterstützung brauchst. Danach kann ich besser einschätzen, welches Paket oder welche Lösung sinnvoll ist.</p>
+      </LegalSection>
+
+      <LegalSection title="Optionaler Kontaktformular-Text, falls ein Formular eingebaut wird">
+        <p>Felder:</p>
+        <p>- Name</p>
+        <p>- Unternehmen</p>
+        <p>- E-Mail</p>
+        <p>- Telefon optional</p>
+        <p>- Worum geht es?</p>
+        <p>- Nachricht</p>
+        <p>Button:</p>
+        <p>Anfrage senden</p>
+        <p>Hinweis unter dem Formular:</p>
+        <p>Mit dem Absenden deiner Anfrage erklärst du dich damit einverstanden, dass deine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Weitere Informationen findest du in der Datenschutzerklärung.</p>
       </LegalSection>
     </LegalLayout>
   )
