@@ -1,0 +1,308 @@
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { ArrowRight, BadgeCheck, BarChart3, BriefcaseBusiness, CalendarDays, CheckCircle2, ClipboardList, Globe2, LayoutDashboard, MessageCircle, PenLine, Rocket, Smartphone, Sparkles, UsersRound } from 'lucide-react'
+import './styles.css'
+
+const navItems = [
+  ['Start', '#start'],
+  ['Leistungen', '#leistungen'],
+  ['App-Lösungen', '#apps'],
+  ['Für wen', '#zielgruppen'],
+  ['Ablauf', '#ablauf'],
+  ['Kontakt', '#kontakt'],
+]
+
+const services = [
+  { icon: PenLine, title: 'Werbung & Content', text: 'Professionelle Texte für Social Media, Google, Flyer, Anzeigen, Webseiten, Landingpages und digitale Produkte.' },
+  { icon: Globe2, title: 'Google & lokale Sichtbarkeit', text: 'Unternehmensbeschreibungen, Google-Beiträge, Bewertungsanfragen, FAQ-Texte und lokale Suchbegriffe.' },
+  { icon: MessageCircle, title: 'WhatsApp-Business-Systeme', text: 'Schnellantworten, Termintexte, Begrüßungen, Abwesenheitsnachrichten und Kundenkommunikation.' },
+  { icon: LayoutDashboard, title: 'Landingpages & Verkaufsseiten', text: 'Seitenstruktur, Headlines, Verkaufstexte, FAQ, Call-to-Action, Angebotslogik und Conversion-Texte.' },
+  { icon: ClipboardList, title: 'Digitale Struktur-Systeme', text: 'Checklisten, Wochenpläne, Kundenprozesse, Mitarbeiterabläufe, Bewertungsprozesse und interne Vorlagen.' },
+  { icon: Smartphone, title: 'Professionelle Unternehmens-Apps', text: 'Individuelle App-Lösungen für Termine, Kundenverwaltung, Aufgaben, Checklisten, Mitarbeiterübersichten und Organisation.' },
+]
+
+const appModules = [
+  ['Kundenverwaltung', UsersRound],
+  ['Terminübersichten', CalendarDays],
+  ['Mitarbeiterorganisation', BriefcaseBusiness],
+  ['Aufgabensteuerung', CheckCircle2],
+  ['Interne Checklisten', ClipboardList],
+  ['Digitale Dashboards', BarChart3],
+  ['Bewertungsprozesse', BadgeCheck],
+  ['Kundenkommunikation', MessageCircle],
+]
+
+const targets = ['Friseursalons', 'Kosmetikstudios', 'Fußpflege', 'Nagelstudios', 'Handwerksbetriebe', 'Cafés', 'Lokale Dienstleister', 'Kleine Einzelhändler', 'Coaches & Berater', 'Praxen & Studios']
+
+const steps = [
+  ['01', 'Erstgespräch', 'Wir schauen gemeinsam, wo dein Unternehmen aktuell steht: Sichtbarkeit, Kundenkommunikation, Abläufe und digitale Möglichkeiten.'],
+  ['02', 'Analyse', 'Ich prüfe, welche Bereiche den größten Nutzen bringen: bessere Werbung, klarere Texte, Struktur oder ein digitales App-System.'],
+  ['03', 'Konzept', 'Du bekommst eine klare Empfehlung, welche Lösung zu deinem Unternehmen passt und welche Schritte sinnvoll sind.'],
+  ['04', 'Umsetzung', 'Ich entwickle die passenden Texte, Vorlagen, Struktur-Systeme oder professionellen App-Lösungen.'],
+  ['05', 'Übergabe', 'Du bekommst nutzbare Ergebnisse, die du direkt in deinem Unternehmen einsetzen kannst.'],
+]
+
+function Header() {
+  return (
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-struktivaDark/80 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+        <a href="#start" className="group flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-struktivaGold/40 bg-struktivaGold/10 text-struktivaGold shadow-gold">
+            S
+          </div>
+          <div>
+            <p className="text-sm font-semibold tracking-[0.28em] text-white">STRUKTIVA</p>
+            <p className="text-xs text-white/55">Business-Service</p>
+          </div>
+        </a>
+        <nav className="hidden items-center gap-6 lg:flex">
+          {navItems.map(([label, href]) => (
+            <a key={label} href={href} className="text-sm text-white/70 transition hover:text-struktivaGold">{label}</a>
+          ))}
+        </nav>
+        <a href="#kontakt" className="hidden rounded-full border border-struktivaGold/40 px-5 py-2 text-sm font-medium text-struktivaGold transition hover:bg-struktivaGold hover:text-struktivaDark md:inline-flex">
+          Anfrage stellen
+        </a>
+      </div>
+    </header>
+  )
+}
+
+function SectionHeader({ eyebrow, title, text, centered = true }) {
+  return (
+    <div className={centered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">{eyebrow}</p>
+      <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">{title}</h2>
+      {text && <p className="mt-5 text-base leading-8 text-white/68 md:text-lg">{text}</p>}
+    </div>
+  )
+}
+
+function Hero() {
+  return (
+    <section id="start" className="relative overflow-hidden px-5 pb-24 pt-36 lg:px-8 lg:pb-32 lg:pt-44">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(214,178,94,0.20),transparent_28%),radial-gradient(circle_at_85%_20%,rgba(28,57,118,0.45),transparent_28%),linear-gradient(135deg,#070a12,#0b1020_42%,#111827)]" />
+      <div className="absolute left-1/2 top-28 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-struktivaGold/10 blur-3xl" />
+      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+        <div>
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-struktivaGold/25 bg-white/5 px-4 py-2 text-sm text-white/78 backdrop-blur">
+            <Sparkles className="h-4 w-4 text-struktivaGold" /> Sichtbarkeit. Struktur. App-Systeme.
+          </div>
+          <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl lg:text-7xl">
+            STRUKTIVA <span className="block text-struktivaGold">Business-Service</span>
+          </h1>
+          <p className="mt-7 max-w-2xl text-xl leading-9 text-white/78 md:text-2xl">
+            Werbung, Struktur & professionelle App-Lösungen für kleine Unternehmen.
+          </p>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/62 md:text-lg">
+            Ich unterstütze kleine Unternehmen, Selbstständige und lokale Betriebe dabei, sichtbarer, strukturierter und digital stärker zu werden – mit professionellen Inhalten, digitalen Struktur-Systemen und individuellen Unternehmens-Apps.
+          </p>
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a href="#kontakt" className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark shadow-gold transition hover:scale-[1.02]">
+              Kostenlose Anfrage stellen <ArrowRight className="h-5 w-5" />
+            </a>
+            <a href="#apps" className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold">
+              App-Lösungen ansehen
+            </a>
+          </div>
+        </div>
+        <div className="relative">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 shadow-premium backdrop-blur-xl">
+            <div className="rounded-[1.5rem] border border-struktivaGold/20 bg-struktivaDark/80 p-6">
+              <div className="mb-6 flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-white/50">Digitales Unternehmenssystem</p>
+                  <p className="text-xl font-semibold text-white">STRUKTIVA Control</p>
+                </div>
+                <div className="rounded-full bg-struktivaGold/15 px-3 py-1 text-xs font-medium text-struktivaGold">Premium</div>
+              </div>
+              <div className="grid gap-4">
+                {['Kunden', 'Termine', 'Aufgaben', 'Bewertungen'].map((item, index) => (
+                  <div key={item} className="flex items-center justify-between rounded-2xl border border-white/8 bg-white/[0.04] p-4">
+                    <div className="flex items-center gap-3">
+                      <div className="h-3 w-3 rounded-full bg-struktivaGold" />
+                      <span className="text-white/78">{item}</span>
+                    </div>
+                    <span className="text-sm text-white/45">{index === 0 ? 'aktiv' : 'geplant'}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 rounded-2xl bg-gradient-to-br from-struktivaGold/20 to-blue-500/10 p-5">
+                <p className="text-sm text-white/60">Ziel</p>
+                <p className="mt-2 text-lg font-semibold text-white">Mehr Übersicht. Weniger digitales Chaos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ProblemSolution() {
+  return (
+    <section className="px-5 py-24 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
+        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-premium md:p-10">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">Problem</p>
+          <h2 className="text-3xl font-semibold text-white md:text-4xl">Viele Unternehmen leisten gute Arbeit – aber digital sieht man davon zu wenig.</h2>
+          <p className="mt-6 leading-8 text-white/65">Viele kleine Unternehmen haben keine klare digitale Außenwirkung. Social Media wird unregelmäßig genutzt, Google-Beiträge fehlen, WhatsApp läuft unstrukturiert und interne Abläufe sind oft nicht sauber dokumentiert.</p>
+        </div>
+        <div className="rounded-[2rem] border border-struktivaGold/20 bg-struktivaGold/[0.08] p-8 shadow-gold md:p-10">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">Lösung</p>
+          <h2 className="text-3xl font-semibold text-white md:text-4xl">STRUKTIVA verbindet Sichtbarkeit, Struktur und digitale Systeme.</h2>
+          <p className="mt-6 leading-8 text-white/68">Es geht nicht um einzelne Posts oder lose Ideen. STRUKTIVA entwickelt ein digitales Gesamtbild aus Außenwirkung, klarer Kommunikation, internen Abläufen und professionellen App-Systemen.</p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Services() {
+  return (
+    <section id="leistungen" className="px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader eyebrow="Leistungen" title="Digitale Lösungen für moderne kleine Unternehmen." text="Von Sichtbarkeit bis Organisation: STRUKTIVA baut die Bausteine, die dein Unternehmen professioneller und klarer machen." />
+        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {services.map(({ icon: Icon, title, text }) => (
+            <div key={title} className="group rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-7 transition hover:-translate-y-1 hover:border-struktivaGold/35 hover:bg-white/[0.06]">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-struktivaGold/12 text-struktivaGold">
+                <Icon className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-white">{title}</h3>
+              <p className="mt-4 leading-7 text-white/62">{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Apps() {
+  return (
+    <section id="apps" className="px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl rounded-[2.5rem] border border-struktivaGold/20 bg-gradient-to-br from-white/[0.07] to-struktivaGold/[0.07] p-7 shadow-gold md:p-12 lg:p-16">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <SectionHeader centered={false} eyebrow="App-Lösungen" title="Professionelle Unternehmens-Apps für bessere Abläufe." text="STRUKTIVA entwickelt individuelle App-Systeme für Unternehmen, die Abläufe digital abbilden, Übersicht schaffen und im Alltag zuverlässig funktionieren." />
+          <div className="grid gap-4 sm:grid-cols-2">
+            {appModules.map(([label, Icon]) => (
+              <div key={label} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-struktivaDark/45 p-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-struktivaGold/13 text-struktivaGold">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <span className="font-medium text-white/82">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Targets() {
+  return (
+    <section id="zielgruppen" className="px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader eyebrow="Für wen" title="Für Betriebe, die gute Arbeit leisten – und digital stärker auftreten wollen." text="STRUKTIVA eignet sich besonders für lokale Unternehmen mit Kunden-, Termin-, Mitarbeiter- oder Organisationsprozessen." />
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
+          {targets.map((target) => (
+            <span key={target} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-white/72">{target}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Process() {
+  return (
+    <section id="ablauf" className="px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader eyebrow="Ablauf" title="Von der Analyse zur nutzbaren Lösung." text="Die Zusammenarbeit ist klar aufgebaut, damit aus Ideen konkrete Ergebnisse werden." />
+        <div className="mt-14 grid gap-5 lg:grid-cols-5">
+          {steps.map(([number, title, text]) => (
+            <div key={number} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6">
+              <p className="text-3xl font-semibold text-struktivaGold">{number}</p>
+              <h3 className="mt-5 text-lg font-semibold text-white">{title}</h3>
+              <p className="mt-3 text-sm leading-6 text-white/58">{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Why() {
+  return (
+    <section className="px-5 py-24 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+        <div>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-struktivaGold">Warum STRUKTIVA</p>
+          <h2 className="text-3xl font-semibold text-white md:text-5xl">Nicht nur Werbung. Ein digitales Gesamtbild.</h2>
+        </div>
+        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 leading-8 text-white/68 md:p-10">
+          STRUKTIVA verbindet Werbung, klare Kommunikation, Unternehmensstruktur und professionelle App-Systeme. Dadurch entsteht eine digitale Basis, mit der kleine Unternehmen sichtbarer auftreten, übersichtlicher arbeiten und moderne Möglichkeiten sinnvoll nutzen können.
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Contact() {
+  return (
+    <section id="kontakt" className="px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-5xl rounded-[2.5rem] border border-struktivaGold/25 bg-gradient-to-br from-struktivaGold/15 via-white/[0.06] to-blue-500/10 p-8 text-center shadow-gold md:p-14">
+        <Rocket className="mx-auto h-12 w-12 text-struktivaGold" />
+        <h2 className="mt-6 text-3xl font-semibold text-white md:text-5xl">Lass uns dein Unternehmen digital stärker machen.</h2>
+        <p className="mx-auto mt-6 max-w-3xl leading-8 text-white/70">Du möchtest bessere Sichtbarkeit, klarere Abläufe oder eine professionelle App-Lösung für dein Unternehmen? Dann stelle jetzt eine Anfrage.</p>
+        <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+          <a href="mailto:kontakt@struktiva.de" className="inline-flex items-center justify-center gap-2 rounded-full bg-struktivaGold px-7 py-4 font-semibold text-struktivaDark transition hover:scale-[1.02]">
+            Anfrage senden <ArrowRight className="h-5 w-5" />
+          </a>
+          <a href="https://wa.me/491234567890" className="inline-flex items-center justify-center rounded-full border border-white/18 px-7 py-4 font-semibold text-white transition hover:border-struktivaGold hover:text-struktivaGold">
+            Per WhatsApp kontaktieren
+          </a>
+        </div>
+        <p className="mt-5 text-sm text-white/45">Hinweis: E-Mail-Adresse und WhatsApp-Nummer bitte vor Veröffentlichung anpassen.</p>
+      </div>
+    </section>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-white/10 px-5 py-10 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 text-sm text-white/48 md:flex-row md:items-center md:justify-between">
+        <p>© {new Date().getFullYear()} STRUKTIVA Business-Service. Alle Rechte vorbehalten.</p>
+        <div className="flex flex-wrap gap-5">
+          <a href="#" className="hover:text-struktivaGold">Impressum</a>
+          <a href="#" className="hover:text-struktivaGold">Datenschutz</a>
+          <a href="#" className="hover:text-struktivaGold">Widerruf</a>
+          <a href="#kontakt" className="hover:text-struktivaGold">Kontakt</a>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+function App() {
+  return (
+    <main className="min-h-screen bg-struktivaDark text-white selection:bg-struktivaGold selection:text-struktivaDark">
+      <Header />
+      <Hero />
+      <ProblemSolution />
+      <Services />
+      <Apps />
+      <Targets />
+      <Process />
+      <Why />
+      <Contact />
+      <Footer />
+    </main>
+  )
+}
+
+createRoot(document.getElementById('root')).render(<App />)
