@@ -86,7 +86,7 @@ const coreServices = [
   [LayoutTemplate, 'Professionelle Webseiten', 'Hochwertige Unternehmenswebseiten mit klarer Struktur, professionellen Texten, mobiler Optimierung und sauberer Kontaktführung.'],
   [Target, 'Landingpages', 'Fokussierte Angebotsseiten für Dienstleistungen, Produkte, Aktionen oder Kampagnen mit klarer Handlungsaufforderung.'],
   [Smartphone, 'Unternehmens-Apps', 'Individuelle App-Systeme für Kundenverwaltung, Termine, Aufgaben, Checklisten, Mitarbeiterorganisation und interne Abläufe.'],
-  [Megaphone, 'Google Ads', 'Kampagnenstruktur, Anzeigentexte und Zielseiten für Unternehmen, die gezielt Kundenanfragen über Google gewinnen möchten.'],
+  [Megaphone, 'Google Ads & digitale Werbung', 'Kampagnenstruktur, Anzeigentexte und passende Zielseiten für Unternehmen, die gezielt Kundenanfragen über Google oder ergänzende Social-Media-Werbung gewinnen möchten.'],
 ]
 
 const websiteFocusCards = [
@@ -156,7 +156,7 @@ const pricingPackages = [
     title: 'Google Ads Startpaket',
     price: 'ab 399 €',
     badge: 'Gezielte Nachfrage',
-    description: 'Für Unternehmen, die gezielt über Google neue Anfragen gewinnen möchten.',
+    description: 'Für Unternehmen, die gezielt über Google neue Anfragen gewinnen möchten. Ergänzend können je nach Zielgruppe auch Social-Media-Werbeansätze berücksichtigt werden.',
     features: [
       'Kampagnenstruktur',
       'Keyword-Grundlogik',
@@ -164,10 +164,11 @@ const pricingPackages = [
       'klare Angebotsausrichtung',
       'Empfehlung für passende Zielseite',
       'Grundkonzept für Anfragegewinnung',
+      'optional erste Ideen für Social-Media-Werbung',
     ],
     callout: 'Wichtig',
-    calloutText: 'Werbebudget ist nicht enthalten und wird separat direkt bei Google eingesetzt.',
-    note: 'Für Google Ads wird idealerweise eine passende Landingpage empfohlen.',
+    calloutText: 'Werbebudget ist nicht enthalten und wird separat direkt bei Google oder der jeweiligen Werbeplattform eingesetzt.',
+    note: 'Für Google Ads und Social-Media-Werbung wird idealerweise eine passende Landingpage empfohlen.',
     cta: 'Google Ads anfragen',
   },
   {
@@ -873,6 +874,12 @@ function GoogleAdsSection() {
           />
         </Reveal>
 
+        <Reveal className="mt-6">
+          <div className="max-w-4xl rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 text-sm leading-7 text-white/70 md:text-base">
+            Je nach Unternehmen kann zusätzlich auch Social-Media-Werbung sinnvoll sein – zum Beispiel für lokale Aktionen, Angebote, neue Leistungen oder mehr regionale Sichtbarkeit. STRUKTIVA kann dabei helfen, Kampagnenideen, Anzeigentexte und passende Landingpages dafür vorzubereiten.
+          </div>
+        </Reveal>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -1044,8 +1051,21 @@ function PricingSection() {
           <SectionHeader
             eyebrow="Angebote & Preise"
             title="Klare Einstiegspreise für professionelle Webseiten, Landingpages, Apps und Google Ads."
-            text="STRUKTIVA Unternehmensarchitektur konzentriert sich auf digitale Lösungen, die Unternehmen wirklich weiterbringen: professionelle Webseiten, starke Landingpages, individuelle App-Systeme und Google-Ads-Strukturen für mehr Anfragen. Der genaue Umfang wird im persönlichen Gespräch festgelegt."
+            text="STRUKTIVA Unternehmensarchitektur konzentriert sich auf digitale Lösungen, die Unternehmen wirklich weiterbringen: professionelle Webseiten, starke Landingpages, individuelle App-Systeme und Google-Ads-Strukturen für mehr Anfragen. Zum Start gibt es ausgewählte Kennenlern-Angebote. Der genaue Umfang wird im persönlichen Gespräch festgelegt und richtet sich nach Bedarf, Projektumfang und technischer Umsetzung."
           />
+        </Reveal>
+
+        <Reveal className="mt-8">
+          <div className="rounded-[1.8rem] border border-struktivaGold/18 bg-[linear-gradient(160deg,rgba(232,194,94,0.08),rgba(255,255,255,0.04),rgba(12,19,36,0.88))] p-6 shadow-premium md:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-struktivaGold/80">Kennenlern-Angebote zum Start</p>
+            <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Professioneller Einstieg mit klar abgestimmtem Umfang</h3>
+            <p className="mt-4 max-w-4xl text-sm leading-7 text-white/72 md:text-base">
+              STRUKTIVA Unternehmensarchitektur befindet sich im Aufbau. Deshalb gibt es zum Start ausgewählte Kennenlern-Angebote für Unternehmen, die ihre Webseite, Landingpage, Sichtbarkeit oder digitalen Abläufe professioneller aufstellen möchten.
+            </p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-white/68 md:text-base">
+              Diese Einstiegspreise sollen den Start erleichtern und eine erste Zusammenarbeit ermöglichen. Der genaue Umfang wird im persönlichen Gespräch festgelegt und transparent abgestimmt.
+            </p>
+          </div>
         </Reveal>
 
         <motion.div
@@ -1073,7 +1093,7 @@ function PricingSection() {
 
         <Reveal className="mt-8">
           <div className="rounded-[1.6rem] border border-white/10 bg-white/[0.045] p-6 text-center text-sm leading-7 text-white/70">
-            Alle Preise verstehen sich als Einstiegspreise. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach Bedarf, Projektumfang, technischer Umsetzung, Hosting, Speicherbedarf, Betreuungsaufwand und Arbeitszeit. Werbebudget für Google Ads ist nicht enthalten.
+            Alle Preise verstehen sich als Kennenlern- und Einstiegspreise zum Start von STRUKTIVA Unternehmensarchitektur. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach Bedarf, Projektumfang, technischer Umsetzung, Hosting, Speicherbedarf, Betreuungsaufwand und Arbeitszeit. Werbebudget für Google Ads oder Social-Media-Werbung ist nicht enthalten.
           </div>
         </Reveal>
       </div>
@@ -1206,6 +1226,12 @@ function ContactSection() {
             text="Schreibe kurz, ob es um eine professionelle Webseite, Landingpage, App-Lösung oder Google Ads geht. Danach erhältst du eine klare Einschätzung, welches Angebot sinnvoll ist."
             centered={false}
           />
+        </Reveal>
+
+        <Reveal className="mt-5">
+          <p className="max-w-3xl text-sm leading-7 text-white/68 md:text-base">
+            Du kannst auch anfragen, wenn du Unterstützung bei Google Ads, Social-Media-Werbung oder einer passenden Landingpage für deine Kampagne brauchst.
+          </p>
         </Reveal>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
