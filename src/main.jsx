@@ -118,7 +118,7 @@ const pricingPackages = [
     title: 'Landingpage',
     price: 'ab 499 €',
     badge: 'Fokussierte Zielseite',
-    description: 'Für Angebote, Aktionen, Dienstleistungen oder Produkte, die klar erklärt und gezielt beworben werden sollen.',
+    description: 'Für Angebote, Aktionen, Dienstleistungen oder Produkte, die klar erklärt und gezielt beworben werden sollen. Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklärt und Besucher gezielt zur Anfrage führt.',
     features: [
       'Seitenstruktur',
       'professionelle Texte',
@@ -172,22 +172,20 @@ const pricingPackages = [
     cta: 'Google Ads anfragen',
   },
   {
-    title: 'App-Konzept',
-    price: '399 €',
-    badge: 'Strategische Vorstufe',
-    description: 'Für Unternehmen, die prüfen möchten, ob eine eigene Unternehmens-App oder ein internes digitales System sinnvoll ist.',
+    title: 'Kostenlose App-Ersteinschätzung',
+    price: '0 €',
+    badge: 'Kostenloser Einstieg',
+    description: 'Für Unternehmen, die prüfen möchten, ob eine eigene App oder ein internes digitales System überhaupt sinnvoll ist.',
     features: [
-      'Analyse der aktuellen Abläufe',
-      'App-Idee passend zum Unternehmen',
-      'Funktionsliste',
-      'Seitenstruktur',
-      'Nutzerrollen',
-      'UI-Konzept',
-      'Umsetzungsplan',
-      'Preisrahmen für die Entwicklung',
+      'kurzes Erstgespräch',
+      'erste Einschätzung der aktuellen Abläufe',
+      'grobe App-Idee passend zum Unternehmen',
+      'Einschätzung möglicher Funktionen',
+      'Empfehlung, ob sich eine App-Lösung lohnt',
+      'grober Preisrahmen für eine mögliche Umsetzung',
     ],
-    note: 'Das App-Konzept dient als klare Entscheidungsgrundlage vor der eigentlichen Umsetzung.',
-    cta: 'App-Konzept anfragen',
+    note: 'Die kostenlose App-Ersteinschätzung ersetzt kein vollständiges App-Konzept. Ein detailliertes Konzept mit Seitenstruktur, Nutzerrollen, Funktionsliste und UI-Planung kann bei Bedarf separat angeboten werden.',
+    cta: 'App kostenlos einschätzen lassen',
   },
   {
     title: 'Unternehmens-App',
@@ -270,7 +268,7 @@ const processSteps = [
   ['1', 'Anfrage', 'Du beschreibst kurz, ob es um eine professionelle Webseite, Landingpage, App-Lösung oder Google Ads geht.'],
   ['2', 'Einschätzung', 'Wir prüfen gemeinsam, was für dein Unternehmen sinnvoll ist.'],
   ['3', 'Konzept', 'Du bekommst eine klare Empfehlung und ein passendes Angebot.'],
-  ['4', 'Umsetzung', 'STRUKTIVA erstellt die vereinbarte Lösung: Webseite, Landingpage, App-Konzept, App-System oder Google-Ads-Struktur.'],
+  ['4', 'Umsetzung', 'STRUKTIVA erstellt die vereinbarte Lösung: Webseite, Landingpage, kostenlose App-Ersteinschätzung, App-System oder Google-Ads-Struktur.'],
   ['5', 'Übergabe & Betreuung', 'Du erhältst nutzbare Ergebnisse und kannst bei Bedarf eine laufende Betreuung vereinbaren.'],
 ]
 
@@ -735,6 +733,11 @@ function WebsiteFocusSection() {
             centered={false}
           />
         </Reveal>
+        <Reveal className="mt-6">
+          <p className="max-w-3xl rounded-[1.3rem] border border-[#d9e7ff] bg-[#f8fbff] px-4 py-3 text-sm leading-7 text-[#475569]">
+            Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklärt und Besucher gezielt zur Anfrage führt.
+          </p>
+        </Reveal>
 
         <motion.div
           initial="hidden"
@@ -812,6 +815,19 @@ function AppsSection() {
               App-Lösung anfragen
               <ArrowRight className="h-4 w-4" />
             </a>
+          </Reveal>
+          <Reveal className="mt-6">
+            <div className="max-w-3xl rounded-[1.4rem] border border-[#d9e7ff] bg-[#f8fbff] p-4 text-sm leading-7 text-[#475569]">
+              <p className="font-semibold text-[#0B1F3A]">Nicht sicher, ob eine eigene App sinnvoll ist?</p>
+              <p className="mt-2">Dann starte mit einer kostenlosen App-Ersteinschätzung. Dabei wird geprüft, ob eine App für deine Abläufe wirklich Nutzen bringt oder ob eine einfachere digitale Lösung ausreicht.</p>
+              <a
+                href={siteLinks.contact}
+                className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#B11226]/28 bg-white px-5 py-2.5 text-sm font-semibold text-[#B11226] transition hover:bg-[#B11226] hover:text-white"
+              >
+                Kostenlose App-Ersteinschätzung anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
           </Reveal>
         </div>
 
@@ -1232,6 +1248,9 @@ function ContactSection() {
           <p className="max-w-3xl text-sm leading-7 text-[#475569] md:text-base">
             Du kannst auch anfragen, wenn du Unterstützung bei Google Ads, Social-Media-Werbung oder einer passenden Landingpage für deine Kampagne brauchst.
           </p>
+          <p className="mt-2 max-w-3xl text-sm leading-7 text-[#475569] md:text-base">
+            Du kannst auch eine kostenlose App-Ersteinschätzung anfragen, wenn du noch nicht sicher bist, ob eine App für dein Unternehmen sinnvoll ist.
+          </p>
         </Reveal>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -1503,7 +1522,7 @@ function ContactPage() {
         <p>- Professionelle Webseite</p>
         <p>- Landingpage</p>
         <p>- Google Ads</p>
-        <p>- App-Konzept</p>
+        <p>- kostenlose App-Ersteinschätzung</p>
         <p>- Unternehmens-App</p>
         <p>- monatliche Betreuung</p>
       </LegalSection>
