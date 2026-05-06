@@ -20,8 +20,8 @@
 
 html {
   background:
-    radial-gradient(circle at top, rgba(177, 18, 38, 0.08), transparent 34%),
-    radial-gradient(circle at 80% 20%, rgba(16, 42, 76, 0.08), transparent 38%),
+    radial-gradient(circle at top, rgba(16, 42, 76, 0.06), transparent 34%),
+    radial-gradient(circle at 80% 20%, rgba(16, 42, 76, 0.07), transparent 40%),
     linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #eaf2ff 100%);
 }
 
@@ -56,26 +56,26 @@ img {
   position: absolute;
   z-index: -1;
   border-radius: 9999px;
-  filter: blur(70px);
+  filter: blur(78px);
   pointer-events: none;
-  animation: orbFloat 18s ease-in-out infinite;
+  animation: orbFloat 28s ease-in-out infinite;
 }
 
 .hero-orb-left {
-  top: 6rem;
+  top: 5rem;
   left: 6%;
-  width: 15rem;
-  height: 15rem;
-  background: rgba(177, 18, 38, 0.1);
+  width: 11rem;
+  height: 11rem;
+  background: rgba(16, 42, 76, 0.08);
 }
 
 .hero-orb-right {
   right: 8%;
-  bottom: 3rem;
-  width: 18rem;
-  height: 18rem;
-  background: rgba(16, 42, 76, 0.14);
-  animation-delay: -8s;
+  bottom: 2rem;
+  width: 13rem;
+  height: 13rem;
+  background: rgba(177, 18, 38, 0.05);
+  animation-delay: -10s;
 }
 
 @keyframes orbFloat {
@@ -84,6 +84,6 @@ img {
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(0, -14px, 0) scale(1.04);
+    transform: translate3d(0, -7px, 0) scale(1.02);
   }
 }

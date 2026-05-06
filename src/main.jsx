@@ -385,12 +385,12 @@ function Header({ pathname }) {
       initial={{ opacity: 0, y: -18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className={`sticky top-0 z-50 px-4 pt-4 lg:px-6 ${
+      className={`sticky top-0 z-50 px-4 pt-3 lg:px-6 ${
         scrolled ? 'backdrop-blur-xl' : ''
       }`}
     >
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border px-4 py-3 transition md:px-6 ${
+        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border px-4 py-2.5 transition md:px-5 ${
           scrolled
             ? 'border-[#cfe0ff] bg-white shadow-[0_20px_70px_rgba(8,12,24,0.35)]'
             : 'border-[#e2ecff] bg-white'
@@ -400,15 +400,15 @@ function Header({ pathname }) {
           <img
             src="/struktiva-logo.jpeg"
             alt="STRUKTIVA Unternehmensarchitektur Logo"
-            className="h-9 w-9 rounded-full object-contain md:h-12 md:w-12"
+            className="h-8 w-8 rounded-full object-contain md:h-10 md:w-10"
           />
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-[#0B1F3A] md:text-base">{brand.name}</p>
+            <p className="truncate text-sm font-semibold text-[#0B1F3A] md:text-[15px]">{brand.name}</p>
             <p className="text-xs uppercase tracking-[0.2em] text-[#64748b]">{brand.descriptor}</p>
           </div>
         </a>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {navItems.map(([label, href]) => (
             <a key={label} href={href} className="text-sm font-medium text-[#475569] transition hover:text-[#B11226]">
               {label}
@@ -419,7 +419,7 @@ function Header({ pathname }) {
         <div className="hidden lg:block">
           <a
             href={siteLinks.contact}
-            className="inline-flex items-center gap-2 rounded-full bg-[#B11226] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.16)] transition hover:bg-[#7A0F1E] hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-full bg-[#B11226] px-4.5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(17,24,39,0.15)] transition hover:bg-[#7A0F1E] hover:-translate-y-0.5"
           >
             Kostenlose Anfrage stellen
             <ArrowRight className="h-4 w-4" />
@@ -430,7 +430,7 @@ function Header({ pathname }) {
           type="button"
           aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
           onClick={() => setMenuOpen((open) => !open)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d9e7ff] bg-white text-[#0B1F3A] lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#d9e7ff] bg-white text-[#0B1F3A] lg:hidden"
         >
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -472,11 +472,11 @@ function Header({ pathname }) {
 
 function HeroSection() {
   return (
-    <section id="start" className="relative scroll-mt-28 overflow-hidden px-5 pb-18 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+    <section id="start" className="relative scroll-mt-24 overflow-hidden px-5 pb-12 pt-7 lg:px-8 lg:pb-16 lg:pt-9">
       <div className="hero-orb hero-orb-left" />
       <div className="hero-orb hero-orb-right" />
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-        <div className="max-w-2xl">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <div className="max-w-[40rem]">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -486,7 +486,7 @@ function HeroSection() {
             <motion.div
               variants={fadeUp}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#102A4C]/14 bg-[#eef4ff] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#B11226]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#102A4C]/14 bg-[#eef4ff] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0B1F3A]"
             >
               <Sparkles className="h-3.5 w-3.5" />
               {brand.name}
@@ -495,42 +495,44 @@ function HeroSection() {
             <motion.h1
               variants={fadeUp}
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-[#0B1F3A] sm:text-5xl lg:text-6xl lg:leading-[1.02]"
+              className="mt-5 max-w-[34rem] text-3xl font-semibold tracking-tight text-[#0B1F3A] sm:text-4xl lg:text-5xl lg:leading-[1.08] xl:text-[58px]"
             >
-              Professionelle Webseiten, Landingpages, Apps und Google Ads für moderne Unternehmen.
+              Digitale Lösungen für professionelle Webseiten, Apps und Werbung.
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-5 max-w-2xl text-base leading-8 text-[#334e68] md:text-lg"
+              className="mt-4 max-w-[35rem] text-[15px] leading-7 text-[#334e68] md:text-base"
             >
-              Ich unterstütze kleine Unternehmen, Selbstständige und lokale Betriebe dabei, online professioneller aufzutreten, gezielt Kunden zu gewinnen und digitale Systeme aufzubauen, die im Alltag wirklich helfen.
+              STRUKTIVA unterstützt kleine Unternehmen dabei, online professioneller sichtbar zu werden, Kundenanfragen zu gewinnen und digitale Abläufe klarer zu organisieren.
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-5 text-sm font-medium uppercase tracking-[0.2em] text-[#64748b]"
+              className="mt-4 inline-flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#475569]"
             >
-              {brand.line}
+              {brand.line.split('. ').filter(Boolean).map((item) => (
+                <span key={item} className="rounded-full border border-[#d9e7ff] bg-white px-2.5 py-1">{item.replace('.', '')}</span>
+              ))}
             </motion.p>
 
             <motion.div
               variants={fadeUp}
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 flex flex-col gap-3 sm:flex-row"
+              className="mt-6 flex flex-col gap-2.5 sm:flex-row"
             >
               <a
                 href={siteLinks.contact}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B11226] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.16)] transition hover:bg-[#7A0F1E] hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B11226] px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(17,24,39,0.16)] transition hover:bg-[#7A0F1E] hover:-translate-y-0.5"
               >
                 Kostenlose Anfrage stellen
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href={siteLinks.pricing}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#cfe0ff] bg-[#f8fbff] px-6 py-3.5 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#B11226]/30 hover:text-[#B11226]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#cfe0ff] bg-[#f8fbff] px-5 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#B11226]/30 hover:text-[#B11226]"
               >
                 Angebote ansehen
               </a>
@@ -540,7 +542,7 @@ function HeroSection() {
               variants={fadeUp}
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
               href={siteLinks.apps}
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-struktivaCream transition hover:text-[#B11226]"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[#334e68] transition hover:text-[#B11226]"
             >
               App-Lösungen entdecken
               <ArrowRight className="h-4 w-4" />
@@ -552,32 +554,32 @@ function HeroSection() {
           initial="hidden"
           animate="visible"
           variants={fadeRight}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto w-full max-w-[31rem]"
+          transition={{ duration: 0.64, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto w-full max-w-[25rem] lg:max-w-[26.5rem]"
         >
-          <div className="rounded-[2rem] border border-[#cfe0ff] bg-white p-4 shadow-premium backdrop-blur-xl">
-            <div className="rounded-[1.6rem] border border-[#cfe0ff] bg-[linear-gradient(180deg,#ffffff,#f3f7ff)] p-5 md:p-6">
+          <div className="rounded-[1.55rem] border border-[#cfe0ff] bg-white p-3 shadow-[0_12px_30px_rgba(15,36,76,0.10)] backdrop-blur-xl">
+            <div className="rounded-[1.25rem] border border-[#cfe0ff] bg-[linear-gradient(180deg,#ffffff,#f3f7ff)] p-4 md:p-4.5">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-sm font-medium text-[#475569]">STRUKTIVA System</p>
-                  <h2 className="mt-2 text-2xl font-semibold text-[#0B1F3A]">Digitale Struktur für Unternehmen</h2>
+                  <h2 className="mt-1.5 text-xl font-semibold text-[#0B1F3A]">Digitale Struktur für Unternehmen</h2>
                 </div>
-                <div className="rounded-full bg-[#b11226]/10 px-3 py-1 text-xs font-semibold text-[#B11226]">
+                <div className="rounded-full bg-[#b11226]/10 px-2.5 py-1 text-[11px] font-semibold text-[#B11226]">
                   Startklar
                 </div>
               </div>
 
-              <div className="mt-6 grid gap-3 sm:grid-cols-[1fr_auto] sm:items-start">
-                <div className="grid gap-3">
+              <div className="mt-4 grid gap-2.5 sm:grid-cols-[1fr_auto] sm:items-start">
+                <div className="grid gap-2.5">
                   {['Webseite', 'Landingpage', 'App-System', 'Google Ads'].map((item) => (
-                    <div key={item} className="flex items-center gap-3 rounded-2xl border border-[#d9e7ff] bg-white px-4 py-3">
-                      <div className="h-2.5 w-2.5 rounded-full bg-[#B11226] shadow-[0_0_16px_rgba(177,18,38,0.25)]" />
-                      <span className="text-sm font-medium text-[#0B1F3A]">{item}</span>
+                    <div key={item} className="flex items-center gap-2.5 rounded-xl border border-[#d9e7ff] bg-white px-3 py-2">
+                      <div className="h-2 w-2 rounded-full bg-[#B11226] shadow-[0_0_12px_rgba(177,18,38,0.2)]" />
+                      <span className="text-[13px] font-medium text-[#0B1F3A]">{item}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="grid gap-2 text-right text-xs font-semibold uppercase tracking-[0.18em] text-[#64748b]">
+                <div className="grid gap-1.5 text-right text-[10px] font-semibold uppercase tracking-[0.14em] text-[#64748b]">
                   <span>professionell</span>
                   <span>fokussiert</span>
                   <span>digital</span>
@@ -585,9 +587,9 @@ function HeroSection() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-[1.35rem] border border-[#102A4C]/12 bg-[#eef4ff] p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#B11226]/82">Ergebnis</p>
-                <p className="mt-2 text-sm leading-7 text-[#1f3656]">
+              <div className="mt-4 rounded-[1rem] border border-[#102A4C]/12 bg-[#eef4ff] p-3.5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#B11226]/82">Ergebnis</p>
+                <p className="mt-1.5 text-[13px] leading-6 text-[#1f3656]">
                   Ein klarer digitaler Auftritt mit Struktur, Sichtbarkeit und System.
                 </p>
               </div>
