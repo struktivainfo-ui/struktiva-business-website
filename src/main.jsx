@@ -72,7 +72,7 @@ const trustCards = [
   [PanelsTopLeft, 'Professioneller Auftritt', 'Hochwertige Webseiten und Landingpages, die klar zeigen, was ein Unternehmen anbietet.'],
   [MousePointerClick, 'Mehr Anfragen', 'Google Ads und Zielseiten werden so gedacht, dass Kunden schneller verstehen und anfragen.'],
   [Workflow, 'Digitale Abläufe', 'App-Systeme können Kunden, Termine, Aufgaben und interne Prozesse übersichtlich abbilden.'],
-  [ShieldCheck, 'Klarer Aufbau', 'Keine überladene Theorie, sondern digitale Lösungen, die kleine Unternehmen wirklich nutzen können.'],
+  [ShieldCheck, 'Klarer Aufbau', 'Keine überladene Theorie, sondern digitale Lösungen, die kleine und mittlere Unternehmen wirklich nutzen können.'],
 ]
 
 const problemCards = [
@@ -288,7 +288,7 @@ const targetGroups = [
 
 const whyPoints = [
   'klarer Fokus auf digitale Ergebnisse',
-  'verständlich für kleine Unternehmen',
+  'verständlich für kleine und mittlere Unternehmen',
   'Verbindung aus Sichtbarkeit, Webseite und System',
 ]
 
@@ -505,7 +505,7 @@ function HeroSection() {
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
               className="mt-4 max-w-[35rem] text-[15px] leading-7 text-[#334e68] md:text-base"
             >
-              STRUKTIVA unterstützt kleine Unternehmen dabei, online professioneller sichtbar zu werden, Kundenanfragen zu gewinnen und digitale Abläufe klarer zu organisieren.
+              STRUKTIVA unterstützt kleine und mittlere Unternehmen, Selbstständige und lokale Betriebe dabei, online professioneller sichtbar zu werden, Kundenanfragen zu gewinnen und digitale Abläufe klarer zu organisieren.
             </motion.p>
 
             <motion.p
@@ -638,7 +638,7 @@ function ProblemSection() {
           <SectionHeader
             eyebrow="Ausgangslage"
             title="Viele Unternehmen leisten gute Arbeit – aber digital sieht man davon zu wenig."
-            text="Viele kleine Unternehmen haben keine klare digitale Außenwirkung. Die Webseite wirkt veraltet oder unvollständig, Angebote werden nicht verständlich erklärt, Google Ads führen ohne gute Zielseite oft ins Leere und interne Abläufe laufen noch zu unübersichtlich."
+            text="Viele kleine und mittlere Unternehmen haben keine klare digitale Außenwirkung. Die Webseite wirkt veraltet oder unvollständig, Angebote werden nicht verständlich erklärt, Google Ads führen ohne gute Zielseite oft ins Leere und interne Abläufe laufen noch zu unübersichtlich."
             centered={false}
           />
         </Reveal>
@@ -682,7 +682,7 @@ function ServicesSection() {
           <SectionHeader
             eyebrow="Leistungen"
             title="Vier klare digitale Lösungen für einen professionelleren Unternehmensauftritt."
-            text="STRUKTIVA konzentriert sich auf die Leistungen, die für kleine Unternehmen digital am meisten Wirkung entfalten: professionelle Webseiten, klare Landingpages, funktionale App-Systeme und Google Ads mit sauberer Angebotsführung."
+            text="STRUKTIVA konzentriert sich auf die Leistungen, die für kleine und mittlere Unternehmen digital am meisten Wirkung entfalten: professionelle Webseiten, klare Landingpages, funktionale App-Systeme und Google Ads mit sauberer Angebotsführung."
           />
         </Reveal>
 
@@ -1166,7 +1166,7 @@ function TargetSection() {
           <SectionHeader
             eyebrow="Für wen"
             title="Für wen ist STRUKTIVA geeignet?"
-            text="STRUKTIVA richtet sich an kleine Unternehmen, Selbstständige und lokale Betriebe, die professioneller sichtbar werden, mehr Anfragen gewinnen oder interne Abläufe digital besser organisieren möchten."
+            text="STRUKTIVA richtet sich an kleine und mittlere Unternehmen, Selbstständige und lokale Betriebe, die professioneller sichtbar werden, mehr Anfragen gewinnen oder interne Abläufe digital besser organisieren möchten."
             centered={false}
           />
         </Reveal>
