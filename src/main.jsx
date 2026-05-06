@@ -497,7 +497,7 @@ function HeroSection() {
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
               className="mt-5 max-w-[34rem] text-3xl font-semibold tracking-tight text-[#0B1F3A] sm:text-4xl lg:text-5xl lg:leading-[1.08] xl:text-[58px]"
             >
-              Digitale Lösungen für professionelle Webseiten, Apps und Werbung.
+              Webseiten, Apps und Werbung professionell aufgebaut.
             </motion.h1>
 
             <motion.p
@@ -1588,5 +1588,6 @@ createRoot(document.getElementById('root')).render(
     <Page />
   </React.StrictMode>,
 )
+
 
 
