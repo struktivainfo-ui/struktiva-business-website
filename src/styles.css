@@ -6,21 +6,30 @@
 
 :root {
   font-family: 'Manrope', 'Segoe UI', sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
+  --struktiva-navy: #0b1f3a;
+  --struktiva-blue: #102a4c;
+  --struktiva-red: #b11226;
+  --struktiva-red-dark: #7a0f1e;
+  --struktiva-light-blue: #eaf2ff;
+  --struktiva-off-white: #f8fafc;
+  --struktiva-text: #111827;
+  --struktiva-text-muted: #475569;
 }
 
 html {
   background:
-    radial-gradient(circle at top, rgba(232, 194, 94, 0.14), transparent 22%),
-    linear-gradient(180deg, #0b1020 0%, #0d1426 42%, #0b1020 100%);
+    radial-gradient(circle at top, rgba(177, 18, 38, 0.08), transparent 34%),
+    radial-gradient(circle at 80% 20%, rgba(16, 42, 76, 0.08), transparent 38%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #eaf2ff 100%);
 }
 
 body {
   margin: 0;
   min-width: 320px;
   background: transparent;
-  color: #f5f7fb;
+  color: var(--struktiva-text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -57,7 +66,7 @@ img {
   left: 6%;
   width: 15rem;
   height: 15rem;
-  background: rgba(232, 194, 94, 0.12);
+  background: rgba(177, 18, 38, 0.1);
 }
 
 .hero-orb-right {
@@ -65,7 +74,7 @@ img {
   bottom: 3rem;
   width: 18rem;
   height: 18rem;
-  background: rgba(93, 140, 213, 0.12);
+  background: rgba(16, 42, 76, 0.14);
   animation-delay: -8s;
 }
 
