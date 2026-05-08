@@ -6,23 +6,24 @@
 
 :root {
   font-family: 'Manrope', 'Segoe UI', sans-serif;
-  color-scheme: light;
+  color-scheme: dark;
   scroll-behavior: smooth;
-  --struktiva-navy: #0b1f3a;
-  --struktiva-blue: #102a4c;
-  --struktiva-red: #b11226;
-  --struktiva-red-dark: #7a0f1e;
-  --struktiva-light-blue: #eaf2ff;
-  --struktiva-off-white: #f8fafc;
-  --struktiva-text: #111827;
-  --struktiva-text-muted: #475569;
+  --struktiva-navy: #07111f;
+  --struktiva-blue: #0b1f3a;
+  --struktiva-black-blue: #050a12;
+  --struktiva-gold: #d8b45a;
+  --struktiva-champagne: #f2d98b;
+  --struktiva-gold-dark: #a9822d;
+  --struktiva-text: #ffffff;
+  --struktiva-text-muted: #d7dce5;
+  --struktiva-text-cool: #94a3b8;
 }
 
 html {
   background:
-    radial-gradient(circle at top, rgba(16, 42, 76, 0.06), transparent 34%),
-    radial-gradient(circle at 80% 20%, rgba(16, 42, 76, 0.07), transparent 40%),
-    linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #eaf2ff 100%);
+    radial-gradient(circle at 20% 12%, rgba(216, 180, 90, 0.14), transparent 26%),
+    radial-gradient(circle at 82% 18%, rgba(11, 31, 58, 0.42), transparent 36%),
+    linear-gradient(180deg, #07111f 0%, #0b1f3a 52%, #050a12 100%);
 }
 
 body {
@@ -56,9 +57,9 @@ img {
   position: absolute;
   z-index: -1;
   border-radius: 9999px;
-  filter: blur(78px);
+  filter: blur(86px);
   pointer-events: none;
-  animation: orbFloat 28s ease-in-out infinite;
+  animation: orbFloat 34s ease-in-out infinite;
 }
 
 .hero-orb-left {
@@ -66,7 +67,7 @@ img {
   left: 6%;
   width: 11rem;
   height: 11rem;
-  background: rgba(16, 42, 76, 0.08);
+  background: rgba(216, 180, 90, 0.2);
 }
 
 .hero-orb-right {
@@ -74,8 +75,21 @@ img {
   bottom: 2rem;
   width: 13rem;
   height: 13rem;
-  background: rgba(177, 18, 38, 0.05);
+  background: rgba(11, 31, 58, 0.42);
   animation-delay: -10s;
+}
+
+#root::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.11;
+  z-index: -2;
 }
 
 @keyframes orbFloat {
