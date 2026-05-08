@@ -116,7 +116,7 @@ const googleAdsCards = [
 const pricingPackages = [
   {
     title: 'Landingpage',
-    price: 'ab 499 €',
+    price: 'ab 899 €',
     badge: 'Fokussierte Zielseite',
     description: 'Für Angebote, Aktionen, Dienstleistungen oder Produkte, die klar erklärt und gezielt beworben werden sollen. Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklärt und Besucher gezielt zur Anfrage führt.',
     features: [
@@ -135,7 +135,7 @@ const pricingPackages = [
   },
   {
     title: 'Professionelle Webseite',
-    price: 'ab 899 €',
+    price: 'ab 1.699 €',
     badge: 'Hochwertiger Auftritt',
     description: 'Für Unternehmen, die einen hochwertigen digitalen Auftritt brauchen.',
     features: [
@@ -189,8 +189,8 @@ const pricingPackages = [
   },
   {
     title: 'Unternehmens-App',
-    price: 'ab 1.990 €',
-    subtitle: 'Monatliche App-Betreuung ab 89 € / Monat',
+    price: 'ab 2.590 €',
+    subtitle: 'Monatliche App-Betreuung ab 119 € / Monat',
     badge: 'Premium App-Lösung',
     description: 'Für Betriebe, die eine individuelle digitale Lösung für ihre Abläufe brauchen.',
     features: [
