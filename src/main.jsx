@@ -36,6 +36,10 @@ const siteLinks = {
   googleAds: '/#google-ads',
   process: '/#ablauf',
   contact: '/kontakt',
+  webseitenPage: '/webseiten',
+  landingpagesPage: '/landingpages',
+  appsPage: '/apps',
+  googleAdsPage: '/google-ads',
   impressum: '/impressum',
   datenschutz: '/datenschutz',
   widerruf: '/widerruf',
@@ -334,6 +338,10 @@ function useDocumentTitle(pathname) {
   useEffect(() => {
     const titles = {
       '/': 'STRUKTIVA Unternehmensarchitektur – Professionelle Webseiten, Landingpages, Apps & Google Ads',
+      '/webseiten': 'Professionelle Webseiten – STRUKTIVA Unternehmensarchitektur',
+      '/landingpages': 'Landingpages – STRUKTIVA Unternehmensarchitektur',
+      '/apps': 'Unternehmens-Apps – STRUKTIVA Unternehmensarchitektur',
+      '/google-ads': 'Google Ads – STRUKTIVA Unternehmensarchitektur',
       '/impressum': 'Impressum – STRUKTIVA Unternehmensarchitektur',
       '/datenschutz': 'Datenschutz – STRUKTIVA Unternehmensarchitektur',
       '/widerruf': 'Widerruf – STRUKTIVA Unternehmensarchitektur',
@@ -715,6 +723,13 @@ function ProblemSection() {
 }
 
 function ServicesSection() {
+  const serviceRoutes = {
+    'Professionelle Webseiten': siteLinks.webseitenPage,
+    Landingpages: siteLinks.landingpagesPage,
+    'Unternehmens-Apps': siteLinks.appsPage,
+    'Google Ads': siteLinks.googleAdsPage,
+  }
+
   return (
     <section id="leistungen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
@@ -734,12 +749,13 @@ function ServicesSection() {
           className="mt-12 grid gap-5 lg:grid-cols-2"
         >
           {coreServices.map(([Icon, title, text]) => (
-            <motion.article
+            <motion.a
               key={title}
+              href={serviceRoutes[title]}
               variants={fadeUp}
               transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-                className="service-card-3d rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 md:p-7"
-              >
+              className="service-card-3d group block cursor-pointer rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
+            >
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
                   <Icon className="h-5 w-5" />
@@ -747,9 +763,13 @@ function ServicesSection() {
                 <div>
                   <h3 className="text-2xl font-semibold text-white">{title}</h3>
                   <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{text}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                    Mehr erfahren
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                  </span>
                 </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -1368,7 +1388,7 @@ function ContactSection() {
 function Footer() {
   return (
     <footer className="px-5 pb-8 pt-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-[2rem] border border-[#D8B45A]/35 bg-[#0B1F3A] px-6 py-7 shadow-premium md:flex-row md:items-end md:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-[2rem] border border-[#D8B45A]/35 bg-[#0B1F3A] px-6 py-7 shadow-premium lg:flex-row lg:items-end lg:justify-between">
         <div>
           <p className="text-lg font-semibold text-white">{brand.name}</p>
           <p className="mt-2 text-sm text-[#D7DCE5]">Jessica Wacker</p>
@@ -1378,11 +1398,22 @@ function Footer() {
             <a href={contactDetails.whatsappHref} className="transition hover:text-[#F2D98B]">WhatsApp Business</a>
           </div>
         </div>
-        <div className="flex flex-wrap gap-4 text-sm text-[#D7DCE5]">
-          <a href={siteLinks.impressum} className="transition hover:text-[#F2D98B]">Impressum</a>
-          <a href={siteLinks.datenschutz} className="transition hover:text-[#F2D98B]">Datenschutz</a>
-          <a href={siteLinks.widerruf} className="transition hover:text-[#F2D98B]">Widerruf</a>
-          <a href={siteLinks.contact} className="transition hover:text-[#F2D98B]">Kontakt</a>
+        <div className="grid gap-5 text-sm text-[#D7DCE5] md:grid-cols-2">
+          <div className="flex flex-wrap gap-4">
+            <a href={siteLinks.impressum} className="transition hover:text-[#F2D98B]">Impressum</a>
+            <a href={siteLinks.datenschutz} className="transition hover:text-[#F2D98B]">Datenschutz</a>
+            <a href={siteLinks.widerruf} className="transition hover:text-[#F2D98B]">Widerruf</a>
+            <a href={siteLinks.contact} className="transition hover:text-[#F2D98B]">Kontakt</a>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F2D98B]/80">Leistungen</p>
+            <div className="mt-2 grid gap-1.5">
+              <a href={siteLinks.webseitenPage} className="transition hover:text-[#F2D98B]">Professionelle Webseiten</a>
+              <a href={siteLinks.landingpagesPage} className="transition hover:text-[#F2D98B]">Landingpages</a>
+              <a href={siteLinks.appsPage} className="transition hover:text-[#F2D98B]">Unternehmens-Apps</a>
+              <a href={siteLinks.googleAdsPage} className="transition hover:text-[#F2D98B]">Google Ads</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
@@ -1406,6 +1437,216 @@ function HomePage() {
       <QualitySection />
       <ContactSection />
     </>
+  )
+}
+
+function ServiceDetailLayout({ title, intro, children }) {
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <div className="rounded-[2.3rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Leistung</p>
+            <h1 className="mt-4 max-w-3xl text-4xl font-semibold text-white md:text-5xl">{title}</h1>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">{intro}</p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Anfrage stellen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={siteLinks.services} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                Zurück zur Übersicht
+              </a>
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="mt-8 grid gap-6">{children}</div>
+      </div>
+    </main>
+  )
+}
+
+function ServiceSection({ title, children }) {
+  return (
+    <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
+      <h2 className="text-2xl font-semibold text-white">{title}</h2>
+      <div className="mt-4 space-y-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{children}</div>
+    </section>
+  )
+}
+
+function UniversalServiceCTA() {
+  return (
+    <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
+      <h2 className="text-2xl font-semibold text-white">Möchtest du wissen, ob diese Lösung zu deinem Unternehmen passt?</h2>
+      <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+        Schreibe kurz, worum es bei deinem Unternehmen geht. Danach erhältst du eine klare Einschätzung, welcher nächste Schritt sinnvoll ist.
+      </p>
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+          Anfrage stellen
+          <ArrowRight className="h-4 w-4" />
+        </a>
+        <a href={contactDetails.whatsappHref} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+          Per WhatsApp Business kontaktieren
+        </a>
+      </div>
+    </section>
+  )
+}
+
+function WebseitenPage() {
+  return (
+    <ServiceDetailLayout
+      title="Professionelle Webseiten für einen starken digitalen Auftritt."
+      intro="Eine professionelle Webseite zeigt auf den ersten Blick, was ein Unternehmen anbietet, warum es vertrauenswürdig ist und wie Kunden Kontakt aufnehmen können."
+    >
+      <ServiceSection title="Worum geht es?">
+        <p>STRUKTIVA erstellt hochwertige Unternehmenswebseiten mit klarer Struktur, professionellen Texten, mobiler Optimierung und sauberer Kundenführung. Ziel ist kein überladener Internetauftritt, sondern eine Webseite, die verständlich, seriös und anfrageorientiert aufgebaut ist.</p>
+      </ServiceSection>
+      <ServiceSection title="Für wen ist das sinnvoll?">
+        <p>- kleine und mittlere Unternehmen</p><p>- lokale Betriebe</p><p>- Selbstständige</p><p>- Dienstleister</p><p>- Salons, Studios, Praxen und Handwerksbetriebe</p><p>- Unternehmen mit veralteter oder unklarer Website</p>
+      </ServiceSection>
+      <ServiceSection title="Was wird gemacht?">
+        <p>- Seitenstruktur planen</p><p>- Startseite aufbauen</p><p>- Leistungsbereiche formulieren</p><p>- Kontaktführung verbessern</p><p>- mobile Darstellung optimieren</p><p>- Texte professionell strukturieren</p><p>- Impressum/Datenschutz/Widerruf verlinken</p><p>- technische Veröffentlichung vorbereiten</p>
+      </ServiceSection>
+      <ServiceSection title="So könnte es aussehen">
+        <div className="grid gap-3 md:grid-cols-2">
+          {['Header mit klarer Navigation', 'Hero-Bereich mit Nutzenfokus', 'Leistungsbereich mit Struktur', 'Kontaktbereich mit CTA'].map((item) => (
+            <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">{item}</div>
+          ))}
+        </div>
+      </ServiceSection>
+      <ServiceSection title="Preis & Umfang">
+        <p className="text-lg font-semibold text-[#D8B45A]">Professionelle Webseite – ab 1.499 €</p>
+        <p>Der genaue Preis hängt von Seitenanzahl, Designaufwand, Textumfang, technischen Anforderungen und gewünschter Betreuung ab.</p>
+      </ServiceSection>
+      <ServiceSection title="Ablauf">
+        <p>1. Kurze Anfrage und Zielklärung</p><p>2. Struktur- und Inhaltsplanung</p><p>3. Design und Textumsetzung</p><p>4. Feedback und Feinschliff</p><p>5. Technische Veröffentlichung und Übergabe</p>
+      </ServiceSection>
+      <UniversalServiceCTA />
+    </ServiceDetailLayout>
+  )
+}
+
+function LandingpagesPage() {
+  return (
+    <ServiceDetailLayout
+      title="Landingpages für klare Angebote und gezielte Anfragen."
+      intro="Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklärt und Besucher gezielt zur Anfrage führt."
+    >
+      <ServiceSection title="Worum geht es?">
+        <p>Eine Landingpage konzentriert sich auf ein klares Ziel: Der Besucher soll schnell verstehen, worum es geht, welchen Nutzen das Angebot hat und wie er Kontakt aufnehmen kann. Sie eignet sich besonders für Aktionen, Dienstleistungen, Kampagnen oder Google Ads.</p>
+      </ServiceSection>
+      <ServiceSection title="Für wen ist das sinnvoll?">
+        <p>- Unternehmen mit konkretem Angebot</p><p>- Aktionen oder Sonderleistungen</p><p>- Google-Ads-Kampagnen</p><p>- lokale Dienstleistungen</p><p>- digitale Produkte</p><p>- Betriebe, die gezielt Anfragen gewinnen möchten</p>
+      </ServiceSection>
+      <ServiceSection title="Was wird gemacht?">
+        <p>- Angebotsstruktur entwickeln</p><p>- Nutzen klar herausarbeiten</p><p>- Texte verkaufsorientiert formulieren</p><p>- Call-to-Action-Bereiche einbauen</p><p>- Kontaktbereich optimieren</p><p>- mobile Darstellung verbessern</p><p>- technische Veröffentlichung vorbereiten</p>
+      </ServiceSection>
+      <ServiceSection title="So könnte es aussehen">
+        <div className="grid gap-3 md:grid-cols-2">
+          {['Angebots-Headline', 'Nutzenpunkte', 'Leistungsbox', 'Kontakt-CTA mit Vertrauenselement'].map((item) => (
+            <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">{item}</div>
+          ))}
+        </div>
+      </ServiceSection>
+      <ServiceSection title="Preis & Umfang">
+        <p className="text-lg font-semibold text-[#D8B45A]">Landingpage – ab 799 €</p>
+        <p>Der genaue Preis hängt vom Umfang, Textaufwand, Design und technischer Umsetzung ab.</p>
+      </ServiceSection>
+      <ServiceSection title="Ablauf">
+        <p>1. Angebot und Ziel definieren</p><p>2. Seitenlogik und Nutzenstruktur aufbauen</p><p>3. Texte und visuelle Abschnitte ausarbeiten</p><p>4. CTA und Kontaktweg optimieren</p><p>5. Technische Veröffentlichung und Übergabe</p>
+      </ServiceSection>
+      <UniversalServiceCTA />
+    </ServiceDetailLayout>
+  )
+}
+
+function AppsPage() {
+  return (
+    <ServiceDetailLayout
+      title="Unternehmens-Apps für klarere Abläufe."
+      intro="Individuelle App-Systeme können Kunden, Termine, Aufgaben, Checklisten und interne Abläufe übersichtlich an einem Ort bündeln."
+    >
+      <ServiceSection title="Worum geht es?">
+        <p>STRUKTIVA entwickelt App-Lösungen und digitale Systeme, die Unternehmen im Alltag unterstützen. Dabei geht es nicht um eine Spielerei, sondern um praktische digitale Werkzeuge für Organisation, Übersicht und bessere Abläufe.</p>
+      </ServiceSection>
+      <ServiceSection title="Für wen ist das sinnvoll?">
+        <p>- Unternehmen mit vielen Kundeninformationen</p><p>- Betriebe mit Terminorganisation</p><p>- Teams mit Aufgaben und Checklisten</p><p>- Salons, Studios und Dienstleister</p><p>- Unternehmen mit wiederkehrenden Abläufen</p><p>- Betriebe, die weniger Zettelwirtschaft wollen</p>
+      </ServiceSection>
+      <ServiceSection title="Was wird gemacht?">
+        <p>- kostenlose App-Ersteinschätzung</p><p>- Abläufe analysieren</p><p>- sinnvolle Funktionen definieren</p><p>- Nutzerrollen planen</p><p>- App-Struktur aufbauen</p><p>- mobile und Desktop-Ansicht berücksichtigen</p><p>- technische Umsetzung vorbereiten</p><p>- Betreuung und Hosting klären</p>
+      </ServiceSection>
+      <ServiceSection title="So könnte es aussehen">
+        <div className="app-preview-3d mx-auto max-w-3xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-4 shadow-premium">
+          <div className="rounded-[1.5rem] border border-[#D8B45A]/20 bg-white/[0.05] p-4 md:p-5">
+            <p className="text-sm font-medium text-[#D7DCE5]">App-Beispiel für Unternehmen</p>
+            <h3 className="mt-1 text-xl font-semibold text-white">STRUKTIVA Business App</h3>
+            <div className="mt-3 rounded-full bg-[#D8B45A]/12 px-3 py-1 text-xs font-semibold text-[#D8B45A] inline-block">Vorschau</div>
+            <div className="mt-4 grid gap-2.5">
+              {[
+                ['Kundenverwaltung', 'übersichtlich'],
+                ['Terminübersicht', 'strukturiert'],
+                ['Aufgabensteuerung', 'klar'],
+                ['Bewertungsprozess', 'integriert'],
+              ].map(([label, state]) => (
+                <div key={label} className="app-layer flex items-center justify-between gap-3 rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-2.5">
+                  <span className="text-sm font-medium text-white">{label}</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#94A3B8]">{state}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </ServiceSection>
+      <ServiceSection title="Preis & Umfang">
+        <p className="text-lg font-semibold text-[#D8B45A]">Kostenlose App-Ersteinschätzung – kostenlos</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Unternehmens-App – ab 2.490 €</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Monatliche App-Betreuung – ab 119 € / Monat</p>
+        <p>Die kostenlose App-Ersteinschätzung ersetzt kein vollständiges App-Konzept. Der genaue Preis hängt von Funktionsumfang, Hosting, Speicherbedarf, Modulen und Betreuungsaufwand ab.</p>
+      </ServiceSection>
+      <ServiceSection title="Ablauf">
+        <p>1. Kostenlose Ersteinschätzung</p><p>2. Ablaufanalyse und Funktionsrahmen</p><p>3. Strukturplanung und Umsetzung</p><p>4. Testphase und Freigabe</p><p>5. Go-live mit Betreuung</p>
+      </ServiceSection>
+      <UniversalServiceCTA />
+    </ServiceDetailLayout>
+  )
+}
+
+function GoogleAdsPage() {
+  return (
+    <ServiceDetailLayout
+      title="Google Ads für gezielte Kundenanfragen."
+      intro="Google Ads können sinnvoll sein, wenn ein Unternehmen Menschen erreichen möchte, die bereits aktiv nach einer Leistung suchen."
+    >
+      <ServiceSection title="Worum geht es?">
+        <p>STRUKTIVA unterstützt bei Kampagnenstruktur, Anzeigentexten, Angebotsausrichtung und passenden Landingpages. Ziel ist nicht einfach Werbung zu schalten, sondern die Anzeige mit einer klaren Zielseite und verständlicher Kundenführung zu verbinden.</p>
+      </ServiceSection>
+      <ServiceSection title="Für wen ist das sinnvoll?">
+        <p>- lokale Betriebe</p><p>- Dienstleister</p><p>- Unternehmen mit konkreten Angeboten</p><p>- Betriebe mit neuer Webseite oder Landingpage</p><p>- Unternehmen, die gezielt Anfragen gewinnen möchten</p>
+      </ServiceSection>
+      <ServiceSection title="Was wird gemacht?">
+        <p>- Kampagnenstruktur entwickeln</p><p>- Keyword-Grundlogik planen</p><p>- Anzeigentexte formulieren</p><p>- Angebot klar ausrichten</p><p>- passende Zielseite empfehlen</p><p>- Anfrageprozess verbessern</p><p>- optional Social-Media-Werbeideen vorbereiten</p>
+      </ServiceSection>
+      <ServiceSection title="So könnte es aussehen">
+        <div className="grid gap-3 md:grid-cols-2">
+          {['Suchanfrage', 'Anzeige', 'Landingpage-Verbindung', 'Anfrageziel'].map((item) => (
+            <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">{item}</div>
+          ))}
+        </div>
+      </ServiceSection>
+      <ServiceSection title="Preis & Umfang">
+        <p className="text-lg font-semibold text-[#D8B45A]">Google Ads Startpaket – ab 349 €</p>
+        <p><span className="font-semibold text-white">Wichtig:</span> Werbebudget ist nicht enthalten und wird separat direkt bei Google oder der jeweiligen Werbeplattform eingesetzt.</p>
+        <p>Für Google Ads wird idealerweise eine passende Landingpage empfohlen.</p>
+      </ServiceSection>
+      <ServiceSection title="Ablauf">
+        <p>1. Angebot und Zielgruppen klären</p><p>2. Kampagnenstruktur und Keywords aufsetzen</p><p>3. Anzeigen und Zielseitenlogik abstimmen</p><p>4. Start und erste Auswertung</p><p>5. Optimierung der Anfragequalität</p>
+      </ServiceSection>
+      <UniversalServiceCTA />
+    </ServiceDetailLayout>
   )
 }
 
@@ -1653,6 +1894,14 @@ function Page() {
     content = <WiderrufPage />
   } else if (pathname === '/kontakt') {
     content = <ContactPage />
+  } else if (pathname === '/webseiten') {
+    content = <WebseitenPage />
+  } else if (pathname === '/landingpages') {
+    content = <LandingpagesPage />
+  } else if (pathname === '/apps') {
+    content = <AppsPage />
+  } else if (pathname === '/google-ads') {
+    content = <GoogleAdsPage />
   }
 
   return (
