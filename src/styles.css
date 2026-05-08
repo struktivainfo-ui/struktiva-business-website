@@ -218,6 +218,44 @@ img {
   animation: splashSweep 1.15s ease-out forwards;
 }
 
+.floating-whatsapp-button {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 60;
+  width: 58px;
+  height: 58px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(160deg, #25d366 0%, #1fb85a 100%);
+  border: 1px solid rgba(216, 180, 90, 0.45);
+  box-shadow:
+    0 14px 28px rgba(5, 10, 18, 0.42),
+    0 0 0 5px rgba(7, 17, 31, 0.68),
+    0 0 24px rgba(37, 211, 102, 0.28);
+  transform: translateY(6px) scale(0.98);
+  opacity: 0;
+  animation: waEntrance 0.5s ease forwards 0.35s, waPulse 7s ease-in-out infinite 2.2s;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+}
+
+.floating-whatsapp-button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 18px 34px rgba(5, 10, 18, 0.5),
+    0 0 0 5px rgba(7, 17, 31, 0.72),
+    0 0 28px rgba(37, 211, 102, 0.36);
+  filter: saturate(1.04);
+}
+
+.floating-whatsapp-button:focus-visible {
+  outline: 2px solid rgba(242, 217, 139, 0.95);
+  outline-offset: 3px;
+}
+
 #root::before {
   content: '';
   position: fixed;
@@ -298,6 +336,29 @@ img {
   }
 }
 
+@keyframes waEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes waPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 14px 28px rgba(5, 10, 18, 0.42),
+      0 0 0 5px rgba(7, 17, 31, 0.68),
+      0 0 22px rgba(37, 211, 102, 0.24);
+  }
+  50% {
+    box-shadow:
+      0 16px 32px rgba(5, 10, 18, 0.48),
+      0 0 0 5px rgba(7, 17, 31, 0.7),
+      0 0 28px rgba(37, 211, 102, 0.34);
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .hero-3d-shell:hover .hero-3d-plane {
     transform: rotateX(6deg) rotateY(-6deg) translateY(-3px);
@@ -338,8 +399,18 @@ img {
   .service-card-3d,
   .pricing-card-3d,
   .app-preview-3d,
+  .floating-whatsapp-button,
   .splash-glow,
   .splash-line {
     transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-whatsapp-button {
+    right: 18px;
+    bottom: 20px;
+    width: 52px;
+    height: 52px;
   }
 }
