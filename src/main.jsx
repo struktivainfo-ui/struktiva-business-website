@@ -359,6 +359,46 @@ function Reveal({ children, className = '', delay = 0 }) {
   )
 }
 
+function SplashScreen({ onDone }) {
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const hideTimer = window.setTimeout(onDone, reducedMotion ? 900 : 1400)
+    const safetyTimer = window.setTimeout(onDone, 2000)
+    return () => {
+      window.clearTimeout(hideTimer)
+      window.clearTimeout(safetyTimer)
+    }
+  }, [onDone])
+
+  return (
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, scale: 1.015 }}
+      transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+      className="splash-screen fixed inset-0 z-[120] flex items-center justify-center px-4"
+      aria-label="STRUKTIVA Splashscreen"
+    >
+      <div className="splash-glow" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96, y: 8 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-[1] text-center"
+      >
+        <img
+          src="/struktiva-logo.jpeg"
+          alt="STRUKTIVA Unternehmensarchitektur Logo"
+          className="mx-auto h-20 w-20 rounded-full object-contain shadow-[0_0_32px_rgba(216,180,90,0.22)] md:h-24 md:w-24"
+        />
+        <p className="mt-5 text-base font-semibold tracking-[0.2em] text-white md:text-lg">Unternehmensarchitektur</p>
+        <div className="splash-line mx-auto mt-3 h-px w-40 max-w-[70vw]" />
+        <p className="mt-3 text-xs uppercase tracking-[0.16em] text-[#D7DCE5] md:text-[13px]">Digitale Systeme. Sichtbarkeit. Struktur.</p>
+      </motion.div>
+    </motion.div>
+  )
+}
+
 function SectionHeader({ eyebrow, title, text, centered = true }) {
   return (
     <div className={centered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
@@ -563,8 +603,8 @@ function HeroSection() {
           transition={{ duration: 0.64, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto w-full max-w-[25rem] lg:max-w-[26.5rem]"
         >
-          <div className="hero-architecture-card rounded-[1.55rem] border border-[#D8B45A]/25 bg-white/[0.05] p-3 shadow-[0_12px_30px_rgba(15,36,76,0.10)] backdrop-blur-xl">
-            <div className="relative overflow-hidden rounded-[1.25rem] border border-[#D8B45A]/25 bg-[linear-gradient(180deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88))] p-4 md:p-4.5">
+            <div className="hero-architecture-card hero-3d-shell rounded-[1.55rem] border border-[#D8B45A]/25 bg-white/[0.05] p-3 shadow-[0_12px_30px_rgba(15,36,76,0.10)] backdrop-blur-xl">
+            <div className="hero-3d-plane relative overflow-hidden rounded-[1.25rem] border border-[#D8B45A]/25 bg-[linear-gradient(180deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88))] p-4 md:p-4.5">
               <div className="hero-architecture-grid" />
               <div className="hero-architecture-line hero-architecture-line-1" />
               <div className="hero-architecture-line hero-architecture-line-2" />
@@ -580,7 +620,7 @@ function HeroSection() {
 
                 <div className="mt-4 grid grid-cols-2 gap-2.5">
                   {['Webseite', 'Landingpage', 'App-System', 'Google Ads'].map((item) => (
-                    <div key={item} className="rounded-xl border border-white/14 bg-white/[0.06] px-3 py-2 text-center text-[12px] font-medium text-white">
+                    <div key={item} className="hero-floating-chip rounded-xl border border-white/14 bg-white/[0.06] px-3 py-2 text-center text-[12px] font-medium text-white">
                       {item}
                     </div>
                   ))}
@@ -698,8 +738,8 @@ function ServicesSection() {
               key={title}
               variants={fadeUp}
               transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 md:p-7"
-            >
+                className="service-card-3d rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 md:p-7"
+              >
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
                   <Icon className="h-5 w-5" />
@@ -816,8 +856,8 @@ function AppsSection() {
         </motion.div>
 
         <Reveal className="mt-9">
-          <div className="mx-auto max-w-3xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-4 shadow-premium backdrop-blur-xl">
-            <div className="rounded-[1.5rem] border border-[#D8B45A]/20 bg-white/[0.05] p-4 md:p-5">
+            <div className="app-preview-3d mx-auto max-w-3xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-4 shadow-premium backdrop-blur-xl">
+              <div className="rounded-[1.5rem] border border-[#D8B45A]/20 bg-white/[0.05] p-4 md:p-5">
               <div className="mb-4">
                 <p className="text-sm font-medium text-[#D7DCE5]">So kann eine STRUKTIVA App-Lösung aussehen</p>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">
@@ -838,7 +878,7 @@ function AppsSection() {
                   ['Aufgabensteuerung', 'klar'],
                   ['Bewertungsprozess', 'integriert'],
                 ].map(([label, state]) => (
-                  <div key={label} className="flex items-center justify-between gap-3 rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-2.5">
+                  <div key={label} className="app-layer flex items-center justify-between gap-3 rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-2.5">
                     <div className="flex items-center gap-3">
                       <div className="h-2.5 w-2.5 rounded-full bg-[#D8B45A] shadow-[0_0_16px_rgba(216,180,90,0.22)]" />
                       <span className="text-sm font-medium text-white">{label}</span>
@@ -932,13 +972,13 @@ function GoogleAdsSection() {
 
 function PricingCard({ pkg }) {
   return (
-    <motion.article
-      variants={fadeUp}
-      transition={{ duration: 0.54, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative flex h-full flex-col overflow-hidden rounded-[2rem] border p-5 shadow-premium transition hover:-translate-y-1 md:p-6 ${
-        pkg.premium
-          ? 'border-[#D8B45A]/35 bg-[linear-gradient(165deg,rgba(216,180,90,0.12),rgba(11,31,58,0.88),rgba(5,10,18,0.95))]'
-          : pkg.strong
+      <motion.article
+        variants={fadeUp}
+        transition={{ duration: 0.54, ease: [0.22, 1, 0.36, 1] }}
+        className={`pricing-card-3d relative flex h-full flex-col overflow-hidden rounded-[2rem] border p-5 shadow-premium transition hover:-translate-y-1 md:p-6 ${
+          pkg.premium
+            ? 'border-[#D8B45A]/35 bg-[linear-gradient(165deg,rgba(216,180,90,0.12),rgba(11,31,58,0.88),rgba(5,10,18,0.95))]'
+            : pkg.strong
             ? 'border-[#D8B45A]/25 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))]'
             : 'border-white/14 bg-white/[0.05]'
       }`}
@@ -1591,7 +1631,20 @@ function ContactPage() {
 
 function Page() {
   const pathname = useCurrentPath()
+  const [showSplash, setShowSplash] = useState(false)
   useDocumentTitle(pathname)
+
+  useEffect(() => {
+    try {
+      const splashSeen = window.sessionStorage.getItem('struktiva_splash_seen')
+      if (!splashSeen) {
+        setShowSplash(true)
+        window.sessionStorage.setItem('struktiva_splash_seen', '1')
+      }
+    } catch {
+      setShowSplash(true)
+    }
+  }, [])
 
   let content = <HomePage />
 
@@ -1610,6 +1663,9 @@ function Page() {
       <Header pathname={pathname} />
       {content}
       <Footer />
+      <AnimatePresence>
+        {showSplash && <SplashScreen onDone={() => setShowSplash(false)} />}
+      </AnimatePresence>
     </div>
   )
 }
