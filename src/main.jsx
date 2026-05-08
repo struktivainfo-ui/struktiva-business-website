@@ -116,7 +116,7 @@ const googleAdsCards = [
 const pricingPackages = [
   {
     title: 'Landingpage',
-    price: 'ab 899 €',
+    price: 'ab 799 €',
     badge: 'Fokussierte Zielseite',
     description: 'Für Angebote, Aktionen, Dienstleistungen oder Produkte, die klar erklärt und gezielt beworben werden sollen. Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklärt und Besucher gezielt zur Anfrage führt.',
     features: [
@@ -135,7 +135,7 @@ const pricingPackages = [
   },
   {
     title: 'Professionelle Webseite',
-    price: 'ab 1.699 €',
+    price: 'ab 1.499 €',
     badge: 'Hochwertiger Auftritt',
     description: 'Für Unternehmen, die einen hochwertigen digitalen Auftritt brauchen.',
     features: [
@@ -154,7 +154,7 @@ const pricingPackages = [
   },
   {
     title: 'Google Ads Startpaket',
-    price: 'ab 399 €',
+    price: 'ab 349 €',
     badge: 'Gezielte Nachfrage',
     description: 'Für Unternehmen, die gezielt über Google neue Anfragen gewinnen möchten. Ergänzend können je nach Zielgruppe auch Social-Media-Werbeansätze berücksichtigt werden.',
     features: [
@@ -173,7 +173,7 @@ const pricingPackages = [
   },
   {
     title: 'Kostenlose App-Ersteinschätzung',
-    price: '0 €',
+    price: 'kostenlos',
     badge: 'Kostenloser Einstieg',
     description: 'Für Unternehmen, die prüfen möchten, ob eine eigene App oder ein internes digitales System überhaupt sinnvoll ist.',
     features: [
@@ -189,7 +189,7 @@ const pricingPackages = [
   },
   {
     title: 'Unternehmens-App',
-    price: 'ab 2.590 €',
+    price: 'ab 2.490 €',
     subtitle: 'Monatliche App-Betreuung ab 119 € / Monat',
     badge: 'Premium App-Lösung',
     description: 'Für Betriebe, die eine individuelle digitale Lösung für ihre Abläufe brauchen.',
@@ -1107,16 +1107,13 @@ function PricingSection() {
 
         <Reveal className="mt-8">
           <div className="rounded-[1.8rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Kennenlern-Angebote zum Start</p>
-            <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Professioneller Einstieg mit klar abgestimmtem Umfang</h3>
-            <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-              STRUKTIVA Unternehmensarchitektur befindet sich im Aufbau. Deshalb gibt es zum Start ausgewählte Kennenlern-Angebote für Unternehmen, die ihre Webseite, Landingpage, Sichtbarkeit oder digitalen Abläufe professioneller aufstellen möchten.
-            </p>
-            <p className="mt-3 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-              Diese Einstiegspreise sollen den Start erleichtern und eine erste Zusammenarbeit ermöglichen. Der genaue Umfang wird im persönlichen Gespräch festgelegt und transparent abgestimmt.
-            </p>
-          </div>
-        </Reveal>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Faire Kennenlernpreise zum Start</p>
+              <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Hochwertige Umsetzung zu fairen Startkonditionen</h3>
+              <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+                STRUKTIVA Unternehmensarchitektur befindet sich im Aufbau und bietet deshalb ausgewählten Unternehmen faire Kennenlern-Angebote an. Die Preise liegen bewusst unter vielen klassischen Freelancer- und Agenturprojekten, bleiben aber auf professionelle Umsetzung, klare Struktur und langfristige Nutzbarkeit ausgerichtet.
+              </p>
+            </div>
+          </Reveal>
 
         <motion.div
           initial="hidden"
@@ -1141,11 +1138,11 @@ function PricingSection() {
           ))}
         </motion.div>
 
-        <Reveal className="mt-8">
-          <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
-            Alle Preise verstehen sich als Kennenlern- und Einstiegspreise zum Start von STRUKTIVA Unternehmensarchitektur. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach Bedarf, Projektumfang, technischer Umsetzung, Hosting, Speicherbedarf, Betreuungsaufwand und Arbeitszeit. Werbebudget für Google Ads oder Social-Media-Werbung ist nicht enthalten.
-          </div>
-        </Reveal>
+          <Reveal className="mt-8">
+            <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
+              Alle Preise verstehen sich als Kennenlern- und Einstiegspreise. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach Projektumfang, technischer Umsetzung, Hosting, Speicherbedarf, Betreuungsaufwand und Arbeitszeit. Werbebudget für Google Ads oder Social-Media-Werbung ist nicht enthalten.
+            </div>
+          </Reveal>
       </div>
     </section>
   )
