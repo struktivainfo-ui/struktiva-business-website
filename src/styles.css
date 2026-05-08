@@ -79,6 +79,83 @@ img {
   animation-delay: -10s;
 }
 
+.hero-architecture-card {
+  position: relative;
+}
+
+.hero-architecture-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(242, 217, 139, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 217, 139, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.hero-architecture-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(216, 180, 90, 0), rgba(216, 180, 90, 0.65), rgba(216, 180, 90, 0));
+  pointer-events: none;
+  animation: architectureFlow 12s ease-in-out infinite;
+}
+
+.hero-architecture-line-1 {
+  top: 26%;
+  left: 14%;
+  width: 68%;
+}
+
+.hero-architecture-line-2 {
+  top: 53%;
+  left: 10%;
+  width: 60%;
+  animation-delay: -3s;
+}
+
+.hero-architecture-line-3 {
+  top: 72%;
+  left: 24%;
+  width: 62%;
+  animation-delay: -6s;
+}
+
+.hero-architecture-node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--struktiva-champagne);
+  box-shadow: 0 0 16px rgba(242, 217, 139, 0.38);
+  pointer-events: none;
+  animation: nodePulse 4.6s ease-in-out infinite;
+}
+
+.hero-architecture-node-1 {
+  top: 24%;
+  left: 16%;
+}
+
+.hero-architecture-node-2 {
+  top: 51%;
+  left: 46%;
+  animation-delay: -1s;
+}
+
+.hero-architecture-node-3 {
+  top: 70%;
+  right: 16%;
+  animation-delay: -2s;
+}
+
+.hero-architecture-node-4 {
+  top: 37%;
+  right: 24%;
+  animation-delay: -3s;
+}
+
 #root::before {
   content: '';
   position: fixed;
@@ -99,5 +176,29 @@ img {
   }
   50% {
     transform: translate3d(0, -7px, 0) scale(1.02);
+  }
+}
+
+@keyframes architectureFlow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateX(4px);
+  }
+}
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.72;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
   }
 }

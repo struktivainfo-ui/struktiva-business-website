@@ -563,41 +563,35 @@ function HeroSection() {
           transition={{ duration: 0.64, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto w-full max-w-[25rem] lg:max-w-[26.5rem]"
         >
-          <div className="rounded-[1.55rem] border border-[#D8B45A]/25 bg-white/[0.05] p-3 shadow-[0_12px_30px_rgba(15,36,76,0.10)] backdrop-blur-xl">
-            <div className="rounded-[1.25rem] border border-[#D8B45A]/25 bg-[linear-gradient(180deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88))] p-4 md:p-4.5">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-sm font-medium text-[#D7DCE5]">STRUKTIVA System</p>
-                  <h2 className="mt-1.5 text-xl font-semibold text-white">Digitale Struktur für Unternehmen</h2>
-                </div>
-                <div className="rounded-full bg-[#D8B45A]/12 px-2.5 py-1 text-[11px] font-semibold text-[#D8B45A]">
-                  Startklar
-                </div>
-              </div>
+          <div className="hero-architecture-card rounded-[1.55rem] border border-[#D8B45A]/25 bg-white/[0.05] p-3 shadow-[0_12px_30px_rgba(15,36,76,0.10)] backdrop-blur-xl">
+            <div className="relative overflow-hidden rounded-[1.25rem] border border-[#D8B45A]/25 bg-[linear-gradient(180deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88))] p-4 md:p-4.5">
+              <div className="hero-architecture-grid" />
+              <div className="hero-architecture-line hero-architecture-line-1" />
+              <div className="hero-architecture-line hero-architecture-line-2" />
+              <div className="hero-architecture-line hero-architecture-line-3" />
+              <div className="hero-architecture-node hero-architecture-node-1" />
+              <div className="hero-architecture-node hero-architecture-node-2" />
+              <div className="hero-architecture-node hero-architecture-node-3" />
+              <div className="hero-architecture-node hero-architecture-node-4" />
 
-              <div className="mt-4 grid gap-2.5 sm:grid-cols-[1fr_auto] sm:items-start">
-                <div className="grid gap-2.5">
+              <div className="relative z-[1]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Digitale Architektur</p>
+                <h2 className="mt-2 text-xl font-semibold text-white">Webseiten. Apps. Werbung. Struktur.</h2>
+
+                <div className="mt-4 grid grid-cols-2 gap-2.5">
                   {['Webseite', 'Landingpage', 'App-System', 'Google Ads'].map((item) => (
-                    <div key={item} className="flex items-center gap-2.5 rounded-xl border border-white/14 bg-white/[0.05] px-3 py-2">
-                      <div className="h-2 w-2 rounded-full bg-[#D8B45A] shadow-[0_0_12px_rgba(216,180,90,0.18)]" />
-                      <span className="text-[13px] font-medium text-white">{item}</span>
+                    <div key={item} className="rounded-xl border border-white/14 bg-white/[0.06] px-3 py-2 text-center text-[12px] font-medium text-white">
+                      {item}
                     </div>
                   ))}
                 </div>
 
-                <div className="grid gap-1.5 text-right text-[10px] font-semibold uppercase tracking-[0.14em] text-[#94A3B8]">
-                  <span>professionell</span>
-                  <span>fokussiert</span>
-                  <span>digital</span>
-                  <span>sichtbar</span>
+                <div className="mt-4 rounded-[1rem] border border-[#D8B45A]/18 bg-white/[0.06] p-3.5">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">Ergebnis</p>
+                  <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">
+                    Ein klarer digitaler Aufbau für Sichtbarkeit, Anfragen und bessere Abläufe.
+                  </p>
                 </div>
-              </div>
-
-              <div className="mt-4 rounded-[1rem] border border-[#D8B45A]/18 bg-white/[0.06] p-3.5">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">Ergebnis</p>
-                <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">
-                  Ein klarer digitaler Auftritt mit Struktur, Sichtbarkeit und System.
-                </p>
               </div>
             </div>
           </div>
@@ -785,93 +779,75 @@ function WebsiteFocusSection() {
 function AppsSection() {
   return (
     <section id="app-loesungen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
-        <div>
-          <Reveal>
-            <SectionHeader
-              eyebrow="Unternehmens-Apps"
-              title="Professionelle Unternehmens-Apps für bessere Abläufe."
-              text="Individuelle App-Systeme für Kundenverwaltung, Termine, Aufgaben, Checklisten und interne Prozesse – klar aufgebaut, alltagstauglich und passend zum Unternehmen."
-              centered={false}
-            />
-          </Reveal>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.12 }}
-            variants={stagger}
-            className="mt-8 grid gap-3 sm:grid-cols-2"
-          >
-            {appModules.map((item) => (
-              <motion.div
-                key={item}
-                variants={fadeUp}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-2xl border border-white/14 bg-white/[0.05] px-4 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5"
-              >
-                {item}
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <Reveal className="mt-8">
-            <a
-              href={siteLinks.contact}
-              className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/28 bg-white/[0.06] px-6 py-3.5 text-sm font-semibold text-[#D8B45A] transition hover:-translate-y-0.5 hover:bg-[#D8B45A] hover:text-white"
-            >
-              Kostenlose App-Ersteinschätzung anfragen
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </Reveal>
-          <Reveal className="mt-6">
-            <div className="max-w-3xl rounded-[1.4rem] border border-white/14 bg-white/[0.04] p-4 text-sm leading-7 text-[#D7DCE5]">
-              <p className="font-semibold text-white">Nicht sicher, ob eine eigene App sinnvoll ist?</p>
-              <p className="mt-2">Dann starte mit einer kostenlosen App-Ersteinschätzung. Dabei wird geprüft, ob eine App für deine Abläufe wirklich Nutzen bringt oder ob eine einfachere digitale Lösung ausreicht.</p>
-              <a
-                href={siteLinks.contact}
-                className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/28 bg-white/[0.05] px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
-              >
-                Kostenlose App-Ersteinschätzung anfragen
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-          </Reveal>
-        </div>
-
+      <div className="mx-auto max-w-7xl">
         <Reveal>
-          <div className="rounded-[2rem] border border-white/14 bg-white/[0.05] p-4 shadow-premium backdrop-blur-xl">
-            <div className="rounded-[1.6rem] border border-[#D8B45A]/20 bg-white/[0.05] p-5 md:p-6">
-              <div className="mb-5">
+          <SectionHeader
+            eyebrow="Unternehmens-Apps"
+            title="Professionelle Unternehmens-Apps für bessere Abläufe."
+            text="Individuelle App-Systeme für Kundenverwaltung, Termine, Aufgaben, Checklisten und interne Prozesse – klar aufgebaut, alltagstauglich und passend zum Unternehmen."
+            centered={false}
+          />
+        </Reveal>
+
+        <Reveal className="mt-6">
+          <div className="max-w-3xl rounded-[1.4rem] border border-white/14 bg-white/[0.04] p-4 text-sm leading-7 text-[#D7DCE5]">
+            <p className="font-semibold text-white">Nicht sicher, ob eine eigene App sinnvoll ist?</p>
+            <p className="mt-2">Starte mit einer kostenlosen App-Ersteinschätzung. Dabei wird geprüft, ob eine App für deine Abläufe wirklich Nutzen bringt oder ob eine einfachere digitale Lösung ausreicht.</p>
+          </div>
+        </Reveal>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.12 }}
+          variants={stagger}
+          className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {appModules.map((item) => (
+            <motion.div
+              key={item}
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-2xl border border-white/14 bg-white/[0.05] px-4 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5"
+            >
+              {item}
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <Reveal className="mt-9">
+          <div className="mx-auto max-w-3xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-4 shadow-premium backdrop-blur-xl">
+            <div className="rounded-[1.5rem] border border-[#D8B45A]/20 bg-white/[0.05] p-4 md:p-5">
+              <div className="mb-4">
                 <p className="text-sm font-medium text-[#D7DCE5]">So kann eine STRUKTIVA App-Lösung aussehen</p>
-                <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
+                <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">
                   Individuelle App-Systeme können Kunden, Termine, Aufgaben, Checklisten und interne Abläufe übersichtlich an einem Ort bündeln.
                 </p>
               </div>
-              <div className="mb-5 flex items-start justify-between gap-4">
+              <div className="mb-4 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-sm font-medium text-[#D7DCE5]">App-Beispiel für Unternehmen</p>
-                  <h3 className="mt-1 text-2xl font-semibold text-white">STRUKTIVA Business App</h3>
+                  <h3 className="mt-1 text-xl font-semibold text-white">STRUKTIVA Business App</h3>
                 </div>
                 <div className="rounded-full bg-[#D8B45A]/12 px-3 py-1 text-xs font-semibold text-[#D8B45A]">Vorschau</div>
               </div>
-              <div className="grid gap-3">
+              <div className="grid gap-2.5">
                 {[
                   ['Kundenverwaltung', 'übersichtlich'],
                   ['Terminübersicht', 'strukturiert'],
                   ['Aufgabensteuerung', 'klar'],
                   ['Bewertungsprozess', 'integriert'],
                 ].map(([label, state]) => (
-                  <div key={label} className="flex items-center justify-between gap-4 rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3">
+                  <div key={label} className="flex items-center justify-between gap-3 rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-2.5">
                     <div className="flex items-center gap-3">
                       <div className="h-2.5 w-2.5 rounded-full bg-[#D8B45A] shadow-[0_0_16px_rgba(216,180,90,0.22)]" />
                       <span className="text-sm font-medium text-white">{label}</span>
                     </div>
-                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#94A3B8]">{state}</span>
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#94A3B8]">{state}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-5 rounded-[1.3rem] border border-white/14 bg-white/[0.06] p-4">
+              <div className="mt-4 rounded-[1.2rem] border border-white/14 bg-white/[0.06] p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Ergebnis</p>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">
                   Ein digitaler Ort für Kunden, Termine, Aufgaben und interne Abläufe.
@@ -879,6 +855,16 @@ function AppsSection() {
               </div>
             </div>
           </div>
+        </Reveal>
+
+        <Reveal className="mt-8">
+          <a
+            href={siteLinks.contact}
+            className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/28 bg-white/[0.06] px-6 py-3.5 text-sm font-semibold text-[#D8B45A] transition hover:-translate-y-0.5 hover:bg-[#D8B45A] hover:text-white"
+          >
+            Kostenlose App-Ersteinschätzung anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </Reveal>
       </div>
     </section>
