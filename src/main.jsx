@@ -184,6 +184,24 @@ const demoPages = {
   },
 }
 
+const demoImageConfigs = {
+  handwerker: {
+    hero: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=1600&q=80',
+    sectionA: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+    sectionB: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+  },
+  beauty: {
+    hero: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1600&q=80',
+    sectionA: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80',
+    sectionB: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80',
+  },
+  dienstleister: {
+    hero: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80',
+    sectionA: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
+    sectionB: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
+  },
+}
+
 const trustCards = [
   [PanelsTopLeft, 'Professionelle Wirkung', 'Ein klarer digitaler Auftritt zeigt sofort, wofür dein Unternehmen steht und warum Kunden dir vertrauen können.'],
   [MousePointerClick, 'Kundenführung statt Zufall', 'Website, Landingpage, WhatsApp und Angebotsstruktur werden so aufgebaut, dass aus Besuchern konkrete Anfragen werden.'],
@@ -1083,7 +1101,7 @@ function GoogleAdsSection() {
   )
 }
 
-function DemoOverviewSection() {
+function DemoOverviewSectionPremium() {
   return (
     <section id="demos" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
@@ -1640,15 +1658,15 @@ function DemoPageTemplate({ demo }) {
   )
 }
 
-function DemoHandwerkerPage() {
+function DemoHandwerkerPagePremium() {
   return <DemoPageTemplate demo={demoPages.handwerker} />
 }
 
-function DemoBeautyPage() {
+function DemoBeautyPagePremium() {
   return <DemoPageTemplate demo={demoPages.beauty} />
 }
 
-function DemoDienstleisterPage() {
+function DemoDienstleisterPagePremium() {
   return <DemoPageTemplate demo={demoPages.dienstleister} />
 }
 
@@ -1698,7 +1716,7 @@ function HomePage() {
       <WebsiteFocusSection />
       <AppsSection />
       <GoogleAdsSection />
-      <DemoOverviewSection />
+      <DemoOverviewSectionPremium />
       <PricingSection />
       <ProcessSection />
       <TargetSection />
@@ -2135,6 +2153,331 @@ function ContactPage() {
   )
 }
 
+function DemoSectionCard({ title, children, className = '' }) {
+  return (
+    <section className={`rounded-[1.6rem] border p-5 shadow-premium md:p-6 ${className}`}>
+      <h2 className="text-2xl font-semibold">{title}</h2>
+      <div className="mt-4 space-y-3 text-sm leading-7 md:text-base">{children}</div>
+    </section>
+  )
+}
+
+function DemoLead({ title, subtitle, image, imageAlt, theme }) {
+  return (
+    <section className={`overflow-hidden rounded-[2.1rem] border shadow-premium ${theme.heroWrap}`}>
+      <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="p-6 md:p-8 lg:p-10">
+          <p className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] ${theme.badge}`}>
+            Demo-Beispiel – keine echte Kundenseite
+          </p>
+          <h1 className={`mt-5 text-3xl font-semibold leading-tight md:text-5xl ${theme.title}`}>{title}</h1>
+          <p className={`mt-4 max-w-2xl text-base leading-8 md:text-lg ${theme.text}`}>{subtitle}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:-translate-y-0.5 ${theme.primaryBtn}`}>
+              {theme.cta}
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href={siteLinks.demos} className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition ${theme.secondaryBtn}`}>
+              Zur Demo-Übersicht
+            </a>
+          </div>
+        </div>
+        <div className="relative min-h-[280px]">
+          <img src={image} alt={imageAlt} className="h-full w-full object-cover" />
+          <div className={`absolute inset-0 ${theme.heroOverlay}`} />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function DemoForm({ fields, cta, theme }) {
+  return (
+    <div className={`rounded-[1.7rem] border p-5 shadow-premium md:p-6 ${theme.formWrap}`}>
+      <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${theme.kicker}`}>Anfragebereich (Demo)</p>
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+        {fields.map((field) => (
+          <div key={field} className={`${field === 'Nachricht' ? 'md:col-span-2' : ''}`}>
+            <label className={`mb-1.5 block text-xs font-medium uppercase tracking-[0.12em] ${theme.label}`}>{field}</label>
+            {field === 'Nachricht' ? (
+              <textarea rows={4} className={`w-full rounded-xl border px-3 py-2.5 text-sm outline-none ${theme.input}`} />
+            ) : (
+              <input className={`w-full rounded-xl border px-3 py-2.5 text-sm outline-none ${theme.input}`} />
+            )}
+          </div>
+        ))}
+      </div>
+      <button type="button" className={`mt-5 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:-translate-y-0.5 ${theme.primaryBtn}`}>
+        {cta}
+        <ArrowRight className="h-4 w-4" />
+      </button>
+    </div>
+  )
+}
+
+function DemoFinalSection() {
+  return (
+    <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
+      <h2 className="text-2xl font-semibold text-white">So könnte dein Unternehmen digital auftreten.</h2>
+      <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+        Wenn du eine ähnliche Struktur für dein Unternehmen möchtest, erstellt STRUKTIVA einen klaren digitalen Aufbau passend zu deiner Branche, deinem Angebot und deinen Kunden.
+      </p>
+      <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+        Kostenlose Ersteinschätzung anfragen
+        <ArrowRight className="h-4 w-4" />
+      </a>
+    </section>
+  )
+}
+
+function DemoOverviewSection() {
+  const cards = [
+    {
+      title: 'Handwerker-Modell',
+      text: 'Solide, direkt und vertrauensstark – für Betriebe, die Leistungen klar zeigen und Projektanfragen gewinnen wollen.',
+      href: siteLinks.demoHandwerker,
+      image: demoImageConfigs.handwerker.hero,
+      alt: 'Handwerker auf einer Baustelle',
+      tone: 'border-[#f59e0b]/40 bg-[linear-gradient(165deg,rgba(17,24,39,0.95),rgba(55,65,81,0.92))] text-white',
+      accent: 'text-[#fbbf24]',
+      icon: Building2,
+    },
+    {
+      title: 'Beauty-Modell',
+      text: 'Elegant, emotional und hochwertig – für Studios, die Atmosphäre, Vertrauen und Buchungen verbinden wollen.',
+      href: siteLinks.demoBeauty,
+      image: demoImageConfigs.beauty.hero,
+      alt: 'Beauty-Behandlung in einem Studio',
+      tone: 'border-[#e9c9ac]/70 bg-[linear-gradient(165deg,rgba(253,244,236,0.98),rgba(248,229,217,0.96))] text-[#3b2f2f]',
+      accent: 'text-[#b8894b]',
+      icon: Sparkles,
+    },
+    {
+      title: 'Dienstleister-Modell',
+      text: 'Klar, seriös und strukturiert – für Selbstständige und lokale Dienstleister, die ihr Angebot professionell erklären möchten.',
+      href: siteLinks.demoDienstleister,
+      image: demoImageConfigs.dienstleister.hero,
+      alt: 'Beratungsgespräch am Tisch',
+      tone: 'border-[#60a5fa]/35 bg-[linear-gradient(165deg,rgba(10,25,47,0.95),rgba(15,40,75,0.92))] text-white',
+      accent: 'text-[#93c5fd]',
+      icon: BriefcaseBusiness,
+    },
+  ]
+
+  return (
+    <section id="demos" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Live-Demos"
+            title="Drei Branchen. Drei Modelle. Eine klare Struktur."
+            text="Diese Beispielseiten zeigen, wie unterschiedlich ein professioneller digitaler Auftritt aussehen kann – je nach Branche, Zielgruppe und Wirkung."
+          />
+        </Reveal>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 lg:grid-cols-3">
+          {cards.map((card) => {
+            const Icon = card.icon
+            return (
+              <motion.a key={card.title} href={card.href} variants={fadeUp} transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }} className={`group overflow-hidden rounded-[1.9rem] border shadow-premium transition hover:-translate-y-1 ${card.tone}`}>
+                <div className="relative h-44 overflow-hidden">
+                  <img src={card.image} alt={card.alt} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+                  <p className="absolute left-4 top-4 rounded-full border border-white/35 bg-black/35 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">Demo-Beispiel</p>
+                </div>
+                <div className="p-6">
+                  <div className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ${card.accent}`}>
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-2xl font-semibold">{card.title}</h3>
+                  <p className="mt-3 text-sm leading-7 opacity-90">{card.text}</p>
+                  <span className={`mt-5 inline-flex items-center gap-2 text-sm font-semibold ${card.accent}`}>Demo ansehen<ArrowRight className="h-4 w-4" /></span>
+                </div>
+              </motion.a>
+            )
+          })}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+function DemoHandwerkerPage() {
+  const theme = {
+    heroWrap: 'border-[#f59e0b]/30 bg-[#111827]',
+    heroOverlay: 'bg-gradient-to-t from-[#111827]/70 via-[#111827]/15 to-transparent',
+    badge: 'border-[#f59e0b]/35 bg-[#f59e0b]/12 text-[#fbbf24]',
+    title: 'text-white',
+    text: 'text-gray-200',
+    kicker: 'text-[#fbbf24]',
+    label: 'text-gray-400',
+    input: 'border-gray-600/60 bg-gray-800/60 text-white',
+    formWrap: 'border-gray-600/50 bg-gray-900/60',
+    primaryBtn: 'bg-[#f59e0b] text-white hover:bg-[#d97706]',
+    secondaryBtn: 'border-[#f59e0b]/30 text-[#fbbf24] hover:bg-[#f59e0b] hover:text-white',
+    cta: 'Projekt anfragen',
+  }
+
+  return (
+    <main className="bg-[#0f172a] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <DemoLead
+          title="Mehr Anfragen für deinen Handwerksbetrieb – mit einem klaren digitalen Auftritt."
+          subtitle="Diese Demo zeigt, wie ein regionaler Handwerksbetrieb Leistungen, Vertrauen und Kontaktmöglichkeiten professionell präsentiert."
+          image={demoImageConfigs.handwerker.hero}
+          imageAlt="Handwerker arbeitet auf einer Baustelle"
+          theme={theme}
+        />
+        <div className="grid gap-6 lg:grid-cols-2">
+          <DemoSectionCard title="Leistungsübersicht" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
+            <p>- Renovierung & Sanierung</p><p>- Reparaturservice</p><p>- Wartung & Instandhaltung</p><p>- individuelle Projektanfragen</p><p>- Notfall- oder Schnellservice optional</p>
+          </DemoSectionCard>
+          <DemoSectionCard title="Warum Kunden Vertrauen brauchen" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
+            <p>Kunden entscheiden im Handwerk schnell nach Vertrauen, Klarheit und Erreichbarkeit. Diese Struktur zeigt Leistungen eindeutig und führt Interessenten direkt zur Anfrage.</p>
+          </DemoSectionCard>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          <img src={demoImageConfigs.handwerker.sectionA} alt="Baustelle mit professioneller Renovierung" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.handwerker.sectionB} alt="Werkzeug und Handwerksdetails in moderner Umgebung" className="h-56 w-full rounded-[1.4rem] object-cover" />
+        </div>
+        <DemoSectionCard title="Vorher-Nachher-Struktur (Demo-Bereich)" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
+          <p>Vorher: unklare Leistungsdarstellung, kaum Vertrauen, unsaubere Kontaktführung.</p>
+          <p>Nachher: klare Leistungsblöcke, sichtbare Kontaktwege, strukturierte Anfrageführung.</p>
+        </DemoSectionCard>
+        <DemoSectionCard title="Ablauf in 3 Schritten" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
+          <p>1. Anfrage und Leistungswunsch</p><p>2. Kurze Einschätzung und passender Vorschlag</p><p>3. Umsetzung mit klaren Kontaktwegen</p>
+          <a href={siteLinks.contact} className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#f59e0b] px-5 py-2.5 text-sm font-semibold text-white">Projekt anfragen<ArrowRight className="h-4 w-4" /></a>
+        </DemoSectionCard>
+        <DemoForm fields={['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Leistung', 'Nachricht']} cta="Projekt anfragen" theme={theme} />
+        <DemoSectionCard title="Bewertungsbereich (Beispielstruktur)" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
+          <p>Hier kann ein Bewertungsbereich als strukturierte Vertrauensfläche integriert werden – klar als Referenz-Modul vorbereitet, ohne erfundene Kundenstimmen.</p>
+        </DemoSectionCard>
+        <DemoSectionCard title="Optionaler Zusatzbaustein: Newsletter-Einbindung" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
+          <p>Auf Wunsch kann ein Newsletter oder Infoverteiler eingebunden werden, z. B. für saisonale Angebote, Wartungserinnerungen oder Kundeninformationen.</p>
+        </DemoSectionCard>
+        <DemoFinalSection />
+      </div>
+    </main>
+  )
+}
+
+function DemoBeautyPage() {
+  const theme = {
+    heroWrap: 'border-[#e9c9ac]/70 bg-[#fdf4ec]',
+    heroOverlay: 'bg-gradient-to-t from-[#3b2f2f]/30 via-transparent to-transparent',
+    badge: 'border-[#d4a574]/45 bg-white/80 text-[#9b6d3e]',
+    title: 'text-[#3b2f2f]',
+    text: 'text-[#5a4740]',
+    kicker: 'text-[#9b6d3e]',
+    label: 'text-[#8b6f65]',
+    input: 'border-[#e4cabb] bg-white text-[#3b2f2f]',
+    formWrap: 'border-[#e4cabb] bg-[#fff8f3]',
+    primaryBtn: 'bg-[#b8894b] text-white hover:bg-[#a5743d]',
+    secondaryBtn: 'border-[#d4a574]/60 text-[#9b6d3e] hover:bg-[#b8894b] hover:text-white',
+    cta: 'Termin anfragen',
+  }
+
+  return (
+    <main className="bg-[linear-gradient(180deg,#fffaf6,#fdeee4)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <DemoLead
+          title="Ein Beauty-Auftritt, der hochwertig wirkt und Buchungen leichter macht."
+          subtitle="Diese Demo zeigt, wie ein Kosmetikstudio oder Beauty-Dienstleister Leistungen elegant präsentiert und Kundinnen direkt zur Anfrage führt."
+          image={demoImageConfigs.beauty.hero}
+          imageAlt="Kosmetikbehandlung in einem eleganten Studio"
+          theme={theme}
+        />
+        <div className="grid gap-6 md:grid-cols-2">
+          <DemoSectionCard title="Beauty-Leistungen" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
+            <p>- Gesichtsbehandlungen</p><p>- Hautpflege-Beratung</p><p>- Augenbrauen & Wimpern</p><p>- Make-up / Styling</p><p>- Wellness- oder Verwöhnpakete</p>
+          </DemoSectionCard>
+          <DemoSectionCard title="Angebotskarten" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
+            <p>- Kennenlernbehandlung</p><p>- Premium-Behandlung</p><p>- Monatsangebot</p><p>- Gutscheinangebot</p>
+            <a href={siteLinks.contact} className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#b8894b] px-5 py-2.5 text-sm font-semibold text-white">Termin anfragen<ArrowRight className="h-4 w-4" /></a>
+          </DemoSectionCard>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          <img src={demoImageConfigs.beauty.sectionA} alt="Elegante Pflegeprodukte in Beauty-Atmosphäre" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.beauty.sectionB} alt="Ruhige Wellness-Atmosphäre für Kosmetikbehandlungen" className="h-56 w-full rounded-[1.4rem] object-cover" />
+        </div>
+        <DemoSectionCard title="Warum Optik und Vertrauen entscheidend sind" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
+          <p>Beauty-Kundinnen achten auf Stil, Klarheit und Gefühl. Eine hochwertige Seite macht Leistungen sofort verständlich und führt direkt zu Buchung oder Anfrage.</p>
+        </DemoSectionCard>
+        <DemoSectionCard title="Öffnungszeiten & Kontakt" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
+          <p>Mo–Fr 09:00–18:00 · Sa 09:00–14:00</p>
+          <div className="mt-3 flex flex-wrap gap-3">
+            <a href={contactDetails.whatsappHref} className="rounded-full border border-[#d4a574] px-4 py-2 text-sm font-semibold text-[#9b6d3e]">WhatsApp</a>
+            <a href={contactDetails.phoneHref} className="rounded-full border border-[#d4a574] px-4 py-2 text-sm font-semibold text-[#9b6d3e]">Telefon</a>
+            <a href={siteLinks.contact} className="rounded-full bg-[#b8894b] px-4 py-2 text-sm font-semibold text-white">Buchung anfragen</a>
+          </div>
+        </DemoSectionCard>
+        <DemoForm fields={['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Behandlung', 'Nachricht']} cta="Termin anfragen" theme={theme} />
+        <DemoSectionCard title="Optionaler Zusatzbaustein: Newsletter-Einbindung" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
+          <p>Auf Wunsch kann ein kleiner Newsletter-Bereich integriert werden, z. B. für Aktionen, Pflege-Tipps oder freie Termine.</p>
+        </DemoSectionCard>
+        <DemoFinalSection />
+      </div>
+    </main>
+  )
+}
+
+function DemoDienstleisterPage() {
+  const theme = {
+    heroWrap: 'border-[#60a5fa]/35 bg-[#0b1f3a]',
+    heroOverlay: 'bg-gradient-to-t from-[#07111f]/65 via-transparent to-transparent',
+    badge: 'border-[#60a5fa]/35 bg-[#1e3a5f]/60 text-[#bfdbfe]',
+    title: 'text-white',
+    text: 'text-[#dbe7ff]',
+    kicker: 'text-[#93c5fd]',
+    label: 'text-[#94a3b8]',
+    input: 'border-[#334155] bg-[#0f172a] text-white',
+    formWrap: 'border-[#334155] bg-[#0b1f3a]',
+    primaryBtn: 'bg-[#2563eb] text-white hover:bg-[#1d4ed8]',
+    secondaryBtn: 'border-[#60a5fa]/35 text-[#bfdbfe] hover:bg-[#2563eb] hover:text-white',
+    cta: 'Unverbindlich anfragen',
+  }
+
+  return (
+    <main className="bg-[linear-gradient(180deg,#081427,#0b1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <DemoLead
+          title="Zeige klar, was du anbietest – und mache Interessenten zu Anfragen."
+          subtitle="Diese Demo zeigt, wie Selbstständige, Berater und lokale Dienstleister ihr Angebot verständlich strukturieren und Vertrauen aufbauen."
+          image={demoImageConfigs.dienstleister.hero}
+          imageAlt="Beratungsgespräch in professionellem Büro"
+          theme={theme}
+        />
+        <div className="grid gap-6 md:grid-cols-2">
+          <DemoSectionCard title="Angebot klar erklären" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+            <p>- Erstgespräch</p><p>- Standard-Leistung</p><p>- Premium-Service</p><p>- laufende Betreuung</p>
+          </DemoSectionCard>
+          <DemoSectionCard title="Geeignet für" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+            <p>Reinigungsfirmen · Fahrschulen · Berater · Coaches · lokale Services · Einzelunternehmer · kleine Dienstleistungsbetriebe</p>
+          </DemoSectionCard>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          <img src={demoImageConfigs.dienstleister.sectionA} alt="Team bei strategischer Planung" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.dienstleister.sectionB} alt="Laptop und Geschäftsunterlagen im Beratungskontext" className="h-56 w-full rounded-[1.4rem] object-cover" />
+        </div>
+        <DemoSectionCard title="Problem-Lösung-Struktur" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+          <p>Viele Dienstleister erklären online nicht klar genug, für wen ihr Angebot gedacht ist und welchen Nutzen es bringt. Diese Demo zeigt, wie Besucher Schritt für Schritt zur Anfrage geführt werden.</p>
+        </DemoSectionCard>
+        <DemoSectionCard title="Ablauf in 3 Schritten" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+          <p>1. Angebot und Zielgruppe präzisieren</p><p>2. Strukturierte Leistungsseite aufbauen</p><p>3. Anfragewege klar und professionell führen</p>
+          <a href={siteLinks.contact} className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-5 py-2.5 text-sm font-semibold text-white">Unverbindlich anfragen<ArrowRight className="h-4 w-4" /></a>
+        </DemoSectionCard>
+        <DemoSectionCard title="FAQ & Bewertungsbereich (Beispielstruktur)" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+          <p>FAQ-Baustein für typische Fragen, dazu ein strukturierter Google-Bewertungsbereich als Vertrauensfläche – klar als Demo dargestellt, ohne erfundene Bewertungen.</p>
+        </DemoSectionCard>
+        <DemoForm fields={['Name', 'Unternehmen', 'E-Mail', 'Telefonnummer', 'Gewünschte Leistung', 'Nachricht']} cta="Unverbindlich anfragen" theme={theme} />
+        <DemoSectionCard title="Optionaler Zusatzbaustein: Newsletter-Einbindung" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+          <p>Ein Newsletter kann optional eingebunden werden, um Interessenten regelmäßig über Angebote, freie Termine oder neue Leistungen zu informieren.</p>
+        </DemoSectionCard>
+        <DemoFinalSection />
+      </div>
+    </main>
+  )
+}
+
 function Page() {
   const pathname = useCurrentPath()
   const [showSplash, setShowSplash] = useState(false)
@@ -2171,11 +2514,11 @@ function Page() {
   } else if (pathname === '/google-ads') {
     content = <GoogleAdsPage />
   } else if (pathname === '/demo-handwerker') {
-    content = <DemoHandwerkerPage />
+    content = <DemoHandwerkerPagePremium />
   } else if (pathname === '/demo-beauty') {
-    content = <DemoBeautyPage />
+    content = <DemoBeautyPagePremium />
   } else if (pathname === '/demo-dienstleister') {
-    content = <DemoDienstleisterPage />
+    content = <DemoDienstleisterPagePremium />
   }
 
   return (
