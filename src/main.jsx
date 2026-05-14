@@ -1825,12 +1825,13 @@ function ServicesSectionPremium() {
         </Reveal>
         <Reveal className="mt-8">
           <div className="service-image-spotlight grid items-center gap-5 rounded-[1.8rem] border border-white/14 bg-white/[0.04] p-4 md:grid-cols-[0.96fr_1.04fr] md:p-5">
-            <img
-              src={struktivaImages.structure}
-              alt="Strategie- und Strukturplanung auf einem modernen Arbeitstisch"
-              loading="lazy"
-              className="h-44 w-full rounded-[1.1rem] object-cover md:h-52"
-            />
+              <img
+                src={struktivaImages.structure}
+                alt="Strategie- und Strukturplanung auf einem modernen Arbeitstisch"
+                loading="lazy"
+                decoding="async"
+                className="h-44 w-full rounded-[1.1rem] object-cover md:h-52"
+              />
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Struktur sichtbar machen</p>
               <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
@@ -2450,7 +2451,7 @@ function DemoOverviewSection() {
             return (
               <motion.a key={card.title} href={card.href} variants={fadeUp} transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }} className={`group overflow-hidden rounded-[1.9rem] border shadow-premium transition hover:-translate-y-1 ${card.tone}`}>
                 <div className="relative h-44 overflow-hidden">
-                  <img src={card.image} alt={card.alt} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <img src={card.image} alt={card.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
                   <p className="absolute left-4 top-4 rounded-full border border-white/35 bg-black/35 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">Demo-Beispiel</p>
                 </div>
@@ -2506,8 +2507,8 @@ function DemoHandwerkerPage() {
           </DemoSectionCard>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
-          <img src={demoImageConfigs.handwerker.sectionA} alt="Baustelle mit professioneller Renovierung" className="h-56 w-full rounded-[1.4rem] object-cover" />
-          <img src={demoImageConfigs.handwerker.sectionB} alt="Werkzeug und Handwerksdetails in moderner Umgebung" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.handwerker.sectionA} alt="Baustelle mit professioneller Renovierung" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.handwerker.sectionB} alt="Werkzeug und Handwerksdetails in moderner Umgebung" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
         </div>
         <DemoSectionCard title="Vorher-Nachher-Struktur (Demo-Bereich)" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
           <p>Vorher: unklare Leistungsdarstellung, kaum Vertrauen, unsaubere Kontaktführung.</p>
@@ -2566,8 +2567,8 @@ function DemoBeautyPage() {
           </DemoSectionCard>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
-          <img src={demoImageConfigs.beauty.sectionA} alt="Elegante Pflegeprodukte in Beauty-Atmosphäre" className="h-56 w-full rounded-[1.4rem] object-cover" />
-          <img src={demoImageConfigs.beauty.sectionB} alt="Ruhige Wellness-Atmosphäre für Kosmetikbehandlungen" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.beauty.sectionA} alt="Elegante Pflegeprodukte in Beauty-Atmosphäre" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.beauty.sectionB} alt="Ruhige Wellness-Atmosphäre für Kosmetikbehandlungen" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
         </div>
         <DemoSectionCard title="Warum Optik und Vertrauen entscheidend sind" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
           <p>Beauty-Kundinnen achten auf Stil, Klarheit und Gefühl. Eine hochwertige Seite macht Leistungen sofort verständlich und führt direkt zu Buchung oder Anfrage.</p>
@@ -2625,8 +2626,8 @@ function DemoDienstleisterPage() {
           </DemoSectionCard>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
-          <img src={demoImageConfigs.dienstleister.sectionA} alt="Team bei strategischer Planung" className="h-56 w-full rounded-[1.4rem] object-cover" />
-          <img src={demoImageConfigs.dienstleister.sectionB} alt="Laptop und Geschäftsunterlagen im Beratungskontext" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.dienstleister.sectionA} alt="Team bei strategischer Planung" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.dienstleister.sectionB} alt="Laptop und Geschäftsunterlagen im Beratungskontext" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
         </div>
         <DemoSectionCard title="Problem-Lösung-Struktur" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
           <p>Viele Dienstleister erklären online nicht klar genug, für wen ihr Angebot gedacht ist und welchen Nutzen es bringt. Diese Demo zeigt, wie Besucher Schritt für Schritt zur Anfrage geführt werden.</p>
