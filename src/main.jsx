@@ -1716,7 +1716,7 @@ function HomePage() {
       <WebsiteFocusSection />
       <AppsSection />
       <GoogleAdsSection />
-      <DemoOverviewSectionPremium />
+      <DemoOverviewSection />
       <PricingSection />
       <ProcessSection />
       <TargetSection />
@@ -2514,11 +2514,11 @@ function Page() {
   } else if (pathname === '/google-ads') {
     content = <GoogleAdsPage />
   } else if (pathname === '/demo-handwerker') {
-    content = <DemoHandwerkerPagePremium />
+    content = <DemoHandwerkerPage />
   } else if (pathname === '/demo-beauty') {
-    content = <DemoBeautyPagePremium />
+    content = <DemoBeautyPage />
   } else if (pathname === '/demo-dienstleister') {
-    content = <DemoDienstleisterPagePremium />
+    content = <DemoDienstleisterPage />
   }
 
   return (
