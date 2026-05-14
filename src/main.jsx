@@ -48,7 +48,7 @@ const siteLinks = {
 const brand = {
   name: 'STRUKTIVA Unternehmensarchitektur',
   descriptor: 'Unternehmensarchitektur',
-  line: 'Professionelle Webseiten. Landingpages. Apps. Google Ads.',
+  line: 'Professionelle Online-Präsenz. Kundengewinnung. Digitale Struktur. Optionale App-Lösungen.',
 }
 
 const contactDetails = {
@@ -73,24 +73,26 @@ const navItems = [
 ]
 
 const trustCards = [
-  [PanelsTopLeft, 'Professioneller Auftritt', 'Hochwertige Webseiten und Landingpages, die klar zeigen, was ein Unternehmen anbietet.'],
-  [MousePointerClick, 'Mehr Anfragen', 'Google Ads und Zielseiten werden so gedacht, dass Kunden schneller verstehen und anfragen.'],
-  [Workflow, 'Digitale Abläufe', 'App-Systeme können Kunden, Termine, Aufgaben und interne Prozesse übersichtlich abbilden.'],
-  [ShieldCheck, 'Klarer Aufbau', 'Keine überladene Theorie, sondern digitale Lösungen, die kleine und mittlere Unternehmen wirklich nutzen können.'],
+  [PanelsTopLeft, 'Professionelle Wirkung', 'Ein klarer digitaler Auftritt zeigt sofort, wofür dein Unternehmen steht und warum Kunden dir vertrauen können.'],
+  [MousePointerClick, 'Kundenführung statt Zufall', 'Website, Landingpage, WhatsApp und Angebotsstruktur werden so aufgebaut, dass aus Besuchern konkrete Anfragen werden.'],
+  [Workflow, 'Digitale Ordnung im Alltag', 'Google-Struktur, Social-Media-Logik und interne Abläufe werden sinnvoll verbunden statt einzeln verwaltet.'],
+  [ShieldCheck, 'Verständlich und umsetzbar', 'Keine Technik-Überforderung, sondern ein System, das kleine Betriebe wirklich nutzen und weiterführen können.'],
 ]
 
 const problemCards = [
-  ['Veralteter Online-Auftritt', 'Die bestehende Webseite wirkt oft nicht mehr klar, vertrauenswürdig oder vollständig.'],
-  ['Unklare Angebotsseiten', 'Leistungen werden digital nicht verständlich genug erklärt oder sauber geführt.'],
-  ['Zu wenig gezielte Anfragen', 'Google Ads ohne gute Struktur und starke Zielseite verlieren Wirkung.'],
-  ['Fehlende digitale Struktur', 'Interne Abläufe sind häufig zu unsortiert, um schnell und sauber zu funktionieren.'],
+  ['Die Webseite wirkt nicht professionell genug', 'Potenzielle Kunden gewinnen nicht sofort Vertrauen in den Betrieb.'],
+  ['Kunden finden keine klare Kontaktmöglichkeit', 'Anfragen gehen verloren, weil Kontaktwege nicht eindeutig geführt sind.'],
+  ['Google-Bewertungen werden nicht systematisch aufgebaut', 'Die lokale Sichtbarkeit bleibt unter den Möglichkeiten des Unternehmens.'],
+  ['Social Media kostet Zeit, bringt aber keine Struktur', 'Inhalte entstehen unregelmäßig und zahlen nicht auf ein klares Ziel ein.'],
+  ['Angebote sind nicht klar formuliert', 'Besucher verstehen den Nutzen nicht schnell genug und springen ab.'],
+  ['Es fehlt ein System, das Besucher zu Anfragen macht', 'Einzelmaßnahmen sind vorhanden, aber kein durchgängiger digitaler Ablauf.'],
 ]
 
 const coreServices = [
-  [LayoutTemplate, 'Professionelle Webseiten', 'Hochwertige Unternehmenswebseiten mit klarer Struktur, professionellen Texten, mobiler Optimierung und sauberer Kontaktführung.'],
-  [Target, 'Landingpages', 'Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklärt und Besucher gezielt zur Anfrage führt.'],
-  [Smartphone, 'Unternehmens-Apps', 'Individuelle App-Systeme für Kundenverwaltung, Termine, Aufgaben, Checklisten, Mitarbeiterorganisation und interne Abläufe.'],
-  [Megaphone, 'Google Ads', 'Kampagnenstruktur, Anzeigentexte und passende Zielseiten für Unternehmen, die gezielt Kundenanfragen über Google gewinnen möchten.'],
+  [LayoutTemplate, 'Professionelle Webseiten', 'Die zentrale digitale Basis mit klarer Leistungsdarstellung, vertrauenswürdiger Struktur und starker Kontaktführung.'],
+  [Target, 'Landingpages', 'Gezielte Angebotsseiten, die ein Angebot verständlich erklären und Besucher aktiv zur Anfrage führen.'],
+  [Smartphone, 'Digitale Unternehmensstruktur', 'WhatsApp-Kontakt, Google-Struktur, Social-Media-Logik und Angebotsarchitektur werden sinnvoll in ein Gesamtsystem eingebunden.'],
+  [Megaphone, 'Kundengewinnung', 'Google Ads und Landingpages werden strategisch verbunden, damit aus Sichtbarkeit qualifizierte Anfragen entstehen.'],
 ]
 
 const websiteFocusCards = [
@@ -119,106 +121,56 @@ const googleAdsCards = [
 
 const pricingPackages = [
   {
-    title: 'Landingpage',
-    price: 'ab 799 €',
-    badge: 'Fokussierte Zielseite',
-    description: 'Für Angebote, Aktionen, Dienstleistungen oder Produkte, die klar erklärt und gezielt beworben werden sollen. Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklärt und Besucher gezielt zur Anfrage führt.',
+    title: 'Sichtbarkeit',
+    price: 'ab 499 €',
+    badge: 'Professioneller Einstieg',
+    description: 'Für Betriebe, die online professioneller gefunden werden wollen.',
     features: [
-      'Seitenstruktur',
-      'professionelle Texte',
-      'Angebotslogik',
-      'Call-to-Action-Bereiche',
-      'Kontaktbereich',
+      'moderne Onepage-Webseite',
       'mobile Optimierung',
-      'Veröffentlichung über geeignete Plattform',
-      'Grundstruktur für spätere Werbung',
+      'klare Angebotsstruktur',
+      'WhatsApp-Kontakt',
+      'Google-Bewertungslink',
+      'einfache Kontaktführung',
     ],
-    note: 'Ideal als Zielseite für Google Ads, Social Media oder direkte Kundenanfragen.',
-    cta: 'Landingpage anfragen',
+    note: 'Ein klarer Start für Betriebe, die digital professioneller auftreten und erreichbar sein möchten.',
+    cta: 'Sichtbarkeit anfragen',
     strong: true,
   },
   {
-    title: 'Professionelle Webseite',
-    price: 'ab 1.499 €',
-    badge: 'Hochwertiger Auftritt',
-    description: 'Für Unternehmen, die einen hochwertigen digitalen Auftritt brauchen.',
+    title: 'Kundengewinnung',
+    price: 'ab 999 €',
+    badge: 'Verkaufsstarke Struktur',
+    description: 'Für Unternehmen, die mehr Anfragen aus ihrem digitalen Auftritt machen wollen.',
     features: [
-      'Startseite',
-      'Leistungsbereiche',
-      'Kontaktbereich',
-      'mobile Optimierung',
-      'professionelle Texte',
+      'verkaufsstarke Landingpage',
+      'Angebotsarchitektur',
+      'WhatsApp-CTA',
+      'Google-Bewertungsstrategie',
+      'Social-Media-Startstruktur',
       'klare Kundenführung',
-      'Impressum-/Datenschutz-Verlinkung',
-      'technische Veröffentlichung',
     ],
-    note: 'Komplette Webseiten werden je nach Seitenanzahl, Designaufwand und technischer Umsetzung individuell kalkuliert.',
-    cta: 'Webseite anfragen',
+    note: 'Der Fokus liegt auf verständlicher Angebotskommunikation und qualifizierter Anfrageführung.',
+    cta: 'Kundengewinnung anfragen',
     strong: true,
   },
   {
-    title: 'Google Ads Startpaket',
-    price: 'ab 349 €',
-    badge: 'Gezielte Nachfrage',
-    description: 'Für Unternehmen, die gezielt über Google neue Anfragen gewinnen möchten. Ergänzend können je nach Zielgruppe auch Social-Media-Werbeansätze berücksichtigt werden.',
+    title: 'Unternehmensarchitektur',
+    price: 'ab 1.999 €',
+    subtitle: 'Optionale App- oder Dashboard-Lösung möglich',
+    badge: 'Ganzheitliches System',
+    description: 'Für Betriebe, die ein vollständiges digitales System brauchen.',
     features: [
-      'Kampagnenstruktur',
-      'Keyword-Grundlogik',
-      'Anzeigentexte',
-      'klare Angebotsausrichtung',
-      'Empfehlung für passende Zielseite',
-      'Grundkonzept für Anfragegewinnung',
-      'optional erste Ideen für Social-Media-Werbung',
+      'Website oder Mehrseiten-Struktur',
+      'Landingpages',
+      'Google-Struktur',
+      'Social-Media-System',
+      'Kundenanfrage-System',
+      'App- oder Dashboard-Konzept optional',
+      '30 Tage Begleitung',
     ],
-    callout: 'Wichtig',
-    calloutText: 'Werbebudget ist nicht enthalten und wird separat direkt bei Google oder der jeweiligen Werbeplattform eingesetzt.',
-    note: 'Für Google Ads und Social-Media-Werbung wird idealerweise eine passende Landingpage empfohlen.',
-    cta: 'Google Ads anfragen',
-  },
-  {
-    title: 'Kostenlose App-Ersteinschätzung',
-    price: 'kostenlos',
-    badge: 'Kostenloser Einstieg',
-    description: 'Für Unternehmen, die prüfen möchten, ob eine eigene App oder ein internes digitales System überhaupt sinnvoll ist.',
-    features: [
-      'kurzes Erstgespräch',
-      'erste Einschätzung der aktuellen Abläufe',
-      'grobe App-Idee passend zum Unternehmen',
-      'Einschätzung möglicher Funktionen',
-      'Empfehlung, ob sich eine App-Lösung lohnt',
-      'grober Preisrahmen für eine mögliche Umsetzung',
-    ],
-    note: 'Die kostenlose App-Ersteinschätzung ersetzt kein vollständiges App-Konzept. Ein detailliertes Konzept mit Seitenstruktur, Nutzerrollen, Funktionsliste und UI-Planung kann bei Bedarf separat angeboten werden.',
-    cta: 'App kostenlos einschätzen lassen',
-  },
-  {
-    title: 'Unternehmens-App',
-    price: 'ab 2.490 €',
-    subtitle: 'Monatliche App-Betreuung ab 119 € / Monat',
-    badge: 'Premium App-Lösung',
-    description: 'Für Betriebe, die eine individuelle digitale Lösung für ihre Abläufe brauchen.',
-    features: [
-      'Kundenverwaltung',
-      'Terminübersicht',
-      'Mitarbeiterorganisation',
-      'Aufgabensteuerung',
-      'interne Checklisten',
-      'Tages- und Wochenplanung',
-      'Admin-Bereich',
-      'mobile und Desktop-Ansicht',
-      'branchenspezifische App-Module',
-    ],
-    extraTitle: 'Die monatliche App-Betreuung beinhaltet',
-    extras: [
-      'Hosting',
-      'technische Bereitstellung',
-      'kleinere Anpassungen',
-      'Pflege und Funktionsprüfung',
-      'Support bei Bedienfragen',
-      'technische Grundbetreuung der App',
-    ],
-    note: 'Der genaue Preis hängt vom Funktionsumfang, den gewünschten Modulen, Hosting-Anforderungen, Speicherbedarf und technischem Aufwand ab.',
-    cta: 'App-Lösung anfragen',
+    note: 'Für Unternehmen, die nicht nur einen Auftritt, sondern ein klares digitales Unternehmenssystem aufbauen wollen.',
+    cta: 'Unternehmensarchitektur anfragen',
     premium: true,
   },
   {
@@ -269,31 +221,33 @@ const pricingPackages = [
 ]
 
 const processSteps = [
-  ['1', 'Anfrage', 'Du beschreibst kurz, ob es um eine professionelle Webseite, Landingpage, App-Lösung oder Google Ads geht.'],
-  ['2', 'Einschätzung', 'Wir prüfen gemeinsam, was für dein Unternehmen sinnvoll ist.'],
-  ['3', 'Konzept', 'Du bekommst eine klare Empfehlung und ein passendes Angebot.'],
-  ['4', 'Umsetzung', 'STRUKTIVA erstellt die vereinbarte Lösung: Webseite, Landingpage, App-System oder Google-Ads-Struktur.'],
-  ['5', 'Übergabe & Betreuung', 'Du erhältst nutzbare Ergebnisse und kannst bei Bedarf eine laufende Betreuung vereinbaren.'],
+  ['1', 'Kostenlose Ersteinschätzung', 'Wir schauen uns an, wo dein Unternehmen aktuell digital steht.'],
+  ['2', 'Strukturplan', 'Du bekommst einen klaren Plan, welche Webseite, Landingpage oder Systemstruktur sinnvoll ist.'],
+  ['3', 'Umsetzung', 'STRUKTIVA erstellt deine digitale Struktur professionell und verständlich.'],
+  ['4', 'Optimierung', 'Nach dem Start wird geprüft, ob Kontaktwege, Texte und Aufbau sauber funktionieren.'],
 ]
 
 const targetGroups = [
-  'Friseursalons',
-  'Kosmetikstudios',
-  'Fußpflege',
-  'Nagelstudios',
   'Handwerksbetriebe',
-  'Cafés',
+  'Kosmetikstudios',
+  'Friseursalons',
+  'Fahrschulen',
+  'Reinigungsfirmen',
+  'Restaurants',
   'lokale Dienstleister',
   'kleine Einzelhändler',
+  'Einzelunternehmer',
+  'Selbstständige',
   'Coaches und Berater',
-  'Praxen und Studios',
-  'Unternehmen mit Kunden-, Termin- oder Mitarbeiterorganisation',
+  'kleine und mittlere Unternehmen',
 ]
 
 const whyPoints = [
-  'klarer Fokus auf digitale Ergebnisse',
-  'verständlich für kleine und mittlere Unternehmen',
-  'Verbindung aus Sichtbarkeit, Webseite und System',
+  'Klarer Aufbau statt schöner, aber wirkungsloser Webseite',
+  'Fokus auf Anfragen, Vertrauen und Kontakt',
+  'WhatsApp, Google und Social Media sinnvoll verbunden',
+  'Verständliche Umsetzung ohne Technik-Blabla',
+  'Systeme, die kleine Unternehmen wirklich im Alltag nutzen können',
 ]
 
 const qualityPoints = [
@@ -495,7 +449,7 @@ function Header({ pathname }) {
             href={siteLinks.contact}
             className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-4.5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(17,24,39,0.15)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
           >
-            Kostenlose Anfrage stellen
+            Kostenlose Ersteinschätzung anfragen
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -533,8 +487,8 @@ function Header({ pathname }) {
                 href={siteLinks.contact}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
               >
-                Kostenlose Anfrage stellen
-                <ArrowRight className="h-4 w-4" />
+                  Kostenlose Ersteinschätzung anfragen
+                  <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </motion.div>
@@ -571,7 +525,7 @@ function HeroSection() {
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
               className="mt-5 max-w-[34rem] text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.08] xl:text-[58px]"
             >
-              Webseiten, Apps und Werbung professionell aufgebaut.
+              Mehr Kunden. Mehr Struktur. Mehr digitale Wirkung.
             </motion.h1>
 
             <motion.p
@@ -579,7 +533,7 @@ function HeroSection() {
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
               className="mt-4 max-w-[35rem] text-[15px] leading-7 text-[#D7DCE5] md:text-base"
             >
-              STRUKTIVA unterstützt kleine und mittlere Unternehmen, Selbstständige und lokale Betriebe dabei, online professioneller sichtbar zu werden, Kundenanfragen zu gewinnen und digitale Abläufe klarer zu organisieren.
+              STRUKTIVA entwickelt digitale Unternehmenssysteme für Selbstständige, lokale Betriebe und kleine Unternehmen – mit Website, Landingpage, WhatsApp-Struktur, Google-Auftritt, Social Media und optionaler App- oder Dashboard-Lösung.
             </motion.p>
 
             <motion.p
@@ -601,8 +555,8 @@ function HeroSection() {
                 href={siteLinks.contact}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(17,24,39,0.16)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
               >
-                Kostenlose Anfrage stellen
-                <ArrowRight className="h-4 w-4" />
+                  Kostenlose Ersteinschätzung anfragen
+                  <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href={siteLinks.pricing}
@@ -612,15 +566,13 @@ function HeroSection() {
               </a>
             </motion.div>
 
-            <motion.a
+            <motion.p
               variants={fadeUp}
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
-              href={siteLinks.contact}
-              className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]"
+              className="mt-3 max-w-[36rem] text-sm leading-7 text-[#D7DCE5]"
             >
-              App-Ersteinschätzung anfragen
-              <ArrowRight className="h-4 w-4" />
-            </motion.a>
+              Keine klassische Webagentur. Sondern digitale Unternehmensarchitektur für Betriebe, die sichtbar, professionell und verkaufsfähig auftreten wollen.
+            </motion.p>
           </motion.div>
         </div>
 
@@ -705,8 +657,8 @@ function ProblemSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Ausgangslage"
-            title="Viele Unternehmen leisten gute Arbeit – aber digital sieht man davon zu wenig."
-            text="Viele kleine und mittlere Unternehmen haben keine klare digitale Außenwirkung. Die Webseite wirkt veraltet oder unvollständig, Angebote werden nicht verständlich erklärt, Google Ads führen ohne gute Zielseite oft ins Leere und interne Abläufe laufen noch zu unübersichtlich."
+            title="Viele kleine Unternehmen verlieren Kunden, bevor sie überhaupt Kontakt aufnehmen."
+            text="Viele Betriebe haben gute Leistungen, aber keinen klaren digitalen Auftritt. Die Webseite wirkt veraltet, Google-Bewertungen werden nicht aktiv genutzt, WhatsApp ist nicht sauber eingebunden, Social Media wirkt unregelmäßig und potenzielle Kunden wissen nicht sofort, warum sie genau hier anfragen sollen."
             centered={false}
           />
         </Reveal>
@@ -734,7 +686,7 @@ function ProblemSection() {
 
         <Reveal className="mt-8">
           <p className="max-w-3xl text-base leading-8 text-[#D7DCE5]">
-            STRUKTIVA setzt genau dort an: bei professionellen Webseiten, klaren Landingpages, gezielter Sichtbarkeit und digitalen App-Systemen.
+            STRUKTIVA verbindet Webseite, Landingpage, Google, WhatsApp, Social Media und Angebotsstruktur zu einem klaren System. Ziel ist nicht einfach nur ein schöner Auftritt, sondern ein digitaler Weg, der Vertrauen aufbaut und mehr qualifizierte Anfragen erzeugt.
           </p>
         </Reveal>
       </div>
@@ -756,8 +708,8 @@ function ServicesSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Leistungen"
-            title="Vier klare digitale Lösungen für einen professionelleren Unternehmensauftritt."
-            text="STRUKTIVA konzentriert sich auf die Leistungen, die für kleine und mittlere Unternehmen digital am meisten Wirkung entfalten: professionelle Webseiten, klare Landingpages, funktionale App-Systeme und Google Ads mit sauberer Angebotsführung."
+            title="Digitale Struktur statt Online-Chaos."
+            text="STRUKTIVA ist keine klassische Webagentur. STRUKTIVA baut digitale Strukturen, die kleine Unternehmen sichtbarer, professioneller und verkaufsfähiger machen."
           />
         </Reveal>
 
@@ -1140,17 +1092,17 @@ function PricingSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Angebote & Preise"
-            title="Kennenlern-Angebote für professionelle Webseiten, Landingpages, Apps und Google Ads."
-            text="STRUKTIVA Unternehmensarchitektur konzentriert sich auf digitale Lösungen, die Unternehmen wirklich weiterbringen: professionelle Webseiten, starke Landingpages, individuelle App-Systeme und Google-Ads-Strukturen für mehr Anfragen. Zum Start gibt es ausgewählte Kennenlern-Angebote. Der genaue Umfang wird im persönlichen Gespräch festgelegt und richtet sich nach Bedarf, Projektumfang und technischer Umsetzung."
+            title="Systemangebote für mehr Sichtbarkeit, Anfragen und digitale Struktur."
+            text="Keine isolierten Einzelmaßnahmen, sondern klar aufgebaute Leistungspakete für Betriebe, die online professioneller auftreten und ihre Kundengewinnung systematisch aufbauen wollen."
           />
         </Reveal>
 
         <Reveal className="mt-8">
           <div className="rounded-[1.8rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Faire Kennenlernpreise zum Start</p>
-              <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Hochwertige Umsetzung zu fairen Startkonditionen</h3>
+              <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Professioneller Einstieg mit klarer Struktur statt Agentur-Standard</h3>
               <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-                STRUKTIVA Unternehmensarchitektur befindet sich im Aufbau und bietet deshalb ausgewählten Unternehmen faire Kennenlern-Angebote an. Die Preise liegen bewusst unter vielen klassischen Freelancer- und Agenturprojekten, bleiben aber auf professionelle Umsetzung, klare Struktur und langfristige Nutzbarkeit ausgerichtet.
+                STRUKTIVA positioniert sich bewusst als digitaler Systemanbieter für kleine Unternehmen. Die Umsetzung verbindet Präsenz, Kundenführung und Kontaktwege in einer Struktur, die im Alltag funktioniert und verkaufsfähig bleibt.
               </p>
             </div>
           </Reveal>
@@ -1196,7 +1148,7 @@ function ProcessSection() {
           <SectionHeader
             eyebrow="Ablauf"
             title="So läuft die Zusammenarbeit ab"
-            text="Klare Schritte, klare Entscheidungen und eine Umsetzung, die auf das Unternehmen und den tatsächlichen Bedarf abgestimmt ist."
+            text="Klar, verständlich und auf den Betrieb abgestimmt – von der Ersteinschätzung bis zur laufenden Optimierung."
           />
         </Reveal>
 
@@ -1234,8 +1186,8 @@ function TargetSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Für wen"
-            title="Für wen ist STRUKTIVA geeignet?"
-            text="STRUKTIVA richtet sich an kleine und mittlere Unternehmen, Selbstständige und lokale Betriebe, die professioneller sichtbar werden, mehr Anfragen gewinnen oder interne Abläufe digital besser organisieren möchten."
+            title="Für kleine Unternehmen, die digital professioneller auftreten wollen."
+            text="STRUKTIVA richtet sich an kleine und mittlere Unternehmen, Selbstständige und lokale Betriebe, die mehr Anfragen, mehr Ordnung und eine professionelle Online-Präsenz brauchen."
             centered={false}
           />
         </Reveal>
@@ -1269,9 +1221,9 @@ function WhySection() {
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">
         <Reveal>
           <SectionHeader
-            eyebrow="Warum STRUKTIVA"
-            title="Digitale Lösungen mit Fokus auf Wirkung, Anfragen und klare Abläufe."
-            text="STRUKTIVA verbindet professionelle Webseiten, Landingpages, Google Ads und App-Systeme zu einem klaren digitalen Gesamtbild. Dadurch entsteht nicht nur ein einzelner Online-Auftritt, sondern eine digitale Struktur, die Sichtbarkeit, Kundenanfragen und Unternehmensabläufe besser zusammenführt."
+            eyebrow="Was STRUKTIVA anders macht"
+            title="Nicht nur Design. Sondern Struktur."
+            text="STRUKTIVA verbindet Sichtbarkeit, Kontaktführung und Angebotslogik zu einem digitalen System, das im Alltag wirklich nutzbar ist."
             centered={false}
           />
         </Reveal>
@@ -1347,8 +1299,8 @@ function ContactSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Kontakt"
-            title="Bereit für einen professionelleren digitalen Auftritt?"
-            text="Schreibe kurz, ob es um eine professionelle Webseite, Landingpage, App-Lösung oder Google Ads geht. Danach erhältst du eine klare Einschätzung, welches Angebot sinnvoll ist."
+            title="Bereit für einen digitalen Auftritt, der nicht nur gut aussieht, sondern Kunden führt?"
+            text="Wenn dein Unternehmen online professioneller wirken, klarer kommunizieren und mehr Anfragen gewinnen soll, ist STRUKTIVA der richtige nächste Schritt."
             centered={false}
           />
         </Reveal>
@@ -1388,7 +1340,7 @@ function ContactSection() {
                 href={siteLinks.contact}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.16)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
               >
-                Anfrage senden
+                Kostenlose Ersteinschätzung anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
@@ -1539,8 +1491,8 @@ function WebseitenPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Professionelle Webseite – ab 1.499 €</p>
-        <p>Der genaue Preis hängt von Seitenanzahl, Designaufwand, Textumfang, technischen Anforderungen und gewünschter Betreuung ab.</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Sichtbarkeit – ab 499 €</p>
+        <p>Für strukturierte Onepage-Webseiten mit professioneller Außendarstellung, WhatsApp-Kontakt und klarer Angebotsführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
         <p>1. Kurze Anfrage und Zielklärung</p><p>2. Struktur- und Inhaltsplanung</p><p>3. Design und Textumsetzung</p><p>4. Feedback und Feinschliff</p><p>5. Technische Veröffentlichung und Übergabe</p>
@@ -1573,8 +1525,8 @@ function LandingpagesPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Landingpage – ab 799 €</p>
-        <p>Der genaue Preis hängt vom Umfang, Textaufwand, Design und technischer Umsetzung ab.</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Kundengewinnung – ab 999 €</p>
+        <p>Für verkaufsstarke Landingpages mit Angebotsarchitektur, WhatsApp-CTA und klarer Anfrageführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
         <p>1. Angebot und Ziel definieren</p><p>2. Seitenlogik und Nutzenstruktur aufbauen</p><p>3. Texte und visuelle Abschnitte ausarbeiten</p><p>4. CTA und Kontaktweg optimieren</p><p>5. Technische Veröffentlichung und Übergabe</p>
@@ -1622,10 +1574,9 @@ function AppsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Kostenlose App-Ersteinschätzung – kostenlos</p>
-        <p className="text-lg font-semibold text-[#D8B45A]">Unternehmens-App – ab 2.490 €</p>
-        <p className="text-lg font-semibold text-[#D8B45A]">Monatliche App-Betreuung – ab 119 € / Monat</p>
-        <p>Die kostenlose App-Ersteinschätzung ersetzt kein vollständiges App-Konzept. Der genaue Preis hängt von Funktionsumfang, Hosting, Speicherbedarf, Modulen und Betreuungsaufwand ab.</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Unternehmensarchitektur – ab 1.999 €</p>
+        <p>App- oder Dashboard-Lösungen sind eine hochwertige Zusatzoption für Unternehmen, die neben Sichtbarkeit auch mehr interne Struktur brauchen.</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
         <p>1. Kostenlose Ersteinschätzung</p><p>2. Ablaufanalyse und Funktionsrahmen</p><p>3. Strukturplanung und Umsetzung</p><p>4. Testphase und Freigabe</p><p>5. Go-live mit Betreuung</p>
@@ -1660,7 +1611,7 @@ function GoogleAdsPage() {
       <ServiceSection title="Preis & Umfang">
         <p className="text-lg font-semibold text-[#D8B45A]">Google Ads Startpaket – ab 349 €</p>
         <p><span className="font-semibold text-white">Wichtig:</span> Werbebudget ist nicht enthalten und wird separat direkt bei Google oder der jeweiligen Werbeplattform eingesetzt.</p>
-        <p>Für Google Ads wird idealerweise eine passende Landingpage empfohlen.</p>
+        <p>Google Ads wird bei STRUKTIVA nicht isoliert, sondern mit Landingpage, Angebotsstruktur und Kontaktführung verbunden.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
         <p>1. Angebot und Zielgruppen klären</p><p>2. Kampagnenstruktur und Keywords aufsetzen</p><p>3. Anzeigen und Zielseitenlogik abstimmen</p><p>4. Start und erste Auswertung</p><p>5. Optimierung der Anfragequalität</p>
