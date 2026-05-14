@@ -32,6 +32,7 @@ const siteLinks = {
   home: '/#start',
   services: '/#leistungen',
   pricing: '/#preise',
+  demos: '/#demos',
   apps: '/apps',
   googleAds: '/google-ads',
   process: '/#ablauf',
@@ -40,6 +41,9 @@ const siteLinks = {
   landingpagesPage: '/landingpages',
   appsPage: '/apps',
   googleAdsPage: '/google-ads',
+  demoHandwerker: '/demo-handwerker',
+  demoBeauty: '/demo-beauty',
+  demoDienstleister: '/demo-dienstleister',
   impressum: '/impressum',
   datenschutz: '/datenschutz',
   widerruf: '/widerruf',
@@ -66,11 +70,119 @@ const navItems = [
   ['Start', siteLinks.home],
   ['Leistungen', siteLinks.services],
   ['Preise', siteLinks.pricing],
+  ['Demos', siteLinks.demos],
   ['Apps', siteLinks.apps],
   ['Google Ads', siteLinks.googleAds],
   ['Ablauf', siteLinks.process],
   ['Kontakt', siteLinks.contact],
 ]
+
+const demoCards = [
+  {
+    title: 'Demo Handwerker',
+    text: 'Eine klare Website-Struktur für Handwerksbetriebe, die Vertrauen aufbauen, Leistungen verständlich zeigen und mehr qualifizierte Anfragen erhalten wollen.',
+    href: siteLinks.demoHandwerker,
+    icon: Building2,
+  },
+  {
+    title: 'Demo Beauty & Kosmetik',
+    text: 'Eine elegante Beispielseite für Kosmetikstudios, Beauty-Dienstleister und lokale Anbieter, die professioneller auftreten und Buchungen leichter machen möchten.',
+    href: siteLinks.demoBeauty,
+    icon: Sparkles,
+  },
+  {
+    title: 'Demo Dienstleister',
+    text: 'Eine moderne Struktur für Selbstständige, Berater, Reinigungsfirmen, Fahrschulen oder lokale Dienstleister, die online klarer und hochwertiger wirken wollen.',
+    href: siteLinks.demoDienstleister,
+    icon: BriefcaseBusiness,
+  },
+]
+
+const demoPages = {
+  handwerker: {
+    title: 'Demo Handwerker – Digitale Struktur für regionale Handwerksbetriebe',
+    hero: 'Mehr Anfragen für deinen Handwerksbetrieb – mit einem klaren digitalen Auftritt.',
+    subheadline:
+      'Diese Beispielseite zeigt, wie ein Handwerksbetrieb seine Leistungen professionell präsentiert, Vertrauen aufbaut und Interessenten direkt zur Anfrage führt.',
+    tags: ['Beispielansicht', 'Regional ausgerichtet', 'Anfragefokus'],
+    sections: [
+      {
+        title: 'Leistungen',
+        points: ['Renovierung & Sanierung', 'Reparaturservice', 'Wartung & Instandhaltung', 'individuelle Projektanfragen', 'Notfall- oder Schnellservice optional'],
+      },
+      {
+        title: 'Warum dieser Aufbau funktioniert',
+        text: 'Kunden wollen schnell verstehen, ob ein Betrieb zuverlässig ist, welche Leistungen angeboten werden und wie sie unkompliziert Kontakt aufnehmen können. Eine klare digitale Struktur reduziert Unsicherheit und führt Besucher gezielt zur Anfrage.',
+      },
+      {
+        title: 'Vertrauenselemente (Demo)',
+        points: ['regionale Ausrichtung', 'klare Kontaktmöglichkeiten', 'Bewertungsbereich als Beispiel', 'Vorher-Nachher-Bereich als Platzhalterstruktur', 'WhatsApp- oder Telefon-CTA'],
+      },
+    ],
+    formFields: ['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Leistung', 'Nachricht'],
+    formCta: 'Projekt anfragen',
+    optional:
+      'Auf Wunsch kann ein Newsletter oder Infoverteiler eingebunden werden, z. B. für saisonale Angebote, Wartungserinnerungen oder Kundeninformationen.',
+  },
+  beauty: {
+    title: 'Demo Beauty & Kosmetik – Professioneller Auftritt für lokale Beauty-Dienstleister',
+    hero: 'Ein Beauty-Auftritt, der hochwertig wirkt und Buchungen leichter macht.',
+    subheadline:
+      'Diese Beispielseite zeigt, wie ein Kosmetikstudio oder Beauty-Dienstleister Leistungen elegant präsentiert, Vertrauen schafft und Kundinnen direkt zur Anfrage oder Buchung führt.',
+    tags: ['Beispielansicht', 'Elegante Darstellung', 'Buchungsorientiert'],
+    sections: [
+      {
+        title: 'Leistungen',
+        points: ['Gesichtsbehandlungen', 'Hautpflege-Beratung', 'Augenbrauen & Wimpern', 'Make-up / Styling', 'Wellness- oder Verwöhnpakete'],
+      },
+      {
+        title: 'Angebotsstruktur',
+        points: ['Kennenlernbehandlung', 'Premium-Behandlung', 'Monatsangebot', 'Gutscheinangebot'],
+      },
+      {
+        title: 'Warum dieser Aufbau funktioniert',
+        text: 'Beauty-Kunden entscheiden stark über Vertrauen, Optik und Klarheit. Eine professionelle Seite zeigt sofort Stil, Leistungen, Preiseinstieg und Kontaktmöglichkeiten.',
+      },
+      {
+        title: 'Kontakt & Buchung',
+        points: ['WhatsApp-Button', 'Telefon-Button', 'Anfrageformular', 'Öffnungszeiten', 'Standortbereich'],
+      },
+    ],
+    formFields: ['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Behandlung', 'Nachricht'],
+    formCta: 'Unverbindlich anfragen',
+    optional:
+      'Auf Wunsch kann ein kleiner Newsletter-Bereich integriert werden, z. B. für Aktionen, Pflege-Tipps oder freie Termine.',
+  },
+  dienstleister: {
+    title: 'Demo Dienstleister – Digitale Struktur für Selbstständige und lokale Unternehmen',
+    hero: 'Zeige klar, was du anbietest – und mache Interessenten zu Anfragen.',
+    subheadline:
+      'Diese Beispielseite zeigt, wie ein lokaler Dienstleister oder Selbstständiger sein Angebot strukturiert, Vertrauen aufbaut und Kunden einfach zur Kontaktaufnahme führt.',
+    tags: ['Beispielansicht', 'Leistungsfokus', 'Kontaktklarheit'],
+    sections: [
+      {
+        title: 'Geeignet für',
+        points: ['Reinigungsfirmen', 'Fahrschulen', 'Berater', 'Coaches', 'lokale Services', 'Einzelunternehmer', 'kleine Dienstleistungsbetriebe'],
+      },
+      {
+        title: 'Angebot klar erklären',
+        points: ['Erstgespräch', 'Standard-Leistung', 'Premium-Service', 'laufende Betreuung'],
+      },
+      {
+        title: 'Problem-Lösung-Struktur',
+        text: 'Viele Dienstleister erklären online nicht klar genug, für wen ihr Angebot gedacht ist und welchen Nutzen es bringt. Diese Demo zeigt, wie Besucher Schritt für Schritt zur Anfrage geführt werden.',
+      },
+      {
+        title: 'Vertrauenselemente',
+        points: ['klare Leistungsübersicht', 'Ablauf in 3 Schritten', 'FAQ-Bereich', 'Kontaktbereich', 'Google-Bewertungsbereich als Beispielstruktur'],
+      },
+    ],
+    formFields: ['Name', 'Unternehmen', 'E-Mail', 'Telefonnummer', 'Gewünschte Leistung', 'Nachricht'],
+    formCta: 'Unverbindlich anfragen',
+    optional:
+      'Ein Newsletter kann optional eingebunden werden, um Interessenten regelmäßig über Angebote, freie Termine oder neue Leistungen zu informieren.',
+  },
+}
 
 const trustCards = [
   [PanelsTopLeft, 'Professionelle Wirkung', 'Ein klarer digitaler Auftritt zeigt sofort, wofür dein Unternehmen steht und warum Kunden dir vertrauen können.'],
@@ -132,6 +244,7 @@ const pricingPackages = [
       'WhatsApp-Kontakt',
       'Google-Bewertungslink',
       'einfache Kontaktführung',
+      'Newsletter-Einbindung optional',
     ],
     note: 'Ein klarer Start für Betriebe, die digital professioneller auftreten und erreichbar sein möchten.',
     cta: 'Sichtbarkeit anfragen',
@@ -149,6 +262,7 @@ const pricingPackages = [
       'Google-Bewertungsstrategie',
       'Social-Media-Startstruktur',
       'klare Kundenführung',
+      'einfache Newsletter-Einbindung auf Wunsch',
     ],
     note: 'Der Fokus liegt auf verständlicher Angebotskommunikation und qualifizierter Anfrageführung.',
     cta: 'Kundengewinnung anfragen',
@@ -167,6 +281,7 @@ const pricingPackages = [
       'Social-Media-System',
       'Kundenanfrage-System',
       'App- oder Dashboard-Konzept optional',
+      'Newsletter-System als zusätzlicher Baustein möglich',
       '30 Tage Begleitung',
     ],
     note: 'Für Unternehmen, die nicht nur einen Auftritt, sondern ein klares digitales Unternehmenssystem aufbauen wollen.',
@@ -245,7 +360,7 @@ const targetGroups = [
 const whyPoints = [
   'Klarer Aufbau statt schöner, aber wirkungsloser Webseite',
   'Fokus auf Anfragen, Vertrauen und Kontakt',
-  'WhatsApp, Google und Social Media sinnvoll verbunden',
+  'Website, Landingpage, WhatsApp, Google, Social Media und optional Newsletter als zusammenhängende Struktur',
   'Verständliche Umsetzung ohne Technik-Blabla',
   'Systeme, die kleine Unternehmen wirklich im Alltag nutzen können',
 ]
@@ -291,11 +406,14 @@ function useCurrentPath() {
 function useDocumentTitle(pathname) {
   useEffect(() => {
     const titles = {
-      '/': 'STRUKTIVA Unternehmensarchitektur – Professionelle Webseiten, Landingpages, Apps & Google Ads',
+      '/': 'STRUKTIVA Unternehmensarchitektur – Digitale Systeme für kleine Unternehmen',
       '/webseiten': 'Professionelle Webseiten – STRUKTIVA Unternehmensarchitektur',
       '/landingpages': 'Landingpages – STRUKTIVA Unternehmensarchitektur',
       '/apps': 'Unternehmens-Apps – STRUKTIVA Unternehmensarchitektur',
       '/google-ads': 'Google Ads – STRUKTIVA Unternehmensarchitektur',
+      '/demo-handwerker': 'Demo Handwerker – STRUKTIVA Unternehmensarchitektur',
+      '/demo-beauty': 'Demo Beauty & Kosmetik – STRUKTIVA Unternehmensarchitektur',
+      '/demo-dienstleister': 'Demo Dienstleister – STRUKTIVA Unternehmensarchitektur',
       '/impressum': 'Impressum – STRUKTIVA Unternehmensarchitektur',
       '/datenschutz': 'Datenschutz – STRUKTIVA Unternehmensarchitektur',
       '/widerruf': 'Widerruf – STRUKTIVA Unternehmensarchitektur',
@@ -533,7 +651,7 @@ function HeroSection() {
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
               className="mt-4 max-w-[35rem] text-[15px] leading-7 text-[#D7DCE5] md:text-base"
             >
-              STRUKTIVA entwickelt digitale Unternehmenssysteme für Selbstständige, lokale Betriebe und kleine Unternehmen – mit Website, Landingpage, WhatsApp-Struktur, Google-Auftritt, Social Media und optionaler App- oder Dashboard-Lösung.
+              STRUKTIVA entwickelt digitale Unternehmenssysteme für Selbstständige, lokale Betriebe und kleine Unternehmen – mit Website, Landingpage, WhatsApp-Struktur, Google-Auftritt, Social Media und auf Wunsch Newsletter-Einbindung als zusätzlichem Baustein.
             </motion.p>
 
             <motion.p
@@ -687,6 +805,9 @@ function ProblemSection() {
         <Reveal className="mt-8">
           <p className="max-w-3xl text-base leading-8 text-[#D7DCE5]">
             STRUKTIVA verbindet Webseite, Landingpage, Google, WhatsApp, Social Media und Angebotsstruktur zu einem klaren System. Ziel ist nicht einfach nur ein schöner Auftritt, sondern ein digitaler Weg, der Vertrauen aufbaut und mehr qualifizierte Anfragen erzeugt.
+          </p>
+          <p className="mt-4 max-w-3xl text-base leading-8 text-[#D7DCE5]">
+            Auf Wunsch kann auch ein Newsletter-System eingebunden werden, um Interessenten und Bestandskunden professionell zu informieren und langfristig an das Unternehmen zu binden.
           </p>
         </Reveal>
       </div>
@@ -962,6 +1083,54 @@ function GoogleAdsSection() {
   )
 }
 
+function DemoOverviewSection() {
+  return (
+    <section id="demos" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Live-Demos"
+            title="So könnte dein digitaler Auftritt aussehen"
+            text="Wähle eine Beispielbranche und sieh dir an, wie STRUKTIVA digitale Struktur, klare Angebote, Kontaktwege und Kundengewinnung für kleine Unternehmen sichtbar macht."
+          />
+        </Reveal>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.08 }}
+          variants={stagger}
+          className="mt-12 grid gap-5 lg:grid-cols-3"
+        >
+          {demoCards.map((demo) => {
+            const Icon = demo.icon
+            return (
+              <motion.a
+                key={demo.title}
+                href={demo.href}
+                variants={fadeUp}
+                transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
+                className="group rounded-[1.9rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/30"
+              >
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Demo / Beispielansicht</p>
+                <h3 className="mt-3 text-2xl font-semibold text-white">{demo.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{demo.text}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                  Demo ansehen
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                </span>
+              </motion.a>
+            )
+          })}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
 function PricingCard({ pkg }) {
   return (
       <motion.article
@@ -1098,7 +1267,7 @@ function PricingSection() {
         </Reveal>
 
         <Reveal className="mt-8">
-          <div className="rounded-[1.8rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-7">
+            <div className="rounded-[1.8rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Faire Kennenlernpreise zum Start</p>
               <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Professioneller Einstieg mit klarer Struktur statt Agentur-Standard</h3>
               <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
@@ -1129,6 +1298,31 @@ function PricingSection() {
             </div>
           ))}
         </motion.div>
+
+        <Reveal className="mt-8">
+          <div className="rounded-[1.8rem] border border-[#D8B45A]/20 bg-white/[0.05] p-6 shadow-premium md:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Optionaler Zusatzbaustein</p>
+            <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.65rem]">Newsletter-Einbindung</h3>
+            <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+              Für Unternehmen, die Interessenten und Bestandskunden regelmäßig professionell informieren möchten, kann STRUKTIVA ein passendes Newsletter-System in die bestehende Website- oder Landingpage-Struktur einbinden.
+            </p>
+            <div className="mt-5 grid gap-2 text-sm text-[#D7DCE5] md:grid-cols-2">
+              {[
+                'Newsletter-Anmeldeformular einbinden',
+                'Newsletter-System verbinden',
+                'erste Grundstruktur vorbereiten',
+                'Kontaktliste sauber aufbauen',
+                'Verbindung mit Website oder Landingpage herstellen',
+                'DSGVO-bewusste Einbindung vorbereiten',
+              ].map((item) => (
+                <div key={item} className="rounded-xl border border-white/12 bg-white/[0.04] px-3.5 py-2.5">
+                  {item}
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 249 € optional</p>
+          </div>
+        </Reveal>
 
           <Reveal className="mt-8">
             <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
@@ -1223,7 +1417,7 @@ function WhySection() {
           <SectionHeader
             eyebrow="Was STRUKTIVA anders macht"
             title="Nicht nur Design. Sondern Struktur."
-            text="STRUKTIVA verbindet Sichtbarkeit, Kontaktführung und Angebotslogik zu einem digitalen System, das im Alltag wirklich nutzbar ist."
+            text="STRUKTIVA verbindet Website, Landingpage, WhatsApp, Google, Social Media und optional Newsletter zu einem digitalen System, das im Alltag wirklich nutzbar ist."
             centered={false}
           />
         </Reveal>
@@ -1357,6 +1551,107 @@ function ContactSection() {
   )
 }
 
+function DemoFormCard({ fields, cta }) {
+  return (
+    <div className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Anfragebereich (Demo)</p>
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+        {fields.map((field) => (
+          <div key={field} className={`${field === 'Nachricht' ? 'md:col-span-2' : ''}`}>
+            <label className="mb-1.5 block text-xs font-medium uppercase tracking-[0.12em] text-[#94A3B8]">{field}</label>
+            {field === 'Nachricht' ? (
+              <textarea rows={4} className="w-full rounded-xl border border-white/14 bg-white/[0.04] px-3 py-2.5 text-sm text-white outline-none" />
+            ) : (
+              <input className="w-full rounded-xl border border-white/14 bg-white/[0.04] px-3 py-2.5 text-sm text-white outline-none" />
+            )}
+          </div>
+        ))}
+      </div>
+      <button type="button" className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+        {cta}
+        <ArrowRight className="h-4 w-4" />
+      </button>
+    </div>
+  )
+}
+
+function DemoFinalCTA() {
+  return (
+    <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
+      <h2 className="text-2xl font-semibold text-white">So könnte dein Unternehmen digital auftreten.</h2>
+      <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+        Wenn du eine ähnliche Struktur für dein Unternehmen möchtest, erstellt STRUKTIVA einen klaren digitalen Aufbau passend zu deiner Branche, deinem Angebot und deinen Kunden.
+      </p>
+      <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+        Kostenlose Ersteinschätzung anfragen
+        <ArrowRight className="h-4 w-4" />
+      </a>
+    </section>
+  )
+}
+
+function DemoPageTemplate({ demo }) {
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <div className="rounded-[2.3rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Demo / Beispielansicht</p>
+            <p className="mt-3 text-base font-medium text-[#D7DCE5]">{demo.title}</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-semibold text-white md:text-5xl">{demo.hero}</h1>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">{demo.subheadline}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {demo.tags.map((tag) => (
+                <span key={tag} className="rounded-full border border-white/14 bg-white/[0.05] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#D7DCE5]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Kostenlose Ersteinschätzung anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={siteLinks.demos} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                Zur Demo-Übersicht
+              </a>
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="mt-8 grid gap-6">
+          {demo.sections.map((section) => (
+            <ServiceSection key={section.title} title={section.title}>
+              {section.text && <p>{section.text}</p>}
+              {section.points && section.points.map((point) => <p key={point}>- {point}</p>)}
+            </ServiceSection>
+          ))}
+
+          <DemoFormCard fields={demo.formFields} cta={demo.formCta} />
+
+          <ServiceSection title="Optionaler Zusatzbaustein">
+            <p>{demo.optional}</p>
+          </ServiceSection>
+
+          <DemoFinalCTA />
+        </div>
+      </div>
+    </main>
+  )
+}
+
+function DemoHandwerkerPage() {
+  return <DemoPageTemplate demo={demoPages.handwerker} />
+}
+
+function DemoBeautyPage() {
+  return <DemoPageTemplate demo={demoPages.beauty} />
+}
+
+function DemoDienstleisterPage() {
+  return <DemoPageTemplate demo={demoPages.dienstleister} />
+}
+
 function Footer() {
   return (
     <footer className="px-5 pb-8 pt-6 lg:px-8">
@@ -1372,6 +1667,7 @@ function Footer() {
         </div>
         <div className="grid gap-5 text-sm text-[#D7DCE5] md:grid-cols-2">
           <div className="flex flex-wrap gap-4">
+            <a href={siteLinks.demos} className="transition hover:text-[#F2D98B]">Demos</a>
             <a href={siteLinks.impressum} className="transition hover:text-[#F2D98B]">Impressum</a>
             <a href={siteLinks.datenschutz} className="transition hover:text-[#F2D98B]">Datenschutz</a>
             <a href={siteLinks.widerruf} className="transition hover:text-[#F2D98B]">Widerruf</a>
@@ -1402,6 +1698,7 @@ function HomePage() {
       <WebsiteFocusSection />
       <AppsSection />
       <GoogleAdsSection />
+      <DemoOverviewSection />
       <PricingSection />
       <ProcessSection />
       <TargetSection />
@@ -1873,6 +2170,12 @@ function Page() {
     content = <AppsPage />
   } else if (pathname === '/google-ads') {
     content = <GoogleAdsPage />
+  } else if (pathname === '/demo-handwerker') {
+    content = <DemoHandwerkerPage />
+  } else if (pathname === '/demo-beauty') {
+    content = <DemoBeautyPage />
+  } else if (pathname === '/demo-dienstleister') {
+    content = <DemoDienstleisterPage />
   }
 
   return (
