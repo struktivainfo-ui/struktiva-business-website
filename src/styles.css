@@ -84,6 +84,22 @@ img {
   transform-style: preserve-3d;
 }
 
+.hero-image-shell {
+  position: relative;
+  box-shadow: 0 14px 34px rgba(5, 10, 18, 0.34);
+}
+
+.hero-image-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, rgba(5, 10, 18, 0), rgba(5, 10, 18, 0.85));
+}
+
+.service-image-spotlight {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 14px 34px rgba(5, 10, 18, 0.28);
+}
+
 .hero-3d-shell {
   perspective: 1200px;
 }
@@ -412,5 +428,9 @@ img {
     bottom: 20px;
     width: 52px;
     height: 52px;
+  }
+
+  .hero-image-overlay {
+    padding: 10px 12px;
   }
 }

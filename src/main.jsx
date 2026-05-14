@@ -55,6 +55,11 @@ const brand = {
   line: 'Professionelle Online-Präsenz. Kundengewinnung. Digitale Struktur. Optionale App-Lösungen.',
 }
 
+const struktivaImages = {
+  hero: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80',
+  structure: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80',
+}
+
 const contactDetails = {
   email: 'info.struktiva@gmail.com',
   phoneLabel: '07051 8162292',
@@ -1706,13 +1711,178 @@ function Footer() {
   )
 }
 
+function HeroSectionPremium() {
+  return (
+    <section id="start" className="relative scroll-mt-24 overflow-hidden px-5 pb-12 pt-8 lg:px-8 lg:pb-18 lg:pt-10">
+      <div className="hero-orb hero-orb-left" />
+      <div className="hero-orb hero-orb-right" />
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <div className="max-w-[41rem]">
+          <motion.div initial="hidden" animate="visible" variants={stagger} className="flex flex-col items-start">
+            <motion.div variants={fadeUp} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/20 bg-white/[0.06] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
+              <Sparkles className="h-3.5 w-3.5" />
+              {brand.name}
+            </motion.div>
+            <motion.h1 variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-5 max-w-[35rem] text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.05] xl:text-[58px]">
+              Mehr Kunden. Mehr Struktur. Mehr digitale Wirkung.
+            </motion.h1>
+            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] text-[15px] leading-7 text-[#D7DCE5] md:text-[17px] md:leading-8">
+              STRUKTIVA entwickelt digitale Unternehmenssysteme für Selbstständige, lokale Betriebe und kleine Unternehmen – mit Website, Landingpage, WhatsApp-Struktur, Google-Auftritt, Social Media und auf Wunsch Newsletter-Einbindung als zusätzlichem Baustein.
+            </motion.p>
+            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 inline-flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#D7DCE5]">
+              {brand.line.split('. ').filter(Boolean).map((item) => (
+                <span key={item} className="rounded-full border border-white/14 bg-white/[0.05] px-2.5 py-1">{item.replace('.', '')}</span>
+              ))}
+            </motion.p>
+            <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 flex flex-col gap-2.5 sm:flex-row">
+              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.2)] transition hover:bg-[#A9822D] hover:-translate-y-0.5">
+                Kostenlose Ersteinschätzung anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={siteLinks.pricing} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">
+                Angebote ansehen
+              </a>
+            </motion.div>
+            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
+              STRUKTIVA ist keine klassische Webagentur. STRUKTIVA baut digitale Strukturen, die kleine Unternehmen sichtbarer, professioneller und verkaufsfähiger machen.
+            </motion.p>
+            <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 grid gap-2 text-sm text-[#D7DCE5] md:grid-cols-2">
+              {[
+                'Für kleine Unternehmen, Selbstständige und lokale Dienstleister',
+                'Klare Struktur statt Technik-Chaos',
+                'Verständliche Umsetzung ohne Agentur-Blabla',
+                'Digitale Systeme, die im Alltag nutzbar sind',
+              ].map((item) => (
+                <p key={item} className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2">{item}</p>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+        <motion.div initial="hidden" animate="visible" variants={fadeRight} transition={{ duration: 0.64, ease: [0.22, 1, 0.36, 1] }} className="mx-auto w-full max-w-[25rem] lg:max-w-[26.5rem]">
+          <div className="hero-architecture-card hero-3d-shell rounded-[1.55rem] border border-[#D8B45A]/25 bg-white/[0.05] p-3 shadow-[0_12px_30px_rgba(15,36,76,0.10)] backdrop-blur-xl">
+            <div className="hero-3d-plane relative overflow-hidden rounded-[1.25rem] border border-[#D8B45A]/25 bg-[linear-gradient(180deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88))] p-4 md:p-4.5">
+              <div className="hero-architecture-grid" />
+              <div className="hero-architecture-line hero-architecture-line-1" />
+              <div className="hero-architecture-line hero-architecture-line-2" />
+              <div className="hero-architecture-line hero-architecture-line-3" />
+              <div className="hero-architecture-node hero-architecture-node-1" />
+              <div className="hero-architecture-node hero-architecture-node-2" />
+              <div className="hero-architecture-node hero-architecture-node-3" />
+              <div className="hero-architecture-node hero-architecture-node-4" />
+              <div className="relative z-[1]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Digitale Architektur</p>
+                <h2 className="mt-2 text-xl font-semibold text-white">Webseiten. Apps. Werbung. Struktur.</h2>
+                <div className="mt-4 grid grid-cols-2 gap-2.5">
+                  {['Webseite', 'Landingpage', 'App-System', 'Google Ads'].map((item) => (
+                    <div key={item} className="hero-floating-chip rounded-xl border border-white/14 bg-white/[0.06] px-3 py-2 text-center text-[12px] font-medium text-white">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 rounded-[1rem] border border-[#D8B45A]/18 bg-white/[0.06] p-3.5">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">Ergebnis</p>
+                  <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">Ein klarer digitaler Aufbau für Sichtbarkeit, Anfragen und bessere Abläufe.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="hero-image-shell mt-4 overflow-hidden rounded-[1.3rem] border border-white/14">
+            <img
+              src={struktivaImages.hero}
+              alt="Moderne Business-Architektur mit strukturierter Stadtansicht bei Nacht"
+              loading="eager"
+              fetchpriority="high"
+              className="h-44 w-full object-cover md:h-52"
+            />
+            <div className="hero-image-overlay">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#F2D98B]">Premium-Umfeld</p>
+              <p className="mt-1 text-sm text-[#D7DCE5]">Digitale Struktur, die professionell wirkt und klar führt.</p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+function ServicesSectionPremium() {
+  const serviceRoutes = {
+    'Professionelle Webseiten': siteLinks.webseitenPage,
+    Landingpages: siteLinks.landingpagesPage,
+    'Unternehmens-Apps': siteLinks.appsPage,
+    'Google Ads': siteLinks.googleAdsPage,
+  }
+
+  return (
+    <section id="leistungen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Leistungen"
+            title="Digitale Struktur statt Online-Chaos."
+            text="STRUKTIVA ist keine klassische Webagentur. STRUKTIVA baut digitale Strukturen, die kleine Unternehmen sichtbarer, professioneller und verkaufsfähiger machen."
+          />
+        </Reveal>
+        <Reveal className="mt-8">
+          <div className="service-image-spotlight grid items-center gap-5 rounded-[1.8rem] border border-white/14 bg-white/[0.04] p-4 md:grid-cols-[0.96fr_1.04fr] md:p-5">
+            <img
+              src={struktivaImages.structure}
+              alt="Strategie- und Strukturplanung auf einem modernen Arbeitstisch"
+              loading="lazy"
+              className="h-44 w-full rounded-[1.1rem] object-cover md:h-52"
+            />
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Struktur sichtbar machen</p>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
+                Ein professioneller Auftritt entsteht, wenn Angebote, Kontaktwege und Kundengewinnung als System gedacht werden – klar, verständlich und alltagstauglich.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 lg:grid-cols-2">
+          {coreServices.map(([Icon, title, text]) => (
+            <motion.a
+              key={title}
+              href={serviceRoutes[title]}
+              variants={fadeUp}
+              transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
+              className="service-card-3d group block cursor-pointer rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-white">{title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{text}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                    Mehr erfahren
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                  </span>
+                </div>
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
+
+        <Reveal className="mt-8">
+          <div className="rounded-[1.5rem] border border-white/14 bg-white/[0.04] p-5 text-sm leading-7 text-[#D7DCE5]">
+            Texte, Struktur, Google-Unternehmensprofil, WhatsApp oder Social Media können je nach Projekt unterstützend eingebunden werden, sind aber keine separaten Hauptangebote mehr.
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
 function HomePage() {
   return (
     <>
-      <HeroSection />
+      <HeroSectionPremium />
       <TrustSection />
       <ProblemSection />
-      <ServicesSection />
+      <ServicesSectionPremium />
       <WebsiteFocusSection />
       <AppsSection />
       <GoogleAdsSection />
