@@ -61,7 +61,7 @@ const struktivaImages = {
 }
 
 const contactDetails = {
-  email: 'info.struktiva@gmail.com',
+  email: 'struktiva.info@gmail.com',
   phoneLabel: '07051 8162292',
   phoneHref: 'tel:+4970518162292',
   whatsappLabel: '07051 8162292',
