@@ -1152,6 +1152,15 @@ function DemoOverviewSectionPremium() {
             )
           })}
         </motion.div>
+        <Reveal className="mt-6">
+          <a
+            href={siteLinks.landingpageDigitaleStruktur}
+            className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+          >
+            Digitale Struktur ansehen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </Reveal>
       </div>
     </section>
   )
@@ -1354,6 +1363,13 @@ function PricingSection() {
             <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
               <p>Aktuelle Einstiegspreise für kleine Unternehmen und Selbstständige.</p>
               <p className="mt-2">Alle Preise verstehen sich als Kennenlern- und Einstiegspreise. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach Projektumfang, technischer Umsetzung, Hosting, Speicherbedarf, Betreuungsaufwand und Arbeitszeit. Werbebudget für Google Ads oder Social-Media-Werbung ist nicht enthalten.</p>
+              <a
+                href={siteLinks.landingpageDigitaleStruktur}
+                className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+              >
+                Digitale Struktur ansehen
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </Reveal>
       </div>
@@ -1716,6 +1732,7 @@ function Footer() {
             <div className="mt-2 grid gap-1.5">
               <a href={siteLinks.webseitenPage} className="transition hover:text-[#F2D98B]">Professionelle Webseiten</a>
               <a href={siteLinks.landingpagesPage} className="transition hover:text-[#F2D98B]">Landingpages</a>
+              <a href={siteLinks.landingpageDigitaleStruktur} className="transition hover:text-[#F2D98B]">Digitale Struktur</a>
               <a href={siteLinks.appsPage} className="transition hover:text-[#F2D98B]">Unternehmens-Apps</a>
               <a href={siteLinks.googleAdsPage} className="transition hover:text-[#F2D98B]">Google Ads</a>
             </div>
@@ -1766,8 +1783,8 @@ function HeroSectionPremium() {
                 Kostenlose Ersteinschätzung anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={siteLinks.pricing} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">
-                Angebote ansehen
+              <a href={siteLinks.landingpageDigitaleStruktur} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">
+                Digitale Struktur ansehen
               </a>
             </motion.div>
             <motion.a
