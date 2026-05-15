@@ -258,7 +258,7 @@ const googleAdsCards = [
 const pricingPackages = [
   {
     title: 'Sichtbarkeit',
-    price: 'ab 499 €',
+    price: 'ab 349 €',
     badge: 'Professioneller Einstieg',
     description: 'Für Betriebe, die online professioneller gefunden werden wollen.',
     features: [
@@ -276,7 +276,7 @@ const pricingPackages = [
   },
   {
     title: 'Kundengewinnung',
-    price: 'ab 999 €',
+    price: 'ab 749 €',
     badge: 'Verkaufsstarke Struktur',
     description: 'Für Unternehmen, die mehr Anfragen aus ihrem digitalen Auftritt machen wollen.',
     features: [
@@ -294,7 +294,7 @@ const pricingPackages = [
   },
   {
     title: 'Unternehmensarchitektur',
-    price: 'ab 1.999 €',
+    price: 'ab 1.499 €',
     subtitle: 'Optionale App- oder Dashboard-Lösung möglich',
     badge: 'Ganzheitliches System',
     description: 'Für Betriebe, die ein vollständiges digitales System brauchen.',
@@ -1344,13 +1344,14 @@ function PricingSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 249 € optional</p>
+            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 199 € optional</p>
           </div>
         </Reveal>
 
           <Reveal className="mt-8">
             <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
-              Alle Preise verstehen sich als Kennenlern- und Einstiegspreise. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach Projektumfang, technischer Umsetzung, Hosting, Speicherbedarf, Betreuungsaufwand und Arbeitszeit. Werbebudget für Google Ads oder Social-Media-Werbung ist nicht enthalten.
+              <p>Aktuelle Einstiegspreise für kleine Unternehmen und Selbstständige.</p>
+              <p className="mt-2">Alle Preise verstehen sich als Kennenlern- und Einstiegspreise. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach Projektumfang, technischer Umsetzung, Hosting, Speicherbedarf, Betreuungsaufwand und Arbeitszeit. Werbebudget für Google Ads oder Social-Media-Werbung ist nicht enthalten.</p>
             </div>
           </Reveal>
       </div>
@@ -2001,7 +2002,7 @@ function WebseitenPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Paket Sichtbarkeit – ab 499 €</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Sichtbarkeit – ab 349 €</p>
         <p>Für strukturierte Onepage-Webseiten mit professioneller Außendarstellung, WhatsApp-Kontakt und klarer Angebotsführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
@@ -2035,7 +2036,7 @@ function LandingpagesPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Paket Kundengewinnung – ab 999 €</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Kundengewinnung – ab 749 €</p>
         <p>Für verkaufsstarke Landingpages mit Angebotsarchitektur, WhatsApp-CTA und klarer Anfrageführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
@@ -2084,7 +2085,7 @@ function AppsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Paket Unternehmensarchitektur – ab 1.999 €</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Unternehmensarchitektur – ab 1.499 €</p>
         <p>App- oder Dashboard-Lösungen sind eine hochwertige Zusatzoption für Unternehmen, die neben Sichtbarkeit auch mehr interne Struktur brauchen.</p>
         <p className="text-lg font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</p>
       </ServiceSection>
