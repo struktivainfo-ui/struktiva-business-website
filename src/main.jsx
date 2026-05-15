@@ -44,6 +44,7 @@ const siteLinks = {
   demoHandwerker: '/demo-handwerker',
   demoBeauty: '/demo-beauty',
   demoDienstleister: '/demo-dienstleister',
+  landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
   impressum: '/impressum',
   datenschutz: '/datenschutz',
   widerruf: '/widerruf',
@@ -438,6 +439,7 @@ function useDocumentTitle(pathname) {
       '/demo-handwerker': 'Demo Handwerker – STRUKTIVA Unternehmensarchitektur',
       '/demo-beauty': 'Demo Beauty & Kosmetik – STRUKTIVA Unternehmensarchitektur',
       '/demo-dienstleister': 'Demo Dienstleister – STRUKTIVA Unternehmensarchitektur',
+      '/landingpage-digitale-struktur': 'Digitale Struktur für kleine Unternehmen – STRUKTIVA Unternehmensarchitektur',
       '/impressum': 'Impressum – STRUKTIVA Unternehmensarchitektur',
       '/datenschutz': 'Datenschutz – STRUKTIVA Unternehmensarchitektur',
       '/widerruf': 'Widerruf – STRUKTIVA Unternehmensarchitektur',
@@ -1768,6 +1770,15 @@ function HeroSectionPremium() {
                 Angebote ansehen
               </a>
             </motion.div>
+            <motion.a
+              variants={fadeUp}
+              transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
+              href={siteLinks.landingpageDigitaleStruktur}
+              className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[#D8B45A] transition hover:text-[#F2D98B]"
+            >
+              Fokussierte Landingpage ansehen
+              <ArrowRight className="h-4 w-4" />
+            </motion.a>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
               STRUKTIVA ist keine klassische Webagentur. STRUKTIVA baut digitale Strukturen, die kleine Unternehmen sichtbarer, professioneller und verkaufsfähiger machen.
             </motion.p>
@@ -1920,6 +1931,140 @@ function HomePage() {
       <QualitySection />
       <ContactSection />
     </>
+  )
+}
+
+function LandingpageDigitaleStrukturPage() {
+  const includedCards = [
+    ['Website & Landingpage', 'Klare Seitenstruktur, professionelle Darstellung und verständliche Angebotsführung.'],
+    ['Google-Sichtbarkeit', 'Saubere Grundlagen für Google-Unternehmensprofil, lokale Auffindbarkeit und Leistungsdarstellung.'],
+    ['WhatsApp & Kontaktwege', 'Einfache Kontaktmöglichkeiten, die Besucher direkt zur Anfrage führen.'],
+    ['Social-Media-Struktur', 'Grundstruktur für Inhalte, die zum Unternehmen passen und nicht chaotisch wirken.'],
+    ['Angebotsarchitektur', 'Leistungen werden so dargestellt, dass Kunden den Nutzen schneller verstehen.'],
+    ['Optionaler Newsletter', 'Dezente Newsletter-Einbindung zur Kundenbindung, wenn es sinnvoll zum Unternehmen passt.'],
+  ]
+
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <section className="rounded-[2.4rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Landingpage</p>
+            <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
+              Digitale Struktur für kleine Unternehmen, die online professioneller wirken wollen.
+            </h1>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+              STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und klare Kundenführung zu einem digitalen System, das verständlich, hochwertig und professionell wirkt.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Kostenlose Ersteinschätzung anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={siteLinks.demos} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                Demo-Seiten ansehen
+              </a>
+            </div>
+            <p className="mt-5 rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
+              Für Selbstständige, lokale Betriebe und Dienstleister, die mehr Klarheit in ihren digitalen Auftritt bringen möchten.
+            </p>
+          </section>
+        </Reveal>
+
+        <div className="mt-8 grid gap-6">
+          <ServiceSection title="Viele Unternehmen verlieren online Vertrauen, bevor ein Kunde überhaupt anfragt.">
+            <p>Viele kleine Unternehmen haben gute Leistungen, aber ihr digitaler Auftritt zeigt es nicht klar genug. Die Website wirkt unstrukturiert, Kontaktwege sind unklar, Google wird nicht richtig genutzt und Social Media läuft ohne System.</p>
+            <p>- Besucher verstehen nicht sofort, was angeboten wird</p>
+            <p>- Kontaktmöglichkeiten sind nicht klar genug sichtbar</p>
+            <p>- Google-Auftritt und Website wirken nicht verbunden</p>
+            <p>- Social Media bringt keine klare Kundenführung</p>
+            <p>- Angebote werden nicht überzeugend präsentiert</p>
+            <p>- Es fehlt ein System, das aus Besuchern Anfragen macht</p>
+          </ServiceSection>
+
+          <ServiceSection title="STRUKTIVA bringt Ordnung in deinen digitalen Auftritt.">
+            <p>Statt einzelne Bausteine unverbunden nebeneinanderzustellen, entwickelt STRUKTIVA eine klare digitale Struktur. Website, Landingpage, Google, WhatsApp, Social Media und optionale Zusatzbausteine werden so aufgebaut, dass Besucher schneller verstehen, warum sie Kontakt aufnehmen sollten.</p>
+          </ServiceSection>
+
+          <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
+            <h2 className="text-2xl font-semibold text-white">Was STRUKTIVA für dein Unternehmen aufbauen kann</h2>
+            <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {includedCards.map(([title, text]) => (
+                <div key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+                  <p className="text-base font-semibold text-white">{title}</p>
+                  <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <ServiceSection title="Geeignet für kleine Unternehmen, die digital klarer auftreten wollen.">
+            <p>- Handwerker</p>
+            <p>- Beauty & Kosmetik</p>
+            <p>- Friseursalons</p>
+            <p>- Reinigungsfirmen</p>
+            <p>- Fahrschulen</p>
+            <p>- lokale Dienstleister</p>
+            <p>- Berater</p>
+            <p>- Selbstständige</p>
+            <p>- kleine Händler</p>
+          </ServiceSection>
+
+          <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
+            <h2 className="text-2xl font-semibold text-white">Sieh dir an, wie verschiedene Branchen digital wirken können.</h2>
+            <p className="mt-4 text-sm leading-7 text-[#D7DCE5] md:text-base">
+              Die Demo-Seiten zeigen unterschiedliche Modelle für verschiedene Branchen. So wird sichtbar, dass STRUKTIVA nicht mit Standardlösungen arbeitet, sondern den digitalen Auftritt an Branche, Zielgruppe und Wirkung anpasst.
+            </p>
+            <div className="mt-5 grid gap-3 md:grid-cols-3">
+              <a href={siteLinks.demoHandwerker} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">Handwerker-Modell · Demo ansehen</a>
+              <a href={siteLinks.demoBeauty} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">Beauty-Modell · Demo ansehen</a>
+              <a href={siteLinks.demoDienstleister} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">Dienstleister-Modell · Demo ansehen</a>
+            </div>
+          </section>
+
+          <ServiceSection title="Einstiegspreise für kleine Unternehmen">
+            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeit – ab 349 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 749 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
+            <p className="text-sm text-[#94A3B8]">Jedes Projekt wird nach Umfang, Ziel und vorhandenen Inhalten individuell eingeschätzt. Die Preise dienen als Einstieg und Orientierung.</p>
+          </ServiceSection>
+
+          <ServiceSection title="So läuft die Zusammenarbeit ab.">
+            <p><span className="font-semibold text-white">Schritt 1: Kostenlose Ersteinschätzung</span><br />Wir schauen uns an, wo dein Unternehmen digital aktuell steht.</p>
+            <p><span className="font-semibold text-white">Schritt 2: Strukturplan</span><br />Du bekommst eine klare Empfehlung, welche digitale Struktur sinnvoll ist.</p>
+            <p><span className="font-semibold text-white">Schritt 3: Umsetzung</span><br />STRUKTIVA erstellt deine Website, Landingpage oder digitale Struktur professionell und verständlich.</p>
+            <p><span className="font-semibold text-white">Schritt 4: Optimierung</span><br />Nach dem Start wird geprüft, ob Aufbau, Kontaktwege und Darstellung sauber funktionieren.</p>
+          </ServiceSection>
+
+          <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
+            <h2 className="text-2xl font-semibold text-white">Bereit für einen digitalen Auftritt, der klarer und professioneller wirkt?</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+              Wenn du wissen möchtest, welche digitale Struktur für dein Unternehmen sinnvoll ist, kannst du eine kostenlose Ersteinschätzung anfragen.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Kostenlose Ersteinschätzung anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={`mailto:${contactDetails.email}`} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                E-Mail schreiben
+              </a>
+              <a href={contactDetails.whatsappHref} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                WhatsApp
+              </a>
+            </div>
+            <div className="mt-4 grid gap-1 text-sm text-[#D7DCE5]">
+              <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-[#D8B45A]">{contactDetails.email}</a></p>
+              <p>Website: <a href="https://struktiva-unternehmensarchitektur.vercel.app/" className="text-[#D8B45A]" target="_blank" rel="noopener noreferrer">struktiva-unternehmensarchitektur.vercel.app</a></p>
+            </div>
+            <p className="mt-4 text-xs text-[#94A3B8]">
+              Du hast bereits mit STRUKTIVA gearbeitet? <a href={contactDetails.googleReviewHref} target="_blank" rel="noopener noreferrer" className="text-[#D8B45A]">Google-Bewertung schreiben</a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
   )
 }
 
@@ -2715,6 +2860,8 @@ function Page() {
     content = <DemoBeautyPage />
   } else if (pathname === '/demo-dienstleister') {
     content = <DemoDienstleisterPage />
+  } else if (pathname === '/landingpage-digitale-struktur') {
+    content = <LandingpageDigitaleStrukturPage />
   }
 
   return (
