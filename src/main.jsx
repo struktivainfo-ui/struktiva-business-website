@@ -1396,7 +1396,7 @@ function PricingSection() {
           <Reveal className="mt-8">
             <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
               <p>Aktuelle Einstiegspreise für kleine Unternehmen und Selbstständige.</p>
-              <p className="mt-2">Alle Preise verstehen sich als Kennenlern- und Einstiegspreise. Der genaue Leistungsumfang wird im persönlichen Gespräch festgelegt und richtet sich nach Projektumfang, technischer Umsetzung, Hosting, Speicherbedarf, Betreuungsaufwand und Arbeitszeit. Werbebudget für Google Ads oder Social-Media-Werbung ist nicht enthalten.</p>
+              <p className="mt-2">Alle Preise verstehen sich als Einstiegspreise netto zzgl. gesetzlicher Umsatzsteuer. Jedes Projekt wird nach Umfang, Ziel und vorhandenen Inhalten individuell eingeschätzt.</p>
               <a
                 href={siteLinks.landingpageDigitaleStruktur}
                 className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
@@ -2082,7 +2082,7 @@ function LandingpageDigitaleStrukturPage() {
             <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 749 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
             <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
             <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
-            <p className="text-sm text-[#94A3B8]">Jedes Projekt wird nach Umfang, Ziel und vorhandenen Inhalten individuell eingeschätzt. Die Preise dienen als Einstieg und Orientierung.</p>
+            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich als Einstiegspreise netto zzgl. gesetzlicher Umsatzsteuer. Jedes Projekt wird nach Umfang, Ziel und vorhandenen Inhalten individuell eingeschätzt.</p>
           </ServiceSection>
 
           <ServiceSection title="So läuft die Zusammenarbeit ab.">
@@ -2272,7 +2272,7 @@ function LandingpageDigitaleStrukturPageV2() {
             <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 749 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
             <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
             <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
-            <p className="text-sm text-[#94A3B8]">Jedes Projekt wird nach Umfang, Ziel und vorhandenen Inhalten individuell eingeschätzt. Die Preise dienen als Einstieg und Orientierung.</p>
+            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich als Einstiegspreise netto zzgl. gesetzlicher Umsatzsteuer. Jedes Projekt wird nach Umfang, Ziel und vorhandenen Inhalten individuell eingeschätzt.</p>
           </ServiceSection>
 
           <ServiceSection title="So läuft die Zusammenarbeit ab.">
