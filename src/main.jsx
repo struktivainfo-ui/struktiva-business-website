@@ -59,6 +59,16 @@ const brand = {
 const struktivaImages = {
   hero: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80',
   structure: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80',
+  businessHero: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80',
+  structurePlanning: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1500&q=80',
+  digitalDashboard: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
+  consulting: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1500&q=80',
+  localBusiness: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80',
+  workspace: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1400&q=80',
+  handwerker: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+  beauty: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1200&q=80',
+  dienstleister: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80',
+  ctaBackdrop: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=80',
 }
 
 const contactDetails = {
@@ -807,6 +817,22 @@ function ProblemSection() {
           />
         </Reveal>
 
+        <Reveal className="mt-8">
+          <div className="relative overflow-hidden rounded-[1.8rem] border border-white/14 shadow-premium">
+            <img
+              src={struktivaImages.workspace}
+              alt="Unstrukturierte digitale Planung mit Laptop und Notizen"
+              loading="lazy"
+              decoding="async"
+              className="h-48 w-full object-cover md:h-56"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(140deg,rgba(7,17,31,0.82),rgba(7,17,31,0.5),rgba(5,10,18,0.88))]" />
+            <p className="absolute bottom-4 left-4 max-w-2xl rounded-xl border border-white/14 bg-white/[0.06] px-3 py-2 text-xs text-[#D7DCE5] md:text-sm">
+              Digitale Sichtbarkeit scheitert selten an Leistung, sondern oft an fehlender Struktur.
+            </p>
+          </div>
+        </Reveal>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -1130,24 +1156,36 @@ function DemoOverviewSectionPremium() {
         >
           {demoCards.map((demo) => {
             const Icon = demo.icon
+            const previewImage =
+              demo.title === 'Demo Handwerker'
+                ? struktivaImages.handwerker
+                : demo.title === 'Demo Beauty & Kosmetik'
+                ? struktivaImages.beauty
+                : struktivaImages.dienstleister
             return (
               <motion.a
                 key={demo.title}
                 href={demo.href}
                 variants={fadeUp}
                 transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-                className="group rounded-[1.9rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/30"
+                className="group overflow-hidden rounded-[1.9rem] border border-white/14 bg-white/[0.05] shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/30"
               >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
-                  <Icon className="h-5 w-5" />
+                <div className="relative h-40 overflow-hidden">
+                  <img src={previewImage} alt={`${demo.title} Vorschau`} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                 </div>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Demo / Beispielansicht</p>
-                <h3 className="mt-3 text-2xl font-semibold text-white">{demo.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{demo.text}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
-                  Demo ansehen
-                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                </span>
+                <div className="p-6">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Demo / Beispielansicht</p>
+                  <h3 className="mt-3 text-2xl font-semibold text-white">{demo.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{demo.text}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                    Demo ansehen
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                  </span>
+                </div>
               </motion.a>
             )
           })}
@@ -1167,6 +1205,15 @@ function DemoOverviewSectionPremium() {
 }
 
 function PricingCard({ pkg }) {
+  const packageImage =
+    pkg.title === 'Sichtbarkeit'
+      ? struktivaImages.localBusiness
+      : pkg.title === 'Kundengewinnung'
+      ? struktivaImages.consulting
+      : pkg.title === 'Unternehmensarchitektur'
+      ? struktivaImages.digitalDashboard
+      : null
+
   return (
       <motion.article
         variants={fadeUp}
@@ -1179,7 +1226,14 @@ function PricingCard({ pkg }) {
             : 'border-white/14 bg-white/[0.05]'
       }`}
     >
+      {packageImage && (
+        <>
+          <img src={packageImage} alt={`${pkg.title} visuelle Vorschau`} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-18" />
+          <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(7,17,31,0.82),rgba(7,17,31,0.7),rgba(5,10,18,0.84))]" />
+        </>
+      )}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D8B45A]/35 to-transparent" />
+      <div className="relative z-[1]">
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -1285,6 +1339,7 @@ function PricingCard({ pkg }) {
         {pkg.cta}
         <ArrowRight className="h-4 w-4" />
       </a>
+      </div>
     </motion.article>
   )
 }
@@ -1302,12 +1357,20 @@ function PricingSection() {
         </Reveal>
 
         <Reveal className="mt-8">
-            <div className="rounded-[1.8rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-7">
+            <div className="overflow-hidden rounded-[1.8rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] shadow-premium md:p-0">
+              <div className="grid gap-0 md:grid-cols-[0.92fr_1.08fr]">
+                <div className="relative min-h-[180px]">
+                  <img src={struktivaImages.consulting} alt="Strategisches Beratungsgespräch im Unternehmenskontext" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(7,17,31,0.78),rgba(7,17,31,0.52),rgba(5,10,18,0.86))]" />
+                </div>
+                <div className="p-6 md:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Faire Kennenlernpreise zum Start</p>
               <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Professioneller Einstieg mit klarer Struktur statt Agentur-Standard</h3>
               <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
                 STRUKTIVA positioniert sich bewusst als digitaler Systemanbieter für kleine Unternehmen. Die Umsetzung verbindet Präsenz, Kundenführung und Kontaktwege in einer Struktur, die im Alltag funktioniert und verkaufsfähig bleibt.
               </p>
+                </div>
+              </div>
             </div>
           </Reveal>
 
@@ -1532,7 +1595,10 @@ function QualitySection() {
 function ContactSection() {
   return (
     <section id="kontakt" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-7xl rounded-[2.5rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-[0_14px_34px_rgba(17,24,39,0.16)] md:p-8 lg:p-10">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-[0_14px_34px_rgba(17,24,39,0.16)] md:p-8 lg:p-10">
+        <img src={struktivaImages.ctaBackdrop} alt="Moderner Arbeitsplatz als Hintergrund im Kontaktbereich" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-[linear-gradient(150deg,rgba(7,17,31,0.88),rgba(11,31,58,0.78),rgba(5,10,18,0.9))]" />
+        <div className="relative z-[1]">
         <Reveal>
           <SectionHeader
             eyebrow="Kontakt"
@@ -1599,6 +1665,7 @@ function ContactSection() {
               </a>
             </div>
           </Reveal>
+        </div>
         </div>
       </div>
     </section>
@@ -1841,7 +1908,7 @@ function HeroSectionPremium() {
           </div>
           <div className="hero-image-shell mt-4 overflow-hidden rounded-[1.3rem] border border-white/14">
             <img
-              src={struktivaImages.hero}
+              src={struktivaImages.businessHero}
               alt="Moderne Business-Architektur mit strukturierter Stadtansicht bei Nacht"
               loading="eager"
               fetchpriority="high"
@@ -1879,7 +1946,7 @@ function ServicesSectionPremium() {
         <Reveal className="mt-8">
           <div className="service-image-spotlight grid items-center gap-5 rounded-[1.8rem] border border-white/14 bg-white/[0.04] p-4 md:grid-cols-[0.96fr_1.04fr] md:p-5">
               <img
-                src={struktivaImages.structure}
+                src={struktivaImages.structurePlanning}
                 alt="Strategie- und Strukturplanung auf einem modernen Arbeitstisch"
                 loading="lazy"
                 decoding="async"
@@ -2087,13 +2154,13 @@ function LandingpageDigitaleStrukturPage() {
 
 function LandingpageDigitaleStrukturPageV2() {
   const landingImages = {
-    hero: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80',
-    problem: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1400&q=80',
-    solution: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80',
-    cta: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=80',
-    demoHandwerker: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
-    demoBeauty: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1200&q=80',
-    demoDienstleister: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80',
+    hero: struktivaImages.businessHero,
+    problem: struktivaImages.workspace,
+    solution: struktivaImages.structurePlanning,
+    cta: struktivaImages.ctaBackdrop,
+    demoHandwerker: struktivaImages.handwerker,
+    demoBeauty: struktivaImages.beauty,
+    demoDienstleister: struktivaImages.dienstleister,
   }
 
   const includedCards = [
@@ -2288,6 +2355,10 @@ function ServiceDetailLayout({ title, intro, children }) {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Leistung</p>
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold text-white md:text-5xl">{title}</h1>
             <p className="mt-4 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">{intro}</p>
+            <div className="relative mt-6 overflow-hidden rounded-[1.2rem] border border-white/14">
+              <img src={struktivaImages.structurePlanning} alt="Strategische digitale Planung im Unternehmenskontext" loading="lazy" decoding="async" className="h-28 w-full object-cover md:h-32" />
+              <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(7,17,31,0.68),rgba(11,31,58,0.4),rgba(5,10,18,0.72))]" />
+            </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
                 Anfrage stellen
