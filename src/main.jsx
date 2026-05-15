@@ -66,6 +66,7 @@ const contactDetails = {
   phoneHref: 'tel:+4970518162292',
   whatsappLabel: '07051 8162292',
   whatsappHref: 'https://wa.me/4970518162292',
+  googleReviewHref: 'https://g.page/r/CZvwYJbOSShgEBM/review',
   addressLine1: 'Ostlandstraße 3',
   addressLine2: '75365 Calw',
   country: 'Deutschland',
@@ -1529,6 +1530,9 @@ function ContactSection() {
           <p className="mt-2 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
             Du kannst auch eine kostenlose App-Ersteinschätzung anfragen, wenn du noch nicht sicher bist, ob eine App für dein Unternehmen sinnvoll ist.
           </p>
+          <p className="mt-2 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+            Du hast bereits mit STRUKTIVA gearbeitet? Dann kannst du hier eine Google-Bewertung abgeben.
+          </p>
         </Reveal>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -1565,6 +1569,14 @@ function ContactSection() {
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]"
               >
                 Per WhatsApp Business kontaktieren
+              </a>
+              <a
+                href={contactDetails.googleReviewHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-[#D7DCE5] transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]"
+              >
+                Bewertung abgeben
               </a>
             </div>
           </Reveal>
@@ -1705,6 +1717,18 @@ function Footer() {
               <a href={siteLinks.googleAdsPage} className="transition hover:text-[#F2D98B]">Google Ads</a>
             </div>
           </div>
+        </div>
+        <div className="rounded-2xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-[#D7DCE5] lg:max-w-md">
+          <p>Zufrieden mit STRUKTIVA? Ich freue mich über deine Google-Bewertung.</p>
+          <a
+            href={contactDetails.googleReviewHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-2 font-semibold text-[#F2D98B] transition hover:text-white"
+          >
+            Google-Bewertung schreiben
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </footer>
