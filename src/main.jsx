@@ -328,42 +328,13 @@ const pricingPackages = [
     price: 'ab 149 € / Monat',
     badge: 'Laufende Begleitung',
     description: 'Für Unternehmen, die nach der Erstellung dauerhaft Unterstützung bei Webseite, Landingpage, Google Ads oder App-Systemen möchten.',
-    tiers: [
-      {
-        title: 'Basic',
-        price: 'ab 149 € / Monat',
-        description: 'Für einfache laufende Unterstützung.',
-        features: [
-          'kleinere Webseiten- oder Landingpage-Anpassungen',
-          'kurze digitale Prüfung',
-          'kleine Textanpassungen',
-          'Empfehlung für nächste Schritte',
-        ],
-      },
-      {
-        title: 'Standard',
-        price: 'ab 299 € / Monat',
-        description: 'Für regelmäßige digitale Weiterentwicklung.',
-        features: [
-          'Webseiten- oder Landingpage-Optimierungen',
-          'Google-Ads-Strukturprüfung',
-          'Optimierung der Kundenführung',
-          'kleinere App- oder Struktur-Anpassungen',
-          'konkrete Verbesserungsvorschläge',
-        ],
-      },
-      {
-        title: 'Premium',
-        price: 'ab 499 € / Monat',
-        description: 'Für intensivere Betreuung.',
-        features: [
-          'laufende Optimierung von Webseite, Landingpage oder App',
-          'Google-Ads-Begleitung',
-          'regelmäßige Anpassungen',
-          'Weiterentwicklung digitaler Abläufe',
-          'priorisierte Betreuung',
-        ],
-      },
+    features: [
+      'kleine Änderungen',
+      'neue Inhalte',
+      'Social-Media-Vorlagen',
+      'Google-Bewertungen',
+      'technische Pflege',
+      'Auswertung und Optimierung',
     ],
     note: 'Der genaue monatliche Umfang wird im persönlichen Gespräch festgelegt.',
     cta: 'Betreuung anfragen',
@@ -1851,7 +1822,7 @@ function HeroSectionPremium() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href={siteLinks.landingpageDigitaleStruktur} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">
-                Digitale Struktur ansehen
+                Demo-Seiten ansehen
               </a>
             </motion.div>
             <motion.a
