@@ -97,6 +97,20 @@ const navItems = [
   ['Kontakt', siteLinks.contact],
 ]
 
+const desktopNavItems = [
+  ['Preise', siteLinks.pricing],
+  ['Demos', siteLinks.demos],
+  ['Kontakt', siteLinks.contact],
+]
+
+const leistungenDropdownItems = [
+  ['Unternehmensstruktur', siteLinks.landingpageDigitaleStruktur],
+  ['Google Ads', siteLinks.googleAdsPage],
+  ['Bewertungs-QR-Code', siteLinks.bewertungsQrCode],
+  ['Apps & Systeme', siteLinks.appsPage],
+  ['Ablauf', siteLinks.process],
+]
+
 const demoCards = [
   {
     title: 'Demo Handwerker',
@@ -539,13 +553,17 @@ function SectionHeader({ eyebrow, title, text, centered = true }) {
 function Header({ pathname }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false)
   const menuPanelRef = useRef(null)
+  const desktopDropdownRef = useRef(null)
 
   const closeMobileMenu = () => {
     setMenuOpen(false)
     document.body.classList.remove('menu-open', 'open', 'active', 'is-open', 'mobile-menu-open')
     document.body.style.overflow = ''
   }
+
+  const closeDesktopDropdown = () => setDesktopDropdownOpen(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 14)
@@ -556,6 +574,7 @@ function Header({ pathname }) {
 
   useEffect(() => {
     closeMobileMenu()
+    closeDesktopDropdown()
   }, [pathname])
 
   useEffect(() => {
@@ -572,6 +591,7 @@ function Header({ pathname }) {
     const onKeyDown = (event) => {
       if (event.key === 'Escape') {
         closeMobileMenu()
+        closeDesktopDropdown()
       }
     }
 
@@ -586,20 +606,35 @@ function Header({ pathname }) {
       if (window.innerWidth >= 1024) {
         closeMobileMenu()
       }
+      if (window.innerWidth < 1024) {
+        closeDesktopDropdown()
+      }
+    }
+
+    const onClickOutsideDesktopDropdown = (event) => {
+      if (
+        desktopDropdownOpen &&
+        desktopDropdownRef.current &&
+        !desktopDropdownRef.current.contains(event.target)
+      ) {
+        closeDesktopDropdown()
+      }
     }
 
     document.addEventListener('keydown', onKeyDown)
     document.addEventListener('mousedown', onPointerDownOutside)
     document.addEventListener('touchstart', onPointerDownOutside, { passive: true })
+    document.addEventListener('mousedown', onClickOutsideDesktopDropdown)
     window.addEventListener('resize', onResize)
 
     return () => {
       document.removeEventListener('keydown', onKeyDown)
       document.removeEventListener('mousedown', onPointerDownOutside)
       document.removeEventListener('touchstart', onPointerDownOutside)
+      document.removeEventListener('mousedown', onClickOutsideDesktopDropdown)
       window.removeEventListener('resize', onResize)
     }
-  }, [menuOpen])
+  }, [menuOpen, desktopDropdownOpen])
 
   return (
     <motion.header
@@ -611,27 +646,80 @@ function Header({ pathname }) {
       }`}
     >
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border px-4 py-2.5 transition md:px-5 ${
+        className={`mx-auto flex w-full max-w-[1240px] items-center justify-between rounded-full border px-4 py-2.5 transition md:px-5 lg:py-3 ${
           scrolled
             ? 'border-[#D8B45A]/25 bg-white/[0.05] shadow-[0_20px_70px_rgba(8,12,24,0.35)]'
             : 'border-white/12 bg-white/[0.05]'
         }`}
       >
-        <a href={siteLinks.home} className="flex min-w-0 items-center gap-3">
+        <a href={siteLinks.home} className="flex min-w-0 max-w-[320px] items-center gap-3 xl:max-w-[380px]">
           <img
             src="/struktiva-logo.jpeg"
             alt="STRUKTIVA Unternehmensarchitektur Logo"
             className="h-8 w-8 rounded-full object-contain md:h-10 md:w-10"
           />
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-white md:text-[15px]">{brand.name}</p>
-            <p className="text-xs uppercase tracking-[0.2em] text-[#94A3B8]">{brand.descriptor}</p>
+            <p className="truncate text-sm font-semibold text-white lg:text-[14px] xl:text-[15px]">{brand.name}</p>
+            <p className="truncate text-[10px] uppercase tracking-[0.24em] text-[#94A3B8] lg:text-[11px]">{brand.descriptor}</p>
           </div>
         </a>
 
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navItems.map(([label, href]) => (
-            <a key={label} href={href} className="text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]">
+        <nav className="hidden items-center gap-4 xl:gap-6 lg:flex">
+          <a href={siteLinks.home} className="whitespace-nowrap text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]">
+            Start
+          </a>
+
+          <div
+            ref={desktopDropdownRef}
+            className="relative"
+            onMouseEnter={() => setDesktopDropdownOpen(true)}
+            onMouseLeave={closeDesktopDropdown}
+          >
+            <button
+              type="button"
+              aria-haspopup="menu"
+              aria-expanded={desktopDropdownOpen}
+              className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]"
+              onClick={() => setDesktopDropdownOpen((open) => !open)}
+            >
+              Leistungen
+              <ArrowRight className={`h-3.5 w-3.5 transition ${desktopDropdownOpen ? 'translate-x-0.5 rotate-90 text-[#D8B45A]' : 'rotate-45'}`} />
+            </button>
+
+            <AnimatePresence>
+              {desktopDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute left-1/2 top-[calc(100%+12px)] z-50 w-[280px] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/30 bg-[#07111F]/96 p-2 shadow-[0_20px_45px_rgba(3,8,16,0.55)] backdrop-blur-xl"
+                >
+                  <div className="mb-2 h-px w-full bg-gradient-to-r from-transparent via-[#D8B45A]/55 to-transparent" />
+                  <div className="grid gap-1">
+                    {leistungenDropdownItems.map(([label, href]) => (
+                      <a
+                        key={label}
+                        href={href}
+                        role="menuitem"
+                        onClick={closeDesktopDropdown}
+                        className="rounded-xl px-3 py-2.5 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.06] hover:text-[#D8B45A]"
+                      >
+                        {label}
+                      </a>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {desktopNavItems.map(([label, href]) => (
+            <a
+              key={label}
+              href={href}
+              className="whitespace-nowrap text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]"
+            >
               {label}
             </a>
           ))}
@@ -640,10 +728,10 @@ function Header({ pathname }) {
         <div className="hidden lg:block">
           <a
             href={siteLinks.contact}
-            className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-4.5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(17,24,39,0.15)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
+            className="inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full bg-[#D8B45A] px-4 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(17,24,39,0.14)] transition hover:bg-[#C9A247] hover:-translate-y-0.5"
           >
-            Kostenlose Ersteinschätzung anfragen
-            <ArrowRight className="h-4 w-4" />
+            Ersteinschätzung
+            <ArrowRight className="h-3.5 w-3.5" />
           </a>
         </div>
 
