@@ -18,6 +18,7 @@ import {
   MousePointerClick,
   PanelsTopLeft,
   PhoneCall,
+  QrCode,
   Search,
   ShieldCheck,
   Sparkles,
@@ -45,6 +46,7 @@ const siteLinks = {
   demoBeauty: '/demo-beauty',
   demoDienstleister: '/demo-dienstleister',
   landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
+  bewertungsQrCode: '/bewertungs-qr-code',
   impressum: '/impressum',
   datenschutz: '/datenschutz',
   widerruf: '/widerruf',
@@ -90,6 +92,7 @@ const navItems = [
   ['Demos', siteLinks.demos],
   ['Apps', siteLinks.apps],
   ['Google Ads', siteLinks.googleAds],
+  ['Bewertungs-QR-Code', siteLinks.bewertungsQrCode],
   ['Ablauf', siteLinks.process],
   ['Kontakt', siteLinks.contact],
 ]
@@ -240,6 +243,7 @@ const coreServices = [
   [Target, 'Landingpages', 'Gezielte Angebotsseiten, die ein Angebot verständlich erklären und Besucher aktiv zur Anfrage führen.'],
   [Smartphone, 'Digitale Unternehmensstruktur', 'WhatsApp-Kontakt, Google-Struktur, Social-Media-Logik und Angebotsarchitektur werden sinnvoll in ein Gesamtsystem eingebunden.'],
   [Megaphone, 'Kundengewinnung', 'Google Ads und Landingpages werden strategisch verbunden, damit aus Sichtbarkeit qualifizierte Anfragen entstehen.'],
+  [QrCode, 'Google-Bewertungssystem', 'Zufriedene Kunden direkt zur Bewertung führen. Mit QR-Code, Bewertungslink und klarer Anleitung für mehr Vertrauen bei Google.'],
 ]
 
 const websiteFocusCards = [
@@ -417,6 +421,7 @@ function useDocumentTitle(pathname) {
       '/landingpages': 'Landingpages – STRUKTIVA Unternehmensarchitektur',
       '/apps': 'Unternehmens-Apps – STRUKTIVA Unternehmensarchitektur',
       '/google-ads': 'Google Ads – STRUKTIVA Unternehmensarchitektur',
+      '/bewertungs-qr-code': 'Google-Bewertungssystem mit QR-Code | STRUKTIVA',
       '/demo-handwerker': 'Demo Handwerker – STRUKTIVA Unternehmensarchitektur',
       '/demo-beauty': 'Demo Beauty & Kosmetik – STRUKTIVA Unternehmensarchitektur',
       '/demo-dienstleister': 'Demo Dienstleister – STRUKTIVA Unternehmensarchitektur',
@@ -428,6 +433,19 @@ function useDocumentTitle(pathname) {
     }
 
     document.title = titles[pathname] || titles['/']
+
+    const descriptions = {
+      '/bewertungs-qr-code':
+        'STRUKTIVA erstellt ein einfaches Google-Bewertungssystem mit QR-Code, Bewertungslink und Anleitung für lokale Unternehmen wie Salons, Handwerker, Kosmetikstudios und Dienstleister.',
+    }
+
+    const defaultDescription =
+      'STRUKTIVA entwickelt Websites, Landingpages und digitale Unternehmenssysteme für Selbstständige, lokale Betriebe und kleine Unternehmen – mit klarer Struktur, Kundengewinnung, WhatsApp, Google, Social Media und optionaler Newsletter-Einbindung.'
+
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', descriptions[pathname] || defaultDescription)
+    }
   }, [pathname])
 }
 
@@ -844,6 +862,7 @@ function ServicesSection() {
     Landingpages: siteLinks.landingpagesPage,
     'Unternehmens-Apps': siteLinks.appsPage,
     'Google Ads': siteLinks.googleAdsPage,
+    'Google-Bewertungssystem': siteLinks.bewertungsQrCode,
   }
 
   return (
@@ -1773,6 +1792,7 @@ function Footer() {
               <a href={siteLinks.landingpageDigitaleStruktur} className="transition hover:text-[#F2D98B]">Digitale Struktur</a>
               <a href={siteLinks.appsPage} className="transition hover:text-[#F2D98B]">Unternehmens-Apps</a>
               <a href={siteLinks.googleAdsPage} className="transition hover:text-[#F2D98B]">Google Ads</a>
+              <a href={siteLinks.bewertungsQrCode} className="transition hover:text-[#F2D98B]">Bewertungs-QR-Code</a>
             </div>
           </div>
         </div>
@@ -1902,6 +1922,7 @@ function ServicesSectionPremium() {
     Landingpages: siteLinks.landingpagesPage,
     'Unternehmens-Apps': siteLinks.appsPage,
     'Google Ads': siteLinks.googleAdsPage,
+    'Google-Bewertungssystem': siteLinks.bewertungsQrCode,
   }
 
   return (
@@ -2530,6 +2551,128 @@ function GoogleAdsPage() {
   )
 }
 
+function BewertungsQrCodePage() {
+  const whatsappRequestHref =
+    'https://wa.me/4970518162292?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20Google-Bewertungssystem%20mit%20QR-Code.'
+
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-6xl">
+        <Reveal>
+          <section className="rounded-[2.3rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/80">STRUKTIVA Leistung</p>
+            <h1 className="mt-4 text-3xl font-semibold text-white md:text-5xl">Google-Bewertungssystem mit QR-Code</h1>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+              Mehr Vertrauen bei Google aufbauen – mit einem einfachen System, das zufriedene Kunden direkt zur Bewertung führt.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a
+                href={whatsappRequestHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D] hover:-translate-y-0.5"
+              >
+                Bewertungssystem anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href={siteLinks.home}
+                className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]"
+              >
+                Zurück zur Startseite
+              </a>
+            </div>
+          </section>
+        </Reveal>
+
+        <div className="mt-8 space-y-6">
+          <Reveal>
+            <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+              <h2 className="text-2xl font-semibold text-white">Warum Bewertungen wichtig sind</h2>
+              <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
+                Viele Kunden prüfen vor einer Anfrage zuerst Google-Bewertungen. Ein professionelles Bewertungssystem macht es zufriedenen Kunden leichter, eine Bewertung abzugeben – ohne komplizierte Suche, ohne Umwege und ohne technische Hürden.
+              </p>
+            </section>
+          </Reveal>
+
+          <Reveal>
+            <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+              <h2 className="text-2xl font-semibold text-white">Was enthalten ist</h2>
+              <div className="mt-5 grid gap-3 md:grid-cols-2">
+                {[
+                  'QR-Code zur direkten Google-Bewertung',
+                  'Bewertungslink für WhatsApp, E-Mail oder Website',
+                  'kleine Druckvorlage für Theke, Empfang oder Rechnung',
+                  'kurzer Kundentext zum freundlichen Bitten um eine Bewertung',
+                  'einfache Anleitung für den Alltag',
+                  'optionaler Einbau auf Website oder Landingpage',
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
+                    <span className="font-semibold text-[#D8B45A]">✓</span> {item}
+                  </div>
+                ))}
+              </div>
+            </section>
+          </Reveal>
+
+          <Reveal>
+            <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+              <h2 className="text-2xl font-semibold text-white">Für wen ist das geeignet?</h2>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {[
+                  'Friseursalons',
+                  'Kosmetikstudios',
+                  'Handwerker',
+                  'lokale Dienstleister',
+                  'kleine Geschäfte',
+                  'Restaurants und Cafés',
+                  'Solo-Selbstständige',
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </section>
+          </Reveal>
+
+          <Reveal>
+            <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+              <h2 className="text-2xl font-semibold text-white">So funktioniert es</h2>
+              <ol className="mt-5 space-y-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
+                <li>1. Google-Bewertungslink wird erstellt oder geprüft</li>
+                <li>2. QR-Code wird professionell gestaltet</li>
+                <li>3. Vorlage und Textbausteine werden vorbereitet</li>
+                <li>4. Der QR-Code wird im Geschäft, auf der Website oder in WhatsApp eingesetzt</li>
+                <li>5. Kunden können direkt bewerten</li>
+              </ol>
+            </section>
+          </Reveal>
+
+          <Reveal>
+            <section className="rounded-[1.8rem] border border-[#D8B45A]/28 bg-white/[0.05] p-6 shadow-premium md:p-7">
+              <h2 className="text-2xl font-semibold text-white">Startpreis</h2>
+              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 49 €</p>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
+                Ideal als einzelnes Mini-Angebot oder als Teil des STRUKTIVA Sichtbarkeitspakets.
+              </p>
+              <a
+                href={whatsappRequestHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D] hover:-translate-y-0.5"
+              >
+                Jetzt Bewertungssystem anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </section>
+          </Reveal>
+        </div>
+      </div>
+    </main>
+  )
+}
+
 function LegalSection({ title, children }) {
   return (
     <section className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
@@ -3107,6 +3250,8 @@ function Page() {
     content = <AppsPage />
   } else if (pathname === '/google-ads') {
     content = <GoogleAdsPage />
+  } else if (pathname === '/bewertungs-qr-code') {
+    content = <BewertungsQrCodePage />
   } else if (pathname === '/demo-handwerker') {
     content = <DemoHandwerkerPage />
   } else if (pathname === '/demo-beauty') {
