@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
@@ -539,6 +539,13 @@ function SectionHeader({ eyebrow, title, text, centered = true }) {
 function Header({ pathname }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const menuPanelRef = useRef(null)
+
+  const closeMobileMenu = () => {
+    setMenuOpen(false)
+    document.body.classList.remove('menu-open', 'open', 'active', 'is-open', 'mobile-menu-open')
+    document.body.style.overflow = ''
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 14)
@@ -548,8 +555,51 @@ function Header({ pathname }) {
   }, [])
 
   useEffect(() => {
-    setMenuOpen(false)
+    closeMobileMenu()
   }, [pathname])
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('menu-open', 'mobile-menu-open')
+      document.body.style.overflow = 'hidden'
+      return
+    }
+    document.body.classList.remove('menu-open', 'mobile-menu-open')
+    document.body.style.overflow = ''
+  }, [menuOpen])
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeMobileMenu()
+      }
+    }
+
+    const onPointerDownOutside = (event) => {
+      if (!menuOpen) return
+      if (menuPanelRef.current && !menuPanelRef.current.contains(event.target)) {
+        closeMobileMenu()
+      }
+    }
+
+    const onResize = () => {
+      if (window.innerWidth >= 1024) {
+        closeMobileMenu()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    document.addEventListener('mousedown', onPointerDownOutside)
+    document.addEventListener('touchstart', onPointerDownOutside, { passive: true })
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('mousedown', onPointerDownOutside)
+      document.removeEventListener('touchstart', onPointerDownOutside)
+      window.removeEventListener('resize', onResize)
+    }
+  }, [menuOpen])
 
   return (
     <motion.header
@@ -600,7 +650,15 @@ function Header({ pathname }) {
         <button
           type="button"
           aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
-          onClick={() => setMenuOpen((open) => !open)}
+          aria-controls="mobile-menu-panel"
+          aria-expanded={menuOpen}
+          onClick={() => {
+            if (menuOpen) {
+              closeMobileMenu()
+              return
+            }
+            setMenuOpen(true)
+          }}
           className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/14 bg-white/[0.05] text-white lg:hidden"
         >
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -610,17 +668,20 @@ function Header({ pathname }) {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            id="mobile-menu-panel"
+            ref={menuPanelRef}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-auto mt-3 max-w-7xl rounded-[1.8rem] border border-white/14 bg-[#07111F]/90 p-4 shadow-premium backdrop-blur-xl lg:hidden"
+            className="relative z-50 mx-auto mt-3 max-w-7xl rounded-[1.8rem] border border-white/14 bg-[#07111F]/90 p-4 shadow-premium backdrop-blur-xl lg:hidden"
           >
             <div className="grid gap-2">
               {navItems.map(([label, href]) => (
                 <a
                   key={label}
                   href={href}
+                  onClick={closeMobileMenu}
                   className="rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
                 >
                   {label}
@@ -628,6 +689,7 @@ function Header({ pathname }) {
               ))}
               <a
                 href={siteLinks.contact}
+                onClick={closeMobileMenu}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
               >
                   Kostenlose Ersteinschätzung anfragen
