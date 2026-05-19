@@ -32,6 +32,7 @@ import './styles.css'
 const siteLinks = {
   home: '/#start',
   services: '/#leistungen',
+  leistungenPage: '/leistungen',
   pricing: '/#preise',
   demos: '/#demos',
   apps: '/apps',
@@ -116,40 +117,12 @@ const desktopNavItems = [
   ['Kontakt', siteLinks.contact],
 ]
 
-const leistungenMegaGroups = [
-  {
-    title: 'Digitale Sichtbarkeit',
-    items: [
-      ['Website-Erstellung', siteLinks.websiteFuerKleineUnternehmen, 'Moderne Websites für kleine Unternehmen und Selbstständige.'],
-      ['Landingpages', siteLinks.landingpageErstellenLassen, 'Verkaufsstarke Seiten für Angebote, Aktionen und Anfragen.'],
-      ['Google-Sichtbarkeit', siteLinks.googleSichtbarkeitKleineUnternehmen, 'Struktur für bessere Auffindbarkeit und lokale Präsenz.'],
-    ],
-  },
-  {
-    title: 'Kundenführung & Marketing',
-    items: [
-      ['Digitale Kundenführung', siteLinks.digitaleKundenfuehrung, 'Klare Wege von Interesse zur Anfrage.'],
-      ['WhatsApp-Kontaktstruktur', siteLinks.whatsappKontaktstruktur, 'Direkte Kontaktwege über Website, Google und Landingpage.'],
-      ['Social-Media-Struktur', siteLinks.socialMediaStruktur, 'Inhalte und Kanäle mit klarer Richtung statt Zufall.'],
-      ['Newsletter-Einbindung', siteLinks.newsletterEinbindung, 'Dezente Kundenbindung über professionelle Newsletter-Systeme.'],
-    ],
-  },
-  {
-    title: 'Digitale Systeme',
-    items: [
-      ['Unternehmens-Apps', siteLinks.unternehmensApps, 'Individuelle App- und Dashboard-Konzepte für kleine Unternehmen.'],
-      ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme, 'Tagesabschluss, Kassenstruktur und steuerberaterfreundliche Abläufe.'],
-      ['Betriebs-Dashboards', siteLinks.betriebsDashboards, 'Übersichten für Termine, Kunden, Zahlen und interne Abläufe.'],
-    ],
-  },
-  {
-    title: 'Strategie & Struktur',
-    items: [
-      ['Digitale Unternehmensstruktur', siteLinks.digitaleUnternehmensstruktur, 'Website, Google, WhatsApp, Social Media und Prozesse als System.'],
-      ['Angebotsarchitektur', siteLinks.angebotsarchitektur, 'Leistungen klar darstellen, damit Kunden schneller verstehen.'],
-      ['Beratung & Ersteinschätzung', siteLinks.contact, 'Kostenlose Einschätzung für den passenden digitalen Aufbau.'],
-    ],
-  },
+const leistungenDropdownItems = [
+  ['Website & Landingpage', siteLinks.websiteFuerKleineUnternehmen],
+  ['Google-Sichtbarkeit', siteLinks.googleSichtbarkeitKleineUnternehmen],
+  ['Digitale Kundenführung', siteLinks.digitaleUnternehmensstruktur],
+  ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme],
+  ['Unternehmens-Apps & Dashboards', siteLinks.unternehmensApps],
 ]
 
 const demoCards = [
@@ -519,6 +492,9 @@ function useDocumentTitle(pathname) {
       '/widerruf': 'Widerruf – STRUKTIVA Unternehmensarchitektur',
       '/kontakt': 'Kontakt – STRUKTIVA Unternehmensarchitektur',
     }
+    descriptions['/leistungen'] = 'Alle STRUKTIVA Leistungen im Überblick: Website, Landingpages, Google-Sichtbarkeit, Kundenführung, Systeme, Dashboards und strukturierte Umsetzung.'
+
+    titles['/leistungen'] = 'Leistungen – STRUKTIVA Unternehmensarchitektur'
 
     document.title = titles[pathname] || titles['/']
 
@@ -777,29 +753,29 @@ function Header({ pathname }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute left-1/2 top-[calc(100%+12px)] z-50 w-[860px] max-w-[92vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/30 bg-[#07111F]/96 p-3 shadow-[0_20px_45px_rgba(3,8,16,0.55)] backdrop-blur-xl"
+                  className="absolute left-1/2 top-[calc(100%+12px)] z-50 w-[360px] max-w-[92vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/30 bg-[#07111F]/96 p-2.5 shadow-[0_20px_45px_rgba(3,8,16,0.55)] backdrop-blur-xl"
                 >
                   <div className="mb-2 h-px w-full bg-gradient-to-r from-transparent via-[#D8B45A]/55 to-transparent" />
-                  <div className="grid gap-3 md:grid-cols-2">
-                    {leistungenMegaGroups.map((group) => (
-                      <div key={group.title} className="rounded-xl border border-white/10 bg-white/[0.03] p-3">
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/88">{group.title}</p>
-                        <div className="mt-2 grid gap-1.5">
-                          {group.items.map(([label, href, desc]) => (
-                            <a
-                              key={label}
-                              href={href}
-                              role="menuitem"
-                              onClick={closeDesktopDropdown}
-                              className="rounded-xl px-3 py-2.5 transition hover:bg-white/[0.06]"
-                            >
-                              <p className="text-sm font-semibold text-[#D7DCE5]">{label}</p>
-                              <p className="mt-0.5 text-xs leading-5 text-[#94A3B8]">{desc}</p>
-                            </a>
-                          ))}
-                        </div>
-                      </div>
+                  <div className="grid gap-1">
+                    {leistungenDropdownItems.map(([label, href]) => (
+                      <a
+                        key={label}
+                        href={href}
+                        role="menuitem"
+                        onClick={closeDesktopDropdown}
+                        className="rounded-xl px-3 py-2.5 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.06] hover:text-[#D8B45A]"
+                      >
+                        {label}
+                      </a>
                     ))}
+                    <a
+                      href={siteLinks.leistungenPage}
+                      role="menuitem"
+                      onClick={closeDesktopDropdown}
+                      className="mt-1 rounded-xl border border-[#D8B45A]/28 bg-white/[0.03] px-3 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                    >
+                      Alle Leistungen ansehen
+                    </a>
                   </div>
                 </motion.div>
               )}
@@ -880,25 +856,27 @@ function Header({ pathname }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.18 }}
-                    className="max-h-[46vh] overflow-auto rounded-2xl border border-white/12 bg-white/[0.03] p-2"
+                    className="rounded-2xl border border-white/12 bg-white/[0.03] p-2"
                   >
-                    {leistungenMegaGroups.map((group) => (
-                      <div key={group.title} className="mb-2 rounded-xl border border-white/10 bg-[#050A12]/40 p-2 last:mb-0">
-                        <p className="px-2 pb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/85">{group.title}</p>
-                        <div className="grid gap-1">
-                          {group.items.map(([label, href]) => (
-                            <a
-                              key={label}
-                              href={href}
-                              onClick={closeMobileMenu}
-                              className="rounded-lg px-2 py-2 text-sm text-[#D7DCE5] transition hover:bg-white/[0.06] hover:text-[#D8B45A]"
-                            >
-                              {label}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+                    <div className="grid gap-1">
+                      {leistungenDropdownItems.map(([label, href]) => (
+                        <a
+                          key={label}
+                          href={href}
+                          onClick={closeMobileMenu}
+                          className="rounded-lg px-2.5 py-2 text-sm text-[#D7DCE5] transition hover:bg-white/[0.06] hover:text-[#D8B45A]"
+                        >
+                          {label}
+                        </a>
+                      ))}
+                      <a
+                        href={siteLinks.leistungenPage}
+                        onClick={closeMobileMenu}
+                        className="mt-1 rounded-lg border border-[#D8B45A]/28 bg-white/[0.03] px-2.5 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                      >
+                        Alle Leistungen ansehen
+                      </a>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -2173,6 +2151,7 @@ function Footer() {
             <div className="mt-2 grid gap-1.5">
               <a href={siteLinks.webseitenPage} className="transition hover:text-[#F2D98B]">Professionelle Webseiten</a>
               <a href={siteLinks.landingpagesPage} className="transition hover:text-[#F2D98B]">Landingpages</a>
+              <a href={siteLinks.leistungenPage} className="transition hover:text-[#F2D98B]">Alle Leistungen</a>
               <a href={siteLinks.landingpageDigitaleStruktur} className="transition hover:text-[#F2D98B]">Digitale Struktur</a>
               <a href={siteLinks.appsPage} className="transition hover:text-[#F2D98B]">Unternehmens-Apps</a>
               <a href={siteLinks.googleAdsPage} className="transition hover:text-[#F2D98B]">Google Ads</a>
@@ -3201,6 +3180,55 @@ function OfferDetailPage({ title, intro, points }) {
   )
 }
 
+function LeistungenPage() {
+  const allLeistungen = [
+    ['Website-Erstellung', 'Moderne Websites für kleine Unternehmen und Selbstständige.'],
+    ['Landingpages', 'Verkaufsstarke Seiten für Angebote, Aktionen und Anfragen.'],
+    ['Google-Sichtbarkeit', 'Struktur für bessere Auffindbarkeit und lokale Präsenz.'],
+    ['Digitale Kundenführung', 'Klare Wege von Interesse zur Anfrage.'],
+    ['WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Landingpage.'],
+    ['Social-Media-Struktur', 'Inhalte und Kanäle mit klarer Richtung statt Zufall.'],
+    ['Newsletter-Einbindung', 'Dezente Kundenbindung über professionelle Newsletter-Systeme.'],
+    ['Unternehmens-Apps', 'Individuelle App- und Dashboard-Konzepte für kleine Unternehmen.'],
+    ['Betriebs-Dashboards', 'Übersichten für Termine, Kunden, Zahlen und interne Abläufe.'],
+    ['Digitale Ordnungssysteme', 'Tagesabschluss, Kassenstruktur und steuerberaterfreundliche Abläufe.'],
+    ['Angebotsarchitektur', 'Leistungen klar darstellen, damit Kunden schneller verstehen.'],
+    ['Beratung & Ersteinschätzung', 'Kostenlose Einschätzung für den passenden digitalen Aufbau.'],
+  ]
+
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <section className="rounded-[2.2rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Leistungsübersicht</p>
+          <h1 className="mt-4 text-3xl font-semibold text-white md:text-5xl">Alle STRUKTIVA Leistungen im Überblick</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+            Die Leistungen sind bewusst so aufgebaut, dass Sichtbarkeit, Kundenführung und digitale Abläufe als zusammenhängendes System funktionieren.
+          </p>
+        </section>
+
+        <section className="mt-8 rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {allLeistungen.map(([title, text]) => (
+              <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+                <h2 className="text-base font-semibold text-white">{title}</h2>
+                <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+              </article>
+            ))}
+          </div>
+          <a
+            href={siteLinks.contact}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+          >
+            Kostenlose Ersteinschätzung anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </section>
+      </div>
+    </main>
+  )
+}
+
 function LegalSection({ title, children }) {
   return (
     <section className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
@@ -3782,6 +3810,8 @@ function Page() {
     content = <BewertungsQrCodePage />
   } else if (pathname === '/digitale-ordnungssysteme') {
     content = <DigitaleOrdnungssystemePage />
+  } else if (pathname === '/leistungen') {
+    content = <LeistungenPage />
   } else if (offerPageContent[pathname]) {
     const page = offerPageContent[pathname]
     content = <OfferDetailPage title={page.title} intro={page.intro} points={page.points} />
