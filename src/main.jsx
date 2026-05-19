@@ -47,6 +47,7 @@ const siteLinks = {
   demoDienstleister: '/demo-dienstleister',
   landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
   bewertungsQrCode: '/bewertungs-qr-code',
+  digitaleOrdnungssysteme: '/digitale-ordnungssysteme',
   impressum: '/impressum',
   datenschutz: '/datenschutz',
   widerruf: '/widerruf',
@@ -95,6 +96,7 @@ const navItems = [
   ['Bewertungs-QR-Code', siteLinks.bewertungsQrCode],
   ['Ablauf', siteLinks.process],
   ['Kontakt', siteLinks.contact],
+  ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme],
 ]
 
 const desktopNavItems = [
@@ -104,11 +106,10 @@ const desktopNavItems = [
 ]
 
 const leistungenDropdownItems = [
-  ['Unternehmensstruktur', siteLinks.landingpageDigitaleStruktur],
-  ['Google Ads', siteLinks.googleAdsPage],
-  ['Bewertungs-QR-Code', siteLinks.bewertungsQrCode],
-  ['Apps & Systeme', siteLinks.appsPage],
-  ['Ablauf', siteLinks.process],
+  ['Website & Landingpage', siteLinks.webseitenPage],
+  ['Google-Sichtbarkeit', siteLinks.googleAdsPage],
+  ['Digitale Kundenführung', siteLinks.landingpageDigitaleStruktur],
+  ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme],
 ]
 
 const demoCards = [
@@ -257,6 +258,7 @@ const coreServices = [
   [Target, 'Landingpages', 'Gezielte Angebotsseiten, die ein Angebot verständlich erklären und Besucher aktiv zur Anfrage führen.'],
   [Smartphone, 'Digitale Unternehmensstruktur', 'WhatsApp-Kontakt, Google-Struktur, Social-Media-Logik und Angebotsarchitektur werden sinnvoll in ein Gesamtsystem eingebunden.'],
   [Megaphone, 'Kundengewinnung', 'Google Ads und Landingpages werden strategisch verbunden, damit aus Sichtbarkeit qualifizierte Anfragen entstehen.'],
+  [ClipboardList, 'Digitale Ordnungssysteme', 'Einfache digitale Erfassungssysteme für Tagesabschluss, Kassenstruktur, Monatsübersicht und steuerberaterfreundliche Abläufe.'],
   [QrCode, 'Google-Bewertungssystem', 'Zufriedene Kunden direkt zur Bewertung führen. Mit QR-Code, Bewertungslink und klarer Anleitung für mehr Vertrauen bei Google.'],
 ]
 
@@ -456,6 +458,7 @@ function useDocumentTitle(pathname) {
       '/apps': 'Unternehmens-Apps – STRUKTIVA Unternehmensarchitektur',
       '/google-ads': 'Google Ads – STRUKTIVA Unternehmensarchitektur',
       '/bewertungs-qr-code': 'Google-Bewertungssystem mit QR-Code | STRUKTIVA',
+      '/digitale-ordnungssysteme': 'Digitale Ordnungssysteme für kleine Betriebe – STRUKTIVA',
       '/demo-handwerker': 'Demo Handwerker – STRUKTIVA Unternehmensarchitektur',
       '/demo-beauty': 'Demo Beauty & Kosmetik – STRUKTIVA Unternehmensarchitektur',
       '/demo-dienstleister': 'Demo Dienstleister – STRUKTIVA Unternehmensarchitektur',
@@ -471,6 +474,8 @@ function useDocumentTitle(pathname) {
     const descriptions = {
       '/bewertungs-qr-code':
         'STRUKTIVA erstellt ein einfaches Google-Bewertungssystem mit QR-Code, Bewertungslink und Anleitung für lokale Unternehmen wie Salons, Handwerker, Kosmetikstudios und Dienstleister.',
+      '/digitale-ordnungssysteme':
+        'STRUKTIVA entwickelt digitale Ordnungssysteme für kleine Betriebe – mit Tagesabschluss, Kassenstruktur, Monatsübersicht, Exportfunktionen und steuerberaterfreundlicher Vorbereitung.',
     }
 
     const defaultDescription =
@@ -1032,6 +1037,7 @@ function ServicesSection() {
     Landingpages: siteLinks.landingpagesPage,
     'Unternehmens-Apps': siteLinks.appsPage,
     'Google Ads': siteLinks.googleAdsPage,
+    'Digitale Ordnungssysteme': siteLinks.digitaleOrdnungssysteme,
     'Google-Bewertungssystem': siteLinks.bewertungsQrCode,
   }
 
@@ -2058,6 +2064,7 @@ function Footer() {
               <a href={siteLinks.landingpageDigitaleStruktur} className="transition hover:text-[#F2D98B]">Digitale Struktur</a>
               <a href={siteLinks.appsPage} className="transition hover:text-[#F2D98B]">Unternehmens-Apps</a>
               <a href={siteLinks.googleAdsPage} className="transition hover:text-[#F2D98B]">Google Ads</a>
+              <a href={siteLinks.digitaleOrdnungssysteme} className="transition hover:text-[#F2D98B]">Digitale Ordnungssysteme</a>
               <a href={siteLinks.bewertungsQrCode} className="transition hover:text-[#F2D98B]">Bewertungs-QR-Code</a>
             </div>
           </div>
@@ -2188,6 +2195,7 @@ function ServicesSectionPremium() {
     Landingpages: siteLinks.landingpagesPage,
     'Unternehmens-Apps': siteLinks.appsPage,
     'Google Ads': siteLinks.googleAdsPage,
+    'Digitale Ordnungssysteme': siteLinks.digitaleOrdnungssysteme,
     'Google-Bewertungssystem': siteLinks.bewertungsQrCode,
   }
 
@@ -2940,6 +2948,61 @@ function BewertungsQrCodePage() {
   )
 }
 
+function DigitaleOrdnungssystemePage() {
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <section className="rounded-[2.3rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
+            <h1 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
+              Digitale Ordnungssysteme für steuerberaterfreundliche Abläufe
+            </h1>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+              Kassenstruktur, Tagesabschluss und Monatsübersicht – klar erfasst, digital gespeichert und für den Steuerberater vorbereitet.
+            </p>
+            <div className="mt-6 space-y-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
+              <p>Viele kleine Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und wiederkehrende Rückfragen.</p>
+              <p>STRUKTIVA entwickelt einfache digitale Erfassungssysteme, mit denen tägliche Werte strukturiert dokumentiert, gespeichert und übersichtlich bereitgestellt werden können.</p>
+              <p>Ob Tagesabschluss, Kassenkontrolle, Beleg-Hinweise, Monatsübersicht oder Exportfunktion – das System wird an den tatsächlichen Ablauf des Betriebs angepasst.</p>
+            </div>
+          </section>
+        </Reveal>
+
+        <section className="mt-8 rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+          <h2 className="text-2xl font-semibold text-white">Was das System leisten kann</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {[
+              ['Digitale Tagesabschluss-Erfassung', 'Tägliche Werte strukturiert erfassen und nachvollziehbar speichern.'],
+              ['Kassenstruktur-Systeme', 'Wechselgeld, Bar-Anteil, EC-Zahlungen, Abschöpfung und Differenzen übersichtlich dokumentieren.'],
+              ['Monatsübersichten', 'Klare Auswertungen für Betrieb und Steuerberater.'],
+              ['Exportfunktionen', 'CSV- oder PDF-Export zur Weitergabe oder internen Kontrolle.'],
+              ['Rollen & Zugriff', 'Betrieb und Steuerberater können je nach Bedarf unterschiedliche Zugriffsrechte erhalten.'],
+              ['Individuelle Anpassung', 'Das System wird an den tatsächlichen betrieblichen Ablauf angepasst.'],
+            ].map(([title, text]) => (
+              <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+                <p className="text-base font-semibold text-white">{title}</p>
+                <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-6 rounded-2xl border border-white/14 bg-[#050A12]/45 px-4 py-3 text-xs leading-6 text-[#D7DCE5] md:text-sm">
+            Hinweis: STRUKTIVA bietet keine Steuerberatung an und ersetzt keinen Steuerberater. Unsere Systeme dienen der strukturierten Erfassung, Ordnung und Vorbereitung betrieblicher Daten. Die steuerliche Bewertung und finale Verwendung erfolgen durch Ihren Steuerberater.
+          </p>
+
+          <a
+            href="/#kontakt"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+          >
+            System unverbindlich anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </section>
+      </div>
+    </main>
+  )
+}
+
 function LegalSection({ title, children }) {
   return (
     <section className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
@@ -3519,6 +3582,8 @@ function Page() {
     content = <GoogleAdsPage />
   } else if (pathname === '/bewertungs-qr-code') {
     content = <BewertungsQrCodePage />
+  } else if (pathname === '/digitale-ordnungssysteme') {
+    content = <DigitaleOrdnungssystemePage />
   } else if (pathname === '/demo-handwerker') {
     content = <DemoHandwerkerPage />
   } else if (pathname === '/demo-beauty') {
