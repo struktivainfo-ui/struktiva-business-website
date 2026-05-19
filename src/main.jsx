@@ -395,6 +395,26 @@ const qualityPoints = [
   ['Praxisnah gedacht', 'Digitale Lösungen, die nicht nur gut aussehen, sondern im echten Unternehmensalltag helfen.'],
 ]
 
+const ordnungssystemVorteile = [
+  'klare tägliche Erfassung',
+  'weniger Zettelwirtschaft',
+  'strukturierte Monatsübersicht',
+  'Zugriff für Betrieb und Steuerberater',
+  'Export als CSV oder PDF',
+  'Rollenverwaltung mit Leserechten',
+  'individuelle Anpassung an den Betrieb',
+  'einfache Bedienung auf Laptop, Tablet und Handy',
+]
+
+const ordnungssystemModule = [
+  ['Digitale Tagesabschluss-Erfassung', 'Für Betriebe, die tägliche Werte sauber und nachvollziehbar erfassen möchten.'],
+  ['Kassenstruktur-Systeme', 'Für Wechselgeld, Bar-Anteil, EC-Zahlungen, Abschöpfung und Differenzkontrolle.'],
+  ['Beleg-Hinweis-Systeme', 'Ohne Dateiablage, aber mit Belegnummern, Hinweisen und klarer Zuordnung.'],
+  ['Monatsübersichten', 'Übersichtliche Auswertungen für Betrieb und Steuerberater.'],
+  ['Exportlösungen', 'CSV- und PDF-Ausgaben zur Weitergabe oder internen Kontrolle.'],
+  ['Individuelle Ordnungssysteme', 'Digitale Abläufe, die an den tatsächlichen Betrieb angepasst werden.'],
+]
+
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 },
@@ -1732,6 +1752,102 @@ function QualitySection() {
   )
 }
 
+function OrdnungssystemeSection() {
+  return (
+    <section id="ordnungssysteme" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2.3rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8 lg:p-10">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Neues Angebot"
+            title="Digitale Ordnungssysteme für steuerberaterfreundliche Abläufe"
+            text="Kassenstruktur, Tagesabschluss und Monatsübersicht – klar erfasst, digital gespeichert und für den Steuerberater vorbereitet."
+            centered={false}
+          />
+        </Reveal>
+
+        <Reveal className="mt-6">
+          <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5">
+              <p className="text-sm leading-8 text-[#D7DCE5] md:text-base">
+                Viele kleine Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und Rückfragen vom Steuerberater.
+              </p>
+              <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
+                STRUKTIVA entwickelt einfache digitale Erfassungssysteme, mit denen betriebliche Werte strukturiert dokumentiert, gespeichert und übersichtlich bereitgestellt werden können.
+              </p>
+              <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
+                Ob Tagesabschluss digital, Kassenkontrolle, Beleg-Hinweise, Monatsübersicht oder Export für Steuerberater – wir bauen ein System, das zu Ihrem betrieblichen Ablauf passt.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {ordnungssystemVorteile.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/14 bg-white/[0.05] px-4 py-3 text-sm font-medium text-white">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.12 }}
+          variants={stagger}
+          className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3"
+        >
+          {ordnungssystemModule.map(([title, text]) => (
+            <motion.article
+              key={title}
+              variants={fadeUp}
+              transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-[1.45rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium transition hover:-translate-y-1"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/80">System</p>
+              <h3 className="mt-3 text-lg font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        <Reveal className="mt-10">
+          <div className="rounded-[1.7rem] border border-[#D8B45A]/28 bg-white/[0.05] p-6">
+            <h3 className="text-2xl font-semibold text-white">Vom Chaos zur klaren Struktur</h3>
+            <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
+              Ein gutes System ersetzt keine fachliche Beratung – aber es sorgt dafür, dass die richtigen Daten sauber, nachvollziehbar und übersichtlich bereitstehen.
+            </p>
+            <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
+              Genau dafür entwickelt STRUKTIVA digitale Ordnungssysteme: einfach genug für den Alltag, strukturiert genug für den Steuerberater.
+            </p>
+            <p className="mt-4 text-sm font-medium text-[#D7DCE5]">
+              Individuelle digitale Ordnungssysteme werden nach Umfang, Betrieb und benötigten Funktionen kalkuliert.
+            </p>
+            <p className="mt-4 rounded-2xl border border-white/14 bg-[#050A12]/45 px-4 py-3 text-xs leading-6 text-[#D7DCE5] md:text-sm">
+              Hinweis: STRUKTIVA bietet keine Steuerberatung an und ersetzt keinen Steuerberater. Unsere Systeme dienen der strukturierten Erfassung, Ordnung und Vorbereitung betrieblicher Daten. Die steuerliche Bewertung und finale Verwendung erfolgen durch Ihren Steuerberater.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#kontakt"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D] hover:-translate-y-0.5"
+              >
+                System unverbindlich anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href={siteLinks.appsPage}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+              >
+                Beispiel ansehen
+              </a>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
 function ContactSection() {
   return (
     <section id="kontakt" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
@@ -2155,6 +2271,7 @@ function HomePage() {
       <TargetSection />
       <WhySection />
       <QualitySection />
+      <OrdnungssystemeSection />
       <ContactSection />
     </>
   )
