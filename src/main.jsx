@@ -3705,7 +3705,7 @@ function LeistungenPage() {
     'Website-Erstellung': 'ab 599 €',
     Landingpages: 'ab 299 €',
     'Google-Sichtbarkeit': 'ab 349 €',
-    'Digitale KundenfÃ¼hrung': 'ab 299 €',
+    'Digitale Kundenführung': 'ab 299 €',
     'WhatsApp-Kontaktstruktur': 'ab 149 €',
     'Social-Media-Struktur': 'ab 249 €',
     'Newsletter-Einbindung': 'ab 199 €',
@@ -3713,7 +3713,7 @@ function LeistungenPage() {
     'Betriebs-Dashboards': 'ab 799 €',
     'Digitale Ordnungssysteme': 'ab 899 €',
     Angebotsarchitektur: 'ab 299 €',
-    'Beratung & ErsteinschÃ¤tzung': 'ab 149 €',
+    'Beratung & Ersteinschätzung': 'ab 149 €',
   }
 
   const allLeistungen = [
