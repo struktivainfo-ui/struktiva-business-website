@@ -95,4 +95,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://struktiva-unternehmensarchitektur.vercel.app/wissen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://struktiva-unternehmensarchitektur.vercel.app/wissen/warum-eine-schoene-website-keine-kunden-bringt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://struktiva-unternehmensarchitektur.vercel.app/wissen/digitale-grundsysteme-kleine-unternehmen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://struktiva-unternehmensarchitektur.vercel.app/wissen/website-landingpage-funnel-unterschied</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

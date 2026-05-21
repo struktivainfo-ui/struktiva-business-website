@@ -63,6 +63,10 @@ const siteLinks = {
   impressum: '/impressum',
   datenschutz: '/datenschutz',
   widerruf: '/widerruf',
+  wissen: '/wissen',
+  wissenWebsiteAllein: '/wissen/warum-eine-schoene-website-keine-kunden-bringt',
+  wissenGrundsysteme: '/wissen/digitale-grundsysteme-kleine-unternehmen',
+  wissenWebsiteLandingpageFunnel: '/wissen/website-landingpage-funnel-unterschied',
 }
 
 const brand = {
@@ -103,6 +107,7 @@ const navItems = [
   ['Leistungen', siteLinks.services],
   ['Preise', siteLinks.pricing],
   ['Demos', siteLinks.demos],
+  ['Wissen', siteLinks.wissen],
   ['Apps', siteLinks.apps],
   ['Google Ads', siteLinks.googleAds],
   ['Bewertungs-QR-Code', siteLinks.bewertungsQrCode],
@@ -114,6 +119,7 @@ const navItems = [
 const desktopNavItems = [
   ['Preise', siteLinks.pricing],
   ['Demos', siteLinks.demos],
+  ['Wissen', siteLinks.wissen],
   ['Kontakt', siteLinks.contact],
 ]
 
@@ -540,6 +546,10 @@ function useDocumentTitleSafe(pathname) {
       '/demo-beauty': 'Demo Beauty & Kosmetik - STRUKTIVA Unternehmensarchitektur',
       '/demo-dienstleister': 'Demo Dienstleister - STRUKTIVA Unternehmensarchitektur',
       '/landingpage-digitale-struktur': 'Digitale Struktur fuer kleine Unternehmen - STRUKTIVA Unternehmensarchitektur',
+      '/wissen': 'STRUKTIVA Wissen - Digitale Unternehmensstruktur für kleine Unternehmen',
+      '/wissen/warum-eine-schoene-website-keine-kunden-bringt': 'Warum eine schöne Website allein keine Kunden bringt - STRUKTIVA Wissen',
+      '/wissen/digitale-grundsysteme-kleine-unternehmen': 'Die 5 digitalen Grundsysteme für kleine Unternehmen - STRUKTIVA Wissen',
+      '/wissen/website-landingpage-funnel-unterschied': 'Website, Landingpage oder Funnel - STRUKTIVA Wissen',
       '/leistungen': 'Leistungen - STRUKTIVA Unternehmensarchitektur',
       '/impressum': 'Impressum - STRUKTIVA Unternehmensarchitektur',
       '/datenschutz': 'Datenschutz - STRUKTIVA Unternehmensarchitektur',
@@ -560,6 +570,14 @@ function useDocumentTitleSafe(pathname) {
         'Google-Sichtbarkeit fuer kleine Unternehmen mit klarer Struktur, lokaler Auffindbarkeit und professioneller Praesenz.',
       '/leistungen':
         'Alle STRUKTIVA Leistungen im Ueberblick: Website, Landingpages, Google-Sichtbarkeit, Kundenfuehrung, Systeme, Dashboards und strukturierte Umsetzung.',
+      '/wissen':
+        'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen Abläufen für kleine Unternehmen.',
+      '/wissen/warum-eine-schoene-website-keine-kunden-bringt':
+        'Warum Design allein nicht reicht und wie kleine Unternehmen mit klarer digitaler Struktur mehr qualifizierte Anfragen erhalten.',
+      '/wissen/digitale-grundsysteme-kleine-unternehmen':
+        'Die 5 digitalen Grundsysteme, die kleine Unternehmen für Sichtbarkeit, Vertrauen und verlässliche Kundenanfragen wirklich brauchen.',
+      '/wissen/website-landingpage-funnel-unterschied':
+        'Website, Landingpage oder Funnel: welche Struktur kleine Unternehmen wirklich brauchen, um online klar und anfragebereit aufzutreten.',
     }
 
     const defaultDescription =
@@ -2410,6 +2428,238 @@ function ServicesSectionPremium() {
   )
 }
 
+const wissenArticles = [
+  {
+    slug: 'warum-eine-schoene-website-keine-kunden-bringt',
+    href: siteLinks.wissenWebsiteAllein,
+    title: 'Warum eine schöne Website allein keine Kunden bringt',
+    description:
+      'Viele kleine Unternehmen investieren in Design, aber nicht in Kundenführung. Dieser Beitrag zeigt, warum Struktur wichtiger ist als reine Optik.',
+    sections: [
+      {
+        heading: 'Eine schöne Website ist kein Verkaufssystem',
+        text:
+          'Design schafft einen ersten Eindruck. Anfragen entstehen aber erst dann, wenn Besucher sofort erkennen, was du anbietest, für wen dein Angebot gedacht ist und wie der nächste Schritt aussieht.',
+      },
+      {
+        heading: 'Was in der Praxis oft fehlt',
+        bullets: [
+          'klare Leistungsstruktur statt allgemeiner Floskeln',
+          'sichtbare Kontaktwege auf jeder wichtigen Seite',
+          'eine starke Verbindung zwischen Google-Profil und Website',
+          'klare Call-to-Actions mit konkretem Nutzen',
+        ],
+      },
+      {
+        heading: 'STRUKTIVA denkt in Systemen',
+        text:
+          'Website, Landingpage, WhatsApp-Kontaktwege, Angebotsstruktur und Google-Sichtbarkeit werden als zusammenhängender Ablauf aufgebaut. So wird aus Sichtbarkeit ein klarer Weg zur Anfrage.',
+      },
+    ],
+  },
+  {
+    slug: 'digitale-grundsysteme-kleine-unternehmen',
+    href: siteLinks.wissenGrundsysteme,
+    title: 'Die 5 digitalen Grundsysteme für kleine Unternehmen',
+    description:
+      'Diese fünf Grundlagen sorgen dafür, dass kleine Unternehmen online klar auftreten, Vertrauen aufbauen und dauerhaft anfragebereit sind.',
+    sections: [
+      {
+        heading: '1. Website-Grundsystem',
+        text:
+          'Die Website erklärt Leistungen klar, zeigt Kompetenz und führt Besucher direkt zur Kontaktaufnahme.',
+      },
+      {
+        heading: '2. Google-Sichtbarkeitssystem',
+        text:
+          'Google-Unternehmensprofil, Bewertungsstruktur und Standortsignale schaffen lokale Auffindbarkeit und Vertrauen.',
+      },
+      {
+        heading: '3. Kontakt- und WhatsApp-System',
+        text:
+          'E-Mail, Telefon und WhatsApp werden so platziert, dass Kunden den schnellsten Kontaktweg sofort erkennen.',
+      },
+      {
+        heading: '4. Angebots- und Landingpage-System',
+        text:
+          'Leistungen werden in klaren Angebotsseiten strukturiert. Aktionen und Schwerpunkte laufen über fokussierte Landingpages.',
+      },
+      {
+        heading: '5. Bewertungs- und Vertrauenssystem',
+        text:
+          'Bewertungsprozesse, Referenzlogik und konsistente Darstellung erhöhen die Abschlusswahrscheinlichkeit spürbar.',
+      },
+    ],
+  },
+  {
+    slug: 'website-landingpage-funnel-unterschied',
+    href: siteLinks.wissenWebsiteLandingpageFunnel,
+    title: 'Website, Landingpage oder Funnel – was braucht dein Unternehmen wirklich?',
+    description:
+      'Nicht jedes Unternehmen braucht sofort einen komplexen Funnel. Dieser Beitrag zeigt, wann Website, Landingpage oder Funnel sinnvoll sind.',
+    sections: [
+      {
+        heading: 'Website',
+        text:
+          'Die Website ist dein digitaler Hauptstandort. Sie gibt Orientierung, erklärt Leistungen und stärkt Vertrauen.',
+      },
+      {
+        heading: 'Landingpage',
+        text:
+          'Eine Landingpage ist ideal für ein konkretes Angebot oder eine Kampagne. Sie führt Besucher mit einem klaren Fokus zur Anfrage.',
+      },
+      {
+        heading: 'Funnel',
+        text:
+          'Ein Funnel ist nur dann sinnvoll, wenn mehrere Schritte und Zielgruppen sauber strukturiert geführt werden sollen.',
+      },
+      {
+        heading: 'Was kleine Unternehmen in der Regel brauchen',
+        bullets: [
+          'eine professionelle Website als Basis',
+          'ein bis zwei starke Landingpages für Kernangebote',
+          'eine klare Kontaktlogik über WhatsApp, Telefon und Formular',
+          'Google-Sichtbarkeit als dauerhafte Grundlage',
+        ],
+      },
+    ],
+  },
+]
+
+function WissenSection() {
+  return (
+    <section id="wissen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <SectionHeader
+            eyebrow="STRUKTIVA Wissen"
+            title="STRUKTIVA Wissen"
+            text="Praxisnahe Beiträge für kleine Unternehmen, Selbstständige und lokale Betriebe, die ihren digitalen Auftritt klarer und wirksamer strukturieren möchten."
+            centered={false}
+          />
+        </Reveal>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3"
+        >
+          {wissenArticles.map((article) => (
+            <motion.a
+              key={article.slug}
+              href={article.href}
+              variants={fadeUp}
+              transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
+              className="group rounded-[1.7rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/85">Wissen</p>
+              <h3 className="mt-3 text-xl font-semibold leading-8 text-white">{article.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{article.description}</p>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                Artikel lesen
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </span>
+            </motion.a>
+          ))}
+        </motion.div>
+        <div className="mt-7">
+          <a
+            href={siteLinks.wissen}
+            className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+          >
+            Zum Wissensbereich
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function WissenOverviewPage() {
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <section className="rounded-[2.1rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Wissen</p>
+          <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
+            Wissen für digitale Unternehmensstruktur
+          </h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+            STRUKTIVA zeigt, wie kleine Unternehmen, Selbstständige und lokale Betriebe digitale Systeme sinnvoll aufbauen: mit Website, Landingpages, Google-Sichtbarkeit, klaren Kontaktwegen und sauberen Abläufen.
+          </p>
+        </section>
+        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {wissenArticles.map((article) => (
+            <a
+              key={article.slug}
+              href={article.href}
+              className="group rounded-[1.7rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/85">Artikel</p>
+              <h2 className="mt-3 text-xl font-semibold leading-8 text-white">{article.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{article.description}</p>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                Artikel lesen
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </main>
+  )
+}
+
+function WissenArticlePage({ article }) {
+  if (!article) return null
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <article className="mx-auto max-w-4xl">
+        <header className="rounded-[2rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Wissen</p>
+          <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">{article.title}</h1>
+          <p className="mt-4 text-base leading-8 text-[#D7DCE5] md:text-lg">{article.description}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.wissen} className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">Zurück zu Wissen</a>
+            <a href={siteLinks.home} className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/[0.03] px-5 py-2.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">Zur Startseite</a>
+          </div>
+        </header>
+
+        <div className="mt-8 space-y-5">
+          {article.sections.map((section) => (
+            <section key={section.heading} className="rounded-[1.4rem] border border-white/12 bg-white/[0.04] p-6 shadow-premium">
+              <h2 className="text-2xl font-semibold text-white">{section.heading}</h2>
+              {section.text ? <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">{section.text}</p> : null}
+              {section.bullets ? (
+                <div className="mt-3 grid gap-2.5 text-sm leading-7 text-[#D7DCE5]">
+                  {section.bullets.map((bullet) => (
+                    <p key={bullet}>- {bullet}</p>
+                  ))}
+                </div>
+              ) : null}
+            </section>
+          ))}
+        </div>
+
+        <section className="mt-8 rounded-[1.6rem] border border-[#D8B45A]/25 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.94))] p-6 shadow-premium">
+          <p className="text-base leading-8 text-[#D7DCE5]">
+            Wenn deine Website nicht nur gut aussehen, sondern für dein Unternehmen arbeiten soll, dann ist STRUKTIVA der richtige nächste Schritt.
+          </p>
+          <a
+            href={siteLinks.contact}
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+          >
+            Digitale Struktur prüfen lassen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </section>
+      </article>
+    </main>
+  )
+}
+
 function HomePage() {
   return (
     <>
@@ -2421,6 +2671,7 @@ function HomePage() {
       <AppsSection />
       <GoogleAdsSection />
       <DemoOverviewSection />
+      <WissenSection />
       <PricingSection />
       <ProcessSection />
       <TargetSection />
@@ -3830,6 +4081,7 @@ function Page() {
   const pathname = useCurrentPath()
   const [showSplash, setShowSplash] = useState(false)
   useDocumentTitleSafe(pathname)
+  const wissenArticle = wissenArticles.find((article) => article.href === pathname)
 
   useEffect(() => {
     try {
@@ -3872,6 +4124,10 @@ function Page() {
     content = <DigitaleOrdnungssystemePage />
   } else if (pathname === '/leistungen') {
     content = <LeistungenPage />
+  } else if (pathname === '/wissen') {
+    content = <WissenOverviewPage />
+  } else if (wissenArticle) {
+    content = <WissenArticlePage article={wissenArticle} />
   } else if (offerPageContent[pathname]) {
     const page = offerPageContent[pathname]
     content = <OfferDetailPage title={page.title} intro={page.intro} points={page.points} />
@@ -3903,6 +4159,3 @@ createRoot(document.getElementById('root')).render(
     <Page />
   </React.StrictMode>,
 )
-
-
-
