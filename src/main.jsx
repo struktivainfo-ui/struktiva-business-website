@@ -156,7 +156,7 @@ const demoPages = {
     sections: [
       {
         title: 'Leistungen',
-        points: ['Renovierung & Sanierung', 'Reparaturservice', 'Wartung & Instandhaltung', 'individuelle Projektanfragen', 'Notfall- oder Schnellservice optional'],
+        points: ['Renovierung & Sanierung', 'Reparaturservice', 'Wartung & Instandhaltung', 'individuelle Projektanfragen', 'Notfall- oder Schnellservice'],
       },
       {
         title: 'Warum dieser Aufbau funktioniert',
@@ -164,13 +164,11 @@ const demoPages = {
       },
       {
         title: 'Vertrauenselemente (Demo)',
-        points: ['regionale Ausrichtung', 'klare Kontaktmöglichkeiten', 'Bewertungsbereich als Beispiel', 'Vorher-Nachher-Bereich als Platzhalterstruktur', 'WhatsApp- oder Telefon-CTA'],
+        points: ['regionale Ausrichtung', 'klare Kontaktmöglichkeiten', 'Bewertungsbereich als Beispiel', 'Vorher-Nachher-Bereich', 'WhatsApp- oder Telefon-CTA'],
       },
     ],
     formFields: ['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Leistung', 'Nachricht'],
     formCta: 'Projekt anfragen',
-    optional:
-      'Auf Wunsch kann ein Newsletter oder Infoverteiler eingebunden werden, z. B. für saisonale Angebote, Wartungserinnerungen oder Kundeninformationen.',
   },
   beauty: {
     title: 'Demo Beauty & Kosmetik – Professioneller Auftritt für lokale Beauty-Dienstleister',
@@ -198,8 +196,6 @@ const demoPages = {
     ],
     formFields: ['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Behandlung', 'Nachricht'],
     formCta: 'Unverbindlich anfragen',
-    optional:
-      'Auf Wunsch kann ein kleiner Newsletter-Bereich integriert werden, z. B. für Aktionen, Pflege-Tipps oder freie Termine.',
   },
   dienstleister: {
     title: 'Demo Dienstleister – Digitale Struktur für Selbstständige und lokale Unternehmen',
@@ -227,8 +223,6 @@ const demoPages = {
     ],
     formFields: ['Name', 'Unternehmen', 'E-Mail', 'Telefonnummer', 'Gewünschte Leistung', 'Nachricht'],
     formCta: 'Unverbindlich anfragen',
-    optional:
-      'Ein Newsletter kann optional eingebunden werden, um Interessenten regelmäßig über Angebote, freie Termine oder neue Leistungen zu informieren.',
   },
 }
 
@@ -312,7 +306,7 @@ const pricingPackages = [
       'WhatsApp-Kontakt',
       'Google-Bewertungslink',
       'einfache Kontaktführung',
-      'Newsletter-Einbindung optional',
+      'Newsletter-Einbindung',
     ],
     note: 'Ein klarer Start für Betriebe, die digital professioneller auftreten und erreichbar sein möchten.',
     cta: 'Sichtbarkeit anfragen',
@@ -348,7 +342,7 @@ const pricingPackages = [
       'Google-Struktur',
       'Social-Media-System',
       'Kundenanfrage-System',
-      'App- oder Dashboard-Konzept optional',
+      'App- oder Dashboard-Konzept',
       'Newsletter-System als zusätzlicher Baustein möglich',
       '30 Tage Begleitung',
     ],
@@ -399,7 +393,7 @@ const targetGroups = [
 const whyPoints = [
   'Klarer Aufbau statt schöner, aber wirkungsloser Webseite',
   'Fokus auf Anfragen, Vertrauen und Kontakt',
-  'Website, Landingpage, WhatsApp, Google, Social Media und optional Newsletter als zusammenhängende Struktur',
+  'Website, Landingpage, WhatsApp, Google, Social Media und Newsletter als zusammenhängende Struktur',
   'Verständliche Umsetzung ohne Technik-Blabla',
   'Systeme, die kleine Unternehmen wirklich im Alltag nutzen können',
 ]
@@ -512,7 +506,7 @@ function useDocumentTitle(pathname) {
     }
 
     const defaultDescription =
-      'STRUKTIVA entwickelt Websites, Landingpages und digitale Unternehmenssysteme für Selbstständige, lokale Betriebe und kleine Unternehmen – mit klarer Struktur, Kundengewinnung, WhatsApp, Google, Social Media und optionaler Newsletter-Einbindung.'
+      'STRUKTIVA entwickelt Websites, Landingpages und digitale Unternehmenssysteme für Selbstständige, lokale Betriebe und kleine Unternehmen – mit klarer Struktur, Kundengewinnung, WhatsApp, Google, Social Media und Newsletter-Einbindung.'
 
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
@@ -569,7 +563,7 @@ function useDocumentTitleSafe(pathname) {
     }
 
     const defaultDescription =
-      'STRUKTIVA entwickelt Websites, Landingpages und digitale Unternehmenssysteme fuer Selbststaendige, lokale Betriebe und kleine Unternehmen - mit klarer Struktur, Kundengewinnung, WhatsApp, Google, Social Media und optionaler Newsletter-Einbindung.'
+      'STRUKTIVA entwickelt Websites, Landingpages und digitale Unternehmenssysteme fuer Selbststaendige, lokale Betriebe und kleine Unternehmen - mit klarer Struktur, Kundengewinnung, WhatsApp, Google, Social Media und Newsletter-Einbindung.'
 
     document.title = titles[pathname] || titles['/']
 
@@ -1233,11 +1227,6 @@ function ServicesSection() {
           ))}
         </motion.div>
 
-        <Reveal className="mt-8">
-          <div className="rounded-[1.5rem] border border-white/14 bg-white/[0.04] p-5 text-sm leading-7 text-[#D7DCE5]">
-            Texte, Struktur, Google-Unternehmensprofil, WhatsApp oder Social Media können je nach Projekt unterstützend eingebunden werden, sind aber keine separaten Hauptangebote mehr.
-          </div>
-        </Reveal>
       </div>
     </section>
   )
@@ -1714,7 +1703,7 @@ function PricingSection() {
 
         <Reveal className="mt-8">
           <div className="rounded-[1.8rem] border border-[#D8B45A]/20 bg-white/[0.05] p-6 shadow-premium md:p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Optionaler Zusatzbaustein</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Newsletter-Einbindung</p>
             <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.65rem]">Newsletter-Einbindung</h3>
             <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
               Für Unternehmen, die Interessenten und Bestandskunden regelmäßig professionell informieren möchten, kann STRUKTIVA ein passendes Newsletter-System in die bestehende Website- oder Landingpage-Struktur einbinden.
@@ -1733,7 +1722,7 @@ function PricingSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 199 € optional</p>
+            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 199 €</p>
           </div>
         </Reveal>
 
@@ -1838,7 +1827,7 @@ function WhySection() {
           <SectionHeader
             eyebrow="Was STRUKTIVA anders macht"
             title="Nicht nur Design. Sondern Struktur."
-            text="STRUKTIVA verbindet Website, Landingpage, WhatsApp, Google, Social Media und optional Newsletter zu einem digitalen System, das im Alltag wirklich nutzbar ist."
+            text="STRUKTIVA verbindet Website, Landingpage, WhatsApp, Google, Social Media und Newsletter zu einem digitalen System, das im Alltag wirklich nutzbar ist."
             centered={false}
           />
         </Reveal>
@@ -2161,8 +2150,7 @@ function DemoPageTemplate({ demo }) {
 
           <DemoFormCard fields={demo.formFields} cta={demo.formCta} />
 
-          <ServiceSection title="Optionaler Zusatzbaustein">
-            <p>{demo.optional}</p>
+          <ServiceSection title="Newsletter-Einbindung">
           </ServiceSection>
 
           <DemoFinalCTA />
@@ -2404,11 +2392,6 @@ function ServicesSectionPremium() {
           ))}
         </motion.div>
 
-        <Reveal className="mt-8">
-          <div className="rounded-[1.5rem] border border-white/14 bg-white/[0.04] p-5 text-sm leading-7 text-[#D7DCE5]">
-            Texte, Struktur, Google-Unternehmensprofil, WhatsApp oder Social Media können je nach Projekt unterstützend eingebunden werden, sind aber keine separaten Hauptangebote mehr.
-          </div>
-        </Reveal>
       </div>
     </section>
   )
@@ -2485,7 +2468,7 @@ function LandingpageDigitaleStrukturPage() {
           </ServiceSection>
 
           <ServiceSection title="STRUKTIVA bringt Ordnung in deinen digitalen Auftritt.">
-            <p>Statt einzelne Bausteine unverbunden nebeneinanderzustellen, entwickelt STRUKTIVA eine klare digitale Struktur. Website, Landingpage, Google, WhatsApp, Social Media und optionale Zusatzbausteine werden so aufgebaut, dass Besucher schneller verstehen, warum sie Kontakt aufnehmen sollten.</p>
+            <p>Statt einzelne Bausteine unverbunden nebeneinanderzustellen, entwickelt STRUKTIVA eine klare digitale Struktur. Website, Landingpage, Google, WhatsApp, Social Media und Newsletter werden so aufgebaut, dass Besucher schneller verstehen, warum sie Kontakt aufnehmen sollten.</p>
           </ServiceSection>
 
           <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
@@ -2655,7 +2638,7 @@ function LandingpageDigitaleStrukturPageV2() {
               </div>
               <div className="p-5 md:p-6 order-1 lg:order-2">
                 <h2 className="text-2xl font-semibold text-white">STRUKTIVA bringt Ordnung in deinen digitalen Auftritt.</h2>
-                <p className="mt-4 text-sm leading-7 text-[#D7DCE5] md:text-base">Statt einzelne Bausteine unverbunden nebeneinanderzustellen, entwickelt STRUKTIVA eine klare digitale Struktur. Website, Landingpage, Google, WhatsApp, Social Media und optionale Zusatzbausteine werden so aufgebaut, dass Besucher schneller verstehen, warum sie Kontakt aufnehmen sollten.</p>
+                <p className="mt-4 text-sm leading-7 text-[#D7DCE5] md:text-base">Statt einzelne Bausteine unverbunden nebeneinanderzustellen, entwickelt STRUKTIVA eine klare digitale Struktur. Website, Landingpage, Google, WhatsApp, Social Media und Newsletter werden so aufgebaut, dass Besucher schneller verstehen, warum sie Kontakt aufnehmen sollten.</p>
               </div>
             </div>
           </section>
@@ -2955,7 +2938,7 @@ function GoogleAdsPage() {
         <p>- lokale Betriebe</p><p>- Dienstleister</p><p>- Unternehmen mit konkreten Angeboten</p><p>- Betriebe mit neuer Webseite oder Landingpage</p><p>- Unternehmen, die gezielt Anfragen gewinnen möchten</p>
       </ServiceSection>
       <ServiceSection title="Was wird gemacht?">
-        <p>- Kampagnenstruktur entwickeln</p><p>- Keyword-Grundlogik planen</p><p>- Anzeigentexte formulieren</p><p>- Angebot klar ausrichten</p><p>- passende Zielseite empfehlen</p><p>- Anfrageprozess verbessern</p><p>- optional Social-Media-Werbeideen vorbereiten</p>
+        <p>- Kampagnenstruktur entwickeln</p><p>- Keyword-Grundlogik planen</p><p>- Anzeigentexte formulieren</p><p>- Angebot klar ausrichten</p><p>- passende Zielseite empfehlen</p><p>- Anfrageprozess verbessern</p><p>- Social-Media-Werbeideen vorbereiten</p>
       </ServiceSection>
       <ServiceSection title="So könnte es aussehen">
         <div className="grid gap-3 md:grid-cols-2">
@@ -3031,7 +3014,7 @@ function BewertungsQrCodePage() {
                   'kleine Druckvorlage für Theke, Empfang oder Rechnung',
                   'kurzer Kundentext zum freundlichen Bitten um eine Bewertung',
                   'einfache Anleitung für den Alltag',
-                  'optionaler Einbau auf Website oder Landingpage',
+                  'Einbau auf Website oder Landingpage',
                 ].map((item) => (
                   <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
                     <span className="font-semibold text-[#D8B45A]">✓</span> {item}
@@ -3681,7 +3664,7 @@ function DemoHandwerkerPage() {
         />
         <div className="grid gap-6 lg:grid-cols-2">
           <DemoSectionCard title="Leistungsübersicht" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
-            <p>- Renovierung & Sanierung</p><p>- Reparaturservice</p><p>- Wartung & Instandhaltung</p><p>- individuelle Projektanfragen</p><p>- Notfall- oder Schnellservice optional</p>
+            <p>- Renovierung & Sanierung</p><p>- Reparaturservice</p><p>- Wartung & Instandhaltung</p><p>- individuelle Projektanfragen</p><p>- Notfall- oder Schnellservice</p>
           </DemoSectionCard>
           <DemoSectionCard title="Warum Kunden Vertrauen brauchen" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
             <p>Kunden entscheiden im Handwerk schnell nach Vertrauen, Klarheit und Erreichbarkeit. Diese Struktur zeigt Leistungen eindeutig und führt Interessenten direkt zur Anfrage.</p>
@@ -3703,7 +3686,7 @@ function DemoHandwerkerPage() {
         <DemoSectionCard title="Bewertungsbereich (Beispielstruktur)" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
           <p>Hier kann ein Bewertungsbereich als strukturierte Vertrauensfläche integriert werden – klar als Referenz-Modul vorbereitet, ohne erfundene Kundenstimmen.</p>
         </DemoSectionCard>
-        <DemoSectionCard title="Optionaler Zusatzbaustein: Newsletter-Einbindung" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
+        <DemoSectionCard title="Newsletter-Einbindung" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
           <p>Auf Wunsch kann ein Newsletter oder Infoverteiler eingebunden werden, z. B. für saisonale Angebote, Wartungserinnerungen oder Kundeninformationen.</p>
         </DemoSectionCard>
         <DemoFinalSection />
@@ -3763,7 +3746,7 @@ function DemoBeautyPage() {
           </div>
         </DemoSectionCard>
         <DemoForm fields={['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Behandlung', 'Nachricht']} cta="Termin anfragen" theme={theme} />
-        <DemoSectionCard title="Optionaler Zusatzbaustein: Newsletter-Einbindung" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
+        <DemoSectionCard title="Newsletter-Einbindung" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
           <p>Auf Wunsch kann ein kleiner Newsletter-Bereich integriert werden, z. B. für Aktionen, Pflege-Tipps oder freie Termine.</p>
         </DemoSectionCard>
         <DemoFinalSection />
@@ -3821,8 +3804,8 @@ function DemoDienstleisterPage() {
           <p>FAQ-Baustein für typische Fragen, dazu ein strukturierter Google-Bewertungsbereich als Vertrauensfläche – klar als Demo dargestellt, ohne erfundene Bewertungen.</p>
         </DemoSectionCard>
         <DemoForm fields={['Name', 'Unternehmen', 'E-Mail', 'Telefonnummer', 'Gewünschte Leistung', 'Nachricht']} cta="Unverbindlich anfragen" theme={theme} />
-        <DemoSectionCard title="Optionaler Zusatzbaustein: Newsletter-Einbindung" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
-          <p>Ein Newsletter kann optional eingebunden werden, um Interessenten regelmäßig über Angebote, freie Termine oder neue Leistungen zu informieren.</p>
+        <DemoSectionCard title="Newsletter-Einbindung" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+          <p>Ein Newsletter kann eingebunden werden, um Interessenten regelmäßig über Angebote, freie Termine oder neue Leistungen zu informieren.</p>
         </DemoSectionCard>
         <DemoFinalSection />
       </div>
@@ -3907,9 +3890,6 @@ createRoot(document.getElementById('root')).render(
     <Page />
   </React.StrictMode>,
 )
-
-
-
 
 
 
