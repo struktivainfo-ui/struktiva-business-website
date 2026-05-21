@@ -9,6 +9,7 @@ import {
   Building2,
   CalendarDays,
   CheckCircle2,
+  ChevronDown,
   ClipboardList,
   LayoutTemplate,
   Megaphone,
@@ -117,7 +118,6 @@ const navItems = [
 ]
 
 const desktopNavItems = [
-  ['Start', siteLinks.home],
   ['Preise', siteLinks.pricing],
   ['Demos', siteLinks.demos],
   ['Wissen', siteLinks.wissen],
@@ -821,7 +821,7 @@ function Header({ pathname }) {
               onClick={() => setDesktopDropdownOpen((open) => !open)}
             >
               Leistungen
-              <ArrowRight className={`h-3.5 w-3.5 transition ${desktopDropdownOpen ? 'translate-x-0.5 rotate-90 text-[#D8B45A]' : 'rotate-45'}`} />
+              <ChevronDown className={`h-3.5 w-3.5 transition ${desktopDropdownOpen ? 'rotate-180 text-[#D8B45A]' : 'rotate-0'}`} />
             </button>
 
             <AnimatePresence>
@@ -925,7 +925,7 @@ function Header({ pathname }) {
                 className="inline-flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
               >
                 Leistungen
-                <ArrowRight className={`h-4 w-4 transition ${mobileLeistungenOpen ? 'rotate-90 text-[#D8B45A]' : 'rotate-45'}`} />
+                <ChevronDown className={`h-4 w-4 transition ${mobileLeistungenOpen ? 'rotate-180 text-[#D8B45A]' : 'rotate-0'}`} />
               </button>
               <AnimatePresence>
                 {mobileLeistungenOpen && (
