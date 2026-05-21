@@ -521,6 +521,65 @@ function useDocumentTitle(pathname) {
   }, [pathname])
 }
 
+function useDocumentTitleSafe(pathname) {
+  useEffect(() => {
+    const titles = {
+      '/': 'STRUKTIVA Unternehmensarchitektur - Digitale Systeme fuer kleine Unternehmen',
+      '/webseiten': 'Professionelle Webseiten - STRUKTIVA Unternehmensarchitektur',
+      '/landingpages': 'Landingpages - STRUKTIVA Unternehmensarchitektur',
+      '/apps': 'Unternehmens-Apps - STRUKTIVA Unternehmensarchitektur',
+      '/google-ads': 'Google Ads - STRUKTIVA Unternehmensarchitektur',
+      '/bewertungs-qr-code': 'Google-Bewertungssystem mit QR-Code | STRUKTIVA',
+      '/digitale-ordnungssysteme': 'Digitale Ordnungssysteme fuer kleine Betriebe - STRUKTIVA',
+      '/website-fuer-kleine-unternehmen': 'Website-Erstellung fuer kleine Unternehmen - STRUKTIVA',
+      '/landingpage-erstellen-lassen': 'Landingpages erstellen lassen - STRUKTIVA',
+      '/google-sichtbarkeit-kleine-unternehmen': 'Google-Sichtbarkeit fuer kleine Unternehmen - STRUKTIVA',
+      '/digitale-kundenfuehrung': 'Digitale Kundenfuehrung - STRUKTIVA',
+      '/whatsapp-kontaktstruktur': 'WhatsApp-Kontaktstruktur - STRUKTIVA',
+      '/social-media-struktur': 'Social-Media-Struktur - STRUKTIVA',
+      '/newsletter-einbindung': 'Newsletter-Einbindung - STRUKTIVA',
+      '/unternehmens-apps': 'Unternehmens-Apps - STRUKTIVA',
+      '/betriebs-dashboards': 'Betriebs-Dashboards - STRUKTIVA',
+      '/angebotsarchitektur': 'Angebotsarchitektur - STRUKTIVA',
+      '/digitale-unternehmensstruktur': 'Digitale Unternehmensstruktur - STRUKTIVA',
+      '/demo-handwerker': 'Demo Handwerker - STRUKTIVA Unternehmensarchitektur',
+      '/demo-beauty': 'Demo Beauty & Kosmetik - STRUKTIVA Unternehmensarchitektur',
+      '/demo-dienstleister': 'Demo Dienstleister - STRUKTIVA Unternehmensarchitektur',
+      '/landingpage-digitale-struktur': 'Digitale Struktur fuer kleine Unternehmen - STRUKTIVA Unternehmensarchitektur',
+      '/leistungen': 'Leistungen - STRUKTIVA Unternehmensarchitektur',
+      '/impressum': 'Impressum - STRUKTIVA Unternehmensarchitektur',
+      '/datenschutz': 'Datenschutz - STRUKTIVA Unternehmensarchitektur',
+      '/widerruf': 'Widerruf - STRUKTIVA Unternehmensarchitektur',
+      '/kontakt': 'Kontakt - STRUKTIVA Unternehmensarchitektur',
+    }
+
+    const descriptions = {
+      '/bewertungs-qr-code':
+        'STRUKTIVA erstellt ein einfaches Google-Bewertungssystem mit QR-Code, Bewertungslink und Anleitung fuer lokale Unternehmen wie Salons, Handwerker, Kosmetikstudios und Dienstleister.',
+      '/digitale-ordnungssysteme':
+        'STRUKTIVA entwickelt digitale Ordnungssysteme fuer kleine Betriebe - mit Tagesabschluss, Kassenstruktur, Monatsuebersicht, Exportfunktionen und steuerberaterfreundlicher Vorbereitung.',
+      '/website-fuer-kleine-unternehmen':
+        'Moderne Website-Erstellung fuer kleine Unternehmen und Selbststaendige mit klarer Struktur und professioneller Kundenfuehrung.',
+      '/landingpage-erstellen-lassen':
+        'Verkaufsstarke Landingpages fuer Angebote, Aktionen und Anfragen - klar aufgebaut und professionell umgesetzt.',
+      '/google-sichtbarkeit-kleine-unternehmen':
+        'Google-Sichtbarkeit fuer kleine Unternehmen mit klarer Struktur, lokaler Auffindbarkeit und professioneller Praesenz.',
+      '/leistungen':
+        'Alle STRUKTIVA Leistungen im Ueberblick: Website, Landingpages, Google-Sichtbarkeit, Kundenfuehrung, Systeme, Dashboards und strukturierte Umsetzung.',
+    }
+
+    const defaultDescription =
+      'STRUKTIVA entwickelt Websites, Landingpages und digitale Unternehmenssysteme fuer Selbststaendige, lokale Betriebe und kleine Unternehmen - mit klarer Struktur, Kundengewinnung, WhatsApp, Google, Social Media und optionaler Newsletter-Einbindung.'
+
+    document.title = titles[pathname] || titles['/']
+
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', descriptions[pathname] || defaultDescription)
+    }
+  }, [pathname])
+}
+
 function Reveal({ children, className = '', delay = 0 }) {
   return (
     <motion.div
@@ -3774,10 +3833,15 @@ function DemoDienstleisterPage() {
 function Page() {
   const pathname = useCurrentPath()
   const [showSplash, setShowSplash] = useState(false)
-  useDocumentTitle(pathname)
+  useDocumentTitleSafe(pathname)
 
   useEffect(() => {
     try {
+      if (window.innerWidth <= 768) {
+        window.sessionStorage.setItem('struktiva_splash_seen', '1')
+        setShowSplash(false)
+        return
+      }
       const splashSeen = window.sessionStorage.getItem('struktiva_splash_seen')
       if (!splashSeen) {
         setShowSplash(true)
