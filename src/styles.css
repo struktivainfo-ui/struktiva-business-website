@@ -425,7 +425,7 @@ img {
 @media (max-width: 768px) {
   .floating-whatsapp-button {
     right: 18px;
-    bottom: 20px;
+    bottom: 26px;
     width: 52px;
     height: 52px;
   }

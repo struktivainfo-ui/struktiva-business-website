@@ -2174,51 +2174,64 @@ function DemoDienstleisterPagePremium() {
 
 function Footer() {
   return (
-    <footer className="px-5 pb-8 pt-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-[2rem] border border-[#D8B45A]/35 bg-[#0B1F3A] px-6 py-7 shadow-premium lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p className="text-lg font-semibold text-white">{brand.name}</p>
-          <p className="mt-2 text-sm text-[#D7DCE5]">Jessica Wacker</p>
-          <div className="mt-3 grid gap-1.5 text-sm text-[#D7DCE5]">
-            <a href={`mailto:${contactDetails.email}`} className="transition hover:text-[#F2D98B]">{contactDetails.email}</a>
-            <a href={contactDetails.phoneHref} className="transition hover:text-[#F2D98B]">{contactDetails.phoneLabel}</a>
-            <a href={contactDetails.whatsappHref} className="transition hover:text-[#F2D98B]">WhatsApp Business</a>
-          </div>
-        </div>
-        <div className="grid gap-5 text-sm text-[#D7DCE5] md:grid-cols-2">
-          <div className="flex flex-wrap gap-4">
-            <a href={siteLinks.demos} className="transition hover:text-[#F2D98B]">Demos</a>
-            <a href={siteLinks.impressum} className="transition hover:text-[#F2D98B]">Impressum</a>
-            <a href={siteLinks.datenschutz} className="transition hover:text-[#F2D98B]">Datenschutz</a>
-            <a href={siteLinks.widerruf} className="transition hover:text-[#F2D98B]">Widerruf</a>
-            <a href={siteLinks.contact} className="transition hover:text-[#F2D98B]">Kontakt</a>
-          </div>
+    <footer className="px-5 pb-24 pt-8 lg:px-8 lg:pb-10">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.7rem] border border-white/12 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] shadow-premium">
+        <div className="h-px w-full bg-[linear-gradient(90deg,rgba(216,180,90,0),rgba(216,180,90,0.75),rgba(216,180,90,0))]" />
+        <div className="grid gap-8 px-6 py-7 text-sm text-[#D7DCE5] md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F2D98B]/80">Leistungen</p>
-            <div className="mt-2 grid gap-1.5">
-              <a href={siteLinks.webseitenPage} className="transition hover:text-[#F2D98B]">Professionelle Webseiten</a>
+            <p className="text-base font-semibold text-white">STRUKTIVA Unternehmensarchitektur</p>
+            <p className="mt-3">Jessica Wacker</p>
+            <a href={`mailto:${contactDetails.email}`} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.email}</a>
+            <a href={contactDetails.phoneHref} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.phoneLabel}</a>
+            <a href={contactDetails.whatsappHref} className="mt-1 block transition hover:text-[#F2D98B]">WhatsApp Business</a>
+            <p className="mt-3 text-xs leading-6 text-[#94A3B8]">Digitale Strukturen f?r kleine Unternehmen, Selbstst?ndige und lokale Dienstleister.</p>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]">Leistungen</p>
+            <div className="mt-3 grid gap-2">
+              <a href={siteLinks.webseitenPage} className="transition hover:text-[#F2D98B]">Webseiten</a>
               <a href={siteLinks.landingpagesPage} className="transition hover:text-[#F2D98B]">Landingpages</a>
-              <a href={siteLinks.leistungenPage} className="transition hover:text-[#F2D98B]">Alle Leistungen</a>
-              <a href={siteLinks.landingpageDigitaleStruktur} className="transition hover:text-[#F2D98B]">Digitale Struktur</a>
-              <a href={siteLinks.appsPage} className="transition hover:text-[#F2D98B]">Unternehmens-Apps</a>
-              <a href={siteLinks.googleAdsPage} className="transition hover:text-[#F2D98B]">Google Ads</a>
+              <a href={siteLinks.googleSichtbarkeitKleineUnternehmen} className="transition hover:text-[#F2D98B]">Google-Sichtbarkeit</a>
+              <a href={siteLinks.unternehmensApps} className="transition hover:text-[#F2D98B]">Unternehmens-Apps</a>
               <a href={siteLinks.digitaleOrdnungssysteme} className="transition hover:text-[#F2D98B]">Digitale Ordnungssysteme</a>
-              <a href={siteLinks.bewertungsQrCode} className="transition hover:text-[#F2D98B]">Bewertungs-QR-Code</a>
-              <a href={siteLinks.digitaleUnternehmensstruktur} className="transition hover:text-[#F2D98B]">Digitale Unternehmensstruktur</a>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]">Unternehmen</p>
+            <div className="mt-3 grid gap-2">
+              <a href={siteLinks.leistungenPage} className="transition hover:text-[#F2D98B]">Leistungen</a>
+              <a href={siteLinks.pricing} className="transition hover:text-[#F2D98B]">Preise</a>
+              <a href={siteLinks.demos} className="transition hover:text-[#F2D98B]">Demos</a>
+              <a href={siteLinks.contact} className="transition hover:text-[#F2D98B]">Kontakt</a>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]">Rechtliches & Bewertung</p>
+            <div className="mt-3 grid gap-2">
+              <a href={siteLinks.impressum} className="transition hover:text-[#F2D98B]">Impressum</a>
+              <a href={siteLinks.datenschutz} className="transition hover:text-[#F2D98B]">Datenschutz</a>
+              <a href={siteLinks.widerruf} className="transition hover:text-[#F2D98B]">Widerruf</a>
+            </div>
+            <div className="mt-4 rounded-xl border border-white/12 bg-white/[0.03] px-3.5 py-3">
+              <p className="text-sm font-medium text-white">Zufrieden mit STRUKTIVA?</p>
+              <a
+                href={contactDetails.googleReviewHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1.5 inline-flex items-center gap-2 text-sm font-semibold text-[#F2D98B] transition hover:text-white"
+              >
+                Google-Bewertung schreiben
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
-        <div className="rounded-2xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-[#D7DCE5] lg:max-w-md">
-          <p>Zufrieden mit STRUKTIVA? Ich freue mich über deine Google-Bewertung.</p>
-          <a
-            href={contactDetails.googleReviewHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center gap-2 font-semibold text-[#F2D98B] transition hover:text-white"
-          >
-            Google-Bewertung schreiben
-            <ArrowRight className="h-4 w-4" />
-          </a>
+        <div className="border-t border-white/10 px-6 py-3.5 text-xs text-[#94A3B8] md:flex md:items-center md:justify-between">
+          <p>? 2026 STRUKTIVA Unternehmensarchitektur. Alle Rechte vorbehalten.</p>
+          <p className="mt-1 md:mt-0">Digitale Strukturen. Klare Systeme. Mehr Wirkung.</p>
         </div>
       </div>
     </footer>
