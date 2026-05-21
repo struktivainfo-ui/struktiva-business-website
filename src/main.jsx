@@ -3466,6 +3466,84 @@ const offerPageContent = {
   },
 }
 
+const websiteFormats = [
+  ['Unternehmenswebsite', 'Für kleine Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.'],
+  ['Landingpage', 'Für einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage geführt werden sollen.'],
+  ['Onepager', 'Eine kompakte Website auf einer Seite – ideal für klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.'],
+  ['Mehrseitige Website', 'Für Unternehmen mit mehreren Leistungen, Referenzen, Team, Preisen, Kontaktbereich und ausführlicher Struktur.'],
+  ['Branchenwebsite', 'Websites speziell für Handwerk, Beauty, Friseur, Kosmetik, Beratung, Dienstleistung oder lokale Betriebe.'],
+  ['Portfolio-Website', 'Für Selbstständige, Kreative, Berater oder Dienstleister, die Arbeiten, Projekte oder Referenzen hochwertig präsentieren möchten.'],
+  ['Angebotsseite', 'Für einzelne Leistungen oder Pakete, die klar erklärt und verkaufsstark dargestellt werden sollen.'],
+  ['Vertrauensseite', 'Für Unternehmen, die Bewertungen, Referenzen, Vorher-Nachher-Beispiele oder Qualität stärker sichtbar machen möchten.'],
+  ['Termin- und Kontaktwebsite', 'Für Betriebe, bei denen schnelle Kontaktaufnahme, WhatsApp, Telefon, Buchungsanfrage oder Terminwunsch im Mittelpunkt stehen.'],
+  ['Website mit Blog oder Ratgeberbereich', 'Für Unternehmen, die langfristig über Google gefunden werden möchten und regelmäßig Inhalte veröffentlichen wollen.'],
+  ['Website mit Newsletter-Einbindung', 'Für Unternehmen, die Interessenten sammeln, Kunden binden oder Angebote regelmäßig kommunizieren möchten.'],
+  ['Website mit QR-Code-Anbindung', 'Für Flyer, Visitenkarten, Schaufenster, Bewertungen oder Aktionen, die direkt auf passende Seiten führen sollen.'],
+  ['Demo-Website', 'Als Vorschau oder Konzeptseite, damit Kunden vorab sehen können, wie ihr digitaler Auftritt wirken könnte.'],
+  ['Website-Relaunch', 'Für bestehende Webseiten, die moderner, klarer, schneller und professioneller aufgebaut werden sollen.'],
+  ['Premium-Webauftritt', 'Für Unternehmen, die einen hochwertigen digitalen Markenauftritt mit starker Optik, klarer Struktur und überzeugender Kundenführung wünschen.'],
+]
+
+function WebsiteFuerKleineUnternehmenPage() {
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-6xl">
+        <section className="rounded-[2.1rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
+          <h1 className="text-3xl font-semibold text-white md:text-5xl">Website für kleine Unternehmen professionell erstellen lassen</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+            STRUKTIVA entwickelt professionelle Unternehmenswebsites, Onepager, Landingpages und Relaunch-Konzepte für kleine Unternehmen, Selbstständige und lokale Dienstleister – mit klarer Struktur, verständlicher Kundenführung und mobiler Optimierung.
+          </p>
+          <div className="mt-7 grid gap-3 md:grid-cols-2">
+            {['klare Seitenstruktur', 'professionelle Darstellung', 'mobile Optimierung', 'saubere Kontaktführung'].map((item) => (
+              <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-medium text-[#D7DCE5]">
+                {item}
+              </div>
+            ))}
+          </div>
+          <a
+            href={siteLinks.contact}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+          >
+            Kostenlose Ersteinschätzung anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </section>
+
+        <section className="mt-8 rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+          <h2 className="text-gold-glow text-2xl font-semibold text-white md:text-3xl">Welche Website passt zu deinem Unternehmen?</h2>
+          <p className="mt-3 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+            Nicht jedes Unternehmen braucht dieselbe Website. STRUKTIVA entwickelt den passenden digitalen Auftritt – je nach Ziel, Branche und gewünschter Wirkung.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {websiteFormats.map(([title, text]) => (
+              <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+                <h3 className="text-base font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-6 text-sm leading-7 text-[#D7DCE5] md:text-base">
+            Nicht jede Website muss groß sein. Entscheidend ist, dass sie zum Unternehmen, zum Angebot und zum Ziel passt.
+          </p>
+          <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
+            STRUKTIVA entwickelt Webseiten nicht als einfache Online-Visitenkarte, sondern als klare digitale Struktur: verständlich, mobil optimiert, vertrauensbildend und auf Anfragen ausgerichtet.
+          </p>
+
+          <a
+            href={`mailto:${contactDetails.email}`}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+          >
+            Website-Format unverbindlich besprechen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </section>
+      </div>
+    </main>
+  )
+}
+
 function OfferDetailPage({ title, intro, points }) {
   return (
     <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
@@ -3495,7 +3573,7 @@ function OfferDetailPage({ title, intro, points }) {
 
 function LeistungenPage() {
   const allLeistungen = [
-    ['Website-Erstellung', 'Moderne Websites für kleine Unternehmen und Selbstständige.'],
+    ['Website-Erstellung', 'STRUKTIVA erstellt unterschiedliche Webseiten-Formate – von Onepager, Unternehmenswebsite und Landingpage bis zu mehrseitigen Premium-Webauftritten, Branchenwebsites, Angebotsseiten und Websites mit Newsletter-, QR-Code- oder Kontaktstruktur.'],
     ['Landingpages', 'Verkaufsstarke Seiten für Angebote, Aktionen und Anfragen.'],
     ['Google-Sichtbarkeit', 'Struktur für bessere Auffindbarkeit und lokale Präsenz.'],
     ['Digitale Kundenführung', 'Klare Wege von Interesse zur Anfrage.'],
@@ -4146,6 +4224,8 @@ function Page() {
     content = <BewertungsQrCodePage />
   } else if (pathname === '/digitale-ordnungssysteme') {
     content = <DigitaleOrdnungssystemePage />
+  } else if (pathname === '/website-fuer-kleine-unternehmen') {
+    content = <WebsiteFuerKleineUnternehmenPage />
   } else if (pathname === '/leistungen') {
     content = <LeistungenPage />
   } else if (pathname === '/wissen') {
