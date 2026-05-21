@@ -33,8 +33,8 @@ const siteLinks = {
   home: '/#start',
   services: '/#leistungen',
   leistungenPage: '/leistungen',
-  pricing: '/#preise',
-  demos: '/#demos',
+  pricing: '/preise',
+  demos: '/demos',
   apps: '/apps',
   googleAds: '/google-ads',
   process: '/#ablauf',
@@ -117,6 +117,7 @@ const navItems = [
 ]
 
 const desktopNavItems = [
+  ['Start', siteLinks.home],
   ['Preise', siteLinks.pricing],
   ['Demos', siteLinks.demos],
   ['Wissen', siteLinks.wissen],
@@ -555,6 +556,8 @@ function useDocumentTitleSafe(pathname) {
       '/datenschutz': 'Datenschutz - STRUKTIVA Unternehmensarchitektur',
       '/widerruf': 'Widerruf - STRUKTIVA Unternehmensarchitektur',
       '/kontakt': 'Kontakt - STRUKTIVA Unternehmensarchitektur',
+      '/preise': 'Preise - STRUKTIVA Unternehmensarchitektur',
+      '/demos': 'Demos - STRUKTIVA Unternehmensarchitektur',
     }
 
     const descriptions = {
@@ -570,6 +573,10 @@ function useDocumentTitleSafe(pathname) {
         'Google-Sichtbarkeit fuer kleine Unternehmen mit klarer Struktur, lokaler Auffindbarkeit und professioneller Praesenz.',
       '/leistungen':
         'Alle STRUKTIVA Leistungen im Ueberblick: Website, Landingpages, Google-Sichtbarkeit, Kundenfuehrung, Systeme, Dashboards und strukturierte Umsetzung.',
+      '/preise':
+        'Einstiegspreise fuer kleine Unternehmen: Sichtbarkeit, Kundengewinnung und Unternehmensarchitektur mit transparenter, strukturierter Umsetzung.',
+      '/demos':
+        'Drei Demo-Modelle zeigen, wie digitale Unternehmensstruktur je nach Branche klar, professionell und anfrageorientiert aufgebaut werden kann.',
       '/wissen':
         'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen Abläufen für kleine Unternehmen.',
       '/wissen/warum-eine-schoene-website-keine-kunden-bringt':
@@ -1990,7 +1997,7 @@ function OrdnungssystemeSection() {
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#kontakt"
+                href={siteLinks.contact}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D] hover:-translate-y-0.5"
               >
                 System unverbindlich anfragen
@@ -4082,6 +4089,10 @@ function Page() {
   const [showSplash, setShowSplash] = useState(false)
   useDocumentTitleSafe(pathname)
   const wissenArticle = wissenArticles.find((article) => article.href === pathname)
+  const homeSectionByPath = {
+    '/preise': 'preise',
+    '/demos': 'demos',
+  }
 
   useEffect(() => {
     try {
@@ -4099,6 +4110,19 @@ function Page() {
       setShowSplash(true)
     }
   }, [])
+
+  useEffect(() => {
+    const targetId = homeSectionByPath[pathname]
+    if (!targetId) return
+    const scrollToSection = () => {
+      const target = document.getElementById(targetId)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+    const timer = window.setTimeout(scrollToSection, 0)
+    return () => window.clearTimeout(timer)
+  }, [pathname])
 
   let content = <HomePage />
 
