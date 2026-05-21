@@ -671,7 +671,7 @@ function SectionHeader({ eyebrow, title, text, centered = true }) {
   return (
     <div className={centered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">{eyebrow}</p>
-      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl lg:text-[2.9rem] lg:leading-[1.08]">
+      <h2 className="text-gold-glow mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl lg:text-[2.9rem] lg:leading-[1.08]">
         {title}
       </h2>
       <p className="mt-4 text-base leading-8 text-[#D7DCE5] md:text-lg">{text}</p>
@@ -996,13 +996,13 @@ function HeroSection() {
               className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/20 bg-white/[0.06] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white"
             >
               <Sparkles className="h-3.5 w-3.5" />
-              {brand.name}
+              <span className="text-gold-glow-soft text-gold-glow-animated">{brand.name}</span>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-5 max-w-[34rem] text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.08] xl:text-[58px]"
+              className="text-gold-glow mt-5 max-w-[34rem] text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.08] xl:text-[58px]"
             >
               Mehr Kunden. Mehr Struktur. Mehr digitale Wirkung.
             </motion.h1>
@@ -3045,7 +3045,7 @@ function ServiceDetailLayout({ title, intro, children }) {
 function ServiceSection({ title, children }) {
   return (
     <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
-      <h2 className="text-2xl font-semibold text-white">{title}</h2>
+      <h2 className="text-gold-glow text-2xl font-semibold text-white">{title}</h2>
       <div className="mt-4 space-y-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{children}</div>
     </section>
   )
