@@ -73,7 +73,7 @@ const siteLinks = {
 const brand = {
   name: 'STRUKTIVA Unternehmensarchitektur',
   descriptor: 'Unternehmensarchitektur',
-  line: 'Professionelle Online-PrÃ¤senz. Kundengewinnung. Digitale Struktur. Optionale App-LÃ¶sungen.',
+  line: 'Professionelle Online-Präsenz. Kundengewinnung. Digitale Struktur. Optionale App-Lösungen.',
 }
 
 const struktivaImages = {
@@ -98,7 +98,7 @@ const contactDetails = {
   whatsappLabel: '07051 8162292',
   whatsappHref: 'https://wa.me/4970518162292',
   googleReviewHref: 'https://g.page/r/CZvwYJbOSShgEBM/review',
-  addressLine1: 'OstlandstraÃŸe 3',
+  addressLine1: 'Ostlandstraße 3',
   addressLine2: '75365 Calw',
   country: 'Deutschland',
 }
@@ -127,7 +127,7 @@ const desktopNavItems = [
 const leistungenDropdownItems = [
   ['Website & Landingpage', siteLinks.websiteFuerKleineUnternehmen],
   ['Google-Sichtbarkeit', siteLinks.googleSichtbarkeitKleineUnternehmen],
-  ['Digitale KundenfÃ¼hrung', siteLinks.digitaleUnternehmensstruktur],
+  ['Digitale Kundenführung', siteLinks.digitaleUnternehmensstruktur],
   ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme],
   ['Unternehmens-Apps & Dashboards', siteLinks.unternehmensApps],
 ]
@@ -135,19 +135,19 @@ const leistungenDropdownItems = [
 const demoCards = [
   {
     title: 'Demo Handwerker',
-    text: 'Eine klare Website-Struktur fÃ¼r Handwerksbetriebe, die Vertrauen aufbauen, Leistungen verstÃ¤ndlich zeigen und mehr qualifizierte Anfragen erhalten wollen.',
+    text: 'Eine klare Website-Struktur für Handwerksbetriebe, die Vertrauen aufbauen, Leistungen verständlich zeigen und mehr qualifizierte Anfragen erhalten wollen.',
     href: siteLinks.demoHandwerker,
     icon: Building2,
   },
   {
     title: 'Demo Beauty & Kosmetik',
-    text: 'Eine elegante Beispielseite fÃ¼r Kosmetikstudios, Beauty-Dienstleister und lokale Anbieter, die professioneller auftreten und Buchungen leichter machen mÃ¶chten.',
+    text: 'Eine elegante Beispielseite für Kosmetikstudios, Beauty-Dienstleister und lokale Anbieter, die professioneller auftreten und Buchungen leichter machen möchten.',
     href: siteLinks.demoBeauty,
     icon: Sparkles,
   },
   {
     title: 'Demo Dienstleister',
-    text: 'Eine moderne Struktur fÃ¼r SelbststÃ¤ndige, Berater, Reinigungsfirmen, Fahrschulen oder lokale Dienstleister, die online klarer und hochwertiger wirken wollen.',
+    text: 'Eine moderne Struktur für Selbstständige, Berater, Reinigungsfirmen, Fahrschulen oder lokale Dienstleister, die online klarer und hochwertiger wirken wollen.',
     href: siteLinks.demoDienstleister,
     icon: BriefcaseBusiness,
   },
@@ -155,10 +155,10 @@ const demoCards = [
 
 const demoPages = {
   handwerker: {
-    title: 'Demo Handwerker â€“ Digitale Struktur fÃ¼r regionale Handwerksbetriebe',
-    hero: 'Mehr Anfragen fÃ¼r deinen Handwerksbetrieb â€“ mit einem klaren digitalen Auftritt.',
+    title: 'Demo Handwerker – Digitale Struktur für regionale Handwerksbetriebe',
+    hero: 'Mehr Anfragen für deinen Handwerksbetrieb – mit einem klaren digitalen Auftritt.',
     subheadline:
-      'Diese Beispielseite zeigt, wie ein Handwerksbetrieb seine Leistungen professionell prÃ¤sentiert, Vertrauen aufbaut und Interessenten direkt zur Anfrage fÃ¼hrt.',
+      'Diese Beispielseite zeigt, wie ein Handwerksbetrieb seine Leistungen professionell präsentiert, Vertrauen aufbaut und Interessenten direkt zur Anfrage führt.',
     tags: ['Beispielansicht', 'Regional ausgerichtet', 'Anfragefokus'],
     sections: [
       {
@@ -167,26 +167,26 @@ const demoPages = {
       },
       {
         title: 'Warum dieser Aufbau funktioniert',
-        text: 'Kunden wollen schnell verstehen, ob ein Betrieb zuverlÃ¤ssig ist, welche Leistungen angeboten werden und wie sie unkompliziert Kontakt aufnehmen kÃ¶nnen. Eine klare digitale Struktur reduziert Unsicherheit und fÃ¼hrt Besucher gezielt zur Anfrage.',
+        text: 'Kunden wollen schnell verstehen, ob ein Betrieb zuverlässig ist, welche Leistungen angeboten werden und wie sie unkompliziert Kontakt aufnehmen können. Eine klare digitale Struktur reduziert Unsicherheit und führt Besucher gezielt zur Anfrage.',
       },
       {
         title: 'Vertrauenselemente (Demo)',
-        points: ['regionale Ausrichtung', 'klare KontaktmÃ¶glichkeiten', 'Bewertungsbereich als Beispiel', 'Vorher-Nachher-Bereich', 'WhatsApp- oder Telefon-CTA'],
+        points: ['regionale Ausrichtung', 'klare Kontaktmöglichkeiten', 'Bewertungsbereich als Beispiel', 'Vorher-Nachher-Bereich', 'WhatsApp- oder Telefon-CTA'],
       },
     ],
-    formFields: ['Name', 'Telefonnummer', 'E-Mail', 'GewÃ¼nschte Leistung', 'Nachricht'],
+    formFields: ['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Leistung', 'Nachricht'],
     formCta: 'Projekt anfragen',
   },
   beauty: {
-    title: 'Demo Beauty & Kosmetik â€“ Professioneller Auftritt fÃ¼r lokale Beauty-Dienstleister',
+    title: 'Demo Beauty & Kosmetik – Professioneller Auftritt für lokale Beauty-Dienstleister',
     hero: 'Ein Beauty-Auftritt, der hochwertig wirkt und Buchungen leichter macht.',
     subheadline:
-      'Diese Beispielseite zeigt, wie ein Kosmetikstudio oder Beauty-Dienstleister Leistungen elegant prÃ¤sentiert, Vertrauen schafft und Kundinnen direkt zur Anfrage oder Buchung fÃ¼hrt.',
+      'Diese Beispielseite zeigt, wie ein Kosmetikstudio oder Beauty-Dienstleister Leistungen elegant präsentiert, Vertrauen schafft und Kundinnen direkt zur Anfrage oder Buchung führt.',
     tags: ['Beispielansicht', 'Elegante Darstellung', 'Buchungsorientiert'],
     sections: [
       {
         title: 'Leistungen',
-        points: ['Gesichtsbehandlungen', 'Hautpflege-Beratung', 'Augenbrauen & Wimpern', 'Make-up / Styling', 'Wellness- oder VerwÃ¶hnpakete'],
+        points: ['Gesichtsbehandlungen', 'Hautpflege-Beratung', 'Augenbrauen & Wimpern', 'Make-up / Styling', 'Wellness- oder Verwöhnpakete'],
       },
       {
         title: 'Angebotsstruktur',
@@ -194,41 +194,41 @@ const demoPages = {
       },
       {
         title: 'Warum dieser Aufbau funktioniert',
-        text: 'Beauty-Kunden entscheiden stark Ã¼ber Vertrauen, Optik und Klarheit. Eine professionelle Seite zeigt sofort Stil, Leistungen, Preiseinstieg und KontaktmÃ¶glichkeiten.',
+        text: 'Beauty-Kunden entscheiden stark über Vertrauen, Optik und Klarheit. Eine professionelle Seite zeigt sofort Stil, Leistungen, Preiseinstieg und Kontaktmöglichkeiten.',
       },
       {
         title: 'Kontakt & Buchung',
-        points: ['WhatsApp-Button', 'Telefon-Button', 'Anfrageformular', 'Ã–ffnungszeiten', 'Standortbereich'],
+        points: ['WhatsApp-Button', 'Telefon-Button', 'Anfrageformular', 'Öffnungszeiten', 'Standortbereich'],
       },
     ],
-    formFields: ['Name', 'Telefonnummer', 'E-Mail', 'GewÃ¼nschte Behandlung', 'Nachricht'],
+    formFields: ['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Behandlung', 'Nachricht'],
     formCta: 'Unverbindlich anfragen',
   },
   dienstleister: {
-    title: 'Demo Dienstleister â€“ Digitale Struktur fÃ¼r SelbststÃ¤ndige und lokale Unternehmen',
-    hero: 'Zeige klar, was du anbietest â€“ und mache Interessenten zu Anfragen.',
+    title: 'Demo Dienstleister – Digitale Struktur für Selbstständige und lokale Unternehmen',
+    hero: 'Zeige klar, was du anbietest – und mache Interessenten zu Anfragen.',
     subheadline:
-      'Diese Beispielseite zeigt, wie ein lokaler Dienstleister oder SelbststÃ¤ndiger sein Angebot strukturiert, Vertrauen aufbaut und Kunden einfach zur Kontaktaufnahme fÃ¼hrt.',
+      'Diese Beispielseite zeigt, wie ein lokaler Dienstleister oder Selbstständiger sein Angebot strukturiert, Vertrauen aufbaut und Kunden einfach zur Kontaktaufnahme führt.',
     tags: ['Beispielansicht', 'Leistungsfokus', 'Kontaktklarheit'],
     sections: [
       {
-        title: 'Geeignet fÃ¼r',
+        title: 'Geeignet für',
         points: ['Reinigungsfirmen', 'Fahrschulen', 'Berater', 'Coaches', 'lokale Services', 'Einzelunternehmer', 'kleine Dienstleistungsbetriebe'],
       },
       {
-        title: 'Angebot klar erklÃ¤ren',
-        points: ['ErstgesprÃ¤ch', 'Standard-Leistung', 'Premium-Service', 'laufende Betreuung'],
+        title: 'Angebot klar erklären',
+        points: ['Erstgespräch', 'Standard-Leistung', 'Premium-Service', 'laufende Betreuung'],
       },
       {
-        title: 'Problem-LÃ¶sung-Struktur',
-        text: 'Viele Dienstleister erklÃ¤ren online nicht klar genug, fÃ¼r wen ihr Angebot gedacht ist und welchen Nutzen es bringt. Diese Demo zeigt, wie Besucher Schritt fÃ¼r Schritt zur Anfrage gefÃ¼hrt werden.',
+        title: 'Problem-Lösung-Struktur',
+        text: 'Viele Dienstleister erklären online nicht klar genug, für wen ihr Angebot gedacht ist und welchen Nutzen es bringt. Diese Demo zeigt, wie Besucher Schritt für Schritt zur Anfrage geführt werden.',
       },
       {
         title: 'Vertrauenselemente',
-        points: ['klare LeistungsÃ¼bersicht', 'Ablauf in 3 Schritten', 'FAQ-Bereich', 'Kontaktbereich', 'Google-Bewertungsbereich als Beispielstruktur'],
+        points: ['klare Leistungsübersicht', 'Ablauf in 3 Schritten', 'FAQ-Bereich', 'Kontaktbereich', 'Google-Bewertungsbereich als Beispielstruktur'],
       },
     ],
-    formFields: ['Name', 'Unternehmen', 'E-Mail', 'Telefonnummer', 'GewÃ¼nschte Leistung', 'Nachricht'],
+    formFields: ['Name', 'Unternehmen', 'E-Mail', 'Telefonnummer', 'Gewünschte Leistung', 'Nachricht'],
     formCta: 'Unverbindlich anfragen',
   },
 }
@@ -252,39 +252,39 @@ const demoImageConfigs = {
 }
 
 const trustCards = [
-  [PanelsTopLeft, 'Professionelle Wirkung', 'Ein klarer digitaler Auftritt zeigt sofort, wofÃ¼r dein Unternehmen steht und warum Kunden dir vertrauen kÃ¶nnen.'],
-  [MousePointerClick, 'KundenfÃ¼hrung statt Zufall', 'Website, Landingpage, WhatsApp und Angebotsstruktur werden so aufgebaut, dass aus Besuchern konkrete Anfragen werden.'],
-  [Workflow, 'Digitale Ordnung im Alltag', 'Google-Struktur, Social-Media-Logik und interne AblÃ¤ufe werden sinnvoll verbunden statt einzeln verwaltet.'],
-  [ShieldCheck, 'VerstÃ¤ndlich und umsetzbar', 'Keine Technik-Ãœberforderung, sondern ein System, das kleine Betriebe wirklich nutzen und weiterfÃ¼hren kÃ¶nnen.'],
+  [PanelsTopLeft, 'Professionelle Wirkung', 'Ein klarer digitaler Auftritt zeigt sofort, wofür dein Unternehmen steht und warum Kunden dir vertrauen können.'],
+  [MousePointerClick, 'Kundenführung statt Zufall', 'Website, Landingpage, WhatsApp und Angebotsstruktur werden so aufgebaut, dass aus Besuchern konkrete Anfragen werden.'],
+  [Workflow, 'Digitale Ordnung im Alltag', 'Google-Struktur, Social-Media-Logik und interne Abläufe werden sinnvoll verbunden statt einzeln verwaltet.'],
+  [ShieldCheck, 'Verständlich und umsetzbar', 'Keine Technik-Überforderung, sondern ein System, das kleine Betriebe wirklich nutzen und weiterführen können.'],
 ]
 
 const problemCards = [
   ['Die Webseite wirkt nicht professionell genug', 'Potenzielle Kunden gewinnen nicht sofort Vertrauen in den Betrieb.'],
-  ['Kunden finden keine klare KontaktmÃ¶glichkeit', 'Anfragen gehen verloren, weil Kontaktwege nicht eindeutig gefÃ¼hrt sind.'],
-  ['Google-Bewertungen werden nicht systematisch aufgebaut', 'Die lokale Sichtbarkeit bleibt unter den MÃ¶glichkeiten des Unternehmens.'],
-  ['Social Media kostet Zeit, bringt aber keine Struktur', 'Inhalte entstehen unregelmÃ¤ÃŸig und zahlen nicht auf ein klares Ziel ein.'],
+  ['Kunden finden keine klare Kontaktmöglichkeit', 'Anfragen gehen verloren, weil Kontaktwege nicht eindeutig geführt sind.'],
+  ['Google-Bewertungen werden nicht systematisch aufgebaut', 'Die lokale Sichtbarkeit bleibt unter den Möglichkeiten des Unternehmens.'],
+  ['Social Media kostet Zeit, bringt aber keine Struktur', 'Inhalte entstehen unregelmäßig und zahlen nicht auf ein klares Ziel ein.'],
   ['Angebote sind nicht klar formuliert', 'Besucher verstehen den Nutzen nicht schnell genug und springen ab.'],
-  ['Es fehlt ein System, das Besucher zu Anfragen macht', 'EinzelmaÃŸnahmen sind vorhanden, aber kein durchgÃ¤ngiger digitaler Ablauf.'],
+  ['Es fehlt ein System, das Besucher zu Anfragen macht', 'Einzelmaßnahmen sind vorhanden, aber kein durchgängiger digitaler Ablauf.'],
 ]
 
 const coreServices = [
-  [LayoutTemplate, 'Professionelle Webseiten', 'Die zentrale digitale Basis mit klarer Leistungsdarstellung, vertrauenswÃ¼rdiger Struktur und starker KontaktfÃ¼hrung.'],
-  [Target, 'Landingpages', 'Gezielte Angebotsseiten, die ein Angebot verstÃ¤ndlich erklÃ¤ren und Besucher aktiv zur Anfrage fÃ¼hren.'],
+  [LayoutTemplate, 'Professionelle Webseiten', 'Die zentrale digitale Basis mit klarer Leistungsdarstellung, vertrauenswürdiger Struktur und starker Kontaktführung.'],
+  [Target, 'Landingpages', 'Gezielte Angebotsseiten, die ein Angebot verständlich erklären und Besucher aktiv zur Anfrage führen.'],
   [Smartphone, 'Digitale Unternehmensstruktur', 'WhatsApp-Kontakt, Google-Struktur, Social-Media-Logik und Angebotsarchitektur werden sinnvoll in ein Gesamtsystem eingebunden.'],
   [Megaphone, 'Kundengewinnung', 'Google Ads und Landingpages werden strategisch verbunden, damit aus Sichtbarkeit qualifizierte Anfragen entstehen.'],
-  [ClipboardList, 'Digitale Ordnungssysteme', 'Einfache digitale Erfassungssysteme fÃ¼r Tagesabschluss, Kassenstruktur, MonatsÃ¼bersicht und steuerberaterfreundliche AblÃ¤ufe.'],
-  [QrCode, 'Google-Bewertungssystem', 'Zufriedene Kunden direkt zur Bewertung fÃ¼hren. Mit QR-Code, Bewertungslink und klarer Anleitung fÃ¼r mehr Vertrauen bei Google.'],
+  [ClipboardList, 'Digitale Ordnungssysteme', 'Einfache digitale Erfassungssysteme für Tagesabschluss, Kassenstruktur, Monatsübersicht und steuerberaterfreundliche Abläufe.'],
+  [QrCode, 'Google-Bewertungssystem', 'Zufriedene Kunden direkt zur Bewertung führen. Mit QR-Code, Bewertungslink und klarer Anleitung für mehr Vertrauen bei Google.'],
 ]
 
 const websiteFocusCards = [
-  ['Professionelle Webseiten', 'Digitale Basis fÃ¼r einen hochwertigen Unternehmensauftritt.'],
-  ['Landingpages', 'Fokussierte Seiten fÃ¼r Angebote, Aktionen, Produkte oder Dienstleistungen.'],
-  ['Angebotsseiten', 'Klare Seiten fÃ¼r Leistungen, Pakete und digitale Produkte.'],
+  ['Professionelle Webseiten', 'Digitale Basis für einen hochwertigen Unternehmensauftritt.'],
+  ['Landingpages', 'Fokussierte Seiten für Angebote, Aktionen, Produkte oder Dienstleistungen.'],
+  ['Angebotsseiten', 'Klare Seiten für Leistungen, Pakete und digitale Produkte.'],
 ]
 
 const appModules = [
   'Kundenverwaltung',
-  'TerminÃ¼bersicht',
+  'Terminübersicht',
   'Mitarbeiterorganisation',
   'Aufgabensteuerung',
   'Checklisten',
@@ -294,55 +294,55 @@ const appModules = [
 ]
 
 const googleAdsCards = [
-  ['Kampagnenstruktur', 'Klare Ordnung fÃ¼r Angebote, Zielgruppen und Suchintentionen.'],
-  ['Anzeigentexte', 'Professionelle Texte, die verstÃ¤ndlich machen, warum Kunden anfragen sollten.'],
-  ['Landingpage-Verbindung', 'Google Ads funktionieren besser, wenn die Zielseite klar, schnell und Ã¼berzeugend aufgebaut ist.'],
-  ['Betreuung', 'Auf Wunsch kÃ¶nnen Kampagnenstruktur und Zielseiten regelmÃ¤ÃŸig geprÃ¼ft und verbessert werden.'],
+  ['Kampagnenstruktur', 'Klare Ordnung für Angebote, Zielgruppen und Suchintentionen.'],
+  ['Anzeigentexte', 'Professionelle Texte, die verständlich machen, warum Kunden anfragen sollten.'],
+  ['Landingpage-Verbindung', 'Google Ads funktionieren besser, wenn die Zielseite klar, schnell und überzeugend aufgebaut ist.'],
+  ['Betreuung', 'Auf Wunsch können Kampagnenstruktur und Zielseiten regelmäßig geprüft und verbessert werden.'],
 ]
 
 const pricingPackages = [
   {
     title: 'Sichtbarkeit',
-    price: 'ab 349 â‚¬',
+    price: 'ab 349 €',
     badge: 'Professioneller Einstieg',
-    description: 'FÃ¼r Betriebe, die online professioneller gefunden werden wollen.',
+    description: 'Für Betriebe, die online professioneller gefunden werden wollen.',
     features: [
       'moderne Onepage-Webseite',
       'mobile Optimierung',
       'klare Angebotsstruktur',
       'WhatsApp-Kontakt',
       'Google-Bewertungslink',
-      'einfache KontaktfÃ¼hrung',
+      'einfache Kontaktführung',
       'Newsletter-Einbindung',
     ],
-    note: 'Ein klarer Start fÃ¼r Betriebe, die digital professioneller auftreten und erreichbar sein mÃ¶chten.',
+    note: 'Ein klarer Start für Betriebe, die digital professioneller auftreten und erreichbar sein möchten.',
     cta: 'Sichtbarkeit anfragen',
     strong: true,
   },
   {
     title: 'Kundengewinnung',
-    price: 'ab 749 â‚¬',
+    price: 'ab 749 €',
     badge: 'Verkaufsstarke Struktur',
-    description: 'FÃ¼r Unternehmen, die mehr Anfragen aus ihrem digitalen Auftritt machen wollen.',
+    description: 'Für Unternehmen, die mehr Anfragen aus ihrem digitalen Auftritt machen wollen.',
     features: [
       'verkaufsstarke Landingpage',
       'Angebotsarchitektur',
       'WhatsApp-CTA',
       'Google-Bewertungsstrategie',
       'Social-Media-Startstruktur',
-      'klare KundenfÃ¼hrung',
+      'klare Kundenführung',
       'einfache Newsletter-Einbindung auf Wunsch',
     ],
-    note: 'Der Fokus liegt auf verstÃ¤ndlicher Angebotskommunikation und qualifizierter AnfragefÃ¼hrung.',
+    note: 'Der Fokus liegt auf verständlicher Angebotskommunikation und qualifizierter Anfrageführung.',
     cta: 'Kundengewinnung anfragen',
     strong: true,
   },
   {
     title: 'Unternehmensarchitektur',
-    price: 'ab 1.499 â‚¬',
-    subtitle: 'Optionale App- oder Dashboard-LÃ¶sung mÃ¶glich',
+    price: 'ab 1.499 €',
+    subtitle: 'Optionale App- oder Dashboard-Lösung möglich',
     badge: 'Ganzheitliches System',
-    description: 'FÃ¼r Betriebe, die ein vollstÃ¤ndiges digitales System brauchen.',
+    description: 'Für Betriebe, die ein vollständiges digitales System brauchen.',
     features: [
       'Website oder Mehrseiten-Struktur',
       'Landingpages',
@@ -350,36 +350,36 @@ const pricingPackages = [
       'Social-Media-System',
       'Kundenanfrage-System',
       'App- oder Dashboard-Konzept',
-      'Newsletter-System als zusÃ¤tzlicher Baustein mÃ¶glich',
+      'Newsletter-System als zusätzlicher Baustein möglich',
       '30 Tage Begleitung',
     ],
-    note: 'FÃ¼r Unternehmen, die nicht nur einen Auftritt, sondern ein klares digitales Unternehmenssystem aufbauen wollen.',
+    note: 'Für Unternehmen, die nicht nur einen Auftritt, sondern ein klares digitales Unternehmenssystem aufbauen wollen.',
     cta: 'Unternehmensarchitektur anfragen',
     premium: true,
   },
   {
     title: 'Monatliche Betreuung',
-    price: 'ab 149 â‚¬ / Monat',
+    price: 'ab 149 € / Monat',
     badge: 'Laufende Begleitung',
-    description: 'FÃ¼r Unternehmen, die nach der Erstellung dauerhaft UnterstÃ¼tzung bei Webseite, Landingpage, Google Ads oder App-Systemen mÃ¶chten.',
+    description: 'Für Unternehmen, die nach der Erstellung dauerhaft Unterstützung bei Webseite, Landingpage, Google Ads oder App-Systemen möchten.',
     features: [
-      'kleine Ã„nderungen',
+      'kleine Änderungen',
       'neue Inhalte',
       'Social-Media-Vorlagen',
       'Google-Bewertungen',
       'technische Pflege',
       'Auswertung und Optimierung',
     ],
-    note: 'Der genaue monatliche Umfang wird im persÃ¶nlichen GesprÃ¤ch festgelegt.',
+    note: 'Der genaue monatliche Umfang wird im persönlichen Gespräch festgelegt.',
     cta: 'Betreuung anfragen',
   },
 ]
 
 const processSteps = [
-  ['1', 'Kostenlose ErsteinschÃ¤tzung', 'Wir schauen uns an, wo dein Unternehmen aktuell digital steht.'],
+  ['1', 'Kostenlose Ersteinschätzung', 'Wir schauen uns an, wo dein Unternehmen aktuell digital steht.'],
   ['2', 'Strukturplan', 'Du bekommst einen klaren Plan, welche Webseite, Landingpage oder Systemstruktur sinnvoll ist.'],
-  ['3', 'Umsetzung', 'STRUKTIVA erstellt deine digitale Struktur professionell und verstÃ¤ndlich.'],
-  ['4', 'Optimierung', 'Nach dem Start wird geprÃ¼ft, ob Kontaktwege, Texte und Aufbau sauber funktionieren.'],
+  ['3', 'Umsetzung', 'STRUKTIVA erstellt deine digitale Struktur professionell und verständlich.'],
+  ['4', 'Optimierung', 'Nach dem Start wird geprüft, ob Kontaktwege, Texte und Aufbau sauber funktionieren.'],
 ]
 
 const targetGroups = [
@@ -390,32 +390,32 @@ const targetGroups = [
   'Reinigungsfirmen',
   'Restaurants',
   'lokale Dienstleister',
-  'kleine EinzelhÃ¤ndler',
+  'kleine Einzelhändler',
   'Einzelunternehmer',
-  'SelbststÃ¤ndige',
+  'Selbstständige',
   'Coaches und Berater',
   'kleine und mittlere Unternehmen',
 ]
 
 const whyPoints = [
-  'Klarer Aufbau statt schÃ¶ner, aber wirkungsloser Webseite',
+  'Klarer Aufbau statt schöner, aber wirkungsloser Webseite',
   'Fokus auf Anfragen, Vertrauen und Kontakt',
-  'Website, Landingpage, WhatsApp, Google, Social Media und Newsletter als zusammenhÃ¤ngende Struktur',
-  'VerstÃ¤ndliche Umsetzung ohne Technik-Blabla',
-  'Systeme, die kleine Unternehmen wirklich im Alltag nutzen kÃ¶nnen',
+  'Website, Landingpage, WhatsApp, Google, Social Media und Newsletter als zusammenhängende Struktur',
+  'Verständliche Umsetzung ohne Technik-Blabla',
+  'Systeme, die kleine Unternehmen wirklich im Alltag nutzen können',
 ]
 
 const qualityPoints = [
-  ['Klar verstÃ¤ndlich', 'Keine unnÃ¶tig komplizierten Systeme, sondern LÃ¶sungen, die nachvollziehbar aufgebaut sind.'],
-  ['Sauber umgesetzt', 'Professionelle Texte, klare Struktur, mobile Optimierung und technische StabilitÃ¤t.'],
-  ['Praxisnah gedacht', 'Digitale LÃ¶sungen, die nicht nur gut aussehen, sondern im echten Unternehmensalltag helfen.'],
+  ['Klar verständlich', 'Keine unnötig komplizierten Systeme, sondern Lösungen, die nachvollziehbar aufgebaut sind.'],
+  ['Sauber umgesetzt', 'Professionelle Texte, klare Struktur, mobile Optimierung und technische Stabilität.'],
+  ['Praxisnah gedacht', 'Digitale Lösungen, die nicht nur gut aussehen, sondern im echten Unternehmensalltag helfen.'],
 ]
 
 const ordnungssystemVorteile = [
-  'klare tÃ¤gliche Erfassung',
+  'klare tägliche Erfassung',
   'weniger Zettelwirtschaft',
-  'strukturierte MonatsÃ¼bersicht',
-  'Zugriff fÃ¼r Betrieb und Steuerberater',
+  'strukturierte Monatsübersicht',
+  'Zugriff für Betrieb und Steuerberater',
   'Export als CSV oder PDF',
   'Rollenverwaltung mit Leserechten',
   'individuelle Anpassung an den Betrieb',
@@ -423,12 +423,12 @@ const ordnungssystemVorteile = [
 ]
 
 const ordnungssystemModule = [
-  ['Digitale Tagesabschluss-Erfassung', 'FÃ¼r Betriebe, die tÃ¤gliche Werte sauber und nachvollziehbar erfassen mÃ¶chten.'],
-  ['Kassenstruktur-Systeme', 'FÃ¼r Wechselgeld, Bar-Anteil, EC-Zahlungen, AbschÃ¶pfung und Differenzkontrolle.'],
+  ['Digitale Tagesabschluss-Erfassung', 'Für Betriebe, die tägliche Werte sauber und nachvollziehbar erfassen möchten.'],
+  ['Kassenstruktur-Systeme', 'Für Wechselgeld, Bar-Anteil, EC-Zahlungen, Abschöpfung und Differenzkontrolle.'],
   ['Beleg-Hinweis-Systeme', 'Ohne Dateiablage, aber mit Belegnummern, Hinweisen und klarer Zuordnung.'],
-  ['MonatsÃ¼bersichten', 'Ãœbersichtliche Auswertungen fÃ¼r Betrieb und Steuerberater.'],
-  ['ExportlÃ¶sungen', 'CSV- und PDF-Ausgaben zur Weitergabe oder internen Kontrolle.'],
-  ['Individuelle Ordnungssysteme', 'Digitale AblÃ¤ufe, die an den tatsÃ¤chlichen Betrieb angepasst werden.'],
+  ['Monatsübersichten', 'Übersichtliche Auswertungen für Betrieb und Steuerberater.'],
+  ['Exportlösungen', 'CSV- und PDF-Ausgaben zur Weitergabe oder internen Kontrolle.'],
+  ['Individuelle Ordnungssysteme', 'Digitale Abläufe, die an den tatsächlichen Betrieb angepasst werden.'],
 ]
 
 const fadeUp = {
@@ -488,9 +488,9 @@ function useDocumentTitleSafe(pathname) {
       '/demo-beauty': 'Demo Beauty & Kosmetik - STRUKTIVA Unternehmensarchitektur',
       '/demo-dienstleister': 'Demo Dienstleister - STRUKTIVA Unternehmensarchitektur',
       '/landingpage-digitale-struktur': 'Digitale Struktur fuer kleine Unternehmen - STRUKTIVA Unternehmensarchitektur',
-      '/wissen': 'STRUKTIVA Wissen - Digitale Unternehmensstruktur fÃ¼r kleine Unternehmen',
-      '/wissen/warum-eine-schoene-website-keine-kunden-bringt': 'Warum eine schÃ¶ne Website allein keine Kunden bringt - STRUKTIVA Wissen',
-      '/wissen/digitale-grundsysteme-kleine-unternehmen': 'Die 5 digitalen Grundsysteme fÃ¼r kleine Unternehmen - STRUKTIVA Wissen',
+      '/wissen': 'STRUKTIVA Wissen - Digitale Unternehmensstruktur für kleine Unternehmen',
+      '/wissen/warum-eine-schoene-website-keine-kunden-bringt': 'Warum eine schöne Website allein keine Kunden bringt - STRUKTIVA Wissen',
+      '/wissen/digitale-grundsysteme-kleine-unternehmen': 'Die 5 digitalen Grundsysteme für kleine Unternehmen - STRUKTIVA Wissen',
       '/wissen/website-landingpage-funnel-unterschied': 'Website, Landingpage oder Funnel - STRUKTIVA Wissen',
       '/leistungen': 'Leistungen - STRUKTIVA Unternehmensarchitektur',
       '/impressum': 'Impressum - STRUKTIVA Unternehmensarchitektur',
@@ -519,11 +519,11 @@ function useDocumentTitleSafe(pathname) {
       '/demos':
         'Drei Demo-Modelle zeigen, wie digitale Unternehmensstruktur je nach Branche klar, professionell und anfrageorientiert aufgebaut werden kann.',
       '/wissen':
-        'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen AblÃ¤ufen fÃ¼r kleine Unternehmen.',
+        'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen Abläufen für kleine Unternehmen.',
       '/wissen/warum-eine-schoene-website-keine-kunden-bringt':
         'Warum Design allein nicht reicht und wie kleine Unternehmen mit klarer digitaler Struktur mehr qualifizierte Anfragen erhalten.',
       '/wissen/digitale-grundsysteme-kleine-unternehmen':
-        'Die 5 digitalen Grundsysteme, die kleine Unternehmen fÃ¼r Sichtbarkeit, Vertrauen und verlÃ¤ssliche Kundenanfragen wirklich brauchen.',
+        'Die 5 digitalen Grundsysteme, die kleine Unternehmen für Sichtbarkeit, Vertrauen und verlässliche Kundenanfragen wirklich brauchen.',
       '/wissen/website-landingpage-funnel-unterschied':
         'Website, Landingpage oder Funnel: welche Struktur kleine Unternehmen wirklich brauchen, um online klar und anfragebereit aufzutreten.',
     }
@@ -858,14 +858,14 @@ function Header({ pathname }) {
             href={siteLinks.contact}
             className="inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full bg-[#D8B45A] px-4 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(17,24,39,0.14)] transition hover:bg-[#C9A247] hover:-translate-y-0.5"
           >
-            ErsteinschÃ¤tzung
+            Ersteinschätzung
             <ArrowRight className="h-3.5 w-3.5" />
           </a>
         </div>
 
         <button
           type="button"
-          aria-label={menuOpen ? 'MenÃ¼ schlieÃŸen' : 'MenÃ¼ Ã¶ffnen'}
+          aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
           aria-controls="mobile-menu-panel"
           aria-expanded={menuOpen}
           onClick={() => {
@@ -955,7 +955,7 @@ function Header({ pathname }) {
                 onClick={closeMobileMenu}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
               >
-                  Kostenlose ErsteinschÃ¤tzung anfragen
+                  Kostenlose Ersteinschätzung anfragen
                   <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -1001,7 +1001,7 @@ function HeroSection() {
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
               className="mt-4 max-w-[35rem] text-[15px] leading-7 text-[#D7DCE5] md:text-base"
             >
-              STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und digitale Systeme zu einer klaren Struktur â€“ damit Kunden schneller verstehen, was du anbietest und leichter Kontakt aufnehmen.
+              STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und digitale Systeme zu einer klaren Struktur – damit Kunden schneller verstehen, was du anbietest und leichter Kontakt aufnehmen.
             </motion.p>
 
             <motion.p
@@ -1023,7 +1023,7 @@ function HeroSection() {
                 href={siteLinks.contact}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(17,24,39,0.16)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
               >
-                  Kostenlose ErsteinschÃ¤tzung anfragen
+                  Kostenlose Ersteinschätzung anfragen
                   <ArrowRight className="h-4 w-4" />
               </a>
               <a
@@ -1039,7 +1039,7 @@ function HeroSection() {
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
               className="mt-3 max-w-[36rem] text-sm leading-7 text-[#D7DCE5]"
             >
-              Keine klassische Webagentur. Sondern digitale Unternehmensarchitektur fÃ¼r Betriebe, die sichtbar, professionell und verkaufsfÃ¤hig auftreten wollen.
+              Keine klassische Webagentur. Sondern digitale Unternehmensarchitektur für Betriebe, die sichtbar, professionell und verkaufsfähig auftreten wollen.
             </motion.p>
           </motion.div>
         </div>
@@ -1077,7 +1077,7 @@ function HeroSection() {
                 <div className="mt-4 rounded-[1rem] border border-[#D8B45A]/18 bg-white/[0.06] p-3.5">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">Ergebnis</p>
                   <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">
-                    Ein klarer digitaler Aufbau fÃ¼r Sichtbarkeit, Anfragen und bessere AblÃ¤ufe.
+                    Ein klarer digitaler Aufbau für Sichtbarkeit, Anfragen und bessere Abläufe.
                   </p>
                 </div>
               </div>
@@ -1125,8 +1125,8 @@ function ProblemSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Ausgangslage"
-            title="Viele kleine Unternehmen verlieren Kunden, bevor sie Ã¼berhaupt Kontakt aufnehmen."
-            text="Viele Betriebe haben gute Leistungen, aber keinen klaren digitalen Auftritt. Die Webseite wirkt veraltet, Google-Bewertungen werden nicht aktiv genutzt, WhatsApp ist nicht sauber eingebunden, Social Media wirkt unregelmÃ¤ÃŸig und potenzielle Kunden wissen nicht sofort, warum sie genau hier anfragen sollen."
+            title="Viele kleine Unternehmen verlieren Kunden, bevor sie überhaupt Kontakt aufnehmen."
+            text="Viele Betriebe haben gute Leistungen, aber keinen klaren digitalen Auftritt. Die Webseite wirkt veraltet, Google-Bewertungen werden nicht aktiv genutzt, WhatsApp ist nicht sauber eingebunden, Social Media wirkt unregelmäßig und potenzielle Kunden wissen nicht sofort, warum sie genau hier anfragen sollen."
             centered={false}
           />
         </Reveal>
@@ -1170,7 +1170,7 @@ function ProblemSection() {
 
         <Reveal className="mt-8">
           <p className="max-w-3xl text-base leading-8 text-[#D7DCE5]">
-            STRUKTIVA verbindet Webseite, Landingpage, Google, WhatsApp, Social Media und Angebotsstruktur zu einem klaren System. Ziel ist nicht einfach nur ein schÃ¶ner Auftritt, sondern ein digitaler Weg, der Vertrauen aufbaut und mehr qualifizierte Anfragen erzeugt.
+            STRUKTIVA verbindet Webseite, Landingpage, Google, WhatsApp, Social Media und Angebotsstruktur zu einem klaren System. Ziel ist nicht einfach nur ein schöner Auftritt, sondern ein digitaler Weg, der Vertrauen aufbaut und mehr qualifizierte Anfragen erzeugt.
           </p>
           <p className="mt-4 max-w-3xl text-base leading-8 text-[#D7DCE5]">
             Auf Wunsch kann auch ein Newsletter-System eingebunden werden, um Interessenten und Bestandskunden professionell zu informieren und langfristig an das Unternehmen zu binden.
@@ -1198,7 +1198,7 @@ function ServicesSection() {
           <SectionHeader
             eyebrow="Leistungen"
             title="Digitale Struktur statt Online-Chaos."
-            text="FÃ¼r kleine Unternehmen, SelbststÃ¤ndige und lokale Dienstleister, die online professioneller auftreten mÃ¶chten."
+            text="Für kleine Unternehmen, Selbstständige und lokale Dienstleister, die online professioneller auftreten möchten."
           />
         </Reveal>
 
@@ -1247,13 +1247,13 @@ function WebsiteFocusSection() {
           <SectionHeader
             eyebrow="Webseiten & Landingpages"
             title="Professionelle Webseiten & Landingpages mit klarer Wirkung."
-            text="Eine professionelle Webseite erklÃ¤rt schnell, was ein Unternehmen anbietet, warum es vertrauenswÃ¼rdig ist und wie Kunden Kontakt aufnehmen kÃ¶nnen. STRUKTIVA entwickelt hochwertige Webseiten, Landingpages und Angebotsseiten mit klarer Struktur, professionellen Texten und sauberer KundenfÃ¼hrung."
+            text="Eine professionelle Webseite erklärt schnell, was ein Unternehmen anbietet, warum es vertrauenswürdig ist und wie Kunden Kontakt aufnehmen können. STRUKTIVA entwickelt hochwertige Webseiten, Landingpages und Angebotsseiten mit klarer Struktur, professionellen Texten und sauberer Kundenführung."
             centered={false}
           />
         </Reveal>
         <Reveal className="mt-6">
           <p className="max-w-3xl rounded-[1.3rem] border border-white/14 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
-            Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklÃ¤rt und Besucher gezielt zur Anfrage fÃ¼hrt.
+            Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklärt und Besucher gezielt zur Anfrage führt.
           </p>
         </Reveal>
 
@@ -1299,8 +1299,8 @@ function AppsSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Unternehmens-Apps"
-            title="Professionelle Unternehmens-Apps fÃ¼r bessere AblÃ¤ufe."
-            text="Individuelle App-Systeme fÃ¼r Kundenverwaltung, Termine, Aufgaben, Checklisten und interne Prozesse â€“ klar aufgebaut, alltagstauglich und passend zum Unternehmen."
+            title="Professionelle Unternehmens-Apps für bessere Abläufe."
+            text="Individuelle App-Systeme für Kundenverwaltung, Termine, Aufgaben, Checklisten und interne Prozesse – klar aufgebaut, alltagstauglich und passend zum Unternehmen."
             centered={false}
           />
         </Reveal>
@@ -1308,7 +1308,7 @@ function AppsSection() {
         <Reveal className="mt-6">
           <div className="max-w-3xl rounded-[1.4rem] border border-white/14 bg-white/[0.04] p-4 text-sm leading-7 text-[#D7DCE5]">
             <p className="font-semibold text-white">Nicht sicher, ob eine eigene App sinnvoll ist?</p>
-            <p className="mt-2">Starte mit einer kostenlosen App-ErsteinschÃ¤tzung. Dabei wird geprÃ¼ft, ob eine App fÃ¼r deine AblÃ¤ufe wirklich Nutzen bringt oder ob eine einfachere digitale LÃ¶sung ausreicht.</p>
+            <p className="mt-2">Starte mit einer kostenlosen App-Ersteinschätzung. Dabei wird geprüft, ob eine App für deine Abläufe wirklich Nutzen bringt oder ob eine einfachere digitale Lösung ausreicht.</p>
           </div>
         </Reveal>
 
@@ -1335,22 +1335,22 @@ function AppsSection() {
             <div className="app-preview-3d mx-auto max-w-3xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-4 shadow-premium backdrop-blur-xl">
               <div className="rounded-[1.5rem] border border-[#D8B45A]/20 bg-white/[0.05] p-4 md:p-5">
               <div className="mb-4">
-                <p className="text-sm font-medium text-[#D7DCE5]">So kann eine STRUKTIVA App-LÃ¶sung aussehen</p>
+                <p className="text-sm font-medium text-[#D7DCE5]">So kann eine STRUKTIVA App-Lösung aussehen</p>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">
-                  Individuelle App-Systeme kÃ¶nnen Kunden, Termine, Aufgaben, Checklisten und interne AblÃ¤ufe Ã¼bersichtlich an einem Ort bÃ¼ndeln.
+                  Individuelle App-Systeme können Kunden, Termine, Aufgaben, Checklisten und interne Abläufe übersichtlich an einem Ort bündeln.
                 </p>
               </div>
               <div className="mb-4 flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-sm font-medium text-[#D7DCE5]">App-Beispiel fÃ¼r Unternehmen</p>
+                  <p className="text-sm font-medium text-[#D7DCE5]">App-Beispiel für Unternehmen</p>
                   <h3 className="mt-1 text-xl font-semibold text-white">STRUKTIVA Business App</h3>
                 </div>
                 <div className="rounded-full bg-[#D8B45A]/12 px-3 py-1 text-xs font-semibold text-[#D8B45A]">Vorschau</div>
               </div>
               <div className="grid gap-2.5">
                 {[
-                  ['Kundenverwaltung', 'Ã¼bersichtlich'],
-                  ['TerminÃ¼bersicht', 'strukturiert'],
+                  ['Kundenverwaltung', 'übersichtlich'],
+                  ['Terminübersicht', 'strukturiert'],
                   ['Aufgabensteuerung', 'klar'],
                   ['Bewertungsprozess', 'integriert'],
                 ].map(([label, state]) => (
@@ -1366,7 +1366,7 @@ function AppsSection() {
               <div className="mt-4 rounded-[1.2rem] border border-white/14 bg-white/[0.06] p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Ergebnis</p>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">
-                  Ein digitaler Ort fÃ¼r Kunden, Termine, Aufgaben und interne AblÃ¤ufe.
+                  Ein digitaler Ort für Kunden, Termine, Aufgaben und interne Abläufe.
                 </p>
               </div>
             </div>
@@ -1378,7 +1378,7 @@ function AppsSection() {
             href={siteLinks.contact}
             className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/28 bg-white/[0.06] px-6 py-3.5 text-sm font-semibold text-[#D8B45A] transition hover:-translate-y-0.5 hover:bg-[#D8B45A] hover:text-white"
           >
-            Kostenlose App-ErsteinschÃ¤tzung anfragen
+            Kostenlose App-Ersteinschätzung anfragen
             <ArrowRight className="h-4 w-4" />
           </a>
         </Reveal>
@@ -1394,15 +1394,15 @@ function GoogleAdsSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Google Ads"
-            title="Google Ads fÃ¼r gezielte Kundenanfragen."
-            text="Google Ads kÃ¶nnen sinnvoll sein, wenn ein Unternehmen gezielt Menschen erreichen mÃ¶chte, die bereits nach einer Leistung suchen. STRUKTIVA unterstÃ¼tzt bei Struktur, Anzeigentexten, Angebotsausrichtung und passenden Landingpages."
+            title="Google Ads für gezielte Kundenanfragen."
+            text="Google Ads können sinnvoll sein, wenn ein Unternehmen gezielt Menschen erreichen möchte, die bereits nach einer Leistung suchen. STRUKTIVA unterstützt bei Struktur, Anzeigentexten, Angebotsausrichtung und passenden Landingpages."
             centered={false}
           />
         </Reveal>
 
         <Reveal className="mt-6">
           <div className="max-w-4xl rounded-[1.5rem] border border-white/14 bg-white/[0.04] p-5 text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Je nach Unternehmen kann zusÃ¤tzlich auch Social-Media-Werbung sinnvoll sein â€“ zum Beispiel fÃ¼r lokale Aktionen, Angebote, neue Leistungen oder mehr regionale Sichtbarkeit. STRUKTIVA kann dabei helfen, Kampagnenideen, Anzeigentexte und passende Landingpages dafÃ¼r vorzubereiten.
+            Je nach Unternehmen kann zusätzlich auch Social-Media-Werbung sinnvoll sein – zum Beispiel für lokale Aktionen, Angebote, neue Leistungen oder mehr regionale Sichtbarkeit. STRUKTIVA kann dabei helfen, Kampagnenideen, Anzeigentexte und passende Landingpages dafür vorzubereiten.
           </div>
         </Reveal>
 
@@ -1453,8 +1453,8 @@ function DemoOverviewSectionPremium() {
         <Reveal>
           <SectionHeader
             eyebrow="Live-Demos"
-            title="So kÃ¶nnte dein digitaler Auftritt aussehen"
-            text="WÃ¤hle eine Beispielbranche und sieh dir an, wie STRUKTIVA digitale Struktur, klare Angebote, Kontaktwege und Kundengewinnung fÃ¼r kleine Unternehmen sichtbar macht."
+            title="So könnte dein digitaler Auftritt aussehen"
+            text="Wähle eine Beispielbranche und sieh dir an, wie STRUKTIVA digitale Struktur, klare Angebote, Kontaktwege und Kundengewinnung für kleine Unternehmen sichtbar macht."
           />
         </Reveal>
 
@@ -1662,8 +1662,8 @@ function PricingSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Angebote & Preise"
-            title="Systemangebote fÃ¼r mehr Sichtbarkeit, Anfragen und digitale Struktur."
-            text="Keine isolierten EinzelmaÃŸnahmen, sondern klar aufgebaute Leistungspakete fÃ¼r Betriebe, die online professioneller auftreten und ihre Kundengewinnung systematisch aufbauen wollen."
+            title="Systemangebote für mehr Sichtbarkeit, Anfragen und digitale Struktur."
+            text="Keine isolierten Einzelmaßnahmen, sondern klar aufgebaute Leistungspakete für Betriebe, die online professioneller auftreten und ihre Kundengewinnung systematisch aufbauen wollen."
           />
         </Reveal>
 
@@ -1671,14 +1671,14 @@ function PricingSection() {
             <div className="overflow-hidden rounded-[1.8rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] shadow-premium md:p-0">
               <div className="grid gap-0 md:grid-cols-[0.92fr_1.08fr]">
                 <div className="relative min-h-[180px]">
-                  <img src={struktivaImages.consulting} alt="Strategisches BeratungsgesprÃ¤ch im Unternehmenskontext" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                  <img src={struktivaImages.consulting} alt="Strategisches Beratungsgespräch im Unternehmenskontext" loading="lazy" decoding="async" className="h-full w-full object-cover" />
                   <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(7,17,31,0.78),rgba(7,17,31,0.52),rgba(5,10,18,0.86))]" />
                 </div>
                 <div className="p-6 md:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Faire Kennenlernpreise zum Start</p>
               <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Professioneller Einstieg mit klarer Struktur statt Agentur-Standard</h3>
               <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-                STRUKTIVA positioniert sich bewusst als digitaler Systemanbieter fÃ¼r kleine Unternehmen. Die Umsetzung verbindet PrÃ¤senz, KundenfÃ¼hrung und Kontaktwege in einer Struktur, die im Alltag funktioniert und verkaufsfÃ¤hig bleibt.
+                STRUKTIVA positioniert sich bewusst als digitaler Systemanbieter für kleine Unternehmen. Die Umsetzung verbindet Präsenz, Kundenführung und Kontaktwege in einer Struktur, die im Alltag funktioniert und verkaufsfähig bleibt.
               </p>
                 </div>
               </div>
@@ -1713,7 +1713,7 @@ function PricingSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Newsletter-Einbindung</p>
             <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.65rem]">Newsletter-Einbindung</h3>
             <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-              FÃ¼r Unternehmen, die Interessenten und Bestandskunden regelmÃ¤ÃŸig professionell informieren mÃ¶chten, kann STRUKTIVA ein passendes Newsletter-System in die bestehende Website- oder Landingpage-Struktur einbinden.
+              Für Unternehmen, die Interessenten und Bestandskunden regelmäßig professionell informieren möchten, kann STRUKTIVA ein passendes Newsletter-System in die bestehende Website- oder Landingpage-Struktur einbinden.
             </p>
             <div className="mt-5 grid gap-2 text-sm text-[#D7DCE5] md:grid-cols-2">
               {[
@@ -1729,15 +1729,15 @@ function PricingSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 199 â‚¬ zzgl. gesetzlicher Mehrwertsteuer</p>
+            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 199 € zzgl. gesetzlicher Mehrwertsteuer</p>
           </div>
         </Reveal>
 
           <Reveal className="mt-8">
             <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
-              <p>Aktuelle Einstiegspreise fÃ¼r kleine Unternehmen und SelbststÃ¤ndige.</p>
-              <p className="mt-2">Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewÃ¼nschten Zusatzsystemen und technischer Umsetzung.</p>
-              <p className="mt-2">Individuelle digitale Systeme werden nach Umfang, Betrieb und benÃ¶tigten Funktionen kalkuliert.</p>
+              <p>Aktuelle Einstiegspreise für kleine Unternehmen und Selbstständige.</p>
+              <p className="mt-2">Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.</p>
+              <p className="mt-2">Individuelle digitale Systeme werden nach Umfang, Betrieb und benötigten Funktionen kalkuliert.</p>
               <a
                 href={siteLinks.landingpageDigitaleStruktur}
                 className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
@@ -1759,8 +1759,8 @@ function ProcessSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Ablauf"
-            title="So lÃ¤uft die Zusammenarbeit ab"
-            text="Klar, verstÃ¤ndlich und auf den Betrieb abgestimmt â€“ von der ErsteinschÃ¤tzung bis zur laufenden Optimierung."
+            title="So läuft die Zusammenarbeit ab"
+            text="Klar, verständlich und auf den Betrieb abgestimmt – von der Ersteinschätzung bis zur laufenden Optimierung."
           />
         </Reveal>
 
@@ -1797,9 +1797,9 @@ function TargetSection() {
       <div className="mx-auto max-w-7xl rounded-[2.4rem] border border-white/14 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(11,17,32,0.9))] p-6 shadow-premium md:p-8 lg:p-10">
         <Reveal>
           <SectionHeader
-            eyebrow="FÃ¼r wen"
-            title="FÃ¼r kleine Unternehmen, die digital professioneller auftreten wollen."
-            text="STRUKTIVA richtet sich an kleine und mittlere Unternehmen, SelbststÃ¤ndige und lokale Betriebe, die mehr Anfragen, mehr Ordnung und eine professionelle Online-PrÃ¤senz brauchen."
+            eyebrow="Für wen"
+            title="Für kleine Unternehmen, die digital professioneller auftreten wollen."
+            text="STRUKTIVA richtet sich an kleine und mittlere Unternehmen, Selbstständige und lokale Betriebe, die mehr Anfragen, mehr Ordnung und eine professionelle Online-Präsenz brauchen."
             centered={false}
           />
         </Reveal>
@@ -1873,8 +1873,8 @@ function QualitySection() {
         <Reveal>
           <SectionHeader
             eyebrow="Unser Anspruch"
-            title="Digitale LÃ¶sungen, die klar, professionell und im Alltag nutzbar sind."
-            text="Unser Anspruch ist es, digitale LÃ¶sungen zu entwickeln, die klar verstÃ¤ndlich, professionell gestaltet und im Alltag nutzbar sind. Ob Webseite, Landingpage, App-System oder Google Ads: Entscheidend ist, dass die LÃ¶sung zum Unternehmen passt und sauber umgesetzt wird."
+            title="Digitale Lösungen, die klar, professionell und im Alltag nutzbar sind."
+            text="Unser Anspruch ist es, digitale Lösungen zu entwickeln, die klar verständlich, professionell gestaltet und im Alltag nutzbar sind. Ob Webseite, Landingpage, App-System oder Google Ads: Entscheidend ist, dass die Lösung zum Unternehmen passt und sauber umgesetzt wird."
             centered={false}
           />
         </Reveal>
@@ -1911,8 +1911,8 @@ function OrdnungssystemeSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Neues Angebot"
-            title="Digitale Ordnungssysteme fÃ¼r steuerberaterfreundliche AblÃ¤ufe"
-            text="Kassenstruktur, Tagesabschluss und MonatsÃ¼bersicht â€“ klar erfasst, digital gespeichert und fÃ¼r den Steuerberater vorbereitet."
+            title="Digitale Ordnungssysteme für steuerberaterfreundliche Abläufe"
+            text="Kassenstruktur, Tagesabschluss und Monatsübersicht – klar erfasst, digital gespeichert und für den Steuerberater vorbereitet."
             centered={false}
           />
         </Reveal>
@@ -1921,13 +1921,13 @@ function OrdnungssystemeSection() {
           <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5">
               <p className="text-sm leading-8 text-[#D7DCE5] md:text-base">
-                Viele kleine Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und RÃ¼ckfragen vom Steuerberater.
+                Viele kleine Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und Rückfragen vom Steuerberater.
               </p>
               <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
-                STRUKTIVA entwickelt einfache digitale Erfassungssysteme, mit denen betriebliche Werte strukturiert dokumentiert, gespeichert und Ã¼bersichtlich bereitgestellt werden kÃ¶nnen.
+                STRUKTIVA entwickelt einfache digitale Erfassungssysteme, mit denen betriebliche Werte strukturiert dokumentiert, gespeichert und übersichtlich bereitgestellt werden können.
               </p>
               <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
-                Ob Tagesabschluss digital, Kassenkontrolle, Beleg-Hinweise, MonatsÃ¼bersicht oder Export fÃ¼r Steuerberater â€“ wir bauen ein System, das zu Ihrem betrieblichen Ablauf passt.
+                Ob Tagesabschluss digital, Kassenkontrolle, Beleg-Hinweise, Monatsübersicht oder Export für Steuerberater – wir bauen ein System, das zu Ihrem betrieblichen Ablauf passt.
               </p>
             </div>
 
@@ -1966,13 +1966,13 @@ function OrdnungssystemeSection() {
           <div className="rounded-[1.7rem] border border-[#D8B45A]/28 bg-white/[0.05] p-6">
             <h3 className="text-2xl font-semibold text-white">Vom Chaos zur klaren Struktur</h3>
             <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
-              Ein gutes System ersetzt keine fachliche Beratung â€“ aber es sorgt dafÃ¼r, dass die richtigen Daten sauber, nachvollziehbar und Ã¼bersichtlich bereitstehen.
+              Ein gutes System ersetzt keine fachliche Beratung – aber es sorgt dafür, dass die richtigen Daten sauber, nachvollziehbar und übersichtlich bereitstehen.
             </p>
             <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
-              Genau dafÃ¼r entwickelt STRUKTIVA digitale Ordnungssysteme: einfach genug fÃ¼r den Alltag, strukturiert genug fÃ¼r den Steuerberater.
+              Genau dafür entwickelt STRUKTIVA digitale Ordnungssysteme: einfach genug für den Alltag, strukturiert genug für den Steuerberater.
             </p>
             <p className="mt-4 text-sm font-medium text-[#D7DCE5]">
-              Individuelle digitale Ordnungssysteme werden nach Umfang, Betrieb und benÃ¶tigten Funktionen kalkuliert.
+              Individuelle digitale Ordnungssysteme werden nach Umfang, Betrieb und benötigten Funktionen kalkuliert.
             </p>
             <p className="mt-4 rounded-2xl border border-white/14 bg-[#050A12]/45 px-4 py-3 text-xs leading-6 text-[#D7DCE5] md:text-sm">
               Hinweis: STRUKTIVA bietet keine Steuerberatung an und ersetzt keinen Steuerberater. Unsere Systeme dienen der strukturierten Erfassung, Ordnung und Vorbereitung betrieblicher Daten. Die steuerliche Bewertung und finale Verwendung erfolgen durch Ihren Steuerberater.
@@ -2010,18 +2010,18 @@ function ContactSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Kontakt"
-            title="Bereit fÃ¼r einen digitalen Auftritt, der nicht nur gut aussieht, sondern Kunden fÃ¼hrt?"
-            text="Wenn dein Unternehmen online professioneller wirken, klarer kommunizieren und mehr Anfragen gewinnen soll, ist STRUKTIVA der richtige nÃ¤chste Schritt."
+            title="Bereit für einen digitalen Auftritt, der nicht nur gut aussieht, sondern Kunden führt?"
+            text="Wenn dein Unternehmen online professioneller wirken, klarer kommunizieren und mehr Anfragen gewinnen soll, ist STRUKTIVA der richtige nächste Schritt."
             centered={false}
           />
         </Reveal>
 
         <Reveal className="mt-5">
           <p className="max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Du kannst auch anfragen, wenn du UnterstÃ¼tzung bei Google Ads, Social-Media-Werbung oder einer passenden Landingpage fÃ¼r deine Kampagne brauchst.
+            Du kannst auch anfragen, wenn du Unterstützung bei Google Ads, Social-Media-Werbung oder einer passenden Landingpage für deine Kampagne brauchst.
           </p>
           <p className="mt-2 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Du kannst auch eine kostenlose App-ErsteinschÃ¤tzung anfragen, wenn du noch nicht sicher bist, ob eine App fÃ¼r dein Unternehmen sinnvoll ist.
+            Du kannst auch eine kostenlose App-Ersteinschätzung anfragen, wenn du noch nicht sicher bist, ob eine App für dein Unternehmen sinnvoll ist.
           </p>
           <p className="mt-2 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
             Du hast bereits mit STRUKTIVA gearbeitet? Dann kannst du hier eine Google-Bewertung abgeben.
@@ -2054,7 +2054,7 @@ function ContactSection() {
                 href={siteLinks.contact}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.16)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
               >
-                Kostenlose ErsteinschÃ¤tzung anfragen
+                Kostenlose Ersteinschätzung anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
@@ -2107,12 +2107,12 @@ function DemoFormCard({ fields, cta }) {
 function DemoFinalCTA() {
   return (
     <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
-      <h2 className="text-2xl font-semibold text-white">So kÃ¶nnte dein Unternehmen digital auftreten.</h2>
+      <h2 className="text-2xl font-semibold text-white">So könnte dein Unternehmen digital auftreten.</h2>
       <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-        Wenn du eine Ã¤hnliche Struktur fÃ¼r dein Unternehmen mÃ¶chtest, erstellt STRUKTIVA einen klaren digitalen Aufbau passend zu deiner Branche, deinem Angebot und deinen Kunden.
+        Wenn du eine ähnliche Struktur für dein Unternehmen möchtest, erstellt STRUKTIVA einen klaren digitalen Aufbau passend zu deiner Branche, deinem Angebot und deinen Kunden.
       </p>
       <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-        Kostenlose ErsteinschÃ¤tzung anfragen
+        Kostenlose Ersteinschätzung anfragen
         <ArrowRight className="h-4 w-4" />
       </a>
     </section>
@@ -2138,11 +2138,11 @@ function DemoPageTemplate({ demo }) {
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-                Kostenlose ErsteinschÃ¤tzung anfragen
+                Kostenlose Ersteinschätzung anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href={siteLinks.demos} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                Zur Demo-Ãœbersicht
+                Zur Demo-Übersicht
               </a>
             </div>
           </div>
@@ -2192,7 +2192,7 @@ function Footer() {
             <a href={`mailto:${contactDetails.email}`} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.email}</a>
             <a href={contactDetails.phoneHref} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.phoneLabel}</a>
             <a href={contactDetails.whatsappHref} className="mt-1 block transition hover:text-[#F2D98B]">WhatsApp Business</a>
-            <p className="mt-3 text-xs leading-6 text-[#94A3B8]">Digitale Strukturen f?r kleine Unternehmen, Selbstst?ndige und lokale Dienstleister.</p>
+            <p className="mt-3 text-xs leading-6 text-[#94A3B8]">Digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.</p>
           </div>
 
           <div>
@@ -2238,7 +2238,7 @@ function Footer() {
           </div>
         </div>
         <div className="border-t border-white/10 px-6 py-3.5 text-xs text-[#94A3B8] md:flex md:items-center md:justify-between">
-          <p>? 2026 STRUKTIVA Unternehmensarchitektur. Alle Rechte vorbehalten.</p>
+          <p>© 2026 STRUKTIVA Unternehmensarchitektur. Alle Rechte vorbehalten.</p>
           <p className="mt-1 md:mt-0">Digitale Strukturen. Klare Systeme. Mehr Wirkung.</p>
         </div>
       </div>
@@ -2259,10 +2259,10 @@ function HeroSectionPremium() {
               {brand.name}
             </motion.div>
             <motion.h1 variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-5 max-w-[35rem] text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.05] xl:text-[58px]">
-              Wir machen dein Unternehmen online sichtbar, verstÃ¤ndlich und anfragebereit.
+              Wir machen dein Unternehmen online sichtbar, verständlich und anfragebereit.
             </motion.h1>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] text-[15px] leading-7 text-[#D7DCE5] md:text-[17px] md:leading-8">
-              STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und digitale Systeme zu einer klaren Struktur â€“ damit Kunden schneller verstehen, was du anbietest und leichter Kontakt aufnehmen.
+              STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und digitale Systeme zu einer klaren Struktur – damit Kunden schneller verstehen, was du anbietest und leichter Kontakt aufnehmen.
             </motion.p>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 inline-flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#D7DCE5]">
               {brand.line.split('. ').filter(Boolean).map((item) => (
@@ -2271,7 +2271,7 @@ function HeroSectionPremium() {
             </motion.p>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 flex flex-col gap-2.5 sm:flex-row">
               <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.2)] transition hover:bg-[#A9822D] hover:-translate-y-0.5">
-                Kostenlose ErsteinschÃ¤tzung anfragen
+                Kostenlose Ersteinschätzung anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href={siteLinks.leistungenPage} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">
@@ -2288,13 +2288,13 @@ function HeroSectionPremium() {
               <ArrowRight className="h-4 w-4" />
             </motion.a>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
-              FÃ¼r kleine Unternehmen, SelbststÃ¤ndige und lokale Dienstleister, die online professioneller auftreten mÃ¶chten.
+              Für kleine Unternehmen, Selbstständige und lokale Dienstleister, die online professioneller auftreten möchten.
             </motion.p>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 grid gap-2 text-sm text-[#D7DCE5] md:grid-cols-2">
               {[
-                'FÃ¼r kleine Unternehmen, SelbststÃ¤ndige und lokale Dienstleister',
+                'Für kleine Unternehmen, Selbstständige und lokale Dienstleister',
                 'Klare Struktur statt Technik-Chaos',
-                'VerstÃ¤ndliche Umsetzung ohne Agentur-Blabla',
+                'Verständliche Umsetzung ohne Agentur-Blabla',
                 'Digitale Systeme, die im Alltag nutzbar sind',
               ].map((item) => (
                 <p key={item} className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2">{item}</p>
@@ -2325,7 +2325,7 @@ function HeroSectionPremium() {
                 </div>
                 <div className="mt-4 rounded-[1rem] border border-[#D8B45A]/18 bg-white/[0.06] p-3.5">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">Ergebnis</p>
-                  <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">Ein klarer digitaler Aufbau fÃ¼r Sichtbarkeit, Anfragen und bessere AblÃ¤ufe.</p>
+                  <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">Ein klarer digitaler Aufbau für Sichtbarkeit, Anfragen und bessere Abläufe.</p>
                 </div>
               </div>
             </div>
@@ -2340,7 +2340,7 @@ function HeroSectionPremium() {
             />
             <div className="hero-image-overlay">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#F2D98B]">Premium-Umfeld</p>
-              <p className="mt-1 text-sm text-[#D7DCE5]">Digitale Struktur, die professionell wirkt und klar fÃ¼hrt.</p>
+              <p className="mt-1 text-sm text-[#D7DCE5]">Digitale Struktur, die professionell wirkt und klar führt.</p>
             </div>
           </div>
         </motion.div>
@@ -2366,7 +2366,7 @@ function ServicesSectionPremium() {
           <SectionHeader
             eyebrow="Leistungen"
             title="Digitale Struktur statt Online-Chaos."
-            text="FÃ¼r kleine Unternehmen, SelbststÃ¤ndige und lokale Dienstleister, die online professioneller auftreten mÃ¶chten."
+            text="Für kleine Unternehmen, Selbstständige und lokale Dienstleister, die online professioneller auftreten möchten."
           />
         </Reveal>
         <Reveal className="mt-8">
@@ -2381,7 +2381,7 @@ function ServicesSectionPremium() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Struktur sichtbar machen</p>
               <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
-                Ein professioneller Auftritt entsteht, wenn Angebote, Kontaktwege und Kundengewinnung als System gedacht werden â€“ klar, verstÃ¤ndlich und alltagstauglich.
+                Ein professioneller Auftritt entsteht, wenn Angebote, Kontaktwege und Kundengewinnung als System gedacht werden – klar, verständlich und alltagstauglich.
               </p>
             </div>
           </div>
@@ -2422,14 +2422,14 @@ const wissenArticles = [
   {
     slug: 'warum-eine-schoene-website-keine-kunden-bringt',
     href: siteLinks.wissenWebsiteAllein,
-    title: 'Warum eine schÃ¶ne Website allein keine Kunden bringt',
+    title: 'Warum eine schöne Website allein keine Kunden bringt',
     description:
-      'Viele kleine Unternehmen investieren in Design, aber nicht in KundenfÃ¼hrung. Dieser Beitrag zeigt, warum Struktur wichtiger ist als reine Optik.',
+      'Viele kleine Unternehmen investieren in Design, aber nicht in Kundenführung. Dieser Beitrag zeigt, warum Struktur wichtiger ist als reine Optik.',
     sections: [
       {
-        heading: 'Eine schÃ¶ne Website ist kein Verkaufssystem',
+        heading: 'Eine schöne Website ist kein Verkaufssystem',
         text:
-          'Design schafft einen ersten Eindruck. Anfragen entstehen aber erst dann, wenn Besucher sofort erkennen, was du anbietest, fÃ¼r wen dein Angebot gedacht ist und wie der nÃ¤chste Schritt aussieht.',
+          'Design schafft einen ersten Eindruck. Anfragen entstehen aber erst dann, wenn Besucher sofort erkennen, was du anbietest, für wen dein Angebot gedacht ist und wie der nächste Schritt aussieht.',
       },
       {
         heading: 'Was in der Praxis oft fehlt',
@@ -2443,21 +2443,21 @@ const wissenArticles = [
       {
         heading: 'STRUKTIVA denkt in Systemen',
         text:
-          'Website, Landingpage, WhatsApp-Kontaktwege, Angebotsstruktur und Google-Sichtbarkeit werden als zusammenhÃ¤ngender Ablauf aufgebaut. So wird aus Sichtbarkeit ein klarer Weg zur Anfrage.',
+          'Website, Landingpage, WhatsApp-Kontaktwege, Angebotsstruktur und Google-Sichtbarkeit werden als zusammenhängender Ablauf aufgebaut. So wird aus Sichtbarkeit ein klarer Weg zur Anfrage.',
       },
     ],
   },
   {
     slug: 'digitale-grundsysteme-kleine-unternehmen',
     href: siteLinks.wissenGrundsysteme,
-    title: 'Die 5 digitalen Grundsysteme fÃ¼r kleine Unternehmen',
+    title: 'Die 5 digitalen Grundsysteme für kleine Unternehmen',
     description:
-      'Diese fÃ¼nf Grundlagen sorgen dafÃ¼r, dass kleine Unternehmen online klar auftreten, Vertrauen aufbauen und dauerhaft anfragebereit sind.',
+      'Diese fünf Grundlagen sorgen dafür, dass kleine Unternehmen online klar auftreten, Vertrauen aufbauen und dauerhaft anfragebereit sind.',
     sections: [
       {
         heading: '1. Website-Grundsystem',
         text:
-          'Die Website erklÃ¤rt Leistungen klar, zeigt Kompetenz und fÃ¼hrt Besucher direkt zur Kontaktaufnahme.',
+          'Die Website erklärt Leistungen klar, zeigt Kompetenz und führt Besucher direkt zur Kontaktaufnahme.',
       },
       {
         heading: '2. Google-Sichtbarkeitssystem',
@@ -2472,43 +2472,43 @@ const wissenArticles = [
       {
         heading: '4. Angebots- und Landingpage-System',
         text:
-          'Leistungen werden in klaren Angebotsseiten strukturiert. Aktionen und Schwerpunkte laufen Ã¼ber fokussierte Landingpages.',
+          'Leistungen werden in klaren Angebotsseiten strukturiert. Aktionen und Schwerpunkte laufen über fokussierte Landingpages.',
       },
       {
         heading: '5. Bewertungs- und Vertrauenssystem',
         text:
-          'Bewertungsprozesse, Referenzlogik und konsistente Darstellung erhÃ¶hen die Abschlusswahrscheinlichkeit spÃ¼rbar.',
+          'Bewertungsprozesse, Referenzlogik und konsistente Darstellung erhöhen die Abschlusswahrscheinlichkeit spürbar.',
       },
     ],
   },
   {
     slug: 'website-landingpage-funnel-unterschied',
     href: siteLinks.wissenWebsiteLandingpageFunnel,
-    title: 'Website, Landingpage oder Funnel â€“ was braucht dein Unternehmen wirklich?',
+    title: 'Website, Landingpage oder Funnel – was braucht dein Unternehmen wirklich?',
     description:
       'Nicht jedes Unternehmen braucht sofort einen komplexen Funnel. Dieser Beitrag zeigt, wann Website, Landingpage oder Funnel sinnvoll sind.',
     sections: [
       {
         heading: 'Website',
         text:
-          'Die Website ist dein digitaler Hauptstandort. Sie gibt Orientierung, erklÃ¤rt Leistungen und stÃ¤rkt Vertrauen.',
+          'Die Website ist dein digitaler Hauptstandort. Sie gibt Orientierung, erklärt Leistungen und stärkt Vertrauen.',
       },
       {
         heading: 'Landingpage',
         text:
-          'Eine Landingpage ist ideal fÃ¼r ein konkretes Angebot oder eine Kampagne. Sie fÃ¼hrt Besucher mit einem klaren Fokus zur Anfrage.',
+          'Eine Landingpage ist ideal für ein konkretes Angebot oder eine Kampagne. Sie führt Besucher mit einem klaren Fokus zur Anfrage.',
       },
       {
         heading: 'Funnel',
         text:
-          'Ein Funnel ist nur dann sinnvoll, wenn mehrere Schritte und Zielgruppen sauber strukturiert gefÃ¼hrt werden sollen.',
+          'Ein Funnel ist nur dann sinnvoll, wenn mehrere Schritte und Zielgruppen sauber strukturiert geführt werden sollen.',
       },
       {
         heading: 'Was kleine Unternehmen in der Regel brauchen',
         bullets: [
           'eine professionelle Website als Basis',
-          'ein bis zwei starke Landingpages fÃ¼r Kernangebote',
-          'eine klare Kontaktlogik Ã¼ber WhatsApp, Telefon und Formular',
+          'ein bis zwei starke Landingpages für Kernangebote',
+          'eine klare Kontaktlogik über WhatsApp, Telefon und Formular',
           'Google-Sichtbarkeit als dauerhafte Grundlage',
         ],
       },
@@ -2524,7 +2524,7 @@ function WissenSection() {
           <SectionHeader
             eyebrow="STRUKTIVA Wissen"
             title="STRUKTIVA Wissen"
-            text="Praxisnahe BeitrÃ¤ge fÃ¼r kleine Unternehmen, SelbststÃ¤ndige und lokale Betriebe, die ihren digitalen Auftritt klarer und wirksamer strukturieren mÃ¶chten."
+            text="Praxisnahe Beiträge für kleine Unternehmen, Selbstständige und lokale Betriebe, die ihren digitalen Auftritt klarer und wirksamer strukturieren möchten."
             centered={false}
           />
         </Reveal>
@@ -2574,10 +2574,10 @@ function WissenOverviewPage() {
         <section className="rounded-[2.1rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Wissen</p>
           <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
-            Wissen fÃ¼r digitale Unternehmensstruktur
+            Wissen für digitale Unternehmensstruktur
           </h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-            STRUKTIVA zeigt, wie kleine Unternehmen, SelbststÃ¤ndige und lokale Betriebe digitale Systeme sinnvoll aufbauen: mit Website, Landingpages, Google-Sichtbarkeit, klaren Kontaktwegen und sauberen AblÃ¤ufen.
+            STRUKTIVA zeigt, wie kleine Unternehmen, Selbstständige und lokale Betriebe digitale Systeme sinnvoll aufbauen: mit Website, Landingpages, Google-Sichtbarkeit, klaren Kontaktwegen und sauberen Abläufen.
           </p>
         </section>
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -2612,7 +2612,7 @@ function WissenArticlePage({ article }) {
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">{article.title}</h1>
           <p className="mt-4 text-base leading-8 text-[#D7DCE5] md:text-lg">{article.description}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href={siteLinks.wissen} className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">ZurÃ¼ck zu Wissen</a>
+            <a href={siteLinks.wissen} className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">Zurück zu Wissen</a>
             <a href={siteLinks.home} className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/[0.03] px-5 py-2.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">Zur Startseite</a>
           </div>
         </header>
@@ -2635,13 +2635,13 @@ function WissenArticlePage({ article }) {
 
         <section className="mt-8 rounded-[1.6rem] border border-[#D8B45A]/25 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.94))] p-6 shadow-premium">
           <p className="text-base leading-8 text-[#D7DCE5]">
-            Wenn deine Website nicht nur gut aussehen, sondern fÃ¼r dein Unternehmen arbeiten soll, dann ist STRUKTIVA der richtige nÃ¤chste Schritt.
+            Wenn deine Website nicht nur gut aussehen, sondern für dein Unternehmen arbeiten soll, dann ist STRUKTIVA der richtige nächste Schritt.
           </p>
           <a
             href={siteLinks.contact}
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
           >
-            Digitale Struktur prÃ¼fen lassen
+            Digitale Struktur prüfen lassen
             <ArrowRight className="h-4 w-4" />
           </a>
         </section>
@@ -2675,10 +2675,10 @@ function HomePage() {
 
 function LandingpageDigitaleStrukturPage() {
   const includedCards = [
-    ['Website & Landingpage', 'Klare Seitenstruktur, professionelle Darstellung und verstÃ¤ndliche AngebotsfÃ¼hrung.'],
-    ['Google-Sichtbarkeit', 'Saubere Grundlagen fÃ¼r Google-Unternehmensprofil, lokale Auffindbarkeit und Leistungsdarstellung.'],
-    ['WhatsApp & Kontaktwege', 'Einfache KontaktmÃ¶glichkeiten, die Besucher direkt zur Anfrage fÃ¼hren.'],
-    ['Social-Media-Struktur', 'Grundstruktur fÃ¼r Inhalte, die zum Unternehmen passen und nicht chaotisch wirken.'],
+    ['Website & Landingpage', 'Klare Seitenstruktur, professionelle Darstellung und verständliche Angebotsführung.'],
+    ['Google-Sichtbarkeit', 'Saubere Grundlagen für Google-Unternehmensprofil, lokale Auffindbarkeit und Leistungsdarstellung.'],
+    ['WhatsApp & Kontaktwege', 'Einfache Kontaktmöglichkeiten, die Besucher direkt zur Anfrage führen.'],
+    ['Social-Media-Struktur', 'Grundstruktur für Inhalte, die zum Unternehmen passen und nicht chaotisch wirken.'],
     ['Angebotsarchitektur', 'Leistungen werden so dargestellt, dass Kunden den Nutzen schneller verstehen.'],
     ['Optionaler Newsletter', 'Dezente Newsletter-Einbindung zur Kundenbindung, wenn es sinnvoll zum Unternehmen passt.'],
   ]
@@ -2690,14 +2690,14 @@ function LandingpageDigitaleStrukturPage() {
           <section className="rounded-[2.4rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Landingpage</p>
             <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
-              Digitale Struktur fÃ¼r kleine Unternehmen, die online professioneller wirken wollen.
+              Digitale Struktur für kleine Unternehmen, die online professioneller wirken wollen.
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-              STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und klare KundenfÃ¼hrung zu einem digitalen System, das verstÃ¤ndlich, hochwertig und professionell wirkt.
+              STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und klare Kundenführung zu einem digitalen System, das verständlich, hochwertig und professionell wirkt.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-                Kostenlose ErsteinschÃ¤tzung anfragen
+                Kostenlose Ersteinschätzung anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href={siteLinks.demos} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
@@ -2705,19 +2705,19 @@ function LandingpageDigitaleStrukturPage() {
               </a>
             </div>
             <p className="mt-5 rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
-              FÃ¼r SelbststÃ¤ndige, lokale Betriebe und Dienstleister, die mehr Klarheit in ihren digitalen Auftritt bringen mÃ¶chten.
+              Für Selbstständige, lokale Betriebe und Dienstleister, die mehr Klarheit in ihren digitalen Auftritt bringen möchten.
             </p>
           </section>
         </Reveal>
 
         <div className="mt-8 grid gap-6">
-          <ServiceSection title="Viele Unternehmen verlieren online Vertrauen, bevor ein Kunde Ã¼berhaupt anfragt.">
-            <p>Viele kleine Unternehmen haben gute Leistungen, aber ihr digitaler Auftritt zeigt es nicht klar genug. Die Website wirkt unstrukturiert, Kontaktwege sind unklar, Google wird nicht richtig genutzt und Social Media lÃ¤uft ohne System.</p>
+          <ServiceSection title="Viele Unternehmen verlieren online Vertrauen, bevor ein Kunde überhaupt anfragt.">
+            <p>Viele kleine Unternehmen haben gute Leistungen, aber ihr digitaler Auftritt zeigt es nicht klar genug. Die Website wirkt unstrukturiert, Kontaktwege sind unklar, Google wird nicht richtig genutzt und Social Media läuft ohne System.</p>
             <p>- Besucher verstehen nicht sofort, was angeboten wird</p>
-            <p>- KontaktmÃ¶glichkeiten sind nicht klar genug sichtbar</p>
+            <p>- Kontaktmöglichkeiten sind nicht klar genug sichtbar</p>
             <p>- Google-Auftritt und Website wirken nicht verbunden</p>
-            <p>- Social Media bringt keine klare KundenfÃ¼hrung</p>
-            <p>- Angebote werden nicht Ã¼berzeugend prÃ¤sentiert</p>
+            <p>- Social Media bringt keine klare Kundenführung</p>
+            <p>- Angebote werden nicht überzeugend präsentiert</p>
             <p>- Es fehlt ein System, das aus Besuchern Anfragen macht</p>
           </ServiceSection>
 
@@ -2726,7 +2726,7 @@ function LandingpageDigitaleStrukturPage() {
           </ServiceSection>
 
           <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
-            <h2 className="text-2xl font-semibold text-white">Was STRUKTIVA fÃ¼r dein Unternehmen aufbauen kann</h2>
+            <h2 className="text-2xl font-semibold text-white">Was STRUKTIVA für dein Unternehmen aufbauen kann</h2>
             <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {includedCards.map(([title, text]) => (
                 <div key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
@@ -2737,7 +2737,7 @@ function LandingpageDigitaleStrukturPage() {
             </div>
           </section>
 
-          <ServiceSection title="Geeignet fÃ¼r kleine Unternehmen, die digital klarer auftreten wollen.">
+          <ServiceSection title="Geeignet für kleine Unternehmen, die digital klarer auftreten wollen.">
             <p>- Handwerker</p>
             <p>- Beauty & Kosmetik</p>
             <p>- Friseursalons</p>
@@ -2745,45 +2745,45 @@ function LandingpageDigitaleStrukturPage() {
             <p>- Fahrschulen</p>
             <p>- lokale Dienstleister</p>
             <p>- Berater</p>
-            <p>- SelbststÃ¤ndige</p>
-            <p>- kleine HÃ¤ndler</p>
+            <p>- Selbstständige</p>
+            <p>- kleine Händler</p>
           </ServiceSection>
 
           <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
-            <h2 className="text-2xl font-semibold text-white">Sieh dir an, wie verschiedene Branchen digital wirken kÃ¶nnen.</h2>
+            <h2 className="text-2xl font-semibold text-white">Sieh dir an, wie verschiedene Branchen digital wirken können.</h2>
             <p className="mt-4 text-sm leading-7 text-[#D7DCE5] md:text-base">
-              Die Demo-Seiten zeigen unterschiedliche Modelle fÃ¼r verschiedene Branchen. So wird sichtbar, dass STRUKTIVA nicht mit StandardlÃ¶sungen arbeitet, sondern den digitalen Auftritt an Branche, Zielgruppe und Wirkung anpasst.
+              Die Demo-Seiten zeigen unterschiedliche Modelle für verschiedene Branchen. So wird sichtbar, dass STRUKTIVA nicht mit Standardlösungen arbeitet, sondern den digitalen Auftritt an Branche, Zielgruppe und Wirkung anpasst.
             </p>
             <div className="mt-5 grid gap-3 md:grid-cols-3">
-              <a href={siteLinks.demoHandwerker} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">Handwerker-Modell Â· Demo ansehen</a>
-              <a href={siteLinks.demoBeauty} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">Beauty-Modell Â· Demo ansehen</a>
-              <a href={siteLinks.demoDienstleister} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">Dienstleister-Modell Â· Demo ansehen</a>
+              <a href={siteLinks.demoHandwerker} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">Handwerker-Modell · Demo ansehen</a>
+              <a href={siteLinks.demoBeauty} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">Beauty-Modell · Demo ansehen</a>
+              <a href={siteLinks.demoDienstleister} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">Dienstleister-Modell · Demo ansehen</a>
             </div>
           </section>
 
-          <ServiceSection title="Einstiegspreise fÃ¼r kleine Unternehmen">
-            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeit â€“ ab 349 â‚¬</span><br />FÃ¼r Unternehmen, die online professioneller auftreten mÃ¶chten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung â€“ ab 749 â‚¬</span><br />FÃ¼r Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen mÃ¶chten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur â€“ ab 1.499 â‚¬</span><br />FÃ¼r Unternehmen, die eine vollstÃ¤ndige digitale Struktur brauchen.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung â€“ ab 149 â‚¬ / Monat</span><br />FÃ¼r regelmÃ¤ÃŸige Pflege, Inhalte, kleine Ã„nderungen und Optimierung.</p>
-            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewÃ¼nschten Zusatzsystemen und technischer Umsetzung.</p>
+          <ServiceSection title="Einstiegspreise für kleine Unternehmen">
+            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeit – ab 349 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 749 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
+            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.</p>
           </ServiceSection>
 
-          <ServiceSection title="So lÃ¤uft die Zusammenarbeit ab.">
-            <p><span className="font-semibold text-white">Schritt 1: Kostenlose ErsteinschÃ¤tzung</span><br />Wir schauen uns an, wo dein Unternehmen digital aktuell steht.</p>
+          <ServiceSection title="So läuft die Zusammenarbeit ab.">
+            <p><span className="font-semibold text-white">Schritt 1: Kostenlose Ersteinschätzung</span><br />Wir schauen uns an, wo dein Unternehmen digital aktuell steht.</p>
             <p><span className="font-semibold text-white">Schritt 2: Strukturplan</span><br />Du bekommst eine klare Empfehlung, welche digitale Struktur sinnvoll ist.</p>
-            <p><span className="font-semibold text-white">Schritt 3: Umsetzung</span><br />STRUKTIVA erstellt deine Website, Landingpage oder digitale Struktur professionell und verstÃ¤ndlich.</p>
-            <p><span className="font-semibold text-white">Schritt 4: Optimierung</span><br />Nach dem Start wird geprÃ¼ft, ob Aufbau, Kontaktwege und Darstellung sauber funktionieren.</p>
+            <p><span className="font-semibold text-white">Schritt 3: Umsetzung</span><br />STRUKTIVA erstellt deine Website, Landingpage oder digitale Struktur professionell und verständlich.</p>
+            <p><span className="font-semibold text-white">Schritt 4: Optimierung</span><br />Nach dem Start wird geprüft, ob Aufbau, Kontaktwege und Darstellung sauber funktionieren.</p>
           </ServiceSection>
 
           <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
-            <h2 className="text-2xl font-semibold text-white">Bereit fÃ¼r einen digitalen Auftritt, der klarer und professioneller wirkt?</h2>
+            <h2 className="text-2xl font-semibold text-white">Bereit für einen digitalen Auftritt, der klarer und professioneller wirkt?</h2>
             <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-              Wenn du wissen mÃ¶chtest, welche digitale Struktur fÃ¼r dein Unternehmen sinnvoll ist, kannst du eine Kostenlose ErsteinschÃ¤tzung anfragen.
+              Wenn du wissen möchtest, welche digitale Struktur für dein Unternehmen sinnvoll ist, kannst du eine Kostenlose Ersteinschätzung anfragen.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-                Kostenlose ErsteinschÃ¤tzung anfragen
+                Kostenlose Ersteinschätzung anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href={`mailto:${contactDetails.email}`} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
@@ -2819,10 +2819,10 @@ function LandingpageDigitaleStrukturPageV2() {
   }
 
   const includedCards = [
-    ['Website & Landingpage', 'Klare Seitenstruktur, professionelle Darstellung und verstÃ¤ndliche AngebotsfÃ¼hrung.'],
-    ['Google-Sichtbarkeit', 'Saubere Grundlagen fÃ¼r Google-Unternehmensprofil, lokale Auffindbarkeit und Leistungsdarstellung.'],
-    ['WhatsApp & Kontaktwege', 'Einfache KontaktmÃ¶glichkeiten, die Besucher direkt zur Anfrage fÃ¼hren.'],
-    ['Social-Media-Struktur', 'Grundstruktur fÃ¼r Inhalte, die zum Unternehmen passen und nicht chaotisch wirken.'],
+    ['Website & Landingpage', 'Klare Seitenstruktur, professionelle Darstellung und verständliche Angebotsführung.'],
+    ['Google-Sichtbarkeit', 'Saubere Grundlagen für Google-Unternehmensprofil, lokale Auffindbarkeit und Leistungsdarstellung.'],
+    ['WhatsApp & Kontaktwege', 'Einfache Kontaktmöglichkeiten, die Besucher direkt zur Anfrage führen.'],
+    ['Social-Media-Struktur', 'Grundstruktur für Inhalte, die zum Unternehmen passen und nicht chaotisch wirken.'],
     ['Angebotsarchitektur', 'Leistungen werden so dargestellt, dass Kunden den Nutzen schneller verstehen.'],
     ['Optionaler Newsletter', 'Dezente Newsletter-Einbindung zur Kundenbindung, wenn es sinnvoll zum Unternehmen passt.'],
   ]
@@ -2836,14 +2836,14 @@ function LandingpageDigitaleStrukturPageV2() {
               <div className="p-7 md:p-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Landingpage</p>
                 <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
-                  Digitale Struktur fÃ¼r kleine Unternehmen, die online professioneller wirken wollen.
+                  Digitale Struktur für kleine Unternehmen, die online professioneller wirken wollen.
                 </h1>
                 <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-                  STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und klare KundenfÃ¼hrung zu einem digitalen System, das verstÃ¤ndlich, hochwertig und professionell wirkt.
+                  STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und klare Kundenführung zu einem digitalen System, das verständlich, hochwertig und professionell wirkt.
                 </p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-                    Kostenlose ErsteinschÃ¤tzung anfragen
+                    Kostenlose Ersteinschätzung anfragen
                     <ArrowRight className="h-4 w-4" />
                   </a>
                   <a href={siteLinks.demos} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
@@ -2851,7 +2851,7 @@ function LandingpageDigitaleStrukturPageV2() {
                   </a>
                 </div>
                 <p className="mt-5 rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
-                  FÃ¼r SelbststÃ¤ndige, lokale Betriebe und Dienstleister, die mehr Klarheit in ihren digitalen Auftritt bringen mÃ¶chten.
+                  Für Selbstständige, lokale Betriebe und Dienstleister, die mehr Klarheit in ihren digitalen Auftritt bringen möchten.
                 </p>
               </div>
               <div className="relative min-h-[280px] lg:min-h-full">
@@ -2866,14 +2866,14 @@ function LandingpageDigitaleStrukturPageV2() {
           <section className="overflow-hidden rounded-[1.8rem] border border-white/14 bg-white/[0.05] shadow-premium">
             <div className="grid gap-0 lg:grid-cols-[1.08fr_0.92fr]">
               <div className="p-5 md:p-6">
-                <h2 className="text-2xl font-semibold text-white">Viele Unternehmen verlieren online Vertrauen, bevor ein Kunde Ã¼berhaupt anfragt.</h2>
+                <h2 className="text-2xl font-semibold text-white">Viele Unternehmen verlieren online Vertrauen, bevor ein Kunde überhaupt anfragt.</h2>
                 <div className="mt-4 space-y-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
-                  <p>Viele kleine Unternehmen haben gute Leistungen, aber ihr digitaler Auftritt zeigt es nicht klar genug. Die Website wirkt unstrukturiert, Kontaktwege sind unklar, Google wird nicht richtig genutzt und Social Media lÃ¤uft ohne System.</p>
+                  <p>Viele kleine Unternehmen haben gute Leistungen, aber ihr digitaler Auftritt zeigt es nicht klar genug. Die Website wirkt unstrukturiert, Kontaktwege sind unklar, Google wird nicht richtig genutzt und Social Media läuft ohne System.</p>
                   <p>- Besucher verstehen nicht sofort, was angeboten wird</p>
-                  <p>- KontaktmÃ¶glichkeiten sind nicht klar genug sichtbar</p>
+                  <p>- Kontaktmöglichkeiten sind nicht klar genug sichtbar</p>
                   <p>- Google-Auftritt und Website wirken nicht verbunden</p>
-                  <p>- Social Media bringt keine klare KundenfÃ¼hrung</p>
-                  <p>- Angebote werden nicht Ã¼berzeugend prÃ¤sentiert</p>
+                  <p>- Social Media bringt keine klare Kundenführung</p>
+                  <p>- Angebote werden nicht überzeugend präsentiert</p>
                   <p>- Es fehlt ein System, das aus Besuchern Anfragen macht</p>
                 </div>
               </div>
@@ -2898,7 +2898,7 @@ function LandingpageDigitaleStrukturPageV2() {
           </section>
 
           <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
-            <h2 className="text-2xl font-semibold text-white">Was STRUKTIVA fÃ¼r dein Unternehmen aufbauen kann</h2>
+            <h2 className="text-2xl font-semibold text-white">Was STRUKTIVA für dein Unternehmen aufbauen kann</h2>
             <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {includedCards.map(([title, text], index) => (
                 <div key={title} className={`rounded-2xl border p-4 ${index < 2 ? 'border-[#D8B45A]/25 bg-[linear-gradient(145deg,rgba(216,180,90,0.12),rgba(11,31,58,0.7),rgba(5,10,18,0.9))]' : 'border-white/12 bg-white/[0.04]'}`}>
@@ -2909,7 +2909,7 @@ function LandingpageDigitaleStrukturPageV2() {
             </div>
           </section>
 
-          <ServiceSection title="Geeignet fÃ¼r kleine Unternehmen, die digital klarer auftreten wollen.">
+          <ServiceSection title="Geeignet für kleine Unternehmen, die digital klarer auftreten wollen.">
             <p>- Handwerker</p>
             <p>- Beauty & Kosmetik</p>
             <p>- Friseursalons</p>
@@ -2917,14 +2917,14 @@ function LandingpageDigitaleStrukturPageV2() {
             <p>- Fahrschulen</p>
             <p>- lokale Dienstleister</p>
             <p>- Berater</p>
-            <p>- SelbststÃ¤ndige</p>
-            <p>- kleine HÃ¤ndler</p>
+            <p>- Selbstständige</p>
+            <p>- kleine Händler</p>
           </ServiceSection>
 
           <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
-            <h2 className="text-2xl font-semibold text-white">Sieh dir an, wie verschiedene Branchen digital wirken kÃ¶nnen.</h2>
+            <h2 className="text-2xl font-semibold text-white">Sieh dir an, wie verschiedene Branchen digital wirken können.</h2>
             <p className="mt-4 text-sm leading-7 text-[#D7DCE5] md:text-base">
-              Die Demo-Seiten zeigen unterschiedliche Modelle fÃ¼r verschiedene Branchen. So wird sichtbar, dass STRUKTIVA nicht mit StandardlÃ¶sungen arbeitet, sondern den digitalen Auftritt an Branche, Zielgruppe und Wirkung anpasst.
+              Die Demo-Seiten zeigen unterschiedliche Modelle für verschiedene Branchen. So wird sichtbar, dass STRUKTIVA nicht mit Standardlösungen arbeitet, sondern den digitalen Auftritt an Branche, Zielgruppe und Wirkung anpasst.
             </p>
             <div className="mt-5 grid gap-3 md:grid-cols-3">
               <a href={siteLinks.demoHandwerker} className="group overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04]">
@@ -2932,51 +2932,51 @@ function LandingpageDigitaleStrukturPageV2() {
                   <img src={landingImages.demoHandwerker} alt="Handwerker bei der Arbeit als Demo-Vorschau" loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,31,0.2),rgba(7,17,31,0.75))]" />
                 </div>
-                <div className="px-4 py-3 text-sm font-semibold text-white transition group-hover:text-[#D8B45A]">Handwerker-Modell Â· Demo ansehen</div>
+                <div className="px-4 py-3 text-sm font-semibold text-white transition group-hover:text-[#D8B45A]">Handwerker-Modell · Demo ansehen</div>
               </a>
               <a href={siteLinks.demoBeauty} className="group overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04]">
                 <div className="relative h-28">
                   <img src={landingImages.demoBeauty} alt="Beauty-Studio als Demo-Vorschau" loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,31,0.2),rgba(7,17,31,0.75))]" />
                 </div>
-                <div className="px-4 py-3 text-sm font-semibold text-white transition group-hover:text-[#D8B45A]">Beauty-Modell Â· Demo ansehen</div>
+                <div className="px-4 py-3 text-sm font-semibold text-white transition group-hover:text-[#D8B45A]">Beauty-Modell · Demo ansehen</div>
               </a>
               <a href={siteLinks.demoDienstleister} className="group overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04]">
                 <div className="relative h-28">
-                  <img src={landingImages.demoDienstleister} alt="Dienstleister-BÃ¼ro als Demo-Vorschau" loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <img src={landingImages.demoDienstleister} alt="Dienstleister-Büro als Demo-Vorschau" loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,31,0.2),rgba(7,17,31,0.75))]" />
                 </div>
-                <div className="px-4 py-3 text-sm font-semibold text-white transition group-hover:text-[#D8B45A]">Dienstleister-Modell Â· Demo ansehen</div>
+                <div className="px-4 py-3 text-sm font-semibold text-white transition group-hover:text-[#D8B45A]">Dienstleister-Modell · Demo ansehen</div>
               </a>
             </div>
           </section>
 
-          <ServiceSection title="Einstiegspreise fÃ¼r kleine Unternehmen">
-            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeit â€“ ab 349 â‚¬</span><br />FÃ¼r Unternehmen, die online professioneller auftreten mÃ¶chten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung â€“ ab 749 â‚¬</span><br />FÃ¼r Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen mÃ¶chten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur â€“ ab 1.499 â‚¬</span><br />FÃ¼r Unternehmen, die eine vollstÃ¤ndige digitale Struktur brauchen.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung â€“ ab 149 â‚¬ / Monat</span><br />FÃ¼r regelmÃ¤ÃŸige Pflege, Inhalte, kleine Ã„nderungen und Optimierung.</p>
-            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewÃ¼nschten Zusatzsystemen und technischer Umsetzung.</p>
+          <ServiceSection title="Einstiegspreise für kleine Unternehmen">
+            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeit – ab 349 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 749 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
+            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.</p>
           </ServiceSection>
 
-          <ServiceSection title="So lÃ¤uft die Zusammenarbeit ab.">
-            <p><span className="font-semibold text-white">Schritt 1: Kostenlose ErsteinschÃ¤tzung</span><br />Wir schauen uns an, wo dein Unternehmen digital aktuell steht.</p>
+          <ServiceSection title="So läuft die Zusammenarbeit ab.">
+            <p><span className="font-semibold text-white">Schritt 1: Kostenlose Ersteinschätzung</span><br />Wir schauen uns an, wo dein Unternehmen digital aktuell steht.</p>
             <p><span className="font-semibold text-white">Schritt 2: Strukturplan</span><br />Du bekommst eine klare Empfehlung, welche digitale Struktur sinnvoll ist.</p>
-            <p><span className="font-semibold text-white">Schritt 3: Umsetzung</span><br />STRUKTIVA erstellt deine Website, Landingpage oder digitale Struktur professionell und verstÃ¤ndlich.</p>
-            <p><span className="font-semibold text-white">Schritt 4: Optimierung</span><br />Nach dem Start wird geprÃ¼ft, ob Aufbau, Kontaktwege und Darstellung sauber funktionieren.</p>
+            <p><span className="font-semibold text-white">Schritt 3: Umsetzung</span><br />STRUKTIVA erstellt deine Website, Landingpage oder digitale Struktur professionell und verständlich.</p>
+            <p><span className="font-semibold text-white">Schritt 4: Optimierung</span><br />Nach dem Start wird geprüft, ob Aufbau, Kontaktwege und Darstellung sauber funktionieren.</p>
           </ServiceSection>
 
           <section className="relative overflow-hidden rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
             <img src={landingImages.cta} alt="Moderner Arbeitsplatz als ruhiger CTA-Hintergrund" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(7,17,31,0.86),rgba(11,31,58,0.78),rgba(5,10,18,0.9))]" />
             <div className="relative z-[1]">
-              <h2 className="text-2xl font-semibold text-white">Bereit fÃ¼r einen digitalen Auftritt, der klarer und professioneller wirkt?</h2>
+              <h2 className="text-2xl font-semibold text-white">Bereit für einen digitalen Auftritt, der klarer und professioneller wirkt?</h2>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-                Wenn du wissen mÃ¶chtest, welche digitale Struktur fÃ¼r dein Unternehmen sinnvoll ist, kannst du eine Kostenlose ErsteinschÃ¤tzung anfragen.
+                Wenn du wissen möchtest, welche digitale Struktur für dein Unternehmen sinnvoll ist, kannst du eine Kostenlose Ersteinschätzung anfragen.
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-                  Kostenlose ErsteinschÃ¤tzung anfragen
+                  Kostenlose Ersteinschätzung anfragen
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href={`mailto:${contactDetails.email}`} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
@@ -3020,7 +3020,7 @@ function ServiceDetailLayout({ title, intro, children }) {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href={siteLinks.services} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                ZurÃ¼ck zur Ãœbersicht
+                Zurück zur Übersicht
               </a>
             </div>
           </div>
@@ -3044,9 +3044,9 @@ function ServiceSection({ title, children }) {
 function UniversalServiceCTA() {
   return (
     <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
-      <h2 className="text-2xl font-semibold text-white">MÃ¶chtest du wissen, ob diese LÃ¶sung zu deinem Unternehmen passt?</h2>
+      <h2 className="text-2xl font-semibold text-white">Möchtest du wissen, ob diese Lösung zu deinem Unternehmen passt?</h2>
       <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-        Schreibe kurz, worum es bei deinem Unternehmen geht. Danach erhÃ¤ltst du eine klare EinschÃ¤tzung, welcher nÃ¤chste Schritt sinnvoll ist.
+        Schreibe kurz, worum es bei deinem Unternehmen geht. Danach erhältst du eine klare Einschätzung, welcher nächste Schritt sinnvoll ist.
       </p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
@@ -3064,19 +3064,19 @@ function UniversalServiceCTA() {
 function WebseitenPage() {
   return (
     <ServiceDetailLayout
-      title="Professionelle Webseiten fÃ¼r einen starken digitalen Auftritt."
-      intro="Eine professionelle Webseite zeigt auf den ersten Blick, was ein Unternehmen anbietet, warum es vertrauenswÃ¼rdig ist und wie Kunden Kontakt aufnehmen kÃ¶nnen."
+      title="Professionelle Webseiten für einen starken digitalen Auftritt."
+      intro="Eine professionelle Webseite zeigt auf den ersten Blick, was ein Unternehmen anbietet, warum es vertrauenswürdig ist und wie Kunden Kontakt aufnehmen können."
     >
       <ServiceSection title="Worum geht es?">
-        <p>STRUKTIVA erstellt hochwertige Unternehmenswebseiten mit klarer Struktur, professionellen Texten, mobiler Optimierung und sauberer KundenfÃ¼hrung. Ziel ist kein Ã¼berladener Internetauftritt, sondern eine Webseite, die verstÃ¤ndlich, seriÃ¶s und anfrageorientiert aufgebaut ist.</p>
+        <p>STRUKTIVA erstellt hochwertige Unternehmenswebseiten mit klarer Struktur, professionellen Texten, mobiler Optimierung und sauberer Kundenführung. Ziel ist kein überladener Internetauftritt, sondern eine Webseite, die verständlich, seriös und anfrageorientiert aufgebaut ist.</p>
       </ServiceSection>
-      <ServiceSection title="FÃ¼r wen ist das sinnvoll?">
-        <p>- kleine und mittlere Unternehmen</p><p>- lokale Betriebe</p><p>- SelbststÃ¤ndige</p><p>- Dienstleister</p><p>- Salons, Studios, Praxen und Handwerksbetriebe</p><p>- Unternehmen mit veralteter oder unklarer Website</p>
+      <ServiceSection title="Für wen ist das sinnvoll?">
+        <p>- kleine und mittlere Unternehmen</p><p>- lokale Betriebe</p><p>- Selbstständige</p><p>- Dienstleister</p><p>- Salons, Studios, Praxen und Handwerksbetriebe</p><p>- Unternehmen mit veralteter oder unklarer Website</p>
       </ServiceSection>
       <ServiceSection title="Was wird gemacht?">
-        <p>- Seitenstruktur planen</p><p>- Startseite aufbauen</p><p>- Leistungsbereiche formulieren</p><p>- KontaktfÃ¼hrung verbessern</p><p>- mobile Darstellung optimieren</p><p>- Texte professionell strukturieren</p><p>- Impressum/Datenschutz/Widerruf verlinken</p><p>- technische VerÃ¶ffentlichung vorbereiten</p>
+        <p>- Seitenstruktur planen</p><p>- Startseite aufbauen</p><p>- Leistungsbereiche formulieren</p><p>- Kontaktführung verbessern</p><p>- mobile Darstellung optimieren</p><p>- Texte professionell strukturieren</p><p>- Impressum/Datenschutz/Widerruf verlinken</p><p>- technische Veröffentlichung vorbereiten</p>
       </ServiceSection>
-      <ServiceSection title="So kÃ¶nnte es aussehen">
+      <ServiceSection title="So könnte es aussehen">
         <div className="grid gap-3 md:grid-cols-2">
           {['Header mit klarer Navigation', 'Hero-Bereich mit Nutzenfokus', 'Leistungsbereich mit Struktur', 'Kontaktbereich mit CTA'].map((item) => (
             <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">{item}</div>
@@ -3084,11 +3084,11 @@ function WebseitenPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Paket Sichtbarkeit â€“ ab 349 â‚¬</p>
-        <p>FÃ¼r strukturierte Onepage-Webseiten mit professioneller AuÃŸendarstellung, WhatsApp-Kontakt und klarer AngebotsfÃ¼hrung.</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Sichtbarkeit – ab 349 €</p>
+        <p>Für strukturierte Onepage-Webseiten mit professioneller Außendarstellung, WhatsApp-Kontakt und klarer Angebotsführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
-        <p>1. Kurze Anfrage und ZielklÃ¤rung</p><p>2. Struktur- und Inhaltsplanung</p><p>3. Design und Textumsetzung</p><p>4. Feedback und Feinschliff</p><p>5. Technische VerÃ¶ffentlichung und Ãœbergabe</p>
+        <p>1. Kurze Anfrage und Zielklärung</p><p>2. Struktur- und Inhaltsplanung</p><p>3. Design und Textumsetzung</p><p>4. Feedback und Feinschliff</p><p>5. Technische Veröffentlichung und Übergabe</p>
       </ServiceSection>
       <UniversalServiceCTA />
     </ServiceDetailLayout>
@@ -3098,19 +3098,19 @@ function WebseitenPage() {
 function LandingpagesPage() {
   return (
     <ServiceDetailLayout
-      title="Landingpages fÃ¼r klare Angebote und gezielte Anfragen."
-      intro="Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklÃ¤rt und Besucher gezielt zur Anfrage fÃ¼hrt."
+      title="Landingpages für klare Angebote und gezielte Anfragen."
+      intro="Eine Landingpage ist eine einzelne Angebotsseite, die ein bestimmtes Produkt, eine Dienstleistung oder Aktion klar erklärt und Besucher gezielt zur Anfrage führt."
     >
       <ServiceSection title="Worum geht es?">
-        <p>Eine Landingpage konzentriert sich auf ein klares Ziel: Der Besucher soll schnell verstehen, worum es geht, welchen Nutzen das Angebot hat und wie er Kontakt aufnehmen kann. Sie eignet sich besonders fÃ¼r Aktionen, Dienstleistungen, Kampagnen oder Google Ads.</p>
+        <p>Eine Landingpage konzentriert sich auf ein klares Ziel: Der Besucher soll schnell verstehen, worum es geht, welchen Nutzen das Angebot hat und wie er Kontakt aufnehmen kann. Sie eignet sich besonders für Aktionen, Dienstleistungen, Kampagnen oder Google Ads.</p>
       </ServiceSection>
-      <ServiceSection title="FÃ¼r wen ist das sinnvoll?">
-        <p>- Unternehmen mit konkretem Angebot</p><p>- Aktionen oder Sonderleistungen</p><p>- Google-Ads-Kampagnen</p><p>- lokale Dienstleistungen</p><p>- digitale Produkte</p><p>- Betriebe, die gezielt Anfragen gewinnen mÃ¶chten</p>
+      <ServiceSection title="Für wen ist das sinnvoll?">
+        <p>- Unternehmen mit konkretem Angebot</p><p>- Aktionen oder Sonderleistungen</p><p>- Google-Ads-Kampagnen</p><p>- lokale Dienstleistungen</p><p>- digitale Produkte</p><p>- Betriebe, die gezielt Anfragen gewinnen möchten</p>
       </ServiceSection>
       <ServiceSection title="Was wird gemacht?">
-        <p>- Angebotsstruktur entwickeln</p><p>- Nutzen klar herausarbeiten</p><p>- Texte verkaufsorientiert formulieren</p><p>- Call-to-Action-Bereiche einbauen</p><p>- Kontaktbereich optimieren</p><p>- mobile Darstellung verbessern</p><p>- technische VerÃ¶ffentlichung vorbereiten</p>
+        <p>- Angebotsstruktur entwickeln</p><p>- Nutzen klar herausarbeiten</p><p>- Texte verkaufsorientiert formulieren</p><p>- Call-to-Action-Bereiche einbauen</p><p>- Kontaktbereich optimieren</p><p>- mobile Darstellung verbessern</p><p>- technische Veröffentlichung vorbereiten</p>
       </ServiceSection>
-      <ServiceSection title="So kÃ¶nnte es aussehen">
+      <ServiceSection title="So könnte es aussehen">
         <div className="grid gap-3 md:grid-cols-2">
           {['Angebots-Headline', 'Nutzenpunkte', 'Leistungsbox', 'Kontakt-CTA mit Vertrauenselement'].map((item) => (
             <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">{item}</div>
@@ -3118,11 +3118,11 @@ function LandingpagesPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Paket Kundengewinnung â€“ ab 749 â‚¬</p>
-        <p>FÃ¼r verkaufsstarke Landingpages mit Angebotsarchitektur, WhatsApp-CTA und klarer AnfragefÃ¼hrung.</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Kundengewinnung – ab 749 €</p>
+        <p>Für verkaufsstarke Landingpages mit Angebotsarchitektur, WhatsApp-CTA und klarer Anfrageführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
-        <p>1. Angebot und Ziel definieren</p><p>2. Seitenlogik und Nutzenstruktur aufbauen</p><p>3. Texte und visuelle Abschnitte ausarbeiten</p><p>4. CTA und Kontaktweg optimieren</p><p>5. Technische VerÃ¶ffentlichung und Ãœbergabe</p>
+        <p>1. Angebot und Ziel definieren</p><p>2. Seitenlogik und Nutzenstruktur aufbauen</p><p>3. Texte und visuelle Abschnitte ausarbeiten</p><p>4. CTA und Kontaktweg optimieren</p><p>5. Technische Veröffentlichung und Übergabe</p>
       </ServiceSection>
       <UniversalServiceCTA />
     </ServiceDetailLayout>
@@ -3132,28 +3132,28 @@ function LandingpagesPage() {
 function AppsPage() {
   return (
     <ServiceDetailLayout
-      title="Unternehmens-Apps fÃ¼r klarere AblÃ¤ufe."
-      intro="Individuelle App-Systeme kÃ¶nnen Kunden, Termine, Aufgaben, Checklisten und interne AblÃ¤ufe Ã¼bersichtlich an einem Ort bÃ¼ndeln."
+      title="Unternehmens-Apps für klarere Abläufe."
+      intro="Individuelle App-Systeme können Kunden, Termine, Aufgaben, Checklisten und interne Abläufe übersichtlich an einem Ort bündeln."
     >
       <ServiceSection title="Worum geht es?">
-        <p>STRUKTIVA entwickelt App-LÃ¶sungen und digitale Systeme, die Unternehmen im Alltag unterstÃ¼tzen. Dabei geht es nicht um eine Spielerei, sondern um praktische digitale Werkzeuge fÃ¼r Organisation, Ãœbersicht und bessere AblÃ¤ufe.</p>
+        <p>STRUKTIVA entwickelt App-Lösungen und digitale Systeme, die Unternehmen im Alltag unterstützen. Dabei geht es nicht um eine Spielerei, sondern um praktische digitale Werkzeuge für Organisation, Übersicht und bessere Abläufe.</p>
       </ServiceSection>
-      <ServiceSection title="FÃ¼r wen ist das sinnvoll?">
-        <p>- Unternehmen mit vielen Kundeninformationen</p><p>- Betriebe mit Terminorganisation</p><p>- Teams mit Aufgaben und Checklisten</p><p>- Salons, Studios und Dienstleister</p><p>- Unternehmen mit wiederkehrenden AblÃ¤ufen</p><p>- Betriebe, die weniger Zettelwirtschaft wollen</p>
+      <ServiceSection title="Für wen ist das sinnvoll?">
+        <p>- Unternehmen mit vielen Kundeninformationen</p><p>- Betriebe mit Terminorganisation</p><p>- Teams mit Aufgaben und Checklisten</p><p>- Salons, Studios und Dienstleister</p><p>- Unternehmen mit wiederkehrenden Abläufen</p><p>- Betriebe, die weniger Zettelwirtschaft wollen</p>
       </ServiceSection>
       <ServiceSection title="Was wird gemacht?">
-        <p>- kostenlose App-ErsteinschÃ¤tzung</p><p>- AblÃ¤ufe analysieren</p><p>- sinnvolle Funktionen definieren</p><p>- Nutzerrollen planen</p><p>- App-Struktur aufbauen</p><p>- mobile und Desktop-Ansicht berÃ¼cksichtigen</p><p>- technische Umsetzung vorbereiten</p><p>- Betreuung und Hosting klÃ¤ren</p>
+        <p>- kostenlose App-Ersteinschätzung</p><p>- Abläufe analysieren</p><p>- sinnvolle Funktionen definieren</p><p>- Nutzerrollen planen</p><p>- App-Struktur aufbauen</p><p>- mobile und Desktop-Ansicht berücksichtigen</p><p>- technische Umsetzung vorbereiten</p><p>- Betreuung und Hosting klären</p>
       </ServiceSection>
-      <ServiceSection title="So kÃ¶nnte es aussehen">
+      <ServiceSection title="So könnte es aussehen">
         <div className="app-preview-3d mx-auto max-w-3xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-4 shadow-premium">
           <div className="rounded-[1.5rem] border border-[#D8B45A]/20 bg-white/[0.05] p-4 md:p-5">
-            <p className="text-sm font-medium text-[#D7DCE5]">App-Beispiel fÃ¼r Unternehmen</p>
+            <p className="text-sm font-medium text-[#D7DCE5]">App-Beispiel für Unternehmen</p>
             <h3 className="mt-1 text-xl font-semibold text-white">STRUKTIVA Business App</h3>
             <div className="mt-3 rounded-full bg-[#D8B45A]/12 px-3 py-1 text-xs font-semibold text-[#D8B45A] inline-block">Vorschau</div>
             <div className="mt-4 grid gap-2.5">
               {[
-                ['Kundenverwaltung', 'Ã¼bersichtlich'],
-                ['TerminÃ¼bersicht', 'strukturiert'],
+                ['Kundenverwaltung', 'übersichtlich'],
+                ['Terminübersicht', 'strukturiert'],
                 ['Aufgabensteuerung', 'klar'],
                 ['Bewertungsprozess', 'integriert'],
               ].map(([label, state]) => (
@@ -3167,12 +3167,12 @@ function AppsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Paket Unternehmensarchitektur â€“ ab 1.499 â‚¬</p>
-        <p>App- oder Dashboard-LÃ¶sungen sind eine hochwertige Zusatzoption fÃ¼r Unternehmen, die neben Sichtbarkeit auch mehr interne Struktur brauchen.</p>
-        <p className="text-lg font-semibold text-[#D8B45A]">Monatliche Betreuung â€“ ab 149 â‚¬ / Monat</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Unternehmensarchitektur – ab 1.499 €</p>
+        <p>App- oder Dashboard-Lösungen sind eine hochwertige Zusatzoption für Unternehmen, die neben Sichtbarkeit auch mehr interne Struktur brauchen.</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
-        <p>1. Kostenlose ErsteinschÃ¤tzung</p><p>2. Ablaufanalyse und Funktionsrahmen</p><p>3. Strukturplanung und Umsetzung</p><p>4. Testphase und Freigabe</p><p>5. Go-live mit Betreuung</p>
+        <p>1. Kostenlose Ersteinschätzung</p><p>2. Ablaufanalyse und Funktionsrahmen</p><p>3. Strukturplanung und Umsetzung</p><p>4. Testphase und Freigabe</p><p>5. Go-live mit Betreuung</p>
       </ServiceSection>
       <UniversalServiceCTA />
     </ServiceDetailLayout>
@@ -3182,19 +3182,19 @@ function AppsPage() {
 function GoogleAdsPage() {
   return (
     <ServiceDetailLayout
-      title="Google Ads fÃ¼r gezielte Kundenanfragen."
-      intro="Google Ads kÃ¶nnen sinnvoll sein, wenn ein Unternehmen Menschen erreichen mÃ¶chte, die bereits aktiv nach einer Leistung suchen."
+      title="Google Ads für gezielte Kundenanfragen."
+      intro="Google Ads können sinnvoll sein, wenn ein Unternehmen Menschen erreichen möchte, die bereits aktiv nach einer Leistung suchen."
     >
       <ServiceSection title="Worum geht es?">
-        <p>STRUKTIVA unterstÃ¼tzt bei Kampagnenstruktur, Anzeigentexten, Angebotsausrichtung und passenden Landingpages. Ziel ist nicht einfach Werbung zu schalten, sondern die Anzeige mit einer klaren Zielseite und verstÃ¤ndlicher KundenfÃ¼hrung zu verbinden.</p>
+        <p>STRUKTIVA unterstützt bei Kampagnenstruktur, Anzeigentexten, Angebotsausrichtung und passenden Landingpages. Ziel ist nicht einfach Werbung zu schalten, sondern die Anzeige mit einer klaren Zielseite und verständlicher Kundenführung zu verbinden.</p>
       </ServiceSection>
-      <ServiceSection title="FÃ¼r wen ist das sinnvoll?">
-        <p>- lokale Betriebe</p><p>- Dienstleister</p><p>- Unternehmen mit konkreten Angeboten</p><p>- Betriebe mit neuer Webseite oder Landingpage</p><p>- Unternehmen, die gezielt Anfragen gewinnen mÃ¶chten</p>
+      <ServiceSection title="Für wen ist das sinnvoll?">
+        <p>- lokale Betriebe</p><p>- Dienstleister</p><p>- Unternehmen mit konkreten Angeboten</p><p>- Betriebe mit neuer Webseite oder Landingpage</p><p>- Unternehmen, die gezielt Anfragen gewinnen möchten</p>
       </ServiceSection>
       <ServiceSection title="Was wird gemacht?">
         <p>- Kampagnenstruktur entwickeln</p><p>- Keyword-Grundlogik planen</p><p>- Anzeigentexte formulieren</p><p>- Angebot klar ausrichten</p><p>- passende Zielseite empfehlen</p><p>- Anfrageprozess verbessern</p><p>- Social-Media-Werbeideen vorbereiten</p>
       </ServiceSection>
-      <ServiceSection title="So kÃ¶nnte es aussehen">
+      <ServiceSection title="So könnte es aussehen">
         <div className="grid gap-3 md:grid-cols-2">
           {['Suchanfrage', 'Anzeige', 'Landingpage-Verbindung', 'Anfrageziel'].map((item) => (
             <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">{item}</div>
@@ -3202,12 +3202,12 @@ function GoogleAdsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Google Ads Startpaket â€“ ab 349 â‚¬</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Google Ads Startpaket – ab 349 €</p>
         <p><span className="font-semibold text-white">Wichtig:</span> Werbebudget ist nicht enthalten und wird separat direkt bei Google oder der jeweiligen Werbeplattform eingesetzt.</p>
-        <p>Google Ads wird bei STRUKTIVA nicht isoliert, sondern mit Landingpage, Angebotsstruktur und KontaktfÃ¼hrung verbunden.</p>
+        <p>Google Ads wird bei STRUKTIVA nicht isoliert, sondern mit Landingpage, Angebotsstruktur und Kontaktführung verbunden.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
-        <p>1. Angebot und Zielgruppen klÃ¤ren</p><p>2. Kampagnenstruktur und Keywords aufsetzen</p><p>3. Anzeigen und Zielseitenlogik abstimmen</p><p>4. Start und erste Auswertung</p><p>5. Optimierung der AnfragequalitÃ¤t</p>
+        <p>1. Angebot und Zielgruppen klären</p><p>2. Kampagnenstruktur und Keywords aufsetzen</p><p>3. Anzeigen und Zielseitenlogik abstimmen</p><p>4. Start und erste Auswertung</p><p>5. Optimierung der Anfragequalität</p>
       </ServiceSection>
       <UniversalServiceCTA />
     </ServiceDetailLayout>
@@ -3226,7 +3226,7 @@ function BewertungsQrCodePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/80">STRUKTIVA Leistung</p>
             <h1 className="mt-4 text-3xl font-semibold text-white md:text-5xl">Google-Bewertungssystem mit QR-Code</h1>
             <p className="mt-4 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-              Mehr Vertrauen bei Google aufbauen â€“ mit einem einfachen System, das zufriedene Kunden direkt zur Bewertung fÃ¼hrt.
+              Mehr Vertrauen bei Google aufbauen – mit einem einfachen System, das zufriedene Kunden direkt zur Bewertung führt.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
@@ -3242,7 +3242,7 @@ function BewertungsQrCodePage() {
                 href={siteLinks.home}
                 className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]"
               >
-                ZurÃ¼ck zur Startseite
+                Zurück zur Startseite
               </a>
             </div>
           </section>
@@ -3253,7 +3253,7 @@ function BewertungsQrCodePage() {
             <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
               <h2 className="text-2xl font-semibold text-white">Warum Bewertungen wichtig sind</h2>
               <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
-                Viele Kunden prÃ¼fen vor einer Anfrage zuerst Google-Bewertungen. Ein professionelles Bewertungssystem macht es zufriedenen Kunden leichter, eine Bewertung abzugeben â€“ ohne komplizierte Suche, ohne Umwege und ohne technische HÃ¼rden.
+                Viele Kunden prüfen vor einer Anfrage zuerst Google-Bewertungen. Ein professionelles Bewertungssystem macht es zufriedenen Kunden leichter, eine Bewertung abzugeben – ohne komplizierte Suche, ohne Umwege und ohne technische Hürden.
               </p>
             </section>
           </Reveal>
@@ -3264,10 +3264,10 @@ function BewertungsQrCodePage() {
               <div className="mt-5 grid gap-3 md:grid-cols-2">
                 {[
                   'QR-Code zur direkten Google-Bewertung',
-                  'Bewertungslink fÃ¼r WhatsApp, E-Mail oder Website',
-                  'kleine Druckvorlage fÃ¼r Theke, Empfang oder Rechnung',
+                  'Bewertungslink für WhatsApp, E-Mail oder Website',
+                  'kleine Druckvorlage für Theke, Empfang oder Rechnung',
                   'kurzer Kundentext zum freundlichen Bitten um eine Bewertung',
-                  'einfache Anleitung fÃ¼r den Alltag',
+                  'einfache Anleitung für den Alltag',
                   'Einbau auf Website oder Landingpage',
                 ].map((item) => (
                   <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
@@ -3280,16 +3280,16 @@ function BewertungsQrCodePage() {
 
           <Reveal>
             <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
-              <h2 className="text-2xl font-semibold text-white">FÃ¼r wen ist das geeignet?</h2>
+              <h2 className="text-2xl font-semibold text-white">Für wen ist das geeignet?</h2>
               <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {[
                   'Friseursalons',
                   'Kosmetikstudios',
                   'Handwerker',
                   'lokale Dienstleister',
-                  'kleine GeschÃ¤fte',
-                  'Restaurants und CafÃ©s',
-                  'Solo-SelbststÃ¤ndige',
+                  'kleine Geschäfte',
+                  'Restaurants und Cafés',
+                  'Solo-Selbstständige',
                 ].map((item) => (
                   <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white">
                     {item}
@@ -3303,11 +3303,11 @@ function BewertungsQrCodePage() {
             <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
               <h2 className="text-2xl font-semibold text-white">So funktioniert es</h2>
               <ol className="mt-5 space-y-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
-                <li>1. Google-Bewertungslink wird erstellt oder geprÃ¼ft</li>
+                <li>1. Google-Bewertungslink wird erstellt oder geprüft</li>
                 <li>2. QR-Code wird professionell gestaltet</li>
                 <li>3. Vorlage und Textbausteine werden vorbereitet</li>
-                <li>4. Der QR-Code wird im GeschÃ¤ft, auf der Website oder in WhatsApp eingesetzt</li>
-                <li>5. Kunden kÃ¶nnen direkt bewerten</li>
+                <li>4. Der QR-Code wird im Geschäft, auf der Website oder in WhatsApp eingesetzt</li>
+                <li>5. Kunden können direkt bewerten</li>
               </ol>
             </section>
           </Reveal>
@@ -3315,7 +3315,7 @@ function BewertungsQrCodePage() {
           <Reveal>
             <section className="rounded-[1.8rem] border border-[#D8B45A]/28 bg-white/[0.05] p-6 shadow-premium md:p-7">
               <h2 className="text-2xl font-semibold text-white">Startpreis</h2>
-              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 149 â‚¬ zzgl. gesetzlicher Mehrwertsteuer</p>
+              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 149 € zzgl. gesetzlicher Mehrwertsteuer</p>
               <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
                 Ideal als einzelnes Mini-Angebot oder als Teil des STRUKTIVA Sichtbarkeitspakets.
               </p>
@@ -3346,15 +3346,15 @@ function DigitaleOrdnungssystemePage() {
         <Reveal>
           <section className="rounded-[2.3rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
             <h1 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
-              Digitale Ordnungssysteme fÃ¼r steuerberaterfreundliche AblÃ¤ufe
+              Digitale Ordnungssysteme für steuerberaterfreundliche Abläufe
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-              Kassenstruktur, Tagesabschluss und MonatsÃ¼bersicht â€“ klar erfasst, digital gespeichert und fÃ¼r den Steuerberater vorbereitet.
+              Kassenstruktur, Tagesabschluss und Monatsübersicht – klar erfasst, digital gespeichert und für den Steuerberater vorbereitet.
             </p>
             <div className="mt-6 space-y-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
-              <p>Viele kleine Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und wiederkehrende RÃ¼ckfragen.</p>
-              <p>STRUKTIVA entwickelt einfache digitale Erfassungssysteme, mit denen tÃ¤gliche Werte strukturiert dokumentiert, gespeichert und Ã¼bersichtlich bereitgestellt werden kÃ¶nnen.</p>
-              <p>Ob Tagesabschluss, Kassenkontrolle, Beleg-Hinweise, MonatsÃ¼bersicht oder Exportfunktion â€“ das System wird an den tatsÃ¤chlichen Ablauf des Betriebs angepasst.</p>
+              <p>Viele kleine Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und wiederkehrende Rückfragen.</p>
+              <p>STRUKTIVA entwickelt einfache digitale Erfassungssysteme, mit denen tägliche Werte strukturiert dokumentiert, gespeichert und übersichtlich bereitgestellt werden können.</p>
+              <p>Ob Tagesabschluss, Kassenkontrolle, Beleg-Hinweise, Monatsübersicht oder Exportfunktion – das System wird an den tatsächlichen Ablauf des Betriebs angepasst.</p>
             </div>
           </section>
         </Reveal>
@@ -3363,12 +3363,12 @@ function DigitaleOrdnungssystemePage() {
           <h2 className="text-2xl font-semibold text-white">Was das System leisten kann</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {[
-              ['Digitale Tagesabschluss-Erfassung', 'TÃ¤gliche Werte strukturiert erfassen und nachvollziehbar speichern.'],
-              ['Kassenstruktur-Systeme', 'Wechselgeld, Bar-Anteil, EC-Zahlungen, AbschÃ¶pfung und Differenzen Ã¼bersichtlich dokumentieren.'],
-              ['MonatsÃ¼bersichten', 'Klare Auswertungen fÃ¼r Betrieb und Steuerberater.'],
+              ['Digitale Tagesabschluss-Erfassung', 'Tägliche Werte strukturiert erfassen und nachvollziehbar speichern.'],
+              ['Kassenstruktur-Systeme', 'Wechselgeld, Bar-Anteil, EC-Zahlungen, Abschöpfung und Differenzen übersichtlich dokumentieren.'],
+              ['Monatsübersichten', 'Klare Auswertungen für Betrieb und Steuerberater.'],
               ['Exportfunktionen', 'CSV- oder PDF-Export zur Weitergabe oder internen Kontrolle.'],
-              ['Rollen & Zugriff', 'Betrieb und Steuerberater kÃ¶nnen je nach Bedarf unterschiedliche Zugriffsrechte erhalten.'],
-              ['Individuelle Anpassung', 'Das System wird an den tatsÃ¤chlichen betrieblichen Ablauf angepasst.'],
+              ['Rollen & Zugriff', 'Betrieb und Steuerberater können je nach Bedarf unterschiedliche Zugriffsrechte erhalten.'],
+              ['Individuelle Anpassung', 'Das System wird an den tatsächlichen betrieblichen Ablauf angepasst.'],
             ].map(([title, text]) => (
               <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
                 <p className="text-base font-semibold text-white">{title}</p>
@@ -3381,11 +3381,11 @@ function DigitaleOrdnungssystemePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Preisorientierung</p>
             <div className="mt-3 grid gap-2 md:grid-cols-2">
               {[
-                'Digitale Ordnungssysteme ab 899 â‚¬',
-                'Tagesabschluss-System ab 699 â‚¬',
-                'Kassenstruktur-System ab 799 â‚¬',
-                'MonatsÃ¼bersicht / Export-System ab 699 â‚¬',
-                'Steuerberaterfreundliche Erfassungsstruktur ab 899 â‚¬',
+                'Digitale Ordnungssysteme ab 899 €',
+                'Tagesabschluss-System ab 699 €',
+                'Kassenstruktur-System ab 799 €',
+                'Monatsübersicht / Export-System ab 699 €',
+                'Steuerberaterfreundliche Erfassungsstruktur ab 899 €',
               ].map((item) => (
                 <p key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[#D7DCE5]">
                   {item}
@@ -3393,10 +3393,10 @@ function DigitaleOrdnungssystemePage() {
               ))}
             </div>
             <p className="mt-3 text-sm leading-7 text-[#94A3B8]">
-              Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewÃ¼nschten Zusatzsystemen und technischer Umsetzung.
+              Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.
             </p>
             <p className="mt-2 text-sm leading-7 text-[#94A3B8]">
-              Individuelle digitale Systeme werden nach Umfang, Betrieb und benÃ¶tigten Funktionen kalkuliert.
+              Individuelle digitale Systeme werden nach Umfang, Betrieb und benötigten Funktionen kalkuliert.
             </p>
           </div>
 
@@ -3419,96 +3419,96 @@ function DigitaleOrdnungssystemePage() {
 
 const offerPageContent = {
   '/website-fuer-kleine-unternehmen': {
-    title: 'Website-Erstellung fÃ¼r kleine Unternehmen',
-    intro: 'Moderne Websites fÃ¼r kleine Unternehmen und SelbststÃ¤ndige â€“ klar strukturiert, mobil optimiert und auf Anfragen ausgerichtet.',
-    points: ['klare Seitenstruktur', 'professionelle Darstellung', 'mobile Optimierung', 'saubere KontaktfÃ¼hrung'],
+    title: 'Website-Erstellung für kleine Unternehmen',
+    intro: 'Moderne Websites für kleine Unternehmen und Selbstständige – klar strukturiert, mobil optimiert und auf Anfragen ausgerichtet.',
+    points: ['klare Seitenstruktur', 'professionelle Darstellung', 'mobile Optimierung', 'saubere Kontaktführung'],
   },
   '/landingpage-erstellen-lassen': {
     title: 'Landingpages erstellen lassen',
-    intro: 'Verkaufsstarke Seiten fÃ¼r Angebote, Aktionen und Anfragen â€“ mit klarer Angebotslogik und starker KundenfÃ¼hrung.',
+    intro: 'Verkaufsstarke Seiten für Angebote, Aktionen und Anfragen – mit klarer Angebotslogik und starker Kundenführung.',
     points: ['Angebotsstruktur', 'Nutzenkommunikation', 'CTA-Bereiche', 'messbare Anfrageziele'],
   },
   '/google-sichtbarkeit-kleine-unternehmen': {
-    title: 'Google-Sichtbarkeit fÃ¼r kleine Unternehmen',
-    intro: 'Saubere Grundlagen fÃ¼r lokale Auffindbarkeit, bessere PrÃ¤senz und klare VerknÃ¼pfung mit Website und Kontaktwegen.',
-    points: ['Google-Unternehmensprofil', 'lokale Struktur', 'AngebotsverknÃ¼pfung', 'Sichtbarkeit mit System'],
+    title: 'Google-Sichtbarkeit für kleine Unternehmen',
+    intro: 'Saubere Grundlagen für lokale Auffindbarkeit, bessere Präsenz und klare Verknüpfung mit Website und Kontaktwegen.',
+    points: ['Google-Unternehmensprofil', 'lokale Struktur', 'Angebotsverknüpfung', 'Sichtbarkeit mit System'],
   },
   '/digitale-kundenfuehrung': {
-    title: 'Digitale KundenfÃ¼hrung',
-    intro: 'Klare Wege von Interesse zur Anfrage â€“ damit Besucher schneller verstehen, was angeboten wird und wie sie Kontakt aufnehmen.',
-    points: ['klare Kontaktwege', 'Anfrage-Logik', 'Landingpage-VerknÃ¼pfung', 'strukturierte NutzerfÃ¼hrung'],
+    title: 'Digitale Kundenführung',
+    intro: 'Klare Wege von Interesse zur Anfrage – damit Besucher schneller verstehen, was angeboten wird und wie sie Kontakt aufnehmen.',
+    points: ['klare Kontaktwege', 'Anfrage-Logik', 'Landingpage-Verknüpfung', 'strukturierte Nutzerführung'],
   },
   '/whatsapp-kontaktstruktur': {
     title: 'WhatsApp-Kontaktstruktur',
-    intro: 'Direkte Kontaktwege Ã¼ber Website, Google und Landingpage â€“ professionell eingebunden und alltagstauglich aufgebaut.',
+    intro: 'Direkte Kontaktwege über Website, Google und Landingpage – professionell eingebunden und alltagstauglich aufgebaut.',
     points: ['WhatsApp-CTA-Logik', 'Kontaktintegration', 'Anfrage-Vorqualifizierung', 'schnelle Erreichbarkeit'],
   },
   '/social-media-struktur': {
     title: 'Social-Media-Struktur',
-    intro: 'Inhalte und KanÃ¤le mit klarer Richtung statt Zufall â€“ passend zur Positionierung und zur gewÃ¼nschten Kundenansprache.',
+    intro: 'Inhalte und Kanäle mit klarer Richtung statt Zufall – passend zur Positionierung und zur gewünschten Kundenansprache.',
     points: ['Themenstruktur', 'Kanal-Logik', 'Angebotsbezug', 'Content-Rhythmus'],
   },
   '/newsletter-einbindung': {
     title: 'Newsletter-Einbindung',
-    intro: 'Dezente Kundenbindung Ã¼ber professionelle Newsletter-Systeme als Zusatzbaustein zur Website- und Landingpage-Struktur.',
+    intro: 'Dezente Kundenbindung über professionelle Newsletter-Systeme als Zusatzbaustein zur Website- und Landingpage-Struktur.',
     points: ['Anmelde-Integration', 'Verteilerstruktur', 'Grundautomationen', 'DSGVO-bewusste Vorbereitung'],
   },
   '/unternehmens-apps': {
     title: 'Unternehmens-Apps',
-    intro: 'Individuelle App- und Dashboard-Konzepte fÃ¼r kleine Unternehmen â€“ alltagstauglich, klar und funktional aufgebaut.',
-    points: ['Prozessdigitalisierung', 'Rollen & Rechte', 'mobile Nutzung', 'strukturierte DatenfÃ¼hrung'],
+    intro: 'Individuelle App- und Dashboard-Konzepte für kleine Unternehmen – alltagstauglich, klar und funktional aufgebaut.',
+    points: ['Prozessdigitalisierung', 'Rollen & Rechte', 'mobile Nutzung', 'strukturierte Datenführung'],
   },
   '/betriebs-dashboards': {
     title: 'Betriebs-Dashboards',
-    intro: 'Ãœbersichten fÃ¼r Termine, Kunden, Zahlen und interne AblÃ¤ufe â€“ damit wichtige Informationen schnell verfÃ¼gbar bleiben.',
-    points: ['Live-Ãœbersichten', 'KPI-Darstellung', 'Teamzugriffe', 'exportierbare Berichte'],
+    intro: 'Übersichten für Termine, Kunden, Zahlen und interne Abläufe – damit wichtige Informationen schnell verfügbar bleiben.',
+    points: ['Live-Übersichten', 'KPI-Darstellung', 'Teamzugriffe', 'exportierbare Berichte'],
   },
   '/angebotsarchitektur': {
     title: 'Angebotsarchitektur',
     intro: 'Leistungen klar darstellen, damit Kunden schneller verstehen, worum es geht und warum sie anfragen sollten.',
-    points: ['Leistungslogik', 'Nutzenfokus', 'AnfragefÃ¼hrung', 'strukturierte Angebotsseiten'],
+    points: ['Leistungslogik', 'Nutzenfokus', 'Anfrageführung', 'strukturierte Angebotsseiten'],
   },
   '/digitale-unternehmensstruktur': {
     title: 'Digitale Unternehmensstruktur',
-    intro: 'Website, Google, WhatsApp, Social Media und Prozesse als System â€“ fÃ¼r mehr Klarheit, Sichtbarkeit und stabile AblÃ¤ufe.',
-    points: ['Systemarchitektur', 'kanalÃ¼bergreifende Struktur', 'Prozessanbindung', 'skalierbare Weiterentwicklung'],
+    intro: 'Website, Google, WhatsApp, Social Media und Prozesse als System – für mehr Klarheit, Sichtbarkeit und stabile Abläufe.',
+    points: ['Systemarchitektur', 'kanalübergreifende Struktur', 'Prozessanbindung', 'skalierbare Weiterentwicklung'],
   },
 }
 
 const websiteFormats = [
-  ['Unternehmenswebsite', 'FÃ¼r kleine Unternehmen, SelbststÃ¤ndige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen mÃ¶chten.'],
-  ['Landingpage', 'FÃ¼r einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage gefÃ¼hrt werden sollen.'],
-  ['Onepager', 'Eine kompakte Website auf einer Seite â€“ ideal fÃ¼r klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.'],
-  ['Mehrseitige Website', 'FÃ¼r Unternehmen mit mehreren Leistungen, Referenzen, Team, Preisen, Kontaktbereich und ausfÃ¼hrlicher Struktur.'],
-  ['Branchenwebsite', 'Websites speziell fÃ¼r Handwerk, Beauty, Friseur, Kosmetik, Beratung, Dienstleistung oder lokale Betriebe.'],
-  ['Portfolio-Website', 'FÃ¼r SelbststÃ¤ndige, Kreative, Berater oder Dienstleister, die Arbeiten, Projekte oder Referenzen hochwertig prÃ¤sentieren mÃ¶chten.'],
-  ['Angebotsseite', 'FÃ¼r einzelne Leistungen oder Pakete, die klar erklÃ¤rt und verkaufsstark dargestellt werden sollen.'],
-  ['Vertrauensseite', 'FÃ¼r Unternehmen, die Bewertungen, Referenzen, Vorher-Nachher-Beispiele oder QualitÃ¤t stÃ¤rker sichtbar machen mÃ¶chten.'],
-  ['Termin- und Kontaktwebsite', 'FÃ¼r Betriebe, bei denen schnelle Kontaktaufnahme, WhatsApp, Telefon, Buchungsanfrage oder Terminwunsch im Mittelpunkt stehen.'],
-  ['Website mit Blog oder Ratgeberbereich', 'FÃ¼r Unternehmen, die langfristig Ã¼ber Google gefunden werden mÃ¶chten und regelmÃ¤ÃŸig Inhalte verÃ¶ffentlichen wollen.'],
-  ['Website mit Newsletter-Einbindung', 'FÃ¼r Unternehmen, die Interessenten sammeln, Kunden binden oder Angebote regelmÃ¤ÃŸig kommunizieren mÃ¶chten.'],
-  ['Website mit QR-Code-Anbindung', 'FÃ¼r Flyer, Visitenkarten, Schaufenster, Bewertungen oder Aktionen, die direkt auf passende Seiten fÃ¼hren sollen.'],
-  ['Demo-Website', 'Als Vorschau oder Konzeptseite, damit Kunden vorab sehen kÃ¶nnen, wie ihr digitaler Auftritt wirken kÃ¶nnte.'],
-  ['Website-Relaunch', 'FÃ¼r bestehende Webseiten, die moderner, klarer, schneller und professioneller aufgebaut werden sollen.'],
-  ['Premium-Webauftritt', 'FÃ¼r Unternehmen, die einen hochwertigen digitalen Markenauftritt mit starker Optik, klarer Struktur und Ã¼berzeugender KundenfÃ¼hrung wÃ¼nschen.'],
+  ['Unternehmenswebsite', 'Für kleine Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.'],
+  ['Landingpage', 'Für einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage geführt werden sollen.'],
+  ['Onepager', 'Eine kompakte Website auf einer Seite – ideal für klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.'],
+  ['Mehrseitige Website', 'Für Unternehmen mit mehreren Leistungen, Referenzen, Team, Preisen, Kontaktbereich und ausführlicher Struktur.'],
+  ['Branchenwebsite', 'Websites speziell für Handwerk, Beauty, Friseur, Kosmetik, Beratung, Dienstleistung oder lokale Betriebe.'],
+  ['Portfolio-Website', 'Für Selbstständige, Kreative, Berater oder Dienstleister, die Arbeiten, Projekte oder Referenzen hochwertig präsentieren möchten.'],
+  ['Angebotsseite', 'Für einzelne Leistungen oder Pakete, die klar erklärt und verkaufsstark dargestellt werden sollen.'],
+  ['Vertrauensseite', 'Für Unternehmen, die Bewertungen, Referenzen, Vorher-Nachher-Beispiele oder Qualität stärker sichtbar machen möchten.'],
+  ['Termin- und Kontaktwebsite', 'Für Betriebe, bei denen schnelle Kontaktaufnahme, WhatsApp, Telefon, Buchungsanfrage oder Terminwunsch im Mittelpunkt stehen.'],
+  ['Website mit Blog oder Ratgeberbereich', 'Für Unternehmen, die langfristig über Google gefunden werden möchten und regelmäßig Inhalte veröffentlichen wollen.'],
+  ['Website mit Newsletter-Einbindung', 'Für Unternehmen, die Interessenten sammeln, Kunden binden oder Angebote regelmäßig kommunizieren möchten.'],
+  ['Website mit QR-Code-Anbindung', 'Für Flyer, Visitenkarten, Schaufenster, Bewertungen oder Aktionen, die direkt auf passende Seiten führen sollen.'],
+  ['Demo-Website', 'Als Vorschau oder Konzeptseite, damit Kunden vorab sehen können, wie ihr digitaler Auftritt wirken könnte.'],
+  ['Website-Relaunch', 'Für bestehende Webseiten, die moderner, klarer, schneller und professioneller aufgebaut werden sollen.'],
+  ['Premium-Webauftritt', 'Für Unternehmen, die einen hochwertigen digitalen Markenauftritt mit starker Optik, klarer Struktur und überzeugender Kundenführung wünschen.'],
 ]
 
 const websiteFormatsWithPrices = [
-  { title: 'Unternehmenswebsite', price: 'ab 599 â‚¬', text: 'FÃ¼r kleine Unternehmen, SelbststÃ¤ndige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen mÃ¶chten.' },
-  { title: 'Landingpage', price: 'ab 299 â‚¬', text: 'FÃ¼r einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage gefÃ¼hrt werden sollen.' },
-  { title: 'Onepager', price: 'ab 349 â‚¬', text: 'Eine kompakte Website auf einer Seite â€“ ideal fÃ¼r klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.' },
-  { title: 'Mehrseitige Website', price: 'ab 899 â‚¬', text: 'FÃ¼r Unternehmen mit mehreren Leistungen, Referenzen, Team, Preisen, Kontaktbereich und ausfÃ¼hrlicher Struktur.' },
-  { title: 'Branchenwebsite', price: 'ab 749 â‚¬', text: 'Websites speziell fÃ¼r Handwerk, Beauty, Friseur, Kosmetik, Beratung, Dienstleistung oder lokale Betriebe.' },
-  { title: 'Portfolio-Website', price: 'ab 499 â‚¬', text: 'FÃ¼r SelbststÃ¤ndige, Kreative, Berater oder Dienstleister, die Arbeiten, Projekte oder Referenzen hochwertig prÃ¤sentieren mÃ¶chten.' },
-  { title: 'Angebotsseite', price: 'ab 249 â‚¬', text: 'FÃ¼r einzelne Leistungen oder Pakete, die klar erklÃ¤rt und verkaufsstark dargestellt werden sollen.' },
-  { title: 'Vertrauensseite', price: 'ab 299 â‚¬', text: 'FÃ¼r Unternehmen, die Bewertungen, Referenzen, Vorher-Nachher-Beispiele oder QualitÃ¤t stÃ¤rker sichtbar machen mÃ¶chten.' },
-  { title: 'Termin- und Kontaktwebsite', price: 'ab 399 â‚¬', text: 'FÃ¼r Betriebe, bei denen schnelle Kontaktaufnahme, WhatsApp, Telefon, Buchungsanfrage oder Terminwunsch im Mittelpunkt stehen.' },
-  { title: 'Website mit Blog oder Ratgeberbereich', price: 'ab 999 â‚¬', text: 'FÃ¼r Unternehmen, die langfristig Ã¼ber Google gefunden werden mÃ¶chten und regelmÃ¤ÃŸig Inhalte verÃ¶ffentlichen wollen.' },
-  { title: 'Website mit Newsletter-Einbindung', price: 'ab 699 â‚¬', text: 'FÃ¼r Unternehmen, die Interessenten sammeln, Kunden binden oder Angebote regelmÃ¤ÃŸig kommunizieren mÃ¶chten.' },
-  { title: 'Website mit QR-Code-Anbindung', price: 'ab 449 â‚¬', text: 'FÃ¼r Flyer, Visitenkarten, Schaufenster, Bewertungen oder Aktionen, die direkt auf passende Seiten fÃ¼hren sollen.' },
-  { title: 'Demo-Website', price: 'ab 249 â‚¬', text: 'Als Vorschau oder Konzeptseite, damit Kunden vorab sehen kÃ¶nnen, wie ihr digitaler Auftritt wirken kÃ¶nnte.' },
-  { title: 'Website-Relaunch', price: 'ab 499 â‚¬', text: 'FÃ¼r bestehende Webseiten, die moderner, klarer, schneller und professioneller aufgebaut werden sollen.' },
-  { title: 'Premium-Webauftritt', price: 'ab 1.499 â‚¬', text: 'FÃ¼r Unternehmen, die einen hochwertigen digitalen Markenauftritt mit starker Optik, klarer Struktur und Ã¼berzeugender KundenfÃ¼hrung wÃ¼nschen.' },
+  { title: 'Unternehmenswebsite', price: 'ab 599 €', text: 'Für kleine Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.' },
+  { title: 'Landingpage', price: 'ab 299 €', text: 'Für einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage geführt werden sollen.' },
+  { title: 'Onepager', price: 'ab 349 €', text: 'Eine kompakte Website auf einer Seite – ideal für klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.' },
+  { title: 'Mehrseitige Website', price: 'ab 899 €', text: 'Für Unternehmen mit mehreren Leistungen, Referenzen, Team, Preisen, Kontaktbereich und ausführlicher Struktur.' },
+  { title: 'Branchenwebsite', price: 'ab 749 €', text: 'Websites speziell für Handwerk, Beauty, Friseur, Kosmetik, Beratung, Dienstleistung oder lokale Betriebe.' },
+  { title: 'Portfolio-Website', price: 'ab 499 €', text: 'Für Selbstständige, Kreative, Berater oder Dienstleister, die Arbeiten, Projekte oder Referenzen hochwertig präsentieren möchten.' },
+  { title: 'Angebotsseite', price: 'ab 249 €', text: 'Für einzelne Leistungen oder Pakete, die klar erklärt und verkaufsstark dargestellt werden sollen.' },
+  { title: 'Vertrauensseite', price: 'ab 299 €', text: 'Für Unternehmen, die Bewertungen, Referenzen, Vorher-Nachher-Beispiele oder Qualität stärker sichtbar machen möchten.' },
+  { title: 'Termin- und Kontaktwebsite', price: 'ab 399 €', text: 'Für Betriebe, bei denen schnelle Kontaktaufnahme, WhatsApp, Telefon, Buchungsanfrage oder Terminwunsch im Mittelpunkt stehen.' },
+  { title: 'Website mit Blog oder Ratgeberbereich', price: 'ab 999 €', text: 'Für Unternehmen, die langfristig über Google gefunden werden möchten und regelmäßig Inhalte veröffentlichen wollen.' },
+  { title: 'Website mit Newsletter-Einbindung', price: 'ab 699 €', text: 'Für Unternehmen, die Interessenten sammeln, Kunden binden oder Angebote regelmäßig kommunizieren möchten.' },
+  { title: 'Website mit QR-Code-Anbindung', price: 'ab 449 €', text: 'Für Flyer, Visitenkarten, Schaufenster, Bewertungen oder Aktionen, die direkt auf passende Seiten führen sollen.' },
+  { title: 'Demo-Website', price: 'ab 249 €', text: 'Als Vorschau oder Konzeptseite, damit Kunden vorab sehen können, wie ihr digitaler Auftritt wirken könnte.' },
+  { title: 'Website-Relaunch', price: 'ab 499 €', text: 'Für bestehende Webseiten, die moderner, klarer, schneller und professioneller aufgebaut werden sollen.' },
+  { title: 'Premium-Webauftritt', price: 'ab 1.499 €', text: 'Für Unternehmen, die einen hochwertigen digitalen Markenauftritt mit starker Optik, klarer Struktur und überzeugender Kundenführung wünschen.' },
 ]
 
 function WebsiteFuerKleineUnternehmenPage() {
@@ -3516,12 +3516,12 @@ function WebsiteFuerKleineUnternehmenPage() {
     <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-6xl">
         <section className="rounded-[2.1rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
-          <h1 className="text-3xl font-semibold text-white md:text-5xl">Website fÃ¼r kleine Unternehmen professionell erstellen lassen</h1>
+          <h1 className="text-3xl font-semibold text-white md:text-5xl">Website für kleine Unternehmen professionell erstellen lassen</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-            STRUKTIVA entwickelt professionelle Unternehmenswebsites, Onepager, Landingpages und Relaunch-Konzepte fÃ¼r kleine Unternehmen, SelbststÃ¤ndige und lokale Dienstleister â€“ mit klarer Struktur, verstÃ¤ndlicher KundenfÃ¼hrung und mobiler Optimierung.
+            STRUKTIVA entwickelt professionelle Unternehmenswebsites, Onepager, Landingpages und Relaunch-Konzepte für kleine Unternehmen, Selbstständige und lokale Dienstleister – mit klarer Struktur, verständlicher Kundenführung und mobiler Optimierung.
           </p>
           <div className="mt-7 grid gap-3 md:grid-cols-2">
-            {['klare Seitenstruktur', 'professionelle Darstellung', 'mobile Optimierung', 'saubere KontaktfÃ¼hrung'].map((item) => (
+            {['klare Seitenstruktur', 'professionelle Darstellung', 'mobile Optimierung', 'saubere Kontaktführung'].map((item) => (
               <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-medium text-[#D7DCE5]">
                 {item}
               </div>
@@ -3531,7 +3531,7 @@ function WebsiteFuerKleineUnternehmenPage() {
             href={siteLinks.contact}
             className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
           >
-            Kostenlose ErsteinschÃ¤tzung anfragen
+            Kostenlose Ersteinschätzung anfragen
             <ArrowRight className="h-4 w-4" />
           </a>
         </section>
@@ -3539,7 +3539,7 @@ function WebsiteFuerKleineUnternehmenPage() {
         <section className="mt-8 rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
           <h2 className="text-gold-glow text-2xl font-semibold text-white md:text-3xl">Welche Website passt zu deinem Unternehmen?</h2>
           <p className="mt-3 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Nicht jedes Unternehmen braucht dieselbe Website. STRUKTIVA entwickelt den passenden digitalen Auftritt â€“ je nach Ziel, Branche und gewÃ¼nschter Wirkung.
+            Nicht jedes Unternehmen braucht dieselbe Website. STRUKTIVA entwickelt den passenden digitalen Auftritt – je nach Ziel, Branche und gewünschter Wirkung.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -3553,14 +3553,14 @@ function WebsiteFuerKleineUnternehmenPage() {
           </div>
 
           <p className="mt-6 text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Nicht jede Website muss groÃŸ sein. Entscheidend ist, dass sie zum Unternehmen, zum Angebot und zum Ziel passt.
+            Nicht jede Website muss groß sein. Entscheidend ist, dass sie zum Unternehmen, zum Angebot und zum Ziel passt.
           </p>
           <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
-            STRUKTIVA entwickelt Webseiten nicht als einfache Online-Visitenkarte, sondern als klare digitale Struktur: verstÃ¤ndlich, mobil optimiert, vertrauensbildend und auf Anfragen ausgerichtet.
+            STRUKTIVA entwickelt Webseiten nicht als einfache Online-Visitenkarte, sondern als klare digitale Struktur: verständlich, mobil optimiert, vertrauensbildend und auf Anfragen ausgerichtet.
           </p>
 
           <p className="mt-2 text-sm leading-7 text-[#94A3B8]">
-            Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewÃ¼nschten Zusatzsystemen und technischer Umsetzung.
+            Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.
           </p>
 
           <a
@@ -3578,48 +3578,48 @@ function WebsiteFuerKleineUnternehmenPage() {
 
 const offerPriceInfo = {
   '/website-fuer-kleine-unternehmen': {
-    main: 'ab 599 â‚¬',
-    extras: ['Onepager ab 349 â‚¬', 'Mehrseitige Website ab 899 â‚¬', 'Website-Relaunch ab 499 â‚¬'],
+    main: 'ab 599 €',
+    extras: ['Onepager ab 349 €', 'Mehrseitige Website ab 899 €', 'Website-Relaunch ab 499 €'],
   },
   '/landingpage-erstellen-lassen': {
-    main: 'ab 299 â‚¬',
-    extras: ['Angebotsseite ab 249 â‚¬', 'Vertrauensseite ab 299 â‚¬'],
+    main: 'ab 299 €',
+    extras: ['Angebotsseite ab 249 €', 'Vertrauensseite ab 299 €'],
   },
   '/google-sichtbarkeit-kleine-unternehmen': {
-    main: 'ab 349 â‚¬',
-    extras: ['Google-Unternehmensprofil Einrichtung ab 249 â‚¬', 'Lokale Sichtbarkeits-Grundstruktur ab 349 â‚¬', 'Website + Google-Grundstruktur ab 699 â‚¬'],
+    main: 'ab 349 €',
+    extras: ['Google-Unternehmensprofil Einrichtung ab 249 €', 'Lokale Sichtbarkeits-Grundstruktur ab 349 €', 'Website + Google-Grundstruktur ab 699 €'],
   },
   '/digitale-kundenfuehrung': {
-    main: 'ab 299 â‚¬',
-    extras: ['Kontaktformular-Integration ab 149 â‚¬', 'WhatsApp-Kontaktstruktur ab 149 â‚¬'],
+    main: 'ab 299 €',
+    extras: ['Kontaktformular-Integration ab 149 €', 'WhatsApp-Kontaktstruktur ab 149 €'],
   },
   '/whatsapp-kontaktstruktur': {
-    main: 'ab 149 â‚¬',
-    extras: ['KundenfÃ¼hrungsstruktur ab 299 â‚¬'],
+    main: 'ab 149 €',
+    extras: ['Kundenführungsstruktur ab 299 €'],
   },
   '/social-media-struktur': {
-    main: 'ab 249 â‚¬',
-    extras: ['Content-Grundstruktur fÃ¼r kleine Unternehmen ab 299 â‚¬', 'Pinterest-/Instagram-Startstruktur ab 249 â‚¬'],
+    main: 'ab 249 €',
+    extras: ['Content-Grundstruktur für kleine Unternehmen ab 299 €', 'Pinterest-/Instagram-Startstruktur ab 249 €'],
   },
   '/newsletter-einbindung': {
-    main: 'ab 199 â‚¬',
-    extras: ['Newsletter-Grundstruktur ab 299 â‚¬'],
+    main: 'ab 199 €',
+    extras: ['Newsletter-Grundstruktur ab 299 €'],
   },
   '/unternehmens-apps': {
-    main: 'ab 999 â‚¬',
-    extras: ['App-Konzept / Demo-App ab 499 â‚¬', 'Betriebs-Dashboard ab 799 â‚¬', 'Kundenverwaltungs-System ab 899 â‚¬', 'Termin-/PlanungsÃ¼bersicht ab 699 â‚¬', 'Digitale Kundenkartei ab 799 â‚¬'],
+    main: 'ab 999 €',
+    extras: ['App-Konzept / Demo-App ab 499 €', 'Betriebs-Dashboard ab 799 €', 'Kundenverwaltungs-System ab 899 €', 'Termin-/Planungsübersicht ab 699 €', 'Digitale Kundenkartei ab 799 €'],
   },
   '/betriebs-dashboards': {
-    main: 'ab 799 â‚¬',
-    extras: ['Kundenverwaltungs-System ab 899 â‚¬', 'Termin-/PlanungsÃ¼bersicht ab 699 â‚¬'],
+    main: 'ab 799 €',
+    extras: ['Kundenverwaltungs-System ab 899 €', 'Termin-/Planungsübersicht ab 699 €'],
   },
   '/angebotsarchitektur': {
-    main: 'ab 299 â‚¬',
-    extras: ['Digitale Strukturberatung ab 149 â‚¬'],
+    main: 'ab 299 €',
+    extras: ['Digitale Strukturberatung ab 149 €'],
   },
   '/digitale-unternehmensstruktur': {
-    main: 'ab 499 â‚¬',
-    extras: ['Digitale Strukturberatung ab 149 â‚¬', 'Digitale ErsteinschÃ¤tzung kostenlos'],
+    main: 'ab 499 €',
+    extras: ['Digitale Strukturberatung ab 149 €', 'Digitale Ersteinschätzung kostenlos'],
   },
 }
 
@@ -3650,7 +3650,7 @@ function OfferDetailPage({ title, intro, points, pathname }) {
                 </div>
               )}
               <p className="mt-3 text-sm leading-7 text-[#94A3B8]">
-                Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewÃ¼nschten Zusatzsystemen und technischer Umsetzung.
+                Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.
               </p>
             </div>
           )}
@@ -3658,7 +3658,7 @@ function OfferDetailPage({ title, intro, points, pathname }) {
             href={siteLinks.contact}
             className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
           >
-            Kostenlose ErsteinschÃ¤tzung anfragen
+            Kostenlose Ersteinschätzung anfragen
             <ArrowRight className="h-4 w-4" />
           </a>
         </section>
@@ -3669,43 +3669,43 @@ function OfferDetailPage({ title, intro, points, pathname }) {
 
 function LeistungenPage() {
   const allLeistungPrices = {
-    'Website-Erstellung': 'ab 599 â‚¬',
-    Landingpages: 'ab 299 â‚¬',
-    'Google-Sichtbarkeit': 'ab 349 â‚¬',
-    'Digitale KundenfÃ¼hrung': 'ab 299 â‚¬',
-    'WhatsApp-Kontaktstruktur': 'ab 149 â‚¬',
-    'Social-Media-Struktur': 'ab 249 â‚¬',
-    'Newsletter-Einbindung': 'ab 199 â‚¬',
-    'Unternehmens-Apps': 'ab 999 â‚¬',
-    'Betriebs-Dashboards': 'ab 799 â‚¬',
-    'Digitale Ordnungssysteme': 'ab 899 â‚¬',
-    Angebotsarchitektur: 'ab 299 â‚¬',
-    'Beratung & ErsteinschÃ¤tzung': 'ab 149 â‚¬',
+    'Website-Erstellung': 'ab 599 €',
+    Landingpages: 'ab 299 €',
+    'Google-Sichtbarkeit': 'ab 349 €',
+    'Digitale Kundenführung': 'ab 299 €',
+    'WhatsApp-Kontaktstruktur': 'ab 149 €',
+    'Social-Media-Struktur': 'ab 249 €',
+    'Newsletter-Einbindung': 'ab 199 €',
+    'Unternehmens-Apps': 'ab 999 €',
+    'Betriebs-Dashboards': 'ab 799 €',
+    'Digitale Ordnungssysteme': 'ab 899 €',
+    Angebotsarchitektur: 'ab 299 €',
+    'Beratung & Ersteinschätzung': 'ab 149 €',
   }
 
   const allLeistungen = [
-    ['Website-Erstellung', 'STRUKTIVA erstellt unterschiedliche Webseiten-Formate â€“ von Onepager, Unternehmenswebsite und Landingpage bis zu mehrseitigen Premium-Webauftritten, Branchenwebsites, Angebotsseiten und Websites mit Newsletter-, QR-Code- oder Kontaktstruktur.'],
-    ['Landingpages', 'Verkaufsstarke Seiten fÃ¼r Angebote, Aktionen und Anfragen.'],
-    ['Google-Sichtbarkeit', 'Struktur fÃ¼r bessere Auffindbarkeit und lokale PrÃ¤senz.'],
-    ['Digitale KundenfÃ¼hrung', 'Klare Wege von Interesse zur Anfrage.'],
-    ['WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege Ã¼ber Website, Google und Landingpage.'],
-    ['Social-Media-Struktur', 'Inhalte und KanÃ¤le mit klarer Richtung statt Zufall.'],
-    ['Newsletter-Einbindung', 'Dezente Kundenbindung Ã¼ber professionelle Newsletter-Systeme.'],
-    ['Unternehmens-Apps', 'Individuelle App- und Dashboard-Konzepte fÃ¼r kleine Unternehmen.'],
-    ['Betriebs-Dashboards', 'Ãœbersichten fÃ¼r Termine, Kunden, Zahlen und interne AblÃ¤ufe.'],
-    ['Digitale Ordnungssysteme', 'Tagesabschluss, Kassenstruktur und steuerberaterfreundliche AblÃ¤ufe.'],
+    ['Website-Erstellung', 'STRUKTIVA erstellt unterschiedliche Webseiten-Formate – von Onepager, Unternehmenswebsite und Landingpage bis zu mehrseitigen Premium-Webauftritten, Branchenwebsites, Angebotsseiten und Websites mit Newsletter-, QR-Code- oder Kontaktstruktur.'],
+    ['Landingpages', 'Verkaufsstarke Seiten für Angebote, Aktionen und Anfragen.'],
+    ['Google-Sichtbarkeit', 'Struktur für bessere Auffindbarkeit und lokale Präsenz.'],
+    ['Digitale Kundenführung', 'Klare Wege von Interesse zur Anfrage.'],
+    ['WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Landingpage.'],
+    ['Social-Media-Struktur', 'Inhalte und Kanäle mit klarer Richtung statt Zufall.'],
+    ['Newsletter-Einbindung', 'Dezente Kundenbindung über professionelle Newsletter-Systeme.'],
+    ['Unternehmens-Apps', 'Individuelle App- und Dashboard-Konzepte für kleine Unternehmen.'],
+    ['Betriebs-Dashboards', 'Übersichten für Termine, Kunden, Zahlen und interne Abläufe.'],
+    ['Digitale Ordnungssysteme', 'Tagesabschluss, Kassenstruktur und steuerberaterfreundliche Abläufe.'],
     ['Angebotsarchitektur', 'Leistungen klar darstellen, damit Kunden schneller verstehen.'],
-    ['Beratung & ErsteinschÃ¤tzung', 'Kostenlose EinschÃ¤tzung fÃ¼r den passenden digitalen Aufbau.'],
+    ['Beratung & Ersteinschätzung', 'Kostenlose Einschätzung für den passenden digitalen Aufbau.'],
   ]
 
   return (
     <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl">
         <section className="rounded-[2.2rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">LeistungsÃ¼bersicht</p>
-          <h1 className="mt-4 text-3xl font-semibold text-white md:text-5xl">Alle STRUKTIVA Leistungen im Ãœberblick</h1>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Leistungsübersicht</p>
+          <h1 className="mt-4 text-3xl font-semibold text-white md:text-5xl">Alle STRUKTIVA Leistungen im Überblick</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-            Die Leistungen sind bewusst so aufgebaut, dass Sichtbarkeit, KundenfÃ¼hrung und digitale AblÃ¤ufe als zusammenhÃ¤ngendes System funktionieren.
+            Die Leistungen sind bewusst so aufgebaut, dass Sichtbarkeit, Kundenführung und digitale Abläufe als zusammenhängendes System funktionieren.
           </p>
         </section>
 
@@ -3722,13 +3722,13 @@ function LeistungenPage() {
             ))}
           </div>
           <p className="mt-6 text-sm leading-7 text-[#94A3B8]">
-            Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewÃ¼nschten Zusatzsystemen und technischer Umsetzung.
+            Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.
           </p>
           <a
             href={siteLinks.contact}
             className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
           >
-            Kostenlose ErsteinschÃ¤tzung anfragen
+            Kostenlose Ersteinschätzung anfragen
             <ArrowRight className="h-4 w-4" />
           </a>
         </section>
@@ -3785,7 +3785,7 @@ function ImpressumPage() {
       title="Impressum"
       intro="Rechtliche Angaben und Kontaktinformationen zu STRUKTIVA Unternehmensarchitektur."
     >
-      <LegalSection title="Angaben gemÃ¤ÃŸ Â§ 5 DDG">
+      <LegalSection title="Angaben gemäß § 5 DDG">
         <ContactBlock />
       </LegalSection>
 
@@ -3793,23 +3793,23 @@ function ImpressumPage() {
         <p>Jessica Wacker</p>
       </LegalSection>
 
-      <LegalSection title="Verantwortlich fÃ¼r den Inhalt nach Â§ 18 Abs. 2 MStV">
+      <LegalSection title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
         <p>Jessica Wacker</p>
         <p>{contactDetails.addressLine1}</p>
         <p>{contactDetails.addressLine2}</p>
         <p>{contactDetails.country}</p>
       </LegalSection>
 
-      <LegalSection title="Haftung fÃ¼r Inhalte">
-        <p>Die Inhalte dieser Webseite wurden mit grÃ¶ÃŸter Sorgfalt erstellt. FÃ¼r die Richtigkeit, VollstÃ¤ndigkeit und AktualitÃ¤t der Inhalte kann jedoch keine GewÃ¤hr Ã¼bernommen werden.</p>
+      <LegalSection title="Haftung für Inhalte">
+        <p>Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
       </LegalSection>
 
-      <LegalSection title="Haftung fÃ¼r Links">
-        <p>Diese Webseite kann Links zu externen Webseiten Dritter enthalten. Auf deren Inhalte habe ich keinen Einfluss. FÃ¼r die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+      <LegalSection title="Haftung für Links">
+        <p>Diese Webseite kann Links zu externen Webseiten Dritter enthalten. Auf deren Inhalte habe ich keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
       </LegalSection>
 
       <LegalSection title="Urheberrecht">
-        <p>Die auf dieser Webseite erstellten Inhalte, Texte, Grafiken und Designs unterliegen dem deutschen Urheberrecht. Eine VervielfÃ¤ltigung, Bearbeitung oder Verbreitung auÃŸerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.</p>
+        <p>Die auf dieser Webseite erstellten Inhalte, Texte, Grafiken und Designs unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung oder Verbreitung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.</p>
       </LegalSection>
     </LegalLayout>
   )
@@ -3818,24 +3818,24 @@ function ImpressumPage() {
 function DatenschutzPage() {
   return (
     <LegalLayout
-      title="DatenschutzerklÃ¤rung"
-      intro="Diese DatenschutzerklÃ¤rung informiert darÃ¼ber, welche personenbezogenen Daten beim Besuch dieser Webseite und bei einer Kontaktaufnahme verarbeitet werden."
+      title="Datenschutzerklärung"
+      intro="Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Webseite und bei einer Kontaktaufnahme verarbeitet werden."
     >
       <LegalSection title="1. Verantwortlicher">
         <ContactBlock />
       </LegalSection>
 
       <LegalSection title="2. Hosting der Webseite">
-        <p>Diese Webseite wird Ã¼ber Vercel bereitgestellt.</p>
+        <p>Diese Webseite wird über Vercel bereitgestellt.</p>
         <p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA</p>
-        <p>Beim Aufruf der Webseite kÃ¶nnen durch den Hosting-Anbieter technische Daten verarbeitet werden. Dazu gehÃ¶ren insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp und Browserversion, verwendetes Betriebssystem, aufgerufene Seiten, Referrer-URL und technische Logdaten.</p>
-        <p>Die Verarbeitung erfolgt, um die Webseite sicher, stabil und zuverlÃ¤ssig bereitzustellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+        <p>Beim Aufruf der Webseite können durch den Hosting-Anbieter technische Daten verarbeitet werden. Dazu gehören insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp und Browserversion, verwendetes Betriebssystem, aufgerufene Seiten, Referrer-URL und technische Logdaten.</p>
+        <p>Die Verarbeitung erfolgt, um die Webseite sicher, stabil und zuverlässig bereitzustellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
       </LegalSection>
 
       <LegalSection title="3. Kontakt per E-Mail, Telefon und WhatsApp Business">
-        <p>Wenn du per E-Mail, Telefon oder WhatsApp Business Kontakt aufnimmst, werden die von dir Ã¼bermittelten Daten verarbeitet, um deine Anfrage zu beantworten.</p>
-        <p>Dazu kÃ¶nnen insbesondere Name, E-Mail-Adresse, Telefonnummer, Nachrichteninhalte und weitere freiwillig Ã¼bermittelte Angaben gehÃ¶ren.</p>
-        <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit einem mÃ¶glichen Vertrag oder einer Leistung zusammenhÃ¤ngt. In anderen FÃ¤llen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
+        <p>Wenn du per E-Mail, Telefon oder WhatsApp Business Kontakt aufnimmst, werden die von dir übermittelten Daten verarbeitet, um deine Anfrage zu beantworten.</p>
+        <p>Dazu können insbesondere Name, E-Mail-Adresse, Telefonnummer, Nachrichteninhalte und weitere freiwillig übermittelte Angaben gehören.</p>
+        <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit einem möglichen Vertrag oder einer Leistung zusammenhängt. In anderen Fällen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
       </LegalSection>
 
       <LegalSection title="4. Cookies und Tracking">
@@ -3843,11 +3843,11 @@ function DatenschutzPage() {
       </LegalSection>
 
       <LegalSection title="5. Speicherdauer">
-        <p>Personenbezogene Daten werden nur so lange gespeichert, wie es fÃ¼r den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
+        <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
       </LegalSection>
 
       <LegalSection title="6. Deine Rechte">
-        <p>Du hast im Rahmen der gesetzlichen Vorgaben das Recht auf Auskunft, Berichtigung, LÃ¶schung, EinschrÃ¤nkung der Verarbeitung, DatenÃ¼bertragbarkeit, Widerspruch gegen die Verarbeitung und Beschwerde bei einer DatenschutzaufsichtsbehÃ¶rde.</p>
+        <p>Du hast im Rahmen der gesetzlichen Vorgaben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch gegen die Verarbeitung und Beschwerde bei einer Datenschutzaufsichtsbehörde.</p>
       </LegalSection>
 
       <LegalSection title="7. Stand">
@@ -3861,36 +3861,36 @@ function WiderrufPage() {
   return (
     <LegalLayout
       title="Widerrufsbelehrung"
-      intro="Hinweise zum gesetzlichen Widerrufsrecht fÃ¼r Verbraucher und zum Muster-Widerrufsformular."
+      intro="Hinweise zum gesetzlichen Widerrufsrecht für Verbraucher und zum Muster-Widerrufsformular."
     >
-      <LegalSection title="Widerrufsrecht fÃ¼r Verbraucher">
-        <p>Verbraucher haben grundsÃ¤tzlich das Recht, binnen vierzehn Tagen ohne Angabe von GrÃ¼nden einen Vertrag zu widerrufen, sofern ein gesetzliches Widerrufsrecht besteht.</p>
-        <p>Die Widerrufsfrist betrÃ¤gt vierzehn Tage ab dem Tag des Vertragsschlusses.</p>
-        <p>Um dein Widerrufsrecht auszuÃ¼ben, musst du mich mittels einer eindeutigen ErklÃ¤rung Ã¼ber deinen Entschluss informieren, diesen Vertrag zu widerrufen.</p>
+      <LegalSection title="Widerrufsrecht für Verbraucher">
+        <p>Verbraucher haben grundsätzlich das Recht, binnen vierzehn Tagen ohne Angabe von Gründen einen Vertrag zu widerrufen, sofern ein gesetzliches Widerrufsrecht besteht.</p>
+        <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses.</p>
+        <p>Um dein Widerrufsrecht auszuüben, musst du mich mittels einer eindeutigen Erklärung über deinen Entschluss informieren, diesen Vertrag zu widerrufen.</p>
       </LegalSection>
 
-      <LegalSection title="Kontakt fÃ¼r Widerruf">
+      <LegalSection title="Kontakt für Widerruf">
         <ContactBlock />
       </LegalSection>
 
       <LegalSection title="Folgen des Widerrufs">
-        <p>Wenn du diesen Vertrag widerrufst, werden alle Zahlungen, die ich von dir erhalten habe, unverzÃ¼glich und spÃ¤testens binnen vierzehn Tagen ab dem Tag zurÃ¼ckgezahlt, an dem die Mitteilung Ã¼ber deinen Widerruf eingegangen ist.</p>
-        <p>FÃ¼r diese RÃ¼ckzahlung wird dasselbe Zahlungsmittel verwendet, das du bei der ursprÃ¼nglichen Zahlung eingesetzt hast, sofern nicht ausdrÃ¼cklich etwas anderes vereinbart wurde.</p>
+        <p>Wenn du diesen Vertrag widerrufst, werden alle Zahlungen, die ich von dir erhalten habe, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückgezahlt, an dem die Mitteilung über deinen Widerruf eingegangen ist.</p>
+        <p>Für diese Rückzahlung wird dasselbe Zahlungsmittel verwendet, das du bei der ursprünglichen Zahlung eingesetzt hast, sofern nicht ausdrücklich etwas anderes vereinbart wurde.</p>
       </LegalSection>
 
       <LegalSection title="Widerruf bei Dienstleistungen und digitalen Inhalten">
-        <p>Hast du verlangt, dass die Dienstleistung bereits wÃ¤hrend der Widerrufsfrist beginnen soll, so ist fÃ¼r bereits erbrachte Leistungen ein angemessener Betrag zu zahlen, sofern dies gesetzlich vorgesehen ist.</p>
-        <p>Bei digitalen Inhalten oder digitalen Leistungen kann das Widerrufsrecht unter bestimmten gesetzlichen Voraussetzungen vorzeitig erlÃ¶schen, wenn mit der AusfÃ¼hrung begonnen wurde und der Verbraucher ausdrÃ¼cklich zugestimmt hat, dass mit der AusfÃ¼hrung vor Ablauf der Widerrufsfrist begonnen wird.</p>
+        <p>Hast du verlangt, dass die Dienstleistung bereits während der Widerrufsfrist beginnen soll, so ist für bereits erbrachte Leistungen ein angemessener Betrag zu zahlen, sofern dies gesetzlich vorgesehen ist.</p>
+        <p>Bei digitalen Inhalten oder digitalen Leistungen kann das Widerrufsrecht unter bestimmten gesetzlichen Voraussetzungen vorzeitig erlöschen, wenn mit der Ausführung begonnen wurde und der Verbraucher ausdrücklich zugestimmt hat, dass mit der Ausführung vor Ablauf der Widerrufsfrist begonnen wird.</p>
       </LegalSection>
 
       <LegalSection title="Muster-Widerrufsformular">
-        <p>Wenn du den Vertrag widerrufen mÃ¶chtest, kannst du dieses Formular ausfÃ¼llen und per E-Mail senden.</p>
+        <p>Wenn du den Vertrag widerrufen möchtest, kannst du dieses Formular ausfüllen und per E-Mail senden.</p>
         <p>An:</p>
         <p>{brand.name}</p>
         <p>Jessica Wacker</p>
         <p>E-Mail: {contactDetails.email}</p>
         <p>Telefon: {contactDetails.phoneLabel}</p>
-        <p className="pt-2">Hiermit widerrufe ich den von mir abgeschlossenen Vertrag Ã¼ber die Erbringung der folgenden Dienstleistung:</p>
+        <p className="pt-2">Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung:</p>
         <p>__________________________________________________</p>
         <p>Bestellt am:</p>
         <p>__________________________________________________</p>
@@ -3913,19 +3913,19 @@ function ContactPage() {
   return (
     <LegalLayout
       title="Kontakt"
-      intro="Du mÃ¶chtest dein Unternehmen sichtbarer, professioneller oder digital besser organisiert aufstellen? Schreibe kurz, wobei du UnterstÃ¼tzung brauchst."
+      intro="Du möchtest dein Unternehmen sichtbarer, professioneller oder digital besser organisiert aufstellen? Schreibe kurz, wobei du Unterstützung brauchst."
     >
       <LegalSection title="Kontakt zu STRUKTIVA Unternehmensarchitektur">
-        <p>MÃ¶gliche Themen:</p>
+        <p>Mögliche Themen:</p>
         <p>- Professionelle Webseite</p>
         <p>- Landingpage</p>
         <p>- Google Ads</p>
-        <p>- kostenlose App-ErsteinschÃ¤tzung</p>
+        <p>- kostenlose App-Ersteinschätzung</p>
         <p>- Unternehmens-App</p>
         <p>- monatliche Betreuung</p>
       </LegalSection>
 
-      <LegalSection title="KontaktmÃ¶glichkeiten">
+      <LegalSection title="Kontaktmöglichkeiten">
         <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-[#D8B45A]">{contactDetails.email}</a></p>
         <p>Telefon: <a href={contactDetails.phoneHref} className="text-[#D8B45A]">{contactDetails.phoneLabel}</a></p>
         <p>WhatsApp Business: <a href={contactDetails.whatsappHref} className="text-[#D8B45A]">{contactDetails.whatsappLabel}</a></p>
@@ -3948,7 +3948,7 @@ function ContactPage() {
       </LegalSection>
 
       <LegalSection title="Hinweis">
-        <p>Bitte beschreibe kurz dein Unternehmen und wobei du UnterstÃ¼tzung brauchst. Danach kann ich besser einschÃ¤tzen, welches Paket oder welche LÃ¶sung sinnvoll ist.</p>
+        <p>Bitte beschreibe kurz dein Unternehmen und wobei du Unterstützung brauchst. Danach kann ich besser einschätzen, welches Paket oder welche Lösung sinnvoll ist.</p>
       </LegalSection>
     </LegalLayout>
   )
@@ -3969,7 +3969,7 @@ function DemoLead({ title, subtitle, image, imageAlt, theme }) {
       <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="p-6 md:p-8 lg:p-10">
           <p className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] ${theme.badge}`}>
-            Demo-Beispiel â€“ keine echte Kundenseite
+            Demo-Beispiel – keine echte Kundenseite
           </p>
           <h1 className={`mt-5 text-3xl font-semibold leading-tight md:text-5xl ${theme.title}`}>{title}</h1>
           <p className={`mt-4 max-w-2xl text-base leading-8 md:text-lg ${theme.text}`}>{subtitle}</p>
@@ -3979,7 +3979,7 @@ function DemoLead({ title, subtitle, image, imageAlt, theme }) {
               <ArrowRight className="h-4 w-4" />
             </a>
             <a href={siteLinks.demos} className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition ${theme.secondaryBtn}`}>
-              Zur Demo-Ãœbersicht
+              Zur Demo-Übersicht
             </a>
           </div>
         </div>
@@ -4019,12 +4019,12 @@ function DemoForm({ fields, cta, theme }) {
 function DemoFinalSection() {
   return (
     <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
-      <h2 className="text-2xl font-semibold text-white">So kÃ¶nnte dein Unternehmen digital auftreten.</h2>
+      <h2 className="text-2xl font-semibold text-white">So könnte dein Unternehmen digital auftreten.</h2>
       <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-        Wenn du eine Ã¤hnliche Struktur fÃ¼r dein Unternehmen mÃ¶chtest, erstellt STRUKTIVA einen klaren digitalen Aufbau passend zu deiner Branche, deinem Angebot und deinen Kunden.
+        Wenn du eine ähnliche Struktur für dein Unternehmen möchtest, erstellt STRUKTIVA einen klaren digitalen Aufbau passend zu deiner Branche, deinem Angebot und deinen Kunden.
       </p>
       <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-        Kostenlose ErsteinschÃ¤tzung anfragen
+        Kostenlose Ersteinschätzung anfragen
         <ArrowRight className="h-4 w-4" />
       </a>
     </section>
@@ -4035,7 +4035,7 @@ function DemoOverviewSection() {
   const cards = [
     {
       title: 'Handwerker-Modell',
-      text: 'Solide, direkt und vertrauensstark â€“ fÃ¼r Betriebe, die Leistungen klar zeigen und Projektanfragen gewinnen wollen.',
+      text: 'Solide, direkt und vertrauensstark – für Betriebe, die Leistungen klar zeigen und Projektanfragen gewinnen wollen.',
       href: siteLinks.demoHandwerker,
       image: demoImageConfigs.handwerker.hero,
       alt: 'Handwerker auf einer Baustelle',
@@ -4045,7 +4045,7 @@ function DemoOverviewSection() {
     },
     {
       title: 'Beauty-Modell',
-      text: 'Elegant, emotional und hochwertig â€“ fÃ¼r Studios, die AtmosphÃ¤re, Vertrauen und Buchungen verbinden wollen.',
+      text: 'Elegant, emotional und hochwertig – für Studios, die Atmosphäre, Vertrauen und Buchungen verbinden wollen.',
       href: siteLinks.demoBeauty,
       image: demoImageConfigs.beauty.hero,
       alt: 'Beauty-Behandlung in einem Studio',
@@ -4055,10 +4055,10 @@ function DemoOverviewSection() {
     },
     {
       title: 'Dienstleister-Modell',
-      text: 'Klar, seriÃ¶s und strukturiert â€“ fÃ¼r SelbststÃ¤ndige und lokale Dienstleister, die ihr Angebot professionell erklÃ¤ren mÃ¶chten.',
+      text: 'Klar, seriös und strukturiert – für Selbstständige und lokale Dienstleister, die ihr Angebot professionell erklären möchten.',
       href: siteLinks.demoDienstleister,
       image: demoImageConfigs.dienstleister.hero,
-      alt: 'BeratungsgesprÃ¤ch am Tisch',
+      alt: 'Beratungsgespräch am Tisch',
       tone: 'border-[#60a5fa]/35 bg-[linear-gradient(165deg,rgba(10,25,47,0.95),rgba(15,40,75,0.92))] text-white',
       accent: 'text-[#93c5fd]',
       icon: BriefcaseBusiness,
@@ -4072,7 +4072,7 @@ function DemoOverviewSection() {
           <SectionHeader
             eyebrow="Live-Demos"
             title="Drei Branchen. Drei Modelle. Eine klare Struktur."
-            text="Diese Beispielseiten zeigen, wie unterschiedlich ein professioneller digitaler Auftritt aussehen kann â€“ je nach Branche, Zielgruppe und Wirkung."
+            text="Diese Beispielseiten zeigen, wie unterschiedlich ein professioneller digitaler Auftritt aussehen kann – je nach Branche, Zielgruppe und Wirkung."
           />
         </Reveal>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -4122,18 +4122,18 @@ function DemoHandwerkerPage() {
     <main className="bg-[#0f172a] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoLead
-          title="Mehr Anfragen fÃ¼r deinen Handwerksbetrieb â€“ mit einem klaren digitalen Auftritt."
-          subtitle="Diese Demo zeigt, wie ein regionaler Handwerksbetrieb Leistungen, Vertrauen und KontaktmÃ¶glichkeiten professionell prÃ¤sentiert."
+          title="Mehr Anfragen für deinen Handwerksbetrieb – mit einem klaren digitalen Auftritt."
+          subtitle="Diese Demo zeigt, wie ein regionaler Handwerksbetrieb Leistungen, Vertrauen und Kontaktmöglichkeiten professionell präsentiert."
           image={demoImageConfigs.handwerker.hero}
           imageAlt="Handwerker arbeitet auf einer Baustelle"
           theme={theme}
         />
         <div className="grid gap-6 lg:grid-cols-2">
-          <DemoSectionCard title="LeistungsÃ¼bersicht" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
+          <DemoSectionCard title="Leistungsübersicht" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
             <p>- Renovierung & Sanierung</p><p>- Reparaturservice</p><p>- Wartung & Instandhaltung</p><p>- individuelle Projektanfragen</p><p>- Notfall- oder Schnellservice</p>
           </DemoSectionCard>
           <DemoSectionCard title="Warum Kunden Vertrauen brauchen" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
-            <p>Kunden entscheiden im Handwerk schnell nach Vertrauen, Klarheit und Erreichbarkeit. Diese Struktur zeigt Leistungen eindeutig und fÃ¼hrt Interessenten direkt zur Anfrage.</p>
+            <p>Kunden entscheiden im Handwerk schnell nach Vertrauen, Klarheit und Erreichbarkeit. Diese Struktur zeigt Leistungen eindeutig und führt Interessenten direkt zur Anfrage.</p>
           </DemoSectionCard>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
@@ -4141,19 +4141,19 @@ function DemoHandwerkerPage() {
           <img src={demoImageConfigs.handwerker.sectionB} alt="Werkzeug und Handwerksdetails in moderner Umgebung" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
         </div>
         <DemoSectionCard title="Vorher-Nachher-Struktur (Demo-Bereich)" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
-          <p>Vorher: unklare Leistungsdarstellung, kaum Vertrauen, unsaubere KontaktfÃ¼hrung.</p>
-          <p>Nachher: klare LeistungsblÃ¶cke, sichtbare Kontaktwege, strukturierte AnfragefÃ¼hrung.</p>
+          <p>Vorher: unklare Leistungsdarstellung, kaum Vertrauen, unsaubere Kontaktführung.</p>
+          <p>Nachher: klare Leistungsblöcke, sichtbare Kontaktwege, strukturierte Anfrageführung.</p>
         </DemoSectionCard>
         <DemoSectionCard title="Ablauf in 3 Schritten" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
-          <p>1. Anfrage und Leistungswunsch</p><p>2. Kurze EinschÃ¤tzung und passender Vorschlag</p><p>3. Umsetzung mit klaren Kontaktwegen</p>
+          <p>1. Anfrage und Leistungswunsch</p><p>2. Kurze Einschätzung und passender Vorschlag</p><p>3. Umsetzung mit klaren Kontaktwegen</p>
           <a href={siteLinks.contact} className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#f59e0b] px-5 py-2.5 text-sm font-semibold text-white">Projekt anfragen<ArrowRight className="h-4 w-4" /></a>
         </DemoSectionCard>
-        <DemoForm fields={['Name', 'Telefonnummer', 'E-Mail', 'GewÃ¼nschte Leistung', 'Nachricht']} cta="Projekt anfragen" theme={theme} />
+        <DemoForm fields={['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Leistung', 'Nachricht']} cta="Projekt anfragen" theme={theme} />
         <DemoSectionCard title="Bewertungsbereich (Beispielstruktur)" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
-          <p>Hier kann ein Bewertungsbereich als strukturierte VertrauensflÃ¤che integriert werden â€“ klar als Referenz-Modul vorbereitet, ohne erfundene Kundenstimmen.</p>
+          <p>Hier kann ein Bewertungsbereich als strukturierte Vertrauensfläche integriert werden – klar als Referenz-Modul vorbereitet, ohne erfundene Kundenstimmen.</p>
         </DemoSectionCard>
         <DemoSectionCard title="Newsletter-Einbindung" className="border-gray-600/50 bg-gray-900/60 text-gray-100">
-          <p>Auf Wunsch kann ein Newsletter oder Infoverteiler eingebunden werden, z. B. fÃ¼r saisonale Angebote, Wartungserinnerungen oder Kundeninformationen.</p>
+          <p>Auf Wunsch kann ein Newsletter oder Infoverteiler eingebunden werden, z. B. für saisonale Angebote, Wartungserinnerungen oder Kundeninformationen.</p>
         </DemoSectionCard>
         <DemoFinalSection />
       </div>
@@ -4182,14 +4182,14 @@ function DemoBeautyPage() {
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoLead
           title="Ein Beauty-Auftritt, der hochwertig wirkt und Buchungen leichter macht."
-          subtitle="Diese Demo zeigt, wie ein Kosmetikstudio oder Beauty-Dienstleister Leistungen elegant prÃ¤sentiert und Kundinnen direkt zur Anfrage fÃ¼hrt."
+          subtitle="Diese Demo zeigt, wie ein Kosmetikstudio oder Beauty-Dienstleister Leistungen elegant präsentiert und Kundinnen direkt zur Anfrage führt."
           image={demoImageConfigs.beauty.hero}
           imageAlt="Kosmetikbehandlung in einem eleganten Studio"
           theme={theme}
         />
         <div className="grid gap-6 md:grid-cols-2">
           <DemoSectionCard title="Beauty-Leistungen" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
-            <p>- Gesichtsbehandlungen</p><p>- Hautpflege-Beratung</p><p>- Augenbrauen & Wimpern</p><p>- Make-up / Styling</p><p>- Wellness- oder VerwÃ¶hnpakete</p>
+            <p>- Gesichtsbehandlungen</p><p>- Hautpflege-Beratung</p><p>- Augenbrauen & Wimpern</p><p>- Make-up / Styling</p><p>- Wellness- oder Verwöhnpakete</p>
           </DemoSectionCard>
           <DemoSectionCard title="Angebotskarten" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
             <p>- Kennenlernbehandlung</p><p>- Premium-Behandlung</p><p>- Monatsangebot</p><p>- Gutscheinangebot</p>
@@ -4197,23 +4197,23 @@ function DemoBeautyPage() {
           </DemoSectionCard>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
-          <img src={demoImageConfigs.beauty.sectionA} alt="Elegante Pflegeprodukte in Beauty-AtmosphÃ¤re" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
-          <img src={demoImageConfigs.beauty.sectionB} alt="Ruhige Wellness-AtmosphÃ¤re fÃ¼r Kosmetikbehandlungen" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.beauty.sectionA} alt="Elegante Pflegeprodukte in Beauty-Atmosphäre" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.beauty.sectionB} alt="Ruhige Wellness-Atmosphäre für Kosmetikbehandlungen" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
         </div>
         <DemoSectionCard title="Warum Optik und Vertrauen entscheidend sind" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
-          <p>Beauty-Kundinnen achten auf Stil, Klarheit und GefÃ¼hl. Eine hochwertige Seite macht Leistungen sofort verstÃ¤ndlich und fÃ¼hrt direkt zu Buchung oder Anfrage.</p>
+          <p>Beauty-Kundinnen achten auf Stil, Klarheit und Gefühl. Eine hochwertige Seite macht Leistungen sofort verständlich und führt direkt zu Buchung oder Anfrage.</p>
         </DemoSectionCard>
-        <DemoSectionCard title="Ã–ffnungszeiten & Kontakt" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
-          <p>Moâ€“Fr 09:00â€“18:00 Â· Sa 09:00â€“14:00</p>
+        <DemoSectionCard title="Öffnungszeiten & Kontakt" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
+          <p>Mo–Fr 09:00–18:00 · Sa 09:00–14:00</p>
           <div className="mt-3 flex flex-wrap gap-3">
             <a href={contactDetails.whatsappHref} className="rounded-full border border-[#d4a574] px-4 py-2 text-sm font-semibold text-[#9b6d3e]">WhatsApp</a>
             <a href={contactDetails.phoneHref} className="rounded-full border border-[#d4a574] px-4 py-2 text-sm font-semibold text-[#9b6d3e]">Telefon</a>
             <a href={siteLinks.contact} className="rounded-full bg-[#b8894b] px-4 py-2 text-sm font-semibold text-white">Buchung anfragen</a>
           </div>
         </DemoSectionCard>
-        <DemoForm fields={['Name', 'Telefonnummer', 'E-Mail', 'GewÃ¼nschte Behandlung', 'Nachricht']} cta="Termin anfragen" theme={theme} />
+        <DemoForm fields={['Name', 'Telefonnummer', 'E-Mail', 'Gewünschte Behandlung', 'Nachricht']} cta="Termin anfragen" theme={theme} />
         <DemoSectionCard title="Newsletter-Einbindung" className="border-[#e4cabb] bg-white text-[#3b2f2f]">
-          <p>Auf Wunsch kann ein kleiner Newsletter-Bereich integriert werden, z. B. fÃ¼r Aktionen, Pflege-Tipps oder freie Termine.</p>
+          <p>Auf Wunsch kann ein kleiner Newsletter-Bereich integriert werden, z. B. für Aktionen, Pflege-Tipps oder freie Termine.</p>
         </DemoSectionCard>
         <DemoFinalSection />
       </div>
@@ -4241,37 +4241,37 @@ function DemoDienstleisterPage() {
     <main className="bg-[linear-gradient(180deg,#081427,#0b1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoLead
-          title="Zeige klar, was du anbietest â€“ und mache Interessenten zu Anfragen."
-          subtitle="Diese Demo zeigt, wie SelbststÃ¤ndige, Berater und lokale Dienstleister ihr Angebot verstÃ¤ndlich strukturieren und Vertrauen aufbauen."
+          title="Zeige klar, was du anbietest – und mache Interessenten zu Anfragen."
+          subtitle="Diese Demo zeigt, wie Selbstständige, Berater und lokale Dienstleister ihr Angebot verständlich strukturieren und Vertrauen aufbauen."
           image={demoImageConfigs.dienstleister.hero}
-          imageAlt="BeratungsgesprÃ¤ch in professionellem BÃ¼ro"
+          imageAlt="Beratungsgespräch in professionellem Büro"
           theme={theme}
         />
         <div className="grid gap-6 md:grid-cols-2">
-          <DemoSectionCard title="Angebot klar erklÃ¤ren" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
-            <p>- ErstgesprÃ¤ch</p><p>- Standard-Leistung</p><p>- Premium-Service</p><p>- laufende Betreuung</p>
+          <DemoSectionCard title="Angebot klar erklären" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+            <p>- Erstgespräch</p><p>- Standard-Leistung</p><p>- Premium-Service</p><p>- laufende Betreuung</p>
           </DemoSectionCard>
-          <DemoSectionCard title="Geeignet fÃ¼r" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
-            <p>Reinigungsfirmen Â· Fahrschulen Â· Berater Â· Coaches Â· lokale Services Â· Einzelunternehmer Â· kleine Dienstleistungsbetriebe</p>
+          <DemoSectionCard title="Geeignet für" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+            <p>Reinigungsfirmen · Fahrschulen · Berater · Coaches · lokale Services · Einzelunternehmer · kleine Dienstleistungsbetriebe</p>
           </DemoSectionCard>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           <img src={demoImageConfigs.dienstleister.sectionA} alt="Team bei strategischer Planung" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
-          <img src={demoImageConfigs.dienstleister.sectionB} alt="Laptop und GeschÃ¤ftsunterlagen im Beratungskontext" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
+          <img src={demoImageConfigs.dienstleister.sectionB} alt="Laptop und Geschäftsunterlagen im Beratungskontext" loading="lazy" decoding="async" className="h-56 w-full rounded-[1.4rem] object-cover" />
         </div>
-        <DemoSectionCard title="Problem-LÃ¶sung-Struktur" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
-          <p>Viele Dienstleister erklÃ¤ren online nicht klar genug, fÃ¼r wen ihr Angebot gedacht ist und welchen Nutzen es bringt. Diese Demo zeigt, wie Besucher Schritt fÃ¼r Schritt zur Anfrage gefÃ¼hrt werden.</p>
+        <DemoSectionCard title="Problem-Lösung-Struktur" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
+          <p>Viele Dienstleister erklären online nicht klar genug, für wen ihr Angebot gedacht ist und welchen Nutzen es bringt. Diese Demo zeigt, wie Besucher Schritt für Schritt zur Anfrage geführt werden.</p>
         </DemoSectionCard>
         <DemoSectionCard title="Ablauf in 3 Schritten" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
-          <p>1. Angebot und Zielgruppe prÃ¤zisieren</p><p>2. Strukturierte Leistungsseite aufbauen</p><p>3. Anfragewege klar und professionell fÃ¼hren</p>
+          <p>1. Angebot und Zielgruppe präzisieren</p><p>2. Strukturierte Leistungsseite aufbauen</p><p>3. Anfragewege klar und professionell führen</p>
           <a href={siteLinks.contact} className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-5 py-2.5 text-sm font-semibold text-white">Unverbindlich anfragen<ArrowRight className="h-4 w-4" /></a>
         </DemoSectionCard>
         <DemoSectionCard title="FAQ & Bewertungsbereich (Beispielstruktur)" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
-          <p>FAQ-Baustein fÃ¼r typische Fragen, dazu ein strukturierter Google-Bewertungsbereich als VertrauensflÃ¤che â€“ klar als Demo dargestellt, ohne erfundene Bewertungen.</p>
+          <p>FAQ-Baustein für typische Fragen, dazu ein strukturierter Google-Bewertungsbereich als Vertrauensfläche – klar als Demo dargestellt, ohne erfundene Bewertungen.</p>
         </DemoSectionCard>
-        <DemoForm fields={['Name', 'Unternehmen', 'E-Mail', 'Telefonnummer', 'GewÃ¼nschte Leistung', 'Nachricht']} cta="Unverbindlich anfragen" theme={theme} />
+        <DemoForm fields={['Name', 'Unternehmen', 'E-Mail', 'Telefonnummer', 'Gewünschte Leistung', 'Nachricht']} cta="Unverbindlich anfragen" theme={theme} />
         <DemoSectionCard title="Newsletter-Einbindung" className="border-[#334155] bg-[#0b1f3a] text-[#dbe7ff]">
-          <p>Ein Newsletter kann eingebunden werden, um Interessenten regelmÃ¤ÃŸig Ã¼ber Angebote, freie Termine oder neue Leistungen zu informieren.</p>
+          <p>Ein Newsletter kann eingebunden werden, um Interessenten regelmäßig über Angebote, freie Termine oder neue Leistungen zu informieren.</p>
         </DemoSectionCard>
         <DemoFinalSection />
       </div>
