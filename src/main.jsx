@@ -468,6 +468,13 @@ const qualityPoints = [
   ['Praxisnah gedacht', 'Digitale Lösungen, die nicht nur gut aussehen, sondern im echten Unternehmensalltag helfen.'],
 ]
 
+const differentiatorCards = [
+  ['Mehr als Webdesign', 'Wir verbinden Website, Google, Kontaktwege und Kundenführung.'],
+  ['Für kleine Unternehmen gebaut', 'Klare Lösungen ohne unnötige Komplexität.'],
+  ['Transparente Einstiegspreise', 'Planbare Pakete inklusive Mehrwertsteuer.'],
+  ['Struktur statt Einzellösung', 'Digitale Systeme, die im Alltag funktionieren.'],
+]
+
 const ordnungssystemVorteile = [
   'klare tägliche Erfassung',
   'weniger Zettelwirtschaft',
@@ -2073,6 +2080,44 @@ function ContactSection() {
   )
 }
 
+function DifferentiatorSection() {
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2.2rem] border border-white/14 bg-[linear-gradient(165deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8 lg:p-10">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Abgrenzung"
+            title="Warum STRUKTIVA statt Baukasten oder Standard-Agentur?"
+            text="Klare digitale Unternehmensstruktur statt Einzellösungen ohne System."
+            centered={false}
+          />
+        </Reveal>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="mt-10 grid gap-5 md:grid-cols-2"
+        >
+          {differentiatorCards.map(([title, text]) => (
+            <motion.article
+              key={title}
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium transition hover:-translate-y-1"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F2D98B]/78">STRUKTIVA Vorteil</p>
+              <h3 className="mt-4 text-xl font-semibold text-white">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
 function DemoFormCard({ fields, cta }) {
   return (
     <div className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
@@ -2687,6 +2732,7 @@ function HomePage() {
       <ProcessSection />
       <TargetSection />
       <WhySection />
+      <DifferentiatorSection />
       <QualitySection />
       <OrdnungssystemeSection />
       <ContactSection />
