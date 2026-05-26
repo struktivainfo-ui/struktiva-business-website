@@ -4163,7 +4163,7 @@ function ContactPage() {
                   alt="Jessica Wacker"
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full object-cover object-[50%_30%]"
+                  className="h-full w-full scale-125 object-cover object-[50%_16%]"
                 />
               </div>
             </div>
