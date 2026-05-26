@@ -303,7 +303,7 @@ const googleAdsCards = [
 const pricingPackages = [
   {
     title: 'Sichtbarkeit',
-    price: 'ab 349 €',
+    price: 'ab 249 €',
     badge: 'Professioneller Einstieg',
     description: 'Für Betriebe, die online professioneller gefunden werden wollen.',
     features: [
@@ -321,7 +321,7 @@ const pricingPackages = [
   },
   {
     title: 'Kundengewinnung',
-    price: 'ab 749 €',
+    price: 'ab 649 €',
     badge: 'Verkaufsstarke Struktur',
     description: 'Für Unternehmen, die mehr Anfragen aus ihrem digitalen Auftritt machen wollen.',
     features: [
@@ -339,7 +339,7 @@ const pricingPackages = [
   },
   {
     title: 'Unternehmensarchitektur',
-    price: 'ab 1.499 €',
+    price: 'ab 1.399 €',
     subtitle: 'Optionale App- oder Dashboard-Lösung möglich',
     badge: 'Ganzheitliches System',
     description: 'Für Betriebe, die ein vollständiges digitales System brauchen.',
@@ -359,7 +359,7 @@ const pricingPackages = [
   },
   {
     title: 'Monatliche Betreuung',
-    price: 'ab 149 € / Monat',
+    price: 'ab 199 € / Monat',
     badge: 'Laufende Begleitung',
     description: 'Für Unternehmen, die nach der Erstellung dauerhaft Unterstützung bei Webseite, Landingpage, Google Ads oder App-Systemen möchten.',
     features: [
@@ -370,7 +370,7 @@ const pricingPackages = [
       'technische Pflege',
       'Auswertung und Optimierung',
     ],
-    note: 'Der genaue monatliche Umfang wird im persönlichen Gespräch festgelegt.',
+    note: 'Der genaue monatliche Umfang wird im persönlichen Gespräch festgelegt. Die monatliche Betreuung erfolgt im vereinbarten Umfang. Zusätzliche Arbeiten werden nach Aufwand angeboten. Basis-Betreuung ab 199 € / Monat, Struktur-Betreuung ab 299 € / Monat und Premium-Betreuung ab 499 € / Monat.',
     cta: 'Betreuung anfragen',
   },
 ]
@@ -1729,7 +1729,7 @@ function PricingSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 199 € inkl. gesetzlicher Mehrwertsteuer</p>
+            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 99 € inkl. gesetzlicher Mehrwertsteuer</p>
           </div>
         </Reveal>
 
@@ -2762,10 +2762,10 @@ function LandingpageDigitaleStrukturPage() {
           </section>
 
           <ServiceSection title="Einstiegspreise für kleine Unternehmen">
-            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeit – ab 349 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 749 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeit – ab 249 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 649 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.399 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
             <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
           </ServiceSection>
 
@@ -2952,10 +2952,10 @@ function LandingpageDigitaleStrukturPageV2() {
           </section>
 
           <ServiceSection title="Einstiegspreise für kleine Unternehmen">
-            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeit – ab 349 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 749 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeit – ab 249 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 649 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.399 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
             <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
           </ServiceSection>
 
@@ -3084,7 +3084,7 @@ function WebseitenPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Paket Sichtbarkeit – ab 349 €</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Sichtbarkeit – ab 249 €</p>
         <p>Für strukturierte Onepage-Webseiten mit professioneller Außendarstellung, WhatsApp-Kontakt und klarer Angebotsführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
@@ -3118,7 +3118,7 @@ function LandingpagesPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Paket Kundengewinnung – ab 749 €</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Kundengewinnung – ab 649 €</p>
         <p>Für verkaufsstarke Landingpages mit Angebotsarchitektur, WhatsApp-CTA und klarer Anfrageführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
@@ -3167,9 +3167,9 @@ function AppsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Paket Unternehmensarchitektur – ab 1.499 €</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Paket Unternehmensarchitektur – ab 1.399 €</p>
         <p>App- oder Dashboard-Lösungen sind eine hochwertige Zusatzoption für Unternehmen, die neben Sichtbarkeit auch mehr interne Struktur brauchen.</p>
-        <p className="text-lg font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
         <p>1. Kostenlose Ersteinschätzung</p><p>2. Ablaufanalyse und Funktionsrahmen</p><p>3. Strukturplanung und Umsetzung</p><p>4. Testphase und Freigabe</p><p>5. Go-live mit Betreuung</p>
@@ -3202,7 +3202,7 @@ function GoogleAdsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Google Ads Startpaket – ab 349 €</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Google Ads Startpaket – ab 249 €</p>
         <p><span className="font-semibold text-white">Wichtig:</span> Werbebudget ist nicht enthalten und wird separat direkt bei Google oder der jeweiligen Werbeplattform eingesetzt.</p>
         <p>Google Ads wird bei STRUKTIVA nicht isoliert, sondern mit Landingpage, Angebotsstruktur und Kontaktführung verbunden.</p>
       </ServiceSection>
@@ -3271,7 +3271,7 @@ function BewertungsQrCodePage() {
                   'Einbau auf Website oder Landingpage',
                 ].map((item) => (
                   <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
-                    <span className="font-semibold text-[#D8B45A]">âœ“</span> {item}
+                    <span className="font-semibold text-[#D8B45A]">✓</span> {item}
                   </div>
                 ))}
               </div>
@@ -3315,7 +3315,7 @@ function BewertungsQrCodePage() {
           <Reveal>
             <section className="rounded-[1.8rem] border border-[#D8B45A]/28 bg-white/[0.05] p-6 shadow-premium md:p-7">
               <h2 className="text-2xl font-semibold text-white">Startpreis</h2>
-              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 149 € inkl. gesetzlicher Mehrwertsteuer</p>
+              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 49 € inkl. gesetzlicher Mehrwertsteuer</p>
               <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
                 Ideal als einzelnes Mini-Angebot oder als Teil des STRUKTIVA Sichtbarkeitspakets.
               </p>
@@ -3381,11 +3381,11 @@ function DigitaleOrdnungssystemePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Preisorientierung</p>
             <div className="mt-3 grid gap-2 md:grid-cols-2">
               {[
-                'Digitale Ordnungssysteme ab 899 €',
-                'Tagesabschluss-System ab 699 €',
-                'Kassenstruktur-System ab 799 €',
-                'Monatsübersicht / Export-System ab 699 €',
-                'Steuerberaterfreundliche Erfassungsstruktur ab 899 €',
+                'Digitale Ordnungssysteme ab 799 €',
+                'Tagesabschluss-System ab 599 €',
+                'Kassenstruktur-System ab 699 €',
+                'Monatsübersicht / Export-System ab 599 €',
+                'Steuerberaterfreundliche Erfassungsstruktur ab 799 €',
               ].map((item) => (
                 <p key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[#D7DCE5]">
                   {item}
@@ -3494,21 +3494,21 @@ const websiteFormats = [
 ]
 
 const websiteFormatsWithPrices = [
-  { title: 'Unternehmenswebsite', price: 'ab 599 €', text: 'Für kleine Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.' },
-  { title: 'Landingpage', price: 'ab 299 €', text: 'Für einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage geführt werden sollen.' },
-  { title: 'Onepager', price: 'ab 349 €', text: 'Eine kompakte Website auf einer Seite – ideal für klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.' },
-  { title: 'Mehrseitige Website', price: 'ab 899 €', text: 'Für Unternehmen mit mehreren Leistungen, Referenzen, Team, Preisen, Kontaktbereich und ausführlicher Struktur.' },
-  { title: 'Branchenwebsite', price: 'ab 749 €', text: 'Websites speziell für Handwerk, Beauty, Friseur, Kosmetik, Beratung, Dienstleistung oder lokale Betriebe.' },
-  { title: 'Portfolio-Website', price: 'ab 499 €', text: 'Für Selbstständige, Kreative, Berater oder Dienstleister, die Arbeiten, Projekte oder Referenzen hochwertig präsentieren möchten.' },
-  { title: 'Angebotsseite', price: 'ab 249 €', text: 'Für einzelne Leistungen oder Pakete, die klar erklärt und verkaufsstark dargestellt werden sollen.' },
-  { title: 'Vertrauensseite', price: 'ab 299 €', text: 'Für Unternehmen, die Bewertungen, Referenzen, Vorher-Nachher-Beispiele oder Qualität stärker sichtbar machen möchten.' },
-  { title: 'Termin- und Kontaktwebsite', price: 'ab 399 €', text: 'Für Betriebe, bei denen schnelle Kontaktaufnahme, WhatsApp, Telefon, Buchungsanfrage oder Terminwunsch im Mittelpunkt stehen.' },
-  { title: 'Website mit Blog oder Ratgeberbereich', price: 'ab 999 €', text: 'Für Unternehmen, die langfristig über Google gefunden werden möchten und regelmäßig Inhalte veröffentlichen wollen.' },
-  { title: 'Website mit Newsletter-Einbindung', price: 'ab 699 €', text: 'Für Unternehmen, die Interessenten sammeln, Kunden binden oder Angebote regelmäßig kommunizieren möchten.' },
-  { title: 'Website mit QR-Code-Anbindung', price: 'ab 449 €', text: 'Für Flyer, Visitenkarten, Schaufenster, Bewertungen oder Aktionen, die direkt auf passende Seiten führen sollen.' },
-  { title: 'Demo-Website', price: 'ab 249 €', text: 'Als Vorschau oder Konzeptseite, damit Kunden vorab sehen können, wie ihr digitaler Auftritt wirken könnte.' },
-  { title: 'Website-Relaunch', price: 'ab 499 €', text: 'Für bestehende Webseiten, die moderner, klarer, schneller und professioneller aufgebaut werden sollen.' },
-  { title: 'Premium-Webauftritt', price: 'ab 1.499 €', text: 'Für Unternehmen, die einen hochwertigen digitalen Markenauftritt mit starker Optik, klarer Struktur und überzeugender Kundenführung wünschen.' },
+  { title: 'Unternehmenswebsite', price: 'ab 499 €', text: 'Für kleine Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.' },
+  { title: 'Landingpage', price: 'ab 199 €', text: 'Für einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage geführt werden sollen.' },
+  { title: 'Onepager', price: 'ab 249 €', text: 'Eine kompakte Website auf einer Seite – ideal für klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.' },
+  { title: 'Mehrseitige Website', price: 'ab 799 €', text: 'Für Unternehmen mit mehreren Leistungen, Referenzen, Team, Preisen, Kontaktbereich und ausführlicher Struktur.' },
+  { title: 'Branchenwebsite', price: 'ab 649 €', text: 'Websites speziell für Handwerk, Beauty, Friseur, Kosmetik, Beratung, Dienstleistung oder lokale Betriebe.' },
+  { title: 'Portfolio-Website', price: 'ab 399 €', text: 'Für Selbstständige, Kreative, Berater oder Dienstleister, die Arbeiten, Projekte oder Referenzen hochwertig präsentieren möchten.' },
+  { title: 'Angebotsseite', price: 'ab 149 €', text: 'Für einzelne Leistungen oder Pakete, die klar erklärt und verkaufsstark dargestellt werden sollen.' },
+  { title: 'Vertrauensseite', price: 'ab 199 €', text: 'Für Unternehmen, die Bewertungen, Referenzen, Vorher-Nachher-Beispiele oder Qualität stärker sichtbar machen möchten.' },
+  { title: 'Termin- und Kontaktwebsite', price: 'ab 299 €', text: 'Für Betriebe, bei denen schnelle Kontaktaufnahme, WhatsApp, Telefon, Buchungsanfrage oder Terminwunsch im Mittelpunkt stehen.' },
+  { title: 'Website mit Blog oder Ratgeberbereich', price: 'ab 899 €', text: 'Für Unternehmen, die langfristig über Google gefunden werden möchten und regelmäßig Inhalte veröffentlichen wollen.' },
+  { title: 'Website mit Newsletter-Einbindung', price: 'ab 599 €', text: 'Für Unternehmen, die Interessenten sammeln, Kunden binden oder Angebote regelmäßig kommunizieren möchten.' },
+  { title: 'Website mit QR-Code-Anbindung', price: 'ab 349 €', text: 'Für Flyer, Visitenkarten, Schaufenster, Bewertungen oder Aktionen, die direkt auf passende Seiten führen sollen.' },
+  { title: 'Demo-Website', price: 'ab 149 €', text: 'Als Vorschau oder Konzeptseite, damit Kunden vorab sehen können, wie ihr digitaler Auftritt wirken könnte.' },
+  { title: 'Website-Relaunch', price: 'ab 399 €', text: 'Für bestehende Webseiten, die moderner, klarer, schneller und professioneller aufgebaut werden sollen.' },
+  { title: 'Premium-Webauftritt', price: 'ab 1.399 €', text: 'Für Unternehmen, die einen hochwertigen digitalen Markenauftritt mit starker Optik, klarer Struktur und überzeugender Kundenführung wünschen.' },
 ]
 
 function WebsiteFuerKleineUnternehmenPage() {
@@ -3578,48 +3578,48 @@ function WebsiteFuerKleineUnternehmenPage() {
 
 const offerPriceInfo = {
   '/website-fuer-kleine-unternehmen': {
-    main: 'ab 599 €',
-    extras: ['Onepager ab 349 €', 'Mehrseitige Website ab 899 €', 'Website-Relaunch ab 499 €'],
+    main: 'ab 499 €',
+    extras: ['Onepager ab 249 €', 'Mehrseitige Website ab 799 €', 'Website-Relaunch ab 399 €'],
   },
   '/landingpage-erstellen-lassen': {
-    main: 'ab 299 €',
-    extras: ['Angebotsseite ab 249 €', 'Vertrauensseite ab 299 €'],
+    main: 'ab 199 €',
+    extras: ['Angebotsseite ab 149 €', 'Vertrauensseite ab 199 €'],
   },
   '/google-sichtbarkeit-kleine-unternehmen': {
-    main: 'ab 349 €',
-    extras: ['Google-Unternehmensprofil Einrichtung ab 249 €', 'Lokale Sichtbarkeits-Grundstruktur ab 349 €', 'Website + Google-Grundstruktur ab 699 €'],
+    main: 'ab 249 €',
+    extras: ['Google-Unternehmensprofil Einrichtung ab 149 €', 'Lokale Sichtbarkeits-Grundstruktur ab 249 €', 'Website + Google-Grundstruktur ab 599 €'],
   },
   '/digitale-kundenfuehrung': {
-    main: 'ab 299 €',
-    extras: ['Kontaktformular-Integration ab 149 €', 'WhatsApp-Kontaktstruktur ab 149 €'],
+    main: 'ab 199 €',
+    extras: ['Kontaktformular-Integration ab 49 €', 'WhatsApp-Kontaktstruktur ab 49 €'],
   },
   '/whatsapp-kontaktstruktur': {
-    main: 'ab 149 €',
-    extras: ['Kundenführungsstruktur ab 299 €'],
+    main: 'ab 49 €',
+    extras: ['Kundenführungsstruktur ab 199 €'],
   },
   '/social-media-struktur': {
-    main: 'ab 249 €',
-    extras: ['Content-Grundstruktur für kleine Unternehmen ab 299 €', 'Pinterest-/Instagram-Startstruktur ab 249 €'],
+    main: 'ab 149 €',
+    extras: ['Content-Grundstruktur für kleine Unternehmen ab 199 €', 'Pinterest-/Instagram-Startstruktur ab 149 €'],
   },
   '/newsletter-einbindung': {
-    main: 'ab 199 €',
-    extras: ['Newsletter-Grundstruktur ab 299 €'],
+    main: 'ab 99 €',
+    extras: ['Newsletter-Grundstruktur ab 199 €'],
   },
   '/unternehmens-apps': {
-    main: 'ab 999 €',
-    extras: ['App-Konzept / Demo-App ab 499 €', 'Betriebs-Dashboard ab 799 €', 'Kundenverwaltungs-System ab 899 €', 'Termin-/Planungsübersicht ab 699 €', 'Digitale Kundenkartei ab 799 €'],
+    main: 'ab 899 €',
+    extras: ['App-Konzept / Demo-App ab 399 €', 'Betriebs-Dashboard ab 699 €', 'Kundenverwaltungs-System ab 799 €', 'Termin-/Planungsübersicht ab 599 €', 'Digitale Kundenkartei ab 699 €'],
   },
   '/betriebs-dashboards': {
-    main: 'ab 799 €',
-    extras: ['Kundenverwaltungs-System ab 899 €', 'Termin-/Planungsübersicht ab 699 €'],
+    main: 'ab 699 €',
+    extras: ['Kundenverwaltungs-System ab 799 €', 'Termin-/Planungsübersicht ab 599 €'],
   },
   '/angebotsarchitektur': {
-    main: 'ab 299 €',
-    extras: ['Digitale Strukturberatung ab 149 €'],
+    main: 'ab 199 €',
+    extras: ['Digitale Strukturberatung ab 49 €'],
   },
   '/digitale-unternehmensstruktur': {
-    main: 'ab 499 €',
-    extras: ['Digitale Strukturberatung ab 149 €', 'Digitale Ersteinschätzung kostenlos'],
+    main: 'ab 399 €',
+    extras: ['Digitale Strukturberatung ab 49 €', 'Digitale Ersteinschätzung kostenlos'],
   },
 }
 
@@ -3669,18 +3669,18 @@ function OfferDetailPage({ title, intro, points, pathname }) {
 
 function LeistungenPage() {
   const allLeistungPrices = {
-    'Website-Erstellung': 'ab 599 €',
-    Landingpages: 'ab 299 €',
-    'Google-Sichtbarkeit': 'ab 349 €',
-    'Digitale Kundenführung': 'ab 299 €',
-    'WhatsApp-Kontaktstruktur': 'ab 149 €',
-    'Social-Media-Struktur': 'ab 249 €',
-    'Newsletter-Einbindung': 'ab 199 €',
-    'Unternehmens-Apps': 'ab 999 €',
-    'Betriebs-Dashboards': 'ab 799 €',
-    'Digitale Ordnungssysteme': 'ab 899 €',
-    Angebotsarchitektur: 'ab 299 €',
-    'Beratung & Ersteinschätzung': 'ab 149 €',
+    'Website-Erstellung': 'ab 499 €',
+    Landingpages: 'ab 199 €',
+    'Google-Sichtbarkeit': 'ab 249 €',
+    'Digitale Kundenführung': 'ab 199 €',
+    'WhatsApp-Kontaktstruktur': 'ab 49 €',
+    'Social-Media-Struktur': 'ab 149 €',
+    'Newsletter-Einbindung': 'ab 99 €',
+    'Unternehmens-Apps': 'ab 899 €',
+    'Betriebs-Dashboards': 'ab 699 €',
+    'Digitale Ordnungssysteme': 'ab 799 €',
+    Angebotsarchitektur: 'ab 199 €',
+    'Beratung & Ersteinschätzung': 'ab 49 €',
   }
 
   const allLeistungen = [
