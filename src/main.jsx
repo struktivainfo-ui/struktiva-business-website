@@ -4148,21 +4148,27 @@ function ContactPage() {
           <figure className="rounded-2xl border border-[#D8B45A]/30 bg-white/[0.03] p-3">
             <div className="flex items-center gap-3">
               <div className="h-24 w-24 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
-                <img
-                  src={contactDetails.foundersImage}
-                  alt="Sven Matzke"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover object-[32%_18%]"
+                <div
+                  role="img"
+                  aria-label="Sven Matzke"
+                  className="h-full w-full bg-cover bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${contactDetails.foundersImage})`,
+                    backgroundSize: '235%',
+                    backgroundPosition: '22% 20%',
+                  }}
                 />
               </div>
               <div className="h-24 w-24 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
-                <img
-                  src={contactDetails.foundersImage}
-                  alt="Jessica Wacker"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover object-[68%_18%]"
+                <div
+                  role="img"
+                  aria-label="Jessica Wacker"
+                  className="h-full w-full bg-cover bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${contactDetails.foundersImage})`,
+                    backgroundSize: '235%',
+                    backgroundPosition: '80% 20%',
+                  }}
                 />
               </div>
             </div>
