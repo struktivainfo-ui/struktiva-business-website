@@ -49,6 +49,7 @@ const siteLinks = {
   demoDienstleister: '/demo-dienstleister',
   landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
   bewertungsQrCode: '/bewertungs-qr-code',
+  digitaleSoforthilfe: '/#digitale-soforthilfe',
   digitaleOrdnungssysteme: '/digitale-ordnungssysteme',
   websiteFuerKleineUnternehmen: '/website-fuer-kleine-unternehmen',
   landingpageErstellenLassen: '/landingpage-erstellen-lassen',
@@ -272,6 +273,7 @@ const coreServices = [
   [Target, 'Landingpages', 'Gezielte Angebotsseiten, die ein Angebot verständlich erklären und Besucher aktiv zur Anfrage führen.'],
   [Smartphone, 'Digitale Unternehmensstruktur', 'WhatsApp-Kontakt, Google-Struktur, Social-Media-Logik und Angebotsarchitektur werden sinnvoll in ein Gesamtsystem eingebunden.'],
   [Megaphone, 'Kundengewinnung', 'Google Ads und Landingpages werden strategisch verbunden, damit aus Sichtbarkeit qualifizierte Anfragen entstehen.'],
+  [Sparkles, 'Digitale Soforthilfe', 'Schnelle Unterstützung bei Website-Anpassungen, Texten, Landingpages, Google-Beiträgen, Social-Media-Inhalten, Angebotsseiten und digitalen Kleinkorrekturen.'],
   [ClipboardList, 'Digitale Ordnungssysteme', 'Einfache digitale Erfassungssysteme für Tagesabschluss, Kassenstruktur, Monatsübersicht und steuerberaterfreundliche Abläufe.'],
   [QrCode, 'Google-Bewertungssystem', 'Zufriedene Kunden direkt zur Bewertung führen. Mit QR-Code, Bewertungslink und klarer Anleitung für mehr Vertrauen bei Google.'],
 ]
@@ -1187,6 +1189,7 @@ function ServicesSection() {
     Landingpages: siteLinks.landingpagesPage,
     'Unternehmens-Apps': siteLinks.appsPage,
     'Google Ads': siteLinks.googleAdsPage,
+    'Digitale Soforthilfe': siteLinks.digitaleSoforthilfe,
     'Digitale Ordnungssysteme': siteLinks.digitaleOrdnungssysteme,
     'Google-Bewertungssystem': siteLinks.bewertungsQrCode,
   }
@@ -2355,6 +2358,7 @@ function ServicesSectionPremium() {
     Landingpages: siteLinks.landingpagesPage,
     'Unternehmens-Apps': siteLinks.appsPage,
     'Google Ads': siteLinks.googleAdsPage,
+    'Digitale Soforthilfe': siteLinks.digitaleSoforthilfe,
     'Digitale Ordnungssysteme': siteLinks.digitaleOrdnungssysteme,
     'Google-Bewertungssystem': siteLinks.bewertungsQrCode,
   }
@@ -2413,6 +2417,87 @@ function ServicesSectionPremium() {
           ))}
         </motion.div>
 
+      </div>
+    </section>
+  )
+}
+
+function DigitaleSoforthilfeSection() {
+  const tasks = [
+    'Webseiten-Anpassungen',
+    'schnelle Landingpages',
+    'Angebots- und Verkaufstexte',
+    'Google-Unternehmensprofil-Texte',
+    'Social-Media-Beiträge',
+    'Flyer- und Aktionstexte',
+    'Bewertungs- und WhatsApp-Texte',
+    'technische Kleinkorrekturen an bestehenden Seiten',
+    'schnelle Strukturierung von digitalen Unterlagen',
+  ]
+
+  const paketCards = [
+    {
+      title: 'Soforthilfe S',
+      price: 'ab 99 € inklusive Mehrwertsteuer',
+      text: 'Für kleine digitale Aufgaben wie kurze Website-Texte, Google-Beiträge, WhatsApp-Texte, Social-Media-Texte oder kleinere Textkorrekturen.',
+    },
+    {
+      title: 'Soforthilfe M',
+      price: 'ab 249 € inklusive Mehrwertsteuer',
+      text: 'Für mittlere Aufgaben wie Angebotsseiten, Flyertexte, mehrere Social-Media-Beiträge, Google-Profil-Texte oder kleinere Landingpage-Strukturen.',
+    },
+    {
+      title: 'Soforthilfe L',
+      price: 'ab 449 € inklusive Mehrwertsteuer',
+      text: 'Für größere kurzfristige Aufgaben wie vollständige Landingpages, Aktionsseiten, Verkaufsseiten, Website-Bereichsüberarbeitung oder Mini-Kampagnen.',
+    },
+  ]
+
+  return (
+    <section id="digitale-soforthilfe" className="scroll-mt-28 px-5 pb-18 lg:px-8 lg:pb-24">
+      <div className="mx-auto max-w-7xl rounded-[2.2rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8 lg:p-10">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Digitale Soforthilfe"
+            title="Wenn es schnell digital funktionieren muss"
+            text="Nicht jede digitale Aufgabe braucht ein großes Projekt. Manchmal muss eine Website kurzfristig angepasst werden, ein Angebot schnell raus, eine Aktion online sichtbar werden oder ein professioneller Text erstellt werden."
+            centered={false}
+          />
+        </Reveal>
+
+        <Reveal className="mt-6">
+          <p className="max-w-4xl text-base leading-8 text-[#D7DCE5]">
+            STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Dienstleister mit digitaler Soforthilfe für schnelle, saubere und strukturierte Lösungen.
+          </p>
+        </Reveal>
+
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-8 grid gap-3 md:grid-cols-2">
+          {tasks.map((task) => (
+            <motion.div key={task} variants={fadeUp} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }} className="rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-[#D7DCE5]">
+              {task}
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-9 grid gap-5 lg:grid-cols-3">
+          {paketCards.map((card) => (
+            <motion.article key={card.title} variants={fadeUp} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium">
+              <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
+              <p className="mt-3 text-base font-semibold text-[#D8B45A]">{card.price}</p>
+              <p className="mt-4 text-sm leading-7 text-[#D7DCE5]">{card.text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        <Reveal className="mt-8">
+          <a
+            href={siteLinks.contact}
+            className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.16)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
+          >
+            Jetzt digitale Soforthilfe anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </Reveal>
       </div>
     </section>
   )
@@ -2657,6 +2742,7 @@ function HomePage() {
       <TrustSection />
       <ProblemSection />
       <ServicesSectionPremium />
+      <DigitaleSoforthilfeSection />
       <WebsiteFocusSection />
       <AppsSection />
       <GoogleAdsSection />
