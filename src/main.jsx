@@ -1729,14 +1729,14 @@ function PricingSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 199 € zzgl. gesetzlicher Mehrwertsteuer</p>
+            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 199 € inkl. gesetzlicher Mehrwertsteuer</p>
           </div>
         </Reveal>
 
           <Reveal className="mt-8">
             <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
               <p>Aktuelle Einstiegspreise für kleine Unternehmen und Selbstständige.</p>
-              <p className="mt-2">Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.</p>
+              <p className="mt-2">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
               <p className="mt-2">Individuelle digitale Systeme werden nach Umfang, Betrieb und benötigten Funktionen kalkuliert.</p>
               <a
                 href={siteLinks.landingpageDigitaleStruktur}
@@ -2766,7 +2766,7 @@ function LandingpageDigitaleStrukturPage() {
             <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 749 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
             <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
             <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
-            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.</p>
+            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
           </ServiceSection>
 
           <ServiceSection title="So läuft die Zusammenarbeit ab.">
@@ -2956,7 +2956,7 @@ function LandingpageDigitaleStrukturPageV2() {
             <p><span className="font-semibold text-[#D8B45A]">Kundengewinnung – ab 749 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
             <p><span className="font-semibold text-[#D8B45A]">Unternehmensarchitektur – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
             <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 149 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
-            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.</p>
+            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
           </ServiceSection>
 
           <ServiceSection title="So läuft die Zusammenarbeit ab.">
@@ -3315,7 +3315,7 @@ function BewertungsQrCodePage() {
           <Reveal>
             <section className="rounded-[1.8rem] border border-[#D8B45A]/28 bg-white/[0.05] p-6 shadow-premium md:p-7">
               <h2 className="text-2xl font-semibold text-white">Startpreis</h2>
-              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 149 € zzgl. gesetzlicher Mehrwertsteuer</p>
+              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 149 € inkl. gesetzlicher Mehrwertsteuer</p>
               <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
                 Ideal als einzelnes Mini-Angebot oder als Teil des STRUKTIVA Sichtbarkeitspakets.
               </p>
@@ -3393,7 +3393,7 @@ function DigitaleOrdnungssystemePage() {
               ))}
             </div>
             <p className="mt-3 text-sm leading-7 text-[#94A3B8]">
-              Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.
+              Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
             </p>
             <p className="mt-2 text-sm leading-7 text-[#94A3B8]">
               Individuelle digitale Systeme werden nach Umfang, Betrieb und benötigten Funktionen kalkuliert.
@@ -3546,7 +3546,7 @@ function WebsiteFuerKleineUnternehmenPage() {
             {websiteFormatsWithPrices.map((item) => (
               <article key={item.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
                 <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                <p className="mt-1 text-sm font-semibold text-[#D8B45A]">{item.price} zzgl. gesetzlicher Mehrwertsteuer</p>
+                <p className="mt-1 text-sm font-semibold text-[#D8B45A]">{item.price} inkl. gesetzlicher Mehrwertsteuer</p>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{item.text}</p>
               </article>
             ))}
@@ -3560,7 +3560,7 @@ function WebsiteFuerKleineUnternehmenPage() {
           </p>
 
           <p className="mt-2 text-sm leading-7 text-[#94A3B8]">
-            Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.
+            Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
           </p>
 
           <a
@@ -3641,7 +3641,7 @@ function OfferDetailPage({ title, intro, points, pathname }) {
           {priceInfo && (
             <div className="mt-7 rounded-2xl border border-[#D8B45A]/24 bg-white/[0.04] p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Preisorientierung</p>
-              <p className="mt-2 text-lg font-semibold text-[#D8B45A]">{priceInfo.main} zzgl. gesetzlicher Mehrwertsteuer</p>
+              <p className="mt-2 text-lg font-semibold text-[#D8B45A]">{priceInfo.main} inkl. gesetzlicher Mehrwertsteuer</p>
               {priceInfo.extras && (
                 <div className="mt-3 grid gap-2 md:grid-cols-2">
                   {priceInfo.extras.map((item) => (
@@ -3650,7 +3650,7 @@ function OfferDetailPage({ title, intro, points, pathname }) {
                 </div>
               )}
               <p className="mt-3 text-sm leading-7 text-[#94A3B8]">
-                Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.
+                Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
               </p>
             </div>
           )}
@@ -3715,14 +3715,14 @@ function LeistungenPage() {
               <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
                 <h2 className="text-base font-semibold text-white">{title}</h2>
                 {allLeistungPrices[title] && (
-                  <p className="mt-1 text-sm font-semibold text-[#D8B45A]">{allLeistungPrices[title]} zzgl. gesetzlicher Mehrwertsteuer</p>
+                  <p className="mt-1 text-sm font-semibold text-[#D8B45A]">{allLeistungPrices[title]} inkl. gesetzlicher Mehrwertsteuer</p>
                 )}
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
               </article>
             ))}
           </div>
           <p className="mt-6 text-sm leading-7 text-[#94A3B8]">
-            Alle Preise verstehen sich zzgl. gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern, gewünschten Zusatzsystemen und technischer Umsetzung.
+            Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
           </p>
           <a
             href={siteLinks.contact}
