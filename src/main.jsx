@@ -101,6 +101,7 @@ const contactDetails = {
   whatsappLabel: '07051 8162292',
   whatsappHref: 'https://wa.me/4970518162292',
   linkedinHref: 'https://www.linkedin.com/in/sven-matzke-960b63411',
+  foundersImage: '/images/founders-sven-jessica.png',
   googleReviewHref: 'https://g.page/r/CZvwYJbOSShgEBM/review',
   addressLine1: 'Ostlandstraße 3',
   addressLine2: '75365 Calw',
@@ -4143,10 +4144,40 @@ function ContactPage() {
       </LegalSection>
 
       <LegalSection title="Persönlich geführt">
-        <p>
-          STRUKTIVA Unternehmensarchitektur wird von Jessica Wacker und Sven Matzke geführt. Gemeinsam entwickeln wir digitale
-          Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister – klar, verständlich und professionell aufgebaut.
-        </p>
+        <div className="grid gap-5 md:grid-cols-[auto,1fr] md:items-center">
+          <figure className="rounded-2xl border border-[#D8B45A]/30 bg-white/[0.03] p-3">
+            <div className="flex items-center gap-3">
+              <div className="h-24 w-24 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
+                <img
+                  src={contactDetails.foundersImage}
+                  alt="Sven Matzke"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover object-[32%_18%]"
+                />
+              </div>
+              <div className="h-24 w-24 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
+                <img
+                  src={contactDetails.foundersImage}
+                  alt="Jessica Wacker"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover object-[68%_18%]"
+                />
+              </div>
+            </div>
+            <figcaption className="mt-3 text-center">
+              <p className="text-sm font-semibold text-white">Sven Matzke & Jessica Wacker</p>
+              <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-[#D8B45A]/85">Gründer von STRUKTIVA Unternehmensarchitektur</p>
+            </figcaption>
+          </figure>
+          <div className="space-y-2">
+            <p className="text-base font-semibold text-white">STRUKTIVA Unternehmensarchitektur wird von Jessica Wacker und Sven Matzke geführt.</p>
+            <p>
+              Gemeinsam entwickeln wir digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister – mit klaren Websites, Google-Sichtbarkeit, Kontaktwegen und digitalen Systemen.
+            </p>
+          </div>
+        </div>
       </LegalSection>
 
       <LegalSection title="Kontaktmöglichkeiten">
