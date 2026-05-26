@@ -563,7 +563,7 @@ function useDocumentTitleSafe(pathname) {
       '/widerruf': 'Widerruf - STRUKTIVA Unternehmensarchitektur',
       '/kontakt': 'Kontakt - STRUKTIVA Unternehmensarchitektur',
       '/preise': 'Preise - STRUKTIVA Unternehmensarchitektur',
-      '/demos': 'Demos - STRUKTIVA Unternehmensarchitektur',
+      '/demos': 'Demo-Beispiele für Websites & digitale Strukturen – STRUKTIVA',
     }
 
     const descriptions = {
@@ -584,7 +584,7 @@ function useDocumentTitleSafe(pathname) {
       '/preise':
         'Einstiegspreise fuer kleine Unternehmen: Sichtbarkeit, Kundengewinnung und Unternehmensarchitektur mit transparenter, strukturierter Umsetzung.',
       '/demos':
-        'Drei Demo-Modelle zeigen, wie digitale Unternehmensstruktur je nach Branche klar, professionell und anfrageorientiert aufgebaut werden kann.',
+        'STRUKTIVA zeigt Demo-Beispiele für Handwerk, Beauty und Dienstleister – mit Website, Google-Sichtbarkeit, Kontaktwegen und klarer digitaler Kundenführung.',
       '/wissen':
         'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen Abläufen für kleine Unternehmen.',
       '/wissen/warum-eine-schoene-website-keine-kunden-bringt':
@@ -4188,6 +4188,9 @@ function DemoLead({ title, subtitle, image, imageAlt, theme }) {
           <p className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] ${theme.badge}`}>
             Demo-Beispiel – keine echte Kundenseite
           </p>
+          <p className={`mt-3 max-w-2xl text-sm leading-7 ${theme.text}`}>
+            Demo- und Musterprojekt von STRUKTIVA. Dieses Beispiel zeigt, wie eine digitale Struktur für diese Branche aussehen kann.
+          </p>
           <h1 className={`mt-5 text-3xl font-semibold leading-tight md:text-5xl ${theme.title}`}>{title}</h1>
           <p className={`mt-4 max-w-2xl text-base leading-8 md:text-lg ${theme.text}`}>{subtitle}</p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -4252,7 +4255,14 @@ function DemoOverviewSection() {
   const cards = [
     {
       title: 'Handwerker-Modell',
-      text: 'Solide, direkt und vertrauensstark – für Betriebe, die Leistungen klar zeigen und Projektanfragen gewinnen wollen.',
+      text: 'Für Handwerksbetriebe, die ihre Leistungen klar zeigen, Vertrauen aufbauen und Projektanfragen einfacher erhalten möchten.',
+      points: [
+        'klare Leistungsübersicht',
+        'direkte Anfrageführung',
+        'Google-Sichtbarkeit',
+        'Telefon, WhatsApp oder Kontaktformular',
+        'Vertrauenselemente für neue Kunden',
+      ],
       href: siteLinks.demoHandwerker,
       image: demoImageConfigs.handwerker.hero,
       alt: 'Handwerker auf einer Baustelle',
@@ -4262,7 +4272,14 @@ function DemoOverviewSection() {
     },
     {
       title: 'Beauty-Modell',
-      text: 'Elegant, emotional und hochwertig – für Studios, die Atmosphäre, Vertrauen und Buchungen verbinden wollen.',
+      text: 'Für Kosmetikstudios, Friseure, Beauty-Dienstleister und lokale Studios, die hochwertig wirken und Terminwege klar darstellen möchten.',
+      points: [
+        'elegante Angebotsstruktur',
+        'Behandlungs- und Leistungsbereiche',
+        'Termin- und Kontaktführung',
+        'Bilder, Atmosphäre und Vertrauen',
+        'mobile Optimierung',
+      ],
       href: siteLinks.demoBeauty,
       image: demoImageConfigs.beauty.hero,
       alt: 'Beauty-Behandlung in einem Studio',
@@ -4272,7 +4289,14 @@ function DemoOverviewSection() {
     },
     {
       title: 'Dienstleister-Modell',
-      text: 'Klar, seriös und strukturiert – für Selbstständige und lokale Dienstleister, die ihr Angebot professionell erklären möchten.',
+      text: 'Für Selbstständige, Berater und lokale Dienstleister, die ihr Angebot verständlich erklären und professionell auftreten möchten.',
+      points: [
+        'klare Angebotsarchitektur',
+        'seriöse Außenwirkung',
+        'Kontakt- und Anfrageführung',
+        'Vertrauensaufbau',
+        'strukturierte Leistungsseiten',
+      ],
       href: siteLinks.demoDienstleister,
       image: demoImageConfigs.dienstleister.hero,
       alt: 'Beratungsgespräch am Tisch',
@@ -4287,27 +4311,39 @@ function DemoOverviewSection() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeader
-            eyebrow="Live-Demos"
-            title="Drei Branchen. Drei Modelle. Eine klare Struktur."
-            text="Diese Beispielseiten zeigen, wie unterschiedlich ein professioneller digitaler Auftritt aussehen kann – je nach Branche, Zielgruppe und Wirkung."
+            eyebrow="Demo-Bereich"
+            title="Demo-Beispiele für verschiedene Branchen"
+            text="So kann digitale Struktur für unterschiedliche Unternehmen aussehen – vom Handwerk über Beauty bis zu lokalen Dienstleistern."
           />
+        </Reveal>
+        <Reveal className="mt-5">
+          <p className="max-w-4xl rounded-2xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
+            Die gezeigten Beispiele sind Demo- und Musterprojekte. Sie zeigen mögliche digitale Strukturen und dienen als Orientierung.
+          </p>
         </Reveal>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 lg:grid-cols-3">
           {cards.map((card) => {
             const Icon = card.icon
             return (
-              <motion.a key={card.title} href={card.href} variants={fadeUp} transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }} className={`group overflow-hidden rounded-[1.9rem] border shadow-premium transition hover:-translate-y-1 ${card.tone}`}>
+              <motion.a key={card.title} href={card.href} variants={fadeUp} transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }} className={`group flex h-full flex-col overflow-hidden rounded-[1.9rem] border shadow-premium transition hover:-translate-y-1 ${card.tone}`}>
                 <div className="relative h-44 overflow-hidden">
                   <img src={card.image} alt={card.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
                   <p className="absolute left-4 top-4 rounded-full border border-white/35 bg-black/35 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">Demo-Beispiel</p>
                 </div>
-                <div className="p-6">
+                <div className="flex grow flex-col p-6">
                   <div className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ${card.accent}`}>
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 text-2xl font-semibold">{card.title}</h3>
                   <p className="mt-3 text-sm leading-7 opacity-90">{card.text}</p>
+                  <div className="mt-4 space-y-2">
+                    {card.points.map((point) => (
+                      <p key={point} className="rounded-xl border border-white/12 bg-white/[0.05] px-3 py-2 text-xs leading-6 opacity-95">
+                        {point}
+                      </p>
+                    ))}
+                  </div>
                   <span className={`mt-5 inline-flex items-center gap-2 text-sm font-semibold ${card.accent}`}>Demo ansehen<ArrowRight className="h-4 w-4" /></span>
                 </div>
               </motion.a>
