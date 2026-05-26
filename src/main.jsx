@@ -2226,7 +2226,7 @@ function Footer() {
         <div className="grid gap-8 px-6 py-7 text-sm text-[#D7DCE5] md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           <div>
             <p className="text-base font-semibold text-white">STRUKTIVA Unternehmensarchitektur</p>
-            <p className="mt-3">Jessica Wacker</p>
+            <p className="mt-3">Geführt von Jessica Wacker und Sven Matzke</p>
             <a href={`mailto:${contactDetails.email}`} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.email}</a>
             <a href={contactDetails.phoneHref} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.phoneLabel}</a>
             <a href={contactDetails.whatsappHref} className="mt-1 block transition hover:text-[#F2D98B]">WhatsApp Business</a>
@@ -4140,6 +4140,13 @@ function ContactPage() {
         <p>- kostenlose App-Ersteinschätzung</p>
         <p>- Unternehmens-App</p>
         <p>- monatliche Betreuung</p>
+      </LegalSection>
+
+      <LegalSection title="Persönlich geführt">
+        <p>
+          STRUKTIVA Unternehmensarchitektur wird von Jessica Wacker und Sven Matzke geführt. Gemeinsam entwickeln wir digitale
+          Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister – klar, verständlich und professionell aufgebaut.
+        </p>
       </LegalSection>
 
       <LegalSection title="Kontaktmöglichkeiten">
