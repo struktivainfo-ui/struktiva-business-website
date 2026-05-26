@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import {
   ArrowRight,
   BadgeCheck,
@@ -594,46 +594,6 @@ function Reveal({ children, className = '', delay = 0 }) {
       className={className}
     >
       {children}
-    </motion.div>
-  )
-}
-
-function SplashScreen({ onDone }) {
-  useEffect(() => {
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const hideTimer = window.setTimeout(onDone, reducedMotion ? 900 : 1400)
-    const safetyTimer = window.setTimeout(onDone, 2000)
-    return () => {
-      window.clearTimeout(hideTimer)
-      window.clearTimeout(safetyTimer)
-    }
-  }, [onDone])
-
-  return (
-    <motion.div
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 1.015 }}
-      transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
-      className="splash-screen fixed inset-0 z-[120] flex items-center justify-center px-4"
-      aria-label="STRUKTIVA Splashscreen"
-    >
-      <div className="splash-glow" />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.96, y: 8 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-[1] text-center"
-      >
-        <img
-          src="/struktiva-logo.jpeg"
-          alt="STRUKTIVA Unternehmensarchitektur Logo"
-          className="mx-auto h-20 w-20 rounded-full object-contain shadow-[0_0_32px_rgba(216,180,90,0.22)] md:h-24 md:w-24"
-        />
-        <p className="mt-5 text-base font-semibold tracking-[0.2em] text-white md:text-lg">Unternehmensarchitektur</p>
-        <div className="splash-line mx-auto mt-3 h-px w-40 max-w-[70vw]" />
-        <p className="mt-3 text-xs uppercase tracking-[0.16em] text-[#D7DCE5] md:text-[13px]">Digitale Systeme. Sichtbarkeit. Struktur.</p>
-      </motion.div>
     </motion.div>
   )
 }
@@ -4393,30 +4353,12 @@ function DemoDienstleisterPage() {
 
 function Page() {
   const pathname = useCurrentPath()
-  const [showSplash, setShowSplash] = useState(false)
   useDocumentTitleSafe(pathname)
   const wissenArticle = wissenArticles.find((article) => article.href === pathname)
   const homeSectionByPath = {
     '/preise': 'preise',
     '/demos': 'demos',
   }
-
-  useEffect(() => {
-    try {
-      if (window.innerWidth <= 768) {
-        window.sessionStorage.setItem('struktiva_splash_seen', '1')
-        setShowSplash(false)
-        return
-      }
-      const splashSeen = window.sessionStorage.getItem('struktiva_splash_seen')
-      if (!splashSeen) {
-        setShowSplash(true)
-        window.sessionStorage.setItem('struktiva_splash_seen', '1')
-      }
-    } catch {
-      setShowSplash(true)
-    }
-  }, [])
 
   useEffect(() => {
     const targetId = homeSectionByPath[pathname]
@@ -4480,9 +4422,6 @@ function Page() {
       {content}
       <Footer />
       <FloatingWhatsAppButton />
-      <AnimatePresence>
-        {showSplash && <SplashScreen onDone={() => setShowSplash(false)} />}
-      </AnimatePresence>
     </div>
   )
 }
