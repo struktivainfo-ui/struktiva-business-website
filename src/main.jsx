@@ -1212,13 +1212,14 @@ function ServicesSection() {
           variants={stagger}
           className="mt-12 grid gap-5 lg:grid-cols-2"
         >
-          {coreServices.map(([Icon, title, text]) => (
-            <motion.a
+          {coreServices.map(([Icon, title, text]) => {
+            const isSoforthilfe = title === 'Digitale Soforthilfe'
+            return (
+            <motion.div
               key={title}
-              href={serviceRoutes[title]}
               variants={fadeUp}
               transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-              className="service-card-3d group block cursor-pointer rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
+              className="service-card-3d group rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
             >
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
@@ -1226,15 +1227,27 @@ function ServicesSection() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold text-white">{title}</h3>
+                  {isSoforthilfe ? <p className="mt-2 text-sm font-medium text-[#F2D98B]">Wenn online schnell etwas funktionieren muss.</p> : null}
                   <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{text}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
-                    Mehr erfahren
-                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                  </span>
+                  {isSoforthilfe ? <p className="mt-4 text-sm font-semibold text-[#D8B45A]">ab 99 € inklusive Mehrwertsteuer</p> : null}
+                  {isSoforthilfe ? (
+                    <a
+                      href={siteLinks.contact}
+                      className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                    >
+                      Soforthilfe anfragen
+                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                    </a>
+                  ) : (
+                    <a href={serviceRoutes[title]} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                      Mehr erfahren
+                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                    </a>
+                  )}
                 </div>
               </div>
-            </motion.a>
-          ))}
+            </motion.div>
+          )})}
         </motion.div>
 
       </div>
@@ -2392,13 +2405,14 @@ function ServicesSectionPremium() {
         </Reveal>
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 lg:grid-cols-2">
-          {coreServices.map(([Icon, title, text]) => (
-            <motion.a
+          {coreServices.map(([Icon, title, text]) => {
+            const isSoforthilfe = title === 'Digitale Soforthilfe'
+            return (
+            <motion.div
               key={title}
-              href={serviceRoutes[title]}
               variants={fadeUp}
               transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-              className="service-card-3d group block cursor-pointer rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
+              className="service-card-3d group rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
             >
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
@@ -2406,15 +2420,27 @@ function ServicesSectionPremium() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold text-white">{title}</h3>
+                  {isSoforthilfe ? <p className="mt-2 text-sm font-medium text-[#F2D98B]">Wenn online schnell etwas funktionieren muss.</p> : null}
                   <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{text}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
-                    Mehr erfahren
-                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                  </span>
+                  {isSoforthilfe ? <p className="mt-4 text-sm font-semibold text-[#D8B45A]">ab 99 € inklusive Mehrwertsteuer</p> : null}
+                  {isSoforthilfe ? (
+                    <a
+                      href={siteLinks.contact}
+                      className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                    >
+                      Soforthilfe anfragen
+                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                    </a>
+                  ) : (
+                    <a href={serviceRoutes[title]} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                      Mehr erfahren
+                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                    </a>
+                  )}
                 </div>
               </div>
-            </motion.a>
-          ))}
+            </motion.div>
+          )})}
         </motion.div>
 
       </div>
