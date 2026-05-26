@@ -49,7 +49,7 @@ const siteLinks = {
   demoDienstleister: '/demo-dienstleister',
   landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
   bewertungsQrCode: '/bewertungs-qr-code',
-  digitaleSoforthilfe: '/#digitale-soforthilfe',
+  digitaleSoforthilfe: '/leistungen#digitale-soforthilfe',
   digitaleOrdnungssysteme: '/digitale-ordnungssysteme',
   websiteFuerKleineUnternehmen: '/website-fuer-kleine-unternehmen',
   landingpageErstellenLassen: '/landingpage-erstellen-lassen',
@@ -129,6 +129,7 @@ const leistungenDropdownItems = [
   ['Website & Landingpage', siteLinks.websiteFuerKleineUnternehmen],
   ['Google-Sichtbarkeit', siteLinks.googleSichtbarkeitKleineUnternehmen],
   ['Digitale Kundenführung', siteLinks.digitaleUnternehmensstruktur],
+  ['Digitale Soforthilfe', siteLinks.digitaleSoforthilfe],
   ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme],
   ['Unternehmens-Apps & Dashboards', siteLinks.unternehmensApps],
 ]
@@ -3640,7 +3641,7 @@ function LeistungenPage() {
     'Betriebs-Dashboards': 'ab 699 €',
     'Digitale Ordnungssysteme': 'ab 799 €',
     Angebotsarchitektur: 'ab 199 €',
-    'Beratung & Ersteinschätzung': 'ab 49 €',
+    'Beratung & Ersteinschätzung': 'Kostenlos',
   }
 
   const allLeistungen = [
@@ -3673,10 +3674,18 @@ function LeistungenPage() {
         <section className="mt-8 rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {allLeistungen.map(([title, text]) => (
-              <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+              <article
+                key={title}
+                id={title === 'Digitale Soforthilfe' ? 'digitale-soforthilfe' : undefined}
+                className="rounded-2xl border border-white/12 bg-white/[0.04] p-4"
+              >
                 <h2 className="text-base font-semibold text-white">{title}</h2>
                 {allLeistungPrices[title] && (
-                  <p className="mt-1 text-sm font-semibold text-[#D8B45A]">{allLeistungPrices[title]} inkl. gesetzlicher Mehrwertsteuer</p>
+                  <p className="mt-1 text-sm font-semibold text-[#D8B45A]">
+                    {allLeistungPrices[title] === 'Kostenlos'
+                      ? 'Kostenlos'
+                      : `${allLeistungPrices[title]} inklusive Mehrwertsteuer`}
+                  </p>
                 )}
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
               </article>
