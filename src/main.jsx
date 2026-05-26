@@ -40,6 +40,7 @@ const siteLinks = {
   googleAds: '/google-ads',
   process: '/#ablauf',
   contact: '/kontakt',
+  contactSection: '/#kontakt',
   webseitenPage: '/webseiten',
   landingpagesPage: '/landingpages',
   appsPage: '/apps',
@@ -49,7 +50,7 @@ const siteLinks = {
   demoDienstleister: '/demo-dienstleister',
   landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
   bewertungsQrCode: '/bewertungs-qr-code',
-  digitaleSoforthilfe: '/leistungen#digitale-soforthilfe',
+  digitaleSoforthilfe: '/#digitale-soforthilfe',
   digitaleOrdnungssysteme: '/digitale-ordnungssysteme',
   websiteFuerKleineUnternehmen: '/website-fuer-kleine-unternehmen',
   landingpageErstellenLassen: '/landingpage-erstellen-lassen',
@@ -326,7 +327,7 @@ const coreServices = [
     description: 'Schnelle Unterstützung bei Website-Anpassungen, Landingpages, Google-Texten, Social-Media-Beiträgen, WhatsApp- und Bewertungstexten sowie digitalen Kleinkorrekturen.',
     price: 'ab 99 € inklusive Mehrwertsteuer',
     ctaLabel: 'Soforthilfe anfragen',
-    href: siteLinks.contact,
+    href: siteLinks.contactSection,
   },
 ]
 
@@ -2340,9 +2341,10 @@ function ServicesSectionPremium() {
             return (
             <motion.div
               key={service.title}
+              id={service.title === 'Digitale Soforthilfe' ? 'digitale-soforthilfe' : undefined}
               variants={fadeUp}
               transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-              className="service-card-3d group rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
+              className="service-card-3d group scroll-mt-28 rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
             >
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
