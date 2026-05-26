@@ -50,7 +50,7 @@ const siteLinks = {
   demoDienstleister: '/demo-dienstleister',
   landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
   bewertungsQrCode: '/bewertungs-qr-code',
-  digitaleSoforthilfe: '/#digitale-soforthilfe',
+  digitaleSoforthilfe: '/digitale-soforthilfe',
   digitaleOrdnungssysteme: '/digitale-ordnungssysteme',
   websiteFuerKleineUnternehmen: '/website-fuer-kleine-unternehmen',
   landingpageErstellenLassen: '/landingpage-erstellen-lassen',
@@ -326,8 +326,8 @@ const coreServices = [
     subtitle: 'Wenn online schnell etwas funktionieren muss.',
     description: 'Schnelle Unterstützung bei Website-Anpassungen, Landingpages, Google-Texten, Social-Media-Beiträgen, WhatsApp- und Bewertungstexten sowie digitalen Kleinkorrekturen.',
     price: 'ab 99 € inklusive Mehrwertsteuer',
-    ctaLabel: 'Soforthilfe anfragen',
-    href: siteLinks.contactSection,
+    ctaLabel: 'Mehr zur Soforthilfe',
+    href: siteLinks.digitaleSoforthilfe,
   },
 ]
 
@@ -539,6 +539,7 @@ function useDocumentTitleSafe(pathname) {
       '/betriebs-dashboards': 'Betriebs-Dashboards - STRUKTIVA',
       '/angebotsarchitektur': 'Angebotsarchitektur - STRUKTIVA',
       '/digitale-unternehmensstruktur': 'Digitale Unternehmensstruktur - STRUKTIVA',
+      '/digitale-soforthilfe': 'Digitale Soforthilfe für kleine Unternehmen | STRUKTIVA',
       '/demo-handwerker': 'Demo Handwerker - STRUKTIVA Unternehmensarchitektur',
       '/demo-beauty': 'Demo Beauty & Kosmetik - STRUKTIVA Unternehmensarchitektur',
       '/demo-dienstleister': 'Demo Dienstleister - STRUKTIVA Unternehmensarchitektur',
@@ -561,6 +562,8 @@ function useDocumentTitleSafe(pathname) {
         'STRUKTIVA erstellt ein einfaches Google-Bewertungssystem mit QR-Code, Bewertungslink und Anleitung fuer lokale Unternehmen wie Salons, Handwerker, Kosmetikstudios und Dienstleister.',
       '/digitale-ordnungssysteme':
         'STRUKTIVA entwickelt digitale Ordnungssysteme fuer kleine Betriebe - mit Tagesabschluss, Kassenstruktur, Monatsuebersicht, Exportfunktionen und steuerberaterfreundlicher Vorbereitung.',
+      '/digitale-soforthilfe':
+        'Schnelle digitale Unterstützung für Website-Anpassungen, Landingpages, Google-Texte, Social-Media-Beiträge, WhatsApp- und Bewertungstexte. STRUKTIVA Digitale Soforthilfe ab 99 € inklusive Mehrwertsteuer.',
       '/website-fuer-kleine-unternehmen':
         'Moderne Website-Erstellung fuer kleine Unternehmen und Selbststaendige mit klarer Struktur und professioneller Kundenfuehrung.',
       '/landingpage-erstellen-lassen':
@@ -2338,13 +2341,27 @@ function ServicesSectionPremium() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 lg:grid-cols-2">
           {coreServices.map((service) => {
             const Icon = service.icon
+            const isSoforthilfeCard = service.title === 'Digitale Soforthilfe'
             return (
             <motion.div
               key={service.title}
-              id={service.title === 'Digitale Soforthilfe' ? 'digitale-soforthilfe' : undefined}
+              id={isSoforthilfeCard ? 'digitale-soforthilfe' : undefined}
               variants={fadeUp}
               transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-              className="service-card-3d group scroll-mt-28 rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
+              className={`service-card-3d group scroll-mt-28 rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7 ${isSoforthilfeCard ? 'cursor-pointer' : ''}`}
+              onClick={isSoforthilfeCard ? () => { window.location.href = service.href } : undefined}
+              onKeyDown={
+                isSoforthilfeCard
+                  ? (event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault()
+                        window.location.href = service.href
+                      }
+                    }
+                  : undefined
+              }
+              role={isSoforthilfeCard ? 'link' : undefined}
+              tabIndex={isSoforthilfeCard ? 0 : undefined}
             >
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
@@ -3296,6 +3313,146 @@ function BewertungsQrCodePage() {
             </section>
           </Reveal>
         </div>
+      </div>
+    </main>
+  )
+}
+
+function DigitaleSoforthilfePage() {
+  const soforthilfePakete = [
+    {
+      title: 'Soforthilfe S',
+      price: 'ab 99 € inklusive Mehrwertsteuer',
+      description: 'Für kleine digitale Aufgaben, die schnell und sauber erledigt werden sollen.',
+      items: [
+        'kurze Website-Texte',
+        'Google-Beiträge',
+        'WhatsApp-Texte',
+        'Social-Media-Texte',
+        'Bewertungstexte',
+        'kleinere Textkorrekturen',
+        'kleine Anpassungen an bestehenden Inhalten',
+      ],
+    },
+    {
+      title: 'Soforthilfe M',
+      price: 'ab 249 € inklusive Mehrwertsteuer',
+      description: 'Für mittlere digitale Aufgaben mit mehr Struktur, Textumfang oder mehreren Elementen.',
+      items: [
+        'Angebotsseiten',
+        'Flyertexte',
+        'mehrere Social-Media-Beiträge',
+        'Google-Profil-Texte',
+        'kleinere Landingpage-Strukturen',
+        'Aktionsseiten im kleinen Umfang',
+        'mehrere Kunden- oder WhatsApp-Nachrichten',
+      ],
+    },
+    {
+      title: 'Soforthilfe L',
+      price: 'ab 449 € inklusive Mehrwertsteuer',
+      description: 'Für größere kurzfristige Aufgaben, bei denen mehrere digitale Bausteine zusammengeführt werden.',
+      items: [
+        'vollständige Landingpages',
+        'Verkaufsseiten',
+        'Mini-Kampagnen',
+        'Website-Bereichsüberarbeitungen',
+        'Angebotsstruktur mit Texten und CTA',
+        'Kombination aus Website, Social Media und Google-Texten',
+      ],
+    },
+  ]
+
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/82">STRUKTIVA Leistung</p>
+            <h1 className="mt-4 text-3xl font-semibold text-white md:text-5xl">Digitale Soforthilfe</h1>
+            <p className="mt-3 text-lg font-medium text-[#F2D98B]">Wenn online schnell etwas funktionieren muss.</p>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+              Nicht jede digitale Aufgabe braucht ein großes Projekt. Manchmal muss eine Webseite kurzfristig angepasst werden, ein Angebot schnell raus, eine Aktion online sichtbar werden oder ein professioneller Text erstellt werden.
+            </p>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+              STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Dienstleister mit klarer digitaler Soforthilfe – schnell, sauber und strukturiert.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={contactDetails.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Soforthilfe anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href="#soforthilfe-pakete" className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                Pakete ansehen
+              </a>
+              <a href={siteLinks.home} className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">
+                Zurück zur Startseite
+              </a>
+            </div>
+          </section>
+        </Reveal>
+
+        <section className="mt-8 rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+          <h2 className="text-2xl font-semibold text-white">Wobei STRUKTIVA kurzfristig unterstützt</h2>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {[
+              'Webseiten-Anpassungen',
+              'schnelle Landingpages',
+              'Angebots- und Verkaufstexte',
+              'Google-Unternehmensprofil-Texte',
+              'Social-Media-Beiträge',
+              'Flyer- und Aktionstexte',
+              'WhatsApp- und Bewertungstexte',
+              'technische Kleinkorrekturen an bestehenden Seiten',
+              'schnelle Strukturierung digitaler Unterlagen',
+            ].map((item) => (
+              <article key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
+                {item}
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="soforthilfe-pakete" className="scroll-mt-28 mt-8 rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+          <h2 className="text-2xl font-semibold text-white">Soforthilfe-Pakete</h2>
+          <p className="mt-2 text-sm text-[#D7DCE5] md:text-base">Wähle den passenden Umfang für deine aktuelle digitale Aufgabe.</p>
+          <div className="mt-6 grid gap-5 lg:grid-cols-3">
+            {soforthilfePakete.map((paket) => (
+              <article key={paket.title} className="rounded-[1.6rem] border border-white/14 bg-white/[0.04] p-5 shadow-premium">
+                <h3 className="text-2xl font-semibold text-white">{paket.title}</h3>
+                <p className="mt-2 text-sm font-semibold text-[#D8B45A]">{paket.price}</p>
+                <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{paket.description}</p>
+                <div className="mt-4 space-y-2">
+                  {paket.items.map((item) => (
+                    <p key={item} className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2 text-xs leading-6 text-[#D7DCE5]">
+                      {item}
+                    </p>
+                  ))}
+                </div>
+                <a href={contactDetails.whatsappHref} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                  {paket.title} anfragen
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-[1.8rem] border border-[#D8B45A]/24 bg-[linear-gradient(150deg,rgba(7,17,31,0.94),rgba(11,31,58,0.86))] p-6 shadow-premium md:p-7">
+          <h2 className="text-2xl font-semibold text-white">Digitale Aufgabe besprechen</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+            Beschreibe kurz, wobei du Unterstützung brauchst. STRUKTIVA prüft den passenden Umfang und gibt dir eine klare Einschätzung.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={contactDetails.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+              WhatsApp anfragen
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">
+              Kontakt aufnehmen
+            </a>
+          </div>
+        </section>
       </div>
     </main>
   )
@@ -4293,6 +4450,8 @@ function Page() {
     content = <GoogleAdsPage />
   } else if (pathname === '/bewertungs-qr-code') {
     content = <BewertungsQrCodePage />
+  } else if (pathname === '/digitale-soforthilfe') {
+    content = <DigitaleSoforthilfePage />
   } else if (pathname === '/digitale-ordnungssysteme') {
     content = <DigitaleOrdnungssystemePage />
   } else if (pathname === '/website-fuer-kleine-unternehmen') {
