@@ -269,13 +269,64 @@ const problemCards = [
 ]
 
 const coreServices = [
-  [LayoutTemplate, 'Professionelle Webseiten', 'Die zentrale digitale Basis mit klarer Leistungsdarstellung, vertrauenswürdiger Struktur und starker Kontaktführung.'],
-  [Target, 'Landingpages', 'Gezielte Angebotsseiten, die ein Angebot verständlich erklären und Besucher aktiv zur Anfrage führen.'],
-  [Smartphone, 'Digitale Unternehmensstruktur', 'WhatsApp-Kontakt, Google-Struktur, Social-Media-Logik und Angebotsarchitektur werden sinnvoll in ein Gesamtsystem eingebunden.'],
-  [Megaphone, 'Kundengewinnung', 'Google Ads und Landingpages werden strategisch verbunden, damit aus Sichtbarkeit qualifizierte Anfragen entstehen.'],
-  [Sparkles, 'Digitale Soforthilfe', 'Schnelle Unterstützung bei Website-Anpassungen, Texten, Landingpages, Google-Beiträgen, Social-Media-Inhalten, Angebotsseiten und digitalen Kleinkorrekturen.'],
-  [ClipboardList, 'Digitale Ordnungssysteme', 'Einfache digitale Erfassungssysteme für Tagesabschluss, Kassenstruktur, Monatsübersicht und steuerberaterfreundliche Abläufe.'],
-  [QrCode, 'Google-Bewertungssystem', 'Zufriedene Kunden direkt zur Bewertung führen. Mit QR-Code, Bewertungslink und klarer Anleitung für mehr Vertrauen bei Google.'],
+  {
+    icon: LayoutTemplate,
+    title: 'Professionelle Webseiten',
+    description: 'Moderne Webseiten für kleine Unternehmen, die Vertrauen aufbauen, Leistungen klar darstellen und Kontaktwege sinnvoll verbinden.',
+    price: 'ab 599 € inklusive Mehrwertsteuer',
+    href: siteLinks.webseitenPage,
+  },
+  {
+    icon: Target,
+    title: 'Landingpages',
+    description: 'Klar fokussierte Seiten für Angebote, Aktionen, Produkte oder Dienstleistungen mit sauberer Struktur und direkter Handlungsaufforderung.',
+    price: 'ab 299 € inklusive Mehrwertsteuer',
+    href: siteLinks.landingpagesPage,
+  },
+  {
+    icon: Search,
+    title: 'Google-Sichtbarkeit',
+    description: 'Strukturierte Unterstützung für bessere Auffindbarkeit über Google, lokale Suchanfragen, Unternehmensprofil-Texte und saubere Online-Grundlagen.',
+    price: 'auf Anfrage',
+    href: siteLinks.googleSichtbarkeit,
+  },
+  {
+    icon: MousePointerClick,
+    title: 'Digitale Kundenführung',
+    description: 'Klare Kontaktwege über Webseite, WhatsApp, Bewertungssysteme, Anfrageformulare und sinnvolle digitale Abläufe.',
+    price: 'auf Anfrage',
+    href: siteLinks.digitaleUnternehmensstruktur,
+  },
+  {
+    icon: Smartphone,
+    title: 'Unternehmens-Apps',
+    description: 'Individuelle Web-Apps für interne Abläufe, Kundenverwaltung, Aufgaben, Termine, Checklisten und mobile Nutzung im Betrieb.',
+    price: 'ab 999 € inklusive Mehrwertsteuer',
+    href: siteLinks.unternehmensApps,
+  },
+  {
+    icon: PanelsTopLeft,
+    title: 'Betriebs-Dashboards',
+    description: 'Übersichtliche digitale Steuerungsflächen für Aufgaben, Tagesplanung, Kennzahlen, Abläufe und betriebliche Kontrolle.',
+    price: 'ab 799 € inklusive Mehrwertsteuer',
+    href: siteLinks.unternehmensApps,
+  },
+  {
+    icon: ClipboardList,
+    title: 'Digitale Ordnungssysteme',
+    description: 'Digitale Strukturen für wiederkehrende Aufgaben, Checklisten, Dokumentation, Vorlagen, Ablage und klare Zuständigkeiten.',
+    price: 'ab 899 € inklusive Mehrwertsteuer',
+    href: siteLinks.digitaleOrdnungssysteme,
+  },
+  {
+    icon: Sparkles,
+    title: 'Digitale Soforthilfe',
+    subtitle: 'Wenn online schnell etwas funktionieren muss.',
+    description: 'Schnelle Unterstützung bei Website-Anpassungen, Landingpages, Google-Texten, Social-Media-Beiträgen, WhatsApp- und Bewertungstexten sowie digitalen Kleinkorrekturen.',
+    price: 'ab 99 € inklusive Mehrwertsteuer',
+    ctaLabel: 'Soforthilfe anfragen',
+    href: siteLinks.contact,
+  },
 ]
 
 const websiteFocusCards = [
@@ -1138,78 +1189,6 @@ function ProblemSection() {
             Auf Wunsch kann auch ein Newsletter-System eingebunden werden, um Interessenten und Bestandskunden professionell zu informieren und langfristig an das Unternehmen zu binden.
           </p>
         </Reveal>
-      </div>
-    </section>
-  )
-}
-
-function ServicesSection() {
-  const serviceRoutes = {
-    'Professionelle Webseiten': siteLinks.webseitenPage,
-    Landingpages: siteLinks.landingpagesPage,
-    'Unternehmens-Apps': siteLinks.appsPage,
-    'Google Ads': siteLinks.googleAdsPage,
-    'Digitale Soforthilfe': siteLinks.digitaleSoforthilfe,
-    'Digitale Ordnungssysteme': siteLinks.digitaleOrdnungssysteme,
-    'Google-Bewertungssystem': siteLinks.bewertungsQrCode,
-  }
-
-  return (
-    <section id="leistungen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-7xl">
-        <Reveal>
-          <SectionHeader
-            eyebrow="Leistungen"
-            title="Digitale Struktur statt Online-Chaos."
-            text="Für kleine Unternehmen, Selbstständige und lokale Dienstleister, die online professioneller auftreten möchten."
-          />
-        </Reveal>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.08 }}
-          variants={stagger}
-          className="mt-12 grid gap-5 lg:grid-cols-2"
-        >
-          {coreServices.map(([Icon, title, text]) => {
-            const isSoforthilfe = title === 'Digitale Soforthilfe'
-            return (
-            <motion.div
-              key={title}
-              variants={fadeUp}
-              transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-              className="service-card-3d group rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-white">{title}</h3>
-                  {isSoforthilfe ? <p className="mt-2 text-sm font-medium text-[#F2D98B]">Wenn online schnell etwas funktionieren muss.</p> : null}
-                  <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{text}</p>
-                  {isSoforthilfe ? <p className="mt-4 text-sm font-semibold text-[#D8B45A]">ab 99 € inklusive Mehrwertsteuer</p> : null}
-                  {isSoforthilfe ? (
-                    <a
-                      href={siteLinks.contact}
-                      className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
-                    >
-                      Soforthilfe anfragen
-                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                    </a>
-                  ) : (
-                    <a href={serviceRoutes[title]} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
-                      Mehr erfahren
-                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          )})}
-        </motion.div>
-
       </div>
     </section>
   )
@@ -2326,24 +2305,14 @@ function HeroSectionPremium() {
 }
 
 function ServicesSectionPremium() {
-  const serviceRoutes = {
-    'Professionelle Webseiten': siteLinks.webseitenPage,
-    Landingpages: siteLinks.landingpagesPage,
-    'Unternehmens-Apps': siteLinks.appsPage,
-    'Google Ads': siteLinks.googleAdsPage,
-    'Digitale Soforthilfe': siteLinks.digitaleSoforthilfe,
-    'Digitale Ordnungssysteme': siteLinks.digitaleOrdnungssysteme,
-    'Google-Bewertungssystem': siteLinks.bewertungsQrCode,
-  }
-
   return (
     <section id="leistungen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeader
             eyebrow="Leistungen"
-            title="Digitale Struktur statt Online-Chaos."
-            text="Für kleine Unternehmen, Selbstständige und lokale Dienstleister, die online professioneller auftreten möchten."
+            title="Leistungen"
+            text="Digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister."
           />
         </Reveal>
         <Reveal className="mt-8">
@@ -2365,11 +2334,11 @@ function ServicesSectionPremium() {
         </Reveal>
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 lg:grid-cols-2">
-          {coreServices.map(([Icon, title, text]) => {
-            const isSoforthilfe = title === 'Digitale Soforthilfe'
+          {coreServices.map((service) => {
+            const Icon = service.icon
             return (
             <motion.div
-              key={title}
+              key={service.title}
               variants={fadeUp}
               transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
               className="service-card-3d group rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35 md:p-7"
@@ -2379,20 +2348,20 @@ function ServicesSectionPremium() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-white">{title}</h3>
-                  {isSoforthilfe ? <p className="mt-2 text-sm font-medium text-[#F2D98B]">Wenn online schnell etwas funktionieren muss.</p> : null}
-                  <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{text}</p>
-                  {isSoforthilfe ? <p className="mt-4 text-sm font-semibold text-[#D8B45A]">ab 99 € inklusive Mehrwertsteuer</p> : null}
-                  {isSoforthilfe ? (
+                  <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
+                  {service.subtitle ? <p className="mt-2 text-sm font-medium text-[#F2D98B]">{service.subtitle}</p> : null}
+                  <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{service.description}</p>
+                  <p className="mt-4 text-sm font-semibold text-[#D8B45A]">{service.price}</p>
+                  {service.ctaLabel ? (
                     <a
-                      href={siteLinks.contact}
+                      href={service.href}
                       className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
                     >
-                      Soforthilfe anfragen
+                      {service.ctaLabel}
                       <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                     </a>
                   ) : (
-                    <a href={serviceRoutes[title]} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                    <a href={service.href} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
                       Mehr erfahren
                       <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                     </a>
@@ -2403,87 +2372,6 @@ function ServicesSectionPremium() {
           )})}
         </motion.div>
 
-      </div>
-    </section>
-  )
-}
-
-function DigitaleSoforthilfeSection() {
-  const tasks = [
-    'Webseiten-Anpassungen',
-    'schnelle Landingpages',
-    'Angebots- und Verkaufstexte',
-    'Google-Unternehmensprofil-Texte',
-    'Social-Media-Beiträge',
-    'Flyer- und Aktionstexte',
-    'Bewertungs- und WhatsApp-Texte',
-    'technische Kleinkorrekturen an bestehenden Seiten',
-    'schnelle Strukturierung von digitalen Unterlagen',
-  ]
-
-  const paketCards = [
-    {
-      title: 'Soforthilfe S',
-      price: 'ab 99 € inklusive Mehrwertsteuer',
-      text: 'Für kleine digitale Aufgaben wie kurze Website-Texte, Google-Beiträge, WhatsApp-Texte, Social-Media-Texte oder kleinere Textkorrekturen.',
-    },
-    {
-      title: 'Soforthilfe M',
-      price: 'ab 249 € inklusive Mehrwertsteuer',
-      text: 'Für mittlere Aufgaben wie Angebotsseiten, Flyertexte, mehrere Social-Media-Beiträge, Google-Profil-Texte oder kleinere Landingpage-Strukturen.',
-    },
-    {
-      title: 'Soforthilfe L',
-      price: 'ab 449 € inklusive Mehrwertsteuer',
-      text: 'Für größere kurzfristige Aufgaben wie vollständige Landingpages, Aktionsseiten, Verkaufsseiten, Website-Bereichsüberarbeitung oder Mini-Kampagnen.',
-    },
-  ]
-
-  return (
-    <section id="digitale-soforthilfe" className="scroll-mt-28 px-5 pb-18 lg:px-8 lg:pb-24">
-      <div className="mx-auto max-w-7xl rounded-[2.2rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8 lg:p-10">
-        <Reveal>
-          <SectionHeader
-            eyebrow="Digitale Soforthilfe"
-            title="Wenn es schnell digital funktionieren muss"
-            text="Nicht jede digitale Aufgabe braucht ein großes Projekt. Manchmal muss eine Website kurzfristig angepasst werden, ein Angebot schnell raus, eine Aktion online sichtbar werden oder ein professioneller Text erstellt werden."
-            centered={false}
-          />
-        </Reveal>
-
-        <Reveal className="mt-6">
-          <p className="max-w-4xl text-base leading-8 text-[#D7DCE5]">
-            STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Dienstleister mit digitaler Soforthilfe für schnelle, saubere und strukturierte Lösungen.
-          </p>
-        </Reveal>
-
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-8 grid gap-3 md:grid-cols-2">
-          {tasks.map((task) => (
-            <motion.div key={task} variants={fadeUp} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }} className="rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-[#D7DCE5]">
-              {task}
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-9 grid gap-5 lg:grid-cols-3">
-          {paketCards.map((card) => (
-            <motion.article key={card.title} variants={fadeUp} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium">
-              <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
-              <p className="mt-3 text-base font-semibold text-[#D8B45A]">{card.price}</p>
-              <p className="mt-4 text-sm leading-7 text-[#D7DCE5]">{card.text}</p>
-            </motion.article>
-          ))}
-        </motion.div>
-
-        <Reveal className="mt-8">
-          <a
-            href={siteLinks.contact}
-            className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.16)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
-          >
-            Jetzt digitale Soforthilfe anfragen
-            <ArrowRight className="h-4 w-4" />
-          </a>
-        </Reveal>
       </div>
     </section>
   )
@@ -2728,7 +2616,6 @@ function HomePage() {
       <TrustSection />
       <ProblemSection />
       <ServicesSectionPremium />
-      <DigitaleSoforthilfeSection />
       <WebsiteFocusSection />
       <AppsSection />
       <GoogleAdsSection />
