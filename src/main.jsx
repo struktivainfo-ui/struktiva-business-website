@@ -101,7 +101,8 @@ const contactDetails = {
   whatsappLabel: '07051 8162292',
   whatsappHref: 'https://wa.me/4970518162292',
   linkedinHref: 'https://www.linkedin.com/in/sven-matzke-960b63411',
-  foundersImage: '/images/founders-sven-jessica.png',
+  founderSvenImage: '/images/founder-sven.jpg',
+  founderJessicaImage: '/images/founder-jessica.jpg',
   googleReviewHref: 'https://g.page/r/CZvwYJbOSShgEBM/review',
   addressLine1: 'Ostlandstraße 3',
   addressLine2: '75365 Calw',
@@ -4148,27 +4149,21 @@ function ContactPage() {
           <figure className="rounded-2xl border border-[#D8B45A]/30 bg-white/[0.03] p-3">
             <div className="flex items-center gap-3">
               <div className="h-24 w-24 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
-                <div
-                  role="img"
-                  aria-label="Sven Matzke"
-                  className="h-full w-full bg-cover bg-no-repeat"
-                  style={{
-                    backgroundImage: `url(${contactDetails.foundersImage})`,
-                    backgroundSize: '235%',
-                    backgroundPosition: '22% 20%',
-                  }}
+                <img
+                  src={contactDetails.founderSvenImage}
+                  alt="Sven Matzke"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover object-[50%_18%]"
                 />
               </div>
               <div className="h-24 w-24 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
-                <div
-                  role="img"
-                  aria-label="Jessica Wacker"
-                  className="h-full w-full bg-cover bg-no-repeat"
-                  style={{
-                    backgroundImage: `url(${contactDetails.foundersImage})`,
-                    backgroundSize: '235%',
-                    backgroundPosition: '80% 20%',
-                  }}
+                <img
+                  src={contactDetails.founderJessicaImage}
+                  alt="Jessica Wacker"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover object-[50%_22%]"
                 />
               </div>
             </div>
