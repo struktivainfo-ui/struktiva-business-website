@@ -12,6 +12,7 @@ import {
   ChevronDown,
   ClipboardList,
   LayoutTemplate,
+  Linkedin,
   Megaphone,
   Menu,
   MessageCircle,
@@ -99,6 +100,7 @@ const contactDetails = {
   phoneHref: 'tel:+4970518162292',
   whatsappLabel: '07051 8162292',
   whatsappHref: 'https://wa.me/4970518162292',
+  linkedinHref: 'https://www.linkedin.com/in/sven-matzke-960b63411',
   googleReviewHref: 'https://g.page/r/CZvwYJbOSShgEBM/review',
   addressLine1: 'Ostlandstraße 3',
   addressLine2: '75365 Calw',
@@ -2004,6 +2006,15 @@ function ContactSection() {
                   <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-[#94A3B8]">WhatsApp Business</span>
                   {contactDetails.whatsappLabel}
                 </a>
+                <a
+                  href={contactDetails.linkedinHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-[#D8B45A]"
+                >
+                  <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-[#94A3B8]">LinkedIn</span>
+                  LinkedIn-Profil ansehen
+                </a>
               </div>
             </div>
           </Reveal>
@@ -2031,9 +2042,31 @@ function ContactSection() {
               >
                 Bewertung abgeben
               </a>
+              <a
+                href={contactDetails.linkedinHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-[#D7DCE5] transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn-Profil ansehen
+              </a>
             </div>
           </Reveal>
         </div>
+        <Reveal className="mt-5">
+          <p className="text-sm leading-7 text-[#D7DCE5]">
+            Vernetzen Sie sich mit STRUKTIVA auf LinkedIn:{' '}
+            <a
+              href={contactDetails.linkedinHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#D8B45A] transition hover:text-[#F2D98B]"
+            >
+              LinkedIn-Profil ansehen
+            </a>
+          </p>
+        </Reveal>
         </div>
       </div>
     </section>
@@ -2152,6 +2185,15 @@ function Footer() {
             <a href={`mailto:${contactDetails.email}`} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.email}</a>
             <a href={contactDetails.phoneHref} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.phoneLabel}</a>
             <a href={contactDetails.whatsappHref} className="mt-1 block transition hover:text-[#F2D98B]">WhatsApp Business</a>
+            <a
+              href={contactDetails.linkedinHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-flex items-center gap-2 transition hover:text-[#F2D98B]"
+            >
+              <Linkedin className="h-4 w-4" />
+              LinkedIn
+            </a>
             <p className="mt-3 text-xs leading-6 text-[#94A3B8]">Digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.</p>
           </div>
 
