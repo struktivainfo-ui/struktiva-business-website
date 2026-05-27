@@ -3328,75 +3328,6 @@ function DemoUseCasesSection() {
   )
 }
 
-function DemoAnchorSections() {
-  const sections = [
-    {
-      id: 'demo-friseursalon',
-      title: 'Demo Friseursalon',
-      text: 'Beispielstruktur für Friseursalons mit klarer Kundenführung von der Leistung bis zur Anfrage.',
-      points: ['Website für Friseursalon', 'Leistungen', 'Team', 'Google-Profil', 'Bewertungen', 'WhatsApp-Anfrage', 'digitale Kundenführung', 'Salon-Struktur'],
-      cta: 'Friseur-Demo ansehen',
-      href: siteLinks.demoBeauty,
-    },
-    {
-      id: 'demo-handwerker',
-      title: 'Demo Handwerker',
-      text: 'Beispielstruktur für Handwerksbetriebe mit regionalem Fokus und direkter Anfrageführung.',
-      points: ['Leistungsseiten', 'Referenzen', 'Anfrageformular', 'regionale Google-Sichtbarkeit', 'WhatsApp-Kontakt', 'klare Angebotsstruktur', 'Handwerker-Struktur'],
-      cta: 'Handwerker-Demo ansehen',
-      href: siteLinks.demoHandwerker,
-    },
-    {
-      id: 'demo-kosmetikstudio',
-      title: 'Demo Kosmetikstudio',
-      text: 'Beispielstruktur für Kosmetikstudios mit Vertrauen, visueller Wirkung und klaren Terminwegen.',
-      points: ['Behandlungen', 'Preise', 'Vertrauen', 'Bewertungen', 'Bilder', 'Termin-Anfrage', 'Instagram-/Pinterest-Verknüpfung', 'Kosmetikstudio-Struktur'],
-      cta: 'Kosmetik-Demo ansehen',
-      href: siteLinks.demoBeauty,
-    },
-    {
-      id: 'demo-bewertungsstruktur',
-      title: 'Demo Bewertungsstruktur',
-      text: 'Beispiel für strukturierte Bewertungsführung über Website, QR-Code und direkte Kundenansprache.',
-      points: ['Google-Bewertungslink', 'QR-Code', 'Bewertungskarte', 'WhatsApp-Text für Bewertungsanfragen', 'Website-Einbindung', 'Bewertungsführung'],
-      cta: 'Bewertungsstruktur ansehen',
-      href: siteLinks.bewertungsQrCode,
-    },
-    {
-      id: 'demo-dashboard',
-      title: 'Demo Dashboard',
-      text: 'Beispiel für eine digitale Betriebsübersicht mit den wichtigsten Tages- und Steuerungsdaten.',
-      points: ['Tagesübersicht', 'Aufgaben', 'Termine', 'Kennzahlen', 'offene Punkte', 'Notizen', 'Betriebsübersicht'],
-      cta: 'Dashboard-Demo ansehen',
-      href: siteLinks.betriebsDashboards,
-    },
-  ]
-
-  return (
-    <section className="px-5 py-12 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-4 lg:grid-cols-2">
-          {sections.map((section) => (
-            <article key={section.id} id={section.id} className="scroll-mt-28 rounded-[1.5rem] border border-white/14 bg-white/[0.04] p-5 shadow-premium">
-              <h3 className="text-xl font-semibold text-white">{section.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{section.text}</p>
-              <div className="mt-3 space-y-1 text-sm text-[#D7DCE5]">
-                {section.points.map((point) => (
-                  <p key={point}>- {point}</p>
-                ))}
-              </div>
-              <a href={section.href} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                {section.cta}
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function WhyStruktivaSection() {
   const points = [
     ['Mehr als Webdesign', 'STRUKTIVA verbindet Website, Google, Kontaktwege, Bewertungen und digitale Abläufe.'],
@@ -3641,7 +3572,6 @@ function HomePage() {
       <ModulesSection />
       <BranchenSection />
       <DemoUseCasesSection />
-      <DemoAnchorSections />
       <SuitableForSection />
       <WhyStructureSection />
       <ProcessSection />
