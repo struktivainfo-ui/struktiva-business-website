@@ -2236,7 +2236,7 @@ const demoV2Images = {
   friseurA: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80',
   friseurB: 'https://images.unsplash.com/photo-1596704017254-9f8e0d1a45a3?auto=format&fit=crop&w=1200&q=80',
   friseurC: 'https://images.unsplash.com/photo-1522336284039-91f7e4b6f0f2?auto=format&fit=crop&w=1200&q=80',
-  handwerkerHero: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1800&q=80',
+  handwerkerHero: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80',
   handwerkerA: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
   handwerkerB: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
   handwerkerC: 'https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1200&q=80',
@@ -2244,9 +2244,9 @@ const demoV2Images = {
   kosmetikA: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80',
   kosmetikB: 'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=1200&q=80',
   kosmetikC: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80',
-  bewertungHero: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=80',
-  bewertungA: 'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=1200&q=80',
-  bewertungB: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1200&q=80',
+  bewertungHero: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1800&q=80',
+  bewertungA: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80',
+  bewertungB: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&q=80',
   dashboardHero: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80',
   dashboardA: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
   dashboardB: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80',
@@ -5647,7 +5647,7 @@ function DemoWebsiteHeader({ brandName, links, theme = 'dark' }) {
 
 function DemoFriseursalonPage() {
   return (
-    <main className="relative bg-[linear-gradient(180deg,#2a1f17,#1d1611)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#2a1f17,#1d1611)] px-5 pb-16 pt-6 text-white lg:px-8 lg:pb-24 lg:pt-8">
       <DemoBackgroundLayer image={demoV2Images.friseurHero} overlay="from-[#f0d9b3]/18 via-[#7a5b32]/20 to-[#120d09]/88" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoWebsiteHeader
@@ -5660,7 +5660,7 @@ function DemoFriseursalonPage() {
             ['Termin', '#salon-ablauf'],
           ]}
         />
-        <section className="rounded-[2.1rem] border border-[#E4C57A]/35 bg-[linear-gradient(160deg,rgba(63,46,30,0.82),rgba(27,21,15,0.84))] p-7 shadow-premium">
+        <section className="rounded-[2rem] bg-[linear-gradient(160deg,rgba(63,46,30,0.7),rgba(27,21,15,0.72))] p-6 shadow-[0_16px_40px_rgba(0,0,0,0.26)] md:p-7">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Moderne Salon-Website mit klarer Terminführung</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#E7DDD0]">Leistungen, Atmosphäre, Bewertungen und WhatsApp-Anfrage sind klar verbunden. Diese Musterseite zeigt, wie ein Salon online Vertrauen und Terminanfragen zusammenführt.</p>
@@ -5668,6 +5668,11 @@ function DemoFriseursalonPage() {
             <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Salon-Struktur anfragen</a>
             <a href="#salon-leistungen" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Leistungen ansehen</a>
             <a href={siteLinks.home} className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white">Zur Startseite</a>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2.5">
+            {['Persönliche Beratung', 'Klare Leistungen', 'Bewertungen sichtbar', 'WhatsApp-Termin'].map((item) => (
+              <span key={item} className="rounded-full border border-[#E4C57A]/35 bg-black/20 px-3 py-1.5 text-xs text-[#F3DEAF]">{item}</span>
+            ))}
           </div>
           <div className="mt-6 overflow-hidden rounded-2xl border border-[#D8B45A]/22">
             <div className="relative h-64 md:h-80">
@@ -5754,7 +5759,7 @@ function DemoFriseursalonPage() {
 
 function DemoHandwerkerV2Page() {
   return (
-    <main className="relative bg-[linear-gradient(180deg,#0a162b,#0f1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#0a162b,#0f1f3a)] px-5 pb-16 pt-6 text-white lg:px-8 lg:pb-24 lg:pt-8">
       <DemoBackgroundLayer image={demoV2Images.handwerkerHero} overlay="from-[#081322]/88 via-[#0f1f3a]/76 to-[#0a1528]/95" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoWebsiteHeader
@@ -5767,7 +5772,7 @@ function DemoHandwerkerV2Page() {
             ['Kontakt', '#hw-contact'],
           ]}
         />
-        <section className="rounded-[2.1rem] border border-[#f59e0b]/36 bg-[linear-gradient(160deg,rgba(12,29,55,0.9),rgba(17,24,39,0.86))] p-7 shadow-premium">
+        <section className="rounded-[2.1rem] bg-[linear-gradient(160deg,rgba(12,29,55,0.84),rgba(17,24,39,0.82))] p-7 shadow-[0_18px_45px_rgba(0,0,0,0.28)]">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#fbbf24]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Handwerkerbetrieb mit klarer digitaler Anfrageführung</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-gray-200">Leistungen, Referenzen, Einsatzgebiet und Kontaktwege sind sofort verständlich aufgebaut. Diese Musterseite zeigt eine robuste Handwerker-Struktur mit klarer Kundenführung.</p>
@@ -5775,6 +5780,11 @@ function DemoHandwerkerV2Page() {
             <a href={siteLinks.contact} className="rounded-full bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-white">Handwerker-Struktur anfragen</a>
             <a href="#hw-refs" className="rounded-full border border-[#f59e0b]/35 px-6 py-3 text-sm font-semibold text-[#fbbf24]">Referenzen ansehen</a>
             <a href={siteLinks.home} className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white">Zur Startseite</a>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2.5">
+            {['Regional erreichbar', 'Klare Leistungen', 'Referenzen sichtbar', 'Direkte Anfrage'].map((item) => (
+              <span key={item} className="rounded-full border border-[#f59e0b]/35 bg-black/20 px-3 py-1.5 text-xs text-[#fcd68a]">{item}</span>
+            ))}
           </div>
           <div className="mt-6 overflow-hidden rounded-2xl border border-[#f59e0b]/25">
             <div className="relative h-64 md:h-80">
@@ -5787,11 +5797,6 @@ function DemoHandwerkerV2Page() {
           <img src={demoV2Images.handwerkerA} alt="Beispielhafte regionale Handwerksleistung" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
           <img src={demoV2Images.handwerkerB} alt="Beispielbild für Werkzeug und Innenausbau" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
           <img src={demoV2Images.handwerkerC} alt="Beispielhafte Montagearbeit im Handwerk" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
-        </section>
-        <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {['Regional erreichbar', 'Klare Leistungen', 'Direkte Anfrage', 'Beispielhafte Referenzen'].map((item) => (
-            <p key={item} className="rounded-xl border border-[#f59e0b]/30 bg-[#0f172a]/80 px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.14em] text-[#fbbf24]">{item}</p>
-          ))}
         </section>
         <section id="hw-leistungen" className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <article className="rounded-2xl border border-[#f59e0b]/30 bg-[#0f172a]/88 p-5">
@@ -5862,7 +5867,7 @@ function DemoHandwerkerV2Page() {
 
 function DemoKosmetikstudioPage() {
   return (
-    <main className="relative bg-[linear-gradient(180deg,#fff9f6,#f6e6de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#fff9f6,#f6e6de)] px-5 pb-16 pt-6 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-8">
       <DemoBackgroundLayer image={demoV2Images.kosmetikHero} overlay="from-[#fff9f6]/82 via-[#f5ded3]/62 to-[#d3b4a5]/64" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoWebsiteHeader
@@ -5876,7 +5881,7 @@ function DemoKosmetikstudioPage() {
           ]}
           theme="light"
         />
-        <section className="rounded-[2.1rem] border border-[#e9c9ac]/85 bg-[linear-gradient(155deg,#fffaf7,#f8ebe4)] p-7 shadow-premium">
+        <section className="rounded-[2.1rem] bg-[linear-gradient(155deg,#fffaf7,#f8ebe4)] p-7 shadow-[0_16px_42px_rgba(145,94,52,0.16)]">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b8894b]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-[#3b2f2f] md:text-5xl">Kosmetikstudio mit klarer Behandlungs- und Terminstruktur</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#5a4740]">Behandlungen, Preise, Vertrauen und Termin-Anfrage sind hochwertig verbunden. Diese Musterseite zeigt eine ruhige Beauty-Struktur mit klarer Kundenführung.</p>
@@ -5884,6 +5889,11 @@ function DemoKosmetikstudioPage() {
             <a href={siteLinks.contact} className="rounded-full bg-[#b8894b] px-6 py-3 text-sm font-semibold text-white">Kosmetik-Struktur anfragen</a>
             <a href="#beauty-services" className="rounded-full border border-[#d4a574]/55 px-6 py-3 text-sm font-semibold text-[#9b6d3e]">Behandlungen ansehen</a>
             <a href={siteLinks.home} className="rounded-full border border-[#d4a574]/60 px-6 py-3 text-sm font-semibold text-[#9b6d3e]">Zur Startseite</a>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2.5">
+            {['Beratung', 'Hygiene', 'Klare Preise', 'Termin-Anfrage'].map((item) => (
+              <span key={item} className="rounded-full border border-[#d4a574]/55 bg-white/60 px-3 py-1.5 text-xs text-[#8a5b35]">{item}</span>
+            ))}
           </div>
           <div className="mt-6 overflow-hidden rounded-2xl border border-[#e9c9ac]/75">
             <div className="relative h-64 md:h-80">
@@ -5948,7 +5958,7 @@ function DemoKosmetikstudioPage() {
 
 function DemoBewertungsstrukturPage() {
   return (
-    <main className="relative bg-[linear-gradient(180deg,#0a1424,#123046)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#0a1424,#123046)] px-5 pb-16 pt-6 text-white lg:px-8 lg:pb-24 lg:pt-8">
       <DemoBackgroundLayer image={demoV2Images.bewertungHero} overlay="from-[#0a1424]/88 via-[#11344b]/72 to-[#0b1b30]/93" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoWebsiteHeader
@@ -5961,7 +5971,7 @@ function DemoBewertungsstrukturPage() {
             ['Kontakt', '#review-contact'],
           ]}
         />
-        <section className="rounded-[2.1rem] border border-[#5ed6ab]/32 bg-[linear-gradient(160deg,rgba(11,24,43,0.92),rgba(17,52,75,0.86))] p-7 shadow-premium">
+        <section className="rounded-[2.1rem] bg-[linear-gradient(160deg,rgba(11,24,43,0.9),rgba(17,52,75,0.84))] p-7 shadow-[0_18px_44px_rgba(0,0,0,0.28)]">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Bewertungen einfacher sammeln</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5]">QR-Code, Bewertungslink, Bewertungskarte und WhatsApp-Text werden als klarer Bewertungsweg verbunden.</p>
@@ -5969,6 +5979,11 @@ function DemoBewertungsstrukturPage() {
             <a href={siteLinks.contact} className="rounded-full bg-[#2fb989] px-6 py-3 text-sm font-semibold text-white">Bewertungsstruktur anfragen</a>
             <a href="#review-flow" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Beispiel ansehen</a>
             <a href={siteLinks.home} className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white">Zur Startseite</a>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2.5">
+            {['QR-Code', 'Bewertungslink', 'WhatsApp-Text', 'Bewertungskarte'].map((item) => (
+              <span key={item} className="rounded-full border border-[#5ed6ab]/35 bg-black/20 px-3 py-1.5 text-xs text-[#a7f3d0]">{item}</span>
+            ))}
           </div>
           <div className="mt-6 overflow-hidden rounded-2xl border border-[#D8B45A]/25">
             <div className="relative h-64 md:h-80">
@@ -6041,7 +6056,7 @@ function DemoDashboardPage() {
     ['Teamübersicht', 'Aufgaben oder Termine können nach Personen strukturiert sichtbar gemacht werden.'],
   ]
   return (
-    <main className="relative bg-[linear-gradient(180deg,#060f1c,#0a1931)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#060f1c,#0a1931)] px-5 pb-16 pt-6 text-white lg:px-8 lg:pb-24 lg:pt-8">
       <DemoBackgroundLayer image={demoV2Images.dashboardHero} overlay="from-[#060f1c]/90 via-[#0a1f3b]/76 to-[#050b17]/95" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoWebsiteHeader
@@ -6054,7 +6069,7 @@ function DemoDashboardPage() {
             ['Kennzahlen', '#dashboard-modules'],
           ]}
         />
-        <section className="rounded-[2.1rem] border border-[#38bdf8]/34 bg-[linear-gradient(155deg,rgba(7,20,39,0.95),rgba(8,29,55,0.88))] p-7 shadow-premium">
+        <section className="rounded-[2.1rem] bg-[linear-gradient(155deg,rgba(7,20,39,0.93),rgba(8,29,55,0.86))] p-7 shadow-[0_18px_44px_rgba(0,0,0,0.3)]">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7dd3fc]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Digitale Übersicht für kleine Unternehmen</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#dbe7ff]">Eine beispielhafte Dashboard-Struktur für Termine, Aufgaben, offene Punkte, Tagesübersicht, Monatsstruktur und Kennzahlen.</p>
@@ -6062,6 +6077,11 @@ function DemoDashboardPage() {
             <a href={siteLinks.contact} className="rounded-full bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white">Dashboard anfragen</a>
             <a href="#dashboard-modules" className="rounded-full border border-[#60a5fa]/35 px-6 py-3 text-sm font-semibold text-[#bfdbfe]">Funktionen ansehen</a>
             <a href={siteLinks.home} className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white">Zur Startseite</a>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2.5">
+            {['Tagesübersicht', 'Aufgaben', 'Termine', 'Anfragen'].map((item) => (
+              <span key={item} className="rounded-full border border-[#38bdf8]/35 bg-black/20 px-3 py-1.5 text-xs text-[#bae6fd]">{item}</span>
+            ))}
           </div>
           <div className="mt-6 overflow-hidden rounded-2xl border border-[#38bdf8]/25">
             <div className="relative h-64 md:h-80">
