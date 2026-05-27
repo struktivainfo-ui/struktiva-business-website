@@ -5496,14 +5496,44 @@ function DemoContactCTA({ text }) {
   )
 }
 
+function DemoMiniNav({ label, links, theme = 'dark' }) {
+  const tone =
+    theme === 'light'
+      ? 'border-[#d4a574]/45 bg-white/85 text-[#5a4740]'
+      : 'border-white/14 bg-white/[0.04] text-[#D7DCE5]'
+
+  return (
+    <nav className={`rounded-2xl border px-4 py-3 ${tone}`}>
+      <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em]">
+        <span className={theme === 'light' ? 'text-[#b8894b]' : 'text-[#D8B45A]'}>{label}</span>
+        {links.map(([title, href]) => (
+          <a key={title} href={href} className="rounded-full border border-current/20 px-3 py-1.5 normal-case tracking-normal transition hover:opacity-80">
+            {title}
+          </a>
+        ))}
+      </div>
+    </nav>
+  )
+}
+
 function DemoFriseursalonPage() {
   return (
     <main className="bg-[linear-gradient(180deg,#120f0d,#1b1713)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoMiniNav
+          label="Friseursalon Demo"
+          links={[
+            ['Leistungen', '#salon-leistungen'],
+            ['Vorteile', '#salon-vorteile'],
+            ['Ablauf', '#salon-ablauf'],
+            ['Kontakt', '#salon-kontakt'],
+            ['Zurück zu STRUKTIVA', siteLinks.home],
+          ]}
+        />
         <section className="rounded-[2.1rem] border border-[#D8B45A]/25 bg-[linear-gradient(160deg,rgba(35,28,23,0.95),rgba(20,17,14,0.92))] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Friseursalon-Demo: Digitale Struktur für moderne Salons</h1>
-          <p className="mt-4 max-w-4xl text-base leading-8 text-[#E7DDD0]">Eine beispielhafte Salon-Website mit Leistungen, Team, Bewertungen, Google-Struktur, WhatsApp-Anfrage und klarer Kundenführung.</p>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#E7DDD0]">Eine beispielhafte Salon-Website mit Leistungen, Team, Bewertungen, Google-Struktur, WhatsApp-Anfrage und klarer Kundenführung. Diese Musterseite zeigt, wie ein Salon online Vertrauen und Terminanfragen verbinden kann.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Salon-Struktur anfragen</a>
             <a href="#salon-leistungen" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Leistungen ansehen</a>
@@ -5521,15 +5551,27 @@ function DemoFriseursalonPage() {
           <img src={demoV2Images.friseurB} alt="Beispielbild für Friseurwerkzeuge und Salonatmosphäre" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
           <img src={demoV2Images.friseurC} alt="Beispielhafte Friseurbehandlung in warmer Salonumgebung" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
         </section>
-        <section id="salon-leistungen" className="grid gap-4 md:grid-cols-3">
-          {['Damenhaarschnitt', 'Herrenhaarschnitt', 'Farbe & Strähnen', 'Styling', 'Hochsteckfrisuren', 'Pflegebehandlungen'].map((item) => (
-            <article key={item} className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4">
-              <h3 className="font-semibold text-white">{item}</h3>
-              <p className="mt-2 text-sm text-[#E7DDD0]">Musterleistung mit klarer Beschreibung, Preisrahmen und direkter Terminführung.</p>
-            </article>
-          ))}
+        <section className="grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+            <h2 className="text-2xl font-semibold text-white">Warum Salons digitale Struktur brauchen</h2>
+            <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">
+              Viele Salons haben starke Leistungen, aber online fehlen klare Leistungswege, Terminführung und ein sichtbarer Vertrauensaufbau. Diese Demo zeigt, wie aus einer reinen Informationsseite ein echter Anfrageweg wird.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+            <h2 className="text-2xl font-semibold text-white">Vom Besuch zur Terminanfrage</h2>
+            <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Website ansehen → Behandlung wählen → Bewertung prüfen → WhatsApp oder Formular nutzen → Rückmeldung erhalten.</p>
+          </article>
         </section>
-        <section className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+        <section id="salon-leistungen" className="grid gap-4 md:grid-cols-3">
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Damenhaarschnitt</h3><p className="mt-2 text-sm text-[#E7DDD0]">Individuelle Schnitte, Beratung und Styling für einen gepflegten Look mit klarer Terminführung auf der Website.</p></article>
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Herrenhaarschnitt</h3><p className="mt-2 text-sm text-[#E7DDD0]">Moderne und klassische Herrenhaarschnitte mit einfacher Online-Anfrage und klaren Leistungsdetails.</p></article>
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Farbe & Strähnen</h3><p className="mt-2 text-sm text-[#E7DDD0]">Farbveränderungen und Strähnen werden verständlich erklärt, damit Kundinnen sicherer entscheiden können.</p></article>
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Styling</h3><p className="mt-2 text-sm text-[#E7DDD0]">Styling-Angebote für Alltag und Anlässe mit emotionaler Darstellung und direktem Kontaktweg.</p></article>
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Hochsteckfrisuren</h3><p className="mt-2 text-sm text-[#E7DDD0]">Leistungsbereich für besondere Momente mit Bildfokus, Ablaufhinweisen und gezielter Anfrage.</p></article>
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Pflegebehandlungen</h3><p className="mt-2 text-sm text-[#E7DDD0]">Pflege und Haarqualität werden als eigene Leistung sichtbar und nicht nur als Nebenpunkt erwähnt.</p></article>
+        </section>
+        <section id="salon-vorteile" className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
           <h2 className="text-2xl font-semibold text-white">Team & Vertrauen</h2>
           <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Persönliche Beratung, familiäre Atmosphäre, klare Terminführung und professionelle Außenwirkung als Beispielstruktur.</p>
         </section>
@@ -5540,6 +5582,18 @@ function DemoFriseursalonPage() {
         <section className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
           <h2 className="text-2xl font-semibold text-white">Bewertungsbereich (Muster)</h2>
           <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Beispielbewertungen als Musterdarstellung für Vertrauensaufbau, klar als Demo gekennzeichnet.</p>
+        </section>
+        <section id="salon-ablauf" className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+          <h2 className="text-2xl font-semibold text-white">Beispiel-Ablauf</h2>
+          <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">1. Anfrage senden · 2. Beratung erhalten · 3. Termin oder Angebot abstimmen · 4. Umsetzung im Salon.</p>
+        </section>
+        <section id="salon-kontakt" className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+          <h2 className="text-2xl font-semibold text-white">Kontakt / Termin-Anfrage (Demo)</h2>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <input placeholder="Name" className="rounded-xl border border-[#D8B45A]/25 bg-[#221c17] px-3 py-2.5 text-sm text-white" />
+            <input placeholder="Telefon oder E-Mail" className="rounded-xl border border-[#D8B45A]/25 bg-[#221c17] px-3 py-2.5 text-sm text-white" />
+            <textarea placeholder="Gewünschte Leistung und Wunschtermin" rows={4} className="md:col-span-2 rounded-xl border border-[#D8B45A]/25 bg-[#221c17] px-3 py-2.5 text-sm text-white" />
+          </div>
         </section>
         <DemoContactCTA text="So könnte auch Ihr Salon digital klarer wirken." />
         <DemoPageDisclaimer />
@@ -5552,6 +5606,16 @@ function DemoHandwerkerV2Page() {
   return (
     <main className="bg-[linear-gradient(180deg,#0b1220,#111827)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoMiniNav
+          label="Handwerker Demo"
+          links={[
+            ['Leistungen', '#hw-leistungen'],
+            ['Referenzen', '#hw-refs'],
+            ['Ablauf', '#hw-flow'],
+            ['Kontakt', '#hw-contact'],
+            ['Zurück zu STRUKTIVA', siteLinks.home],
+          ]}
+        />
         <section className="rounded-[2.1rem] border border-[#f59e0b]/30 bg-[#111827] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#fbbf24]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Handwerker-Demo: Klare Website-Struktur für regionale Betriebe</h1>
@@ -5573,17 +5637,17 @@ function DemoHandwerkerV2Page() {
           <img src={demoV2Images.handwerkerB} alt="Beispielbild für Werkzeug und Innenausbau" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
           <img src={demoV2Images.handwerkerC} alt="Beispielhafte Montagearbeit im Handwerk" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
         </section>
-        <section className="grid gap-4 md:grid-cols-3">
-          {['Renovierung', 'Reparaturen', 'Montage', 'Wartung', 'Innenausbau', 'Notdienst / schnelle Anfrage'].map((item) => (
-            <article key={item} className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4">
-              <h3 className="font-semibold text-white">{item}</h3>
-              <p className="mt-2 text-sm text-gray-200">Klarer Leistungsblock mit regionalem Bezug und direkter Anfrageoption.</p>
-            </article>
-          ))}
+        <section id="hw-leistungen" className="grid gap-4 md:grid-cols-3">
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Renovierung</h3><p className="mt-2 text-sm text-gray-200">Saubere Renovierungsarbeiten für Wohn- und Geschäftsräume mit klarer Leistungsübersicht und direkter Anfrage.</p></article>
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Reparaturen</h3><p className="mt-2 text-sm text-gray-200">Kleine Schäden und Ausbesserungen werden als schnelle Anfragen mit kurzer Rückmeldezeit strukturiert dargestellt.</p></article>
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Montage</h3><p className="mt-2 text-sm text-gray-200">Montageleistungen werden übersichtlich erklärt, damit Besucher sofort verstehen, welche Arbeiten übernommen werden.</p></article>
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Wartung</h3><p className="mt-2 text-sm text-gray-200">Wartungsleistungen für wiederkehrende Einsätze mit klaren Intervallen und transparenten Kontaktwegen.</p></article>
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Innenausbau</h3><p className="mt-2 text-sm text-gray-200">Innenausbau profitiert von Projektbildern, Materialhinweisen und einer strukturierten Angebotsdarstellung.</p></article>
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Notdienst / schnelle Anfrage</h3><p className="mt-2 text-sm text-gray-200">Bei dringenden Anliegen sind Telefonnummer, WhatsApp und Kurzformular sofort sichtbar und klar priorisiert.</p></article>
         </section>
         <section id="hw-refs" className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
           <h2 className="text-2xl font-semibold text-white">Referenzen (Muster)</h2>
-          <p className="mt-3 text-sm leading-7 text-gray-200">Badezimmermodernisierung, Innenausbau, Reparaturauftrag, Montagearbeit – als beispielhafte Projektkarten.</p>
+          <p className="mt-3 text-sm leading-7 text-gray-200">Beispielprojekt: Badezimmermodernisierung · Beispielprojekt: Innenausbau eines Wohnraums · Beispielprojekt: Reparaturauftrag im Bestand · Beispielprojekt: Montagearbeit beim Kunden.</p>
         </section>
         <section className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
           <h2 className="text-2xl font-semibold text-white">Anfrageführung</h2>
@@ -5592,6 +5656,19 @@ function DemoHandwerkerV2Page() {
         <section className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
           <h2 className="text-2xl font-semibold text-white">Google & regionale Sichtbarkeit</h2>
           <p className="mt-3 text-sm leading-7 text-gray-200">Einsatzgebiet, Leistungen, Bewertungen und Kontaktwege werden als regionale Struktur sichtbar gemacht.</p>
+        </section>
+        <section id="hw-flow" className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+          <h2 className="text-2xl font-semibold text-white">So wird aus einem Besucher eine klare Anfrage</h2>
+          <p className="mt-3 text-sm leading-7 text-gray-200">1. Leistung auswählen · 2. Einsatzort nennen · 3. Bilder oder Beschreibung senden · 4. Rückmeldung erhalten.</p>
+        </section>
+        <section id="hw-contact" className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+          <h2 className="text-2xl font-semibold text-white">Kontaktbereich (Beispielstruktur)</h2>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <input placeholder="Name" className="rounded-xl border border-gray-600/60 bg-gray-800/60 px-3 py-2.5 text-sm text-white" />
+            <input placeholder="Ort" className="rounded-xl border border-gray-600/60 bg-gray-800/60 px-3 py-2.5 text-sm text-white" />
+            <input placeholder="Gewünschte Leistung" className="rounded-xl border border-gray-600/60 bg-gray-800/60 px-3 py-2.5 text-sm text-white md:col-span-2" />
+            <textarea placeholder="Beschreibung des Anliegens" rows={4} className="rounded-xl border border-gray-600/60 bg-gray-800/60 px-3 py-2.5 text-sm text-white md:col-span-2" />
+          </div>
         </section>
         <DemoContactCTA text="So wird Ihr Handwerksbetrieb online klarer gefunden und besser angefragt." />
         <DemoPageDisclaimer />
@@ -5604,6 +5681,17 @@ function DemoKosmetikstudioPage() {
   return (
     <main className="bg-[linear-gradient(180deg,#fff8f5,#f9e7de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoMiniNav
+          label="Kosmetikstudio Demo"
+          links={[
+            ['Behandlungen', '#beauty-services'],
+            ['Vertrauen', '#beauty-trust'],
+            ['Terminführung', '#beauty-booking'],
+            ['Kontakt', '#beauty-contact'],
+            ['Zurück zu STRUKTIVA', siteLinks.home],
+          ]}
+          theme="light"
+        />
         <section className="rounded-[2.1rem] border border-[#e9c9ac]/80 bg-[#fff8f3] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b8894b]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-[#3b2f2f] md:text-5xl">Kosmetikstudio-Demo: Digitale Struktur für Beauty-Angebote</h1>
@@ -5626,24 +5714,32 @@ function DemoKosmetikstudioPage() {
           <img src={demoV2Images.kosmetikC} alt="Beispielbild für ruhige Studioatmosphäre" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
         </section>
         <section id="beauty-services" className="grid gap-4 md:grid-cols-3">
-          {['Gesichtsbehandlung', 'Hautanalyse', 'Wimpern & Augenbrauen', 'Make-up', 'Pflegepakete', 'Beratung'].map((item) => (
-            <article key={item} className="rounded-2xl border border-[#e4cabb] bg-white p-4">
-              <h3 className="font-semibold text-[#3b2f2f]">{item}</h3>
-              <p className="mt-2 text-sm text-[#5a4740]">Beispielhafter Leistungsbereich mit klarer Beschreibung und Terminweg.</p>
-            </article>
-          ))}
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Gesichtsbehandlung</h3><p className="mt-2 text-sm text-[#5a4740]">Klare Darstellung von Pflege, Reinigung und Entspannung für einen verständlichen Einstieg.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Hautanalyse</h3><p className="mt-2 text-sm text-[#5a4740]">Die Hautanalyse erklärt den Start der Behandlung und stärkt Vertrauen durch Beratung.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Wimpern & Augenbrauen</h3><p className="mt-2 text-sm text-[#5a4740]">Beauty-Leistungen werden übersichtlich gezeigt und direkt mit Terminwegen verbunden.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Make-up</h3><p className="mt-2 text-sm text-[#5a4740]">Make-up für Alltag, Event oder besondere Anlässe mit hochwertiger, klarer Erklärung.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Pflegepakete</h3><p className="mt-2 text-sm text-[#5a4740]">Pakete bündeln mehrere Leistungen sinnvoll und machen Angebote leichter verständlich.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Beratung</h3><p className="mt-2 text-sm text-[#5a4740]">Persönliche Beratung als Vertrauenselement unterstützt die Entscheidung zur Anfrage.</p></article>
         </section>
         <section className="rounded-2xl border border-[#e4cabb] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#3b2f2f]">Preise / Pakete (Demo)</h2>
           <p className="mt-3 text-sm leading-7 text-[#5a4740]">Basisbehandlung · Premiumbehandlung · Beauty-Paket – als Musterstruktur gekennzeichnet.</p>
         </section>
-        <section className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+        <section id="beauty-trust" className="rounded-2xl border border-[#e4cabb] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#3b2f2f]">Vertrauen</h2>
           <p className="mt-3 text-sm leading-7 text-[#5a4740]">Hygiene, Beratung, ruhige Atmosphäre, professionelle Behandlung und Bewertungsführung als digitale Vertrauensbasis.</p>
         </section>
-        <section className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+        <section id="beauty-booking" className="rounded-2xl border border-[#e4cabb] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#3b2f2f]">Terminführung</h2>
           <p className="mt-3 text-sm leading-7 text-[#5a4740]">Termin anfragen, Behandlung auswählen, Kontakt über WhatsApp oder Formular und klare Rückmeldung.</p>
+        </section>
+        <section id="beauty-contact" className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+          <h2 className="text-2xl font-semibold text-[#3b2f2f]">Kontakt / Termin-Anfrage (Demo)</h2>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <input placeholder="Name" className="rounded-xl border border-[#e4cabb] bg-white px-3 py-2.5 text-sm text-[#3b2f2f]" />
+            <input placeholder="Telefon oder E-Mail" className="rounded-xl border border-[#e4cabb] bg-white px-3 py-2.5 text-sm text-[#3b2f2f]" />
+            <textarea placeholder="Gewünschte Behandlung und Terminwunsch" rows={4} className="md:col-span-2 rounded-xl border border-[#e4cabb] bg-white px-3 py-2.5 text-sm text-[#3b2f2f]" />
+          </div>
         </section>
         <DemoContactCTA text="So könnte Ihr Kosmetikstudio online hochwertiger und klarer wirken." />
         <DemoPageDisclaimer />
@@ -5656,6 +5752,16 @@ function DemoBewertungsstrukturPage() {
   return (
     <main className="bg-[linear-gradient(180deg,#0b1220,#13253d)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoMiniNav
+          label="Bewertungsstruktur Demo"
+          links={[
+            ['Ablauf', '#review-flow'],
+            ['Bestandteile', '#review-components'],
+            ['WhatsApp-Text', '#review-whatsapp'],
+            ['Kontakt', '#review-contact'],
+            ['Zurück zu STRUKTIVA', siteLinks.home],
+          ]}
+        />
         <section className="rounded-[2.1rem] border border-[#D8B45A]/30 bg-[#0f172a] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Bewertungsstruktur-Demo: Mehr Vertrauen durch klare Bewertungswege</h1>
@@ -5680,7 +5786,7 @@ function DemoBewertungsstrukturPage() {
           <h2 className="text-2xl font-semibold text-white">Wie es funktioniert</h2>
           <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">1. Kunde ist zufrieden · 2. QR-Code scannen · 3. Bewertung öffnen · 4. Bewertung abgeben · 5. Vertrauen für neue Kunden stärken.</p>
         </section>
-        <section className="grid gap-4 md:grid-cols-3">
+        <section id="review-components" className="grid gap-4 md:grid-cols-3">
           {['Google-Bewertungslink', 'QR-Code', 'Bewertungskarte', 'WhatsApp-Text', 'Website-Einbindung', 'Bewertungsbereich'].map((item) => (
             <article key={item} className="rounded-2xl border border-white/14 bg-white/[0.04] p-4">
               <h3 className="font-semibold text-white">{item}</h3>
@@ -5688,7 +5794,7 @@ function DemoBewertungsstrukturPage() {
             </article>
           ))}
         </section>
-        <section className="rounded-2xl border border-white/14 bg-white/[0.04] p-5">
+        <section id="review-whatsapp" className="rounded-2xl border border-white/14 bg-white/[0.04] p-5">
           <h2 className="text-2xl font-semibold text-white">Beispieltext (WhatsApp)</h2>
           <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">„Vielen Dank für Ihren Besuch. Wenn Sie zufrieden waren, freuen wir uns über eine kurze Bewertung.“</p>
         </section>
@@ -5697,6 +5803,10 @@ function DemoBewertungsstrukturPage() {
           <div className="mt-4 inline-flex h-36 w-36 items-center justify-center rounded-xl border border-[#D8B45A]/45 bg-white text-xs font-semibold text-[#0f172a]">
             Beispiel-QR-Code
           </div>
+        </section>
+        <section id="review-contact" className="rounded-2xl border border-white/14 bg-white/[0.04] p-5">
+          <h2 className="text-2xl font-semibold text-white">Anfragebereich (Beispiel)</h2>
+          <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">Anfrage senden für QR-Code-Setup, Bewertungslink-Struktur und passende Nachrichtentexte.</p>
         </section>
         <DemoContactCTA text="Machen Sie es zufriedenen Kunden leichter, eine Bewertung abzugeben." />
         <DemoPageDisclaimer />
@@ -5712,6 +5822,16 @@ function DemoDashboardPage() {
   return (
     <main className="bg-[linear-gradient(180deg,#07111f,#0b1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoMiniNav
+          label="Dashboard Demo"
+          links={[
+            ['Kennzahlen', '#dashboard-metrics'],
+            ['Module', '#dashboard-modules'],
+            ['Ablauf', '#dashboard-flow'],
+            ['Kontakt', '#dashboard-contact'],
+            ['Zurück zu STRUKTIVA', siteLinks.home],
+          ]}
+        />
         <section className="rounded-[2.1rem] border border-[#38bdf8]/30 bg-[#081427] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7dd3fc]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Dashboard-Demo: Digitale Übersicht für kleine Unternehmen</h1>
@@ -5732,7 +5852,7 @@ function DemoDashboardPage() {
           <img src={demoV2Images.dashboardA} alt="Digitale Übersicht mit Aufgaben und Kennzahlen" loading="lazy" className="h-48 w-full rounded-2xl object-cover" />
           <img src={demoV2Images.dashboardB} alt="Beispielbild für Business-Software und Teamplanung" loading="lazy" className="h-48 w-full rounded-2xl object-cover" />
         </section>
-        <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <section id="dashboard-metrics" className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {cards.map(([title, value]) => (
             <article key={title} className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-4">
               <p className="text-xs uppercase tracking-[0.14em] text-[#94a3b8]">{title}</p>
@@ -5752,6 +5872,14 @@ function DemoDashboardPage() {
           <h2 className="text-2xl font-semibold text-white">Für wen geeignet?</h2>
           <p className="mt-3 text-sm leading-7 text-[#dbe7ff]">Friseursalons, Handwerker, Kosmetikstudios, Beratungsbetriebe und lokale Dienstleister.</p>
           <p className="mt-2 text-xs uppercase tracking-[0.14em] text-[#94a3b8]">Alle Werte sind Demo-Werte.</p>
+        </section>
+        <section id="dashboard-flow" className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-5">
+          <h2 className="text-2xl font-semibold text-white">Kundenführung im Dashboard-Beispiel</h2>
+          <p className="mt-3 text-sm leading-7 text-[#dbe7ff]">Anfrage erfassen → Aufgabe zuweisen → Termin planen → Status aktualisieren → Tagesübersicht prüfen.</p>
+        </section>
+        <section id="dashboard-contact" className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-5">
+          <h2 className="text-2xl font-semibold text-white">Kontakt / Anfragebereich (Demo)</h2>
+          <p className="mt-3 text-sm leading-7 text-[#dbe7ff]">Diese Musterseite zeigt, wie ein Dashboard-Angebot mit klarer Anfrageführung strukturiert werden kann.</p>
         </section>
         <DemoContactCTA text="Bringen Sie mehr Übersicht in Ihren Betriebsalltag." />
         <DemoPageDisclaimer />
