@@ -54,6 +54,11 @@ const siteLinks = {
   demoKosmetikstudioV2: '/demos/kosmetikstudio',
   demoBewertungsstrukturV2: '/demos/bewertungsstruktur',
   demoDashboardV2: '/demos/dashboard',
+  brancheFriseursalons: '/branchen/friseursalons',
+  brancheHandwerker: '/branchen/handwerker',
+  brancheKosmetikstudios: '/branchen/kosmetikstudios',
+  brancheLokaleDienstleister: '/branchen/lokale-dienstleister',
+  brancheBeratung: '/branchen/beratung',
   landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
   bewertungsQrCode: '/bewertungs-qr-code',
   digitaleSoforthilfe: '/digitale-soforthilfe',
@@ -564,6 +569,11 @@ function useDocumentTitleSafe(pathname) {
       '/demos/kosmetikstudio': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/bewertungsstruktur': 'Bewertungsstruktur Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/dashboard': 'Dashboard Demo | STRUKTIVA Unternehmensarchitektur',
+      '/branchen/friseursalons': 'Digitale Struktur für Friseursalons | STRUKTIVA',
+      '/branchen/handwerker': 'Digitale Struktur für Handwerker | STRUKTIVA',
+      '/branchen/kosmetikstudios': 'Digitale Struktur für Kosmetikstudios | STRUKTIVA',
+      '/branchen/lokale-dienstleister': 'Digitale Struktur für lokale Dienstleister | STRUKTIVA',
+      '/branchen/beratung': 'Digitale Struktur für Beratungsbetriebe | STRUKTIVA',
       '/landingpage-digitale-struktur': 'Digitale Struktur fuer kleine Unternehmen - STRUKTIVA Unternehmensarchitektur',
       '/wissen': 'STRUKTIVA Wissen - Digitale Unternehmensstruktur für kleine Unternehmen',
       '/wissen/warum-eine-schoene-website-keine-kunden-bringt': 'Warum eine schöne Website allein keine Kunden bringt - STRUKTIVA Wissen',
@@ -607,6 +617,16 @@ function useDocumentTitleSafe(pathname) {
         'Beispielhafte Bewertungsstruktur mit QR-Code, Bewertungslink, WhatsApp-Text und Website-Einbindung.',
       '/demos/dashboard':
         'Beispielhaftes Betriebs-Dashboard für kleine Unternehmen mit Aufgaben, Terminen, Tagesübersicht und Kennzahlen.',
+      '/branchen/friseursalons':
+        'Digitale Struktur für Friseursalons mit Website, Leistungsstruktur, Bewertungen, Google-Profil und WhatsApp-Terminführung.',
+      '/branchen/handwerker':
+        'Digitale Struktur für Handwerker mit Leistungsseiten, Referenzen, regionaler Sichtbarkeit und klaren Anfragewegen.',
+      '/branchen/kosmetikstudios':
+        'Digitale Struktur für Kosmetikstudios mit Behandlungen, Preisen, Vertrauen, Bewertungen und Terminführung.',
+      '/branchen/lokale-dienstleister':
+        'Digitale Struktur für lokale Dienstleister mit professionellem Auftritt, Kontaktwegen und klarer Kundenführung.',
+      '/branchen/beratung':
+        'Digitale Struktur für Beratungsbetriebe mit Angebotslogik, Vertrauensaufbau und klarer Termin-Anfrageführung.',
       '/wissen':
         'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen Abläufen für kleine Unternehmen.',
       '/wissen/warum-eine-schoene-website-keine-kunden-bringt':
@@ -3047,11 +3067,11 @@ function ModulesSection() {
 
 function BranchenSection() {
   const items = [
-    ['Friseursalons', 'Typische Probleme: unklare Website, schwache Google-Wirkung, wenige Bewertungen, keine klare Termin- oder WhatsApp-Führung.', 'STRUKTIVA löst: moderne Salon-Website, Leistungsstruktur, Team-/Vertrauensbereich, Google- und Bewertungsstruktur, WhatsApp-Anfrageweg.', 'Lösung für Friseursalons ansehen'],
-    ['Handwerker', 'Typische Probleme: unklare Leistungen, fehlende Referenzen, unklare Anfragewege, regional schwer auffindbar.', 'STRUKTIVA löst: Leistungsseiten, Referenzstruktur, Anfrageformular, Google-Sichtbarkeit und WhatsApp-Kontakt.', 'Lösung für Handwerker ansehen'],
-    ['Kosmetikstudios', 'Typische Probleme: Behandlungen und Preise unübersichtlich, Vertrauen fehlt, Bewertungen/Bilder nicht sauber eingebunden.', 'STRUKTIVA löst: Behandlungsstruktur, Preisübersicht, Bewertungsbereich, Vertrauensaufbau, Instagram-/Pinterest-Verknüpfung.', 'Lösung für Kosmetikstudios ansehen'],
-    ['Lokale Dienstleister', 'Typische Probleme: kein klarer digitaler Auftritt, wenig Vertrauen, schwache Kontaktführung.', 'STRUKTIVA löst: professionelle Website, lokale Google-Grundlage, klare Kontaktwege und Kundenführung.', 'Lösung für lokale Dienstleister ansehen'],
-    ['Beratungsbetriebe', 'Typische Probleme: Angebot schwer verständlich, Positionierung unklar, keine klare Termin-Anfrage.', 'STRUKTIVA löst: Angebotsstruktur, Vertrauenselemente, LinkedIn-/Google-Verknüpfung und Terminführung.', 'Lösung für Beratungsbetriebe ansehen'],
+    ['Friseursalons', 'Viele Salons haben eine veraltete Website, wenig Bewertungen und keine klare Terminführung.', 'STRUKTIVA verbindet Salon-Website, Leistungsstruktur, Google-Profil, Bewertungen und WhatsApp-Anfrageweg.', 'Lösung für Friseursalons ansehen', siteLinks.brancheFriseursalons],
+    ['Handwerker', 'Leistungen, Einsatzgebiet und Referenzen sind online oft nicht klar genug sichtbar.', 'STRUKTIVA baut Leistungsseiten, Referenzstruktur, Anfragewege und regionale Google-Grundlage.', 'Lösung für Handwerker ansehen', siteLinks.brancheHandwerker],
+    ['Kosmetikstudios', 'Behandlungen, Preise, Vertrauen und Terminwege sind oft unübersichtlich dargestellt.', 'STRUKTIVA strukturiert Behandlungen, Preise, Bewertungen, Bilder und Termin-Anfrage.', 'Lösung für Kosmetikstudios ansehen', siteLinks.brancheKosmetikstudios],
+    ['Lokale Dienstleister', 'Kein klarer Auftritt und schwache Kontaktführung kosten Vertrauen und Anfragen.', 'STRUKTIVA schafft eine professionelle Struktur mit klarer Positionierung und direkter Kundenführung.', 'Lösung für lokale Dienstleister ansehen', siteLinks.brancheLokaleDienstleister],
+    ['Beratungsbetriebe', 'Angebot und Nutzen werden online oft zu abstrakt dargestellt.', 'STRUKTIVA baut eine klare Angebotslogik mit Vertrauenselementen und Terminführung auf.', 'Lösung für Beratungsbetriebe ansehen', siteLinks.brancheBeratung],
   ]
 
   return (
@@ -3064,12 +3084,12 @@ function BranchenSection() {
           centered={false}
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {items.map(([title, problemText, solutionText, cta]) => (
+          {items.map(([title, problemText, solutionText, cta, href]) => (
             <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
               <h3 className="text-lg font-semibold text-white">{title}</h3>
               <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{problemText}</p>
               <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{solutionText}</p>
-              <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+              <a href={href} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
                 {cta}
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -5453,6 +5473,16 @@ function Page() {
     content = <DemoBewertungsstrukturPage />
   } else if (pathname === '/demos/dashboard') {
     content = <DemoDashboardPage />
+  } else if (pathname === '/branchen/friseursalons') {
+    content = <BrancheFriseursalonsPage />
+  } else if (pathname === '/branchen/handwerker') {
+    content = <BrancheHandwerkerPage />
+  } else if (pathname === '/branchen/kosmetikstudios') {
+    content = <BrancheKosmetikstudiosPage />
+  } else if (pathname === '/branchen/lokale-dienstleister') {
+    content = <BrancheLokaleDienstleisterPage />
+  } else if (pathname === '/branchen/beratung') {
+    content = <BrancheBeratungPage />
   } else if (pathname === '/landingpage-digitale-struktur') {
     content = <LandingpageDigitaleStrukturPageV2 />
   }
@@ -5883,6 +5913,177 @@ function DemoDashboardPage() {
         </section>
         <DemoContactCTA text="Bringen Sie mehr Übersicht in Ihren Betriebsalltag." />
         <DemoPageDisclaimer />
+      </div>
+    </main>
+  )
+}
+
+function BrancheFriseursalonsPage() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#120f0d,#1b1713)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <DemoMiniNav label="Branchenlösung Friseursalon" links={[['Leistungen', '#branche-friseur-services'], ['Vorteile', '#branche-friseur-benefits'], ['Ablauf', '#branche-friseur-flow'], ['Kontakt', '#branche-friseur-contact'], ['Zurück zu STRUKTIVA', siteLinks.home]]} />
+        <section className="rounded-[2rem] border border-[#D8B45A]/25 bg-[linear-gradient(160deg,rgba(35,28,23,0.95),rgba(20,17,14,0.92))] p-7 shadow-premium">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Branchenbeispiel von STRUKTIVA</p>
+          <h1 className="mt-3 text-4xl font-semibold md:text-5xl">Digitale Struktur für Friseursalons</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#E7DDD0]">Website, Leistungen, Google-Profil, Bewertungen und WhatsApp-Terminführung klar verbunden.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Salon-Struktur anfragen</a>
+            <a href={siteLinks.demoFriseursalonV2} className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Beispiel ansehen</a>
+          </div>
+        </section>
+        <section className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+            <h2 className="text-2xl font-semibold text-white">Warum Salons klare Struktur brauchen</h2>
+            <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Veraltete Website, wenig Bewertungen und unklare Terminwege kosten Vertrauen. Mit einer klaren Salonstruktur werden Leistungen, Atmosphäre und Kontakt logisch geführt.</p>
+          </article>
+          <img src={demoV2Images.friseurA} alt="Beispielbild für modernen Friseursalon" loading="lazy" className="h-full min-h-56 w-full rounded-2xl object-cover" />
+        </section>
+        <section id="branche-friseur-services" className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold">Leistungsstruktur</h3><p className="mt-2 text-sm text-[#E7DDD0]">Leistungen werden verständlich gegliedert, damit Kundinnen sofort den passenden Bereich finden.</p></article>
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold">Team & Atmosphäre</h3><p className="mt-2 text-sm text-[#E7DDD0]">Persönlichkeit und Vertrauen werden sichtbar gemacht statt nur genannt.</p></article>
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold">Terminführung</h3><p className="mt-2 text-sm text-[#E7DDD0]">Website-Besucher werden direkt zu WhatsApp oder Anfrageformular geführt.</p></article>
+        </section>
+        <section id="branche-friseur-benefits" className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+          <h2 className="text-2xl font-semibold">STRUKTIVA-Lösung für Salons</h2>
+          <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Salon-Website → Google-Profil → Bewertungen → WhatsApp-Anfrage → Terminführung.</p>
+        </section>
+        <section id="branche-friseur-flow" className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+          <h2 className="text-2xl font-semibold">Beispiel-Ablauf</h2>
+          <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">1. Anfrage senden · 2. Beratung erhalten · 3. Termin abstimmen · 4. Umsetzung.</p>
+        </section>
+        <section id="branche-friseur-contact" className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+          <h2 className="text-2xl font-semibold">Kontaktbereich</h2>
+          <p className="mt-3 text-sm text-[#E7DDD0]">So könnte Ihr Salon digital klarer, hochwertiger und vertrauensvoller wirken.</p>
+          <a href={siteLinks.contact} className="mt-4 inline-flex rounded-full bg-[#D8B45A] px-5 py-2.5 text-sm font-semibold text-white">Friseursalon-Lösung anfragen</a>
+        </section>
+      </div>
+    </main>
+  )
+}
+
+function BrancheHandwerkerPage() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#0b1220,#111827)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <DemoMiniNav label="Branchenlösung Handwerker" links={[['Leistungen', '#branche-hw-services'], ['Referenzen', '#branche-hw-projects'], ['Ablauf', '#branche-hw-flow'], ['Kontakt', '#branche-hw-contact'], ['Zurück zu STRUKTIVA', siteLinks.home]]} />
+        <section className="rounded-[2rem] border border-[#f59e0b]/30 bg-[#111827] p-7 shadow-premium">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#fbbf24]">Branchenbeispiel von STRUKTIVA</p>
+          <h1 className="mt-3 text-4xl font-semibold md:text-5xl">Digitale Struktur für Handwerker</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-gray-200">Leistungen, Referenzen, Einsatzgebiet, Anfrageformular und regionale Sichtbarkeit klar aufgebaut.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className="rounded-full bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-white">Handwerker-Struktur anfragen</a>
+            <a href={siteLinks.demoHandwerkerV2} className="rounded-full border border-[#f59e0b]/35 px-6 py-3 text-sm font-semibold text-[#fbbf24]">Leistungen ansehen</a>
+          </div>
+        </section>
+        <section className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+          <aside className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+            <h2 className="text-2xl font-semibold">Typische Probleme</h2>
+            <p className="mt-3 text-sm leading-7 text-gray-200">Leistungen unklar · Referenzen fehlen · Anfragewege unklar · Einsatzgebiet unsichtbar · regionale Auffindbarkeit schwach.</p>
+          </aside>
+          <img src={demoV2Images.handwerkerA} alt="Beispielhafte regionale Handwerksleistung" loading="lazy" className="h-full min-h-56 w-full rounded-2xl object-cover" />
+        </section>
+        <section id="branche-hw-services" className="space-y-3 rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+          <h2 className="text-2xl font-semibold">Leistungsstruktur</h2>
+          <p className="text-sm text-gray-200">Renovierung: Klarer Leistungsumfang mit direkter Anfrage.</p>
+          <p className="text-sm text-gray-200">Reparaturen: Schnelle Kontaktwege für dringende Anliegen.</p>
+          <p className="text-sm text-gray-200">Montage: Transparente Darstellung von Montageleistungen und Ablauf.</p>
+          <p className="text-sm text-gray-200">Wartung: Wiederkehrende Leistungen klar und verständlich erklärt.</p>
+          <p className="text-sm text-gray-200">Innenausbau: Projektfokus mit Bildbelegen und Angebotslogik.</p>
+          <p className="text-sm text-gray-200">Schnelle Anfrage: Telefon, WhatsApp und Formular sichtbar priorisiert.</p>
+        </section>
+        <section id="branche-hw-projects" className="grid gap-4 md:grid-cols-2">
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold">Beispielprojekt: Badmodernisierung</h3><p className="mt-2 text-sm text-gray-200">Vorher/Nachher-Logik mit klarer Leistungsbeschreibung.</p></article>
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold">Beispielprojekt: Innenausbau</h3><p className="mt-2 text-sm text-gray-200">Material, Ablauf und Ergebnis strukturiert erklärt.</p></article>
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold">Beispielprojekt: Montageauftrag</h3><p className="mt-2 text-sm text-gray-200">Schnelle Anfrage bis Ausführung als klarer Prozess.</p></article>
+          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold">Beispielprojekt: Reparatur im Bestand</h3><p className="mt-2 text-sm text-gray-200">Kurzfristiger Auftrag mit direkter Kundenführung.</p></article>
+        </section>
+        <section id="branche-hw-flow" className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+          <h2 className="text-2xl font-semibold">Anfrageführung</h2>
+          <p className="mt-3 text-sm text-gray-200">Leistung wählen → Einsatzort nennen → Bilder senden → Rückmeldung erhalten.</p>
+        </section>
+        <section id="branche-hw-contact" className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+          <h2 className="text-2xl font-semibold">Kontakt-CTA</h2>
+          <p className="mt-3 text-sm text-gray-200">So wird Ihr Handwerksbetrieb regional klarer sichtbar und einfacher anfragbar.</p>
+          <a href={siteLinks.contact} className="mt-4 inline-flex rounded-full bg-[#f59e0b] px-5 py-2.5 text-sm font-semibold text-white">Handwerker-Lösung anfragen</a>
+        </section>
+      </div>
+    </main>
+  )
+}
+
+function BrancheKosmetikstudiosPage() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#fff8f5,#f9e7de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <DemoMiniNav label="Branchenlösung Kosmetikstudio" links={[['Behandlungen', '#branche-kosmetik-services'], ['Vertrauen', '#branche-kosmetik-trust'], ['Termine', '#branche-kosmetik-flow'], ['Kontakt', '#branche-kosmetik-contact'], ['Zurück zu STRUKTIVA', siteLinks.home]]} theme="light" />
+        <section className="rounded-[2rem] border border-[#e9c9ac]/80 bg-[#fff8f3] p-7 shadow-premium">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b8894b]">Branchenbeispiel von STRUKTIVA</p>
+          <h1 className="mt-3 text-4xl font-semibold text-[#3b2f2f] md:text-5xl">Digitale Struktur für Kosmetikstudios</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#5a4740]">Behandlungen, Preise, Vertrauen, Bewertungen und Termin-Anfrage hochwertig und klar dargestellt.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className="rounded-full bg-[#b8894b] px-6 py-3 text-sm font-semibold text-white">Kosmetik-Struktur anfragen</a>
+            <a href={siteLinks.demoKosmetikstudioV2} className="rounded-full border border-[#d4a574]/55 px-6 py-3 text-sm font-semibold text-[#9b6d3e]">Behandlungen ansehen</a>
+          </div>
+        </section>
+        <section id="branche-kosmetik-trust" className="grid gap-5 lg:grid-cols-[1fr_1fr]">
+          <img src={demoV2Images.kosmetikA} alt="Beispielbild für Kosmetikbehandlung" loading="lazy" className="h-full min-h-56 w-full rounded-2xl object-cover" />
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+            <h2 className="text-2xl font-semibold text-[#3b2f2f]">Vertrauensbereich</h2>
+            <p className="mt-3 text-sm leading-7 text-[#5a4740]">Beratung, Hygiene, Behandlungserklärung, ruhige Atmosphäre, klare Preise und Bewertungen werden als Vertrauenssystem sichtbar gemacht.</p>
+          </article>
+        </section>
+        <section id="branche-kosmetik-services" className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Gesichtsbehandlung</h3><p className="mt-2 text-sm text-[#5a4740]">Pflege und Entspannung werden klar verständlich dargestellt.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Hautanalyse</h3><p className="mt-2 text-sm text-[#5a4740]">Ein strukturierter Einstieg in die passende Behandlung.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Wimpern & Augenbrauen</h3><p className="mt-2 text-sm text-[#5a4740]">Detailleistungen mit klarem Terminweg und Nutzenfokus.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Make-up</h3><p className="mt-2 text-sm text-[#5a4740]">Leistungsdarstellung für Alltag, Event und besondere Anlässe.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Pflegepakete</h3><p className="mt-2 text-sm text-[#5a4740]">Pakete machen Angebote verständlich und vergleichbar.</p></article>
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Beratung</h3><p className="mt-2 text-sm text-[#5a4740]">Persönliche Beratung stärkt die Terminentscheidung.</p></article>
+        </section>
+        <section className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+          <h2 className="text-2xl font-semibold text-[#3b2f2f]">Preis-/Paketlogik (Demo)</h2>
+          <p className="mt-3 text-sm text-[#5a4740]">Basisbehandlung · Premiumbehandlung · Beauty-Paket – als beispielhafte Struktur.</p>
+        </section>
+        <section id="branche-kosmetik-flow" className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+          <h2 className="text-2xl font-semibold text-[#3b2f2f]">Terminführung</h2>
+          <p className="mt-3 text-sm text-[#5a4740]">Behandlung auswählen → Termin anfragen → Rückmeldung erhalten.</p>
+        </section>
+        <section id="branche-kosmetik-contact" className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+          <h2 className="text-2xl font-semibold text-[#3b2f2f]">Kontakt-CTA</h2>
+          <p className="mt-3 text-sm text-[#5a4740]">So kann Ihr Kosmetikstudio online hochwertiger, klarer und vertrauensvoller wirken.</p>
+          <a href={siteLinks.contact} className="mt-4 inline-flex rounded-full bg-[#b8894b] px-5 py-2.5 text-sm font-semibold text-white">Kosmetik-Lösung anfragen</a>
+        </section>
+      </div>
+    </main>
+  )
+}
+
+function BrancheLokaleDienstleisterPage() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#0a162c,#11284a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-6xl space-y-6">
+        <h1 className="text-4xl font-semibold md:text-5xl">Digitale Struktur für lokale Dienstleister</h1>
+        <p className="max-w-4xl text-base leading-8 text-[#dbe7ff]">Branchenbeispiel von STRUKTIVA: professioneller Auftritt, lokale Sichtbarkeit und klare Anfragewege.</p>
+        <div className="rounded-2xl border border-[#60a5fa]/30 bg-[#0b1f3a] p-6">
+          <p className="text-sm leading-7 text-[#dbe7ff]">Typische Probleme: kein klarer digitaler Auftritt, wenig Vertrauen, schwache Kontaktführung. STRUKTIVA löst mit strukturierter Website, lokaler Google-Grundlage und klarer Kundenführung.</p>
+        </div>
+        <a href={siteLinks.contact} className="inline-flex rounded-full bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white">Lösung für lokale Dienstleister anfragen</a>
+      </div>
+    </main>
+  )
+}
+
+function BrancheBeratungPage() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#101827,#1e293b)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-6xl space-y-6">
+        <h1 className="text-4xl font-semibold md:text-5xl">Digitale Struktur für Beratungsbetriebe</h1>
+        <p className="max-w-4xl text-base leading-8 text-[#d7dce5]">Branchenbeispiel von STRUKTIVA: klare Angebotsstruktur, Vertrauenselemente und professionelle Termin-Anfrageführung.</p>
+        <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-6">
+          <p className="text-sm leading-7 text-[#d7dce5]">Typische Probleme: Angebot schwer verständlich, Positionierung unklar, keine klare Termin-Anfrage. STRUKTIVA verbindet Angebotslogik, LinkedIn-/Google-Verknüpfung und klare Kontaktführung.</p>
+        </div>
+        <a href={siteLinks.contact} className="inline-flex rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Lösung für Beratungsbetriebe anfragen</a>
       </div>
     </main>
   )
