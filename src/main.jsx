@@ -435,10 +435,10 @@ const pricingPackages = [
 ]
 
 const processSteps = [
-  ['1', 'Kostenlose Ersteinschätzung', 'Wir schauen uns an, wo dein Unternehmen aktuell digital steht.'],
-  ['2', 'Strukturplan', 'Du bekommst einen klaren Plan, welche Webseite, Landingpage oder Systemstruktur sinnvoll ist.'],
-  ['3', 'Umsetzung', 'STRUKTIVA erstellt deine digitale Struktur professionell und verständlich.'],
-  ['4', 'Optimierung', 'Nach dem Start wird geprüft, ob Kontaktwege, Texte und Aufbau sauber funktionieren.'],
+  ['1', 'Digitale Analyse', 'Wir prüfen, welche Struktur Ihr Unternehmen aktuell braucht.'],
+  ['2', 'Strukturplanung', 'Wir definieren Website, Google, Kontaktwege, Bewertungen und digitale Abläufe.'],
+  ['3', 'Umsetzung', 'Wir bauen die passenden digitalen Bausteine professionell auf.'],
+  ['4', 'Betreuung & Erweiterung', 'Auf Wunsch betreuen, verbessern und erweitern wir Ihre digitale Struktur dauerhaft.'],
 ]
 
 const targetGroups = [
@@ -532,7 +532,7 @@ function useCurrentPath() {
 function useDocumentTitleSafe(pathname) {
   useEffect(() => {
     const titles = {
-      '/': 'STRUKTIVA Unternehmensarchitektur - Digitale Systeme fuer kleine Unternehmen',
+      '/': 'STRUKTIVA Unternehmensarchitektur | Digitale Struktur für kleine Unternehmen',
       '/webseiten': 'Professionelle Webseiten - STRUKTIVA Unternehmensarchitektur',
       '/landingpages': 'Landingpages - STRUKTIVA Unternehmensarchitektur',
       '/apps': 'Unternehmens-Apps - STRUKTIVA Unternehmensarchitektur',
@@ -598,7 +598,7 @@ function useDocumentTitleSafe(pathname) {
     }
 
     const defaultDescription =
-      'STRUKTIVA entwickelt Websites, Landingpages und digitale Unternehmenssysteme fuer Selbststaendige, lokale Betriebe und kleine Unternehmen - mit klarer Struktur, Kundengewinnung, WhatsApp, Google, Social Media und Newsletter-Einbindung.'
+      'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege, Apps, Dashboards und digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.'
 
     document.title = titles[pathname] || titles['/']
 
@@ -1700,7 +1700,7 @@ function PricingSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 99 € inkl. gesetzlicher Mehrwertsteuer</p>
+            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 99 € inklusive Mehrwertsteuer</p>
           </div>
         </Reveal>
 
@@ -2327,6 +2327,9 @@ function HeroSectionPremium() {
                 Leistungen ansehen
               </a>
             </motion.div>
+            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-3 text-sm text-[#D7DCE5]">
+              Kostenlose Ersteinschätzung für Ihr Unternehmen möglich.
+            </motion.p>
             <motion.a
               variants={fadeUp}
               transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
@@ -2797,9 +2800,52 @@ function SuitableForSection() {
   )
 }
 
+function ThreeStructureFieldsSection() {
+  const cards = [
+    {
+      title: 'Digitale Außenstruktur',
+      text: 'Für einen professionellen ersten Eindruck und bessere Sichtbarkeit.',
+      points: ['Website', 'Landingpage', 'Google-Sichtbarkeit', 'Google-Unternehmensprofil', 'Bewertungsstruktur', 'Social-Media- und Pinterest-Struktur'],
+    },
+    {
+      title: 'Digitale Kundenführung',
+      text: 'Damit Interessenten leichter verstehen, anfragen und Kontakt aufnehmen können.',
+      points: ['WhatsApp-Kontaktstruktur', 'Anfragewege', 'Kontaktbuttons', 'Bewertungslinks', 'QR-Code-Strukturen', 'Newsletter-Einbindung'],
+    },
+    {
+      title: 'Digitale Innenstruktur',
+      text: 'Für mehr Ordnung, Übersicht und klare Abläufe im Unternehmen.',
+      points: ['Unternehmens-Apps', 'Betriebs-Dashboards', 'digitale Ordnungssysteme', 'Tagesabschluss-Systeme', 'kassennahe Struktur', 'Tagesübersicht'],
+    },
+  ]
+
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader
+          eyebrow="Strukturfelder"
+          title="Die drei Strukturfelder von STRUKTIVA"
+          text="STRUKTIVA betrachtet Ihr Unternehmen nicht nur als Website-Projekt. Wir verbinden Außenauftritt, Kontaktwege und interne Abläufe zu einer klaren digitalen Struktur."
+        />
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {cards.map((card) => (
+            <article key={card.title} className="rounded-[1.7rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium">
+              <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{card.text}</p>
+              <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">
+                {card.points.map((point) => <p key={point}>- {point}</p>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function WhyStructureSection() {
-  const before = ['einzelne digitale Baustellen', 'unklare Kontaktwege', 'wenig Vertrauen', 'keine klare Kundenführung', 'keine Struktur im Alltag']
-  const after = ['klare Website-Struktur', 'bessere Auffindbarkeit', 'professionelle Kontaktwege', 'mehr Vertrauen', 'digitale Ordnung im Unternehmen']
+  const before = ['einzelne digitale Baustellen', 'unklare Kontaktwege', 'wenig Vertrauen', 'keine Bewertungsführung', 'keine klare Kundenführung', 'digitale Unordnung im Alltag']
+  const after = ['klare Website-Struktur', 'bessere Auffindbarkeit', 'professionelle Kontaktwege', 'Bewertungs- und QR-Code-Struktur', 'mehr Vertrauen', 'digitale Ordnung im Unternehmen']
   return (
     <section className="px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
@@ -2820,6 +2866,148 @@ function WhyStructureSection() {
             <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{after.map((item) => <p key={item}>- {item}</p>)}</div>
           </div>
         </div>
+        <a href={siteLinks.contact} className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+          Digitale Struktur prüfen lassen
+          <ArrowRight className="h-4 w-4" />
+        </a>
+      </div>
+    </section>
+  )
+}
+
+function ModulesSection() {
+  const modules = [
+    ['Professionelle Webseiten', 'Websites für kleine Unternehmen, die klar erklären, Vertrauen aufbauen und Kontaktanfragen erleichtern.', 'ab 599 € inklusive Mehrwertsteuer'],
+    ['Landingpages', 'Verkaufsstarke Einzelseiten für Angebote, Aktionen, Dienstleistungen oder Kampagnen.', 'ab 299 € inklusive Mehrwertsteuer'],
+    ['Google-Unternehmensprofil-Struktur', 'Optimierung der wichtigsten Angaben, Leistungen, Beschreibung, Bilderstruktur und Kontaktwege.', 'ab 299 € inklusive Mehrwertsteuer'],
+    ['Bewertungs- und QR-Code-System', 'QR-Code, Bewertungslink, Bewertungskarte und Texte, damit zufriedene Kunden leichter Bewertungen abgeben.', 'ab 149 € inklusive Mehrwertsteuer'],
+    ['WhatsApp-Kontaktstruktur', 'Klare WhatsApp-Anfragewege, vorbereitete Nachrichten und direkte Kontaktführung von Website zu Anfrage.', 'ab 199 € inklusive Mehrwertsteuer'],
+    ['Unternehmens-App / Web-App', 'Digitale Arbeitsbereiche für Termine, Kunden, Aufgaben, interne Abläufe oder Unternehmensübersichten.', 'ab 999 € inklusive Mehrwertsteuer'],
+    ['Betriebs-Dashboard', 'Übersicht über Termine, Aufgaben, offene Punkte, Kennzahlen, Tages- oder Monatsinformationen.', 'ab 799 € inklusive Mehrwertsteuer'],
+    ['Digitale Ordnungssysteme', 'Struktur für Ablagen, Vorlagen, Checklisten, Kundenprozesse, Mitarbeiterabläufe und wiederkehrende Aufgaben.', 'ab 899 € inklusive Mehrwertsteuer'],
+    ['Tagesabschluss-Systeme', 'Digitale Struktur für Tagesübersicht, interne Kontrolle, offene Punkte und bessere Nachvollziehbarkeit im Betriebsalltag.', 'ab 499 € inklusive Mehrwertsteuer'],
+    ['Kassennahe Struktur und Tagesübersicht', 'Keine Kassensoftware. Keine rechtliche Zertifizierung. Sondern digitale Struktur für bessere Übersicht rund um Tageskontrolle und interne Abläufe.', 'auf Anfrage'],
+    ['Newsletter-Grundstruktur', 'Einbindung von Newsletter-Anmeldung, Listenstruktur und einfacher Kundenkommunikation.', 'ab 249 € inklusive Mehrwertsteuer'],
+    ['Social-Media- und Pinterest-Grundstruktur', 'Profilstruktur, Beitragsideen, Pin-/Post-Struktur, Beschreibungstexte und sinnvolle Verlinkung zur Website.', 'ab 249 € inklusive Mehrwertsteuer'],
+  ]
+
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader
+          eyebrow="Einzelmodule"
+          title="Digitale Strukturbausteine"
+          text="Sie können mit einem Paket starten oder einzelne Strukturbausteine gezielt ergänzen."
+        />
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {modules.map(([title, text, price]) => (
+            <article key={title} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
+              <h3 className="text-xl font-semibold text-white">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+              <p className="mt-4 text-sm font-semibold text-[#D8B45A]">{price}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function BranchenSection() {
+  const items = [
+    ['Friseursalons', 'Website, Leistungen, Team, Google-Profil, Bewertungen, WhatsApp-Anfragen und digitale Kundenführung klar verbunden.', 'Lösung für Friseursalons ansehen'],
+    ['Handwerker', 'Leistungsseiten, Referenzen, Anfrageformular, Google-Sichtbarkeit, WhatsApp-Anfragen und klare Kontaktwege.', 'Lösung für Handwerker ansehen'],
+    ['Kosmetikstudios', 'Behandlungen, Preise, Vertrauen, Bewertungen, Bilder, Kontaktwege und Social-Media-Verknüpfung klar strukturiert.', 'Lösung für Kosmetikstudios ansehen'],
+    ['Lokale Dienstleister', 'Professioneller Online-Auftritt, bessere Auffindbarkeit, einfache Anfragewege und klare Kundenführung.', 'Lösung für lokale Dienstleister ansehen'],
+    ['Beratungsbetriebe', 'Angebotsstruktur, Vertrauensaufbau, Termin-Anfrage, LinkedIn-/Google-Verknüpfung und professionelle Positionierung.', 'Lösung für Beratungsbetriebe ansehen'],
+  ]
+
+  return (
+    <section id="branchen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
+        <SectionHeader
+          eyebrow="Branchenlösungen"
+          title="Digitale Struktur für Ihre Branche"
+          text="Jede Branche braucht andere digitale Wege. STRUKTIVA entwickelt Strukturen, die zu Ihrem Betrieb passen."
+          centered={false}
+        />
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {items.map(([title, text, cta]) => (
+            <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+              <h3 className="text-lg font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+              <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                {cta}
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function OfferMatchSection() {
+  const cards = [
+    ['Sie haben noch keine professionelle Website?', 'STRUKTIVA Start'],
+    ['Sie haben eine Website, aber zu wenig Struktur oder Anfragen?', 'STRUKTIVA Wachstum'],
+    ['Sie möchten Website, Google, Bewertungen und Kontaktwege verbinden?', 'STRUKTIVA Wachstum'],
+    ['Sie brauchen interne Ordnung, Dashboard oder App-Struktur?', 'STRUKTIVA System'],
+    ['Sie möchten schnell mehr Bewertungen sammeln?', 'Bewertungs- und QR-Code-System'],
+    ['Sie möchten WhatsApp besser als Anfrageweg nutzen?', 'WhatsApp-Kontaktstruktur'],
+  ]
+
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader eyebrow="Entscheidungshilfe" title="Welches Angebot passt zu Ihnen?" text="Klare Empfehlungen für Ihren nächsten sinnvollen Schritt." />
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {cards.map(([question, recommendation]) => (
+            <article key={question} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
+              <p className="text-sm leading-7 text-[#D7DCE5]">{question}</p>
+              <p className="mt-3 text-base font-semibold text-[#D8B45A]">Empfehlung: {recommendation}</p>
+              <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                Passendes Angebot anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function BetreuungSection() {
+  const plans = [
+    ['Basis-Betreuung', 'ab 199 € / Monat inklusive Mehrwertsteuer', 'Für einfache Pflege, kleinere Anpassungen und technische Grundbetreuung.'],
+    ['Struktur-Betreuung', 'ab 299 € / Monat inklusive Mehrwertsteuer', 'Für regelmäßige Anpassungen, Inhalte, Google-Struktur, Kontaktwege und laufende Optimierung.'],
+    ['Premium-Betreuung', 'ab 499 € / Monat inklusive Mehrwertsteuer', 'Für intensivere Begleitung, Erweiterungen, Strukturarbeit, Kampagnen und digitale Weiterentwicklung.'],
+  ]
+
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8">
+        <SectionHeader
+          eyebrow="Monatliche Betreuung"
+          title="Laufende Betreuung für Ihre digitale Struktur"
+          text="Digitale Struktur endet nicht mit der Veröffentlichung. Auf Wunsch begleitet STRUKTIVA Ihr Unternehmen dauerhaft bei Pflege, Anpassungen, Sichtbarkeit, Inhalten und Erweiterungen."
+          centered={false}
+        />
+        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          {plans.map(([title, price, text]) => (
+            <article key={title} className="rounded-2xl border border-white/14 bg-white/[0.05] p-5">
+              <h3 className="text-xl font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm font-semibold text-[#D8B45A]">{price}</p>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+            </article>
+          ))}
+        </div>
+        <a href={siteLinks.contact} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+          Betreuung anfragen
+          <ArrowRight className="h-4 w-4" />
+        </a>
       </div>
     </section>
   )
@@ -2866,7 +3054,7 @@ function PricingArchitectureSection() {
       title: 'STRUKTIVA Start',
       price: 'ab 599 € inklusive Mehrwertsteuer',
       text: 'Für kleine Unternehmen, die professionell sichtbar werden möchten.',
-      points: ['professionelle Website-Grundstruktur', 'mobile Optimierung', 'klare Leistungsdarstellung', 'Kontaktbereich', 'SEO-Grundstruktur', 'einfache Kundenführung'],
+      points: ['professionelle Website-Grundstruktur', 'mobile Optimierung', 'klare Leistungsdarstellung', 'Kontaktbereich', 'SEO-Grundstruktur', 'einfache Kundenführung', 'Impressum-/Datenschutz-Verlinkung'],
     },
     {
       title: 'STRUKTIVA Wachstum',
@@ -2908,10 +3096,17 @@ function PricingArchitectureSection() {
         <div className="mt-5 grid gap-5 lg:grid-cols-3">
           {packages.map((pkg) => (
             <article key={pkg.title} className="rounded-[1.7rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-5 shadow-premium">
+              {pkg.title === 'STRUKTIVA Wachstum' ? (
+                <p className="mb-2 inline-flex rounded-full border border-[#D8B45A]/35 bg-[#D8B45A]/12 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]">Empfohlen</p>
+              ) : null}
               <h4 className="text-xl font-semibold text-white">{pkg.title}</h4>
               <p className="mt-2 text-sm font-semibold text-[#D8B45A]">{pkg.price}</p>
               <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{pkg.text}</p>
               <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
+              <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                {pkg.title === 'STRUKTIVA Start' ? 'Start-Paket anfragen' : pkg.title === 'STRUKTIVA Wachstum' ? 'Wachstums-Paket anfragen' : 'System-Paket anfragen'}
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </article>
           ))}
         </div>
@@ -2934,13 +3129,14 @@ function PricingArchitectureSection() {
 
 function FAQSection() {
   const faqs = [
-    ['Ist STRUKTIVA nur ein Webdesign-Angebot?', 'Nein. STRUKTIVA verbindet Website, Google-Sichtbarkeit, Kontaktwege und digitale Kundenführung zu einer klaren Unternehmensstruktur.'],
-    ['Kann STRUKTIVA meine bestehende Website verbessern?', 'Ja. Relaunch, Strukturverbesserung und klare Anfrageführung können auf bestehende Seiten aufgesetzt werden.'],
-    ['Ist Google-Sichtbarkeit enthalten?', 'Je nach Paket werden Grundlagen für lokale Auffindbarkeit, Google-Unternehmensprofil und Bewertungsstruktur eingebunden.'],
-    ['Kann ich klein starten und später erweitern?', 'Ja. Die Struktur ist modular aufgebaut und kann schrittweise erweitert werden.'],
-    ['Für welche Branchen ist STRUKTIVA geeignet?', 'Für kleine Unternehmen, Selbstständige, Handwerk, Beauty, Dienstleister und Beratungsbetriebe.'],
-    ['Gibt es monatliche Betreuung?', 'Ja. Es gibt drei Betreuungsstufen für Pflege, Optimierung und laufende Weiterentwicklung.'],
-    ['Sind die Preise inklusive Mehrwertsteuer?', 'Ja. Alle genannten Preise sind inklusive Mehrwertsteuer.'],
+    ['Ist STRUKTIVA nur ein Webdesign-Angebot?', 'Nein. STRUKTIVA erstellt Webseiten, verbindet diese aber mit Google-Sichtbarkeit, Kontaktwegen, Bewertungen, Kundenführung und auf Wunsch internen digitalen Strukturen.'],
+    ['Kann ich klein starten?', 'Ja. Sie können mit einer Landingpage, einem Onepager, einer Bewertungsstruktur oder einem Website-Paket starten und später erweitern.'],
+    ['Sind die Preise inklusive Mehrwertsteuer?', 'Ja. Alle genannten Preise verstehen sich inklusive Mehrwertsteuer.'],
+    ['Für welche Branchen ist STRUKTIVA geeignet?', 'Für kleine Unternehmen, Selbstständige, lokale Dienstleister, Handwerker, Friseursalons, Kosmetikstudios und Beratungsbetriebe.'],
+    ['Ist Google-Sichtbarkeit garantiert?', 'Nein, seriöse Sichtbarkeit kann nicht garantiert werden. STRUKTIVA schafft jedoch eine bessere technische und strukturelle Grundlage für Auffindbarkeit, Vertrauen und klare Kontaktwege.'],
+    ['Ersetzt STRUKTIVA ein Kassensystem?', 'Nein. STRUKTIVA ersetzt keine zertifizierte Kassensoftware. Wir entwickeln digitale Strukturbausteine für bessere Übersicht, Tageskontrolle und interne Abläufe.'],
+    ['Kann meine bestehende Website verbessert werden?', 'Ja. STRUKTIVA kann bestehende Websites analysieren, strukturieren, modernisieren oder neu aufbauen.'],
+    ['Gibt es monatliche Betreuung?', 'Ja. Es gibt Betreuungsangebote ab 199 € / Monat inklusive Mehrwertsteuer.'],
   ]
 
   return (
@@ -2990,10 +3186,15 @@ function HomePage() {
     <>
       <HeroSectionPremium />
       <WhatStruktivaBuildsSection />
-      <SuitableForSection />
-      <WhyStructureSection />
+      <ThreeStructureFieldsSection />
       <PricingArchitectureSection />
+      <ModulesSection />
+      <BranchenSection />
+      <SuitableForSection />
+      <OfferMatchSection />
+      <WhyStructureSection />
       <ProcessSection />
+      <BetreuungSection />
       <FAQSection />
       <StructureCtaSection />
       <DemoOverviewSection />
@@ -3646,7 +3847,7 @@ function BewertungsQrCodePage() {
           <Reveal>
             <section className="rounded-[1.8rem] border border-[#D8B45A]/28 bg-white/[0.05] p-6 shadow-premium md:p-7">
               <h2 className="text-2xl font-semibold text-white">Startpreis</h2>
-              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 49 € inkl. gesetzlicher Mehrwertsteuer</p>
+              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 49 € inklusive Mehrwertsteuer</p>
               <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
                 Ideal als einzelnes Mini-Angebot oder als Teil des STRUKTIVA Sichtbarkeitspakets.
               </p>
@@ -4017,7 +4218,7 @@ function WebsiteFuerKleineUnternehmenPage() {
             {websiteFormatsWithPrices.map((item) => (
               <article key={item.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
                 <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                <p className="mt-1 text-sm font-semibold text-[#D8B45A]">{item.price} inkl. gesetzlicher Mehrwertsteuer</p>
+                <p className="mt-1 text-sm font-semibold text-[#D8B45A]">{item.price} inklusive Mehrwertsteuer</p>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{item.text}</p>
               </article>
             ))}
@@ -4112,7 +4313,7 @@ function OfferDetailPage({ title, intro, points, pathname }) {
           {priceInfo && (
             <div className="mt-7 rounded-2xl border border-[#D8B45A]/24 bg-white/[0.04] p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Preisorientierung</p>
-              <p className="mt-2 text-lg font-semibold text-[#D8B45A]">{priceInfo.main} inkl. gesetzlicher Mehrwertsteuer</p>
+              <p className="mt-2 text-lg font-semibold text-[#D8B45A]">{priceInfo.main} inklusive Mehrwertsteuer</p>
               {priceInfo.extras && (
                 <div className="mt-3 grid gap-2 md:grid-cols-2">
                   {priceInfo.extras.map((item) => (
