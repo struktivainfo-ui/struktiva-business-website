@@ -2877,18 +2877,102 @@ function WhyStructureSection() {
 
 function ModulesSection() {
   const modules = [
-    ['Professionelle Webseiten', 'Websites für kleine Unternehmen, die klar erklären, Vertrauen aufbauen und Kontaktanfragen erleichtern.', 'ab 599 € inklusive Mehrwertsteuer'],
-    ['Landingpages', 'Verkaufsstarke Einzelseiten für Angebote, Aktionen, Dienstleistungen oder Kampagnen.', 'ab 299 € inklusive Mehrwertsteuer'],
-    ['Google-Unternehmensprofil-Struktur', 'Optimierung der wichtigsten Angaben, Leistungen, Beschreibung, Bilderstruktur und Kontaktwege.', 'ab 299 € inklusive Mehrwertsteuer'],
-    ['Bewertungs- und QR-Code-System', 'QR-Code, Bewertungslink, Bewertungskarte und Texte, damit zufriedene Kunden leichter Bewertungen abgeben.', 'ab 149 € inklusive Mehrwertsteuer'],
-    ['WhatsApp-Kontaktstruktur', 'Klare WhatsApp-Anfragewege, vorbereitete Nachrichten und direkte Kontaktführung von Website zu Anfrage.', 'ab 199 € inklusive Mehrwertsteuer'],
-    ['Unternehmens-App / Web-App', 'Digitale Arbeitsbereiche für Termine, Kunden, Aufgaben, interne Abläufe oder Unternehmensübersichten.', 'ab 999 € inklusive Mehrwertsteuer'],
-    ['Betriebs-Dashboard', 'Übersicht über Termine, Aufgaben, offene Punkte, Kennzahlen, Tages- oder Monatsinformationen.', 'ab 799 € inklusive Mehrwertsteuer'],
-    ['Digitale Ordnungssysteme', 'Struktur für Ablagen, Vorlagen, Checklisten, Kundenprozesse, Mitarbeiterabläufe und wiederkehrende Aufgaben.', 'ab 899 € inklusive Mehrwertsteuer'],
-    ['Tagesabschluss-Systeme', 'Digitale Struktur für Tagesübersicht, interne Kontrolle, offene Punkte und bessere Nachvollziehbarkeit im Betriebsalltag.', 'ab 499 € inklusive Mehrwertsteuer'],
-    ['Kassennahe Struktur und Tagesübersicht', 'Keine Kassensoftware. Keine rechtliche Zertifizierung. Sondern digitale Struktur für bessere Übersicht rund um Tageskontrolle und interne Abläufe.', 'auf Anfrage'],
-    ['Newsletter-Grundstruktur', 'Einbindung von Newsletter-Anmeldung, Listenstruktur und einfacher Kundenkommunikation.', 'ab 249 € inklusive Mehrwertsteuer'],
-    ['Social-Media- und Pinterest-Grundstruktur', 'Profilstruktur, Beitragsideen, Pin-/Post-Struktur, Beschreibungstexte und sinnvolle Verlinkung zur Website.', 'ab 249 € inklusive Mehrwertsteuer'],
+    {
+      title: 'Professionelle Webseiten',
+      what: 'Der digitale Hauptstandort Ihres Unternehmens.',
+      forWho: 'Geeignet für kleine Unternehmen, Selbstständige und lokale Betriebe.',
+      solves: 'Leistungen klar erklären, Vertrauen aufbauen und Anfragen erleichtern.',
+      includes: 'Klare Seitenstruktur, Kontaktbereiche, mobile Optimierung und Vertrauenselemente.',
+      price: 'ab 599 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'Landingpages',
+      what: 'Gezielte Einzelseiten für ein konkretes Angebot oder eine Aktion.',
+      forWho: 'Geeignet für Kampagnen, Dienstleistungen und Angebotsseiten.',
+      solves: 'Besucher schneller zur Anfrage führen.',
+      includes: 'Klare Headline-Struktur, Angebotslogik, CTA-Führung und Kontaktweg.',
+      price: 'ab 299 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'Google-Unternehmensprofil-Struktur',
+      what: 'Strukturierter Aufbau der wichtigsten lokalen Google-Bausteine.',
+      forWho: 'Geeignet für alle lokal arbeitenden Unternehmen.',
+      solves: 'Schwache lokale Präsenz und unklare Auffindbarkeit.',
+      includes: 'Leistungsbereiche, Beschreibung, Kontaktwege, Bildstruktur und Profilklarheit.',
+      price: 'ab 299 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'Bewertungs- und QR-Code-System',
+      what: 'Ein klarer Prozess für mehr und bessere Kundenbewertungen.',
+      forWho: 'Geeignet für Betriebe mit direktem Kundenkontakt.',
+      solves: 'Zu wenige Bewertungen trotz zufriedener Kunden.',
+      includes: 'Bewertungslink, QR-Code, Bewertungskarte und Anfrage-Texte.',
+      price: 'ab 149 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'WhatsApp-Kontaktstruktur',
+      what: 'Ein professioneller Anfrageweg über WhatsApp.',
+      forWho: 'Geeignet für Betriebe mit schnellen Kontaktanfragen.',
+      solves: 'Unklare oder unstrukturierte Kundenanfragen.',
+      includes: 'Direkte Buttons, vorbereitete Nachrichten und klare Anfrageführung.',
+      price: 'ab 199 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'Unternehmens-App / Web-App',
+      what: 'Digitaler Arbeitsbereich für wiederkehrende Abläufe.',
+      forWho: 'Geeignet für Betriebe mit internen Prozessen und Tagesaufgaben.',
+      solves: 'Verteilte Informationen und unklare Arbeitsabläufe.',
+      includes: 'Termin-App, Kundenverwaltungs-App, Mitarbeiter-App, Aufgaben-App, Tagesabschluss-App.',
+      price: 'ab 999 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'Betriebs-Dashboard',
+      what: 'Übersicht aller wichtigen Betriebsinformationen an einem Ort.',
+      forWho: 'Geeignet für Unternehmen mit mehreren Aufgabenbereichen.',
+      solves: 'Fehlende Übersicht bei Terminen, Aufgaben und offenen Punkten.',
+      includes: 'Tagesübersicht, Aufgaben, Kennzahlen, Monatsinfos und Notizbereiche.',
+      price: 'ab 799 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'Digitale Ordnungssysteme',
+      what: 'Strukturierte digitale Ordnung für wiederkehrende Betriebsabläufe.',
+      forWho: 'Geeignet für Teams und Selbstständige mit vielen parallelen Aufgaben.',
+      solves: 'Digitale Unordnung in Ablage, Prozessen und Zuständigkeiten.',
+      includes: 'Vorlagen, Checklisten, Ablagestruktur, Kundenprozesse und interne Standards.',
+      price: 'ab 899 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'Tagesabschluss-Systeme',
+      what: 'Struktur für Tagesübersicht und interne Kontrolle.',
+      forWho: 'Geeignet für Betriebe mit täglichem Abschlussbedarf.',
+      solves: 'Fehlende Nachvollziehbarkeit im Tagesablauf.',
+      includes: 'Tagesübersicht, offene Punkte, Kontrolllogik und Übergaben.',
+      price: 'ab 499 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'Kassennahe Struktur und Tagesübersicht',
+      what: 'Digitale Struktur rund um interne Übersicht und Tageskontrolle.',
+      forWho: 'Geeignet für Betriebe mit bargeldnahen Abläufen.',
+      solves: 'Unklare Tagesdaten und fehlende Übersicht.',
+      includes: 'Keine Kassensoftware. Keine rechtliche Zertifizierung. Sondern Struktur für interne Abläufe.',
+      price: 'auf Anfrage',
+    },
+    {
+      title: 'Newsletter-Grundstruktur',
+      what: 'Einfacher Einstieg in professionelle Kundenkommunikation.',
+      forWho: 'Geeignet für Unternehmen mit wiederkehrenden Angeboten.',
+      solves: 'Fehlende Kundenbindung nach der ersten Anfrage.',
+      includes: 'Anmeldeeinbindung, Listenstruktur und Versandgrundlage.',
+      price: 'ab 249 € inklusive Mehrwertsteuer',
+    },
+    {
+      title: 'Social-Media- und Pinterest-Grundstruktur',
+      what: 'Klare Content-Struktur statt zufälliger Einzelbeiträge.',
+      forWho: 'Geeignet für Betriebe, die regelmäßig sichtbar sein wollen.',
+      solves: 'Unregelmäßige Inhalte ohne Bezug zur Website oder Angebotslogik.',
+      includes: 'Profilstruktur, Beitragsideen, Pin-/Post-Planung, Beschreibungstexte und Verlinkung.',
+      price: 'ab 249 € inklusive Mehrwertsteuer',
+    },
   ]
 
   return (
@@ -2900,11 +2984,18 @@ function ModulesSection() {
           text="Sie können mit einem Paket starten oder einzelne Strukturbausteine gezielt ergänzen."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {modules.map(([title, text, price]) => (
-            <article key={title} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
-              <h3 className="text-xl font-semibold text-white">{title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
-              <p className="mt-4 text-sm font-semibold text-[#D8B45A]">{price}</p>
+          {modules.map((module) => (
+            <article key={module.title} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
+              <h3 className="text-xl font-semibold text-white">{module.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]"><span className="font-semibold text-white">Was ist das?</span> {module.what}</p>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]"><span className="font-semibold text-white">Für wen?</span> {module.forWho}</p>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]"><span className="font-semibold text-white">Was löst es?</span> {module.solves}</p>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]"><span className="font-semibold text-white">Enthalten:</span> {module.includes}</p>
+              <p className="mt-4 text-sm font-semibold text-[#D8B45A]">{module.price}</p>
+              <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+                Direkt Kontakt aufnehmen
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </article>
           ))}
         </div>
@@ -2915,11 +3006,11 @@ function ModulesSection() {
 
 function BranchenSection() {
   const items = [
-    ['Friseursalons', 'Website, Leistungen, Team, Google-Profil, Bewertungen, WhatsApp-Anfragen und digitale Kundenführung klar verbunden.', 'Lösung für Friseursalons ansehen'],
-    ['Handwerker', 'Leistungsseiten, Referenzen, Anfrageformular, Google-Sichtbarkeit, WhatsApp-Anfragen und klare Kontaktwege.', 'Lösung für Handwerker ansehen'],
-    ['Kosmetikstudios', 'Behandlungen, Preise, Vertrauen, Bewertungen, Bilder, Kontaktwege und Social-Media-Verknüpfung klar strukturiert.', 'Lösung für Kosmetikstudios ansehen'],
-    ['Lokale Dienstleister', 'Professioneller Online-Auftritt, bessere Auffindbarkeit, einfache Anfragewege und klare Kundenführung.', 'Lösung für lokale Dienstleister ansehen'],
-    ['Beratungsbetriebe', 'Angebotsstruktur, Vertrauensaufbau, Termin-Anfrage, LinkedIn-/Google-Verknüpfung und professionelle Positionierung.', 'Lösung für Beratungsbetriebe ansehen'],
+    ['Friseursalons', 'Typische Probleme: unklare Website, schwache Google-Wirkung, wenige Bewertungen, keine klare Termin- oder WhatsApp-Führung.', 'STRUKTIVA löst: moderne Salon-Website, Leistungsstruktur, Team-/Vertrauensbereich, Google- und Bewertungsstruktur, WhatsApp-Anfrageweg.', 'Lösung für Friseursalons ansehen'],
+    ['Handwerker', 'Typische Probleme: unklare Leistungen, fehlende Referenzen, unklare Anfragewege, regional schwer auffindbar.', 'STRUKTIVA löst: Leistungsseiten, Referenzstruktur, Anfrageformular, Google-Sichtbarkeit und WhatsApp-Kontakt.', 'Lösung für Handwerker ansehen'],
+    ['Kosmetikstudios', 'Typische Probleme: Behandlungen und Preise unübersichtlich, Vertrauen fehlt, Bewertungen/Bilder nicht sauber eingebunden.', 'STRUKTIVA löst: Behandlungsstruktur, Preisübersicht, Bewertungsbereich, Vertrauensaufbau, Instagram-/Pinterest-Verknüpfung.', 'Lösung für Kosmetikstudios ansehen'],
+    ['Lokale Dienstleister', 'Typische Probleme: kein klarer digitaler Auftritt, wenig Vertrauen, schwache Kontaktführung.', 'STRUKTIVA löst: professionelle Website, lokale Google-Grundlage, klare Kontaktwege und Kundenführung.', 'Lösung für lokale Dienstleister ansehen'],
+    ['Beratungsbetriebe', 'Typische Probleme: Angebot schwer verständlich, Positionierung unklar, keine klare Termin-Anfrage.', 'STRUKTIVA löst: Angebotsstruktur, Vertrauenselemente, LinkedIn-/Google-Verknüpfung und Terminführung.', 'Lösung für Beratungsbetriebe ansehen'],
   ]
 
   return (
@@ -2932,10 +3023,11 @@ function BranchenSection() {
           centered={false}
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {items.map(([title, text, cta]) => (
+          {items.map(([title, problemText, solutionText, cta]) => (
             <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
               <h3 className="text-lg font-semibold text-white">{title}</h3>
-              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{problemText}</p>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{solutionText}</p>
               <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
                 {cta}
                 <ArrowRight className="h-4 w-4" />
@@ -2950,27 +3042,137 @@ function BranchenSection() {
 
 function OfferMatchSection() {
   const cards = [
-    ['Sie haben noch keine professionelle Website?', 'STRUKTIVA Start'],
-    ['Sie haben eine Website, aber zu wenig Struktur oder Anfragen?', 'STRUKTIVA Wachstum'],
-    ['Sie möchten Website, Google, Bewertungen und Kontaktwege verbinden?', 'STRUKTIVA Wachstum'],
-    ['Sie brauchen interne Ordnung, Dashboard oder App-Struktur?', 'STRUKTIVA System'],
-    ['Sie möchten schnell mehr Bewertungen sammeln?', 'Bewertungs- und QR-Code-System'],
-    ['Sie möchten WhatsApp besser als Anfrageweg nutzen?', 'WhatsApp-Kontaktstruktur'],
+    ['Sie haben noch keine professionelle Website.', 'STRUKTIVA Start', 'Für einen klaren, professionellen Online-Auftritt mit mobiler Optimierung, Leistungsdarstellung und Kontaktmöglichkeit.', 'Start-Paket anfragen'],
+    ['Sie haben eine Website, aber wenig Anfragen.', 'STRUKTIVA Wachstum', 'Für bessere Struktur, Google-Grundlage, Kontaktführung, WhatsApp-Anbindung und Bewertungsstruktur.', 'Wachstums-Paket anfragen'],
+    ['Ihre Website, Google und Kontaktwege wirken nicht verbunden.', 'STRUKTIVA Wachstum', 'Wir verbinden Website, Google-Profil, Bewertungen, WhatsApp und Anfragewege zu einer klaren Kundenführung.', 'Digitale Kundenführung anfragen'],
+    ['Sie möchten mehr Bewertungen sammeln.', 'Bewertungs- & QR-Code-System', 'Bewertungslink, QR-Code, Bewertungskarte und Anfrage-Texte für zufriedene Kunden.', 'Bewertungsstruktur anfragen'],
+    ['Sie möchten WhatsApp professioneller nutzen.', 'WhatsApp-Kontaktstruktur', 'Klare Anfragewege, vorbereitete Nachrichten und direkte Kontaktführung von der Website zu WhatsApp.', 'WhatsApp-Struktur anfragen'],
+    ['Ihr Betrieb braucht mehr interne Ordnung.', 'STRUKTIVA System', 'Für digitale Ordnungssysteme, Dashboards, Apps, Tagesübersichten und klare interne Abläufe.', 'System-Paket anfragen'],
+    ['Sie möchten Inhalte und Social Media strukturierter nutzen.', 'Social-Media- & Pinterest-Grundstruktur', 'Profilstruktur, Beitragsideen, Pin-/Post-Struktur, Beschreibungstexte und sinnvolle Verlinkung zur Website.', 'Content-Struktur anfragen'],
   ]
 
   return (
     <section className="px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader eyebrow="Entscheidungshilfe" title="Welches Angebot passt zu Ihnen?" text="Klare Empfehlungen für Ihren nächsten sinnvollen Schritt." />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {cards.map(([question, recommendation]) => (
+        <SectionHeader
+          eyebrow="Entscheidungshilfe"
+          title="Welches STRUKTIVA-Angebot passt zu Ihnen?"
+          text="Nicht jedes Unternehmen braucht sofort alles. STRUKTIVA hilft Ihnen, mit der passenden digitalen Struktur zu starten und später sinnvoll zu erweitern."
+        />
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+          {cards.map(([question, recommendation, text, cta]) => (
             <article key={question} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
-              <p className="text-sm leading-7 text-[#D7DCE5]">{question}</p>
+              <p className="text-sm font-semibold leading-7 text-white">{question}</p>
               <p className="mt-3 text-base font-semibold text-[#D8B45A]">Empfehlung: {recommendation}</p>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
               <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                Passendes Angebot anfragen
+                {cta}
                 <ArrowRight className="h-4 w-4" />
               </a>
+            </article>
+          ))}
+        </div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+            Passendes Angebot finden
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:text-[#D8B45A]">
+            Digitale Struktur prüfen lassen
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function DemoUseCasesSection() {
+  const demos = [
+    {
+      title: 'Demo Friseursalon',
+      text: 'Website, Leistungen, Team, Google-Profil, Bewertungen, WhatsApp-Anfrage und digitale Kundenführung für einen Salon.',
+      structure: ['Startseite', 'Leistungen', 'Team', 'Kontakt', 'Bewertungen', 'WhatsApp-Anfrage', 'Google-Verbindung'],
+      href: siteLinks.demoBeauty,
+      cta: 'Friseur-Demo ansehen',
+    },
+    {
+      title: 'Demo Handwerker',
+      text: 'Leistungsseiten, Referenzen, Anfrageformular, Google-Sichtbarkeit, WhatsApp-Kontakt und klare Angebotsstruktur.',
+      structure: ['Leistungen', 'Einsatzgebiet', 'Referenzen', 'Anfrageformular', 'Kontakt', 'Google-Struktur'],
+      href: siteLinks.demoHandwerker,
+      cta: 'Handwerker-Demo ansehen',
+    },
+    {
+      title: 'Demo Kosmetikstudio',
+      text: 'Behandlungen, Preise, Vertrauen, Bewertungen, Bilder, Kontaktwege und Social-Media-Verknüpfung klar strukturiert.',
+      structure: ['Behandlungen', 'Preise', 'Vorher/Nachher', 'Bewertungen', 'Termin-Anfrage', 'Instagram/Pinterest-Verbindung'],
+      href: siteLinks.demoBeauty,
+      cta: 'Kosmetik-Demo ansehen',
+    },
+    {
+      title: 'Demo Bewertungsstruktur',
+      text: 'QR-Code, Bewertungslink, Bewertungskarte und WhatsApp-Text für zufriedene Kunden.',
+      structure: ['QR-Code', 'Bewertungslink', 'Bewertungskarte', 'Anfrage-Text', 'Website-Einbindung'],
+      href: siteLinks.bewertungsQrCode,
+      cta: 'Bewertungsstruktur ansehen',
+    },
+    {
+      title: 'Demo Dashboard',
+      text: 'Digitale Übersicht für Termine, Aufgaben, offene Punkte, Tagesübersicht, Monatsstruktur oder Kennzahlen.',
+      structure: ['Tagesübersicht', 'Aufgaben', 'Termine', 'Kennzahlen', 'offene Punkte', 'Notizen'],
+      href: siteLinks.betriebsDashboards,
+      cta: 'Dashboard-Demo ansehen',
+    },
+  ]
+
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader
+          eyebrow="Demo-Beispiele"
+          title="Beispiele für digitale Unternehmensstruktur"
+          text="Damit digitale Struktur greifbar wird, zeigt STRUKTIVA typische Anwendungsfälle für kleine Unternehmen."
+        />
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {demos.map((demo) => (
+            <article key={demo.title} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
+              <h3 className="text-xl font-semibold text-white">{demo.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{demo.text}</p>
+              <div className="mt-3 space-y-1 text-sm text-[#D7DCE5]">
+                <p className="font-semibold text-white">Mögliche Struktur:</p>
+                {demo.structure.map((item) => <p key={item}>- {item}</p>)}
+              </div>
+              <a href={demo.href} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                {demo.cta}
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function WhyStruktivaSection() {
+  const points = [
+    ['Mehr als Webdesign', 'STRUKTIVA verbindet Website, Google, Kontaktwege, Bewertungen und digitale Abläufe.'],
+    ['Für kleine Unternehmen entwickelt', 'Keine überkomplizierten Systeme, sondern verständliche digitale Struktur.'],
+    ['Klarer Aufbau statt Einzelbaustellen', 'Alle digitalen Bausteine sollen sinnvoll zusammenarbeiten.'],
+    ['Persönliche und direkte Umsetzung', 'Kurze Wege, klare Abstimmung und verständliche Entscheidungen.'],
+    ['Erweiterbar statt starr', 'Sie können klein starten und später weitere Strukturbausteine ergänzen.'],
+    ['Seriöse Kommunikation', 'Keine unrealistischen Versprechen, sondern klare Struktur, bessere Grundlagen und professionelle Wirkung.'],
+  ]
+
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
+        <SectionHeader eyebrow="Vertrauen" title="Warum STRUKTIVA?" text="STRUKTIVA ist kein normaler Webseitenanbieter, sondern Ihr digitaler Strukturpartner." centered={false} />
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {points.map(([title, text]) => (
+            <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+              <h3 className="text-lg font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
             </article>
           ))}
         </div>
@@ -3137,6 +3339,8 @@ function FAQSection() {
     ['Ersetzt STRUKTIVA ein Kassensystem?', 'Nein. STRUKTIVA ersetzt keine zertifizierte Kassensoftware. Wir entwickeln digitale Strukturbausteine für bessere Übersicht, Tageskontrolle und interne Abläufe.'],
     ['Kann meine bestehende Website verbessert werden?', 'Ja. STRUKTIVA kann bestehende Websites analysieren, strukturieren, modernisieren oder neu aufbauen.'],
     ['Gibt es monatliche Betreuung?', 'Ja. Es gibt Betreuungsangebote ab 199 € / Monat inklusive Mehrwertsteuer.'],
+    ['Was ist eine Unternehmens-App?', 'Eine Unternehmens-App oder Web-App ist ein digitaler Arbeitsbereich für Abläufe wie Termine, Aufgaben, Kunden, Tagesübersichten oder interne Prozesse.'],
+    ['Was ist ein Betriebs-Dashboard?', 'Ein Betriebs-Dashboard zeigt wichtige Informationen an einem Ort, zum Beispiel Termine, Aufgaben, offene Punkte, Kennzahlen oder Tagesübersichten.'],
   ]
 
   return (
@@ -3185,13 +3389,16 @@ function HomePage() {
   return (
     <>
       <HeroSectionPremium />
+      <OfferMatchSection />
       <WhatStruktivaBuildsSection />
       <ThreeStructureFieldsSection />
+      <WhyStruktivaSection />
+      <StructureCtaSection />
       <PricingArchitectureSection />
       <ModulesSection />
       <BranchenSection />
+      <DemoUseCasesSection />
       <SuitableForSection />
-      <OfferMatchSection />
       <WhyStructureSection />
       <ProcessSection />
       <BetreuungSection />
