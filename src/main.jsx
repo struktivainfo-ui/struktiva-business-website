@@ -3544,6 +3544,12 @@ function PricingArchitectureSection() {
     'WhatsApp-Kontaktstruktur ab 199 € inklusive Mehrwertsteuer',
     'Social-Media- und Pinterest-Grundstruktur ab 249 € inklusive Mehrwertsteuer',
   ]
+  const compareRows = [
+    ['Geeignet für', 'Erster professioneller Auftritt', 'Mehr Anfragen durch klare Verknüpfung', 'Außenwirkung plus interne Struktur'],
+    ['Website-Struktur', 'Grundstruktur', 'Mehrseitige Struktur', 'Premium-Webauftritt'],
+    ['Google & Bewertungen', 'Basis', 'Erweitert', 'Erweitert + Systemlogik'],
+    ['Interne Struktur', 'Optional', 'Optional', 'Im Paket vorgesehen'],
+  ]
 
   return (
     <section id="preise" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
@@ -3579,6 +3585,23 @@ function PricingArchitectureSection() {
           ))}
         </div>
 
+        <div className="mt-8 overflow-hidden rounded-[1.7rem] border border-white/14 bg-white/[0.04] shadow-premium">
+          <div className="grid grid-cols-4 border-b border-white/10 bg-white/[0.03] text-xs font-semibold uppercase tracking-[0.14em] text-[#D8B45A]">
+            <p className="px-4 py-3">Vergleich</p>
+            <p className="px-4 py-3">Start</p>
+            <p className="px-4 py-3">Wachstum</p>
+            <p className="px-4 py-3">System</p>
+          </div>
+          {compareRows.map(([label, start, growth, system]) => (
+            <div key={label} className="grid grid-cols-4 border-b border-white/10 text-sm text-[#D7DCE5] last:border-b-0">
+              <p className="px-4 py-3 font-semibold text-white">{label}</p>
+              <p className="px-4 py-3">{start}</p>
+              <p className="px-4 py-3">{growth}</p>
+              <p className="px-4 py-3">{system}</p>
+            </div>
+          ))}
+        </div>
+
         <div className="mt-10 rounded-[1.7rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium">
           <h3 className="text-2xl font-semibold text-white">Schnelle digitale Strukturbausteine</h3>
           <div className="mt-4 grid gap-3 md:grid-cols-2">
@@ -3596,28 +3619,46 @@ function PricingArchitectureSection() {
 }
 
 function FAQSection() {
+  const [openIndex, setOpenIndex] = useState(0)
   const faqs = [
-    ['Ist STRUKTIVA nur ein Webdesign-Angebot?', 'Nein. STRUKTIVA erstellt Webseiten, verbindet diese aber mit Google-Sichtbarkeit, Kontaktwegen, Bewertungen, Kundenführung und auf Wunsch internen digitalen Strukturen.'],
-    ['Kann ich klein starten?', 'Ja. Sie können mit einer Landingpage, einem Onepager, einer Bewertungsstruktur oder einem Website-Paket starten und später erweitern.'],
+    ['Ist STRUKTIVA nur ein Webdesign-Angebot?', 'Nein. STRUKTIVA erstellt Webseiten und verbindet diese mit Google-Sichtbarkeit, Kontaktwegen, Bewertungen, Kundenführung und auf Wunsch internen digitalen Strukturen.'],
+    ['Kann ich klein starten?', 'Ja. Sie können mit Landingpage, Onepager oder Bewertungsstruktur starten und später sinnvoll erweitern.'],
     ['Sind die Preise inklusive Mehrwertsteuer?', 'Ja. Alle genannten Preise verstehen sich inklusive Mehrwertsteuer.'],
     ['Für welche Branchen ist STRUKTIVA geeignet?', 'Für kleine Unternehmen, Selbstständige, lokale Dienstleister, Handwerker, Friseursalons, Kosmetikstudios und Beratungsbetriebe.'],
-    ['Ist Google-Sichtbarkeit garantiert?', 'Nein, seriöse Sichtbarkeit kann nicht garantiert werden. STRUKTIVA schafft jedoch eine bessere technische und strukturelle Grundlage für Auffindbarkeit, Vertrauen und klare Kontaktwege.'],
-    ['Ersetzt STRUKTIVA ein Kassensystem?', 'Nein. STRUKTIVA ersetzt keine zertifizierte Kassensoftware. Wir entwickeln digitale Strukturbausteine für bessere Übersicht, Tageskontrolle und interne Abläufe.'],
-    ['Kann meine bestehende Website verbessert werden?', 'Ja. STRUKTIVA kann bestehende Websites analysieren, strukturieren, modernisieren oder neu aufbauen.'],
-    ['Gibt es monatliche Betreuung?', 'Ja. Es gibt Betreuungsangebote ab 199 € / Monat inklusive Mehrwertsteuer.'],
-    ['Was ist eine Unternehmens-App?', 'Eine Unternehmens-App oder Web-App ist ein digitaler Arbeitsbereich für Abläufe wie Termine, Aufgaben, Kunden, Tagesübersichten oder interne Prozesse.'],
-    ['Was ist ein Betriebs-Dashboard?', 'Ein Betriebs-Dashboard zeigt wichtige Informationen an einem Ort, zum Beispiel Termine, Aufgaben, offene Punkte, Kennzahlen oder Tagesübersichten.'],
+    ['Ist Google-Sichtbarkeit garantiert?', 'Nein. Seriöse Sichtbarkeit kann nicht garantiert werden. STRUKTIVA schafft eine bessere strukturelle Grundlage für Auffindbarkeit, Vertrauen und klare Kontaktwege.'],
+    ['Ersetzt STRUKTIVA ein Kassensystem?', 'Nein. STRUKTIVA ersetzt keine zertifizierte Kassensoftware. Wir entwickeln digitale Strukturbausteine für Übersicht, Tageskontrolle und interne Abläufe.'],
+    ['Kann meine bestehende Website verbessert werden?', 'Ja. Bestehende Websites können analysiert, strukturiert, modernisiert oder neu aufgebaut werden.'],
+    ['Gibt es monatliche Betreuung?', 'Ja. Betreuungsangebote starten ab 199 € / Monat inklusive Mehrwertsteuer.'],
+    ['Was ist eine Unternehmens-App?', 'Eine Unternehmens-App oder Web-App ist ein digitaler Arbeitsbereich für Termine, Aufgaben, Kunden und interne Prozesse.'],
+    ['Was ist ein Betriebs-Dashboard?', 'Ein Betriebs-Dashboard bündelt wichtige Informationen wie Termine, Aufgaben, offene Punkte und Kennzahlen.'],
   ]
 
   return (
     <section className="px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
         <SectionHeader eyebrow="FAQ" title="Häufige Fragen" text="Klar, verständlich und ohne Agentur-Blabla." />
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {faqs.map(([q, a]) => (
-            <article key={q} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
-              <h3 className="text-base font-semibold text-white">{q}</h3>
-              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{a}</p>
+        <div className="mt-8 space-y-3">
+          {faqs.map(([q, a], index) => (
+            <article key={q} className="rounded-2xl border border-white/12 bg-white/[0.04]">
+              <button
+                type="button"
+                onClick={() => setOpenIndex((current) => (current === index ? -1 : index))}
+                className="flex w-full items-center justify-between gap-4 px-4 py-3 text-left"
+              >
+                <h3 className="text-base font-semibold text-white">{q}</h3>
+                <ChevronDown className={`h-4 w-4 text-[#D8B45A] transition ${openIndex === index ? 'rotate-180' : 'rotate-0'}`} />
+              </button>
+              {openIndex === index ? (
+                <div className="border-t border-white/10 px-4 pb-4 pt-3">
+                  <p className="text-sm leading-7 text-[#D7DCE5]">{a}</p>
+                  {(index + 1) % 2 === 0 ? (
+                    <a href={siteLinks.contact} className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-3.5 py-1.5 text-xs font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                      Kostenlose Ersteinschätzung anfragen
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
             </article>
           ))}
         </div>
