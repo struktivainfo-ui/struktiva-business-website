@@ -49,6 +49,11 @@ const siteLinks = {
   demoHandwerker: '/demo-handwerker',
   demoBeauty: '/demo-beauty',
   demoDienstleister: '/demo-dienstleister',
+  demoFriseursalonV2: '/demos/friseursalon',
+  demoHandwerkerV2: '/demos/handwerker',
+  demoKosmetikstudioV2: '/demos/kosmetikstudio',
+  demoBewertungsstrukturV2: '/demos/bewertungsstruktur',
+  demoDashboardV2: '/demos/dashboard',
   landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
   bewertungsQrCode: '/bewertungs-qr-code',
   digitaleSoforthilfe: '/digitale-soforthilfe',
@@ -554,6 +559,11 @@ function useDocumentTitleSafe(pathname) {
       '/demo-handwerker': 'Demo Handwerker - STRUKTIVA Unternehmensarchitektur',
       '/demo-beauty': 'Demo Beauty & Kosmetik - STRUKTIVA Unternehmensarchitektur',
       '/demo-dienstleister': 'Demo Dienstleister - STRUKTIVA Unternehmensarchitektur',
+      '/demos/friseursalon': 'Friseursalon Demo | STRUKTIVA Unternehmensarchitektur',
+      '/demos/handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
+      '/demos/kosmetikstudio': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
+      '/demos/bewertungsstruktur': 'Bewertungsstruktur Demo | STRUKTIVA Unternehmensarchitektur',
+      '/demos/dashboard': 'Dashboard Demo | STRUKTIVA Unternehmensarchitektur',
       '/landingpage-digitale-struktur': 'Digitale Struktur fuer kleine Unternehmen - STRUKTIVA Unternehmensarchitektur',
       '/wissen': 'STRUKTIVA Wissen - Digitale Unternehmensstruktur für kleine Unternehmen',
       '/wissen/warum-eine-schoene-website-keine-kunden-bringt': 'Warum eine schöne Website allein keine Kunden bringt - STRUKTIVA Wissen',
@@ -587,6 +597,16 @@ function useDocumentTitleSafe(pathname) {
         'Einstiegspreise fuer kleine Unternehmen: Sichtbarkeit, Kundengewinnung und Unternehmensarchitektur mit transparenter, strukturierter Umsetzung.',
       '/demos':
         'STRUKTIVA zeigt Demo-Beispiele für Handwerk, Beauty und Dienstleister – mit Website, Google-Sichtbarkeit, Kontaktwegen und klarer digitaler Kundenführung.',
+      '/demos/friseursalon':
+        'Beispielhafte digitale Struktur für Friseursalons mit Website, Google, Bewertungen, WhatsApp-Anfrage und Kundenführung.',
+      '/demos/handwerker':
+        'Beispielhafte Website-Struktur für Handwerker mit Leistungen, Referenzen, Anfragewegen und regionaler Sichtbarkeit.',
+      '/demos/kosmetikstudio':
+        'Beispielhafte digitale Struktur für Kosmetikstudios mit Behandlungen, Preisen, Bewertungen und Termin-Anfrage.',
+      '/demos/bewertungsstruktur':
+        'Beispielhafte Bewertungsstruktur mit QR-Code, Bewertungslink, WhatsApp-Text und Website-Einbindung.',
+      '/demos/dashboard':
+        'Beispielhaftes Betriebs-Dashboard für kleine Unternehmen mit Aufgaben, Terminen, Tagesübersicht und Kennzahlen.',
       '/wissen':
         'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen Abläufen für kleine Unternehmen.',
       '/wissen/warum-eine-schoene-website-keine-kunden-bringt':
@@ -3087,48 +3107,40 @@ function OfferMatchSection() {
 }
 
 function DemoUseCasesSection() {
-  const demoAnchorLinks = {
-    friseur: '/#demo-friseursalon',
-    handwerker: '/#demo-handwerker',
-    kosmetik: '/#demo-kosmetikstudio',
-    bewertung: '/#demo-bewertungsstruktur',
-    dashboard: '/#demo-dashboard',
-  }
-
   const demos = [
     {
       title: 'Demo Friseursalon',
       text: 'Website, Leistungen, Team, Google-Profil, Bewertungen, WhatsApp-Anfrage und digitale Kundenführung für einen Salon.',
       structure: ['Startseite', 'Leistungen', 'Team', 'Kontakt', 'Bewertungen', 'WhatsApp-Anfrage', 'Google-Verbindung'],
-      href: demoAnchorLinks.friseur,
+      href: siteLinks.demoFriseursalonV2,
       cta: 'Friseur-Demo ansehen',
     },
     {
       title: 'Demo Handwerker',
       text: 'Leistungsseiten, Referenzen, Anfrageformular, Google-Sichtbarkeit, WhatsApp-Kontakt und klare Angebotsstruktur.',
       structure: ['Leistungen', 'Einsatzgebiet', 'Referenzen', 'Anfrageformular', 'Kontakt', 'Google-Struktur'],
-      href: demoAnchorLinks.handwerker,
+      href: siteLinks.demoHandwerkerV2,
       cta: 'Handwerker-Demo ansehen',
     },
     {
       title: 'Demo Kosmetikstudio',
       text: 'Behandlungen, Preise, Vertrauen, Bewertungen, Bilder, Kontaktwege und Social-Media-Verknüpfung klar strukturiert.',
       structure: ['Behandlungen', 'Preise', 'Vorher/Nachher', 'Bewertungen', 'Termin-Anfrage', 'Instagram/Pinterest-Verbindung'],
-      href: demoAnchorLinks.kosmetik,
+      href: siteLinks.demoKosmetikstudioV2,
       cta: 'Kosmetik-Demo ansehen',
     },
     {
       title: 'Demo Bewertungsstruktur',
       text: 'QR-Code, Bewertungslink, Bewertungskarte und WhatsApp-Text für zufriedene Kunden.',
       structure: ['QR-Code', 'Bewertungslink', 'Bewertungskarte', 'Anfrage-Text', 'Website-Einbindung'],
-      href: demoAnchorLinks.bewertung,
+      href: siteLinks.demoBewertungsstrukturV2,
       cta: 'Bewertungsstruktur ansehen',
     },
     {
       title: 'Demo Dashboard',
       text: 'Digitale Übersicht für Termine, Aufgaben, offene Punkte, Tagesübersicht, Monatsstruktur oder Kennzahlen.',
       structure: ['Tagesübersicht', 'Aufgaben', 'Termine', 'Kennzahlen', 'offene Punkte', 'Notizen'],
-      href: demoAnchorLinks.dashboard,
+      href: siteLinks.demoDashboardV2,
       cta: 'Dashboard-Demo ansehen',
     },
   ]
@@ -5041,16 +5053,27 @@ function DemoFinalSection() {
 function DemoOverviewSection() {
   const cards = [
     {
-      title: 'Handwerker-Modell',
-      text: 'Für Handwerksbetriebe, die ihre Leistungen klar zeigen, Vertrauen aufbauen und Projektanfragen einfacher erhalten möchten.',
+      title: 'Friseursalon-Demo',
+      text: 'Beispielhafte Salon-Struktur mit Leistungen, Team, Google-Profil, Bewertungen und WhatsApp-Anfrage.',
+      points: ['Leistungen & Team', 'Bewertungsbereich', 'Google-Verbindung', 'WhatsApp-Terminweg', 'Beispielhafte Demo'],
+      href: siteLinks.demoFriseursalonV2,
+      image: demoImageConfigs.beauty.hero,
+      alt: 'Salon-Atmosphäre als Demo',
+      tone: 'border-[#e9c9ac]/70 bg-[linear-gradient(165deg,rgba(253,244,236,0.98),rgba(248,229,217,0.96))] text-[#3b2f2f]',
+      accent: 'text-[#b8894b]',
+      icon: Sparkles,
+    },
+    {
+      title: 'Handwerker-Demo',
+      text: 'Beispielhafte Handwerker-Struktur mit Leistungsseiten, Referenzen, Anfrageführung und regionaler Sichtbarkeit.',
       points: [
-        'klare Leistungsübersicht',
-        'direkte Anfrageführung',
-        'Google-Sichtbarkeit',
-        'Telefon, WhatsApp oder Kontaktformular',
-        'Vertrauenselemente für neue Kunden',
+        'Leistungen & Referenzen',
+        'Regionale Sichtbarkeit',
+        'Anfrageformular',
+        'WhatsApp-Kontakt',
+        'Beispielhafte Demo',
       ],
-      href: siteLinks.demoHandwerker,
+      href: siteLinks.demoHandwerkerV2,
       image: demoImageConfigs.handwerker.hero,
       alt: 'Handwerker auf einer Baustelle',
       tone: 'border-[#f59e0b]/40 bg-[linear-gradient(165deg,rgba(17,24,39,0.95),rgba(55,65,81,0.92))] text-white',
@@ -5058,16 +5081,16 @@ function DemoOverviewSection() {
       icon: Building2,
     },
     {
-      title: 'Beauty-Modell',
-      text: 'Für Kosmetikstudios, Friseure, Beauty-Dienstleister und lokale Studios, die hochwertig wirken und Terminwege klar darstellen möchten.',
+      title: 'Kosmetikstudio-Demo',
+      text: 'Beispielhafte Beauty-Struktur mit Behandlungen, Preisen, Bewertungen und Termin-Anfrage.',
       points: [
-        'elegante Angebotsstruktur',
-        'Behandlungs- und Leistungsbereiche',
-        'Termin- und Kontaktführung',
-        'Bilder, Atmosphäre und Vertrauen',
-        'mobile Optimierung',
+        'Behandlungen & Preise',
+        'Vertrauensbereich',
+        'Terminführung',
+        'Instagram/Pinterest-Anbindung',
+        'Beispielhafte Demo',
       ],
-      href: siteLinks.demoBeauty,
+      href: siteLinks.demoKosmetikstudioV2,
       image: demoImageConfigs.beauty.hero,
       alt: 'Beauty-Behandlung in einem Studio',
       tone: 'border-[#e9c9ac]/70 bg-[linear-gradient(165deg,rgba(253,244,236,0.98),rgba(248,229,217,0.96))] text-[#3b2f2f]',
@@ -5075,21 +5098,38 @@ function DemoOverviewSection() {
       icon: Sparkles,
     },
     {
-      title: 'Dienstleister-Modell',
-      text: 'Für Selbstständige, Berater und lokale Dienstleister, die ihr Angebot verständlich erklären und professionell auftreten möchten.',
+      title: 'Bewertungsstruktur-Demo',
+      text: 'Beispielstruktur für QR-Code, Bewertungslink, Bewertungskarte und Website-Einbindung.',
       points: [
-        'klare Angebotsarchitektur',
-        'seriöse Außenwirkung',
-        'Kontakt- und Anfrageführung',
-        'Vertrauensaufbau',
-        'strukturierte Leistungsseiten',
+        'Google-Bewertungslink',
+        'QR-Code-Prozess',
+        'WhatsApp-Mustertext',
+        'Bewertungsführung',
+        'Beispielhafte Demo',
       ],
-      href: siteLinks.demoDienstleister,
+      href: siteLinks.demoBewertungsstrukturV2,
+      image: struktivaImages.digitalDashboard,
+      alt: 'Bewertungs- und QR-Code Struktur',
+      tone: 'border-[#D8B45A]/35 bg-[linear-gradient(165deg,rgba(15,23,42,0.95),rgba(30,41,59,0.92))] text-white',
+      accent: 'text-[#F2D98B]',
+      icon: QrCode,
+    },
+    {
+      title: 'Dashboard-Demo',
+      text: 'Beispielhafte Dashboard-Struktur für Tagesübersicht, Aufgaben, Termine, Kennzahlen und offene Punkte.',
+      points: [
+        'Termine heute',
+        'Aufgaben & Notizen',
+        'Kennzahlen-Ansicht',
+        'Monatsübersicht',
+        'Beispielhafte Demo',
+      ],
+      href: siteLinks.demoDashboardV2,
       image: demoImageConfigs.dienstleister.hero,
-      alt: 'Beratungsgespräch am Tisch',
-      tone: 'border-[#60a5fa]/35 bg-[linear-gradient(165deg,rgba(10,25,47,0.95),rgba(15,40,75,0.92))] text-white',
-      accent: 'text-[#93c5fd]',
-      icon: BriefcaseBusiness,
+      alt: 'Digitale Dashboard-Oberfläche',
+      tone: 'border-[#38bdf8]/30 bg-[linear-gradient(165deg,rgba(8,20,39,0.95),rgba(11,31,58,0.92))] text-white',
+      accent: 'text-[#7dd3fc]',
+      icon: PanelsTopLeft,
     },
   ]
 
@@ -5108,7 +5148,7 @@ function DemoOverviewSection() {
             Die gezeigten Beispiele sind Demo- und Musterprojekte. Sie zeigen mögliche digitale Strukturen und dienen als Orientierung.
           </p>
         </Reveal>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 lg:grid-cols-3">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {cards.map((card) => {
             const Icon = card.icon
             return (
@@ -5382,6 +5422,16 @@ function Page() {
     content = <DemoBeautyPage />
   } else if (pathname === '/demo-dienstleister') {
     content = <DemoDienstleisterPage />
+  } else if (pathname === '/demos/friseursalon') {
+    content = <DemoFriseursalonPage />
+  } else if (pathname === '/demos/handwerker') {
+    content = <DemoHandwerkerV2Page />
+  } else if (pathname === '/demos/kosmetikstudio') {
+    content = <DemoKosmetikstudioPage />
+  } else if (pathname === '/demos/bewertungsstruktur') {
+    content = <DemoBewertungsstrukturPage />
+  } else if (pathname === '/demos/dashboard') {
+    content = <DemoDashboardPage />
   } else if (pathname === '/landingpage-digitale-struktur') {
     content = <LandingpageDigitaleStrukturPageV2 />
   }
@@ -5393,6 +5443,241 @@ function Page() {
       <Footer />
       <FloatingWhatsAppButton />
     </div>
+  )
+}
+
+function DemoPageDisclaimer() {
+  return (
+    <section className="rounded-[1.5rem] border border-white/14 bg-white/[0.04] p-5 text-sm leading-7 text-[#D7DCE5]">
+      Diese Demo zeigt beispielhaft, wie STRUKTIVA digitale Struktur für diese Branche aufbauen kann. Inhalte, Farben und Funktionen können individuell angepasst werden.
+    </section>
+  )
+}
+
+function DemoContactCTA({ text }) {
+  return (
+    <section className="rounded-[1.8rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
+      <h2 className="text-2xl font-semibold text-white">Eigene digitale Struktur anfragen</h2>
+      <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+      <div className="mt-4 flex flex-wrap gap-3">
+        <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-5 py-2.5 text-sm font-semibold text-white">
+          Eigene digitale Struktur anfragen
+          <ArrowRight className="h-4 w-4" />
+        </a>
+        <a href={`mailto:${contactDetails.email}`} className="rounded-full border border-white/14 px-4 py-2 text-sm font-semibold text-[#D7DCE5]">
+          {contactDetails.email}
+        </a>
+        <a href={contactDetails.phoneHref} className="rounded-full border border-white/14 px-4 py-2 text-sm font-semibold text-[#D7DCE5]">
+          {contactDetails.phoneLabel}
+        </a>
+      </div>
+    </section>
+  )
+}
+
+function DemoFriseursalonPage() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#120f0d,#1b1713)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <section className="rounded-[2.1rem] border border-[#D8B45A]/25 bg-[linear-gradient(160deg,rgba(35,28,23,0.95),rgba(20,17,14,0.92))] p-7 shadow-premium">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
+          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Friseursalon-Demo: Digitale Struktur für moderne Salons</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#E7DDD0]">Eine beispielhafte Salon-Website mit Leistungen, Team, Bewertungen, Google-Struktur, WhatsApp-Anfrage und klarer Kundenführung.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Salon-Struktur anfragen</a>
+            <a href="#salon-leistungen" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Leistungen ansehen</a>
+          </div>
+        </section>
+        <section id="salon-leistungen" className="grid gap-4 md:grid-cols-3">
+          {['Damenhaarschnitt', 'Herrenhaarschnitt', 'Farbe & Strähnen', 'Styling', 'Hochsteckfrisuren', 'Pflegebehandlungen'].map((item) => (
+            <article key={item} className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4">
+              <h3 className="font-semibold text-white">{item}</h3>
+              <p className="mt-2 text-sm text-[#E7DDD0]">Musterleistung mit klarer Beschreibung, Preisrahmen und direkter Terminführung.</p>
+            </article>
+          ))}
+        </section>
+        <section className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+          <h2 className="text-2xl font-semibold text-white">Team & Vertrauen</h2>
+          <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Persönliche Beratung, familiäre Atmosphäre, klare Terminführung und professionelle Außenwirkung als Beispielstruktur.</p>
+        </section>
+        <section className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+          <h2 className="text-2xl font-semibold text-white">Kundenführung</h2>
+          <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Website, Google-Profil, Bewertungen, WhatsApp-Terminfrage und Kontaktbutton arbeiten als klare digitale Kundenführung zusammen.</p>
+        </section>
+        <section className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+          <h2 className="text-2xl font-semibold text-white">Bewertungsbereich (Muster)</h2>
+          <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Beispielbewertungen als Musterdarstellung für Vertrauensaufbau, klar als Demo gekennzeichnet.</p>
+        </section>
+        <DemoContactCTA text="So könnte auch Ihr Salon digital klarer wirken." />
+        <DemoPageDisclaimer />
+      </div>
+    </main>
+  )
+}
+
+function DemoHandwerkerV2Page() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#0b1220,#111827)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <section className="rounded-[2.1rem] border border-[#f59e0b]/30 bg-[#111827] p-7 shadow-premium">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#fbbf24]">Beispielhafte Demo von STRUKTIVA</p>
+          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Handwerker-Demo: Klare Website-Struktur für regionale Betriebe</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-gray-200">Eine beispielhafte Handwerker-Seite mit Leistungen, Referenzen, Anfrageformular, regionaler Sichtbarkeit und klaren Kontaktwegen.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className="rounded-full bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-white">Handwerker-Struktur anfragen</a>
+            <a href="#hw-refs" className="rounded-full border border-[#f59e0b]/35 px-6 py-3 text-sm font-semibold text-[#fbbf24]">Referenzen ansehen</a>
+          </div>
+        </section>
+        <section className="grid gap-4 md:grid-cols-3">
+          {['Renovierung', 'Reparaturen', 'Montage', 'Wartung', 'Innenausbau', 'Notdienst / schnelle Anfrage'].map((item) => (
+            <article key={item} className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4">
+              <h3 className="font-semibold text-white">{item}</h3>
+              <p className="mt-2 text-sm text-gray-200">Klarer Leistungsblock mit regionalem Bezug und direkter Anfrageoption.</p>
+            </article>
+          ))}
+        </section>
+        <section id="hw-refs" className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+          <h2 className="text-2xl font-semibold text-white">Referenzen (Muster)</h2>
+          <p className="mt-3 text-sm leading-7 text-gray-200">Badezimmermodernisierung, Innenausbau, Reparaturauftrag, Montagearbeit – als beispielhafte Projektkarten.</p>
+        </section>
+        <section className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+          <h2 className="text-2xl font-semibold text-white">Anfrageführung</h2>
+          <p className="mt-3 text-sm leading-7 text-gray-200">Was soll gemacht werden? Wo ist der Einsatzort? Gibt es Bilder? Wann soll es erledigt werden? So wird eine Anfrage klar strukturiert.</p>
+        </section>
+        <section className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+          <h2 className="text-2xl font-semibold text-white">Google & regionale Sichtbarkeit</h2>
+          <p className="mt-3 text-sm leading-7 text-gray-200">Einsatzgebiet, Leistungen, Bewertungen und Kontaktwege werden als regionale Struktur sichtbar gemacht.</p>
+        </section>
+        <DemoContactCTA text="So wird Ihr Handwerksbetrieb online klarer gefunden und besser angefragt." />
+        <DemoPageDisclaimer />
+      </div>
+    </main>
+  )
+}
+
+function DemoKosmetikstudioPage() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#fff8f5,#f9e7de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <section className="rounded-[2.1rem] border border-[#e9c9ac]/80 bg-[#fff8f3] p-7 shadow-premium">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b8894b]">Beispielhafte Demo von STRUKTIVA</p>
+          <h1 className="mt-3 text-4xl font-semibold text-[#3b2f2f] md:text-5xl">Kosmetikstudio-Demo: Digitale Struktur für Beauty-Angebote</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#5a4740]">Eine beispielhafte Kosmetikstudio-Seite mit Behandlungen, Preisen, Vertrauen, Bewertungen, Bildern und Termin-Anfrage.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className="rounded-full bg-[#b8894b] px-6 py-3 text-sm font-semibold text-white">Kosmetik-Struktur anfragen</a>
+            <a href="#beauty-services" className="rounded-full border border-[#d4a574]/55 px-6 py-3 text-sm font-semibold text-[#9b6d3e]">Behandlungen ansehen</a>
+          </div>
+        </section>
+        <section id="beauty-services" className="grid gap-4 md:grid-cols-3">
+          {['Gesichtsbehandlung', 'Hautanalyse', 'Wimpern & Augenbrauen', 'Make-up', 'Pflegepakete', 'Beratung'].map((item) => (
+            <article key={item} className="rounded-2xl border border-[#e4cabb] bg-white p-4">
+              <h3 className="font-semibold text-[#3b2f2f]">{item}</h3>
+              <p className="mt-2 text-sm text-[#5a4740]">Beispielhafter Leistungsbereich mit klarer Beschreibung und Terminweg.</p>
+            </article>
+          ))}
+        </section>
+        <section className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+          <h2 className="text-2xl font-semibold text-[#3b2f2f]">Preise / Pakete (Demo)</h2>
+          <p className="mt-3 text-sm leading-7 text-[#5a4740]">Basisbehandlung · Premiumbehandlung · Beauty-Paket – als Musterstruktur gekennzeichnet.</p>
+        </section>
+        <section className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+          <h2 className="text-2xl font-semibold text-[#3b2f2f]">Vertrauen</h2>
+          <p className="mt-3 text-sm leading-7 text-[#5a4740]">Hygiene, Beratung, ruhige Atmosphäre, professionelle Behandlung und Bewertungsführung als digitale Vertrauensbasis.</p>
+        </section>
+        <section className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+          <h2 className="text-2xl font-semibold text-[#3b2f2f]">Terminführung</h2>
+          <p className="mt-3 text-sm leading-7 text-[#5a4740]">Termin anfragen, Behandlung auswählen, Kontakt über WhatsApp oder Formular und klare Rückmeldung.</p>
+        </section>
+        <DemoContactCTA text="So könnte Ihr Kosmetikstudio online hochwertiger und klarer wirken." />
+        <DemoPageDisclaimer />
+      </div>
+    </main>
+  )
+}
+
+function DemoBewertungsstrukturPage() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#0b1220,#13253d)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <section className="rounded-[2.1rem] border border-[#D8B45A]/30 bg-[#0f172a] p-7 shadow-premium">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
+          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Bewertungsstruktur-Demo: Mehr Vertrauen durch klare Bewertungswege</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5]">Eine beispielhafte Struktur mit QR-Code, Bewertungslink, Bewertungskarte, WhatsApp-Text und Website-Einbindung.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Bewertungsstruktur anfragen</a>
+            <a href="#review-flow" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Beispiel ansehen</a>
+          </div>
+        </section>
+        <section id="review-flow" className="rounded-2xl border border-white/14 bg-white/[0.04] p-5">
+          <h2 className="text-2xl font-semibold text-white">Wie es funktioniert</h2>
+          <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">1. Kunde ist zufrieden · 2. QR-Code scannen · 3. Bewertung öffnen · 4. Bewertung abgeben · 5. Vertrauen für neue Kunden stärken.</p>
+        </section>
+        <section className="grid gap-4 md:grid-cols-3">
+          {['Google-Bewertungslink', 'QR-Code', 'Bewertungskarte', 'WhatsApp-Text', 'Website-Einbindung', 'Bewertungsbereich'].map((item) => (
+            <article key={item} className="rounded-2xl border border-white/14 bg-white/[0.04] p-4">
+              <h3 className="font-semibold text-white">{item}</h3>
+              <p className="mt-2 text-sm text-[#D7DCE5]">Beispielhafter Strukturbaustein für eine saubere Bewertungsführung.</p>
+            </article>
+          ))}
+        </section>
+        <section className="rounded-2xl border border-white/14 bg-white/[0.04] p-5">
+          <h2 className="text-2xl font-semibold text-white">Beispieltext (WhatsApp)</h2>
+          <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">„Vielen Dank für Ihren Besuch. Wenn Sie zufrieden waren, freuen wir uns über eine kurze Bewertung.“</p>
+        </section>
+        <section className="rounded-2xl border border-dashed border-[#D8B45A]/45 bg-[#0f172a] p-5">
+          <h2 className="text-2xl font-semibold text-white">QR-Code-Demo</h2>
+          <div className="mt-4 inline-flex h-36 w-36 items-center justify-center rounded-xl border border-[#D8B45A]/45 bg-white text-xs font-semibold text-[#0f172a]">
+            Beispiel-QR-Code
+          </div>
+        </section>
+        <DemoContactCTA text="Machen Sie es zufriedenen Kunden leichter, eine Bewertung abzugeben." />
+        <DemoPageDisclaimer />
+      </div>
+    </main>
+  )
+}
+
+function DemoDashboardPage() {
+  const cards = [
+    ['Termine heute', '8'], ['Offene Aufgaben', '14'], ['Neue Anfragen', '5'], ['Tagesnotizen', '3'], ['Monatsübersicht', '26'], ['Umsatzübersicht (Demo)', '12.480 €'], ['Offene Punkte', '7'],
+  ]
+  return (
+    <main className="bg-[linear-gradient(180deg,#07111f,#0b1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <section className="rounded-[2.1rem] border border-[#38bdf8]/30 bg-[#081427] p-7 shadow-premium">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7dd3fc]">Beispielhafte Demo von STRUKTIVA</p>
+          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Dashboard-Demo: Digitale Übersicht für kleine Unternehmen</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#dbe7ff]">Eine beispielhafte Dashboard-Struktur für Termine, Aufgaben, offene Punkte, Tagesübersicht, Monatsstruktur und Kennzahlen.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className="rounded-full bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white">Dashboard anfragen</a>
+            <a href="#dashboard-modules" className="rounded-full border border-[#60a5fa]/35 px-6 py-3 text-sm font-semibold text-[#bfdbfe]">Funktionen ansehen</a>
+          </div>
+        </section>
+        <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {cards.map(([title, value]) => (
+            <article key={title} className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-4">
+              <p className="text-xs uppercase tracking-[0.14em] text-[#94a3b8]">{title}</p>
+              <p className="mt-2 text-2xl font-semibold text-[#7dd3fc]">{value}</p>
+            </article>
+          ))}
+        </section>
+        <section id="dashboard-modules" className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {['Tagesübersicht', 'Aufgaben', 'Termine', 'Kundenanfragen', 'Kennzahlen', 'Notizen', 'Monatsplanung', 'Teamübersicht'].map((item) => (
+            <article key={item} className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-4">
+              <h3 className="font-semibold text-white">{item}</h3>
+              <p className="mt-2 text-sm text-[#dbe7ff]">Beispielmodul für strukturierte Betriebsübersicht.</p>
+            </article>
+          ))}
+        </section>
+        <section className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-5">
+          <h2 className="text-2xl font-semibold text-white">Für wen geeignet?</h2>
+          <p className="mt-3 text-sm leading-7 text-[#dbe7ff]">Friseursalons, Handwerker, Kosmetikstudios, Beratungsbetriebe und lokale Dienstleister.</p>
+          <p className="mt-2 text-xs uppercase tracking-[0.14em] text-[#94a3b8]">Alle Werte sind Demo-Werte.</p>
+        </section>
+        <DemoContactCTA text="Bringen Sie mehr Übersicht in Ihren Betriebsalltag." />
+        <DemoPageDisclaimer />
+      </div>
+    </main>
   )
 }
 
