@@ -135,7 +135,6 @@ const navItems = [
 
 const desktopNavItems = [
   ['Preise', siteLinks.pricing],
-  ['Demos', siteLinks.demos],
   ['Wissen', siteLinks.wissen],
   ['Kontakt', siteLinks.contact],
 ]
@@ -147,6 +146,14 @@ const leistungenDropdownItems = [
   ['Digitale Soforthilfe', siteLinks.digitaleSoforthilfe],
   ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme],
   ['Unternehmens-Apps & Dashboards', siteLinks.unternehmensApps],
+]
+
+const demoDropdownItems = [
+  ['Friseursalon-Demo', 'Warme Salon-Struktur mit Leistungen, Bewertungen und Terminführung.', siteLinks.demoFriseursalonV2, Sparkles],
+  ['Handwerker-Demo', 'Robuste Website-Struktur für Leistungen, Referenzen und Anfragen.', siteLinks.demoHandwerkerV2, Building2],
+  ['Kosmetikstudio-Demo', 'Elegante Beauty-Struktur mit Behandlungen, Preisen und Termin-Anfrage.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
+  ['Bewertungsstruktur-Demo', 'QR-Code, Bewertungslink und klare Kundenführung zur Bewertung.', siteLinks.demoBewertungsstrukturV2, QrCode],
+  ['Dashboard-Demo', 'Digitale Übersicht für Aufgaben, Termine, Anfragen und Kennzahlen.', siteLinks.demoDashboardV2, PanelsTopLeft],
 ]
 
 const demoCards = [
@@ -741,18 +748,23 @@ function Header({ pathname }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false)
+  const [desktopDemoDropdownOpen, setDesktopDemoDropdownOpen] = useState(false)
   const [mobileLeistungenOpen, setMobileLeistungenOpen] = useState(false)
+  const [mobileDemosOpen, setMobileDemosOpen] = useState(false)
   const menuPanelRef = useRef(null)
   const desktopDropdownRef = useRef(null)
+  const desktopDemoDropdownRef = useRef(null)
 
   const closeMobileMenu = () => {
     setMenuOpen(false)
     setMobileLeistungenOpen(false)
+    setMobileDemosOpen(false)
     document.body.classList.remove('menu-open', 'open', 'active', 'is-open', 'mobile-menu-open')
     document.body.style.overflow = ''
   }
 
   const closeDesktopDropdown = () => setDesktopDropdownOpen(false)
+  const closeDesktopDemoDropdown = () => setDesktopDemoDropdownOpen(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 14)
@@ -764,6 +776,7 @@ function Header({ pathname }) {
   useEffect(() => {
     closeMobileMenu()
     closeDesktopDropdown()
+    closeDesktopDemoDropdown()
   }, [pathname])
 
   useEffect(() => {
@@ -781,6 +794,7 @@ function Header({ pathname }) {
       if (event.key === 'Escape') {
         closeMobileMenu()
         closeDesktopDropdown()
+        closeDesktopDemoDropdown()
       }
     }
 
@@ -797,6 +811,7 @@ function Header({ pathname }) {
       }
       if (window.innerWidth < 1024) {
         closeDesktopDropdown()
+        closeDesktopDemoDropdown()
       }
     }
 
@@ -807,6 +822,13 @@ function Header({ pathname }) {
         !desktopDropdownRef.current.contains(event.target)
       ) {
         closeDesktopDropdown()
+      }
+      if (
+        desktopDemoDropdownOpen &&
+        desktopDemoDropdownRef.current &&
+        !desktopDemoDropdownRef.current.contains(event.target)
+      ) {
+        closeDesktopDemoDropdown()
       }
     }
 
@@ -823,7 +845,7 @@ function Header({ pathname }) {
       document.removeEventListener('mousedown', onClickOutsideDesktopDropdown)
       window.removeEventListener('resize', onResize)
     }
-  }, [menuOpen, desktopDropdownOpen])
+  }, [menuOpen, desktopDropdownOpen, desktopDemoDropdownOpen])
 
   return (
     <motion.header
@@ -905,6 +927,59 @@ function Header({ pathname }) {
                     >
                       Alle Leistungen ansehen
                     </a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <div
+            ref={desktopDemoDropdownRef}
+            className="relative"
+            onMouseEnter={() => setDesktopDemoDropdownOpen(true)}
+            onMouseLeave={closeDesktopDemoDropdown}
+          >
+            <button
+              type="button"
+              aria-haspopup="menu"
+              aria-expanded={desktopDemoDropdownOpen}
+              className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]"
+              onClick={() => setDesktopDemoDropdownOpen((open) => !open)}
+            >
+              Demos
+              <ChevronDown className={`h-3.5 w-3.5 transition ${desktopDemoDropdownOpen ? 'rotate-180 text-[#D8B45A]' : 'rotate-0'}`} />
+            </button>
+
+            <AnimatePresence>
+              {desktopDemoDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute left-1/2 top-[calc(100%+12px)] z-50 w-[460px] max-w-[94vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/30 bg-[#07111F]/96 p-3 shadow-[0_20px_45px_rgba(3,8,16,0.55)] backdrop-blur-xl"
+                >
+                  <div className="mb-2 h-px w-full bg-gradient-to-r from-transparent via-[#D8B45A]/55 to-transparent" />
+                  <div className="grid gap-2">
+                    {demoDropdownItems.map(([label, text, href, Icon]) => (
+                      <a
+                        key={label}
+                        href={href}
+                        role="menuitem"
+                        onClick={closeDesktopDemoDropdown}
+                        className="group rounded-xl border border-white/10 bg-white/[0.03] p-3 transition hover:border-[#D8B45A]/35 hover:bg-white/[0.06]"
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-[#D8B45A]/30 bg-[#D8B45A]/10 text-[#D8B45A]">
+                            <Icon className="h-4 w-4" />
+                          </span>
+                          <div>
+                            <p className="text-sm font-semibold text-white group-hover:text-[#F2D98B]">{label}</p>
+                            <p className="mt-1 text-xs leading-6 text-[#D7DCE5]">{text}</p>
+                          </div>
+                        </div>
+                      </a>
+                    ))}
                   </div>
                 </motion.div>
               )}
@@ -1005,6 +1080,40 @@ function Header({ pathname }) {
                       >
                         Alle Leistungen ansehen
                       </a>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              <button
+                type="button"
+                aria-expanded={mobileDemosOpen}
+                onClick={() => setMobileDemosOpen((open) => !open)}
+                className="inline-flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
+              >
+                Demos
+                <ChevronDown className={`h-4 w-4 transition ${mobileDemosOpen ? 'rotate-180 text-[#D8B45A]' : 'rotate-0'}`} />
+              </button>
+              <AnimatePresence>
+                {mobileDemosOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="rounded-2xl border border-white/12 bg-white/[0.03] p-2"
+                  >
+                    <div className="grid gap-1">
+                      {demoDropdownItems.map(([label, text, href, Icon]) => (
+                        <a
+                          key={label}
+                          href={href}
+                          onClick={closeMobileMenu}
+                          className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-2.5 text-sm text-[#D7DCE5] transition hover:bg-white/[0.06] hover:text-[#D8B45A]"
+                        >
+                          <span className="inline-flex items-center gap-2 font-semibold"><Icon className="h-3.5 w-3.5" />{label}</span>
+                          <span className="mt-1 block text-xs leading-6 text-[#94A3B8]">{text}</span>
+                        </a>
+                      ))}
                     </div>
                   </motion.div>
                 )}
@@ -3067,11 +3176,11 @@ function ModulesSection() {
 
 function BranchenSection() {
   const items = [
-    ['Friseursalons', 'Viele Salons haben eine veraltete Website, wenig Bewertungen und keine klare Terminführung.', 'STRUKTIVA verbindet Salon-Website, Leistungsstruktur, Google-Profil, Bewertungen und WhatsApp-Anfrageweg.', 'Lösung für Friseursalons ansehen', siteLinks.brancheFriseursalons],
-    ['Handwerker', 'Leistungen, Einsatzgebiet und Referenzen sind online oft nicht klar genug sichtbar.', 'STRUKTIVA baut Leistungsseiten, Referenzstruktur, Anfragewege und regionale Google-Grundlage.', 'Lösung für Handwerker ansehen', siteLinks.brancheHandwerker],
-    ['Kosmetikstudios', 'Behandlungen, Preise, Vertrauen und Terminwege sind oft unübersichtlich dargestellt.', 'STRUKTIVA strukturiert Behandlungen, Preise, Bewertungen, Bilder und Termin-Anfrage.', 'Lösung für Kosmetikstudios ansehen', siteLinks.brancheKosmetikstudios],
-    ['Lokale Dienstleister', 'Kein klarer Auftritt und schwache Kontaktführung kosten Vertrauen und Anfragen.', 'STRUKTIVA schafft eine professionelle Struktur mit klarer Positionierung und direkter Kundenführung.', 'Lösung für lokale Dienstleister ansehen', siteLinks.brancheLokaleDienstleister],
-    ['Beratungsbetriebe', 'Angebot und Nutzen werden online oft zu abstrakt dargestellt.', 'STRUKTIVA baut eine klare Angebotslogik mit Vertrauenselementen und Terminführung auf.', 'Lösung für Beratungsbetriebe ansehen', siteLinks.brancheBeratung],
+    ['Friseursalons', 'Viele Salons haben eine veraltete Website, wenig Bewertungen und keine klare Terminführung.', 'STRUKTIVA verbindet Salon-Website, Leistungsstruktur, Google-Profil, Bewertungen und WhatsApp-Anfrageweg.', 'Lösung für Friseursalons ansehen', siteLinks.brancheFriseursalons, demoV2Images.friseurA, 'from-[#120f0d]/85 via-[#1f1a15]/68 to-[#100c09]/92'],
+    ['Handwerker', 'Leistungen, Einsatzgebiet und Referenzen sind online oft nicht klar genug sichtbar.', 'STRUKTIVA baut Leistungsseiten, Referenzstruktur, Anfragewege und regionale Google-Grundlage.', 'Lösung für Handwerker ansehen', siteLinks.brancheHandwerker, demoV2Images.handwerkerA, 'from-[#0b1220]/88 via-[#111827]/72 to-[#090f1b]/94'],
+    ['Kosmetikstudios', 'Behandlungen, Preise, Vertrauen und Terminwege sind oft unübersichtlich dargestellt.', 'STRUKTIVA strukturiert Behandlungen, Preise, Bewertungen, Bilder und Termin-Anfrage.', 'Lösung für Kosmetikstudios ansehen', siteLinks.brancheKosmetikstudios, demoV2Images.kosmetikA, 'from-[#352626]/75 via-[#5c4740]/45 to-[#2f2422]/80'],
+    ['Lokale Dienstleister', 'Kein klarer Auftritt und schwache Kontaktführung kosten Vertrauen und Anfragen.', 'STRUKTIVA schafft eine professionelle Struktur mit klarer Positionierung und direkter Kundenführung.', 'Lösung für lokale Dienstleister ansehen', siteLinks.brancheLokaleDienstleister, struktivaImages.localBusiness, 'from-[#0a162c]/84 via-[#11284a]/64 to-[#081323]/90'],
+    ['Beratungsbetriebe', 'Angebot und Nutzen werden online oft zu abstrakt dargestellt.', 'STRUKTIVA baut eine klare Angebotslogik mit Vertrauenselementen und Terminführung auf.', 'Lösung für Beratungsbetriebe ansehen', siteLinks.brancheBeratung, struktivaImages.consulting, 'from-[#101827]/84 via-[#1e293b]/66 to-[#0b1220]/90'],
   ]
 
   return (
@@ -3084,8 +3193,11 @@ function BranchenSection() {
           centered={false}
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {items.map(([title, problemText, solutionText, cta, href]) => (
-            <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+          {items.map(([title, problemText, solutionText, cta, href, image, overlay]) => (
+            <article key={title} className="group relative overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04] p-4 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/30">
+              <img src={image} alt="" aria-hidden="true" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-20 transition duration-500 group-hover:scale-105 group-hover:opacity-30" />
+              <div className={`absolute inset-0 bg-gradient-to-b ${overlay}`} />
+              <div className="relative">
               <h3 className="text-lg font-semibold text-white">{title}</h3>
               <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{problemText}</p>
               <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{solutionText}</p>
@@ -3093,6 +3205,7 @@ function BranchenSection() {
                 {cta}
                 <ArrowRight className="h-4 w-4" />
               </a>
+              </div>
             </article>
           ))}
         </div>
@@ -5504,6 +5617,22 @@ function DemoPageDisclaimer() {
   )
 }
 
+function DemoBackgroundLayer({ image, overlay = 'from-[#07111F]/88 via-[#07111F]/68 to-[#050A12]/90' }) {
+  return (
+    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <img
+        src={image}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        className="h-full w-full object-cover opacity-20"
+      />
+      <div className={`absolute inset-0 bg-gradient-to-b ${overlay}`} />
+    </div>
+  )
+}
+
 function DemoContactCTA({ text }) {
   return (
     <section className="rounded-[1.8rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
@@ -5569,7 +5698,8 @@ function DemoSiteBar({ name, primaryCta, theme = 'dark' }) {
 
 function DemoFriseursalonPage() {
   return (
-    <main className="bg-[linear-gradient(180deg,#120f0d,#1b1713)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#120f0d,#1b1713)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.friseurHero} overlay="from-[#120f0d]/88 via-[#1b1713]/72 to-[#100c09]/92" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Muster Salon Atelier" primaryCta="Salon-Struktur anfragen" />
         <DemoMiniNav
@@ -5656,7 +5786,8 @@ function DemoFriseursalonPage() {
 
 function DemoHandwerkerV2Page() {
   return (
-    <main className="bg-[linear-gradient(180deg,#0b1220,#111827)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#0b1220,#111827)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.handwerkerHero} overlay="from-[#0b1220]/90 via-[#111827]/75 to-[#090f1b]/94" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Muster Handwerk Regional" primaryCta="Anfrage stellen" />
         <DemoMiniNav
@@ -5745,7 +5876,8 @@ function DemoHandwerkerV2Page() {
 
 function DemoKosmetikstudioPage() {
   return (
-    <main className="bg-[linear-gradient(180deg,#fff8f5,#f9e7de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#fff8f5,#f9e7de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.kosmetikHero} overlay="from-[#fff8f5]/92 via-[#f9e7de]/78 to-[#f4ddd2]/94" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Muster Beauty Studio" primaryCta="Termin anfragen" theme="light" />
         <DemoMiniNav
@@ -5817,7 +5949,8 @@ function DemoKosmetikstudioPage() {
 
 function DemoBewertungsstrukturPage() {
   return (
-    <main className="bg-[linear-gradient(180deg,#0b1220,#13253d)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#0b1220,#13253d)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.bewertungHero} overlay="from-[#0b1220]/90 via-[#13253d]/76 to-[#0c1a2d]/94" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Muster Bewertungsstruktur" primaryCta="Bewertungsstruktur anfragen" />
         <DemoMiniNav
@@ -5898,7 +6031,8 @@ function DemoDashboardPage() {
     ['Teamübersicht', 'Aufgaben oder Termine können nach Personen strukturiert sichtbar gemacht werden.'],
   ]
   return (
-    <main className="bg-[linear-gradient(180deg,#07111f,#0b1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="relative bg-[linear-gradient(180deg,#07111f,#0b1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.dashboardHero} overlay="from-[#07111f]/90 via-[#0b1f3a]/76 to-[#060d19]/94" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Muster Betriebs-Dashboard" primaryCta="Dashboard anfragen" />
         <DemoMiniNav
