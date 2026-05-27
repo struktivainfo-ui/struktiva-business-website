@@ -5545,10 +5545,33 @@ function DemoMiniNav({ label, links, theme = 'dark' }) {
   )
 }
 
+function DemoSiteBar({ name, primaryCta, theme = 'dark' }) {
+  const wrap =
+    theme === 'light'
+      ? 'border-[#d4a574]/45 bg-white/90 text-[#5a4740]'
+      : 'border-white/14 bg-white/[0.05] text-[#D7DCE5]'
+
+  return (
+    <div className={`rounded-2xl border px-4 py-3 ${wrap}`}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em]">Beispielhafte Demo von STRUKTIVA</p>
+          <p className="text-base font-semibold">{name}</p>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <a href={siteLinks.home} className="rounded-full border border-current/25 px-3 py-1.5 text-xs font-semibold">Zur Startseite</a>
+          <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-4 py-2 text-xs font-semibold text-white">{primaryCta}</a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function DemoFriseursalonPage() {
   return (
     <main className="bg-[linear-gradient(180deg,#120f0d,#1b1713)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoSiteBar name="Muster Salon Atelier" primaryCta="Salon-Struktur anfragen" />
         <DemoMiniNav
           label="Friseursalon Demo"
           links={[
@@ -5635,6 +5658,7 @@ function DemoHandwerkerV2Page() {
   return (
     <main className="bg-[linear-gradient(180deg,#0b1220,#111827)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoSiteBar name="Muster Handwerk Regional" primaryCta="Anfrage stellen" />
         <DemoMiniNav
           label="Handwerker Demo"
           links={[
@@ -5678,6 +5702,19 @@ function DemoHandwerkerV2Page() {
           <h2 className="text-2xl font-semibold text-white">Referenzen (Muster)</h2>
           <p className="mt-3 text-sm leading-7 text-gray-200">Beispielprojekt: Badezimmermodernisierung · Beispielprojekt: Innenausbau eines Wohnraums · Beispielprojekt: Reparaturauftrag im Bestand · Beispielprojekt: Montagearbeit beim Kunden.</p>
         </section>
+        <section className="grid gap-4 md:grid-cols-4">
+          {[
+            ['Neue Anfragen heute', '3'],
+            ['Laufende Projekte', '8'],
+            ['Rückmeldungen offen', '2'],
+            ['Einsatzgebiete aktiv', '5'],
+          ].map(([title, value]) => (
+            <article key={title} className="rounded-2xl border border-[#f59e0b]/35 bg-[#111827] p-4">
+              <p className="text-xs uppercase tracking-[0.14em] text-[#fbbf24]">{title}</p>
+              <p className="mt-2 text-2xl font-semibold text-white">{value}</p>
+            </article>
+          ))}
+        </section>
         <section className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
           <h2 className="text-2xl font-semibold text-white">Anfrageführung</h2>
           <p className="mt-3 text-sm leading-7 text-gray-200">Was soll gemacht werden? Wo ist der Einsatzort? Gibt es Bilder? Wann soll es erledigt werden? So wird eine Anfrage klar strukturiert.</p>
@@ -5710,6 +5747,7 @@ function DemoKosmetikstudioPage() {
   return (
     <main className="bg-[linear-gradient(180deg,#fff8f5,#f9e7de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoSiteBar name="Muster Beauty Studio" primaryCta="Termin anfragen" theme="light" />
         <DemoMiniNav
           label="Kosmetikstudio Demo"
           links={[
@@ -5781,6 +5819,7 @@ function DemoBewertungsstrukturPage() {
   return (
     <main className="bg-[linear-gradient(180deg,#0b1220,#13253d)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoSiteBar name="Muster Bewertungsstruktur" primaryCta="Bewertungsstruktur anfragen" />
         <DemoMiniNav
           label="Bewertungsstruktur Demo"
           links={[
@@ -5846,11 +5885,22 @@ function DemoBewertungsstrukturPage() {
 
 function DemoDashboardPage() {
   const cards = [
-    ['Termine heute', '8'], ['Offene Aufgaben', '14'], ['Neue Anfragen', '5'], ['Tagesnotizen', '3'], ['Monatsübersicht', '26'], ['Umsatzübersicht (Demo)', '12.480 €'], ['Offene Punkte', '7'],
+    ['Termine heute', '8'], ['Offene Aufgaben', '5'], ['Neue Anfragen', '3'], ['Tagesnotizen', '2'], ['Monatsübersicht', '26'], ['Umsatzübersicht (Demo)', '12.480 €'], ['Offene Punkte', '7'],
+  ]
+  const dashboardModules = [
+    ['Tagesübersicht', 'Alle wichtigen Informationen des Tages werden an einem Ort gesammelt, damit nichts untergeht.'],
+    ['Aufgaben', 'Aufgaben, Zuständigkeiten und Prioritäten werden sichtbar und können besser verfolgt werden.'],
+    ['Termine', 'Termine werden übersichtlich dargestellt und helfen bei der Tages- und Wochenplanung.'],
+    ['Kundenanfragen', 'Neue Anfragen werden gesammelt sichtbar, damit kein Kontakt verloren geht.'],
+    ['Kennzahlen', 'Wichtige Demo-Werte zeigen Entwicklungen auf einen Blick.'],
+    ['Notizen', 'Interne Notizen halten offene Punkte und Hinweise im Team fest.'],
+    ['Monatsplanung', 'Wiederkehrende Aufgaben und Ziele werden planbar strukturiert.'],
+    ['Teamübersicht', 'Aufgaben oder Termine können nach Personen strukturiert sichtbar gemacht werden.'],
   ]
   return (
     <main className="bg-[linear-gradient(180deg,#07111f,#0b1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl space-y-6">
+        <DemoSiteBar name="Muster Betriebs-Dashboard" primaryCta="Dashboard anfragen" />
         <DemoMiniNav
           label="Dashboard Demo"
           links={[
@@ -5890,10 +5940,10 @@ function DemoDashboardPage() {
           ))}
         </section>
         <section id="dashboard-modules" className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {['Tagesübersicht', 'Aufgaben', 'Termine', 'Kundenanfragen', 'Kennzahlen', 'Notizen', 'Monatsplanung', 'Teamübersicht'].map((item) => (
-            <article key={item} className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-4">
-              <h3 className="font-semibold text-white">{item}</h3>
-              <p className="mt-2 text-sm text-[#dbe7ff]">Beispielmodul für strukturierte Betriebsübersicht.</p>
+          {dashboardModules.map(([title, text]) => (
+            <article key={title} className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-4">
+              <h3 className="font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm text-[#dbe7ff]">{text}</p>
             </article>
           ))}
         </section>
@@ -6062,11 +6112,17 @@ function BrancheLokaleDienstleisterPage() {
   return (
     <main className="bg-[linear-gradient(180deg,#0a162c,#11284a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-6xl space-y-6">
+        <DemoSiteBar name="Branchenlösung lokale Dienstleister" primaryCta="Lösung anfragen" />
         <h1 className="text-4xl font-semibold md:text-5xl">Digitale Struktur für lokale Dienstleister</h1>
         <p className="max-w-4xl text-base leading-8 text-[#dbe7ff]">Branchenbeispiel von STRUKTIVA: professioneller Auftritt, lokale Sichtbarkeit und klare Anfragewege.</p>
         <div className="rounded-2xl border border-[#60a5fa]/30 bg-[#0b1f3a] p-6">
           <p className="text-sm leading-7 text-[#dbe7ff]">Typische Probleme: kein klarer digitaler Auftritt, wenig Vertrauen, schwache Kontaktführung. STRUKTIVA löst mit strukturierter Website, lokaler Google-Grundlage und klarer Kundenführung.</p>
         </div>
+        <section className="grid gap-4 md:grid-cols-3">
+          {['Leistungsdarstellung', 'Google-Grundlage', 'Kontakt- und Anfragewege'].map((item) => (
+            <article key={item} className="rounded-2xl border border-[#60a5fa]/30 bg-[#0b1f3a] p-4 text-sm text-[#dbe7ff]">{item}</article>
+          ))}
+        </section>
         <a href={siteLinks.contact} className="inline-flex rounded-full bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white">Lösung für lokale Dienstleister anfragen</a>
       </div>
     </main>
@@ -6077,11 +6133,17 @@ function BrancheBeratungPage() {
   return (
     <main className="bg-[linear-gradient(180deg,#101827,#1e293b)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-6xl space-y-6">
+        <DemoSiteBar name="Branchenlösung Beratungsbetriebe" primaryCta="Beratungslösung anfragen" />
         <h1 className="text-4xl font-semibold md:text-5xl">Digitale Struktur für Beratungsbetriebe</h1>
         <p className="max-w-4xl text-base leading-8 text-[#d7dce5]">Branchenbeispiel von STRUKTIVA: klare Angebotsstruktur, Vertrauenselemente und professionelle Termin-Anfrageführung.</p>
         <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-6">
           <p className="text-sm leading-7 text-[#d7dce5]">Typische Probleme: Angebot schwer verständlich, Positionierung unklar, keine klare Termin-Anfrage. STRUKTIVA verbindet Angebotslogik, LinkedIn-/Google-Verknüpfung und klare Kontaktführung.</p>
         </div>
+        <section className="grid gap-4 md:grid-cols-3">
+          {['Positionierung', 'Angebotsarchitektur', 'Terminführung'].map((item) => (
+            <article key={item} className="rounded-2xl border border-white/15 bg-white/[0.04] p-4 text-sm text-[#d7dce5]">{item}</article>
+          ))}
+        </section>
         <a href={siteLinks.contact} className="inline-flex rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Lösung für Beratungsbetriebe anfragen</a>
       </div>
     </main>
