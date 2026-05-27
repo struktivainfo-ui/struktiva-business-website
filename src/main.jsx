@@ -2308,10 +2308,10 @@ function HeroSectionPremium() {
               {brand.name}
             </motion.div>
             <motion.h1 variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-5 max-w-[35rem] text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.05] xl:text-[58px]">
-              Wir machen dein Unternehmen online sichtbar, verständlich und anfragebereit.
+              Digitale Struktur für kleine Unternehmen.
             </motion.h1>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] text-[15px] leading-7 text-[#D7DCE5] md:text-[17px] md:leading-8">
-              STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und digitale Systeme zu einer klaren Struktur – damit Kunden schneller verstehen, was du anbietest und leichter Kontakt aufnehmen.
+              STRUKTIVA verbindet Website, Google-Sichtbarkeit, Kontaktwege und digitale Kundenführung zu einer klaren Unternehmensstruktur.
             </motion.p>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 inline-flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#D7DCE5]">
               {brand.line.split('. ').filter(Boolean).map((item) => (
@@ -2320,7 +2320,7 @@ function HeroSectionPremium() {
             </motion.p>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 flex flex-col gap-2.5 sm:flex-row">
               <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.2)] transition hover:bg-[#A9822D] hover:-translate-y-0.5">
-                Kostenlose Ersteinschätzung anfragen
+                Digitale Struktur anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href={siteLinks.leistungenPage} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">
@@ -2337,7 +2337,7 @@ function HeroSectionPremium() {
               <ArrowRight className="h-4 w-4" />
             </motion.a>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
-              Für kleine Unternehmen, Selbstständige und lokale Dienstleister, die online professioneller auftreten möchten.
+              Für Selbstständige, Handwerker, Friseure, Kosmetikstudios, Beratungsbetriebe und lokale Dienstleister.
             </motion.p>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 grid gap-2 text-sm text-[#D7DCE5] md:grid-cols-2">
               {[
@@ -2718,25 +2718,287 @@ function WissenArticlePage({ article }) {
   )
 }
 
+function WhatStruktivaBuildsSection() {
+  const cards = [
+    [LayoutTemplate, 'Professionelle Webseiten', 'Moderne Website-Strukturen, die Leistungen klar zeigen und Vertrauen aufbauen.'],
+    [Target, 'Landingpages', 'Gezielte Seiten für Angebote, Aktionen und klare Anfrageführung.'],
+    [Search, 'Google-Sichtbarkeit', 'Bessere Auffindbarkeit durch klare lokale Struktur und saubere Inhalte.'],
+    [Building2, 'Google-Unternehmensprofil', 'Professionelle Profilstruktur für mehr Vertrauen und lokale Sichtbarkeit.'],
+    [MousePointerClick, 'Digitale Kundenführung', 'Kontaktwege, CTAs und Seitenlogik auf Anfragen ausgerichtet.'],
+    [MessageCircle, 'WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Angebotsseiten.'],
+    [QrCode, 'QR-Code- & Bewertungsstrukturen', 'Einfache Bewertungswege für mehr Sichtbarkeit und Vertrauen.'],
+    [Smartphone, 'Unternehmens-Apps', 'Digitale Werkzeuge für wiederkehrende Abläufe im Betrieb.'],
+    [PanelsTopLeft, 'Betriebs-Dashboards', 'Übersichten für Aufgaben, Kennzahlen und tägliche Steuerung.'],
+    [ClipboardList, 'Digitale Ordnungssysteme', 'Strukturierte Prozesse statt digitalem Chaos.'],
+    [CalendarDays, 'Tagesabschluss-Systeme', 'Saubere Erfassung täglicher Werte und klarer Ablauf.'],
+    [BarChart3, 'Kassenstruktur-Systeme', 'Transparente Kassenübersicht für den Arbeitsalltag.'],
+    [BadgeCheck, 'Newsletter-Einbindung', 'Professionelle Kundenbindung über klar integrierte Newsletter-Struktur.'],
+    [Megaphone, 'Social-Media- & Pinterest-Struktur', 'Planbare Inhalte statt unregelmäßiger Einzelposts.'],
+  ]
+
+  return (
+    <section id="leistungen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Leistungen"
+            title="Was wir für Ihr Unternehmen aufbauen"
+            text="STRUKTIVA entwickelt keine losen Einzellösungen. Wir verbinden die wichtigsten digitalen Bausteine Ihres Unternehmens zu einer klaren, professionellen und verständlichen Struktur."
+          />
+        </Reveal>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {cards.map(([Icon, title, text]) => (
+            <motion.article key={title} variants={fadeUp} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
+                <Icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-xl font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+function SuitableForSection() {
+  const cards = [
+    ['Handwerker', 'Leistungen, Kontaktwege und Google-Sichtbarkeit werden klar auf Projektanfragen ausgerichtet.'],
+    ['Friseursalons', 'Website, Google-Profil, Bewertungen, WhatsApp-Anfragen und digitale Kundenführung klar verbunden.'],
+    ['Kosmetikstudios', 'Elegante Darstellung, klare Terminwege und professionelle Vertrauenselemente.'],
+    ['Lokale Dienstleister', 'Angebotsstruktur und Kontaktführung für schnelle und verständliche Anfragen.'],
+    ['Selbstständige', 'Professioneller Außenauftritt mit klaren Angeboten und sauberer Positionierung.'],
+    ['Beratungsbetriebe', 'Seriöse Struktur mit klaren Leistungsseiten und nachvollziehbarer Anfrageführung.'],
+    ['Kleine Unternehmen', 'Website, Google, Kontaktwege und Kundenführung sinnvoll verbunden als Gesamtsystem.'],
+  ]
+
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2.2rem] border border-white/14 bg-[linear-gradient(165deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8 lg:p-10">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Zielgruppen"
+            title="Für wen STRUKTIVA entwickelt wurde"
+            text="Bezahlbare digitale Struktur für kleine Unternehmen, die professioneller auftreten und mehr Anfragen gewinnen möchten."
+            centered={false}
+          />
+        </Reveal>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {cards.map(([title, text]) => (
+            <motion.article key={title} variants={fadeUp} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
+              <h3 className="text-xl font-semibold text-white">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+function WhyStructureSection() {
+  const before = ['einzelne digitale Baustellen', 'unklare Kontaktwege', 'wenig Vertrauen', 'keine klare Kundenführung', 'keine Struktur im Alltag']
+  const after = ['klare Website-Struktur', 'bessere Auffindbarkeit', 'professionelle Kontaktwege', 'mehr Vertrauen', 'digitale Ordnung im Unternehmen']
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Warum Struktur"
+            title="Warum eine normale Website allein nicht reicht"
+            text="Eine Website allein ist noch keine digitale Struktur. Erst wenn Website, Google-Sichtbarkeit, Kontaktwege, Bewertungen und Kundenführung sinnvoll verbunden sind, entsteht ein professioneller digitaler Auftritt."
+          />
+        </Reveal>
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          <div className="rounded-[1.7rem] border border-white/14 bg-white/[0.04] p-6 shadow-premium">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#94A3B8]">Vorher</p>
+            <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{before.map((item) => <p key={item}>- {item}</p>)}</div>
+          </div>
+          <div className="rounded-[1.7rem] border border-[#D8B45A]/26 bg-white/[0.05] p-6 shadow-premium">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/85">Nachher</p>
+            <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{after.map((item) => <p key={item}>- {item}</p>)}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function PricingArchitectureSection() {
+  const groups = [
+    {
+      title: 'Einstieg / Soforthilfe',
+      items: [
+        'Landingpage ab 299 € inklusive Mehrwertsteuer',
+        'Onepager ab 349 € inklusive Mehrwertsteuer',
+        'Website-Relaunch ab 499 € inklusive Mehrwertsteuer',
+      ],
+    },
+    {
+      title: 'Kernangebote',
+      items: [
+        'Unternehmenswebsite ab 599 € inklusive Mehrwertsteuer',
+        'Mehrseitige Website ab 899 € inklusive Mehrwertsteuer',
+        'Premium-Webauftritt ab 1.499 € inklusive Mehrwertsteuer',
+      ],
+    },
+    {
+      title: 'Systemangebote',
+      items: [
+        'Betriebs-Dashboard ab 799 € inklusive Mehrwertsteuer',
+        'Digitale Ordnungssysteme ab 899 € inklusive Mehrwertsteuer',
+        'Unternehmens-App ab 999 € inklusive Mehrwertsteuer',
+      ],
+    },
+    {
+      title: 'Monatliche Betreuung',
+      items: [
+        'Basis-Betreuung ab 199 € / Monat inklusive Mehrwertsteuer',
+        'Struktur-Betreuung ab 299 € / Monat inklusive Mehrwertsteuer',
+        'Premium-Betreuung ab 499 € / Monat inklusive Mehrwertsteuer',
+      ],
+    },
+  ]
+
+  const packages = [
+    {
+      title: 'STRUKTIVA Start',
+      price: 'ab 599 € inklusive Mehrwertsteuer',
+      text: 'Für kleine Unternehmen, die professionell sichtbar werden möchten.',
+      points: ['professionelle Website-Grundstruktur', 'mobile Optimierung', 'klare Leistungsdarstellung', 'Kontaktbereich', 'SEO-Grundstruktur', 'einfache Kundenführung'],
+    },
+    {
+      title: 'STRUKTIVA Wachstum',
+      price: 'ab 899 € inklusive Mehrwertsteuer',
+      text: 'Für Betriebe, die Website, Google und Kontaktwege verbinden möchten.',
+      points: ['mehrseitige Website-Struktur', 'Google-Sichtbarkeitsgrundlage', 'Kontakt- und Anfrageführung', 'Bewertungsstruktur', 'WhatsApp-Kontaktweg', 'klare Vertrauenselemente'],
+    },
+    {
+      title: 'STRUKTIVA System',
+      price: 'ab 1.499 € inklusive Mehrwertsteuer',
+      text: 'Für Unternehmen, die digitale Struktur im Außenauftritt und im Alltag möchten.',
+      points: ['Premium-Webauftritt', 'Google- und Bewertungsstruktur', 'digitale Kundenführung', 'interne Strukturbausteine', 'Dashboard- oder App-Grundkonzept', 'erweiterbare Unternehmensarchitektur'],
+    },
+  ]
+
+  const minis = [
+    'Google-Unternehmensprofil-Struktur ab 299 € inklusive Mehrwertsteuer',
+    'Bewertungs- und QR-Code-System ab 149 € inklusive Mehrwertsteuer',
+    'WhatsApp-Kontaktstruktur ab 199 € inklusive Mehrwertsteuer',
+    'Social-Media- und Pinterest-Grundstruktur ab 249 € inklusive Mehrwertsteuer',
+  ]
+
+  return (
+    <section id="preise" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <SectionHeader eyebrow="Preise & Pakete" title="Transparente Einstiegspreise mit klarer Struktur" text="Keine Einzellösung. Sondern Unternehmensarchitektur." />
+        </Reveal>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {groups.map((group) => (
+            <div key={group.title} className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
+              <h3 className="text-xl font-semibold text-white">{group.title}</h3>
+              <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{group.items.map((item) => <p key={item}>- {item}</p>)}</div>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="mt-12 text-2xl font-semibold text-white">Hauptpakete</h3>
+        <div className="mt-5 grid gap-5 lg:grid-cols-3">
+          {packages.map((pkg) => (
+            <article key={pkg.title} className="rounded-[1.7rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-5 shadow-premium">
+              <h4 className="text-xl font-semibold text-white">{pkg.title}</h4>
+              <p className="mt-2 text-sm font-semibold text-[#D8B45A]">{pkg.price}</p>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{pkg.text}</p>
+              <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10 rounded-[1.7rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium">
+          <h3 className="text-2xl font-semibold text-white">Schnelle digitale Strukturbausteine</h3>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            {minis.map((item) => (
+              <p key={item} className="rounded-xl border border-white/12 bg-white/[0.04] px-3 py-2 text-sm text-[#D7DCE5]">{item}</p>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-[#94A3B8]">
+            Alle Preise verstehen sich inklusive Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function FAQSection() {
+  const faqs = [
+    ['Ist STRUKTIVA nur ein Webdesign-Angebot?', 'Nein. STRUKTIVA verbindet Website, Google-Sichtbarkeit, Kontaktwege und digitale Kundenführung zu einer klaren Unternehmensstruktur.'],
+    ['Kann STRUKTIVA meine bestehende Website verbessern?', 'Ja. Relaunch, Strukturverbesserung und klare Anfrageführung können auf bestehende Seiten aufgesetzt werden.'],
+    ['Ist Google-Sichtbarkeit enthalten?', 'Je nach Paket werden Grundlagen für lokale Auffindbarkeit, Google-Unternehmensprofil und Bewertungsstruktur eingebunden.'],
+    ['Kann ich klein starten und später erweitern?', 'Ja. Die Struktur ist modular aufgebaut und kann schrittweise erweitert werden.'],
+    ['Für welche Branchen ist STRUKTIVA geeignet?', 'Für kleine Unternehmen, Selbstständige, Handwerk, Beauty, Dienstleister und Beratungsbetriebe.'],
+    ['Gibt es monatliche Betreuung?', 'Ja. Es gibt drei Betreuungsstufen für Pflege, Optimierung und laufende Weiterentwicklung.'],
+    ['Sind die Preise inklusive Mehrwertsteuer?', 'Ja. Alle genannten Preise sind inklusive Mehrwertsteuer.'],
+  ]
+
+  return (
+    <section className="px-5 py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
+        <SectionHeader eyebrow="FAQ" title="Häufige Fragen" text="Klar, verständlich und ohne Agentur-Blabla." />
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          {faqs.map(([q, a]) => (
+            <article key={q} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+              <h3 className="text-base font-semibold text-white">{q}</h3>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{a}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function StructureCtaSection() {
+  return (
+    <section className="px-5 pb-10 lg:px-8 lg:pb-14">
+      <div className="mx-auto max-w-7xl rounded-[1.9rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
+        <h2 className="text-2xl font-semibold text-white">Lassen Sie Ihre digitale Struktur prüfen.</h2>
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+          Sie möchten wissen, welche Website-, Google- oder Kontaktstruktur für Ihr Unternehmen sinnvoll ist? Dann fragen Sie eine unverbindliche Ersteinschätzung an.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+            Kostenlose Ersteinschätzung anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a href={`mailto:${contactDetails.email}`} className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:text-[#D8B45A]">
+            {contactDetails.email}
+          </a>
+          <a href={contactDetails.phoneHref} className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:text-[#D8B45A]">
+            {contactDetails.phoneLabel}
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function HomePage() {
   return (
     <>
       <HeroSectionPremium />
-      <TrustSection />
-      <ProblemSection />
-      <ServicesSectionPremium />
-      <WebsiteFocusSection />
-      <AppsSection />
-      <GoogleAdsSection />
+      <WhatStruktivaBuildsSection />
+      <SuitableForSection />
+      <WhyStructureSection />
+      <PricingArchitectureSection />
+      <ProcessSection />
+      <FAQSection />
+      <StructureCtaSection />
       <DemoOverviewSection />
       <WissenSection />
-      <PricingSection />
-      <ProcessSection />
-      <TargetSection />
-      <WhySection />
       <DifferentiatorSection />
-      <QualitySection />
-      <OrdnungssystemeSection />
       <ContactSection />
     </>
   )
@@ -4163,7 +4425,7 @@ function ContactPage() {
                   alt="Jessica Wacker"
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full scale-160 rotate-[-13deg] object-cover object-[52%_72%]"
+                  className="h-full w-full scale-160 object-cover object-[52%_84%]"
                 />
               </div>
             </div>
