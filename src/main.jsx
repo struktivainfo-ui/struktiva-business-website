@@ -3154,20 +3154,38 @@ function ModulesSection() {
           text="Sie können mit einem Paket starten oder einzelne Strukturbausteine gezielt ergänzen."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {modules.map((module) => (
-            <article key={module.title} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
-              <h3 className="text-xl font-semibold text-white">{module.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]"><span className="font-semibold text-white">Was ist das?</span> {module.what}</p>
-              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]"><span className="font-semibold text-white">Für wen?</span> {module.forWho}</p>
-              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]"><span className="font-semibold text-white">Was löst es?</span> {module.solves}</p>
-              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]"><span className="font-semibold text-white">Enthalten:</span> {module.includes}</p>
-              <p className="mt-4 text-sm font-semibold text-[#D8B45A]">{module.price}</p>
-              <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
-                Direkt Kontakt aufnehmen
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </article>
-          ))}
+          {modules.map((module, index) => {
+            const includeItems = module.includes.split(',').map((item) => item.trim()).filter(Boolean)
+            return (
+              <article
+                key={module.title}
+                className={`rounded-[1.5rem] border p-5 shadow-premium transition hover:-translate-y-1 ${
+                  index % 3 === 0
+                    ? 'border-[#D8B45A]/25 bg-[linear-gradient(155deg,rgba(7,17,31,0.9),rgba(11,31,58,0.82))]'
+                    : index % 3 === 1
+                      ? 'border-white/14 bg-white/[0.05]'
+                      : 'border-white/14 bg-[linear-gradient(155deg,rgba(5,10,18,0.9),rgba(15,23,42,0.86))]'
+                }`}
+              >
+                <h3 className="text-xl font-semibold text-white">{module.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{module.what}</p>
+                <p className="mt-3 text-xs leading-6 text-[#B6C2D8]"><span className="font-semibold text-white">Geeignet für:</span> {module.forWho.replace('Geeignet für ', '')}</p>
+                <p className="mt-2 text-xs leading-6 text-[#B6C2D8]"><span className="font-semibold text-white">Löst:</span> {module.solves}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {includeItems.slice(0, 5).map((item) => (
+                    <span key={item} className="rounded-full border border-[#D8B45A]/24 bg-white/[0.03] px-2.5 py-1 text-[11px] text-[#DCC78D]">{item}</span>
+                  ))}
+                </div>
+                <div className="mt-4 flex items-end justify-between gap-3">
+                  <p className="text-sm font-semibold text-[#D8B45A]">{module.price}</p>
+                  <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-3.5 py-1.5 text-xs font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                    Angebot anfragen
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -3215,45 +3233,57 @@ function BranchenSection() {
 }
 
 function OfferMatchSection() {
-  const cards = [
-    ['Sie haben noch keine professionelle Website.', 'STRUKTIVA Start', 'Für einen klaren, professionellen Online-Auftritt mit mobiler Optimierung, Leistungsdarstellung und Kontaktmöglichkeit.', 'Start-Paket anfragen'],
-    ['Sie haben eine Website, aber wenig Anfragen.', 'STRUKTIVA Wachstum', 'Für bessere Struktur, Google-Grundlage, Kontaktführung, WhatsApp-Anbindung und Bewertungsstruktur.', 'Wachstums-Paket anfragen'],
-    ['Ihre Website, Google und Kontaktwege wirken nicht verbunden.', 'STRUKTIVA Wachstum', 'Wir verbinden Website, Google-Profil, Bewertungen, WhatsApp und Anfragewege zu einer klaren Kundenführung.', 'Digitale Kundenführung anfragen'],
-    ['Sie möchten mehr Bewertungen sammeln.', 'Bewertungs- & QR-Code-System', 'Bewertungslink, QR-Code, Bewertungskarte und Anfrage-Texte für zufriedene Kunden.', 'Bewertungsstruktur anfragen'],
-    ['Sie möchten WhatsApp professioneller nutzen.', 'WhatsApp-Kontaktstruktur', 'Klare Anfragewege, vorbereitete Nachrichten und direkte Kontaktführung von der Website zu WhatsApp.', 'WhatsApp-Struktur anfragen'],
-    ['Ihr Betrieb braucht mehr interne Ordnung.', 'STRUKTIVA System', 'Für digitale Ordnungssysteme, Dashboards, Apps, Tagesübersichten und klare interne Abläufe.', 'System-Paket anfragen'],
-    ['Sie möchten Inhalte und Social Media strukturierter nutzen.', 'Social-Media- & Pinterest-Grundstruktur', 'Profilstruktur, Beitragsideen, Pin-/Post-Struktur, Beschreibungstexte und sinnvolle Verlinkung zur Website.', 'Content-Struktur anfragen'],
+  const recommendations = [
+    ['Keine Website vorhanden', 'STRUKTIVA Start', 'Für einen klaren Online-Auftritt mit mobiler Optimierung und strukturierter Anfrageführung.', 'Start-Paket anfragen'],
+    ['Website vorhanden, aber wenig Anfragen', 'STRUKTIVA Wachstum', 'Für bessere Struktur, Google-Grundlage, Kontaktführung und Bewertungslogik.', 'Wachstums-Paket anfragen'],
+    ['Google, Bewertungen und WhatsApp nicht verbunden', 'STRUKTIVA Wachstum', 'Wir verbinden Website, Google-Profil, Bewertungen und Kontaktwege zu einer klaren Kundenführung.', 'Digitale Kundenführung anfragen'],
+    ['Interne Abläufe unübersichtlich', 'STRUKTIVA System', 'Für digitale Ordnungssysteme, Dashboards, Apps und klarere interne Prozesse.', 'System-Paket anfragen'],
+    ['Schnell mehr Bewertungen sammeln', 'Bewertungs- & QR-Code-System', 'Bewertungslink, QR-Code, Bewertungskarte und WhatsApp-Text als klarer Bewertungsweg.', 'Bewertungsstruktur anfragen'],
   ]
+  const chips = ['Website fehlt', 'wenig Anfragen', 'Google unklar', 'Bewertungen fehlen', 'interne Ordnung fehlt']
 
   return (
     <section className="px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Entscheidungshilfe"
-          title="Welches STRUKTIVA-Angebot passt zu Ihnen?"
-          text="Nicht jedes Unternehmen braucht sofort alles. STRUKTIVA hilft Ihnen, mit der passenden digitalen Struktur zu starten und später sinnvoll zu erweitern."
-        />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-          {cards.map(([question, recommendation, text, cta]) => (
-            <article key={question} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
-              <p className="text-sm font-semibold leading-7 text-white">{question}</p>
-              <p className="mt-3 text-base font-semibold text-[#D8B45A]">Empfehlung: {recommendation}</p>
-              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
-              <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                {cta}
+        <div className="rounded-[2rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8">
+          <div className="grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+            <article className="rounded-[1.5rem] border border-white/12 bg-white/[0.04] p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/85">Entscheidungshilfe</p>
+              <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Welches STRUKTIVA-Angebot passt zu Ihnen?</h2>
+              <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
+                Nicht jedes Unternehmen braucht sofort alles. STRUKTIVA hilft Ihnen, mit der passenden digitalen Struktur zu starten und später sinnvoll zu erweitern.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2.5">
+                {chips.map((chip) => (
+                  <span key={chip} className="rounded-full border border-[#D8B45A]/28 bg-white/[0.03] px-3 py-1.5 text-xs font-semibold tracking-[0.08em] text-[#E5C979]">{chip}</span>
+                ))}
+              </div>
+              <a href={siteLinks.contact} className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Passendes Angebot finden
                 <ArrowRight className="h-4 w-4" />
               </a>
             </article>
-          ))}
-        </div>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-            Passendes Angebot finden
-            <ArrowRight className="h-4 w-4" />
-          </a>
-          <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:text-[#D8B45A]">
-            Digitale Struktur prüfen lassen
-          </a>
+
+            <div className="space-y-3">
+              {recommendations.map(([situation, recommendation, text, cta]) => (
+                <article key={situation} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4 transition hover:border-[#D8B45A]/30 hover:bg-white/[0.06]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#94A3B8]">Situation</p>
+                  <p className="mt-1 text-sm font-semibold text-white">{situation}</p>
+                  <p className="mt-2 text-sm font-semibold text-[#D8B45A]">Empfehlung: {recommendation}</p>
+                  <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+                  <a href={siteLinks.contact} className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-xs font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                    {cta}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:text-[#D8B45A]">
+              Digitale Struktur prüfen lassen
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -3307,21 +3337,37 @@ function DemoUseCasesSection() {
           title="Beispiele für digitale Unternehmensstruktur"
           text="Sehen Sie beispielhaft, wie STRUKTIVA digitale Struktur für unterschiedliche Branchen und Systeme aufbauen kann."
         />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {demos.map((demo) => (
-            <article key={demo.title} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
-              <h3 className="text-xl font-semibold text-white">{demo.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{demo.text}</p>
-              <div className="mt-3 space-y-1 text-sm text-[#D7DCE5]">
-                <p className="font-semibold text-white">Mögliche Struktur:</p>
-                {demo.structure.map((item) => <p key={item}>- {item}</p>)}
-              </div>
-              <a href={demo.href} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                {demo.cta}
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </article>
-          ))}
+        <div className="mt-10 grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">
+          <article className="rounded-[1.7rem] border border-[#D8B45A]/28 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium">
+            <h3 className="text-2xl font-semibold text-white">{demos[0].title}</h3>
+            <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{demos[0].text}</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {demos[0].structure.map((item) => (
+                <span key={item} className="rounded-full border border-[#D8B45A]/28 bg-white/[0.03] px-3 py-1.5 text-xs text-[#E5C979]">{item}</span>
+              ))}
+            </div>
+            <a href={demos[0].href} className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+              {demos[0].cta}
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </article>
+          <div className="space-y-3">
+            {demos.slice(1).map((demo) => (
+              <article key={demo.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4 shadow-premium transition hover:border-[#D8B45A]/30 hover:bg-white/[0.06]">
+                <h3 className="text-lg font-semibold text-white">{demo.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{demo.text}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {demo.structure.slice(0, 4).map((item) => (
+                    <span key={item} className="rounded-full border border-white/16 px-2.5 py-1 text-[11px] text-[#C9D2E3]">{item}</span>
+                  ))}
+                </div>
+                <a href={demo.href} className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-xs font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                  {demo.cta}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -5498,21 +5544,23 @@ function DemoFriseursalonPage() {
     <main className="relative bg-[linear-gradient(180deg,#120f0d,#1b1713)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <DemoBackgroundLayer image={demoV2Images.friseurHero} overlay="from-[#120f0d]/88 via-[#1b1713]/72 to-[#100c09]/92" />
       <div className="mx-auto max-w-7xl space-y-6">
-        <DemoSiteBar name="Muster Salon Atelier" primaryCta="Salon-Struktur anfragen" />
+        <DemoSiteBar name="Salon Muster" primaryCta="Termin anfragen" />
         <DemoMiniNav
           label="Friseursalon Demo"
           links={[
             ['Leistungen', '#salon-leistungen'],
-            ['Vorteile', '#salon-vorteile'],
-            ['Ablauf', '#salon-ablauf'],
+            ['Atmosphäre', '#salon-vorteile'],
+            ['Team', '#salon-team'],
+            ['Bewertungen', '#salon-reviews'],
+            ['Termin', '#salon-ablauf'],
             ['Kontakt', '#salon-kontakt'],
             ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
         <section className="rounded-[2.1rem] border border-[#D8B45A]/25 bg-[linear-gradient(160deg,rgba(35,28,23,0.95),rgba(20,17,14,0.92))] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
-          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Friseursalon-Demo: Digitale Struktur für moderne Salons</h1>
-          <p className="mt-4 max-w-4xl text-base leading-8 text-[#E7DDD0]">Eine beispielhafte Salon-Website mit Leistungen, Team, Bewertungen, Google-Struktur, WhatsApp-Anfrage und klarer Kundenführung. Diese Musterseite zeigt, wie ein Salon online Vertrauen und Terminanfragen verbinden kann.</p>
+          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Moderne Salon-Website mit klarer Terminführung</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#E7DDD0]">Leistungen, Atmosphäre, Bewertungen und WhatsApp-Anfrage sind klar verbunden. Diese Musterseite zeigt, wie ein Salon online Vertrauen und Terminanfragen zusammenführt.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Salon-Struktur anfragen</a>
             <a href="#salon-leistungen" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Leistungen ansehen</a>
@@ -5542,25 +5590,42 @@ function DemoFriseursalonPage() {
             <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Website ansehen → Behandlung wählen → Bewertung prüfen → WhatsApp oder Formular nutzen → Rückmeldung erhalten.</p>
           </article>
         </section>
-        <section id="salon-leistungen" className="grid gap-4 md:grid-cols-3">
+        <section id="salon-leistungen" className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+          <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-5">
+            <p className="text-xs uppercase tracking-[0.14em] text-[#D8B45A]">Highlight-Leistung</p>
+            <h3 className="mt-2 text-2xl font-semibold text-white">Damenhaarschnitt & Farbberatung</h3>
+            <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Individuelle Schnitte, Farbkonzept und Stylingberatung für einen gepflegten Look. Der Ablauf ist auf der Website so strukturiert, dass Interessentinnen schnell die passende Leistung wählen können.</p>
+          </article>
+          <div className="grid gap-4 sm:grid-cols-2">
           <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Damenhaarschnitt</h3><p className="mt-2 text-sm text-[#E7DDD0]">Individuelle Schnitte, Beratung und Styling für einen gepflegten Look mit klarer Terminführung auf der Website.</p></article>
           <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Herrenhaarschnitt</h3><p className="mt-2 text-sm text-[#E7DDD0]">Moderne und klassische Herrenhaarschnitte mit einfacher Online-Anfrage und klaren Leistungsdetails.</p></article>
           <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Farbe & Strähnen</h3><p className="mt-2 text-sm text-[#E7DDD0]">Farbveränderungen und Strähnen werden verständlich erklärt, damit Kundinnen sicherer entscheiden können.</p></article>
           <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Styling</h3><p className="mt-2 text-sm text-[#E7DDD0]">Styling-Angebote für Alltag und Anlässe mit emotionaler Darstellung und direktem Kontaktweg.</p></article>
           <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Hochsteckfrisuren</h3><p className="mt-2 text-sm text-[#E7DDD0]">Leistungsbereich für besondere Momente mit Bildfokus, Ablaufhinweisen und gezielter Anfrage.</p></article>
           <article className="rounded-2xl border border-[#D8B45A]/22 bg-[#221c17] p-4"><h3 className="font-semibold text-white">Pflegebehandlungen</h3><p className="mt-2 text-sm text-[#E7DDD0]">Pflege und Haarqualität werden als eigene Leistung sichtbar und nicht nur als Nebenpunkt erwähnt.</p></article>
+          </div>
         </section>
         <section id="salon-vorteile" className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
           <h2 className="text-2xl font-semibold text-white">Team & Vertrauen</h2>
           <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Persönliche Beratung, familiäre Atmosphäre, klare Terminführung und professionelle Außenwirkung als Beispielstruktur.</p>
         </section>
+        <section id="salon-team" className="grid gap-4 md:grid-cols-3">
+          {['Persönliche Beratung vor jedem Termin', 'Ruhige Atmosphäre im gesamten Salon', 'Klare Kommunikation zu Leistungen und Zeitbedarf'].map((item) => (
+            <article key={item} className="rounded-xl border border-[#D8B45A]/20 bg-[#221c17] p-4 text-sm text-[#E7DDD0]">{item}</article>
+          ))}
+        </section>
         <section className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
           <h2 className="text-2xl font-semibold text-white">Kundenführung</h2>
           <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Website, Google-Profil, Bewertungen, WhatsApp-Terminfrage und Kontaktbutton arbeiten als klare digitale Kundenführung zusammen.</p>
         </section>
-        <section className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
+        <section id="salon-reviews" className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
           <h2 className="text-2xl font-semibold text-white">Bewertungsbereich (Muster)</h2>
-          <p className="mt-3 text-sm leading-7 text-[#E7DDD0]">Beispielbewertungen als Musterdarstellung für Vertrauensaufbau, klar als Demo gekennzeichnet.</p>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            <article className="rounded-xl border border-[#D8B45A]/20 bg-[#221c17] p-3 text-sm text-[#E7DDD0]">„Sehr angenehme Beratung und klarer Ablauf bei der Terminvergabe.“</article>
+            <article className="rounded-xl border border-[#D8B45A]/20 bg-[#221c17] p-3 text-sm text-[#E7DDD0]">„Leistungen online sofort verständlich, Anfrage direkt möglich.“</article>
+            <article className="rounded-xl border border-[#D8B45A]/20 bg-[#221c17] p-3 text-sm text-[#E7DDD0]">„Vom ersten Klick bis zur Bestätigung sehr strukturiert geführt.“</article>
+          </div>
+          <p className="mt-3 text-xs uppercase tracking-[0.14em] text-[#D8B45A]/82">Beispielbewertungen – Demo, keine echten Kundenstimmen</p>
         </section>
         <section id="salon-ablauf" className="rounded-2xl border border-[#D8B45A]/22 bg-[#1f1a15] p-5">
           <h2 className="text-2xl font-semibold text-white">Beispiel-Ablauf</h2>
@@ -5576,6 +5641,9 @@ function DemoFriseursalonPage() {
         </section>
         <DemoContactCTA text="So könnte auch Ihr Salon digital klarer wirken." />
         <DemoPageDisclaimer />
+        <footer className="rounded-2xl border border-[#D8B45A]/18 bg-[#1a1511] p-4 text-xs leading-6 text-[#d9c8af]">
+          Diese Seite ist eine beispielhafte STRUKTIVA-Demo.
+        </footer>
       </div>
     </main>
   )
@@ -5586,21 +5654,22 @@ function DemoHandwerkerV2Page() {
     <main className="relative bg-[linear-gradient(180deg,#0b1220,#111827)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <DemoBackgroundLayer image={demoV2Images.handwerkerHero} overlay="from-[#0b1220]/90 via-[#111827]/75 to-[#090f1b]/94" />
       <div className="mx-auto max-w-7xl space-y-6">
-        <DemoSiteBar name="Muster Handwerk Regional" primaryCta="Anfrage stellen" />
+        <DemoSiteBar name="Muster Handwerk" primaryCta="Anfrage stellen" />
         <DemoMiniNav
           label="Handwerker Demo"
           links={[
             ['Leistungen', '#hw-leistungen'],
             ['Referenzen', '#hw-refs'],
-            ['Ablauf', '#hw-flow'],
+            ['Einsatzgebiet', '#hw-region'],
+            ['Anfrage', '#hw-flow'],
             ['Kontakt', '#hw-contact'],
             ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
         <section className="rounded-[2.1rem] border border-[#f59e0b]/30 bg-[#111827] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#fbbf24]">Beispielhafte Demo von STRUKTIVA</p>
-          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Handwerker-Demo: Klare Website-Struktur für regionale Betriebe</h1>
-          <p className="mt-4 max-w-4xl text-base leading-8 text-gray-200">Eine beispielhafte Handwerker-Seite mit Leistungen, Referenzen, Anfrageformular, regionaler Sichtbarkeit und klaren Kontaktwegen.</p>
+          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Handwerkerbetrieb mit klarer digitaler Anfrageführung</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-gray-200">Leistungen, Referenzen, Einsatzgebiet und Kontaktwege sind sofort verständlich aufgebaut. Diese Musterseite zeigt eine robuste Handwerker-Struktur mit klarer Kundenführung.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-white">Handwerker-Struktur anfragen</a>
             <a href="#hw-refs" className="rounded-full border border-[#f59e0b]/35 px-6 py-3 text-sm font-semibold text-[#fbbf24]">Referenzen ansehen</a>
@@ -5618,17 +5687,33 @@ function DemoHandwerkerV2Page() {
           <img src={demoV2Images.handwerkerB} alt="Beispielbild für Werkzeug und Innenausbau" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
           <img src={demoV2Images.handwerkerC} alt="Beispielhafte Montagearbeit im Handwerk" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
         </section>
-        <section id="hw-leistungen" className="grid gap-4 md:grid-cols-3">
-          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Renovierung</h3><p className="mt-2 text-sm text-gray-200">Saubere Renovierungsarbeiten für Wohn- und Geschäftsräume mit klarer Leistungsübersicht und direkter Anfrage.</p></article>
-          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Reparaturen</h3><p className="mt-2 text-sm text-gray-200">Kleine Schäden und Ausbesserungen werden als schnelle Anfragen mit kurzer Rückmeldezeit strukturiert dargestellt.</p></article>
-          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Montage</h3><p className="mt-2 text-sm text-gray-200">Montageleistungen werden übersichtlich erklärt, damit Besucher sofort verstehen, welche Arbeiten übernommen werden.</p></article>
-          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Wartung</h3><p className="mt-2 text-sm text-gray-200">Wartungsleistungen für wiederkehrende Einsätze mit klaren Intervallen und transparenten Kontaktwegen.</p></article>
-          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Innenausbau</h3><p className="mt-2 text-sm text-gray-200">Innenausbau profitiert von Projektbildern, Materialhinweisen und einer strukturierten Angebotsdarstellung.</p></article>
-          <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Notdienst / schnelle Anfrage</h3><p className="mt-2 text-sm text-gray-200">Bei dringenden Anliegen sind Telefonnummer, WhatsApp und Kurzformular sofort sichtbar und klar priorisiert.</p></article>
+        <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {['Regional erreichbar', 'Klare Leistungen', 'Direkte Anfrage', 'Beispielhafte Referenzen'].map((item) => (
+            <p key={item} className="rounded-xl border border-[#f59e0b]/30 bg-[#0f172a]/80 px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.14em] text-[#fbbf24]">{item}</p>
+          ))}
+        </section>
+        <section id="hw-leistungen" className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+          <article className="rounded-2xl border border-[#f59e0b]/30 bg-[#0f172a]/88 p-5">
+            <p className="text-xs uppercase tracking-[0.15em] text-[#fbbf24]">Highlight-Leistung</p>
+            <h3 className="mt-2 text-2xl font-semibold text-white">Renovierung & Innenausbau</h3>
+            <p className="mt-3 text-sm leading-7 text-gray-200">Saubere Renovierungsarbeiten für Wohn- und Geschäftsräume. Leistungsumfang, Materialien und Anfragewege werden so dargestellt, dass Interessenten schnell die passende Leistung erkennen.</p>
+          </article>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Reparaturen</h3><p className="mt-2 text-sm text-gray-200">Kleine Schäden und Ausbesserungen mit kurzen Kontaktwegen.</p></article>
+            <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Montage</h3><p className="mt-2 text-sm text-gray-200">Montageleistungen werden übersichtlich und verständlich dargestellt.</p></article>
+            <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Wartung</h3><p className="mt-2 text-sm text-gray-200">Regelmäßige Wartungen mit klarer Leistungsbeschreibung.</p></article>
+            <article className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-4"><h3 className="font-semibold text-white">Schnelle Anfrage</h3><p className="mt-2 text-sm text-gray-200">Telefon, WhatsApp oder Formular sind jederzeit direkt verfügbar.</p></article>
+          </div>
         </section>
         <section id="hw-refs" className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
           <h2 className="text-2xl font-semibold text-white">Referenzen (Muster)</h2>
-          <p className="mt-3 text-sm leading-7 text-gray-200">Beispielprojekt: Badezimmermodernisierung · Beispielprojekt: Innenausbau eines Wohnraums · Beispielprojekt: Reparaturauftrag im Bestand · Beispielprojekt: Montagearbeit beim Kunden.</p>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <article className="rounded-xl border border-gray-600/60 bg-gray-800/45 p-3"><p className="font-semibold text-white">Beispielprojekt Badezimmermodernisierung</p><p className="mt-1 text-sm text-gray-200">Ablauf, Materialwahl und Anfrageweg klar dargestellt.</p></article>
+            <article className="rounded-xl border border-gray-600/60 bg-gray-800/45 p-3"><p className="font-semibold text-white">Beispielprojekt Innenausbau eines Wohnraums</p><p className="mt-1 text-sm text-gray-200">Projektübersicht mit Leistungsbereichen und Zeitrahmen.</p></article>
+            <article className="rounded-xl border border-gray-600/60 bg-gray-800/45 p-3"><p className="font-semibold text-white">Beispielprojekt Montageauftrag</p><p className="mt-1 text-sm text-gray-200">Direkte Anfrageführung für schnelle Umsetzungen.</p></article>
+            <article className="rounded-xl border border-gray-600/60 bg-gray-800/45 p-3"><p className="font-semibold text-white">Beispielprojekt Reparatur im Bestand</p><p className="mt-1 text-sm text-gray-200">Kurzfristige Reparatur mit transparenter Rückmeldung.</p></article>
+          </div>
+          <p className="mt-3 text-xs uppercase tracking-[0.14em] text-[#94a3b8]">Hinweis: Beispielhafte Demo-Projekte</p>
         </section>
         <section className="grid gap-4 md:grid-cols-4">
           {[
@@ -5647,7 +5732,7 @@ function DemoHandwerkerV2Page() {
           <h2 className="text-2xl font-semibold text-white">Anfrageführung</h2>
           <p className="mt-3 text-sm leading-7 text-gray-200">Was soll gemacht werden? Wo ist der Einsatzort? Gibt es Bilder? Wann soll es erledigt werden? So wird eine Anfrage klar strukturiert.</p>
         </section>
-        <section className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
+        <section id="hw-region" className="rounded-2xl border border-gray-600/60 bg-gray-900/60 p-5">
           <h2 className="text-2xl font-semibold text-white">Google & regionale Sichtbarkeit</h2>
           <p className="mt-3 text-sm leading-7 text-gray-200">Einsatzgebiet, Leistungen, Bewertungen und Kontaktwege werden als regionale Struktur sichtbar gemacht.</p>
         </section>
@@ -5666,6 +5751,9 @@ function DemoHandwerkerV2Page() {
         </section>
         <DemoContactCTA text="So wird Ihr Handwerksbetrieb online klarer gefunden und besser angefragt." />
         <DemoPageDisclaimer />
+        <footer className="rounded-2xl border border-white/10 bg-[#0a1324]/75 p-4 text-xs leading-6 text-gray-300">
+          Diese Seite ist eine beispielhafte STRUKTIVA-Demo.
+        </footer>
       </div>
     </main>
   )
@@ -5676,7 +5764,7 @@ function DemoKosmetikstudioPage() {
     <main className="relative bg-[linear-gradient(180deg,#fff8f5,#f9e7de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
       <DemoBackgroundLayer image={demoV2Images.kosmetikHero} overlay="from-[#fff8f5]/92 via-[#f9e7de]/78 to-[#f4ddd2]/94" />
       <div className="mx-auto max-w-7xl space-y-6">
-        <DemoSiteBar name="Muster Beauty Studio" primaryCta="Termin anfragen" theme="light" />
+        <DemoSiteBar name="Beauty Musterstudio" primaryCta="Termin anfragen" theme="light" />
         <DemoMiniNav
           label="Kosmetikstudio Demo"
           links={[
@@ -5690,8 +5778,8 @@ function DemoKosmetikstudioPage() {
         />
         <section className="rounded-[2.1rem] border border-[#e9c9ac]/80 bg-[#fff8f3] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b8894b]">Beispielhafte Demo von STRUKTIVA</p>
-          <h1 className="mt-3 text-4xl font-semibold text-[#3b2f2f] md:text-5xl">Kosmetikstudio-Demo: Digitale Struktur für Beauty-Angebote</h1>
-          <p className="mt-4 max-w-4xl text-base leading-8 text-[#5a4740]">Eine beispielhafte Kosmetikstudio-Seite mit Behandlungen, Preisen, Vertrauen, Bewertungen, Bildern und Termin-Anfrage.</p>
+          <h1 className="mt-3 text-4xl font-semibold text-[#3b2f2f] md:text-5xl">Kosmetikstudio mit klarer Behandlungs- und Terminstruktur</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#5a4740]">Behandlungen, Preise, Vertrauen und Termin-Anfrage sind hochwertig verbunden. Diese Musterseite zeigt eine ruhige Beauty-Struktur mit klarer Kundenführung.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#b8894b] px-6 py-3 text-sm font-semibold text-white">Kosmetik-Struktur anfragen</a>
             <a href="#beauty-services" className="rounded-full border border-[#d4a574]/55 px-6 py-3 text-sm font-semibold text-[#9b6d3e]">Behandlungen ansehen</a>
@@ -5709,13 +5797,20 @@ function DemoKosmetikstudioPage() {
           <img src={demoV2Images.kosmetikB} alt="Beispielhafte Hautanalyse im Kosmetikstudio" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
           <img src={demoV2Images.kosmetikC} alt="Beispielbild für ruhige Studioatmosphäre" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
         </section>
-        <section id="beauty-services" className="grid gap-4 md:grid-cols-3">
+        <section id="beauty-services" className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+          <article className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+            <p className="text-xs uppercase tracking-[0.14em] text-[#b8894b]">Highlight-Behandlung</p>
+            <h3 className="mt-2 text-2xl font-semibold text-[#3b2f2f]">Gesichtsbehandlung mit Hautanalyse</h3>
+            <p className="mt-3 text-sm leading-7 text-[#5a4740]">Pflege, Reinigung und Analyse werden als klarer Einstieg erklärt. So verstehen Kundinnen den Nutzen vor der Anfrage und können den passenden Terminweg wählen.</p>
+          </article>
+          <div className="grid gap-4 sm:grid-cols-2">
           <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Gesichtsbehandlung</h3><p className="mt-2 text-sm text-[#5a4740]">Klare Darstellung von Pflege, Reinigung und Entspannung für einen verständlichen Einstieg.</p></article>
           <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Hautanalyse</h3><p className="mt-2 text-sm text-[#5a4740]">Die Hautanalyse erklärt den Start der Behandlung und stärkt Vertrauen durch Beratung.</p></article>
           <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Wimpern & Augenbrauen</h3><p className="mt-2 text-sm text-[#5a4740]">Beauty-Leistungen werden übersichtlich gezeigt und direkt mit Terminwegen verbunden.</p></article>
           <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Make-up</h3><p className="mt-2 text-sm text-[#5a4740]">Make-up für Alltag, Event oder besondere Anlässe mit hochwertiger, klarer Erklärung.</p></article>
           <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Pflegepakete</h3><p className="mt-2 text-sm text-[#5a4740]">Pakete bündeln mehrere Leistungen sinnvoll und machen Angebote leichter verständlich.</p></article>
           <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Beratung</h3><p className="mt-2 text-sm text-[#5a4740]">Persönliche Beratung als Vertrauenselement unterstützt die Entscheidung zur Anfrage.</p></article>
+          </div>
         </section>
         <section className="rounded-2xl border border-[#e4cabb] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#3b2f2f]">Preise / Pakete (Demo)</h2>
@@ -5739,6 +5834,9 @@ function DemoKosmetikstudioPage() {
         </section>
         <DemoContactCTA text="So könnte Ihr Kosmetikstudio online hochwertiger und klarer wirken." />
         <DemoPageDisclaimer />
+        <footer className="rounded-2xl border border-[#e4cabb] bg-[#fff7f2] p-4 text-xs leading-6 text-[#5a4740]">
+          Diese Seite ist eine beispielhafte STRUKTIVA-Demo.
+        </footer>
       </div>
     </main>
   )
@@ -5762,8 +5860,8 @@ function DemoBewertungsstrukturPage() {
         />
         <section className="rounded-[2.1rem] border border-[#D8B45A]/30 bg-[#0f172a] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
-          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Bewertungsstruktur-Demo: Mehr Vertrauen durch klare Bewertungswege</h1>
-          <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5]">Eine beispielhafte Struktur mit QR-Code, Bewertungslink, Bewertungskarte, WhatsApp-Text und Website-Einbindung.</p>
+          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Bewertungen einfacher sammeln</h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5]">QR-Code, Bewertungslink, Bewertungskarte und WhatsApp-Text werden als klarer Bewertungsweg verbunden.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Bewertungsstruktur anfragen</a>
             <a href="#review-flow" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Beispiel ansehen</a>
@@ -5783,6 +5881,11 @@ function DemoBewertungsstrukturPage() {
         <section id="review-flow" className="rounded-2xl border border-white/14 bg-white/[0.04] p-5">
           <h2 className="text-2xl font-semibold text-white">Wie es funktioniert</h2>
           <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">1. Kunde ist zufrieden · 2. QR-Code scannen · 3. Bewertung öffnen · 4. Bewertung abgeben · 5. Vertrauen für neue Kunden stärken.</p>
+          <div className="mt-4 flex flex-wrap gap-2.5">
+            {['Kunde zufrieden', 'QR scannen', 'Bewertung öffnen', 'Bewertung abgeben', 'Vertrauen stärken'].map((step) => (
+              <span key={step} className="rounded-full border border-[#D8B45A]/35 bg-white/[0.02] px-3 py-1.5 text-xs text-[#D8B45A]">{step}</span>
+            ))}
+          </div>
         </section>
         <section id="review-components" className="grid gap-4 md:grid-cols-3">
           {['Google-Bewertungslink', 'QR-Code', 'Bewertungskarte', 'WhatsApp-Text', 'Website-Einbindung', 'Bewertungsbereich'].map((item) => (
@@ -5808,6 +5911,9 @@ function DemoBewertungsstrukturPage() {
         </section>
         <DemoContactCTA text="Machen Sie es zufriedenen Kunden leichter, eine Bewertung abzugeben." />
         <DemoPageDisclaimer />
+        <footer className="rounded-2xl border border-white/10 bg-[#0d1a2d]/75 p-4 text-xs leading-6 text-[#C8D6EA]">
+          Diese Seite ist eine beispielhafte STRUKTIVA-Demo.
+        </footer>
       </div>
     </main>
   )
@@ -5835,16 +5941,17 @@ function DemoDashboardPage() {
         <DemoMiniNav
           label="Dashboard Demo"
           links={[
-            ['Kennzahlen', '#dashboard-metrics'],
-            ['Module', '#dashboard-modules'],
-            ['Ablauf', '#dashboard-flow'],
+            ['Heute', '#dashboard-metrics'],
+            ['Aufgaben', '#dashboard-tasks'],
+            ['Termine', '#dashboard-schedule'],
+            ['Kennzahlen', '#dashboard-modules'],
             ['Kontakt', '#dashboard-contact'],
             ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
         <section className="rounded-[2.1rem] border border-[#38bdf8]/30 bg-[#081427] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7dd3fc]">Beispielhafte Demo von STRUKTIVA</p>
-          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Dashboard-Demo: Digitale Übersicht für kleine Unternehmen</h1>
+          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Digitale Übersicht für kleine Unternehmen</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#dbe7ff]">Eine beispielhafte Dashboard-Struktur für Termine, Aufgaben, offene Punkte, Tagesübersicht, Monatsstruktur und Kennzahlen.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white">Dashboard anfragen</a>
@@ -5870,6 +5977,26 @@ function DemoDashboardPage() {
             </article>
           ))}
         </section>
+        <section className="grid gap-4 lg:grid-cols-[0.28fr_0.72fr]">
+          <aside className="rounded-2xl border border-[#334155] bg-[#091527] p-4">
+            <p className="text-xs uppercase tracking-[0.14em] text-[#7dd3fc]">Navigation</p>
+            <div className="mt-3 space-y-2 text-sm text-[#dbe7ff]">
+              {['Heute', 'Aufgaben', 'Termine', 'Anfragen', 'Kennzahlen'].map((item) => (
+                <p key={item} className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2">{item}</p>
+              ))}
+            </div>
+          </aside>
+          <div className="grid gap-4 md:grid-cols-2">
+            <article id="dashboard-tasks" className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-4">
+              <h3 className="font-semibold text-white">Aufgabenliste</h3>
+              <p className="mt-2 text-sm text-[#dbe7ff]">Prioritäten, Zuständigkeiten und Fristen an einem Ort.</p>
+            </article>
+            <article id="dashboard-schedule" className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-4">
+              <h3 className="font-semibold text-white">Terminübersicht</h3>
+              <p className="mt-2 text-sm text-[#dbe7ff]">Tages- und Wochenplanung mit klaren Zeitblöcken.</p>
+            </article>
+          </div>
+        </section>
         <section id="dashboard-modules" className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {dashboardModules.map(([title, text]) => (
             <article key={title} className="rounded-2xl border border-[#334155] bg-[#0b1f3a] p-4">
@@ -5893,6 +6020,9 @@ function DemoDashboardPage() {
         </section>
         <DemoContactCTA text="Bringen Sie mehr Übersicht in Ihren Betriebsalltag." />
         <DemoPageDisclaimer />
+        <footer className="rounded-2xl border border-white/10 bg-[#081427]/75 p-4 text-xs leading-6 text-[#C8D6EA]">
+          Diese Seite ist eine beispielhafte STRUKTIVA-Demo. Alle Werte sind Demo-Werte.
+        </footer>
       </div>
     </main>
   )
