@@ -3300,12 +3300,12 @@ function DemoUseCasesSection() {
   ]
 
   return (
-    <section className="px-5 py-18 lg:px-8 lg:py-24">
+    <section id="demos" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Demo-Beispiele"
           title="Beispiele für digitale Unternehmensstruktur"
-          text="Damit digitale Struktur greifbar wird, zeigt STRUKTIVA typische Anwendungsfälle für kleine Unternehmen."
+          text="Sehen Sie beispielhaft, wie STRUKTIVA digitale Struktur für unterschiedliche Branchen und Systeme aufbauen kann."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {demos.map((demo) => (
@@ -3647,7 +3647,6 @@ function HomePage() {
       <ProcessSection />
       <BetreuungSection />
       <FAQSection />
-      <DemoOverviewSection />
       <WissenSection />
       <DifferentiatorSection />
       <ContactSection />
@@ -5199,138 +5198,6 @@ function DemoFinalSection() {
         Kostenlose Ersteinschätzung anfragen
         <ArrowRight className="h-4 w-4" />
       </a>
-    </section>
-  )
-}
-
-function DemoOverviewSection() {
-  const cards = [
-    {
-      title: 'Friseursalon-Demo',
-      text: 'Beispielhafte Salon-Struktur mit Leistungen, Team, Google-Profil, Bewertungen und WhatsApp-Anfrage.',
-      points: ['Leistungen & Team', 'Bewertungsbereich', 'Google-Verbindung', 'WhatsApp-Terminweg', 'Beispielhafte Demo'],
-      href: siteLinks.demoFriseursalonV2,
-      image: demoV2Images.friseurHero,
-      alt: 'Beispielbild für modernen Friseursalon',
-      tone: 'border-[#e9c9ac]/70 bg-[linear-gradient(165deg,rgba(253,244,236,0.98),rgba(248,229,217,0.96))] text-[#3b2f2f]',
-      accent: 'text-[#b8894b]',
-      icon: Sparkles,
-    },
-    {
-      title: 'Handwerker-Demo',
-      text: 'Beispielhafte Handwerker-Struktur mit Leistungsseiten, Referenzen, Anfrageführung und regionaler Sichtbarkeit.',
-      points: [
-        'Leistungen & Referenzen',
-        'Regionale Sichtbarkeit',
-        'Anfrageformular',
-        'WhatsApp-Kontakt',
-        'Beispielhafte Demo',
-      ],
-      href: siteLinks.demoHandwerkerV2,
-      image: demoV2Images.handwerkerHero,
-      alt: 'Beispielbild für Handwerker bei Montagearbeit',
-      tone: 'border-[#f59e0b]/40 bg-[linear-gradient(165deg,rgba(17,24,39,0.95),rgba(55,65,81,0.92))] text-white',
-      accent: 'text-[#fbbf24]',
-      icon: Building2,
-    },
-    {
-      title: 'Kosmetikstudio-Demo',
-      text: 'Beispielhafte Beauty-Struktur mit Behandlungen, Preisen, Bewertungen und Termin-Anfrage.',
-      points: [
-        'Behandlungen & Preise',
-        'Vertrauensbereich',
-        'Terminführung',
-        'Instagram/Pinterest-Anbindung',
-        'Beispielhafte Demo',
-      ],
-      href: siteLinks.demoKosmetikstudioV2,
-      image: demoV2Images.kosmetikHero,
-      alt: 'Beispielbild für Kosmetikbehandlung',
-      tone: 'border-[#e9c9ac]/70 bg-[linear-gradient(165deg,rgba(253,244,236,0.98),rgba(248,229,217,0.96))] text-[#3b2f2f]',
-      accent: 'text-[#b8894b]',
-      icon: Sparkles,
-    },
-    {
-      title: 'Bewertungsstruktur-Demo',
-      text: 'Beispielstruktur für QR-Code, Bewertungslink, Bewertungskarte und Website-Einbindung.',
-      points: [
-        'Google-Bewertungslink',
-        'QR-Code-Prozess',
-        'WhatsApp-Mustertext',
-        'Bewertungsführung',
-        'Beispielhafte Demo',
-      ],
-      href: siteLinks.demoBewertungsstrukturV2,
-      image: demoV2Images.bewertungHero,
-      alt: 'Beispielhafte digitale Bewertungsstruktur',
-      tone: 'border-[#D8B45A]/35 bg-[linear-gradient(165deg,rgba(15,23,42,0.95),rgba(30,41,59,0.92))] text-white',
-      accent: 'text-[#F2D98B]',
-      icon: QrCode,
-    },
-    {
-      title: 'Dashboard-Demo',
-      text: 'Beispielhafte Dashboard-Struktur für Tagesübersicht, Aufgaben, Termine, Kennzahlen und offene Punkte.',
-      points: [
-        'Termine heute',
-        'Aufgaben & Notizen',
-        'Kennzahlen-Ansicht',
-        'Monatsübersicht',
-        'Beispielhafte Demo',
-      ],
-      href: siteLinks.demoDashboardV2,
-      image: demoV2Images.dashboardHero,
-      alt: 'Beispielhafte Dashboard-Ansicht für kleine Unternehmen',
-      tone: 'border-[#38bdf8]/30 bg-[linear-gradient(165deg,rgba(8,20,39,0.95),rgba(11,31,58,0.92))] text-white',
-      accent: 'text-[#7dd3fc]',
-      icon: PanelsTopLeft,
-    },
-  ]
-
-  return (
-    <section id="demos" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-7xl">
-        <Reveal>
-          <SectionHeader
-            eyebrow="Demo-Bereich"
-            title="Demo-Beispiele für verschiedene Branchen"
-            text="So kann digitale Struktur für unterschiedliche Unternehmen aussehen – vom Handwerk über Beauty bis zu lokalen Dienstleistern."
-          />
-        </Reveal>
-        <Reveal className="mt-5">
-          <p className="max-w-4xl rounded-2xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
-            Die gezeigten Beispiele sind Demo- und Musterprojekte. Sie zeigen mögliche digitale Strukturen und dienen als Orientierung.
-          </p>
-        </Reveal>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {cards.map((card) => {
-            const Icon = card.icon
-            return (
-              <motion.a key={card.title} href={card.href} variants={fadeUp} transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }} className={`group flex h-full flex-col overflow-hidden rounded-[1.9rem] border shadow-premium transition hover:-translate-y-1 ${card.tone}`}>
-                <div className="relative h-44 overflow-hidden">
-                  <img src={card.image} alt={card.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
-                  <p className="absolute left-4 top-4 rounded-full border border-white/35 bg-black/35 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">Demo-Beispiel</p>
-                </div>
-                <div className="flex grow flex-col p-6">
-                  <div className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ${card.accent}`}>
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mt-4 text-2xl font-semibold">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-7 opacity-90">{card.text}</p>
-                  <div className="mt-4 space-y-2">
-                    {card.points.map((point) => (
-                      <p key={point} className="rounded-xl border border-white/12 bg-white/[0.05] px-3 py-2 text-xs leading-6 opacity-95">
-                        {point}
-                      </p>
-                    ))}
-                  </div>
-                  <span className={`mt-5 inline-flex items-center gap-2 text-sm font-semibold ${card.accent}`}>Demo ansehen<ArrowRight className="h-4 w-4" /></span>
-                </div>
-              </motion.a>
-            )
-          })}
-        </motion.div>
-      </div>
     </section>
   )
 }
