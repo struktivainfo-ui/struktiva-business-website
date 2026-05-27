@@ -2483,11 +2483,6 @@ function HeroSectionPremium() {
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] text-[15px] leading-7 text-[#D7DCE5] md:text-[17px] md:leading-8">
               STRUKTIVA verbindet Website, Google-Sichtbarkeit, Kontaktwege und digitale Kundenführung zu einer klaren Unternehmensstruktur.
             </motion.p>
-            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 inline-flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#D7DCE5]">
-              {brand.line.split('. ').filter(Boolean).map((item) => (
-                <span key={item} className="rounded-full border border-white/14 bg-white/[0.05] px-2.5 py-1">{item.replace('.', '')}</span>
-              ))}
-            </motion.p>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 flex flex-col gap-2.5 sm:flex-row">
               <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.2)] transition hover:bg-[#A9822D] hover:-translate-y-0.5">
                 Digitale Struktur anfragen
@@ -2512,16 +2507,9 @@ function HeroSectionPremium() {
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
               Für Selbstständige, Handwerker, Friseure, Kosmetikstudios, Beratungsbetriebe und lokale Dienstleister.
             </motion.p>
-            <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 grid gap-2 text-sm text-[#D7DCE5] md:grid-cols-2">
-              {[
-                'Für kleine Unternehmen, Selbstständige und lokale Dienstleister',
-                'Klare Struktur statt Technik-Chaos',
-                'Verständliche Umsetzung ohne Agentur-Blabla',
-                'Digitale Systeme, die im Alltag nutzbar sind',
-              ].map((item) => (
-                <p key={item} className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2">{item}</p>
-              ))}
-            </motion.div>
+            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 text-sm leading-7 text-[#D7DCE5]">
+              Klare Systeme statt Technik-Chaos. Verständliche Umsetzung für kleine Unternehmen und lokale Dienstleister.
+            </motion.p>
           </motion.div>
         </div>
         <motion.div initial="hidden" animate="visible" variants={fadeRight} transition={{ duration: 0.64, ease: [0.22, 1, 0.36, 1] }} className="mx-auto w-full max-w-[25rem] lg:max-w-[26.5rem]">
@@ -2947,7 +2935,7 @@ function SuitableForSection() {
   ]
 
   return (
-    <section className="px-5 py-18 lg:px-8 lg:py-24">
+    <section className="px-5 py-14 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl rounded-[2.2rem] border border-white/14 bg-[linear-gradient(165deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8 lg:p-10">
         <Reveal>
           <SectionHeader
@@ -3259,7 +3247,7 @@ function OfferMatchSection() {
                 ))}
               </div>
               <a href={siteLinks.contact} className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-                Passendes Angebot finden
+                Kostenlose Ersteinschätzung anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
             </article>
@@ -3350,7 +3338,7 @@ function DemoUseCasesSection() {
   ]
 
   return (
-    <section id="demos" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+    <section id="demos" className="scroll-mt-28 px-5 py-14 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <SectionHeader
@@ -3370,7 +3358,7 @@ function DemoUseCasesSection() {
               <h3 className="text-3xl font-semibold text-white">{demos[0].title}</h3>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-[#F1E8D9]">{demos[0].text}</p>
               <div className="mt-4 flex flex-wrap gap-2.5">
-                {demos[0].structure.slice(0, 6).map((item) => (
+                {demos[0].structure.slice(0, 5).map((item) => (
                   <span key={item} className={`rounded-full border bg-black/20 px-3 py-1.5 text-xs ${demos[0].chipTone}`}>{item}</span>
                 ))}
               </div>
@@ -3405,7 +3393,7 @@ function DemoUseCasesSection() {
                 <h3 className="text-xl font-semibold text-white">{demo.title}</h3>
                 <p className="mt-2 text-sm leading-7 text-[#D8E1EF]">{demo.text}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {demo.structure.slice(0, 4).map((item) => <span key={item} className={`rounded-full border bg-black/18 px-2.5 py-1 text-[11px] ${demo.chipTone}`}>{item}</span>)}
+                  {demo.structure.slice(0, 3).map((item) => <span key={item} className={`rounded-full border bg-black/18 px-2.5 py-1 text-[11px] ${demo.chipTone}`}>{item}</span>)}
                 </div>
                 <a href={demo.href} className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-4 py-2 text-xs font-semibold text-white transition hover:border-[#D8B45A]/40 hover:text-[#E8C772]">
                   {demo.cta}
@@ -3552,7 +3540,7 @@ function PricingArchitectureSection() {
   ]
 
   return (
-    <section id="preise" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
+    <section id="preise" className="scroll-mt-28 px-5 py-14 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeader eyebrow="Preise & Pakete" title="Transparente Einstiegspreise mit klarer Struktur" text="Keine Einzellösung. Sondern Unternehmensarchitektur." />
@@ -3593,7 +3581,7 @@ function PricingArchitectureSection() {
             <p className="px-4 py-3">System</p>
           </div>
           {compareRows.map(([label, start, growth, system]) => (
-            <div key={label} className="grid grid-cols-4 border-b border-white/10 text-sm text-[#D7DCE5] last:border-b-0">
+            <div key={label} className="grid grid-cols-4 border-b border-white/10 text-xs md:text-sm text-[#D7DCE5] last:border-b-0">
               <p className="px-4 py-3 font-semibold text-white">{label}</p>
               <p className="px-4 py-3">{start}</p>
               <p className="px-4 py-3">{growth}</p>
@@ -3634,7 +3622,7 @@ function FAQSection() {
   ]
 
   return (
-    <section className="px-5 py-18 lg:px-8 lg:py-24">
+    <section className="px-5 py-14 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
         <SectionHeader eyebrow="FAQ" title="Häufige Fragen" text="Klar, verständlich und ohne Agentur-Blabla." />
         <div className="mt-8 space-y-3">
