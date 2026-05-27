@@ -2102,6 +2102,27 @@ function ContactSection() {
   )
 }
 
+const demoV2Images = {
+  friseurHero: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1800&q=80',
+  friseurA: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80',
+  friseurB: 'https://images.unsplash.com/photo-1596704017254-9f8e0d1a45a3?auto=format&fit=crop&w=1200&q=80',
+  friseurC: 'https://images.unsplash.com/photo-1522336284039-91f7e4b6f0f2?auto=format&fit=crop&w=1200&q=80',
+  handwerkerHero: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1800&q=80',
+  handwerkerA: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
+  handwerkerB: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+  handwerkerC: 'https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1200&q=80',
+  kosmetikHero: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1800&q=80',
+  kosmetikA: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80',
+  kosmetikB: 'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=1200&q=80',
+  kosmetikC: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80',
+  bewertungHero: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=80',
+  bewertungA: 'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=1200&q=80',
+  bewertungB: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1200&q=80',
+  dashboardHero: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80',
+  dashboardA: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+  dashboardB: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80',
+}
+
 function DifferentiatorSection() {
   return (
     <section className="px-5 py-18 lg:px-8 lg:py-24">
@@ -5057,8 +5078,8 @@ function DemoOverviewSection() {
       text: 'Beispielhafte Salon-Struktur mit Leistungen, Team, Google-Profil, Bewertungen und WhatsApp-Anfrage.',
       points: ['Leistungen & Team', 'Bewertungsbereich', 'Google-Verbindung', 'WhatsApp-Terminweg', 'Beispielhafte Demo'],
       href: siteLinks.demoFriseursalonV2,
-      image: demoImageConfigs.beauty.hero,
-      alt: 'Salon-Atmosphäre als Demo',
+      image: demoV2Images.friseurHero,
+      alt: 'Beispielbild für modernen Friseursalon',
       tone: 'border-[#e9c9ac]/70 bg-[linear-gradient(165deg,rgba(253,244,236,0.98),rgba(248,229,217,0.96))] text-[#3b2f2f]',
       accent: 'text-[#b8894b]',
       icon: Sparkles,
@@ -5074,8 +5095,8 @@ function DemoOverviewSection() {
         'Beispielhafte Demo',
       ],
       href: siteLinks.demoHandwerkerV2,
-      image: demoImageConfigs.handwerker.hero,
-      alt: 'Handwerker auf einer Baustelle',
+      image: demoV2Images.handwerkerHero,
+      alt: 'Beispielbild für Handwerker bei Montagearbeit',
       tone: 'border-[#f59e0b]/40 bg-[linear-gradient(165deg,rgba(17,24,39,0.95),rgba(55,65,81,0.92))] text-white',
       accent: 'text-[#fbbf24]',
       icon: Building2,
@@ -5091,8 +5112,8 @@ function DemoOverviewSection() {
         'Beispielhafte Demo',
       ],
       href: siteLinks.demoKosmetikstudioV2,
-      image: demoImageConfigs.beauty.hero,
-      alt: 'Beauty-Behandlung in einem Studio',
+      image: demoV2Images.kosmetikHero,
+      alt: 'Beispielbild für Kosmetikbehandlung',
       tone: 'border-[#e9c9ac]/70 bg-[linear-gradient(165deg,rgba(253,244,236,0.98),rgba(248,229,217,0.96))] text-[#3b2f2f]',
       accent: 'text-[#b8894b]',
       icon: Sparkles,
@@ -5108,8 +5129,8 @@ function DemoOverviewSection() {
         'Beispielhafte Demo',
       ],
       href: siteLinks.demoBewertungsstrukturV2,
-      image: struktivaImages.digitalDashboard,
-      alt: 'Bewertungs- und QR-Code Struktur',
+      image: demoV2Images.bewertungHero,
+      alt: 'Beispielhafte digitale Bewertungsstruktur',
       tone: 'border-[#D8B45A]/35 bg-[linear-gradient(165deg,rgba(15,23,42,0.95),rgba(30,41,59,0.92))] text-white',
       accent: 'text-[#F2D98B]',
       icon: QrCode,
@@ -5125,8 +5146,8 @@ function DemoOverviewSection() {
         'Beispielhafte Demo',
       ],
       href: siteLinks.demoDashboardV2,
-      image: demoImageConfigs.dienstleister.hero,
-      alt: 'Digitale Dashboard-Oberfläche',
+      image: demoV2Images.dashboardHero,
+      alt: 'Beispielhafte Dashboard-Ansicht für kleine Unternehmen',
       tone: 'border-[#38bdf8]/30 bg-[linear-gradient(165deg,rgba(8,20,39,0.95),rgba(11,31,58,0.92))] text-white',
       accent: 'text-[#7dd3fc]',
       icon: PanelsTopLeft,
@@ -5486,7 +5507,19 @@ function DemoFriseursalonPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Salon-Struktur anfragen</a>
             <a href="#salon-leistungen" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Leistungen ansehen</a>
+            <a href={siteLinks.home} className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white">Zur Startseite</a>
           </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[#D8B45A]/22">
+            <div className="relative h-64 md:h-80">
+              <img src={demoV2Images.friseurHero} alt="Beispielbild für modernen Friseursalon" loading="lazy" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
+            </div>
+          </div>
+        </section>
+        <section className="grid gap-4 md:grid-cols-3">
+          <img src={demoV2Images.friseurA} alt="Beispielhafte Haarpflege und Styling im Salon" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
+          <img src={demoV2Images.friseurB} alt="Beispielbild für Friseurwerkzeuge und Salonatmosphäre" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
+          <img src={demoV2Images.friseurC} alt="Beispielhafte Friseurbehandlung in warmer Salonumgebung" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
         </section>
         <section id="salon-leistungen" className="grid gap-4 md:grid-cols-3">
           {['Damenhaarschnitt', 'Herrenhaarschnitt', 'Farbe & Strähnen', 'Styling', 'Hochsteckfrisuren', 'Pflegebehandlungen'].map((item) => (
@@ -5526,7 +5559,19 @@ function DemoHandwerkerV2Page() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-white">Handwerker-Struktur anfragen</a>
             <a href="#hw-refs" className="rounded-full border border-[#f59e0b]/35 px-6 py-3 text-sm font-semibold text-[#fbbf24]">Referenzen ansehen</a>
+            <a href={siteLinks.home} className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white">Zur Startseite</a>
           </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[#f59e0b]/25">
+            <div className="relative h-64 md:h-80">
+              <img src={demoV2Images.handwerkerHero} alt="Beispielbild für Handwerker bei Montagearbeit" loading="lazy" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            </div>
+          </div>
+        </section>
+        <section className="grid gap-4 md:grid-cols-3">
+          <img src={demoV2Images.handwerkerA} alt="Beispielhafte regionale Handwerksleistung" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
+          <img src={demoV2Images.handwerkerB} alt="Beispielbild für Werkzeug und Innenausbau" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
+          <img src={demoV2Images.handwerkerC} alt="Beispielhafte Montagearbeit im Handwerk" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
         </section>
         <section className="grid gap-4 md:grid-cols-3">
           {['Renovierung', 'Reparaturen', 'Montage', 'Wartung', 'Innenausbau', 'Notdienst / schnelle Anfrage'].map((item) => (
@@ -5566,7 +5611,19 @@ function DemoKosmetikstudioPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#b8894b] px-6 py-3 text-sm font-semibold text-white">Kosmetik-Struktur anfragen</a>
             <a href="#beauty-services" className="rounded-full border border-[#d4a574]/55 px-6 py-3 text-sm font-semibold text-[#9b6d3e]">Behandlungen ansehen</a>
+            <a href={siteLinks.home} className="rounded-full border border-[#d4a574]/60 px-6 py-3 text-sm font-semibold text-[#9b6d3e]">Zur Startseite</a>
           </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[#e9c9ac]/75">
+            <div className="relative h-64 md:h-80">
+              <img src={demoV2Images.kosmetikHero} alt="Beispielbild für Kosmetikbehandlung" loading="lazy" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3b2f2f]/45 via-[#3b2f2f]/10 to-transparent" />
+            </div>
+          </div>
+        </section>
+        <section className="grid gap-4 md:grid-cols-3">
+          <img src={demoV2Images.kosmetikA} alt="Beispielhafte Beauty- und Pflegeanwendung" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
+          <img src={demoV2Images.kosmetikB} alt="Beispielhafte Hautanalyse im Kosmetikstudio" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
+          <img src={demoV2Images.kosmetikC} alt="Beispielbild für ruhige Studioatmosphäre" loading="lazy" className="h-44 w-full rounded-2xl object-cover" />
         </section>
         <section id="beauty-services" className="grid gap-4 md:grid-cols-3">
           {['Gesichtsbehandlung', 'Hautanalyse', 'Wimpern & Augenbrauen', 'Make-up', 'Pflegepakete', 'Beratung'].map((item) => (
@@ -5606,7 +5663,18 @@ function DemoBewertungsstrukturPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Bewertungsstruktur anfragen</a>
             <a href="#review-flow" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Beispiel ansehen</a>
+            <a href={siteLinks.home} className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white">Zur Startseite</a>
           </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[#D8B45A]/25">
+            <div className="relative h-64 md:h-80">
+              <img src={demoV2Images.bewertungHero} alt="Beispielhafte digitale Bewertungsstruktur" loading="lazy" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            </div>
+          </div>
+        </section>
+        <section className="grid gap-4 md:grid-cols-2">
+          <img src={demoV2Images.bewertungA} alt="Beispielhafte Bewertungskarte mit QR-Code" loading="lazy" className="h-48 w-full rounded-2xl object-cover" />
+          <img src={demoV2Images.bewertungB} alt="Beispielhafte Smartphone-Bewertungssituation" loading="lazy" className="h-48 w-full rounded-2xl object-cover" />
         </section>
         <section id="review-flow" className="rounded-2xl border border-white/14 bg-white/[0.04] p-5">
           <h2 className="text-2xl font-semibold text-white">Wie es funktioniert</h2>
@@ -5651,7 +5719,18 @@ function DemoDashboardPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white">Dashboard anfragen</a>
             <a href="#dashboard-modules" className="rounded-full border border-[#60a5fa]/35 px-6 py-3 text-sm font-semibold text-[#bfdbfe]">Funktionen ansehen</a>
+            <a href={siteLinks.home} className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white">Zur Startseite</a>
           </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[#38bdf8]/25">
+            <div className="relative h-64 md:h-80">
+              <img src={demoV2Images.dashboardHero} alt="Beispielhafte Dashboard-Ansicht für kleine Unternehmen" loading="lazy" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
+            </div>
+          </div>
+        </section>
+        <section className="grid gap-4 md:grid-cols-2">
+          <img src={demoV2Images.dashboardA} alt="Digitale Übersicht mit Aufgaben und Kennzahlen" loading="lazy" className="h-48 w-full rounded-2xl object-cover" />
+          <img src={demoV2Images.dashboardB} alt="Beispielbild für Business-Software und Teamplanung" loading="lazy" className="h-48 w-full rounded-2xl object-cover" />
         </section>
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {cards.map(([title, value]) => (
