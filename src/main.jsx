@@ -5433,6 +5433,7 @@ function DemoDienstleisterPage() {
 function Page() {
   const pathname = useCurrentPath()
   useDocumentTitleSafe(pathname)
+  const isDemoRoute = pathname.startsWith('/demos/')
   const wissenArticle = wissenArticles.find((article) => article.href === pathname)
   const homeSectionByPath = {
     '/preise': 'preise',
@@ -5519,9 +5520,9 @@ function Page() {
 
   return (
     <div className="min-h-screen text-white">
-      <Header pathname={pathname} />
+      {!isDemoRoute ? <Header pathname={pathname} /> : null}
       {content}
-      <Footer />
+      {!isDemoRoute ? <Footer /> : null}
       <FloatingWhatsAppButton />
     </div>
   )
@@ -5614,22 +5615,49 @@ function DemoSiteBar({ name, primaryCta, theme = 'dark' }) {
   )
 }
 
+function DemoWebsiteHeader({ brandName, links, theme = 'dark' }) {
+  const tone =
+    theme === 'light'
+      ? 'border-[#d4a574]/55 bg-[#fffaf6]/92 text-[#5a4740]'
+      : 'border-white/14 bg-[#07111F]/62 text-[#D7DCE5]'
+
+  return (
+    <header className={`rounded-2xl border px-4 py-3 backdrop-blur-lg md:px-5 ${tone}`}>
+      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <div className="flex items-center gap-3">
+          <p className="text-lg font-semibold">{brandName}</p>
+          <span className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${theme === 'light' ? 'border-[#d4a574]/40 text-[#9b6d3e]' : 'border-[#D8B45A]/30 text-[#D8B45A]'}`}>
+            Demo von STRUKTIVA
+          </span>
+        </div>
+        <nav className="flex flex-wrap items-center gap-2 text-sm">
+          {links.map(([title, href]) => (
+            <a key={title} href={href} className={`rounded-full px-3 py-1.5 transition ${theme === 'light' ? 'hover:bg-[#f2e2d8]' : 'hover:bg-white/10'}`}>
+              {title}
+            </a>
+          ))}
+          <a href={siteLinks.home} className={`rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] ${theme === 'light' ? 'border-[#d4a574]/45 text-[#9b6d3e]' : 'border-white/20 text-[#D8B45A]'}`}>
+            Zurück zu STRUKTIVA
+          </a>
+        </nav>
+      </div>
+    </header>
+  )
+}
+
 function DemoFriseursalonPage() {
   return (
     <main className="relative bg-[linear-gradient(180deg,#2a1f17,#1d1611)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <DemoBackgroundLayer image={demoV2Images.friseurHero} overlay="from-[#f0d9b3]/18 via-[#7a5b32]/20 to-[#120d09]/88" />
       <div className="mx-auto max-w-7xl space-y-6">
-        <DemoSiteBar name="Salon Muster" primaryCta="Termin anfragen" />
-        <DemoMiniNav
-          label="Friseursalon Demo"
+        <DemoWebsiteHeader
+          brandName="Salon Muster"
           links={[
             ['Leistungen', '#salon-leistungen'],
             ['Atmosphäre', '#salon-vorteile'],
             ['Team', '#salon-team'],
             ['Bewertungen', '#salon-reviews'],
             ['Termin', '#salon-ablauf'],
-            ['Kontakt', '#salon-kontakt'],
-            ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
         <section className="rounded-[2.1rem] border border-[#E4C57A]/35 bg-[linear-gradient(160deg,rgba(63,46,30,0.82),rgba(27,21,15,0.84))] p-7 shadow-premium">
@@ -5729,16 +5757,14 @@ function DemoHandwerkerV2Page() {
     <main className="relative bg-[linear-gradient(180deg,#0a162b,#0f1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <DemoBackgroundLayer image={demoV2Images.handwerkerHero} overlay="from-[#081322]/88 via-[#0f1f3a]/76 to-[#0a1528]/95" />
       <div className="mx-auto max-w-7xl space-y-6">
-        <DemoSiteBar name="Muster Handwerk" primaryCta="Anfrage stellen" />
-        <DemoMiniNav
-          label="Handwerker Demo"
+        <DemoWebsiteHeader
+          brandName="Muster Handwerk"
           links={[
             ['Leistungen', '#hw-leistungen'],
             ['Referenzen', '#hw-refs'],
             ['Einsatzgebiet', '#hw-region'],
             ['Anfrage', '#hw-flow'],
             ['Kontakt', '#hw-contact'],
-            ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
         <section className="rounded-[2.1rem] border border-[#f59e0b]/36 bg-[linear-gradient(160deg,rgba(12,29,55,0.9),rgba(17,24,39,0.86))] p-7 shadow-premium">
@@ -5839,15 +5865,14 @@ function DemoKosmetikstudioPage() {
     <main className="relative bg-[linear-gradient(180deg,#fff9f6,#f6e6de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
       <DemoBackgroundLayer image={demoV2Images.kosmetikHero} overlay="from-[#fff9f6]/82 via-[#f5ded3]/62 to-[#d3b4a5]/64" />
       <div className="mx-auto max-w-7xl space-y-6">
-        <DemoSiteBar name="Beauty Musterstudio" primaryCta="Termin anfragen" theme="light" />
-        <DemoMiniNav
-          label="Kosmetikstudio Demo"
+        <DemoWebsiteHeader
+          brandName="Beauty Musterstudio"
           links={[
             ['Behandlungen', '#beauty-services'],
+            ['Preise', '#beauty-pricing'],
             ['Vertrauen', '#beauty-trust'],
-            ['Terminführung', '#beauty-booking'],
-            ['Kontakt', '#beauty-contact'],
-            ['Zurück zu STRUKTIVA', siteLinks.home],
+            ['Bewertungen', '#beauty-reviews'],
+            ['Termin', '#beauty-booking'],
           ]}
           theme="light"
         />
@@ -5887,7 +5912,7 @@ function DemoKosmetikstudioPage() {
           <article className="rounded-2xl border border-[#e4cabb] bg-white p-4"><h3 className="font-semibold text-[#3b2f2f]">Beratung</h3><p className="mt-2 text-sm text-[#5a4740]">Persönliche Beratung als Vertrauenselement unterstützt die Entscheidung zur Anfrage.</p></article>
           </div>
         </section>
-        <section className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+        <section id="beauty-pricing" className="rounded-2xl border border-[#e4cabb] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#3b2f2f]">Preise / Pakete (Demo)</h2>
           <p className="mt-3 text-sm leading-7 text-[#5a4740]">Basisbehandlung · Premiumbehandlung · Beauty-Paket – als Musterstruktur gekennzeichnet.</p>
         </section>
@@ -5898,6 +5923,10 @@ function DemoKosmetikstudioPage() {
         <section id="beauty-booking" className="rounded-2xl border border-[#e4cabb] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#3b2f2f]">Terminführung</h2>
           <p className="mt-3 text-sm leading-7 text-[#5a4740]">Termin anfragen, Behandlung auswählen, Kontakt über WhatsApp oder Formular und klare Rückmeldung.</p>
+        </section>
+        <section id="beauty-reviews" className="rounded-2xl border border-[#e4cabb] bg-white p-5">
+          <h2 className="text-2xl font-semibold text-[#3b2f2f]">Bewertungen (Demo)</h2>
+          <p className="mt-3 text-sm leading-7 text-[#5a4740]">„Sehr ruhige Behandlung und klare Beratung.“ · „Website wirkt hochwertig und Terminweg ist einfach.“ · „Leistungen online sofort verständlich.“</p>
         </section>
         <section id="beauty-contact" className="rounded-2xl border border-[#e4cabb] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#3b2f2f]">Kontakt / Termin-Anfrage (Demo)</h2>
@@ -5922,15 +5951,14 @@ function DemoBewertungsstrukturPage() {
     <main className="relative bg-[linear-gradient(180deg,#0a1424,#123046)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <DemoBackgroundLayer image={demoV2Images.bewertungHero} overlay="from-[#0a1424]/88 via-[#11344b]/72 to-[#0b1b30]/93" />
       <div className="mx-auto max-w-7xl space-y-6">
-        <DemoSiteBar name="Muster Bewertungsstruktur" primaryCta="Bewertungsstruktur anfragen" />
-        <DemoMiniNav
-          label="Bewertungsstruktur Demo"
+        <DemoWebsiteHeader
+          brandName="Bewertungsstruktur Demo"
           links={[
             ['Ablauf', '#review-flow'],
-            ['Bestandteile', '#review-components'],
+            ['QR-Code', '#review-qr'],
             ['WhatsApp-Text', '#review-whatsapp'],
+            ['Bewertungskarte', '#review-card'],
             ['Kontakt', '#review-contact'],
-            ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
         <section className="rounded-[2.1rem] border border-[#5ed6ab]/32 bg-[linear-gradient(160deg,rgba(11,24,43,0.92),rgba(17,52,75,0.86))] p-7 shadow-premium">
@@ -5974,11 +6002,15 @@ function DemoBewertungsstrukturPage() {
           <h2 className="text-2xl font-semibold text-white">Beispieltext (WhatsApp)</h2>
           <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">„Vielen Dank für Ihren Besuch. Wenn Sie zufrieden waren, freuen wir uns über eine kurze Bewertung.“</p>
         </section>
-        <section className="rounded-2xl border border-dashed border-[#D8B45A]/45 bg-[#0f172a] p-5">
+        <section id="review-qr" className="rounded-2xl border border-dashed border-[#D8B45A]/45 bg-[#0f172a] p-5">
           <h2 className="text-2xl font-semibold text-white">QR-Code-Demo</h2>
           <div className="mt-4 inline-flex h-36 w-36 items-center justify-center rounded-xl border border-[#D8B45A]/45 bg-white text-xs font-semibold text-[#0f172a]">
             Beispiel-QR-Code
           </div>
+        </section>
+        <section id="review-card" className="rounded-2xl border border-white/14 bg-white/[0.04] p-5">
+          <h2 className="text-2xl font-semibold text-white">Beispiel-Bewertungskarte</h2>
+          <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">Kleine Karte für Theke/Empfang mit kurzem Hinweistext und QR-Code für direkte Bewertung.</p>
         </section>
         <section id="review-contact" className="rounded-2xl border border-white/14 bg-white/[0.04] p-5">
           <h2 className="text-2xl font-semibold text-white">Anfragebereich (Beispiel)</h2>
@@ -6012,16 +6044,14 @@ function DemoDashboardPage() {
     <main className="relative bg-[linear-gradient(180deg,#060f1c,#0a1931)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
       <DemoBackgroundLayer image={demoV2Images.dashboardHero} overlay="from-[#060f1c]/90 via-[#0a1f3b]/76 to-[#050b17]/95" />
       <div className="mx-auto max-w-7xl space-y-6">
-        <DemoSiteBar name="Muster Betriebs-Dashboard" primaryCta="Dashboard anfragen" />
-        <DemoMiniNav
-          label="Dashboard Demo"
+        <DemoWebsiteHeader
+          brandName="STRUKTIVA Dashboard Demo"
           links={[
             ['Heute', '#dashboard-metrics'],
             ['Aufgaben', '#dashboard-tasks'],
             ['Termine', '#dashboard-schedule'],
+            ['Anfragen', '#dashboard-flow'],
             ['Kennzahlen', '#dashboard-modules'],
-            ['Kontakt', '#dashboard-contact'],
-            ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
         <section className="rounded-[2.1rem] border border-[#38bdf8]/34 bg-[linear-gradient(155deg,rgba(7,20,39,0.95),rgba(8,29,55,0.88))] p-7 shadow-premium">
