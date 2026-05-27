@@ -3298,6 +3298,10 @@ function DemoUseCasesSection() {
       structure: ['Startseite', 'Leistungen', 'Team', 'Kontakt', 'Bewertungen', 'WhatsApp-Anfrage', 'Google-Verbindung'],
       href: siteLinks.demoFriseursalonV2,
       cta: 'Friseur-Demo ansehen',
+      image: demoV2Images.friseurHero,
+      overlay: 'from-[#f6e2c4]/25 via-[#c89b57]/20 to-[#130f0c]/85',
+      chipTone: 'border-[#e5c173]/40 text-[#f3dba2]',
+      cardTone: 'border-[#d6b166]/35 bg-[linear-gradient(160deg,rgba(24,18,13,0.78),rgba(58,41,24,0.56),rgba(14,10,7,0.86))]',
     },
     {
       title: 'Demo Handwerker',
@@ -3305,6 +3309,10 @@ function DemoUseCasesSection() {
       structure: ['Leistungen', 'Einsatzgebiet', 'Referenzen', 'Anfrageformular', 'Kontakt', 'Google-Struktur'],
       href: siteLinks.demoHandwerkerV2,
       cta: 'Handwerker-Demo ansehen',
+      image: demoV2Images.handwerkerHero,
+      overlay: 'from-[#0b1220]/74 via-[#111827]/62 to-[#090f1b]/90',
+      chipTone: 'border-[#f6b74d]/36 text-[#ffd78b]',
+      cardTone: 'border-[#f59e0b]/30 bg-[linear-gradient(160deg,rgba(10,22,44,0.78),rgba(17,24,39,0.62),rgba(6,11,20,0.9))]',
     },
     {
       title: 'Demo Kosmetikstudio',
@@ -3312,6 +3320,10 @@ function DemoUseCasesSection() {
       structure: ['Behandlungen', 'Preise', 'Vorher/Nachher', 'Bewertungen', 'Termin-Anfrage', 'Instagram/Pinterest-Verbindung'],
       href: siteLinks.demoKosmetikstudioV2,
       cta: 'Kosmetik-Demo ansehen',
+      image: demoV2Images.kosmetikHero,
+      overlay: 'from-[#f6d8d0]/26 via-[#e6bca8]/22 to-[#6e4f43]/72',
+      chipTone: 'border-[#e9c2a8]/60 text-[#f5dccf]',
+      cardTone: 'border-[#e9c2a8]/45 bg-[linear-gradient(160deg,rgba(54,36,33,0.66),rgba(88,61,52,0.48),rgba(37,26,23,0.78))]',
     },
     {
       title: 'Demo Bewertungsstruktur',
@@ -3319,6 +3331,10 @@ function DemoUseCasesSection() {
       structure: ['QR-Code', 'Bewertungslink', 'Bewertungskarte', 'Anfrage-Text', 'Website-Einbindung'],
       href: siteLinks.demoBewertungsstrukturV2,
       cta: 'Bewertungsstruktur ansehen',
+      image: demoV2Images.bewertungHero,
+      overlay: 'from-[#0b1220]/70 via-[#12334a]/62 to-[#0e182b]/88',
+      chipTone: 'border-[#7de5b2]/38 text-[#b6f4d5]',
+      cardTone: 'border-[#5ed6ab]/28 bg-[linear-gradient(160deg,rgba(10,25,45,0.78),rgba(18,50,71,0.56),rgba(8,16,30,0.9))]',
     },
     {
       title: 'Demo Dashboard',
@@ -3326,48 +3342,78 @@ function DemoUseCasesSection() {
       structure: ['Tagesübersicht', 'Aufgaben', 'Termine', 'Kennzahlen', 'offene Punkte', 'Notizen'],
       href: siteLinks.demoDashboardV2,
       cta: 'Dashboard-Demo ansehen',
+      image: demoV2Images.dashboardHero,
+      overlay: 'from-[#07111f]/66 via-[#0b1f3a]/62 to-[#050d19]/90',
+      chipTone: 'border-[#60a5fa]/38 text-[#b7d8ff]',
+      cardTone: 'border-[#60a5fa]/28 bg-[linear-gradient(160deg,rgba(6,17,33,0.8),rgba(9,30,56,0.62),rgba(5,11,24,0.92))]',
     },
   ]
 
   return (
     <section id="demos" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Demo-Beispiele"
-          title="Beispiele für digitale Unternehmensstruktur"
-          text="Sehen Sie beispielhaft, wie STRUKTIVA digitale Struktur für unterschiedliche Branchen und Systeme aufbauen kann."
-        />
-        <div className="mt-10 grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">
-          <article className="rounded-[1.7rem] border border-[#D8B45A]/28 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium">
-            <h3 className="text-2xl font-semibold text-white">{demos[0].title}</h3>
-            <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{demos[0].text}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {demos[0].structure.map((item) => (
-                <span key={item} className="rounded-full border border-[#D8B45A]/28 bg-white/[0.03] px-3 py-1.5 text-xs text-[#E5C979]">{item}</span>
-              ))}
+        <div className="flex flex-wrap items-end justify-between gap-5">
+          <SectionHeader
+            eyebrow="Demo-Beispiele"
+            title="Beispiele für digitale Unternehmensstruktur"
+            text="Sehen Sie, wie STRUKTIVA digitale Struktur je nach Branche unterschiedlich aufbauen kann – von Salon-Webseite bis Betriebs-Dashboard."
+          />
+          <p className="rounded-full border border-white/12 bg-white/[0.03] px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#D8B45A]">
+            5 Musterseiten · verschiedene Branchen · individuelle Struktur
+          </p>
+        </div>
+        <div className="mt-10 grid gap-4 xl:grid-cols-12">
+          <article className={`group relative overflow-hidden rounded-[1.8rem] border p-6 shadow-premium transition duration-300 hover:-translate-y-1 ${demos[0].cardTone} xl:col-span-7`}>
+            <img src={demos[0].image} alt="Vorschau Friseursalon-Demo" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-45 transition duration-500 group-hover:scale-105 group-hover:opacity-55" />
+            <div className={`absolute inset-0 bg-gradient-to-br ${demos[0].overlay}`} />
+            <div className="relative">
+              <h3 className="text-3xl font-semibold text-white">{demos[0].title}</h3>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-[#F1E8D9]">{demos[0].text}</p>
+              <div className="mt-4 flex flex-wrap gap-2.5">
+                {demos[0].structure.slice(0, 6).map((item) => (
+                  <span key={item} className={`rounded-full border bg-black/20 px-3 py-1.5 text-xs ${demos[0].chipTone}`}>{item}</span>
+                ))}
+              </div>
+              <a href={demos[0].href} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                {demos[0].cta}
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
-            <a href={demos[0].href} className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-              {demos[0].cta}
-              <ArrowRight className="h-4 w-4" />
-            </a>
           </article>
-          <div className="space-y-3">
-            {demos.slice(1).map((demo) => (
-              <article key={demo.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4 shadow-premium transition hover:border-[#D8B45A]/30 hover:bg-white/[0.06]">
-                <h3 className="text-lg font-semibold text-white">{demo.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{demo.text}</p>
+
+          <article className={`group relative overflow-hidden rounded-[1.6rem] border p-5 shadow-premium transition duration-300 hover:-translate-y-1 ${demos[1].cardTone} xl:col-span-5`}>
+            <img src={demos[1].image} alt="Vorschau Handwerker-Demo" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-35 transition duration-500 group-hover:scale-105" />
+            <div className={`absolute inset-0 bg-gradient-to-br ${demos[1].overlay}`} />
+            <div className="relative">
+              <h3 className="text-2xl font-semibold text-white">{demos[1].title}</h3>
+              <p className="mt-2 text-sm leading-7 text-[#D9E3F3]">{demos[1].text}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {demos[1].structure.slice(0, 4).map((item) => <span key={item} className={`rounded-full border bg-black/20 px-2.5 py-1 text-[11px] ${demos[1].chipTone}`}>{item}</span>)}
+              </div>
+              <a href={demos[1].href} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#f59e0b]/45 bg-[#0f172a]/70 px-4 py-2 text-sm font-semibold text-[#ffd78b] transition hover:bg-[#f59e0b] hover:text-white">
+                {demos[1].cta}
+                <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
+          </article>
+
+          {demos.slice(2).map((demo) => (
+            <article key={demo.title} className={`group relative overflow-hidden rounded-[1.5rem] border p-4 shadow-premium transition duration-300 hover:-translate-y-1 ${demo.cardTone} xl:col-span-4`}>
+              <img src={demo.image} alt={`Vorschau ${demo.title}`} loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-30 transition duration-500 group-hover:scale-105" />
+              <div className={`absolute inset-0 bg-gradient-to-br ${demo.overlay}`} />
+              <div className="relative">
+                <h3 className="text-xl font-semibold text-white">{demo.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-[#D8E1EF]">{demo.text}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {demo.structure.slice(0, 4).map((item) => (
-                    <span key={item} className="rounded-full border border-white/16 px-2.5 py-1 text-[11px] text-[#C9D2E3]">{item}</span>
-                  ))}
+                  {demo.structure.slice(0, 4).map((item) => <span key={item} className={`rounded-full border bg-black/18 px-2.5 py-1 text-[11px] ${demo.chipTone}`}>{item}</span>)}
                 </div>
-                <a href={demo.href} className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-xs font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                <a href={demo.href} className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-4 py-2 text-xs font-semibold text-white transition hover:border-[#D8B45A]/40 hover:text-[#E8C772]">
                   {demo.cta}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </a>
-              </article>
-            ))}
-          </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -5541,8 +5587,8 @@ function DemoSiteBar({ name, primaryCta, theme = 'dark' }) {
 
 function DemoFriseursalonPage() {
   return (
-    <main className="relative bg-[linear-gradient(180deg,#120f0d,#1b1713)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
-      <DemoBackgroundLayer image={demoV2Images.friseurHero} overlay="from-[#120f0d]/88 via-[#1b1713]/72 to-[#100c09]/92" />
+    <main className="relative bg-[linear-gradient(180deg,#2a1f17,#1d1611)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.friseurHero} overlay="from-[#f0d9b3]/18 via-[#7a5b32]/20 to-[#120d09]/88" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Salon Muster" primaryCta="Termin anfragen" />
         <DemoMiniNav
@@ -5557,7 +5603,7 @@ function DemoFriseursalonPage() {
             ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
-        <section className="rounded-[2.1rem] border border-[#D8B45A]/25 bg-[linear-gradient(160deg,rgba(35,28,23,0.95),rgba(20,17,14,0.92))] p-7 shadow-premium">
+        <section className="rounded-[2.1rem] border border-[#E4C57A]/35 bg-[linear-gradient(160deg,rgba(63,46,30,0.82),rgba(27,21,15,0.84))] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Moderne Salon-Website mit klarer Terminführung</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#E7DDD0]">Leistungen, Atmosphäre, Bewertungen und WhatsApp-Anfrage sind klar verbunden. Diese Musterseite zeigt, wie ein Salon online Vertrauen und Terminanfragen zusammenführt.</p>
@@ -5651,8 +5697,8 @@ function DemoFriseursalonPage() {
 
 function DemoHandwerkerV2Page() {
   return (
-    <main className="relative bg-[linear-gradient(180deg,#0b1220,#111827)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
-      <DemoBackgroundLayer image={demoV2Images.handwerkerHero} overlay="from-[#0b1220]/90 via-[#111827]/75 to-[#090f1b]/94" />
+    <main className="relative bg-[linear-gradient(180deg,#0a162b,#0f1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.handwerkerHero} overlay="from-[#081322]/88 via-[#0f1f3a]/76 to-[#0a1528]/95" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Muster Handwerk" primaryCta="Anfrage stellen" />
         <DemoMiniNav
@@ -5666,7 +5712,7 @@ function DemoHandwerkerV2Page() {
             ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
-        <section className="rounded-[2.1rem] border border-[#f59e0b]/30 bg-[#111827] p-7 shadow-premium">
+        <section className="rounded-[2.1rem] border border-[#f59e0b]/36 bg-[linear-gradient(160deg,rgba(12,29,55,0.9),rgba(17,24,39,0.86))] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#fbbf24]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Handwerkerbetrieb mit klarer digitaler Anfrageführung</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-gray-200">Leistungen, Referenzen, Einsatzgebiet und Kontaktwege sind sofort verständlich aufgebaut. Diese Musterseite zeigt eine robuste Handwerker-Struktur mit klarer Kundenführung.</p>
@@ -5761,8 +5807,8 @@ function DemoHandwerkerV2Page() {
 
 function DemoKosmetikstudioPage() {
   return (
-    <main className="relative bg-[linear-gradient(180deg,#fff8f5,#f9e7de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
-      <DemoBackgroundLayer image={demoV2Images.kosmetikHero} overlay="from-[#fff8f5]/92 via-[#f9e7de]/78 to-[#f4ddd2]/94" />
+    <main className="relative bg-[linear-gradient(180deg,#fff9f6,#f6e6de)] px-5 pb-16 pt-10 text-[#3b2f2f] lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.kosmetikHero} overlay="from-[#fff9f6]/82 via-[#f5ded3]/62 to-[#d3b4a5]/64" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Beauty Musterstudio" primaryCta="Termin anfragen" theme="light" />
         <DemoMiniNav
@@ -5776,7 +5822,7 @@ function DemoKosmetikstudioPage() {
           ]}
           theme="light"
         />
-        <section className="rounded-[2.1rem] border border-[#e9c9ac]/80 bg-[#fff8f3] p-7 shadow-premium">
+        <section className="rounded-[2.1rem] border border-[#e9c9ac]/85 bg-[linear-gradient(155deg,#fffaf7,#f8ebe4)] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b8894b]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-[#3b2f2f] md:text-5xl">Kosmetikstudio mit klarer Behandlungs- und Terminstruktur</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#5a4740]">Behandlungen, Preise, Vertrauen und Termin-Anfrage sind hochwertig verbunden. Diese Musterseite zeigt eine ruhige Beauty-Struktur mit klarer Kundenführung.</p>
@@ -5844,8 +5890,8 @@ function DemoKosmetikstudioPage() {
 
 function DemoBewertungsstrukturPage() {
   return (
-    <main className="relative bg-[linear-gradient(180deg,#0b1220,#13253d)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
-      <DemoBackgroundLayer image={demoV2Images.bewertungHero} overlay="from-[#0b1220]/90 via-[#13253d]/76 to-[#0c1a2d]/94" />
+    <main className="relative bg-[linear-gradient(180deg,#0a1424,#123046)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.bewertungHero} overlay="from-[#0a1424]/88 via-[#11344b]/72 to-[#0b1b30]/93" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Muster Bewertungsstruktur" primaryCta="Bewertungsstruktur anfragen" />
         <DemoMiniNav
@@ -5858,12 +5904,12 @@ function DemoBewertungsstrukturPage() {
             ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
-        <section className="rounded-[2.1rem] border border-[#D8B45A]/30 bg-[#0f172a] p-7 shadow-premium">
+        <section className="rounded-[2.1rem] border border-[#5ed6ab]/32 bg-[linear-gradient(160deg,rgba(11,24,43,0.92),rgba(17,52,75,0.86))] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Bewertungen einfacher sammeln</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5]">QR-Code, Bewertungslink, Bewertungskarte und WhatsApp-Text werden als klarer Bewertungsweg verbunden.</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href={siteLinks.contact} className="rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white">Bewertungsstruktur anfragen</a>
+            <a href={siteLinks.contact} className="rounded-full bg-[#2fb989] px-6 py-3 text-sm font-semibold text-white">Bewertungsstruktur anfragen</a>
             <a href="#review-flow" className="rounded-full border border-[#D8B45A]/35 px-6 py-3 text-sm font-semibold text-[#F2D98B]">Beispiel ansehen</a>
             <a href={siteLinks.home} className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white">Zur Startseite</a>
           </div>
@@ -5934,8 +5980,8 @@ function DemoDashboardPage() {
     ['Teamübersicht', 'Aufgaben oder Termine können nach Personen strukturiert sichtbar gemacht werden.'],
   ]
   return (
-    <main className="relative bg-[linear-gradient(180deg,#07111f,#0b1f3a)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
-      <DemoBackgroundLayer image={demoV2Images.dashboardHero} overlay="from-[#07111f]/90 via-[#0b1f3a]/76 to-[#060d19]/94" />
+    <main className="relative bg-[linear-gradient(180deg,#060f1c,#0a1931)] px-5 pb-16 pt-10 text-white lg:px-8 lg:pb-24 lg:pt-14">
+      <DemoBackgroundLayer image={demoV2Images.dashboardHero} overlay="from-[#060f1c]/90 via-[#0a1f3b]/76 to-[#050b17]/95" />
       <div className="mx-auto max-w-7xl space-y-6">
         <DemoSiteBar name="Muster Betriebs-Dashboard" primaryCta="Dashboard anfragen" />
         <DemoMiniNav
@@ -5949,7 +5995,7 @@ function DemoDashboardPage() {
             ['Zurück zu STRUKTIVA', siteLinks.home],
           ]}
         />
-        <section className="rounded-[2.1rem] border border-[#38bdf8]/30 bg-[#081427] p-7 shadow-premium">
+        <section className="rounded-[2.1rem] border border-[#38bdf8]/34 bg-[linear-gradient(155deg,rgba(7,20,39,0.95),rgba(8,29,55,0.88))] p-7 shadow-premium">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7dd3fc]">Beispielhafte Demo von STRUKTIVA</p>
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Digitale Übersicht für kleine Unternehmen</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#dbe7ff]">Eine beispielhafte Dashboard-Struktur für Termine, Aufgaben, offene Punkte, Tagesübersicht, Monatsstruktur und Kennzahlen.</p>
