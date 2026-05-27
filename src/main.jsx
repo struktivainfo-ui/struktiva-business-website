@@ -3246,8 +3246,8 @@ function OfferMatchSection() {
     <section className="px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="rounded-[2rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8">
-          <div className="grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
-            <article className="rounded-[1.5rem] border border-white/12 bg-white/[0.04] p-6">
+          <div className="grid items-start gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+            <article className="h-fit self-start rounded-[1.5rem] border border-white/12 bg-white/[0.04] p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/85">Entscheidungshilfe</p>
               <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Welches STRUKTIVA-Angebot passt zu Ihnen?</h2>
               <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
