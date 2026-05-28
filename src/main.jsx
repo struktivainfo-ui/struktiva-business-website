@@ -1244,10 +1244,6 @@ function HeroSection() {
               <div className="hero-architecture-line hero-architecture-line-1" />
               <div className="hero-architecture-line hero-architecture-line-2" />
               <div className="hero-architecture-line hero-architecture-line-3" />
-              <div className="hero-architecture-node hero-architecture-node-1" />
-              <div className="hero-architecture-node hero-architecture-node-2" />
-              <div className="hero-architecture-node hero-architecture-node-3" />
-              <div className="hero-architecture-node hero-architecture-node-4" />
 
               <div className="relative z-[1]">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Digitale Architektur</p>
@@ -2564,10 +2560,6 @@ function HeroSectionPremium() {
               <div className="hero-architecture-line hero-architecture-line-1" />
               <div className="hero-architecture-line hero-architecture-line-2" />
               <div className="hero-architecture-line hero-architecture-line-3" />
-              <div className="hero-architecture-node hero-architecture-node-1" />
-              <div className="hero-architecture-node hero-architecture-node-2" />
-              <div className="hero-architecture-node hero-architecture-node-3" />
-              <div className="hero-architecture-node hero-architecture-node-4" />
               <div className="relative z-[1]">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Digitale Architektur</p>
                 <h2 className="mt-2 text-xl font-semibold text-white">Webseiten. Apps. Werbung. Struktur.</h2>
