@@ -470,37 +470,37 @@ img {
   }
 }
 
-/* STRUKTIVA V3 visual layer (design-only refresh) */
-.struktiva-v3 {
+/* STRUKTIVA home-only premium layer */
+.struktiva-home {
   position: relative;
   isolation: isolate;
 }
 
-.struktiva-v3::after {
+.struktiva-home::after {
   content: '';
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.46;
+  opacity: 0.4;
   background:
-    radial-gradient(circle at 8% 14%, rgba(216, 180, 90, 0.18), transparent 24%),
-    radial-gradient(circle at 84% 20%, rgba(122, 96, 41, 0.12), transparent 30%),
-    radial-gradient(circle at 72% 72%, rgba(11, 31, 58, 0.28), transparent 38%);
+    radial-gradient(circle at 10% 10%, rgba(214, 168, 79, 0.2), transparent 28%),
+    radial-gradient(circle at 86% 16%, rgba(16, 23, 34, 0.4), transparent 34%),
+    radial-gradient(circle at 68% 76%, rgba(11, 15, 20, 0.32), transparent 40%);
 }
 
-.struktiva-v3 .shadow-premium {
+.struktiva-home .shadow-premium {
   box-shadow:
-    0 28px 64px rgba(3, 8, 16, 0.46),
-    0 10px 22px rgba(6, 14, 27, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 32px 72px rgba(0, 0, 0, 0.52),
+    0 12px 24px rgba(6, 14, 27, 0.36),
+    inset 0 1px 0 rgba(248, 245, 237, 0.05);
 }
 
-.struktiva-v3 section {
+.struktiva-home section {
   position: relative;
 }
 
-.struktiva-v3 section::before {
+.struktiva-home section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -508,49 +508,49 @@ img {
   transform: translateX(-50%);
   width: min(560px, 82%);
   height: 1px;
-  background: linear-gradient(90deg, rgba(216, 180, 90, 0), rgba(216, 180, 90, 0.4), rgba(216, 180, 90, 0));
-  opacity: 0.65;
+  background: linear-gradient(90deg, rgba(214, 168, 79, 0), rgba(214, 168, 79, 0.45), rgba(214, 168, 79, 0));
+  opacity: 0.68;
   pointer-events: none;
 }
 
-.struktiva-v3 #start::before {
+.struktiva-home #start::before {
   display: none;
 }
 
-.struktiva-v3 .hero-orb-left {
+.struktiva-home .hero-orb-left {
   width: 15rem;
   height: 15rem;
-  background: rgba(216, 180, 90, 0.25);
+  background: rgba(214, 168, 79, 0.3);
   filter: blur(95px);
 }
 
-.struktiva-v3 .hero-orb-right {
+.struktiva-home .hero-orb-right {
   width: 16rem;
   height: 16rem;
-  background: rgba(44, 72, 114, 0.4);
+  background: rgba(16, 23, 34, 0.52);
   filter: blur(102px);
 }
 
-.struktiva-v3 .hero-3d-plane {
+.struktiva-home .hero-3d-plane {
   border-radius: 1rem;
   box-shadow:
-    0 22px 50px rgba(5, 10, 18, 0.42),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 24px 56px rgba(5, 5, 5, 0.52),
+    inset 0 1px 0 rgba(248, 245, 237, 0.06);
 }
 
-.struktiva-v3 .hero-floating-chip {
+.struktiva-home .hero-floating-chip {
   border-color: rgba(216, 180, 90, 0.24);
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+  background: linear-gradient(155deg, rgba(248, 245, 237, 0.1), rgba(248, 245, 237, 0.03));
 }
 
-.struktiva-v3 .service-card-3d,
-.struktiva-v3 .pricing-card-3d,
-.struktiva-v3 .app-preview-3d {
+.struktiva-home .service-card-3d,
+.struktiva-home .pricing-card-3d,
+.struktiva-home .app-preview-3d {
   backdrop-filter: blur(11px);
 }
 
-.struktiva-v3 .service-card-3d::after,
-.struktiva-v3 .pricing-card-3d::after {
+.struktiva-home .service-card-3d::after,
+.struktiva-home .pricing-card-3d::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -559,38 +559,38 @@ img {
   pointer-events: none;
 }
 
-.struktiva-v3 #demos .group,
-.struktiva-v3 #preise article,
-.struktiva-v3 #leistungen article {
+.struktiva-home #demos .group,
+.struktiva-home #preise article,
+.struktiva-home #leistungen article {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.struktiva-v3 #demos .group:hover,
-.struktiva-v3 #preise article:hover,
-.struktiva-v3 #leistungen article:hover {
+.struktiva-home #demos .group:hover,
+.struktiva-home #preise article:hover,
+.struktiva-home #leistungen article:hover {
   box-shadow:
     0 24px 48px rgba(3, 8, 16, 0.5),
     0 0 0 1px rgba(216, 180, 90, 0.2);
 }
 
-.struktiva-v3 #preise article .text-3xl {
+.struktiva-home #preise article .text-3xl {
   letter-spacing: -0.02em;
   text-shadow: 0 0 22px rgba(216, 180, 90, 0.16);
 }
 
-.struktiva-v3 #kontakt > div {
+.struktiva-home #kontakt > div {
   box-shadow:
     0 34px 70px rgba(2, 7, 15, 0.52),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    inset 0 1px 0 rgba(248, 245, 237, 0.05);
 }
 
-.struktiva-v3 footer .footer-grid,
-.struktiva-v3 footer .container {
+.struktiva-home footer .footer-grid,
+.struktiva-home footer .container {
   position: relative;
 }
 
-.struktiva-v3 footer .footer-grid::before,
-.struktiva-v3 footer .container::before {
+.struktiva-home footer .footer-grid::before,
+.struktiva-home footer .container::before {
   content: '';
   position: absolute;
   top: -1px;
@@ -600,25 +600,53 @@ img {
   background: linear-gradient(90deg, rgba(216, 180, 90, 0), rgba(216, 180, 90, 0.42), rgba(216, 180, 90, 0));
 }
 
-.struktiva-v3 a:focus-visible,
-.struktiva-v3 button:focus-visible {
+.struktiva-home a:focus-visible,
+.struktiva-home button:focus-visible {
   outline: 2px solid rgba(242, 217, 139, 0.92);
   outline-offset: 3px;
 }
 
 @media (max-width: 980px) {
-  .struktiva-v3 section::before {
+  .struktiva-home section::before {
     width: min(420px, 88%);
     opacity: 0.5;
   }
 
-  .struktiva-v3 .hero-orb-left {
+  .struktiva-home .hero-orb-left {
     width: 11rem;
     height: 11rem;
   }
 
-  .struktiva-v3 .hero-orb-right {
+  .struktiva-home .hero-orb-right {
     width: 12rem;
     height: 12rem;
   }
+}
+
+.struktiva-home #start .hero-3d-plane,
+.struktiva-home #leistungen article,
+.struktiva-home #demos .group,
+.struktiva-home #preise article,
+.struktiva-home #kontakt > div {
+  border-radius: 1.45rem;
+  border-color: rgba(214, 168, 79, 0.22);
+}
+
+.struktiva-home #leistungen article,
+.struktiva-home #demos .group,
+.struktiva-home #preise article {
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(248, 245, 237, 0.04);
+}
+
+.struktiva-home #leistungen article:hover,
+.struktiva-home #demos .group:hover,
+.struktiva-home #preise article:hover {
+  border-color: rgba(214, 168, 79, 0.36);
+  transform: translateY(-6px);
+}
+
+.struktiva-home #start .hero-architecture-grid {
+  opacity: 0.26;
 }

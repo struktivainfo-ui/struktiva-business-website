@@ -5512,6 +5512,7 @@ function Page() {
   const pathname = useCurrentPath()
   useDocumentTitleSafe(pathname)
   const isDemoRoute = pathname.startsWith('/demos/')
+  const isHomeRoute = pathname === '/' || pathname === '/preise' || pathname === '/demos'
   const wissenArticle = wissenArticles.find((article) => article.href === pathname)
   const homeSectionByPath = {
     '/preise': 'preise',
@@ -5591,7 +5592,7 @@ function Page() {
   }
 
   return (
-    <div className="struktiva-v3 min-h-screen text-white">
+    <div className={`${isHomeRoute ? 'struktiva-home' : ''} min-h-screen text-white`}>
       {!isDemoRoute ? <Header pathname={pathname} /> : null}
       {content}
       {!isDemoRoute ? <Footer /> : null}
