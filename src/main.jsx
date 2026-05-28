@@ -12,6 +12,7 @@ import {
   ChevronDown,
   ClipboardList,
   LayoutTemplate,
+  Instagram,
   Linkedin,
   Megaphone,
   Menu,
@@ -111,6 +112,7 @@ const contactDetails = {
   whatsappLabel: '07051 8162292',
   whatsappHref: 'https://wa.me/4970518162292',
   linkedinHref: 'https://www.linkedin.com/in/sven-matzke-960b63411',
+  instagramHref: 'https://www.instagram.com/struktiva1',
   founderSvenImage: '/images/founder-sven.jpg',
   founderJessicaImage: '/images/founder-jessica.jpg',
   googleReviewHref: 'https://g.page/r/CZvwYJbOSShgEBM/review',
@@ -2189,6 +2191,15 @@ function ContactSection() {
                   <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-[#94A3B8]">LinkedIn</span>
                   LinkedIn-Profil ansehen
                 </a>
+                <a
+                  href={contactDetails.instagramHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-[#D8B45A]"
+                >
+                  <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-[#94A3B8]">Instagram</span>
+                  STRUKTIVA auf Instagram
+                </a>
               </div>
             </div>
           </Reveal>
@@ -2225,6 +2236,15 @@ function ContactSection() {
                 <Linkedin className="h-4 w-4" />
                 LinkedIn-Profil ansehen
               </a>
+              <a
+                href={contactDetails.instagramHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-[#D7DCE5] transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]"
+              >
+                <Instagram className="h-4 w-4" />
+                STRUKTIVA auf Instagram
+              </a>
             </div>
           </Reveal>
         </div>
@@ -2238,6 +2258,15 @@ function ContactSection() {
               className="font-semibold text-[#D8B45A] transition hover:text-[#F2D98B]"
             >
               LinkedIn-Profil ansehen
+            </a>
+            {' '}oder auf Instagram:{' '}
+            <a
+              href={contactDetails.instagramHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#D8B45A] transition hover:text-[#F2D98B]"
+            >
+              STRUKTIVA auf Instagram
             </a>
           </p>
         </Reveal>
@@ -2426,6 +2455,15 @@ function Footer() {
             >
               <Linkedin className="h-4 w-4" />
               LinkedIn
+            </a>
+            <a
+              href={contactDetails.instagramHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-flex items-center gap-2 transition hover:text-[#F2D98B]"
+            >
+              <Instagram className="h-4 w-4" />
+              Instagram
             </a>
             <p className="mt-3 text-xs leading-6 text-[#94A3B8]">Digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.</p>
           </div>
