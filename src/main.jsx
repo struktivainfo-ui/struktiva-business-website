@@ -50,7 +50,6 @@ const siteLinks = {
   demoHandwerker: '/demos/handwerker',
   demoBeauty: '/demos/kosmetik',
   demoDienstleister: '/demos/lokaler-dienstleister',
-  demoFriseursalonV2: '/demos/friseursalon',
   demoHandwerkerV2: '/demos/handwerker',
   demoKosmetikstudioV2: '/demos/kosmetik',
   demoBewertungsstrukturV2: '/demos/bewertungsstruktur',
@@ -570,9 +569,6 @@ function useDocumentTitleSafe(pathname) {
       '/angebotsarchitektur': 'Angebotsarchitektur - STRUKTIVA',
       '/digitale-unternehmensstruktur': 'Digitale Unternehmensstruktur - STRUKTIVA',
       '/digitale-soforthilfe': 'Digitale Soforthilfe für kleine Unternehmen | STRUKTIVA',
-      '/demo-handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
-      '/demo-dienstleister': 'Lokaler Dienstleister Demo | STRUKTIVA Unternehmensarchitektur',
-      '/demos/friseursalon': 'Friseursalon Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/kosmetik': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/lokaler-dienstleister': 'Lokaler Dienstleister Demo | STRUKTIVA Unternehmensarchitektur',
@@ -616,8 +612,6 @@ function useDocumentTitleSafe(pathname) {
         'Einstiegspreise fuer kleine Unternehmen: Sichtbarkeit, Kundengewinnung und Unternehmensarchitektur mit transparenter, strukturierter Umsetzung.',
       '/demos':
         'STRUKTIVA zeigt Demo-Beispiele für Handwerk, Beauty und Dienstleister – mit Website, Google-Sichtbarkeit, Kontaktwegen und klarer digitaler Kundenführung.',
-      '/demos/friseursalon':
-        'Beispielhafte digitale Struktur für Friseursalons mit Website, Google, Bewertungen, WhatsApp-Anfrage und Kundenführung.',
       '/demos/handwerker':
         'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.',
       '/demos/kosmetik':
@@ -700,9 +694,6 @@ function useDocumentTitleSafe(pathname) {
       '/demos/handwerker',
       '/demos/kosmetik',
       '/demos/lokaler-dienstleister',
-      '/demo-handwerker',
-      '/demo-dienstleister',
-      '/lokaler-dienstleister-demo',
     ])
     setMeta('name', 'robots', noIndexPaths.has(pathname) ? 'noindex, nofollow' : 'index, follow')
   }, [pathname])
@@ -5575,17 +5566,11 @@ function Page() {
   } else if (offerPageContent[pathname]) {
     const page = offerPageContent[pathname]
     content = <OfferDetailPage title={page.title} intro={page.intro} points={page.points} pathname={pathname} />
-  } else if (pathname === '/demo-handwerker') {
-    content = <DemoHandwerkerHtmlPage />
-  } else if (pathname === '/demo-dienstleister') {
-    content = <DemoDienstleisterHtmlPage />
-  } else if (pathname === '/demos/friseursalon') {
-    content = <DemoFriseursalonPage />
   } else if (pathname === '/demos/handwerker') {
     content = <DemoHandwerkerHtmlPage />
   } else if (pathname === '/demos/kosmetik') {
     content = <DemoKosmetikHtmlPage />
-  } else if (pathname === '/demos/lokaler-dienstleister' || pathname === '/lokaler-dienstleister-demo') {
+  } else if (pathname === '/demos/lokaler-dienstleister') {
     content = <DemoDienstleisterHtmlPage />
   } else if (pathname === '/demos/bewertungsstruktur') {
     content = <DemoBewertungsstrukturPage />

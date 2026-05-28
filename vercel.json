@@ -8,23 +8,11 @@
       "destination": "/demos/handwerker/index.html"
     },
     {
-      "source": "/demo-handwerker",
-      "destination": "/demos/handwerker/index.html"
-    },
-    {
       "source": "/demos/kosmetik",
       "destination": "/demos/kosmetik/index.html"
     },
     {
       "source": "/demos/lokaler-dienstleister",
-      "destination": "/demos/lokaler-dienstleister/index.html"
-    },
-    {
-      "source": "/lokaler-dienstleister-demo",
-      "destination": "/demos/lokaler-dienstleister/index.html"
-    },
-    {
-      "source": "/demo-dienstleister",
       "destination": "/demos/lokaler-dienstleister/index.html"
     },
     {
