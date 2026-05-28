@@ -855,16 +855,20 @@ function Header({ pathname, isHomeRoute = false }) {
       initial={{ opacity: 0, y: -18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className={`sticky top-0 z-[999] px-4 pt-3 lg:px-6 ${
-        scrolled ? 'backdrop-blur-[18px]' : ''
+      className={`sticky top-0 z-[9999] px-4 pt-3 lg:px-6 ${
+        isHomeRoute
+          ? 'border-b border-[#D6A84F]/45 bg-[linear-gradient(180deg,rgba(5,5,5,0.98),rgba(11,15,20,0.96))] shadow-[0_10px_35px_rgba(0,0,0,0.45),0_0_24px_rgba(214,168,79,0.12)] backdrop-blur-[14px]'
+          : scrolled
+          ? 'backdrop-blur-[18px]'
+          : ''
       }`}
     >
       <div
         className={`mx-auto flex w-full max-w-[1240px] items-center justify-between rounded-full border px-4 py-2.5 transition md:px-5 lg:py-3 ${
           scrolled
-            ? 'border-[#D6A84F]/35 bg-[linear-gradient(180deg,rgba(5,5,5,0.96),rgba(11,15,20,0.9))] shadow-[0_10px_35px_rgba(0,0,0,0.35)]'
+            ? 'border-[#D6A84F]/35 bg-[rgba(5,5,5,0.96)] shadow-[0_10px_35px_rgba(0,0,0,0.35)]'
             : isHomeRoute
-            ? 'border-[#D6A84F]/28 bg-[rgba(5,5,5,0.92)] shadow-[0_10px_30px_rgba(0,0,0,0.28)]'
+            ? 'border-[#D6A84F]/32 bg-[rgba(5,5,5,0.95)] shadow-[0_10px_30px_rgba(0,0,0,0.3)]'
             : 'border-white/12 bg-white/[0.05]'
         }`}
       >
@@ -1039,7 +1043,7 @@ function Header({ pathname, isHomeRoute = false }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-[999] mx-auto mt-3 max-w-7xl rounded-[1.8rem] border border-[#D6A84F]/35 bg-[rgba(5,5,5,0.96)] p-4 shadow-premium backdrop-blur-[18px] lg:hidden"
+            className="relative z-[9999] mx-auto mt-3 max-w-7xl rounded-[1.8rem] border border-[#D6A84F]/40 bg-[rgba(5,5,5,0.98)] p-4 shadow-premium backdrop-blur-[14px] lg:hidden"
           >
             <div className="grid gap-2">
               <a
