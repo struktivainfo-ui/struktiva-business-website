@@ -913,7 +913,7 @@ function Header({ pathname, isHomeRoute = false }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute left-1/2 top-[calc(100%+12px)] z-50 w-[360px] max-w-[92vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/30 bg-[#07111F]/96 p-2.5 shadow-[0_20px_45px_rgba(3,8,16,0.55)] backdrop-blur-xl"
+                  className="absolute left-1/2 top-[calc(100%+12px)] z-[10000] w-[360px] max-w-[92vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/40 bg-[#050505] p-2.5 shadow-[0_20px_45px_rgba(3,8,16,0.62)]"
                 >
                   <div className="mb-2 h-px w-full bg-gradient-to-r from-transparent via-[#D8B45A]/55 to-transparent" />
                   <div className="grid gap-1">
@@ -966,7 +966,7 @@ function Header({ pathname, isHomeRoute = false }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute left-1/2 top-[calc(100%+12px)] z-50 w-[460px] max-w-[94vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/30 bg-[#07111F]/96 p-3 shadow-[0_20px_45px_rgba(3,8,16,0.55)] backdrop-blur-xl"
+                  className="absolute left-1/2 top-[calc(100%+12px)] z-[10000] w-[460px] max-w-[94vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/40 bg-[#050505] p-3 shadow-[0_20px_45px_rgba(3,8,16,0.62)]"
                 >
                   <div className="mb-2 h-px w-full bg-gradient-to-r from-transparent via-[#D8B45A]/55 to-transparent" />
                   <div className="grid gap-2">
@@ -1069,7 +1069,7 @@ function Header({ pathname, isHomeRoute = false }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.18 }}
-                    className="rounded-2xl border border-white/12 bg-white/[0.03] p-2"
+                    className="rounded-2xl border border-[#D6A84F]/35 bg-[#050505] p-2"
                   >
                     <div className="grid gap-1">
                       {leistungenDropdownItems.map(([label, href]) => (
@@ -1077,7 +1077,7 @@ function Header({ pathname, isHomeRoute = false }) {
                           key={label}
                           href={href}
                           onClick={closeMobileMenu}
-                          className="rounded-lg px-2.5 py-2 text-sm text-[#D7DCE5] transition hover:bg-white/[0.06] hover:text-[#D8B45A]"
+                          className="rounded-lg px-2.5 py-2 text-sm text-[#D7DCE5] transition hover:bg-[#111827] hover:text-[#D8B45A]"
                         >
                           {label}
                         </a>
@@ -1085,7 +1085,7 @@ function Header({ pathname, isHomeRoute = false }) {
                       <a
                         href={siteLinks.leistungenPage}
                         onClick={closeMobileMenu}
-                        className="mt-1 rounded-lg border border-[#D8B45A]/28 bg-white/[0.03] px-2.5 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                        className="mt-1 rounded-lg border border-[#D8B45A]/35 bg-[#0B0F14] px-2.5 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
                       >
                         Alle Leistungen ansehen
                       </a>
@@ -1109,7 +1109,7 @@ function Header({ pathname, isHomeRoute = false }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.18 }}
-                    className="rounded-2xl border border-white/12 bg-white/[0.03] p-2"
+                    className="rounded-2xl border border-[#D6A84F]/35 bg-[#050505] p-2"
                   >
                     <div className="grid gap-1">
                       {demoDropdownItems.map(([label, text, href, Icon]) => (
@@ -1117,7 +1117,7 @@ function Header({ pathname, isHomeRoute = false }) {
                           key={label}
                           href={href}
                           onClick={closeMobileMenu}
-                          className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-2.5 text-sm text-[#D7DCE5] transition hover:bg-white/[0.06] hover:text-[#D8B45A]"
+                          className="rounded-lg border border-[#D6A84F]/25 bg-[#0B0F14] px-2.5 py-2.5 text-sm text-[#D7DCE5] transition hover:bg-[#111827] hover:text-[#D8B45A]"
                         >
                           <span className="inline-flex items-center gap-2 font-semibold"><Icon className="h-3.5 w-3.5" />{label}</span>
                           <span className="mt-1 block text-xs leading-6 text-[#94A3B8]">{text}</span>
