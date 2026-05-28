@@ -46,7 +46,7 @@ const siteLinks = {
   landingpagesPage: '/landingpages',
   appsPage: '/apps',
   googleAdsPage: '/google-ads',
-  demoHandwerker: '/demo-handwerker',
+  demoHandwerker: '/demos/handwerker',
   demoBeauty: '/demo-beauty',
   demoDienstleister: '/demo-dienstleister',
   demoFriseursalonV2: '/demos/friseursalon',
@@ -150,7 +150,7 @@ const leistungenDropdownItems = [
 
 const demoDropdownItems = [
   ['Referenzprojekt Salon Karola', 'Echte Umsetzung: vom Baukasten-Auftritt zur modernen digitalen Salon-Struktur.', 'https://salon-karola-webseite.vercel.app/', Sparkles],
-  ['Handwerker-Demo', 'Robuste Website-Struktur für Leistungen, Referenzen und Anfragen.', siteLinks.demoHandwerkerV2, Building2],
+  ['Handwerker-Demo', 'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.', siteLinks.demoHandwerkerV2, Building2],
   ['Kosmetikstudio-Demo', 'Elegante Beauty-Struktur mit Behandlungen, Preisen und Termin-Anfrage.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
   ['Lokaler Dienstleister-Demo', 'Digitale Struktur für lokale Betriebe mit klarer Positionierung und Kontaktführung.', siteLinks.demoDienstleister, BriefcaseBusiness],
   ['Bewertungsstruktur-Demo', 'QR-Code, Bewertungslink und klare Kundenführung zur Bewertung.', siteLinks.demoBewertungsstrukturV2, QrCode],
@@ -617,7 +617,7 @@ function useDocumentTitleSafe(pathname) {
       '/demos/friseursalon':
         'Beispielhafte digitale Struktur für Friseursalons mit Website, Google, Bewertungen, WhatsApp-Anfrage und Kundenführung.',
       '/demos/handwerker':
-        'Beispielhafte Website-Struktur für Handwerker mit Leistungen, Referenzen, Anfragewegen und regionaler Sichtbarkeit.',
+        'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.',
       '/demos/kosmetikstudio':
         'Beispielhafte digitale Struktur für Kosmetikstudios mit Behandlungen, Preisen, Bewertungen und Termin-Anfrage.',
       '/demos/bewertungsstruktur':
@@ -692,7 +692,8 @@ function useDocumentTitleSafe(pathname) {
     setMeta('name', 'twitter:title', activeTitle)
     setMeta('name', 'twitter:description', activeDescription)
     setMeta('name', 'twitter:image', 'https://struktiva-unternehmensarchitektur.vercel.app/struktiva-logo.jpeg')
-    setMeta('name', 'robots', 'index, follow')
+    const noIndexPaths = new Set(['/demos/handwerker'])
+    setMeta('name', 'robots', noIndexPaths.has(pathname) ? 'noindex, nofollow' : 'index, follow')
   }, [pathname])
 }
 
@@ -3291,7 +3292,7 @@ function DemoUseCasesSection() {
   const industryDemos = [
     {
       title: 'Handwerker-Demo',
-      text: 'Klare Leistungsstruktur, regionale Sichtbarkeit, schnelle Kontaktaufnahme und vertrauensvoller Auftritt für Handwerksbetriebe.',
+      text: 'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.',
       href: siteLinks.demoHandwerkerV2,
       image: demoV2Images.handwerkerHero,
       chipTone: 'border-[#f6b74d]/36 text-[#ffd78b]',
@@ -5528,7 +5529,7 @@ function Page() {
     const page = offerPageContent[pathname]
     content = <OfferDetailPage title={page.title} intro={page.intro} points={page.points} pathname={pathname} />
   } else if (pathname === '/demo-handwerker') {
-    content = <DemoHandwerkerPage />
+    content = <DemoHandwerkerHtmlPage />
   } else if (pathname === '/demo-beauty') {
     content = <DemoBeautyPage />
   } else if (pathname === '/demo-dienstleister') {
@@ -5536,7 +5537,7 @@ function Page() {
   } else if (pathname === '/demos/friseursalon') {
     content = <DemoFriseursalonPage />
   } else if (pathname === '/demos/handwerker') {
-    content = <DemoHandwerkerV2Page />
+    content = <DemoHandwerkerHtmlPage />
   } else if (pathname === '/demos/kosmetikstudio') {
     content = <DemoKosmetikstudioPage />
   } else if (pathname === '/demos/bewertungsstruktur') {
@@ -5792,6 +5793,19 @@ function DemoFriseursalonPage() {
           Diese Seite ist eine beispielhafte STRUKTIVA-Demo.
         </footer>
       </div>
+    </main>
+  )
+}
+
+function DemoHandwerkerHtmlPage() {
+  return (
+    <main className="min-h-screen bg-[#f7fbff]">
+      <iframe
+        src="/demos/handwerker/index.html"
+        title="STRUKTIVA Handwerker Demo"
+        className="block h-screen w-full border-0"
+        loading="lazy"
+      />
     </main>
   )
 }
