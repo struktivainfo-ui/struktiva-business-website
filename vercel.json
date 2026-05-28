@@ -12,6 +12,18 @@
       "destination": "/demos/handwerker/index.html"
     },
     {
+      "source": "/demos/kosmetik",
+      "destination": "/demos/kosmetik/index.html"
+    },
+    {
+      "source": "/kosmetik-demo",
+      "destination": "/demos/kosmetik/index.html"
+    },
+    {
+      "source": "/demos/kosmetikstudio",
+      "destination": "/demos/kosmetik/index.html"
+    },
+    {
       "source": "/((?!.*\\..*).*)",
       "destination": "/index.html"
     }

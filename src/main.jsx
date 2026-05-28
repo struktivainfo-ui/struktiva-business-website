@@ -51,7 +51,7 @@ const siteLinks = {
   demoDienstleister: '/demo-dienstleister',
   demoFriseursalonV2: '/demos/friseursalon',
   demoHandwerkerV2: '/demos/handwerker',
-  demoKosmetikstudioV2: '/demos/kosmetikstudio',
+  demoKosmetikstudioV2: '/demos/kosmetik',
   demoBewertungsstrukturV2: '/demos/bewertungsstruktur',
   demoDashboardV2: '/demos/dashboard',
   brancheFriseursalons: '/branchen/friseursalons',
@@ -151,7 +151,7 @@ const leistungenDropdownItems = [
 const demoDropdownItems = [
   ['Referenzprojekt Salon Karola', 'Echte Umsetzung: vom Baukasten-Auftritt zur modernen digitalen Salon-Struktur.', 'https://salon-karola-webseite.vercel.app/', Sparkles],
   ['Handwerker-Demo', 'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.', siteLinks.demoHandwerkerV2, Building2],
-  ['Kosmetikstudio-Demo', 'Elegante Beauty-Struktur mit Behandlungen, Preisen und Termin-Anfrage.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
+  ['Kosmetikstudio-Demo', 'Elegante Website-Struktur für Kosmetikstudios mit Leistungen, Buchungswegen, Vertrauen, Bildern und klarer Kundenführung.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
   ['Lokaler Dienstleister-Demo', 'Digitale Struktur für lokale Betriebe mit klarer Positionierung und Kontaktführung.', siteLinks.demoDienstleister, BriefcaseBusiness],
   ['Bewertungsstruktur-Demo', 'QR-Code, Bewertungslink und klare Kundenführung zur Bewertung.', siteLinks.demoBewertungsstrukturV2, QrCode],
 ]
@@ -574,6 +574,7 @@ function useDocumentTitleSafe(pathname) {
       '/demos/friseursalon': 'Friseursalon Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/kosmetikstudio': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
+      '/demos/kosmetik': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/bewertungsstruktur': 'Bewertungsstruktur Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/dashboard': 'Dashboard Demo | STRUKTIVA Unternehmensarchitektur',
       '/branchen/friseursalons': 'Digitale Struktur für Friseursalons | STRUKTIVA',
@@ -619,7 +620,9 @@ function useDocumentTitleSafe(pathname) {
       '/demos/handwerker':
         'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.',
       '/demos/kosmetikstudio':
-        'Beispielhafte digitale Struktur für Kosmetikstudios mit Behandlungen, Preisen, Bewertungen und Termin-Anfrage.',
+        'Elegante Website-Struktur für Kosmetikstudios mit Leistungen, Buchungswegen, Vertrauen, Bildern und klarer Kundenführung.',
+      '/demos/kosmetik':
+        'Elegante Website-Struktur für Kosmetikstudios mit Leistungen, Buchungswegen, Vertrauen, Bildern und klarer Kundenführung.',
       '/demos/bewertungsstruktur':
         'Beispielhafte Bewertungsstruktur mit QR-Code, Bewertungslink, WhatsApp-Text und Website-Einbindung.',
       '/demos/dashboard':
@@ -692,7 +695,7 @@ function useDocumentTitleSafe(pathname) {
     setMeta('name', 'twitter:title', activeTitle)
     setMeta('name', 'twitter:description', activeDescription)
     setMeta('name', 'twitter:image', 'https://struktiva-unternehmensarchitektur.vercel.app/struktiva-logo.jpeg')
-    const noIndexPaths = new Set(['/demos/handwerker'])
+    const noIndexPaths = new Set(['/demos/handwerker', '/demos/kosmetik', '/demos/kosmetikstudio'])
     setMeta('name', 'robots', noIndexPaths.has(pathname) ? 'noindex, nofollow' : 'index, follow')
   }, [pathname])
 }
@@ -3301,7 +3304,7 @@ function DemoUseCasesSection() {
     },
     {
       title: 'Kosmetikstudio-Demo',
-      text: 'Eleganter Beauty-Auftritt mit Leistungen, Buchungswegen, Vertrauen, Bildern und klarer Kundenführung.',
+      text: 'Elegante Website-Struktur für Kosmetikstudios mit Leistungen, Buchungswegen, Vertrauen, Bildern und klarer Kundenführung.',
       href: siteLinks.demoKosmetikstudioV2,
       image: demoV2Images.kosmetikHero,
       chipTone: 'border-[#e9c2a8]/60 text-[#f5dccf]',
@@ -5539,7 +5542,9 @@ function Page() {
   } else if (pathname === '/demos/handwerker') {
     content = <DemoHandwerkerHtmlPage />
   } else if (pathname === '/demos/kosmetikstudio') {
-    content = <DemoKosmetikstudioPage />
+    content = <DemoKosmetikHtmlPage />
+  } else if (pathname === '/demos/kosmetik' || pathname === '/kosmetik-demo') {
+    content = <DemoKosmetikHtmlPage />
   } else if (pathname === '/demos/bewertungsstruktur') {
     content = <DemoBewertungsstrukturPage />
   } else if (pathname === '/demos/dashboard') {
@@ -5803,6 +5808,19 @@ function DemoHandwerkerHtmlPage() {
       <iframe
         src="/demos/handwerker/index.html"
         title="STRUKTIVA Handwerker Demo"
+        className="block h-screen w-full border-0"
+        loading="lazy"
+      />
+    </main>
+  )
+}
+
+function DemoKosmetikHtmlPage() {
+  return (
+    <main className="min-h-screen bg-[#fff8f1]">
+      <iframe
+        src="/demos/kosmetik/index.html"
+        title="STRUKTIVA Kosmetikstudio Demo"
         className="block h-screen w-full border-0"
         loading="lazy"
       />

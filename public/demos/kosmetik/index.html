@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Kosmetikstudio Bella Vita – STRUKTIVA Demo-Webseite</title>
+  <meta name="description" content="Demo-Webseite für Kosmetikstudios von STRUKTIVA Unternehmensarchitektur. Alle Inhalte sind beispielhaft." />
+  <meta name="theme-color" content="#f8efe7" />
+  <style>
+    :root {
+      --cream: #fff8f1;
+      --cream-2: #f7eadf;
+      --rose: #d9a7a7;
+      --rose-dark: #9e5f63;
+      --gold: #c9a24d;
+      --gold-soft: #ead8a2;
+      --ink: #231f20;
+      --muted: #725f5f;
+      --white: #ffffff;
+      --line: rgba(201, 162, 77, 0.32);
+      --shadow: 0 22px 60px rgba(79, 45, 45, 0.16);
+      --radius: 28px;
+      --radius-sm: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 5%, rgba(234, 216, 162, .35), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(217, 167, 167, .28), transparent 28%),
+        linear-gradient(180deg, #fffaf5 0%, #f8efe7 48%, #fffaf5 100%);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      color: var(--rose-dark);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .02em;
+      backdrop-filter: blur(16px);
+    }
+    .pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(201,162,77,.65);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 248, 241, .82);
+      border-bottom: 1px solid rgba(201, 162, 77, .18);
+      backdrop-filter: blur(20px);
+    }
+    .nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--rose), var(--gold-soft));
+      border: 1px solid rgba(201,162,77,.45);
+      box-shadow: 0 14px 30px rgba(158, 95, 99, .17);
+      font-weight: 900;
+      color: #6f4547;
+      font-family: Georgia, serif;
+      font-size: 21px;
+    }
+    .brand strong { display: block; line-height: 1.05; font-size: 17px; }
+    .brand span { display: block; color: var(--muted); font-size: 12px; margin-top: 3px; }
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #5d4a4a;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .menu a:hover { color: var(--rose-dark); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: linear-gradient(135deg, #a96d70, #c9a24d);
+      color: var(--white);
+      font-weight: 850;
+      box-shadow: 0 18px 36px rgba(158,95,99,.20);
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 22px 44px rgba(158,95,99,.25); }
+    .btn.secondary {
+      background: rgba(255,255,255,.78);
+      color: var(--rose-dark);
+      border-color: var(--line);
+      box-shadow: none;
+    }
+
+    .demo-bar {
+      background: #231f20;
+      color: #fff6e8;
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: .01em;
+    }
+    .demo-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      text-align: center;
+    }
+
+    .hero {
+      position: relative;
+      padding: 72px 0 42px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 42px;
+      align-items: center;
+    }
+    .eyebrow { margin-bottom: 18px; }
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .96;
+      letter-spacing: -.06em;
+      max-width: 740px;
+    }
+    .hero p.lead {
+      margin: 24px 0 0;
+      color: #5d4a4a;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.65;
+      max-width: 680px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 700px;
+    }
+    .trust-card {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(201,162,77,.22);
+      box-shadow: 0 10px 28px rgba(79,45,45,.07);
+    }
+    .trust-card strong { display: block; color: var(--rose-dark); font-size: 22px; line-height: 1; }
+    .trust-card span { display: block; color: var(--muted); font-size: 13px; margin-top: 7px; line-height: 1.35; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 610px;
+    }
+    .photo-card {
+      position: absolute;
+      overflow: hidden;
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.75);
+      background: var(--white);
+    }
+    .photo-card.main {
+      inset: 0 0 52px 72px;
+    }
+    .photo-card.small {
+      width: 45%;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      border-radius: 28px;
+    }
+    .photo {
+      height: 100%;
+      min-height: 250px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .photo:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(35,31,32,.42));
+    }
+    .photo.main-img {
+      background-image:
+        linear-gradient(rgba(255,248,241,.03), rgba(255,248,241,.03)),
+        url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85");
+    }
+    .photo.small-img {
+      background-image:
+        linear-gradient(rgba(255,248,241,.02), rgba(255,248,241,.02)),
+        url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85");
+      min-height: 270px;
+    }
+    .floating-note {
+      position: absolute;
+      right: -8px;
+      bottom: 82px;
+      z-index: 3;
+      max-width: 310px;
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(79,45,45,.14);
+      backdrop-filter: blur(18px);
+    }
+    .floating-note strong { display: block; color: var(--rose-dark); margin-bottom: 6px; }
+    .floating-note span { color: var(--muted); font-size: 14px; line-height: 1.45; }
+
+    section { padding: 86px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+    .section-head h2 {
+      margin: 10px 0 0;
+      font-size: clamp(31px, 4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -.045em;
+      max-width: 680px;
+    }
+    .section-head p {
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 500px;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .service-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(201,162,77,.22);
+      box-shadow: 0 16px 40px rgba(79,45,45,.08);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 24px 58px rgba(79,45,45,.13); }
+    .service-img {
+      height: 205px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .service-img:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0), rgba(35,31,32,.28));
+    }
+    .service-card .content { padding: 22px; }
+    .service-card h3 { margin: 0; font-size: 21px; letter-spacing: -.02em; }
+    .service-card p { margin: 11px 0 0; color: var(--muted); line-height: 1.62; }
+
+    .split {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+    .panel {
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(201,162,77,.24);
+      box-shadow: 0 18px 48px rgba(79,45,45,.08);
+      padding: 30px;
+    }
+    .panel h2, .panel h3 { margin-top: 0; letter-spacing: -.03em; }
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .benefit {
+      border-radius: 20px;
+      padding: 17px;
+      background: linear-gradient(180deg, rgba(255,248,241,.9), rgba(255,255,255,.72));
+      border: 1px solid rgba(201,162,77,.18);
+    }
+    .benefit strong { display: block; margin-bottom: 5px; color: var(--rose-dark); }
+    .benefit span { color: var(--muted); font-size: 14px; line-height: 1.45; }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .step {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(201,162,77,.24);
+      box-shadow: 0 14px 34px rgba(79,45,45,.08);
+    }
+    .number {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--rose), var(--gold-soft));
+      color: #6f4547;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+    .step h3 { margin: 0 0 9px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.62; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+    }
+    .gallery .big, .gallery .stack > div {
+      border-radius: var(--radius);
+      min-height: 420px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.74);
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery .stack { display: grid; gap: 18px; }
+    .gallery .stack > div { min-height: 201px; }
+    .caption {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      right: 18px;
+      color: white;
+      font-weight: 850;
+      text-shadow: 0 6px 18px rgba(0,0,0,.36);
+      z-index: 2;
+    }
+    .gallery .big:after, .gallery .stack > div:after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, transparent 48%, rgba(35,31,32,.5));
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .review {
+      padding: 25px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.80);
+      border: 1px solid rgba(201,162,77,.24);
+      box-shadow: 0 16px 40px rgba(79,45,45,.08);
+    }
+    .stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; }
+    .review p { color: #584848; line-height: 1.65; font-size: 16px; }
+    .review small { color: var(--muted); font-weight: 750; }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .contact-card {
+      padding: 32px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #fff, #fff7ed);
+      border: 1px solid rgba(201,162,77,.28);
+      box-shadow: var(--shadow);
+    }
+    .contact-card h2 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 46px); letter-spacing: -.04em; }
+    .contact-card p, .contact-card li { color: var(--muted); line-height: 1.65; }
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0;
+      display: grid;
+      gap: 12px;
+    }
+    .contact-list li {
+      padding: 15px 16px;
+      border-radius: 18px;
+      background: rgba(248,239,231,.74);
+      border: 1px solid rgba(201,162,77,.18);
+    }
+    .form {
+      display: grid;
+      gap: 12px;
+    }
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid rgba(201,162,77,.28);
+      border-radius: 18px;
+      padding: 15px 16px;
+      background: rgba(255,255,255,.82);
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+    }
+    textarea { min-height: 132px; resize: vertical; }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,162,77,.13);
+    }
+
+    details {
+      border-radius: 20px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(201,162,77,.22);
+      padding: 18px 20px;
+      box-shadow: 0 12px 30px rgba(79,45,45,.06);
+    }
+    details + details { margin-top: 12px; }
+    summary { cursor: pointer; font-weight: 850; color: #4f3d3d; }
+    details p { color: var(--muted); line-height: 1.65; margin-bottom: 0; }
+
+    .cta {
+      padding: 0 0 88px;
+    }
+    .cta-box {
+      border-radius: 36px;
+      padding: 38px;
+      color: #fffaf2;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(234,216,162,.32), transparent 30%),
+        linear-gradient(135deg, #7f4b50, #231f20);
+      box-shadow: 0 26px 70px rgba(79,45,45,.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cta-box h2 { margin: 0; font-size: clamp(30px, 4vw, 50px); letter-spacing: -.045em; }
+    .cta-box p { color: rgba(255,250,242,.76); line-height: 1.6; max-width: 620px; }
+    .cta-box .btn.secondary { background: rgba(255,255,255,.12); color: white; border-color: rgba(255,255,255,.32); }
+
+    footer {
+      padding: 36px 0;
+      background: #231f20;
+      color: rgba(255,250,242,.78);
+    }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    footer strong { color: white; }
+
+    .float-buttons {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 30;
+      display: grid;
+      gap: 10px;
+    }
+    .float-buttons a {
+      width: 54px;
+      height: 54px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #a96d70, #c9a24d);
+      color: white;
+      box-shadow: 0 14px 36px rgba(79,45,45,.24);
+      border: 1px solid rgba(255,255,255,.34);
+      font-weight: 900;
+      font-size: 21px;
+    }
+
+    @media (max-width: 980px) {
+      .menu { display: none; }
+      .hero-grid, .split, .gallery, .contact { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; }
+      .hero-visual { min-height: 540px; }
+      .photo-card.main { inset: 0 0 68px 36px; }
+      .services, .reviews, .process { grid-template-columns: 1fr; }
+      .benefits { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .cta-box { display: block; }
+      .trust-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 22px, var(--max)); }
+      .nav { height: 66px; }
+      .brand span { display: none; }
+      .btn { width: 100%; }
+      .hero-actions { display: grid; }
+      .hero-visual { min-height: 440px; }
+      .photo-card.main { inset: 0 0 88px 18px; border-radius: 26px; }
+      .photo-card.small { width: 58%; }
+      .floating-note { right: 8px; left: 24px; bottom: 38px; }
+      section { padding: 62px 0; }
+      .services { gap: 14px; }
+      .panel, .contact-card, .cta-box { padding: 22px; border-radius: 26px; }
+      footer .container { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">
+    <div class="container">STRUKTIVA Demo-Webseite für Kosmetikstudios · Alle Inhalte sind beispielhaft · Keine echte Firma</div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#start" aria-label="Zur Startseite">
+        <div class="logo">BV</div>
+        <div>
+          <strong>Kosmetikstudio Bella Vita</strong>
+          <span>Beauty · Hautpflege · Wohlgefühl</span>
+        </div>
+      </a>
+      <nav class="menu" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#galerie">Eindrücke</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn" href="#kontakt">Termin anfragen</a>
+    </div>
+  </header>
+
+  <main id="start">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="pill"><span class="dot"></span> Kosmetikstudio Demo · Musterstadt</span>
+          </div>
+          <h1>Schönheit, Pflege und Wohlgefühl in Musterstadt</h1>
+          <p class="lead">
+            Professionelle Kosmetikbehandlungen, moderne Hautpflege und entspannte Beauty-Momente in stilvoller Atmosphäre.
+            Diese Demo zeigt, wie ein hochwertiger Online-Auftritt für ein Kosmetikstudio wirken kann.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#kontakt">Termin anfragen</a>
+            <a class="btn secondary" href="#leistungen">Leistungen ansehen</a>
+          </div>
+          <div class="trust-row">
+            <div class="trust-card"><strong>6</strong><span>klare Leistungsbereiche für Beauty-Kunden</span></div>
+            <div class="trust-card"><strong>3</strong><span>Schritte von Beratung bis Pflegeempfehlung</span></div>
+            <div class="trust-card"><strong>100%</strong><span>fiktive Demo-Inhalte, sauber gekennzeichnet</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Beauty Bildbereich">
+          <div class="photo-card main"><div class="photo main-img"></div></div>
+          <div class="photo-card small"><div class="photo small-img"></div></div>
+          <div class="floating-note">
+            <strong>Ruhige Atmosphäre. Klare Behandlung. Gepflegte Wirkung.</strong>
+            <span>Ein eleganter Beauty-Auftritt führt Besucher schnell zu Leistungen, Vertrauen und Termin-Anfrage.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="pill"><span class="dot"></span> Leistungen</span>
+            <h2>Behandlungen klar, hochwertig und verständlich präsentiert</h2>
+          </div>
+          <p>Eine Kosmetik-Webseite sollte nicht überladen wirken. Sie muss Vertrauen schaffen, Behandlungen erklären und den Weg zur Anfrage einfach machen.</p>
+        </div>
+
+        <div class="services">
+          <article class="service-card">
+            <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="content">
+              <h3>Gesichtsbehandlungen</h3>
+              <p>Pflegeprogramme für ein frisches Hautgefühl, abgestimmt auf Hautbild, Wunsch und Anlass.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="content">
+              <h3>Hautanalyse</h3>
+              <p>Strukturierte Beratung als Grundlage für die passende Behandlung und Pflegeempfehlung.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="content">
+              <h3>Augenbrauen & Wimpern</h3>
+              <p>Feine Details für einen gepflegten Ausdruck, sauber erklärt und einfach anfragbar.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="content">
+              <h3>Maniküre</h3>
+              <p>Gepflegte Hände, stilvolle Details und klare Leistungsbeschreibung für Termin-Anfragen.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="content">
+              <h3>Make-up</h3>
+              <p>Natürlich, elegant oder anlassbezogen – ideal für klare Angebotsbereiche auf Beauty-Webseiten.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="content">
+              <h3>Wellness & Pflege</h3>
+              <p>Wohlfühlmomente hochwertig darstellen und emotional mit Vertrauen verbinden.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="vertrauen">
+      <div class="container split">
+        <div class="panel">
+          <span class="pill"><span class="dot"></span> Vertrauen</span>
+          <h2>Warum Kundinnen sich gut aufgehoben fühlen</h2>
+          <p style="color:var(--muted);line-height:1.7;">
+            Gerade bei Beauty, Hautpflege und Kosmetik entscheidet Vertrauen. Deshalb braucht die Webseite klare Informationen, ruhige Gestaltung und direkte Kontaktwege.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#kontakt">Beratung anfragen</a>
+            <a class="btn secondary" href="#faq">Fragen lesen</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Wichtige Vertrauenselemente</h3>
+          <div class="benefits">
+            <div class="benefit"><strong>Persönliche Beratung</strong><span>Die Kundin versteht sofort, dass nicht pauschal behandelt wird.</span></div>
+            <div class="benefit"><strong>Ruhige Atmosphäre</strong><span>Die Gestaltung vermittelt Entspannung und gepflegte Umgebung.</span></div>
+            <div class="benefit"><strong>Klare Terminstruktur</strong><span>Besucher finden schnell Anfrage, Kontakt und nächste Schritte.</span></div>
+            <div class="benefit"><strong>Transparente Leistungen</strong><span>Beauty-Angebote sind sauber geordnet und verständlich erklärt.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="pill"><span class="dot"></span> Ablauf</span>
+            <h2>Vom ersten Interesse zur passenden Behandlung</h2>
+          </div>
+          <p>Ein einfacher Ablauf hilft Besucherinnen, schneller Vertrauen aufzubauen und ohne Unsicherheit eine Anfrage zu stellen.</p>
+        </div>
+
+        <div class="process">
+          <article class="step">
+            <div class="number">1</div>
+            <h3>Beratung</h3>
+            <p>Wünsche, Hautbild und Ziel werden besprochen. Die Webseite erklärt schon vorher, was Kundinnen erwartet.</p>
+          </article>
+          <article class="step">
+            <div class="number">2</div>
+            <h3>Behandlung</h3>
+            <p>Die passende Anwendung wird ruhig, professionell und nachvollziehbar durchgeführt.</p>
+          </article>
+          <article class="step">
+            <div class="number">3</div>
+            <h3>Pflegeempfehlung</h3>
+            <p>Nach der Behandlung gibt es Empfehlungen für Pflege, Wiederholung und nächste Termine.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="pill"><span class="dot"></span> Eindrücke</span>
+            <h2>Bildbereiche, die Atmosphäre und Qualität zeigen</h2>
+          </div>
+          <p>Bei Beauty-Webseiten verkaufen Bilder nicht nur Optik, sondern Gefühl: Ruhe, Sauberkeit, Stil und Vertrauen.</p>
+        </div>
+
+        <div class="gallery">
+          <div class="big" style="background-image:url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1100&q=85')">
+            <div class="caption">Stilvolle Beauty-Atmosphäre</div>
+          </div>
+          <div class="stack">
+            <div style="background-image:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85')">
+              <div class="caption">Pflege & Details</div>
+            </div>
+            <div style="background-image:url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85')">
+              <div class="caption">Produkte & Beratung</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bewertungen">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="pill"><span class="dot"></span> Demo-Bewertungen</span>
+            <h2>Kundenstimmen als Vertrauensbereich</h2>
+          </div>
+          <p>Diese Bewertungen sind beispielhaft und zeigen nur, wie ein Bewertungsbereich auf einer Kosmetik-Webseite wirken kann.</p>
+        </div>
+
+        <div class="reviews">
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Sehr angenehme Atmosphäre und eine tolle Beratung. Ich habe mich sofort wohlgefühlt.“</p>
+            <small>Demo-Bewertung · Beispiel</small>
+          </article>
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Die Behandlung war entspannend und professionell. Alles wurde ruhig erklärt.“</p>
+            <small>Demo-Bewertung · Beispiel</small>
+          </article>
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Schöne Räume, klare Leistungen und einfache Termin-Anfrage. Sehr hochwertiger Eindruck.“</p>
+            <small>Demo-Bewertung · Beispiel</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container contact">
+        <div class="contact-card">
+          <span class="pill"><span class="dot"></span> Kontakt Demo</span>
+          <h2>Termin für Pflege, Beratung oder Beauty-Behandlung anfragen</h2>
+          <p>Dies ist ein beispielhafter Kontaktbereich. In einer echten Webseite würden Telefon, WhatsApp, Buchung oder Kontaktformular mit dem Betrieb verbunden werden.</p>
+          <ul class="contact-list">
+            <li><strong>Telefon:</strong> 01234 567890</li>
+            <li><strong>E-Mail:</strong> kontakt@bella-vita-demo.de</li>
+            <li><strong>Adresse:</strong> Musterstraße 12, 12345 Musterstadt</li>
+            <li><strong>Öffnungszeiten:</strong> Mo–Fr 09:00–18:00 Uhr · Sa nach Vereinbarung</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn" href="tel:01234567890">Anrufen</a>
+            <a class="btn secondary" href="#" onclick="alert('Demo-Link: In einer echten Webseite würde hier Google Maps oder die Routenplanung öffnen.'); return false;">Route planen</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3 style="margin-top:0;font-size:26px;">Demo-Anfrageformular</h3>
+          <form class="form" onsubmit="event.preventDefault(); alert('Demo-Formular: In einer echten Webseite würde die Anfrage jetzt versendet werden.');">
+            <input aria-label="Name" placeholder="Name" required />
+            <input aria-label="Telefon oder E-Mail" placeholder="Telefon oder E-Mail" required />
+            <select aria-label="Gewünschte Leistung">
+              <option>Gewünschte Leistung auswählen</option>
+              <option>Gesichtsbehandlung</option>
+              <option>Hautanalyse</option>
+              <option>Augenbrauen & Wimpern</option>
+              <option>Maniküre</option>
+              <option>Make-up</option>
+              <option>Wellness & Pflege</option>
+            </select>
+            <textarea aria-label="Nachricht" placeholder="Kurze Nachricht oder Wunschtermin"></textarea>
+            <button class="btn" type="submit">Demo-Anfrage senden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="pill"><span class="dot"></span> FAQ</span>
+            <h2>Fragen beantworten, bevor Unsicherheit entsteht</h2>
+          </div>
+          <p>Ein FAQ-Bereich hilft besonders bei Kosmetikleistungen, weil Kundinnen vor dem ersten Termin oft Beratung und Orientierung suchen.</p>
+        </div>
+
+        <details open>
+          <summary>Muss ich einen Termin vereinbaren?</summary>
+          <p>In dieser Demo wird mit Termin-Anfrage gearbeitet. In einer echten Webseite könnte der Betrieb Telefon, WhatsApp oder ein Buchungssystem einbinden.</p>
+        </details>
+        <details>
+          <summary>Welche Behandlung passt zu meiner Haut?</summary>
+          <p>Die passende Behandlung wird normalerweise nach Beratung und Hautanalyse ausgewählt. Die Webseite sollte diesen Weg klar erklären.</p>
+        </details>
+        <details>
+          <summary>Gibt es Beratung vor der ersten Behandlung?</summary>
+          <p>Ja, ein Beratungsbereich schafft Vertrauen und reduziert Hemmungen bei Neukundinnen.</p>
+        </details>
+        <details>
+          <summary>Kann ich Gutscheine kaufen?</summary>
+          <p>Das könnte auf einer echten Webseite als eigener Bereich, Button oder Kontaktoption ergänzt werden.</p>
+        </details>
+        <details>
+          <summary>Wie lange dauert eine Behandlung?</summary>
+          <p>Die Dauer hängt von der Leistung ab. Eine echte Webseite kann Zeiten je Behandlung aufführen.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>So könnte ein Kosmetikstudio online wirken.</h2>
+            <p>Diese Demo zeigt, wie STRUKTIVA eine Beauty-Webseite strukturieren kann: mit klarer Kundenführung, hochwertigen Bildbereichen, Vertrauen und einfachen Kontaktwegen.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn" href="#kontakt">Demo-Kontakt ansehen</a>
+            <a class="btn secondary" href="https://struktiva-unternehmensarchitektur.vercel.app/" target="_blank" rel="noopener">STRUKTIVA ansehen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="float-buttons" aria-label="Schnellkontakt">
+    <a href="tel:01234567890" title="Anrufen">☎</a>
+    <a href="#kontakt" title="Termin anfragen">✦</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div>
+        <strong>Kosmetikstudio Bella Vita</strong><br>
+        Demo-Webseite für Kosmetikstudios · Max(i) Mustermann · Musterstadt
+      </div>
+      <div>
+        Erstellt als Demo von <strong>STRUKTIVA Unternehmensarchitektur</strong><br>
+        Alle Inhalte sind beispielhaft. Keine echte Firma.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
