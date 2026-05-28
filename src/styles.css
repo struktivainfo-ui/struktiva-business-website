@@ -651,3 +651,56 @@ img {
 .struktiva-home #start .hero-architecture-grid {
   opacity: 0.26;
 }
+
+/* Stronger, clearly visible premium pass for homepage only */
+.struktiva-home {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(214, 168, 79, 0.22), transparent 30%),
+    radial-gradient(circle at 84% 14%, rgba(16, 23, 34, 0.56), transparent 40%),
+    linear-gradient(180deg, #050505 0%, #0b0f14 46%, #101722 100%);
+}
+
+.struktiva-home #start,
+.struktiva-home #leistungen,
+.struktiva-home #demos,
+.struktiva-home #preise,
+.struktiva-home #kontakt {
+  position: relative;
+}
+
+.struktiva-home #start::after,
+.struktiva-home #leistungen::after,
+.struktiva-home #demos::after,
+.struktiva-home #preise::after,
+.struktiva-home #kontakt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  pointer-events: none;
+  background: linear-gradient(145deg, rgba(248, 245, 237, 0.015), rgba(214, 168, 79, 0.04), rgba(5, 5, 5, 0.04));
+}
+
+.struktiva-home #leistungen article,
+.struktiva-home #demos .group,
+.struktiva-home #preise article,
+.struktiva-home #kontakt > div {
+  background: linear-gradient(160deg, rgba(5, 5, 5, 0.82), rgba(11, 15, 20, 0.86), rgba(16, 23, 34, 0.92)) !important;
+  border-color: rgba(214, 168, 79, 0.26) !important;
+}
+
+.struktiva-home #start .hero-architecture-card,
+.struktiva-home #start .hero-image-shell {
+  border-color: rgba(214, 168, 79, 0.35) !important;
+  box-shadow:
+    0 28px 64px rgba(0, 0, 0, 0.54),
+    0 0 36px rgba(214, 168, 79, 0.12);
+}
+
+.struktiva-home #start .text-white,
+.struktiva-home #leistungen .text-white,
+.struktiva-home #demos .text-white,
+.struktiva-home #preise .text-white,
+.struktiva-home #kontakt .text-white {
+  color: #f8f5ed !important;
+}
