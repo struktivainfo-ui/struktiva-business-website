@@ -47,7 +47,7 @@ const siteLinks = {
   appsPage: '/apps',
   googleAdsPage: '/google-ads',
   demoHandwerker: '/demos/handwerker',
-  demoBeauty: '/demo-beauty',
+  demoBeauty: '/demos/kosmetik',
   demoDienstleister: '/demos/lokaler-dienstleister',
   demoFriseursalonV2: '/demos/friseursalon',
   demoHandwerkerV2: '/demos/handwerker',
@@ -568,9 +568,9 @@ function useDocumentTitleSafe(pathname) {
       '/angebotsarchitektur': 'Angebotsarchitektur - STRUKTIVA',
       '/digitale-unternehmensstruktur': 'Digitale Unternehmensstruktur - STRUKTIVA',
       '/digitale-soforthilfe': 'Digitale Soforthilfe für kleine Unternehmen | STRUKTIVA',
-      '/demo-handwerker': 'Demo Handwerker - STRUKTIVA Unternehmensarchitektur',
-      '/demo-beauty': 'Demo Beauty & Kosmetik - STRUKTIVA Unternehmensarchitektur',
-      '/demo-dienstleister': 'Demo Dienstleister - STRUKTIVA Unternehmensarchitektur',
+      '/demo-handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
+      '/demo-beauty': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
+      '/demo-dienstleister': 'Lokaler Dienstleister Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/friseursalon': 'Friseursalon Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/kosmetikstudio': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
@@ -698,7 +698,16 @@ function useDocumentTitleSafe(pathname) {
     setMeta('name', 'twitter:title', activeTitle)
     setMeta('name', 'twitter:description', activeDescription)
     setMeta('name', 'twitter:image', 'https://struktiva-unternehmensarchitektur.vercel.app/struktiva-logo.jpeg')
-    const noIndexPaths = new Set(['/demos/handwerker', '/demos/kosmetik', '/demos/kosmetikstudio', '/demos/lokaler-dienstleister', '/demo-dienstleister', '/lokaler-dienstleister-demo'])
+    const noIndexPaths = new Set([
+      '/demos/handwerker',
+      '/demos/kosmetik',
+      '/demos/kosmetikstudio',
+      '/demos/lokaler-dienstleister',
+      '/demo-handwerker',
+      '/demo-beauty',
+      '/demo-dienstleister',
+      '/lokaler-dienstleister-demo',
+    ])
     setMeta('name', 'robots', noIndexPaths.has(pathname) ? 'noindex, nofollow' : 'index, follow')
   }, [pathname])
 }
@@ -5537,7 +5546,7 @@ function Page() {
   } else if (pathname === '/demo-handwerker') {
     content = <DemoHandwerkerHtmlPage />
   } else if (pathname === '/demo-beauty') {
-    content = <DemoBeautyPage />
+    content = <DemoKosmetikHtmlPage />
   } else if (pathname === '/demo-dienstleister') {
     content = <DemoDienstleisterHtmlPage />
   } else if (pathname === '/demos/friseursalon') {

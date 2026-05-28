@@ -11,21 +11,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://struktiva-unternehmensarchitektur.vercel.app/demo-handwerker</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://struktiva-unternehmensarchitektur.vercel.app/demo-beauty</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://struktiva-unternehmensarchitektur.vercel.app/demo-dienstleister</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://struktiva-unternehmensarchitektur.vercel.app/bewertungs-qr-code</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
