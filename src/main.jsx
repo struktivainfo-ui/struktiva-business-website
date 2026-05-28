@@ -153,7 +153,7 @@ const leistungenDropdownItems = [
 const demoDropdownItems = [
   ['Referenzprojekt Salon Karola', 'Echte Umsetzung: vom Baukasten-Auftritt zur modernen digitalen Salon-Struktur.', 'https://salon-karola-webseite.vercel.app/', Sparkles],
   ['Handwerker-Demo', 'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.', siteLinks.demoHandwerkerV2, Building2],
-  ['Kosmetikstudio-Demo', 'Bunte, kreative Website-Struktur für Kosmetikstudios mit runden Bildwelten, klaren Leistungen, Vertrauen und Anfragewegen.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
+  ['Kosmetikstudio-Demo', 'Moderne Website-Struktur für Kosmetikstudios mit Leistungen, Atmosphäre, Vertrauen, Termin-Anfrage und klarer Kundenführung.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
   ['Lokaler-Dienstleister-Demo', 'Digitale Struktur für lokale Betriebe mit Leistungen, Einsatzgebiet, Vertrauen, Anfragewegen und klarer Kundenführung.', siteLinks.demoDienstleister, BriefcaseBusiness],
   ['Bewertungsstruktur-Demo', 'QR-Code, Bewertungslink und klare Kundenführung zur Bewertung.', siteLinks.demoBewertungsstrukturV2, QrCode],
 ]
@@ -167,7 +167,7 @@ const demoCards = [
   },
   {
     title: 'Kosmetikstudio-Demo',
-    text: 'Bunte, kreative Website-Struktur für Kosmetikstudios mit runden Bildwelten, klaren Leistungen, Vertrauen, Anfragewegen und moderner Beauty-Wirkung.',
+    text: 'Moderne Website-Struktur für Kosmetikstudios mit Leistungen, Atmosphäre, Vertrauen, Termin-Anfrage und klarer Kundenführung.',
     href: siteLinks.demoBeauty,
     icon: Sparkles,
   },
@@ -621,7 +621,7 @@ function useDocumentTitleSafe(pathname) {
       '/demos/handwerker':
         'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.',
       '/demos/kosmetik':
-        'Bunte, kreative Website-Struktur für Kosmetikstudios mit runden Bildwelten, klaren Leistungen, Vertrauen, Anfragewegen und moderner Beauty-Wirkung.',
+        'Moderne Website-Struktur für Kosmetikstudios mit Leistungen, Atmosphäre, Vertrauen, Termin-Anfrage und klarer Kundenführung.',
       '/demos/lokaler-dienstleister':
         'Digitale Struktur für lokale Betriebe mit Leistungen, Einsatzgebiet, Vertrauen, Anfragewegen und klarer Kundenführung.',
       '/demos/bewertungsstruktur':
@@ -6467,3 +6467,4 @@ createRoot(document.getElementById('root')).render(
     <Page />
   </React.StrictMode>,
 )
+
