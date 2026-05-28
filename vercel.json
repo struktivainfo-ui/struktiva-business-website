@@ -4,6 +4,14 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/demos/handwerker",
+      "destination": "/demos/handwerker/index.html"
+    },
+    {
+      "source": "/demo-handwerker",
+      "destination": "/demos/handwerker/index.html"
+    },
+    {
       "source": "/((?!.*\\..*).*)",
       "destination": "/index.html"
     }
