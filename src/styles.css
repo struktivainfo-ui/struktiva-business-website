@@ -500,6 +500,10 @@ img {
   position: relative;
 }
 
+.struktiva-home section[id] {
+  scroll-margin-top: 100px;
+}
+
 .struktiva-home section::before {
   content: '';
   position: absolute;
@@ -607,6 +611,10 @@ img {
 }
 
 @media (max-width: 980px) {
+  .struktiva-home section[id] {
+    scroll-margin-top: 90px;
+  }
+
   .struktiva-home section::before {
     width: min(420px, 88%);
     opacity: 0.5;
