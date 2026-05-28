@@ -16,18 +16,6 @@
       "destination": "/demos/kosmetik/index.html"
     },
     {
-      "source": "/kosmetik-demo",
-      "destination": "/demos/kosmetik/index.html"
-    },
-    {
-      "source": "/demos/kosmetikstudio",
-      "destination": "/demos/kosmetik/index.html"
-    },
-    {
-      "source": "/demo-beauty",
-      "destination": "/demos/kosmetik/index.html"
-    },
-    {
       "source": "/demos/lokaler-dienstleister",
       "destination": "/demos/lokaler-dienstleister/index.html"
     },

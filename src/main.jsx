@@ -153,7 +153,7 @@ const leistungenDropdownItems = [
 const demoDropdownItems = [
   ['Referenzprojekt Salon Karola', 'Echte Umsetzung: vom Baukasten-Auftritt zur modernen digitalen Salon-Struktur.', 'https://salon-karola-webseite.vercel.app/', Sparkles],
   ['Handwerker-Demo', 'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.', siteLinks.demoHandwerkerV2, Building2],
-  ['Kosmetikstudio-Demo', 'Elegante Website-Struktur für Kosmetikstudios mit Leistungen, Buchungswegen, Vertrauen, Bildern und klarer Kundenführung.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
+  ['Kosmetikstudio-Demo', 'Bunte, kreative Website-Struktur für Kosmetikstudios mit runden Bildwelten, klaren Leistungen, Vertrauen und Anfragewegen.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
   ['Lokaler-Dienstleister-Demo', 'Digitale Struktur für lokale Betriebe mit Leistungen, Einsatzgebiet, Vertrauen, Anfragewegen und klarer Kundenführung.', siteLinks.demoDienstleister, BriefcaseBusiness],
   ['Bewertungsstruktur-Demo', 'QR-Code, Bewertungslink und klare Kundenführung zur Bewertung.', siteLinks.demoBewertungsstrukturV2, QrCode],
 ]
@@ -166,8 +166,8 @@ const demoCards = [
     icon: Building2,
   },
   {
-    title: 'Demo Beauty & Kosmetik',
-    text: 'Eine elegante Beispielseite für Kosmetikstudios, Beauty-Dienstleister und lokale Anbieter, die professioneller auftreten und Buchungen leichter machen möchten.',
+    title: 'Kosmetikstudio-Demo',
+    text: 'Bunte, kreative Website-Struktur für Kosmetikstudios mit runden Bildwelten, klaren Leistungen, Vertrauen, Anfragewegen und moderner Beauty-Wirkung.',
     href: siteLinks.demoBeauty,
     icon: Sparkles,
   },
@@ -204,7 +204,7 @@ const demoPages = {
     formCta: 'Projekt anfragen',
   },
   beauty: {
-    title: 'Demo Beauty & Kosmetik – Professioneller Auftritt für lokale Beauty-Dienstleister',
+    title: 'Kosmetikstudio-Demo – Kreativer Auftritt für lokale Beauty-Dienstleister',
     hero: 'Ein Beauty-Auftritt, der hochwertig wirkt und Buchungen leichter macht.',
     subheadline:
       'Diese Beispielseite zeigt, wie ein Kosmetikstudio oder Beauty-Dienstleister Leistungen elegant präsentiert, Vertrauen schafft und Kundinnen direkt zur Anfrage oder Buchung führt.',
@@ -571,11 +571,9 @@ function useDocumentTitleSafe(pathname) {
       '/digitale-unternehmensstruktur': 'Digitale Unternehmensstruktur - STRUKTIVA',
       '/digitale-soforthilfe': 'Digitale Soforthilfe für kleine Unternehmen | STRUKTIVA',
       '/demo-handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
-      '/demo-beauty': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
       '/demo-dienstleister': 'Lokaler Dienstleister Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/friseursalon': 'Friseursalon Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
-      '/demos/kosmetikstudio': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/kosmetik': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/lokaler-dienstleister': 'Lokaler Dienstleister Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/bewertungsstruktur': 'Bewertungsstruktur Demo | STRUKTIVA Unternehmensarchitektur',
@@ -622,10 +620,8 @@ function useDocumentTitleSafe(pathname) {
         'Beispielhafte digitale Struktur für Friseursalons mit Website, Google, Bewertungen, WhatsApp-Anfrage und Kundenführung.',
       '/demos/handwerker':
         'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.',
-      '/demos/kosmetikstudio':
-        'Elegante Website-Struktur für Kosmetikstudios mit Leistungen, Buchungswegen, Vertrauen, Bildern und klarer Kundenführung.',
       '/demos/kosmetik':
-        'Elegante Website-Struktur für Kosmetikstudios mit Leistungen, Buchungswegen, Vertrauen, Bildern und klarer Kundenführung.',
+        'Bunte, kreative Website-Struktur für Kosmetikstudios mit runden Bildwelten, klaren Leistungen, Vertrauen, Anfragewegen und moderner Beauty-Wirkung.',
       '/demos/lokaler-dienstleister':
         'Digitale Struktur für lokale Betriebe mit Leistungen, Einsatzgebiet, Vertrauen, Anfragewegen und klarer Kundenführung.',
       '/demos/bewertungsstruktur':
@@ -703,10 +699,8 @@ function useDocumentTitleSafe(pathname) {
     const noIndexPaths = new Set([
       '/demos/handwerker',
       '/demos/kosmetik',
-      '/demos/kosmetikstudio',
       '/demos/lokaler-dienstleister',
       '/demo-handwerker',
-      '/demo-beauty',
       '/demo-dienstleister',
       '/lokaler-dienstleister-demo',
     ])
@@ -1608,7 +1602,7 @@ function DemoOverviewSectionPremium() {
             const previewImage =
               demo.title === 'Demo Handwerker'
                 ? struktivaImages.handwerker
-                : demo.title === 'Demo Beauty & Kosmetik'
+                : demo.title === 'Kosmetikstudio-Demo'
                 ? struktivaImages.beauty
                 : struktivaImages.dienstleister
             return (
@@ -5583,17 +5577,13 @@ function Page() {
     content = <OfferDetailPage title={page.title} intro={page.intro} points={page.points} pathname={pathname} />
   } else if (pathname === '/demo-handwerker') {
     content = <DemoHandwerkerHtmlPage />
-  } else if (pathname === '/demo-beauty') {
-    content = <DemoKosmetikHtmlPage />
   } else if (pathname === '/demo-dienstleister') {
     content = <DemoDienstleisterHtmlPage />
   } else if (pathname === '/demos/friseursalon') {
     content = <DemoFriseursalonPage />
   } else if (pathname === '/demos/handwerker') {
     content = <DemoHandwerkerHtmlPage />
-  } else if (pathname === '/demos/kosmetikstudio') {
-    content = <DemoKosmetikHtmlPage />
-  } else if (pathname === '/demos/kosmetik' || pathname === '/kosmetik-demo') {
+  } else if (pathname === '/demos/kosmetik') {
     content = <DemoKosmetikHtmlPage />
   } else if (pathname === '/demos/lokaler-dienstleister' || pathname === '/lokaler-dienstleister-demo') {
     content = <DemoDienstleisterHtmlPage />
