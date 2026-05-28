@@ -5606,7 +5606,7 @@ function Page() {
   }
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="struktiva-v3 min-h-screen text-white">
       {!isDemoRoute ? <Header pathname={pathname} /> : null}
       {content}
       {!isDemoRoute ? <Footer /> : null}
