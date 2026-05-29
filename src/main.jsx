@@ -2597,6 +2597,25 @@ function HeroSectionPremium() {
 }
 
 function ServicesSectionPremium() {
+  const leistungGruppen = [
+    {
+      title: 'Webseiten & Auftritt',
+      items: ['professionelle Webseiten', 'Landingpages', 'Onepager', 'Unternehmenswebseiten', 'Website-Relaunch'],
+    },
+    {
+      title: 'Sichtbarkeit & Kontaktwege',
+      items: ['Google-Sichtbarkeit', 'digitale Kundenführung', 'WhatsApp-Kontaktstruktur', 'Bewertungsstruktur', 'QR-Code-Strukturen'],
+    },
+    {
+      title: 'Kommunikation & Reichweite',
+      items: ['Social-Media- und Pinterest-Struktur', 'Newsletter-Einbindung'],
+    },
+    {
+      title: 'Systeme & Unternehmensstruktur',
+      items: ['Unternehmens-Apps', 'Betriebs-Dashboards', 'digitale Ordnungssysteme', 'Tagesabschluss-Systeme', 'Kassenstruktur-Systeme', 'interne Strukturbausteine', 'digitale Unternehmensarchitektur'],
+    },
+  ]
+
   return (
     <section id="leistungen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
@@ -2658,7 +2677,7 @@ function ServicesSectionPremium() {
                   <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
                   {service.subtitle ? <p className="mt-2 text-sm font-medium text-[#F2D98B]">{service.subtitle}</p> : null}
                   <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{service.description}</p>
-                  <p className="mt-4 text-sm font-semibold text-[#D8B45A]">{service.price}</p>
+                  {isSoforthilfeCard ? <p className="mt-4 text-sm font-semibold text-[#D8B45A]">{service.price}</p> : null}
                   {service.ctaLabel ? (
                     <a
                       href={service.href}
@@ -2678,6 +2697,31 @@ function ServicesSectionPremium() {
             </motion.div>
           )})}
         </motion.div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          {leistungGruppen.map((group) => (
+            <article key={group.title} className="rounded-[1.7rem] border border-white/14 bg-white/[0.04] p-5 shadow-premium">
+              <h3 className="text-lg font-semibold text-white">{group.title}</h3>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span key={item} className="rounded-full border border-[#D8B45A]/28 bg-[#D8B45A]/10 px-3 py-1 text-xs font-medium text-[#F2D98B]">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10 rounded-[1.8rem] border border-[#D8B45A]/24 bg-white/[0.05] p-6 shadow-premium">
+          <p className="text-sm leading-7 text-[#D7DCE5] md:text-base">
+            Die Kosten richten sich nach Umfang, Ausgangslage und gewünschter Struktur. Manche Betriebe benötigen nur eine einfache digitale Grundlage, andere eine vollständige Unternehmensstruktur mit Website, Google-Sichtbarkeit, Kontaktwegen, Kundenführung und internen Systemen. Deshalb besprechen wir zuerst, was wirklich sinnvoll ist.
+          </p>
+          <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+            Kostenlose Ersteinschätzung anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </div>
 
       </div>
     </section>
@@ -3546,136 +3590,87 @@ function BetreuungSection() {
 }
 
 function PricingArchitectureSection() {
-  const groups = [
-    {
-      title: 'Einstieg / Soforthilfe',
-      items: [
-        'Landingpage ab 299 € inklusive Mehrwertsteuer',
-        'Onepager ab 349 € inklusive Mehrwertsteuer',
-        'Website-Relaunch ab 499 € inklusive Mehrwertsteuer',
-      ],
-    },
-    {
-      title: 'Kernangebote',
-      items: [
-        'Unternehmenswebsite ab 599 € inklusive Mehrwertsteuer',
-        'Mehrseitige Website ab 899 € inklusive Mehrwertsteuer',
-        'Premium-Webauftritt ab 1.499 € inklusive Mehrwertsteuer',
-      ],
-    },
-    {
-      title: 'Systemangebote',
-      items: [
-        'Betriebs-Dashboard ab 799 € inklusive Mehrwertsteuer',
-        'Digitale Ordnungssysteme ab 899 € inklusive Mehrwertsteuer',
-        'Unternehmens-App ab 999 € inklusive Mehrwertsteuer',
-      ],
-    },
-    {
-      title: 'Monatliche Betreuung',
-      items: [
-        'Basis-Betreuung ab 199 € / Monat inklusive Mehrwertsteuer',
-        'Struktur-Betreuung ab 299 € / Monat inklusive Mehrwertsteuer',
-        'Premium-Betreuung ab 499 € / Monat inklusive Mehrwertsteuer',
-      ],
-    },
-  ]
-
   const packages = [
     {
-      title: 'STRUKTIVA Start',
-      price: 'ab 599 € inklusive Mehrwertsteuer',
-      text: 'Für kleine Unternehmen, die professionell sichtbar werden möchten.',
-      points: ['professionelle Website-Grundstruktur', 'mobile Optimierung', 'klare Leistungsdarstellung', 'Kontaktbereich', 'SEO-Grundstruktur', 'einfache Kundenführung', 'Impressum-/Datenschutz-Verlinkung'],
+      title: 'STRUKTIVA Einstieg',
+      price: 'ab 199 € inklusive Mehrwertsteuer',
+      text: 'Für kleine Unternehmen, Selbstständige und lokale Dienstleister, die schnell eine klare digitale Grundlage brauchen.',
+      points: ['kurze digitale Erststruktur', 'Analyse von Website, Google-Auftritt oder Kontaktwegen', 'klare Handlungsempfehlung', 'einfache Kontaktstruktur', 'Prioritätenplan für die nächsten Schritte'],
+      cta: 'Einstieg anfragen',
     },
     {
-      title: 'STRUKTIVA Wachstum',
-      price: 'ab 899 € inklusive Mehrwertsteuer',
-      text: 'Für Betriebe, die Website, Google und Kontaktwege verbinden möchten.',
-      points: ['mehrseitige Website-Struktur', 'Google-Sichtbarkeitsgrundlage', 'Kontakt- und Anfrageführung', 'Bewertungsstruktur', 'WhatsApp-Kontaktweg', 'klare Vertrauenselemente'],
+      title: 'STRUKTIVA Start',
+      price: 'ab 299 € inklusive Mehrwertsteuer',
+      text: 'Für Betriebe, die eine einfache Website-, Landingpage- oder Onepager-Struktur brauchen.',
+      points: ['einfache Website- oder Landingpage-Struktur', 'klare Leistungsdarstellung', 'Kontaktbereich', 'mobile Optimierung', 'SEO-Grundstruktur', 'Impressum-/Datenschutz-Verlinkung', 'einfache Kundenführung'],
+      cta: 'Start-Paket anfragen',
+    },
+    {
+      title: 'STRUKTIVA Struktur',
+      price: 'ab 599 € inklusive Mehrwertsteuer',
+      text: 'Für Unternehmen, die Website, Vertrauen, Kontaktwege und Kundenführung professioneller verbinden möchten.',
+      points: ['Unternehmenswebsite-Grundstruktur', 'klare Angebots- und Leistungsstruktur', 'Kontakt- und Anfrageführung', 'Google-Sichtbarkeitsgrundlage', 'Bewertungsstruktur', 'WhatsApp-Kontaktweg', 'Vertrauenselemente', 'strukturierter Seitenaufbau'],
+      cta: 'Struktur-Paket anfragen',
     },
     {
       title: 'STRUKTIVA System',
-      price: 'ab 1.499 € inklusive Mehrwertsteuer',
-      text: 'Für Unternehmen, die digitale Struktur im Außenauftritt und im Alltag möchten.',
-      points: ['Premium-Webauftritt', 'Google- und Bewertungsstruktur', 'digitale Kundenführung', 'interne Strukturbausteine', 'Dashboard- oder App-Grundkonzept', 'erweiterbare Unternehmensarchitektur'],
+      price: 'ab 799 € inklusive Mehrwertsteuer',
+      text: 'Für Betriebe, die nicht nur sichtbar werden möchten, sondern digitale Struktur im Außenauftritt und im Alltag brauchen.',
+      points: ['digitale Ordnungssysteme', 'Betriebs-Dashboard-Grundstruktur', 'App-Grundkonzept oder interne Systemstruktur', 'Tagesabschluss- oder Kassenstruktur-Grundlage', 'Kundenführungsstruktur', 'interne Strukturbausteine', 'erweiterbare Unternehmensarchitektur'],
+      cta: 'System-Paket anfragen',
     },
   ]
 
-  const minis = [
-    'Google-Unternehmensprofil-Struktur ab 299 € inklusive Mehrwertsteuer',
-    'Bewertungs- und QR-Code-System ab 149 € inklusive Mehrwertsteuer',
-    'WhatsApp-Kontaktstruktur ab 199 € inklusive Mehrwertsteuer',
-    'Social-Media- und Pinterest-Grundstruktur ab 249 € inklusive Mehrwertsteuer',
-  ]
-  const compareRows = [
-    ['Geeignet für', 'Erster professioneller Auftritt', 'Mehr Anfragen durch klare Verknüpfung', 'Außenwirkung plus interne Struktur'],
-    ['Website-Struktur', 'Grundstruktur', 'Mehrseitige Struktur', 'Premium-Webauftritt'],
-    ['Google & Bewertungen', 'Basis', 'Erweitert', 'Erweitert + Systemlogik'],
-    ['Interne Struktur', 'Optional', 'Optional', 'Im Paket vorgesehen'],
+  const betreuung = [
+    'Basis-Betreuung ab 199 € / Monat inklusive Mehrwertsteuer',
+    'Struktur-Betreuung ab 299 € / Monat inklusive Mehrwertsteuer',
+    'Premium-Betreuung ab 499 € / Monat inklusive Mehrwertsteuer',
   ]
 
   return (
     <section id="preise" className="scroll-mt-28 px-5 py-14 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeader eyebrow="Preise & Pakete" title="Transparente Einstiegspreise mit klarer Struktur" text="Keine Einzellösung. Sondern Unternehmensarchitektur." />
+          <SectionHeader eyebrow="Pakete & Preise" title="Vier klare Pakete für einen einfachen Einstieg" text="Die Pakete geben Orientierung und machen den Start planbar." />
         </Reveal>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {groups.map((group) => (
-            <div key={group.title} className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
-              <h3 className="text-xl font-semibold text-white">{group.title}</h3>
-              <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{group.items.map((item) => <p key={item}>- {item}</p>)}</div>
-            </div>
-          ))}
-        </div>
 
-        <h3 className="mt-12 text-2xl font-semibold text-white">Hauptpakete</h3>
-        <div className="mt-5 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
           {packages.map((pkg) => (
             <article key={pkg.title} className="rounded-[1.7rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-5 shadow-premium">
-              {pkg.title === 'STRUKTIVA Wachstum' ? (
-                <p className="mb-2 inline-flex rounded-full border border-[#D8B45A]/35 bg-[#D8B45A]/12 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]">Empfohlen</p>
-              ) : null}
               <h4 className="text-xl font-semibold text-white">{pkg.title}</h4>
               <p className="mt-2 text-sm font-semibold text-[#D8B45A]">{pkg.price}</p>
               <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{pkg.text}</p>
               <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
               <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                {pkg.title === 'STRUKTIVA Start' ? 'Start-Paket anfragen' : pkg.title === 'STRUKTIVA Wachstum' ? 'Wachstums-Paket anfragen' : 'System-Paket anfragen'}
+                {pkg.cta}
                 <ArrowRight className="h-4 w-4" />
               </a>
             </article>
           ))}
         </div>
 
-        <div className="mt-8 overflow-hidden rounded-[1.7rem] border border-white/14 bg-white/[0.04] shadow-premium">
-          <div className="grid grid-cols-4 border-b border-white/10 bg-white/[0.03] text-xs font-semibold uppercase tracking-[0.14em] text-[#D8B45A]">
-            <p className="px-4 py-3">Vergleich</p>
-            <p className="px-4 py-3">Start</p>
-            <p className="px-4 py-3">Wachstum</p>
-            <p className="px-4 py-3">System</p>
-          </div>
-          {compareRows.map(([label, start, growth, system]) => (
-            <div key={label} className="grid grid-cols-4 border-b border-white/10 text-xs md:text-sm text-[#D7DCE5] last:border-b-0">
-              <p className="px-4 py-3 font-semibold text-white">{label}</p>
-              <p className="px-4 py-3">{start}</p>
-              <p className="px-4 py-3">{growth}</p>
-              <p className="px-4 py-3">{system}</p>
-            </div>
-          ))}
-        </div>
-
         <div className="mt-10 rounded-[1.7rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium">
-          <h3 className="text-2xl font-semibold text-white">Schnelle digitale Strukturbausteine</h3>
-          <div className="mt-4 grid gap-3 md:grid-cols-2">
-            {minis.map((item) => (
+          <h3 className="text-2xl font-semibold text-white">Monatliche Betreuung</h3>
+          <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">Für laufende Pflege, Anpassungen, Weiterentwicklung und digitale Struktur im Betrieb.</p>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            {betreuung.map((item) => (
               <p key={item} className="rounded-xl border border-white/12 bg-white/[0.04] px-3 py-2 text-sm text-[#D7DCE5]">{item}</p>
             ))}
           </div>
-          <p className="mt-5 text-sm leading-7 text-[#94A3B8]">
-            Alle Preise verstehen sich inklusive Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
+        </div>
+
+        <div className="mt-8 rounded-[1.7rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium">
+          <h3 className="text-2xl font-semibold text-white">Pakete sind nicht zwingend</h3>
+          <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
+            Unsere Pakete geben Orientierung und machen den Einstieg einfacher. Auf Wunsch können einzelne Leistungen aber auch separat geplant und umgesetzt werden – zum Beispiel nur eine Landingpage, ein Website-Relaunch, ein Dashboard, eine WhatsApp-Kontaktstruktur, eine Bewertungsstruktur oder ein digitales Ordnungssystem.
           </p>
+          <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
+            Nach einer kurzen Einschätzung sagen wir ehrlich, ob ein Paket sinnvoll ist oder ob eine einzelne Leistung ausreicht.
+          </p>
+          <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+            Einzelleistung anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
