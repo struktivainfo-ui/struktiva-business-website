@@ -4736,22 +4736,13 @@ const websiteFormats = [
   ['Premium-Webauftritt', 'Für Unternehmen, die einen hochwertigen digitalen Markenauftritt mit starker Optik, klarer Struktur und überzeugender Kundenführung wünschen.'],
 ]
 
-const websiteFormatsWithPrices = [
-  { title: 'Unternehmenswebsite', price: 'ab 599 €', text: 'Für kleine Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.' },
-  { title: 'Landingpage', price: 'ab 299 €', text: 'Für einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage geführt werden sollen.' },
-  { title: 'Onepager', price: 'ab 349 €', text: 'Eine kompakte Website auf einer Seite – ideal für klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.' },
-  { title: 'Mehrseitige Website', price: 'ab 899 €', text: 'Für Unternehmen mit mehreren Leistungen, Referenzen, Team, Preisen, Kontaktbereich und ausführlicher Struktur.' },
-  { title: 'Branchenwebsite', price: 'ab 749 €', text: 'Websites speziell für Handwerk, Beauty, Friseur, Kosmetik, Beratung, Dienstleistung oder lokale Betriebe.' },
-  { title: 'Portfolio-Website', price: 'ab 499 €', text: 'Für Selbstständige, Kreative, Berater oder Dienstleister, die Arbeiten, Projekte oder Referenzen hochwertig präsentieren möchten.' },
-  { title: 'Angebotsseite', price: 'ab 249 €', text: 'Für einzelne Leistungen oder Pakete, die klar erklärt und verkaufsstark dargestellt werden sollen.' },
-  { title: 'Vertrauensseite', price: 'ab 299 €', text: 'Für Unternehmen, die Bewertungen, Referenzen, Vorher-Nachher-Beispiele oder Qualität stärker sichtbar machen möchten.' },
-  { title: 'Termin- und Kontaktwebsite', price: 'ab 399 €', text: 'Für Betriebe, bei denen schnelle Kontaktaufnahme, WhatsApp, Telefon, Buchungsanfrage oder Terminwunsch im Mittelpunkt stehen.' },
-  { title: 'Website mit Blog oder Ratgeberbereich', price: 'ab 999 €', text: 'Für Unternehmen, die langfristig über Google gefunden werden möchten und regelmäßig Inhalte veröffentlichen wollen.' },
-  { title: 'Website mit Newsletter-Einbindung', price: 'ab 599 €', text: 'Für Unternehmen, die Interessenten sammeln, Kunden binden oder Angebote regelmäßig kommunizieren möchten.' },
-  { title: 'Website mit QR-Code-Anbindung', price: 'ab 449 €', text: 'Für Flyer, Visitenkarten, Schaufenster, Bewertungen oder Aktionen, die direkt auf passende Seiten führen sollen.' },
-  { title: 'Demo-Website', price: 'ab 249 €', text: 'Als Vorschau oder Konzeptseite, damit Kunden vorab sehen können, wie ihr digitaler Auftritt wirken könnte.' },
-  { title: 'Website-Relaunch', price: 'ab 499 €', text: 'Für bestehende Webseiten, die moderner, klarer, schneller und professioneller aufgebaut werden sollen.' },
-  { title: 'Premium-Webauftritt', price: 'ab 1.499 €', text: 'Für Unternehmen, die einen hochwertigen digitalen Markenauftritt mit starker Optik, klarer Struktur und überzeugender Kundenführung wünschen.' },
+const websiteFormatsCards = [
+  { title: 'Unternehmenswebsite', text: 'Für kleine Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.' },
+  { title: 'Landingpage', text: 'Für einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage geführt werden sollen.' },
+  { title: 'Onepager', text: 'Eine kompakte Website auf einer Seite – ideal für klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.' },
+  { title: 'Mehrseitige Website', text: 'Für Unternehmen mit mehreren Leistungen, Referenzen, Team, Kontaktbereich und ausführlicher Struktur.' },
+  { title: 'Branchenwebsite', text: 'Websites speziell für Handwerk, Beauty, Friseur, Kosmetik, Beratung, Dienstleistung oder lokale Betriebe.' },
+  { title: 'Portfolio-Website', text: 'Für Selbstständige, Kreative, Berater oder Dienstleister, die Arbeiten, Projekte oder Referenzen hochwertig präsentieren möchten.' },
 ]
 
 function WebsiteFuerKleineUnternehmenPage() {
@@ -4786,29 +4777,34 @@ function WebsiteFuerKleineUnternehmenPage() {
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {websiteFormatsWithPrices.map((item) => (
+            {websiteFormatsCards.map((item) => (
               <article key={item.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
                 <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                <p className="mt-1 text-sm font-semibold text-[#D8B45A]">{item.price} inklusive Mehrwertsteuer</p>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{item.text}</p>
               </article>
             ))}
           </div>
 
-          <p className="mt-6 text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Nicht jede Website muss groß sein. Entscheidend ist, dass sie zum Unternehmen, zum Angebot und zum Ziel passt.
-          </p>
-          <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
-            STRUKTIVA entwickelt Webseiten nicht als einfache Online-Visitenkarte, sondern als klare digitale Struktur: verständlich, mobil optimiert, vertrauensbildend und auf Anfragen ausgerichtet.
-          </p>
-
-          <p className="mt-2 text-sm leading-7 text-[#94A3B8]">
-            Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
-          </p>
+          <div className="mt-7 rounded-2xl border border-[#D8B45A]/24 bg-[#D8B45A]/8 p-5">
+            <h3 className="text-lg font-semibold text-white">Welche Website sinnvoll ist, hängt vom Ziel ab.</h3>
+            <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
+              Die passende Lösung richtet sich nach Umfang, Branche, Ausgangslage und gewünschter Wirkung. Manche Betriebe brauchen nur eine einfache digitale Grundlage, andere eine vollständige Website mit Leistungen, Vertrauen, Google-Sichtbarkeit, Kontaktwegen und Kundenführung.
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
+              Wir besprechen zuerst, was wirklich sinnvoll ist – damit keine unnötige Struktur entsteht.
+            </p>
+            <a
+              href={siteLinks.contact}
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+            >
+              Kostenlose Ersteinschätzung anfragen
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
 
           <a
-            href={`mailto:${contactDetails.email}`}
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+            href={siteLinks.contact}
+            className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
           >
             Website-Format unverbindlich besprechen
             <ArrowRight className="h-4 w-4" />
