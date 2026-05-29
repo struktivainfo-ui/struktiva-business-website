@@ -3557,9 +3557,9 @@ function WhyStruktivaSection() {
 
 function BetreuungSection() {
   const plans = [
-    ['Basis-Betreuung', 'ab 199 € / Monat inklusive Mehrwertsteuer', 'Für einfache Pflege, kleinere Anpassungen und technische Grundbetreuung.'],
-    ['Struktur-Betreuung', 'ab 299 € / Monat inklusive Mehrwertsteuer', 'Für regelmäßige Anpassungen, Inhalte, Google-Struktur, Kontaktwege und laufende Optimierung.'],
-    ['Premium-Betreuung', 'ab 499 € / Monat inklusive Mehrwertsteuer', 'Für intensivere Begleitung, Erweiterungen, Strukturarbeit, Kampagnen und digitale Weiterentwicklung.'],
+    ['Basis-Betreuung', 'ab 199 € / Monat', 'inklusive Mehrwertsteuer', 'Für kleinere laufende Anpassungen, Pflege und einfache Aktualisierungen.'],
+    ['Struktur-Betreuung', 'ab 299 € / Monat', 'inklusive Mehrwertsteuer', 'Für regelmäßige Weiterentwicklung, Strukturpflege, Inhalte, Kontaktwege und Sichtbarkeit.'],
+    ['Premium-Betreuung', 'ab 499 € / Monat', 'inklusive Mehrwertsteuer', 'Für intensive laufende Betreuung, Erweiterungen, Systeme, Strukturaufbau und digitale Weiterentwicklung.'],
   ]
 
   return (
@@ -3572,10 +3572,11 @@ function BetreuungSection() {
           centered={false}
         />
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
-          {plans.map(([title, price, text]) => (
+          {plans.map(([title, price, vatHint, text]) => (
             <article key={title} className="rounded-2xl border border-white/14 bg-white/[0.05] p-5">
               <h3 className="text-xl font-semibold text-white">{title}</h3>
-              <p className="mt-2 text-sm font-semibold text-[#D8B45A]">{price}</p>
+              <p className="mt-2 text-lg font-semibold text-[#D8B45A]">{price}</p>
+              <p className="mt-1 text-xs font-medium uppercase tracking-[0.08em] text-[#F2D98B]">{vatHint}</p>
               <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
             </article>
           ))}
@@ -3583,10 +3584,10 @@ function BetreuungSection() {
         <div className="mt-7 rounded-2xl border border-[#D8B45A]/24 bg-[#D8B45A]/10 p-5">
           <h3 className="text-lg font-semibold text-white">Betreuung nur, wenn sie wirklich sinnvoll ist</h3>
           <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Unsere monatliche Betreuung ist für Unternehmen gedacht, die laufend Unterstützung brauchen: Pflege der Website, Anpassungen, Erweiterungen, Google-Sichtbarkeit, Bewertungen, Kontaktwege oder digitale Strukturen.
+            Monatliche Betreuung ist für Unternehmen gedacht, die regelmäßig Unterstützung brauchen – zum Beispiel bei Website-Pflege, neuen Inhalten, Anpassungen, Google-Sichtbarkeit, Bewertungsstruktur, Kontaktwegen oder digitalen Systemen.
           </p>
           <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Wenn Sie nur eine Website möchten und später nur gelegentlich Änderungen benötigen, ist keine monatliche Betreuung zwingend notwendig. In diesem Fall können einzelne Anpassungen separat nach Aufwand umgesetzt werden.
+            Wenn Sie nur eine Website möchten und später nur gelegentlich etwas ändern lassen, ist keine monatliche Betreuung zwingend notwendig. In diesem Fall können einzelne Anpassungen separat nach Aufwand angefragt werden.
           </p>
           <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
             Wir empfehlen keine Betreuung, wenn sie nicht notwendig ist. Vorab klären wir ehrlich, ob ein monatliches Paket sinnvoll ist oder ob einzelne Änderungen ausreichen.
@@ -3595,7 +3596,7 @@ function BetreuungSection() {
         <div className="mt-5 rounded-2xl border border-white/14 bg-white/[0.04] p-5">
           <h3 className="text-base font-semibold text-white">Einzelne Änderungen sind auch möglich</h3>
           <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Kleine Anpassungen, neue Bilder, Textänderungen oder gelegentliche Erweiterungen können auch separat angefragt werden, wenn kein laufender Betreuungsbedarf besteht.
+            Kleine Textänderungen, neue Bilder, einzelne neue Abschnitte oder gelegentliche Anpassungen können auch separat umgesetzt werden, wenn kein laufender Betreuungsbedarf besteht.
           </p>
           <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
             Änderung anfragen
