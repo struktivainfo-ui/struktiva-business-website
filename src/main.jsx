@@ -2529,9 +2529,6 @@ function HeroSectionPremium() {
                 Digitale Struktur anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={siteLinks.leistungenPage} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/25 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]">
-                Leistungen ansehen
-              </a>
             </motion.div>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-3 text-sm text-[#D7DCE5]">
               Kostenlose Ersteinschätzung für Ihr Unternehmen möglich.
