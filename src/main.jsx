@@ -3561,9 +3561,9 @@ function WhyStruktivaSection() {
 
 function BetreuungSection() {
   const plans = [
-    ['Basis-Betreuung', 'ab 199 € / Monat', 'inklusive Mehrwertsteuer', 'Für kleinere laufende Anpassungen, Pflege und einfache Aktualisierungen.'],
-    ['Struktur-Betreuung', 'ab 299 € / Monat', 'inklusive Mehrwertsteuer', 'Für regelmäßige Weiterentwicklung, Strukturpflege, Inhalte, Kontaktwege und Sichtbarkeit.'],
-    ['Premium-Betreuung', 'ab 499 € / Monat', 'inklusive Mehrwertsteuer', 'Für intensive laufende Betreuung, Erweiterungen, Systeme, Strukturaufbau und digitale Weiterentwicklung.'],
+    ['Basis-Betreuung', 'ab 99 € / Monat', 'inklusive Mehrwertsteuer', 'Für kleinere laufende Anpassungen, Pflege und einfache Aktualisierungen.'],
+    ['Struktur-Betreuung', 'ab 199 € / Monat', 'inklusive Mehrwertsteuer', 'Für regelmäßige Weiterentwicklung, Strukturpflege, Inhalte, Kontaktwege und Sichtbarkeit.'],
+    ['Premium-Betreuung', 'ab 399 € / Monat', 'inklusive Mehrwertsteuer', 'Für intensive laufende Betreuung, Erweiterungen, Systeme, Strukturaufbau und digitale Weiterentwicklung.'],
   ]
 
   return (
@@ -3658,9 +3658,9 @@ function PricingArchitectureSection() {
   ]
 
   const betreuung = [
-    'Basis-Betreuung ab 199 € / Monat inklusive Mehrwertsteuer',
-    'Struktur-Betreuung ab 299 € / Monat inklusive Mehrwertsteuer',
-    'Premium-Betreuung ab 499 € / Monat inklusive Mehrwertsteuer',
+    'Basis-Betreuung ab 99 € / Monat inklusive Mehrwertsteuer',
+    'Struktur-Betreuung ab 199 € / Monat inklusive Mehrwertsteuer',
+    'Premium-Betreuung ab 399 € / Monat inklusive Mehrwertsteuer',
   ]
 
   return (
