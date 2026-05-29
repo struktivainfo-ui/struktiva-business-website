@@ -3580,6 +3580,28 @@ function BetreuungSection() {
             </article>
           ))}
         </div>
+        <div className="mt-7 rounded-2xl border border-[#D8B45A]/24 bg-[#D8B45A]/10 p-5">
+          <h3 className="text-lg font-semibold text-white">Betreuung nur, wenn sie wirklich sinnvoll ist</h3>
+          <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
+            Unsere monatliche Betreuung ist für Unternehmen gedacht, die laufend Unterstützung brauchen: Pflege der Website, Anpassungen, Erweiterungen, Google-Sichtbarkeit, Bewertungen, Kontaktwege oder digitale Strukturen.
+          </p>
+          <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
+            Wenn Sie nur eine Website möchten und später nur gelegentlich Änderungen benötigen, ist keine monatliche Betreuung zwingend notwendig. In diesem Fall können einzelne Anpassungen separat nach Aufwand umgesetzt werden.
+          </p>
+          <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
+            Wir empfehlen keine Betreuung, wenn sie nicht notwendig ist. Vorab klären wir ehrlich, ob ein monatliches Paket sinnvoll ist oder ob einzelne Änderungen ausreichen.
+          </p>
+        </div>
+        <div className="mt-5 rounded-2xl border border-white/14 bg-white/[0.04] p-5">
+          <h3 className="text-base font-semibold text-white">Einzelne Änderungen sind auch möglich</h3>
+          <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
+            Kleine Anpassungen, neue Bilder, Textänderungen oder gelegentliche Erweiterungen können auch separat angefragt werden, wenn kein laufender Betreuungsbedarf besteht.
+          </p>
+          <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+            Änderung anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </div>
         <a href={siteLinks.contact} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
           Betreuung anfragen
           <ArrowRight className="h-4 w-4" />
