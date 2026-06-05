@@ -3037,105 +3037,82 @@ function WissenArticlePage({ article }) {
 }
 
 function WhatStruktivaBuildsSection() {
-  const groups = [
-    {
-      title: 'Außenauftritt & Sichtbarkeit',
-      text: 'Alles, was Ihr Unternehmen digital nach außen klarer, professioneller und auffindbarer macht.',
-      accent: 'border-[#D8B45A]/26 bg-[linear-gradient(160deg,rgba(17,13,10,0.42),rgba(40,29,20,0.18),rgba(11,8,6,0.28))]',
-      items: [
-        [LayoutTemplate, 'Professionelle Webseiten', 'Moderne Website-Strukturen, die Leistungen klar zeigen und Vertrauen aufbauen.'],
-        [Target, 'Landingpages', 'Gezielte Seiten für Angebote, Aktionen und klare Anfrageführung.'],
-        [Search, 'Google-Sichtbarkeit', 'Bessere Auffindbarkeit durch klare lokale Struktur und saubere Inhalte.'],
-        [Building2, 'Google-Unternehmensprofil', 'Professionelle Profilstruktur für mehr Vertrauen und lokale Sichtbarkeit.'],
-        [BadgeCheck, 'Newsletter-Einbindung', 'Professionelle Kundenbindung über klar integrierte Newsletter-Struktur.'],
-        [Megaphone, 'Social-Media- & Pinterest-Struktur', 'Planbare Inhalte statt unregelmäßiger Einzelposts.'],
-      ],
-    },
-    {
-      title: 'Kundenführung & Anfragewege',
-      text: 'Damit Interessenten schneller verstehen, vertrauen und den passenden Kontaktweg wählen.',
-      accent: 'border-white/14 bg-white/[0.04]',
-      items: [
-        [MousePointerClick, 'Digitale Kundenführung', 'Kontaktwege, CTAs und Seitenlogik auf Anfragen ausgerichtet.'],
-        [MessageCircle, 'WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Angebotsseiten.'],
-        [QrCode, 'QR-Code- & Bewertungsstrukturen', 'Einfache Bewertungswege für mehr Sichtbarkeit und Vertrauen.'],
-      ],
-    },
-    {
-      title: 'Interne Systeme & Ordnung',
-      text: 'Digitale Bausteine für Übersicht, saubere Abläufe und mehr Struktur im Arbeitsalltag.',
-      accent: 'border-[#7ea5df]/18 bg-[linear-gradient(160deg,rgba(7,17,31,0.8),rgba(11,31,58,0.5),rgba(5,10,18,0.9))]',
-      items: [
-        [Smartphone, 'Unternehmens-Apps', 'Digitale Werkzeuge für wiederkehrende Abläufe im Betrieb.'],
-        [PanelsTopLeft, 'Betriebs-Dashboards', 'Übersichten für Aufgaben, Kennzahlen und tägliche Steuerung.'],
-        [ClipboardList, 'Digitale Ordnungssysteme', 'Strukturierte Prozesse statt digitalem Chaos.'],
-        [CalendarDays, 'Tagesabschluss-Systeme', 'Saubere Erfassung täglicher Werte und klarer Ablauf.'],
-        [BarChart3, 'Kassenstruktur-Systeme', 'Transparente Kassenübersicht für den Arbeitsalltag.'],
-      ],
-    },
+  const steps = [
+    ['Verstehen', 'Besucher erkennen schnell, was Ihr Unternehmen anbietet und wofür es steht.'],
+    ['Vertrauen', 'Website, Google, Bewertungen und klare Struktur schaffen einen professionellen Eindruck.'],
+    ['Kontakt aufnehmen', 'Interessenten finden direkt den passenden Weg über Formular, Telefon oder WhatsApp.'],
+  ]
+
+  const overviewTiles = [
+    [LayoutTemplate, 'Webseiten & Landingpages', '#webseiten-landingpages'],
+    [Search, 'Google-Sichtbarkeit', '#google-sichtbarkeit'],
+    [MousePointerClick, 'Kundenführung & Anfragewege', '#kundenfuehrung-anfragewege'],
+    [MessageCircle, 'WhatsApp-Kontaktstruktur', '#whatsapp-kontaktstruktur'],
+    [QrCode, 'Bewertungs- & QR-Strukturen', '#bewertungs-qr-strukturen'],
+    [Smartphone, 'Unternehmens-Apps', '#unternehmens-apps'],
+    [PanelsTopLeft, 'Betriebs-Dashboards', '#betriebs-dashboards'],
+    [ClipboardList, 'Digitale Ordnungssysteme', '#digitale-ordnungssysteme'],
+    [Megaphone, 'Social Media & Pinterest-Struktur', '#social-media-pinterest'],
   ]
 
   return (
     <section id="leistungen" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeader
-            eyebrow="Leistungen"
-            title="Was wir für Ihr Unternehmen aufbauen"
-            text="STRUKTIVA entwickelt keine losen Einzellösungen. Wir verbinden die wichtigsten digitalen Bausteine Ihres Unternehmens zu einer klaren, professionellen und verständlichen Struktur."
-          />
+          <div className="grid gap-6 xl:grid-cols-[0.88fr_1.12fr] xl:items-start">
+            <div>
+              <SectionHeader
+                eyebrow="STRUKTIVA erklärt"
+                title="Keine normale Webdesign-Seite. Sondern klare digitale Unternehmensstruktur."
+                text="STRUKTIVA verbindet Website, Google-Sichtbarkeit, Kontaktwege, Kundenführung und auf Wunsch interne Systeme zu einer nachvollziehbaren Struktur. So entsteht kein lose zusammengebauter Online-Auftritt, sondern ein klar geführtes digitales Gesamtbild."
+                centered={false}
+              />
+            </div>
+            <div className="grid gap-3 md:grid-cols-3">
+              {steps.map(([title, text]) => (
+                <div key={title} className="rounded-[1.35rem] border border-white/12 bg-white/[0.04] p-4 shadow-premium">
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">{title}</p>
+                  <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </Reveal>
-        <div className="mt-10 grid gap-5 xl:grid-cols-[0.92fr_1.08fr]">
-          <Reveal>
-            <article className="rounded-[2rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/85">STRUKTIVA-Bausteine</p>
-              <h3 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Nicht alles gleichzeitig. Sondern dort, wo Struktur sofort Wirkung entfaltet.</h3>
-              <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
-                Manche Unternehmen brauchen zuerst einen klaren Außenauftritt. Andere verlieren Anfragen durch unklare Kontaktwege. Wieder andere haben intern zu viel digitale Unordnung. STRUKTIVA setzt genau dort an, wo der größte Hebel liegt.
+        <div className="mt-12 rounded-[2rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/85">Leistungen im Überblick</p>
+              <h3 className="mt-2 text-3xl font-semibold text-white md:text-4xl">Gezielt zum passenden Leistungsbereich springen</h3>
+              <p className="mt-3 max-w-3xl text-sm leading-8 text-[#D7DCE5] md:text-base">
+                Statt sofort alle Details in voller Länge zu zeigen, finden Sie hier zuerst die wichtigsten STRUKTIVA-Leistungsfelder als kompakte Übersicht.
               </p>
-              <div className="mt-6 space-y-3">
-                {[
-                  'Website, Google und Vertrauenselemente greifen sichtbar ineinander.',
-                  'Kontaktwege werden nicht nur eingebaut, sondern logisch geführt.',
-                  'Digitale Innenstruktur entsteht so, dass sie im Alltag wirklich nutzbar bleibt.',
-                ].map((item) => (
-                  <div key={item} className="rounded-[1.2rem] border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
-                    {item}
+            </div>
+            <a href={siteLinks.contact} className="inline-flex w-fit items-center gap-2 rounded-full border border-[#D8B45A]/35 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+              Kostenloses Erstgespräch
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {overviewTiles.map(([Icon, title, href]) => (
+              <motion.a
+                key={title}
+                variants={fadeUp}
+                transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                href={href}
+                className="group rounded-[1.25rem] border border-white/12 bg-white/[0.04] p-4 shadow-premium transition hover:border-[#D8B45A]/35 hover:bg-white/[0.06]"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
+                    <Icon className="h-5 w-5" />
                   </div>
-                ))}
-              </div>
-              <a href={siteLinks.contact} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-                Passende Struktur anfragen
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </article>
-          </Reveal>
-
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="grid gap-5">
-            {groups.map((group) => (
-              <motion.article key={group.title} variants={fadeUp} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }} className={`rounded-[1.8rem] border p-5 shadow-premium md:p-6 ${group.accent}`}>
-                <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-                  <div className="max-w-2xl">
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Leistungsfeld</p>
-                    <h3 className="mt-2 text-2xl font-semibold text-white">{group.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{group.text}</p>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold leading-6 text-white">{title}</p>
+                    <p className="mt-2 text-xs font-medium uppercase tracking-[0.12em] text-[#D8B45A]/82 group-hover:text-[#F2D98B]">
+                      Bereich ansehen
+                    </p>
                   </div>
-                  <span className="inline-flex w-fit rounded-full border border-white/12 bg-black/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#C9D0DD]">
-                    {group.items.length} Bausteine
-                  </span>
                 </div>
-                <div className="mt-5 grid gap-3 md:grid-cols-2">
-                  {group.items.map(([Icon, title, text]) => (
-                    <div key={title} className="rounded-[1.25rem] border border-white/12 bg-[#050A12]/38 p-4">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <h4 className="mt-4 text-lg font-semibold text-white">{title}</h4>
-                      <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.article>
+              </motion.a>
             ))}
           </motion.div>
         </div>
@@ -3255,102 +3232,106 @@ function WhyStructureSection() {
 }
 
 function ModulesSection() {
-  const modules = [
+  const chapters = [
     {
-      title: 'Professionelle Webseiten',
-      what: 'Der digitale Hauptstandort Ihres Unternehmens.',
-      forWho: 'Geeignet für kleine Unternehmen, Selbstständige und lokale Betriebe.',
-      solves: 'Leistungen klar erklären, Vertrauen aufbauen und Anfragen erleichtern.',
-      includes: 'Klare Seitenstruktur, Kontaktbereiche, mobile Optimierung und Vertrauenselemente.',
-      price: 'ab 599 € inklusive Mehrwertsteuer',
+      id: 'webseiten-landingpages',
+      eyebrow: 'Leistungsbereich 01',
+      title: 'Webseiten & Landingpages',
+      text: 'Für Unternehmen, die online klarer auftreten, Leistungen verständlicher zeigen und Besucher gezielt zur Anfrage führen möchten.',
+      highlights: ['Professionelle Webseiten', 'Landingpages'],
+      details: [
+        'Professionelle Webseiten: Der digitale Hauptstandort Ihres Unternehmens. Geeignet für kleine Unternehmen, Selbstständige und lokale Betriebe. Löst unklare Leistungsdarstellung und schwache Anfrageführung. Preis: ab 599 € inklusive Mehrwertsteuer.',
+        'Landingpages: Gezielte Einzelseiten für ein konkretes Angebot oder eine Aktion. Geeignet für Kampagnen, Dienstleistungen und Angebotsseiten. Preis: ab 299 € inklusive Mehrwertsteuer.',
+      ],
     },
     {
-      title: 'Landingpages',
-      what: 'Gezielte Einzelseiten für ein konkretes Angebot oder eine Aktion.',
-      forWho: 'Geeignet für Kampagnen, Dienstleistungen und Angebotsseiten.',
-      solves: 'Besucher schneller zur Anfrage führen.',
-      includes: 'Klare Headline-Struktur, Angebotslogik, CTA-Führung und Kontaktweg.',
-      price: 'ab 299 € inklusive Mehrwertsteuer',
+      id: 'google-sichtbarkeit',
+      eyebrow: 'Leistungsbereich 02',
+      title: 'Google-Sichtbarkeit',
+      text: 'Für lokal arbeitende Unternehmen, die online nicht nur vorhanden sein, sondern verständlich auffindbar wirken wollen.',
+      highlights: ['Google-Unternehmensprofil-Struktur', 'lokale Auffindbarkeit', 'klare Profilbausteine'],
+      details: [
+        'Google-Unternehmensprofil-Struktur: Strukturierter Aufbau der wichtigsten lokalen Google-Bausteine mit Leistungsbereichen, Beschreibung, Kontaktwegen, Bildstruktur und Profilklarheit.',
+        'Geeignet für alle lokal arbeitenden Unternehmen. Preis: ab 299 € inklusive Mehrwertsteuer.',
+      ],
     },
     {
-      title: 'Google-Unternehmensprofil-Struktur',
-      what: 'Strukturierter Aufbau der wichtigsten lokalen Google-Bausteine.',
-      forWho: 'Geeignet für alle lokal arbeitenden Unternehmen.',
-      solves: 'Schwache lokale Präsenz und unklare Auffindbarkeit.',
-      includes: 'Leistungsbereiche, Beschreibung, Kontaktwege, Bildstruktur und Profilklarheit.',
-      price: 'ab 299 € inklusive Mehrwertsteuer',
+      id: 'kundenfuehrung-anfragewege',
+      eyebrow: 'Leistungsbereich 03',
+      title: 'Kundenführung & Anfragewege',
+      text: 'Damit Besucher nicht nur lesen, sondern schneller verstehen, Vertrauen aufbauen und zum passenden Kontaktweg geführt werden.',
+      highlights: ['klare CTA-Führung', 'Angebotslogik', 'schnellere Anfragewege'],
+      details: [
+        'Kundenführung bedeutet bei STRUKTIVA: Leistungen klar strukturieren, Reibung im Kontakt verringern und digitale Wege so aufbauen, dass Anfragen nachvollziehbar und natürlich entstehen.',
+        'Dieser Bereich verbindet Website-Struktur, Kontaktbuttons, Angebotslogik und die sinnvolle Führung zu Formular, Telefon oder WhatsApp.',
+      ],
     },
     {
-      title: 'Bewertungs- und QR-Code-System',
-      what: 'Ein klarer Prozess für mehr und bessere Kundenbewertungen.',
-      forWho: 'Geeignet für Betriebe mit direktem Kundenkontakt.',
-      solves: 'Zu wenige Bewertungen trotz zufriedener Kunden.',
-      includes: 'Bewertungslink, QR-Code, Bewertungskarte und Anfrage-Texte.',
-      price: 'ab 149 € inklusive Mehrwertsteuer',
-    },
-    {
+      id: 'whatsapp-kontaktstruktur',
+      eyebrow: 'Leistungsbereich 04',
       title: 'WhatsApp-Kontaktstruktur',
-      what: 'Ein professioneller Anfrageweg über WhatsApp.',
-      forWho: 'Geeignet für Betriebe mit schnellen Kontaktanfragen.',
-      solves: 'Unklare oder unstrukturierte Kundenanfragen.',
-      includes: 'Direkte Buttons, vorbereitete Nachrichten und klare Anfrageführung.',
-      price: 'ab 199 € inklusive Mehrwertsteuer',
+      text: 'Für Betriebe mit schnellen Kontaktanfragen, die nicht in unklaren Nachrichten oder chaotischen Rückfragen enden sollen.',
+      highlights: ['Direkte Buttons', 'vorbereitete Nachrichten', 'klare Anfrageführung'],
+      details: [
+        'WhatsApp-Kontaktstruktur: Ein professioneller Anfrageweg über WhatsApp mit direkter Einbindung über Website, Angebotsseiten oder Google.',
+        'Geeignet für Betriebe mit schnellen Kontaktanfragen. Preis: ab 199 € inklusive Mehrwertsteuer.',
+      ],
     },
     {
-      title: 'Unternehmens-App / Web-App',
-      what: 'Digitaler Arbeitsbereich für wiederkehrende Abläufe.',
-      forWho: 'Geeignet für Betriebe mit internen Prozessen und Tagesaufgaben.',
-      solves: 'Verteilte Informationen und unklare Arbeitsabläufe.',
-      includes: 'Termin-App, Kundenverwaltungs-App, Mitarbeiter-App, Aufgaben-App, Tagesabschluss-App.',
-      price: 'ab 999 € inklusive Mehrwertsteuer',
+      id: 'bewertungs-qr-strukturen',
+      eyebrow: 'Leistungsbereich 05',
+      title: 'Bewertungs- & QR-Strukturen',
+      text: 'Für Unternehmen mit direktem Kundenkontakt, die zufriedene Kunden einfacher zur Bewertung führen möchten.',
+      highlights: ['Bewertungslink', 'QR-Code', 'Bewertungskarte'],
+      details: [
+        'Bewertungs- und QR-Code-System: Ein klarer Prozess für mehr und bessere Kundenbewertungen mit Bewertungslink, QR-Code, Bewertungskarte und Anfrage-Texten.',
+        'Geeignet für Betriebe mit direktem Kundenkontakt. Preis: ab 149 € inklusive Mehrwertsteuer.',
+      ],
     },
     {
-      title: 'Betriebs-Dashboard',
-      what: 'Übersicht aller wichtigen Betriebsinformationen an einem Ort.',
-      forWho: 'Geeignet für Unternehmen mit mehreren Aufgabenbereichen.',
-      solves: 'Fehlende Übersicht bei Terminen, Aufgaben und offenen Punkten.',
-      includes: 'Tagesübersicht, Aufgaben, Kennzahlen, Monatsinfos und Notizbereiche.',
-      price: 'ab 799 € inklusive Mehrwertsteuer',
+      id: 'unternehmens-apps',
+      eyebrow: 'Leistungsbereich 06',
+      title: 'Unternehmens-Apps',
+      text: 'Für Betriebe mit wiederkehrenden internen Abläufen, die einen eigenen digitalen Arbeitsbereich brauchen.',
+      highlights: ['Termin-App', 'Kundenverwaltungs-App', 'Mitarbeiter-App', 'Aufgaben-App'],
+      details: [
+        'Unternehmens-App / Web-App: Digitaler Arbeitsbereich für wiederkehrende Abläufe und verteilte Informationen.',
+        'Geeignet für Betriebe mit internen Prozessen und Tagesaufgaben. Preis: ab 999 € inklusive Mehrwertsteuer.',
+      ],
     },
     {
+      id: 'betriebs-dashboards',
+      eyebrow: 'Leistungsbereich 07',
+      title: 'Betriebs-Dashboards',
+      text: 'Für Unternehmen, die Termine, Aufgaben, offene Punkte und Kennzahlen an einem Ort sichtbar machen wollen.',
+      highlights: ['Tagesübersicht', 'Aufgaben', 'Kennzahlen', 'Notizbereiche'],
+      details: [
+        'Betriebs-Dashboard: Übersicht aller wichtigen Betriebsinformationen an einem Ort.',
+        'Geeignet für Unternehmen mit mehreren Aufgabenbereichen. Preis: ab 799 € inklusive Mehrwertsteuer.',
+      ],
+    },
+    {
+      id: 'digitale-ordnungssysteme',
+      eyebrow: 'Leistungsbereich 08',
       title: 'Digitale Ordnungssysteme',
-      what: 'Strukturierte digitale Ordnung für wiederkehrende Betriebsabläufe.',
-      forWho: 'Geeignet für Teams und Selbstständige mit vielen parallelen Aufgaben.',
-      solves: 'Digitale Unordnung in Ablage, Prozessen und Zuständigkeiten.',
-      includes: 'Vorlagen, Checklisten, Ablagestruktur, Kundenprozesse und interne Standards.',
-      price: 'ab 899 € inklusive Mehrwertsteuer',
+      text: 'Für Teams und Selbstständige, die digitale Unordnung in Ablage, Prozessen und Tagesabläufen reduzieren möchten.',
+      highlights: ['Digitale Ordnungssysteme', 'Tagesabschluss-Systeme', 'kassennahe Struktur'],
+      details: [
+        'Digitale Ordnungssysteme: Vorlagen, Checklisten, Ablagestruktur, Kundenprozesse und interne Standards. Preis: ab 899 € inklusive Mehrwertsteuer.',
+        'Tagesabschluss-Systeme: Struktur für Tagesübersicht und interne Kontrolle. Preis: ab 499 € inklusive Mehrwertsteuer.',
+        'Kassennahe Struktur und Tagesübersicht: Keine Kassensoftware, keine rechtliche Zertifizierung, sondern Struktur für interne Abläufe. Preis: auf Anfrage.',
+      ],
     },
     {
-      title: 'Tagesabschluss-Systeme',
-      what: 'Struktur für Tagesübersicht und interne Kontrolle.',
-      forWho: 'Geeignet für Betriebe mit täglichem Abschlussbedarf.',
-      solves: 'Fehlende Nachvollziehbarkeit im Tagesablauf.',
-      includes: 'Tagesübersicht, offene Punkte, Kontrolllogik und Übergaben.',
-      price: 'ab 499 € inklusive Mehrwertsteuer',
-    },
-    {
-      title: 'Kassennahe Struktur und Tagesübersicht',
-      what: 'Digitale Struktur rund um interne Übersicht und Tageskontrolle.',
-      forWho: 'Geeignet für Betriebe mit bargeldnahen Abläufen.',
-      solves: 'Unklare Tagesdaten und fehlende Übersicht.',
-      includes: 'Keine Kassensoftware. Keine rechtliche Zertifizierung. Sondern Struktur für interne Abläufe.',
-      price: 'auf Anfrage',
-    },
-    {
-      title: 'Newsletter-Grundstruktur',
-      what: 'Einfacher Einstieg in professionelle Kundenkommunikation.',
-      forWho: 'Geeignet für Unternehmen mit wiederkehrenden Angeboten.',
-      solves: 'Fehlende Kundenbindung nach der ersten Anfrage.',
-      includes: 'Anmeldeeinbindung, Listenstruktur und Versandgrundlage.',
-      price: 'ab 249 € inklusive Mehrwertsteuer',
-    },
-    {
-      title: 'Social-Media- und Pinterest-Grundstruktur',
-      what: 'Klare Content-Struktur statt zufälliger Einzelbeiträge.',
-      forWho: 'Geeignet für Betriebe, die regelmäßig sichtbar sein wollen.',
-      solves: 'Unregelmäßige Inhalte ohne Bezug zur Website oder Angebotslogik.',
-      includes: 'Profilstruktur, Beitragsideen, Pin-/Post-Planung, Beschreibungstexte und Verlinkung.',
-      price: 'ab 249 € inklusive Mehrwertsteuer',
+      id: 'social-media-pinterest',
+      eyebrow: 'Leistungsbereich 09',
+      title: 'Social Media & Pinterest-Struktur',
+      text: 'Für Betriebe, die regelmäßig sichtbar sein wollen und dafür eine klare Content-Struktur statt zufälliger Einzelbeiträge brauchen.',
+      highlights: ['Profilstruktur', 'Beitragsideen', 'Pin-/Post-Planung', 'Newsletter-Grundstruktur'],
+      details: [
+        'Social-Media- und Pinterest-Grundstruktur: Profilstruktur, Beitragsideen, Pin-/Post-Planung, Beschreibungstexte und Verlinkung. Preis: ab 249 € inklusive Mehrwertsteuer.',
+        'Newsletter-Grundstruktur: Einfacher Einstieg in professionelle Kundenkommunikation mit Anmeldeeinbindung, Listenstruktur und Versandgrundlage. Preis: ab 249 € inklusive Mehrwertsteuer.',
+      ],
     },
   ]
 
@@ -3359,39 +3340,47 @@ function ModulesSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Einzelmodule"
-          title="Digitale Strukturbausteine"
-          text="Sie können mit einem Paket starten oder einzelne Strukturbausteine gezielt ergänzen."
+          title="Die Leistungsbereiche im Detail"
+          text="Hier sehen Sie die einzelnen STRUKTIVA-Kapitel in ruhigerer Form. Sie können gezielt in den passenden Bereich einsteigen oder mehrere Strukturbausteine sinnvoll verbinden."
         />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {modules.map((module, index) => {
-            const includeItems = module.includes.split(',').map((item) => item.trim()).filter(Boolean)
-            return (
-              <article
-                key={module.title}
-                className={`rounded-[1.5rem] border p-5 shadow-premium transition hover:-translate-y-1 ${
-                  index % 3 === 0
-                    ? 'border-[#D8B45A]/25 bg-[linear-gradient(155deg,rgba(7,17,31,0.9),rgba(11,31,58,0.82))]'
-                    : index % 3 === 1
-                      ? 'border-white/14 bg-white/[0.05]'
-                      : 'border-white/14 bg-[linear-gradient(155deg,rgba(5,10,18,0.9),rgba(15,23,42,0.86))]'
-                }`}
-              >
-                <h3 className="text-xl font-semibold text-white">{module.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{module.what}</p>
-                <p className="mt-3 text-xs leading-6 text-[#B6C2D8]"><span className="font-semibold text-white">Geeignet für:</span> {module.forWho.replace('Geeignet für ', '')}</p>
-                <p className="mt-2 text-xs leading-6 text-[#B6C2D8]"><span className="font-semibold text-white">Löst:</span> {module.solves}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {includeItems.slice(0, 5).map((item) => (
-                    <span key={item} className="rounded-full border border-[#D8B45A]/24 bg-white/[0.03] px-2.5 py-1 text-[11px] text-[#DCC78D]">{item}</span>
-                  ))}
+        <div className="mt-10 space-y-6">
+          {chapters.map((chapter, index) => (
+            <article
+              key={chapter.id}
+              id={chapter.id}
+              className={`scroll-mt-28 rounded-[1.9rem] border p-6 shadow-premium md:p-7 ${
+                index % 2 === 0
+                  ? 'border-[#D8B45A]/24 bg-[linear-gradient(155deg,rgba(7,17,31,0.9),rgba(11,31,58,0.82),rgba(5,10,18,0.95))]'
+                  : 'border-white/14 bg-white/[0.045]'
+              }`}
+            >
+              <div className="grid gap-5 xl:grid-cols-[0.8fr_1.2fr] xl:items-start">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">{chapter.eyebrow}</p>
+                  <h3 className="mt-3 text-3xl font-semibold text-white">{chapter.title}</h3>
+                  <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">{chapter.text}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {chapter.highlights.map((item) => (
+                      <span key={item} className="rounded-full border border-[#D8B45A]/24 bg-white/[0.03] px-3 py-1.5 text-[11px] font-medium text-[#DCC78D]">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <a href={siteLinks.contact} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-3.5 py-1.5 text-xs font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                  Angebot anfragen
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </a>
-              </article>
-            )
-          })}
+                <div className="grid gap-3">
+                  {chapter.details.map((detail) => (
+                    <div key={detail} className="rounded-[1.2rem] border border-white/12 bg-[#050A12]/38 px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
+                      {detail}
+                    </div>
+                  ))}
+                  <a href={siteLinks.contact} className="mt-2 inline-flex w-fit items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                    Bereich anfragen
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
         <div className="mt-7 rounded-2xl border border-[#D8B45A]/24 bg-[#D8B45A]/10 p-5">
           <h3 className="text-lg font-semibold text-white">Strukturbausteine nach Bedarf</h3>
@@ -4050,18 +4039,16 @@ function HomePage() {
   return (
     <>
       <HeroSectionPremium />
-      <OfferMatchSection />
-      <WhyStruktivaSection />
       <WhatStruktivaBuildsSection />
+      <WhyStruktivaSection />
       <ThreeStructureFieldsSection />
-      <StructureCtaSection />
       <PricingArchitectureSection />
       <ModulesSection />
+      <OfferMatchSection />
       <BranchenSection />
       <DemoUseCasesSection />
-      <SuitableForSection />
-      <WhyStructureSection />
       <ProcessSection />
+      <StructureCtaSection />
       <BetreuungSection />
       <FAQSection />
       <WissenSection />
