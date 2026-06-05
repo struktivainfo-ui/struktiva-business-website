@@ -4002,22 +4002,44 @@ function FAQSection() {
 function StructureCtaSection() {
   return (
     <section className="px-5 pb-10 lg:px-8 lg:pb-14">
-      <div className="mx-auto max-w-7xl rounded-[1.9rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
-        <h2 className="text-2xl font-semibold text-white">Lassen Sie Ihre digitale Struktur prüfen.</h2>
-        <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-          Sie möchten wissen, welche Website-, Google- oder Kontaktstruktur für Ihr Unternehmen sinnvoll ist? Dann fragen Sie eine unverbindliche Ersteinschätzung an.
-        </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-            Kostenlose Ersteinschätzung anfragen
-            <ArrowRight className="h-4 w-4" />
-          </a>
-          <a href={`mailto:${contactDetails.email}`} className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:text-[#D8B45A]">
-            {contactDetails.email}
-          </a>
-          <a href={contactDetails.phoneHref} className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:text-[#D8B45A]">
-            {contactDetails.phoneLabel}
-          </a>
+      <div className="mx-auto max-w-7xl rounded-[2.1rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(17,13,10,0.34),rgba(7,17,31,0.94),rgba(11,31,58,0.88),rgba(5,10,18,0.96))] p-6 shadow-premium md:p-8">
+        <div className="grid gap-6 xl:grid-cols-[1.06fr_0.94fr] xl:items-end">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/85">Nächster Schritt</p>
+            <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-white md:text-4xl">Lassen Sie Ihre digitale Struktur prüfen.</h2>
+            <p className="mt-4 max-w-3xl text-sm leading-8 text-[#D7DCE5] md:text-base">
+              Sie möchten wissen, welche Website-, Google- oder Kontaktstruktur für Ihr Unternehmen sinnvoll ist? Dann fragen Sie eine unverbindliche Ersteinschätzung an.
+            </p>
+            <div className="mt-6 grid gap-3 md:grid-cols-3">
+              {[
+                'schnelle Ersteinschätzung statt langem Agenturprozess',
+                'klarer sinnvoller Startpunkt statt technischer Überforderung',
+                'Kontakt direkt über Formular, E-Mail oder Telefon',
+              ].map((item) => (
+                <div key={item} className="rounded-[1.2rem] border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[1.7rem] border border-white/12 bg-[#050A12]/45 p-5 shadow-premium">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/85">Direkt erreichbar</p>
+            <div className="mt-4 grid gap-3">
+              <a href={siteLinks.contact} className="inline-flex items-center justify-between rounded-[1.15rem] bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Kostenlose Ersteinschätzung anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={`mailto:${contactDetails.email}`} className="inline-flex items-center justify-between rounded-[1.15rem] border border-white/14 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">
+                {contactDetails.email}
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={contactDetails.phoneHref} className="inline-flex items-center justify-between rounded-[1.15rem] border border-white/14 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:border-[#D8B45A]/35 hover:text-[#D8B45A]">
+                {contactDetails.phoneLabel}
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
