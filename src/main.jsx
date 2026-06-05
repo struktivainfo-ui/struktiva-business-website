@@ -2135,25 +2135,46 @@ function ContactSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Kontakt"
-            title="Bereit für einen digitalen Auftritt, der nicht nur gut aussieht, sondern Kunden führt?"
-            text="Wenn dein Unternehmen online professioneller wirken, klarer kommunizieren und mehr Anfragen gewinnen soll, ist STRUKTIVA der richtige nächste Schritt."
+            title="Bereit für eine digitale Struktur, die Ihr Unternehmen klarer verkauft?"
+            text="Wenn Ihr Unternehmen online professioneller wirken, besser verstanden werden und schneller zu Anfragen führen soll, ist STRUKTIVA der richtige nächste Schritt."
             centered={false}
           />
         </Reveal>
 
         <Reveal className="mt-5">
-          <p className="max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Du kannst auch anfragen, wenn du Unterstützung bei Google Ads, Social-Media-Werbung oder einer passenden Landingpage für deine Kampagne brauchst.
-          </p>
-          <p className="mt-2 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Du kannst auch eine kostenlose App-Ersteinschätzung anfragen, wenn du noch nicht sicher bist, ob eine App für dein Unternehmen sinnvoll ist.
-          </p>
-          <p className="mt-2 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-            Du hast bereits mit STRUKTIVA gearbeitet? Dann kannst du hier eine Google-Bewertung abgeben.
-          </p>
+          <div className="grid gap-4 lg:grid-cols-[1.04fr_0.96fr]">
+            <div className="rounded-[1.7rem] border border-white/12 bg-white/[0.04] p-5 shadow-premium">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/85">Wofür Sie anfragen können</p>
+              <div className="mt-4 grid gap-3 text-sm leading-7 text-[#D7DCE5] md:grid-cols-2">
+                {[
+                  'Website oder Relaunch',
+                  'Google-Sichtbarkeit',
+                  'Landingpage für ein Angebot',
+                  'WhatsApp- und Kontaktstruktur',
+                  'Bewertungs- und QR-Code-System',
+                  'App, Dashboard oder Ordnungssystem',
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-white/10 bg-[#050A12]/40 px-4 py-3">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-[1.7rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(216,180,90,0.12),rgba(255,255,255,0.04))] p-5 shadow-premium">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/85">Schneller Start</p>
+              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
+                Sie müssen noch nicht alles genau wissen. Beschreiben Sie kurz Ihr Unternehmen und die aktuelle Ausgangslage. STRUKTIVA sortiert den sinnvollen nächsten Schritt mit Ihnen gemeinsam.
+              </p>
+              <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">
+                <p>• klare Ersteinschätzung statt Agentur-Blabla</p>
+                <p>• passende Struktur statt unnötiger Komplettlösung</p>
+                <p>• direkter Kontakt über E-Mail, Telefon oder WhatsApp</p>
+              </div>
+            </div>
+          </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div className="mt-10 grid gap-8 xl:grid-cols-[0.88fr_0.64fr_0.9fr] xl:items-start">
           <Reveal>
             <div className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium">
               <div className="grid gap-4 text-sm leading-7 text-[#D7DCE5]">
@@ -2192,7 +2213,36 @@ function ContactSection() {
           </Reveal>
 
           <Reveal>
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="rounded-[1.8rem] border border-white/14 bg-[#050A12]/45 p-6 shadow-premium">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/85">Direkte Wege</p>
+              <div className="mt-4 grid gap-3">
+                <a
+                  href={siteLinks.contact}
+                  className="inline-flex items-center justify-between rounded-[1.1rem] border border-[#D8B45A]/24 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/45 hover:text-[#D8B45A]"
+                >
+                  Kontaktformular / Ersteinschätzung
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href={contactDetails.whatsappHref}
+                  className="inline-flex items-center justify-between rounded-[1.1rem] border border-[#D8B45A]/24 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/45 hover:text-[#D8B45A]"
+                >
+                  WhatsApp Business
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href={contactDetails.phoneHref}
+                  className="inline-flex items-center justify-between rounded-[1.1rem] border border-[#D8B45A]/24 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:border-[#D8B45A]/45 hover:text-[#D8B45A]"
+                >
+                  Telefonischer Kontakt
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="flex flex-col gap-4">
               <a
                 href={siteLinks.contact}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.16)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
@@ -2508,83 +2558,112 @@ function Footer() {
 
 function HeroSectionPremium() {
   return (
-    <section id="start" className="relative scroll-mt-24 overflow-hidden px-5 pb-12 pt-8 lg:px-8 lg:pb-18 lg:pt-10">
+    <section id="start" className="relative scroll-mt-24 overflow-hidden px-5 pb-14 pt-8 lg:px-8 lg:pb-20 lg:pt-12">
       <div className="hero-orb hero-orb-left" />
       <div className="hero-orb hero-orb-right" />
-      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-        <div className="max-w-[41rem]">
+      <div className="mx-auto grid max-w-7xl gap-8 xl:grid-cols-[1.06fr_0.94fr] xl:items-center">
+        <div className="max-w-[43rem]">
           <motion.div initial={false} animate="visible" variants={stagger} className="flex flex-col items-start">
             <motion.div variants={fadeUp} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/20 bg-white/[0.06] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
               <Sparkles className="h-3.5 w-3.5" />
               {brand.name}
             </motion.div>
-            <motion.h1 variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-5 max-w-[35rem] text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.05] xl:text-[58px]">
-              Digitale Struktur für kleine Unternehmen.
+            <motion.p variants={fadeUp} transition={{ duration: 0.56, ease: [0.22, 1, 0.36, 1] }} className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-[#D8B45A]">
+              Keine Einzellösung.
+            </motion.p>
+            <motion.h1 variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-3 max-w-[40rem] text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-[62px] lg:leading-[1.02]">
+              Eine klare digitale Struktur für mehr Sichtbarkeit, mehr Vertrauen und mehr Anfragen.
             </motion.h1>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] text-[15px] leading-7 text-[#D7DCE5] md:text-[17px] md:leading-8">
-              STRUKTIVA verbindet Website, Google-Sichtbarkeit, Kontaktwege und digitale Kundenführung zu einer klaren Unternehmensstruktur.
+              STRUKTIVA entwickelt digitale Unternehmensarchitektur für kleine Unternehmen, Selbstständige und lokale Dienstleister. Website, Google-Sichtbarkeit, Kontaktwege, WhatsApp, Bewertungen und interne Systeme werden sinnvoll verbunden statt einzeln nebeneinandergestellt.
             </motion.p>
+            <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 max-w-[39rem] rounded-[1.6rem] border border-[#D8B45A]/20 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-4 shadow-premium">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/85">Digitale Unternehmensarchitektur</p>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5] md:text-base">
+                Der Besucher soll sofort verstehen, was Sie anbieten, warum er Ihnen vertrauen kann und wie der schnellste Kontaktweg aussieht. Genau darauf baut STRUKTIVA die digitale Struktur Ihres Unternehmens auf.
+              </p>
+            </motion.div>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 flex flex-col gap-2.5 sm:flex-row">
               <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.2)] transition hover:bg-[#A9822D] hover:-translate-y-0.5">
                 Digitale Struktur anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
+              <a href={siteLinks.pricing} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/28 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-[#D8B45A]/48 hover:text-[#D8B45A]">
+                Pakete & Preise ansehen
+              </a>
             </motion.div>
-            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-3 text-sm text-[#D7DCE5]">
-              Kostenlose Ersteinschätzung für Ihr Unternehmen möglich.
-            </motion.p>
-            <motion.a
-              variants={fadeUp}
-              transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
-              href={siteLinks.landingpageDigitaleStruktur}
-              className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[#D8B45A] transition hover:text-[#F2D98B]"
-            >
-              Fokussierte Landingpage ansehen
-              <ArrowRight className="h-4 w-4" />
-            </motion.a>
-            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[36rem] rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
-              Für Selbstständige, Handwerker, Friseure, Kosmetikstudios, Beratungsbetriebe und lokale Dienstleister.
-            </motion.p>
-            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 text-sm leading-7 text-[#D7DCE5]">
-              Klare Systeme statt Technik-Chaos. Verständliche Umsetzung für kleine Unternehmen und lokale Dienstleister.
-            </motion.p>
+            <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 grid gap-3 sm:grid-cols-3">
+              {[
+                ['Website & Google', 'Außenstruktur für Sichtbarkeit und ersten Eindruck.'],
+                ['Kontaktwege & WhatsApp', 'Klare Wege zur Anfrage statt digitalem Chaos.'],
+                ['Systeme & Dashboards', 'Interne Struktur für Abläufe, Übersicht und Ordnung.'],
+              ].map(([title, text]) => (
+                <div key={title} className="rounded-[1.35rem] border border-white/12 bg-white/[0.04] p-4 shadow-premium">
+                  <p className="text-sm font-semibold text-white">{title}</p>
+                  <p className="mt-2 text-xs leading-6 text-[#AEB7C8]">{text}</p>
+                </div>
+              ))}
+            </motion.div>
+            <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 flex flex-wrap gap-3 text-sm text-[#D7DCE5]">
+              <a href={contactDetails.phoneHref} className="rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 transition hover:border-[#D8B45A]/32 hover:text-[#D8B45A]">
+                {contactDetails.phoneLabel}
+              </a>
+              <a href={`mailto:${contactDetails.email}`} className="rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 transition hover:border-[#D8B45A]/32 hover:text-[#D8B45A]">
+                {contactDetails.email}
+              </a>
+              <a href={contactDetails.whatsappHref} className="rounded-full border border-[#D8B45A]/25 bg-[#D8B45A]/10 px-4 py-2 font-medium text-[#F2D98B] transition hover:bg-[#D8B45A] hover:text-white">
+                WhatsApp Business
+              </a>
+            </motion.div>
           </motion.div>
         </div>
-        <motion.div initial="hidden" animate="visible" variants={fadeRight} transition={{ duration: 0.64, ease: [0.22, 1, 0.36, 1] }} className="mx-auto w-full max-w-[25rem] lg:max-w-[26.5rem]">
-          <div className="hero-architecture-card hero-3d-shell rounded-[1.55rem] border border-[#D8B45A]/25 bg-white/[0.05] p-3 shadow-[0_12px_30px_rgba(15,36,76,0.10)] backdrop-blur-xl">
-            <div className="hero-3d-plane relative overflow-hidden rounded-[1.25rem] border border-[#D8B45A]/25 bg-[linear-gradient(180deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88))] p-4 md:p-4.5">
+        <motion.div initial="hidden" animate="visible" variants={fadeRight} transition={{ duration: 0.64, ease: [0.22, 1, 0.36, 1] }} className="mx-auto w-full max-w-[25rem] lg:max-w-[27rem]">
+          <div className="hero-architecture-card hero-3d-shell rounded-[1.7rem] border border-[#D8B45A]/25 bg-white/[0.05] p-3 shadow-[0_12px_30px_rgba(15,36,76,0.10)] backdrop-blur-xl">
+            <div className="hero-3d-plane relative overflow-hidden rounded-[1.35rem] border border-[#D8B45A]/25 bg-[linear-gradient(180deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88))] p-5">
               <div className="hero-architecture-grid" />
               <div className="hero-architecture-line hero-architecture-line-1" />
               <div className="hero-architecture-line hero-architecture-line-2" />
               <div className="hero-architecture-line hero-architecture-line-3" />
               <div className="relative z-[1]">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Digitale Architektur</p>
-                <h2 className="mt-2 text-xl font-semibold text-white">Webseiten. Apps. Werbung. Struktur.</h2>
-                <div className="mt-4 grid grid-cols-2 gap-2.5">
-                  {['Webseite', 'Landingpage', 'App-System', 'Google Ads'].map((item) => (
-                    <div key={item} className="hero-floating-chip rounded-xl border border-white/14 bg-white/[0.06] px-3 py-2 text-center text-[12px] font-medium text-white">
-                      {item}
+                <h2 className="mt-2 text-[1.35rem] font-semibold text-white">Verstehen. Vertrauen. Kontakt.</h2>
+                <div className="mt-5 space-y-3">
+                  {[
+                    ['1', 'Angebot sofort verstehen', 'Leistungen, Nutzen und Positionierung werden klar dargestellt.'],
+                    ['2', 'Vertrauen digital aufbauen', 'Google, Bewertungen, Referenzen und Kontaktlogik arbeiten zusammen.'],
+                    ['3', 'Kontaktwege sichtbar führen', 'Website, WhatsApp, Telefon und Anfragewege werden gezielt verbunden.'],
+                  ].map(([step, title, text]) => (
+                    <div key={step} className="rounded-[1.1rem] border border-white/12 bg-white/[0.05] p-3.5">
+                      <div className="flex items-start gap-3">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#D8B45A]/28 bg-[#D8B45A]/10 text-xs font-semibold text-[#F2D98B]">
+                          {step}
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-white">{title}</p>
+                          <p className="mt-1 text-xs leading-6 text-[#D7DCE5]">{text}</p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
                 <div className="mt-4 rounded-[1rem] border border-[#D8B45A]/18 bg-white/[0.06] p-3.5">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">Ergebnis</p>
-                  <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">Ein klarer digitaler Aufbau für Sichtbarkeit, Anfragen und bessere Abläufe.</p>
+                  <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">Ein klarer digitaler Aufbau, der nicht nur gut aussieht, sondern logisch verkauft.</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="hero-image-shell mt-4 overflow-hidden rounded-[1.3rem] border border-white/14">
+          <div className="hero-image-shell mt-4 overflow-hidden rounded-[1.5rem] border border-white/14">
             <img
               src={struktivaImages.businessHero}
               alt="Moderne Business-Architektur mit strukturierter Stadtansicht bei Nacht"
               loading="eager"
               fetchpriority="high"
-              className="h-44 w-full object-cover md:h-52"
+              className="h-48 w-full object-cover md:h-56"
             />
             <div className="hero-image-overlay">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#F2D98B]">Premium-Umfeld</p>
-              <p className="mt-1 text-sm text-[#D7DCE5]">Digitale Struktur, die professionell wirkt und klar führt.</p>
+              <p className="mt-1 text-sm text-[#D7DCE5]">Digitale Struktur, die professionell wirkt, Vertrauen aufbaut und den nächsten Schritt klar macht.</p>
             </div>
           </div>
         </motion.div>
@@ -2958,21 +3037,42 @@ function WissenArticlePage({ article }) {
 }
 
 function WhatStruktivaBuildsSection() {
-  const cards = [
-    [LayoutTemplate, 'Professionelle Webseiten', 'Moderne Website-Strukturen, die Leistungen klar zeigen und Vertrauen aufbauen.'],
-    [Target, 'Landingpages', 'Gezielte Seiten für Angebote, Aktionen und klare Anfrageführung.'],
-    [Search, 'Google-Sichtbarkeit', 'Bessere Auffindbarkeit durch klare lokale Struktur und saubere Inhalte.'],
-    [Building2, 'Google-Unternehmensprofil', 'Professionelle Profilstruktur für mehr Vertrauen und lokale Sichtbarkeit.'],
-    [MousePointerClick, 'Digitale Kundenführung', 'Kontaktwege, CTAs und Seitenlogik auf Anfragen ausgerichtet.'],
-    [MessageCircle, 'WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Angebotsseiten.'],
-    [QrCode, 'QR-Code- & Bewertungsstrukturen', 'Einfache Bewertungswege für mehr Sichtbarkeit und Vertrauen.'],
-    [Smartphone, 'Unternehmens-Apps', 'Digitale Werkzeuge für wiederkehrende Abläufe im Betrieb.'],
-    [PanelsTopLeft, 'Betriebs-Dashboards', 'Übersichten für Aufgaben, Kennzahlen und tägliche Steuerung.'],
-    [ClipboardList, 'Digitale Ordnungssysteme', 'Strukturierte Prozesse statt digitalem Chaos.'],
-    [CalendarDays, 'Tagesabschluss-Systeme', 'Saubere Erfassung täglicher Werte und klarer Ablauf.'],
-    [BarChart3, 'Kassenstruktur-Systeme', 'Transparente Kassenübersicht für den Arbeitsalltag.'],
-    [BadgeCheck, 'Newsletter-Einbindung', 'Professionelle Kundenbindung über klar integrierte Newsletter-Struktur.'],
-    [Megaphone, 'Social-Media- & Pinterest-Struktur', 'Planbare Inhalte statt unregelmäßiger Einzelposts.'],
+  const groups = [
+    {
+      title: 'Außenauftritt & Sichtbarkeit',
+      text: 'Alles, was Ihr Unternehmen digital nach außen klarer, professioneller und auffindbarer macht.',
+      accent: 'border-[#D8B45A]/26 bg-[linear-gradient(160deg,rgba(17,13,10,0.42),rgba(40,29,20,0.18),rgba(11,8,6,0.28))]',
+      items: [
+        [LayoutTemplate, 'Professionelle Webseiten', 'Moderne Website-Strukturen, die Leistungen klar zeigen und Vertrauen aufbauen.'],
+        [Target, 'Landingpages', 'Gezielte Seiten für Angebote, Aktionen und klare Anfrageführung.'],
+        [Search, 'Google-Sichtbarkeit', 'Bessere Auffindbarkeit durch klare lokale Struktur und saubere Inhalte.'],
+        [Building2, 'Google-Unternehmensprofil', 'Professionelle Profilstruktur für mehr Vertrauen und lokale Sichtbarkeit.'],
+        [BadgeCheck, 'Newsletter-Einbindung', 'Professionelle Kundenbindung über klar integrierte Newsletter-Struktur.'],
+        [Megaphone, 'Social-Media- & Pinterest-Struktur', 'Planbare Inhalte statt unregelmäßiger Einzelposts.'],
+      ],
+    },
+    {
+      title: 'Kundenführung & Anfragewege',
+      text: 'Damit Interessenten schneller verstehen, vertrauen und den passenden Kontaktweg wählen.',
+      accent: 'border-white/14 bg-white/[0.04]',
+      items: [
+        [MousePointerClick, 'Digitale Kundenführung', 'Kontaktwege, CTAs und Seitenlogik auf Anfragen ausgerichtet.'],
+        [MessageCircle, 'WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Angebotsseiten.'],
+        [QrCode, 'QR-Code- & Bewertungsstrukturen', 'Einfache Bewertungswege für mehr Sichtbarkeit und Vertrauen.'],
+      ],
+    },
+    {
+      title: 'Interne Systeme & Ordnung',
+      text: 'Digitale Bausteine für Übersicht, saubere Abläufe und mehr Struktur im Arbeitsalltag.',
+      accent: 'border-[#7ea5df]/18 bg-[linear-gradient(160deg,rgba(7,17,31,0.8),rgba(11,31,58,0.5),rgba(5,10,18,0.9))]',
+      items: [
+        [Smartphone, 'Unternehmens-Apps', 'Digitale Werkzeuge für wiederkehrende Abläufe im Betrieb.'],
+        [PanelsTopLeft, 'Betriebs-Dashboards', 'Übersichten für Aufgaben, Kennzahlen und tägliche Steuerung.'],
+        [ClipboardList, 'Digitale Ordnungssysteme', 'Strukturierte Prozesse statt digitalem Chaos.'],
+        [CalendarDays, 'Tagesabschluss-Systeme', 'Saubere Erfassung täglicher Werte und klarer Ablauf.'],
+        [BarChart3, 'Kassenstruktur-Systeme', 'Transparente Kassenübersicht für den Arbeitsalltag.'],
+      ],
+    },
   ]
 
   return (
@@ -2985,17 +3085,60 @@ function WhatStruktivaBuildsSection() {
             text="STRUKTIVA entwickelt keine losen Einzellösungen. Wir verbinden die wichtigsten digitalen Bausteine Ihres Unternehmens zu einer klaren, professionellen und verständlichen Struktur."
           />
         </Reveal>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {cards.map(([Icon, title, text]) => (
-            <motion.article key={title} variants={fadeUp} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }} className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
-                <Icon className="h-5 w-5" />
+        <div className="mt-10 grid gap-5 xl:grid-cols-[0.92fr_1.08fr]">
+          <Reveal>
+            <article className="rounded-[2rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/85">STRUKTIVA-Bausteine</p>
+              <h3 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Nicht alles gleichzeitig. Sondern dort, wo Struktur sofort Wirkung entfaltet.</h3>
+              <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
+                Manche Unternehmen brauchen zuerst einen klaren Außenauftritt. Andere verlieren Anfragen durch unklare Kontaktwege. Wieder andere haben intern zu viel digitale Unordnung. STRUKTIVA setzt genau dort an, wo der größte Hebel liegt.
+              </p>
+              <div className="mt-6 space-y-3">
+                {[
+                  'Website, Google und Vertrauenselemente greifen sichtbar ineinander.',
+                  'Kontaktwege werden nicht nur eingebaut, sondern logisch geführt.',
+                  'Digitale Innenstruktur entsteht so, dass sie im Alltag wirklich nutzbar bleibt.',
+                ].map((item) => (
+                  <div key={item} className="rounded-[1.2rem] border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
+                    {item}
+                  </div>
+                ))}
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-white">{title}</h3>
-              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
-            </motion.article>
-          ))}
-        </motion.div>
+              <a href={siteLinks.contact} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Passende Struktur anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </article>
+          </Reveal>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="grid gap-5">
+            {groups.map((group) => (
+              <motion.article key={group.title} variants={fadeUp} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }} className={`rounded-[1.8rem] border p-5 shadow-premium md:p-6 ${group.accent}`}>
+                <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div className="max-w-2xl">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/82">Leistungsfeld</p>
+                    <h3 className="mt-2 text-2xl font-semibold text-white">{group.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{group.text}</p>
+                  </div>
+                  <span className="inline-flex w-fit rounded-full border border-white/12 bg-black/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#C9D0DD]">
+                    {group.items.length} Bausteine
+                  </span>
+                </div>
+                <div className="mt-5 grid gap-3 md:grid-cols-2">
+                  {group.items.map(([Icon, title, text]) => (
+                    <div key={title} className="rounded-[1.25rem] border border-white/12 bg-[#050A12]/38 p-4">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h4 className="mt-4 text-lg font-semibold text-white">{title}</h4>
+                      <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.article>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   )
@@ -3318,9 +3461,9 @@ function OfferMatchSection() {
   return (
     <section className="px-5 py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="rounded-[2rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8">
-          <div className="grid items-start gap-6 xl:grid-cols-[1.02fr_0.98fr]">
-            <article className="h-fit self-start rounded-[1.5rem] border border-white/12 bg-white/[0.04] p-6">
+        <div className="rounded-[2.1rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8">
+          <div className="grid items-start gap-6 xl:grid-cols-[0.92fr_1.08fr]">
+            <article className="h-fit self-start rounded-[1.7rem] border border-[#D8B45A]/20 bg-[linear-gradient(150deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-6 shadow-premium">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/85">Entscheidungshilfe</p>
               <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Welches STRUKTIVA-Angebot passt zu Ihnen?</h2>
               <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
@@ -3331,6 +3474,23 @@ function OfferMatchSection() {
                   <span key={chip} className="rounded-full border border-[#D8B45A]/28 bg-white/[0.03] px-3 py-1.5 text-xs font-semibold tracking-[0.08em] text-[#E5C979]">{chip}</span>
                 ))}
               </div>
+              <div className="mt-7 rounded-[1.35rem] border border-white/12 bg-[#050A12]/45 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#94A3B8]">Typischer Weg</p>
+                <div className="mt-3 space-y-3 text-sm text-[#D7DCE5]">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 h-2.5 w-2.5 rounded-full bg-[#D8B45A]" />
+                    <p>Digitale Ausgangslage kurz prüfen</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 h-2.5 w-2.5 rounded-full bg-[#D8B45A]" />
+                    <p>Passenden Startpunkt statt unnötiger Komplettlösung festlegen</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 h-2.5 w-2.5 rounded-full bg-[#D8B45A]" />
+                    <p>Website, Google, Kontaktwege und Systeme sinnvoll erweitern</p>
+                  </div>
+                </div>
+              </div>
               <a href={siteLinks.contact} className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
                 Kostenlose Ersteinschätzung anfragen
                 <ArrowRight className="h-4 w-4" />
@@ -3338,16 +3498,23 @@ function OfferMatchSection() {
             </article>
 
             <div className="space-y-3">
-              {recommendations.map(([situation, recommendation, text, cta]) => (
-                <article key={situation} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4 transition hover:border-[#D8B45A]/30 hover:bg-white/[0.06]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#94A3B8]">Situation</p>
-                  <p className="mt-1 text-sm font-semibold text-white">{situation}</p>
-                  <p className="mt-2 text-sm font-semibold text-[#D8B45A]">Empfehlung: {recommendation}</p>
-                  <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
-                  <a href={siteLinks.contact} className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-xs font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                    {cta}
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </a>
+              {recommendations.map(([situation, recommendation, text, cta], index) => (
+                <article key={situation} className="rounded-[1.45rem] border border-white/12 bg-white/[0.04] p-4 transition hover:border-[#D8B45A]/30 hover:bg-white/[0.06]">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D8B45A]/28 bg-[#D8B45A]/10 text-xs font-semibold text-[#F2D98B]">
+                      {index + 1}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#94A3B8]">Situation</p>
+                      <p className="mt-1 text-sm font-semibold text-white">{situation}</p>
+                      <p className="mt-2 text-sm font-semibold text-[#D8B45A]">Empfehlung: {recommendation}</p>
+                      <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+                      <a href={siteLinks.contact} className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-4 py-2 text-xs font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                        {cta}
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </a>
+                    </div>
+                  </div>
                 </article>
               ))}
             </div>
@@ -3355,6 +3522,9 @@ function OfferMatchSection() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-[#D7DCE5] transition hover:text-[#D8B45A]">
               Digitale Struktur prüfen lassen
+            </a>
+            <a href={contactDetails.whatsappHref} className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/30 bg-[#D8B45A]/10 px-6 py-3 text-sm font-semibold text-[#F2D98B] transition hover:bg-[#D8B45A] hover:text-white">
+              Per WhatsApp vorsortieren
             </a>
           </div>
         </div>
@@ -3421,6 +3591,19 @@ function DemoUseCasesSection() {
           Am Beispiel von Salon Karola sieht man, wie aus einem einfachen Online-Auftritt ein moderner, vertrauensstarker Salon-Auftritt wurde.
         </p>
 
+        <div className="mt-8 grid gap-3 md:grid-cols-3">
+          {[
+            ['Echte Umsetzung', 'Salon Karola zeigt die reale Weiterentwicklung von einfacher Website zu klarer Struktur.'],
+            ['Demo-Beispiele', 'Weitere Branchen sehen sofort, wie digitale Struktur konkret aussehen kann.'],
+            ['Klare Trennung', 'Referenzprojekt und Demos bleiben bewusst getrennt, damit Vertrauen und Orientierung sauber bleiben.'],
+          ].map(([title, text]) => (
+            <div key={title} className="rounded-[1.3rem] border border-white/12 bg-white/[0.04] p-4 shadow-premium">
+              <p className="text-sm font-semibold text-white">{title}</p>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+            </div>
+          ))}
+        </div>
+
         <div className="mt-10 rounded-[2rem] border border-[#D8B45A]/28 bg-[linear-gradient(160deg,rgba(17,13,10,0.9),rgba(40,29,20,0.74),rgba(11,8,6,0.92))] p-6 shadow-premium md:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#D8B45A]">Echtes Referenzprojekt</p>
           <h3 className="mt-2 text-3xl font-semibold text-white md:text-4xl">Echtes Referenzprojekt: Salon Karola</h3>
@@ -3486,23 +3669,36 @@ function DemoUseCasesSection() {
         </div>
 
         <div className="mt-12">
-          <h3 className="text-3xl font-semibold text-white">Demo-Beispiele für weitere Branchen</h3>
-          <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
-            Damit Betriebe direkt sehen, wie eine digitale Struktur in ihrer Branche aussehen kann.
-          </p>
-          <div className="mt-6 grid gap-4 lg:grid-cols-3">
-            {industryDemos.map((demo) => (
-              <article key={demo.title} className={`group relative overflow-hidden rounded-[1.5rem] border p-5 shadow-premium transition duration-300 hover:-translate-y-1 ${demo.cardTone}`}>
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <h3 className="text-3xl font-semibold text-white">Demo-Beispiele für weitere Branchen</h3>
+              <p className="mt-3 max-w-3xl text-sm leading-8 text-[#D7DCE5] md:text-base">
+                Damit Betriebe direkt sehen, wie eine digitale Struktur in ihrer Branche aussehen kann.
+              </p>
+            </div>
+            <a href={siteLinks.contact} className="inline-flex w-fit items-center gap-2 rounded-full border border-[#D8B45A]/35 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+              So eine Struktur anfragen
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+          <div className="mt-6 grid gap-4 xl:grid-cols-[1.08fr_0.92fr_0.92fr]">
+            {industryDemos.map((demo, index) => (
+              <article key={demo.title} className={`group relative overflow-hidden rounded-[1.5rem] border p-5 shadow-premium transition duration-300 hover:-translate-y-1 ${demo.cardTone} ${index === 0 ? 'xl:min-h-[29rem]' : 'xl:min-h-[24.5rem]'}`}>
                 <img src={demo.image} alt={`Vorschau ${demo.title}`} loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-30 transition duration-500 group-hover:scale-105" />
                 <div className={`absolute inset-0 bg-gradient-to-br ${demo.overlay}`} />
-                <div className="relative">
+                <div className="relative flex h-full flex-col">
                   <h4 className="text-2xl font-semibold text-white">{demo.title}</h4>
                   <p className="mt-2 text-sm leading-7 text-[#D8E1EF]">{demo.text}</p>
-                  <span className={`mt-3 inline-flex rounded-full border bg-black/18 px-2.5 py-1 text-[11px] ${demo.chipTone}`}>Demo-Beispiel</span>
-                  <a href={demo.href} className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-[#D8B45A]/40 hover:text-[#E8C772]">
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className={`inline-flex rounded-full border bg-black/18 px-2.5 py-1 text-[11px] ${demo.chipTone}`}>Demo-Beispiel</span>
+                    <span className="inline-flex rounded-full border border-white/14 bg-black/18 px-2.5 py-1 text-[11px] text-white/80">Branchenvorschau</span>
+                  </div>
+                  <div className="mt-auto pt-6">
+                    <a href={demo.href} className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-[#D8B45A]/40 hover:text-[#E8C772]">
                     Demo ansehen
                     <ArrowRight className="h-3.5 w-3.5" />
-                  </a>
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}
@@ -3670,43 +3866,84 @@ function PricingArchitectureSection() {
           <SectionHeader eyebrow="Pakete & Preise" title="Vier klare Pakete für einen einfachen Einstieg" text="Die Pakete geben Orientierung und machen den Start planbar." />
         </Reveal>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {packages.map((pkg) => (
-            <article key={pkg.title} className="rounded-[1.7rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-5 shadow-premium">
-              <h4 className="text-xl font-semibold text-white">{pkg.title}</h4>
-              <p className="mt-2 text-sm font-semibold text-[#D8B45A]">{pkg.price}</p>
-              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{pkg.text}</p>
-              <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
-              <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                {pkg.cta}
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </article>
-          ))}
-        </div>
+        <div className="mt-10 grid gap-5 xl:grid-cols-[0.82fr_1.18fr]">
+          <article className="rounded-[2rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(17,13,10,0.88),rgba(40,29,20,0.64),rgba(11,8,6,0.92))] p-6 shadow-premium md:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/85">Preislogik</p>
+            <h3 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Nicht das größte Paket zuerst. Sondern der sinnvollste Einstieg.</h3>
+            <p className="mt-4 text-sm leading-8 text-[#E7DDD0] md:text-base">
+              Die Pakete geben Orientierung. Sie zeigen, mit welchem Umfang Unternehmen meist starten und wie sich daraus eine klare digitale Struktur entwickeln lässt.
+            </p>
+            <div className="mt-6 space-y-3">
+              {[
+                'Einstieg für erste Klarheit und Prioritäten.',
+                'Start für einfache Website- oder Landingpage-Struktur.',
+                'Struktur für professionelle Verbindung von Vertrauen, Sichtbarkeit und Anfragewegen.',
+                'System für Unternehmen, die auch intern digitale Ordnung aufbauen wollen.',
+              ].map((item, index) => (
+                <div key={item} className="flex items-start gap-3 rounded-[1.15rem] border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#E7DDD0]">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#D8B45A]/30 bg-[#D8B45A]/12 text-[11px] font-semibold text-[#F2D98B]">
+                    {index + 1}
+                  </span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+            <a href={siteLinks.contact} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+              Passendes Paket anfragen
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </article>
 
-        <div className="mt-10 rounded-[1.7rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium">
-          <h3 className="text-2xl font-semibold text-white">Monatliche Betreuung</h3>
-          <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">Für laufende Pflege, Anpassungen, Weiterentwicklung und digitale Struktur im Betrieb.</p>
-          <div className="mt-4 grid gap-3 md:grid-cols-3">
-            {betreuung.map((item) => (
-              <p key={item} className="rounded-xl border border-white/12 bg-white/[0.04] px-3 py-2 text-sm text-[#D7DCE5]">{item}</p>
+          <div className="grid gap-5 md:grid-cols-2">
+            {packages.map((pkg, index) => (
+              <article key={pkg.title} className={`rounded-[1.8rem] border p-5 shadow-premium ${index === 2 ? 'border-[#D8B45A]/34 bg-[linear-gradient(160deg,rgba(17,13,10,0.82),rgba(40,29,20,0.46),rgba(7,17,31,0.94))]' : 'border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))]'}`}>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#94A3B8]">Paket {index + 1}</p>
+                    <h4 className="mt-2 text-xl font-semibold text-white">{pkg.title}</h4>
+                  </div>
+                  {index === 2 ? (
+                    <span className="rounded-full border border-[#D8B45A]/34 bg-[#D8B45A]/12 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#F2D98B]">
+                      häufig gewählt
+                    </span>
+                  ) : null}
+                </div>
+                <p className="mt-3 text-sm font-semibold text-[#D8B45A]">{pkg.price}</p>
+                <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{pkg.text}</p>
+                <div className="mt-4 space-y-2 text-sm text-[#D7DCE5]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
+                <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                  {pkg.cta}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </article>
             ))}
           </div>
         </div>
 
-        <div className="mt-8 rounded-[1.7rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium">
-          <h3 className="text-2xl font-semibold text-white">Pakete sind nicht zwingend</h3>
-          <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
-            Unsere Pakete geben Orientierung und machen den Einstieg einfacher. Auf Wunsch können einzelne Leistungen aber auch separat geplant und umgesetzt werden – zum Beispiel nur eine Landingpage, ein Website-Relaunch, ein Dashboard, eine WhatsApp-Kontaktstruktur, eine Bewertungsstruktur oder ein digitales Ordnungssystem.
-          </p>
-          <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
-            Nach einer kurzen Einschätzung sagen wir ehrlich, ob ein Paket sinnvoll ist oder ob eine einzelne Leistung ausreicht.
-          </p>
-          <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-            Einzelleistung anfragen
-            <ArrowRight className="h-4 w-4" />
-          </a>
+        <div className="mt-10 grid gap-5 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="rounded-[1.7rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium">
+            <h3 className="text-2xl font-semibold text-white">Monatliche Betreuung</h3>
+            <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">Für laufende Pflege, Anpassungen, Weiterentwicklung und digitale Struktur im Betrieb.</p>
+            <div className="mt-4 grid gap-3 md:grid-cols-3 lg:grid-cols-1">
+              {betreuung.map((item) => (
+                <p key={item} className="rounded-xl border border-white/12 bg-white/[0.04] px-3 py-2 text-sm text-[#D7DCE5]">{item}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[1.7rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.9),rgba(11,31,58,0.86),rgba(5,10,18,0.95))] p-6 shadow-premium">
+            <h3 className="text-2xl font-semibold text-white">Pakete sind nicht zwingend</h3>
+            <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
+              Unsere Pakete geben Orientierung und machen den Einstieg einfacher. Auf Wunsch können einzelne Leistungen aber auch separat geplant und umgesetzt werden – zum Beispiel nur eine Landingpage, ein Website-Relaunch, ein Dashboard, eine WhatsApp-Kontaktstruktur, eine Bewertungsstruktur oder ein digitales Ordnungssystem.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
+              Nach einer kurzen Einschätzung sagen wir ehrlich, ob ein Paket sinnvoll ist oder ob eine einzelne Leistung ausreicht.
+            </p>
+            <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+              Einzelleistung anfragen
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -3792,9 +4029,9 @@ function HomePage() {
     <>
       <HeroSectionPremium />
       <OfferMatchSection />
+      <WhyStruktivaSection />
       <WhatStruktivaBuildsSection />
       <ThreeStructureFieldsSection />
-      <WhyStruktivaSection />
       <StructureCtaSection />
       <PricingArchitectureSection />
       <ModulesSection />
@@ -3806,7 +4043,6 @@ function HomePage() {
       <BetreuungSection />
       <FAQSection />
       <WissenSection />
-      <DifferentiatorSection />
       <ContactSection />
     </>
   )
