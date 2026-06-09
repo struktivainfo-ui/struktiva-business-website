@@ -41,6 +41,7 @@ const siteLinks = {
   demos: '/demos',
   apps: '/apps',
   googleAds: '/google-ads',
+  kiAutomatisierung: '/ki-automatisierung',
   process: '/#ablauf',
   contact: '/kontakt',
   contactSection: '/#kontakt',
@@ -136,6 +137,7 @@ const navItems = [
 ]
 
 const desktopNavItems = [
+  ['KI & Automatisierung', siteLinks.kiAutomatisierung],
   ['Preise', siteLinks.pricing],
   ['Wissen', siteLinks.wissen],
   ['Kontakt', siteLinks.contact],
@@ -144,10 +146,27 @@ const desktopNavItems = [
 const leistungenDropdownItems = [
   ['Website & Landingpage', siteLinks.websiteFuerKleineUnternehmen],
   ['Google-Sichtbarkeit', siteLinks.googleSichtbarkeitKleineUnternehmen],
+  ['KI & Automatisierung', siteLinks.kiAutomatisierung],
   ['Digitale Kundenführung', siteLinks.digitaleUnternehmensstruktur],
   ['Digitale Soforthilfe', siteLinks.digitaleSoforthilfe],
   ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme],
   ['Unternehmens-Apps & Dashboards', siteLinks.unternehmensApps],
+]
+
+const kiAutomationCards = [
+  [Workflow, 'Anfrage-Systeme', 'Kontaktformulare, automatische Bestätigungen, interne Benachrichtigungen und saubere Weiterleitung von Kundenanfragen.'],
+  [MessageCircle, 'KI-Antwortvorlagen', 'Professionelle Antwortvorschläge für häufige Kundenfragen, E-Mails, WhatsApp-Nachrichten und Angebotsanfragen.'],
+  [BarChart3, 'Lead-Übersicht', 'Kundenanfragen gesammelt in einer klaren Übersicht mit Status, Kontaktdaten und Notizen.'],
+  [QrCode, 'Bewertungsstruktur', 'QR-Codes, Bewertungsanfragen und passende Antwortvorlagen für Google-Bewertungen.'],
+  [CalendarDays, 'Termin-Kommunikation', 'Vorlagen und Abläufe für Terminbestätigungen, Erinnerungen und Rückfragen.'],
+  [ClipboardList, 'Digitale Abläufe', 'Wiederkehrende Aufgaben einfacher organisieren, vorbereiten und nachvollziehbar machen.'],
+]
+
+const kiAutomationAudience = [
+  ['Friseure & Beauty-Betriebe', Sparkles],
+  ['Handwerker & Dienstleister', Building2],
+  ['Beratungsbetriebe', BriefcaseBusiness],
+  ['Lokale kleine Unternehmen', BadgeCheck],
 ]
 
 const demoDropdownItems = [
@@ -556,6 +575,7 @@ function useDocumentTitleSafe(pathname) {
       '/landingpages': 'Landingpages - STRUKTIVA Unternehmensarchitektur',
       '/apps': 'Unternehmens-Apps - STRUKTIVA Unternehmensarchitektur',
       '/google-ads': 'Google Ads - STRUKTIVA Unternehmensarchitektur',
+      '/ki-automatisierung': 'KI & Automatisierung für kleine Unternehmen - STRUKTIVA',
       '/bewertungs-qr-code': 'Google-Bewertungssystem mit QR-Code | STRUKTIVA',
       '/digitale-ordnungssysteme': 'Digitale Ordnungssysteme fuer kleine Betriebe - STRUKTIVA',
       '/website-fuer-kleine-unternehmen': 'Website-Erstellung fuer kleine Unternehmen - STRUKTIVA',
@@ -601,6 +621,8 @@ function useDocumentTitleSafe(pathname) {
         'STRUKTIVA entwickelt digitale Ordnungssysteme fuer kleine Betriebe - mit Tagesabschluss, Kassenstruktur, Monatsuebersicht, Exportfunktionen und steuerberaterfreundlicher Vorbereitung.',
       '/digitale-soforthilfe':
         'Schnelle digitale Unterstützung für Website-Anpassungen, Landingpages, Google-Texte, Social-Media-Beiträge, WhatsApp- und Bewertungstexte. STRUKTIVA Digitale Soforthilfe ab 99 € inklusive Mehrwertsteuer.',
+      '/ki-automatisierung':
+        'KI & Automatisierung für kleine Unternehmen: STRUKTIVA verbindet Anfragen, Kommunikation und digitale Abläufe zu klaren, alltagstauglichen Systemen.',
       '/website-fuer-kleine-unternehmen':
         'Moderne Website-Erstellung fuer kleine Unternehmen und Selbststaendige mit klarer Struktur und professioneller Kundenfuehrung.',
       '/landingpage-erstellen-lassen':
@@ -1047,17 +1069,24 @@ function Header({ pathname, isHomeRoute = false }) {
             className="relative z-[9999] mx-auto mt-3 max-w-7xl rounded-[1.8rem] border border-[#D6A84F]/40 bg-[rgba(5,5,5,0.98)] p-4 shadow-premium backdrop-blur-[14px] lg:hidden"
           >
             <div className="grid gap-2">
-              <a
-                href={siteLinks.home}
-                onClick={closeMobileMenu}
-                className="rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
-              >
-                Start
-              </a>
-              <button
-                type="button"
-                aria-expanded={mobileLeistungenOpen}
-                onClick={() => setMobileLeistungenOpen((open) => !open)}
+      <a
+        href={siteLinks.home}
+        onClick={closeMobileMenu}
+        className="rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
+      >
+        Start
+      </a>
+      <a
+        href={siteLinks.kiAutomatisierung}
+        onClick={closeMobileMenu}
+        className="rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
+      >
+        KI & Automatisierung
+      </a>
+      <button
+        type="button"
+        aria-expanded={mobileLeistungenOpen}
+        onClick={() => setMobileLeistungenOpen((open) => !open)}
                 className="inline-flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
               >
                 Leistungen
@@ -5200,6 +5229,7 @@ function LeistungenPage() {
     'Website-Erstellung': 'ab 599 €',
     Landingpages: 'ab 299 €',
     'Google-Sichtbarkeit': 'ab 299 €',
+    'KI & Automatisierung': 'projektbezogen',
     'Digitale Soforthilfe': 'ab 99 €',
     'Digitale Kundenführung': 'ab 299 €',
     'WhatsApp-Kontaktstruktur': 'ab 149 €',
@@ -5216,6 +5246,7 @@ function LeistungenPage() {
     ['Website-Erstellung', 'STRUKTIVA erstellt unterschiedliche Webseiten-Formate – von Onepager, Unternehmenswebsite und Landingpage bis zu mehrseitigen Premium-Webauftritten, Branchenwebsites, Angebotsseiten und Websites mit Newsletter-, QR-Code- oder Kontaktstruktur.'],
     ['Landingpages', 'Verkaufsstarke Seiten für Angebote, Aktionen und Anfragen.'],
     ['Google-Sichtbarkeit', 'Struktur für bessere Auffindbarkeit und lokale Präsenz.'],
+    ['KI & Automatisierung', 'Einfache Systeme für Anfragen, Kommunikation, Antwortvorlagen und nachvollziehbare digitale Abläufe.'],
     ['Digitale Soforthilfe', 'Wenn online schnell etwas funktionieren muss. Schnelle Unterstützung bei Website-Anpassungen, Landingpages, Google-Texten, Social-Media-Beiträgen, WhatsApp- und Bewertungstexten sowie digitalen Kleinkorrekturen.'],
     ['Digitale Kundenführung', 'Klare Wege von Interesse zur Anfrage.'],
     ['WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Landingpage.'],
@@ -5252,6 +5283,8 @@ function LeistungenPage() {
                   <p className="mt-1 text-sm font-semibold text-[#D8B45A]">
                     {allLeistungPrices[title] === 'Kostenlos'
                       ? 'Kostenlos'
+                      : allLeistungPrices[title] === 'projektbezogen'
+                      ? 'Projektbezogen'
                       : `${allLeistungPrices[title]} inklusive Mehrwertsteuer`}
                   </p>
                 )}
@@ -5269,6 +5302,193 @@ function LeistungenPage() {
             Kostenlose Ersteinschätzung anfragen
             <ArrowRight className="h-4 w-4" />
           </a>
+        </section>
+      </div>
+    </main>
+  )
+}
+
+function KiAutomatisierungPage() {
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <section className="relative overflow-hidden rounded-[2.2rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(5,5,5,0.95),rgba(11,15,20,0.96),rgba(16,23,34,0.98))] p-7 shadow-premium md:p-10 lg:p-12">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(216,180,90,0.14),transparent_28%),radial-gradient(circle_at_left_center,rgba(11,31,58,0.32),transparent_38%)]" />
+          <div className="relative z-[1] grid gap-8 xl:grid-cols-[1.02fr_0.98fr] xl:items-center">
+            <Reveal>
+              <div className="max-w-3xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Neue Leistungsseite</p>
+                <h1 className="text-gold-glow mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-[3.5rem] lg:leading-[1.03]">
+                  KI & Automatisierung für kleine Unternehmen
+                </h1>
+                <p className="mt-5 max-w-2xl text-xl font-medium text-[#F2D98B]">
+                  Weniger manuelle Arbeit. Schnellere Reaktion. Mehr digitale Ordnung.
+                </p>
+                <p className="mt-5 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+                  STRUKTIVA verbindet Webseite, Kundenanfragen, E-Mail, WhatsApp, Tabellen und digitale Abläufe zu einem
+                  klaren System. So gehen weniger Anfragen unter, wiederkehrende Aufgaben werden einfacher und
+                  Kundenkommunikation wirkt professioneller.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href={siteLinks.contact}
+                    className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.22)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
+                  >
+                    Automatisierung anfragen
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={siteLinks.contactSection}
+                    className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/28 bg-white/[0.05] px-5 py-3.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                  >
+                    Zum Kontaktbereich
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <div className="rounded-[1.8rem] border border-[#D8B45A]/20 bg-white/[0.04] p-4 shadow-premium backdrop-blur-xl">
+                <div className="rounded-[1.45rem] border border-white/10 bg-[linear-gradient(160deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-5">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Praxisnah statt kompliziert</p>
+                      <h2 className="mt-2 text-2xl font-semibold text-white">Digitale Ordnung für den Alltag</h2>
+                    </div>
+                    <div className="rounded-full border border-[#D8B45A]/24 bg-[#D8B45A]/10 px-3 py-1 text-xs font-semibold text-[#D8B45A]">
+                      Struktur
+                    </div>
+                  </div>
+                  <div className="mt-5 grid gap-3">
+                    {[
+                      ['Anfragen kommen geordnet an', 'Formular, WhatsApp und E-Mail können klar zusammengeführt werden.'],
+                      ['Antworten werden schneller', 'Vorlagen und Abläufe erleichtern die erste Reaktion auf neue Anfragen.'],
+                      ['Nächste Schritte bleiben sichtbar', 'Status, Notizen und Aufgaben sind nachvollziehbar statt verstreut.'],
+                    ].map(([title, text]) => (
+                      <div key={title} className="rounded-[1.2rem] border border-white/12 bg-white/[0.04] p-4">
+                        <p className="text-sm font-semibold text-white">{title}</p>
+                        <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-[1.9rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
+          <Reveal>
+            <SectionHeader
+              eyebrow="Einordnung"
+              title="Eine Webseite ist nur der Anfang."
+              text="Viele kleine Unternehmen haben eine Webseite, aber dahinter fehlt oft ein klarer Ablauf. Kundenanfragen kommen per Formular, WhatsApp, E-Mail oder Telefon rein – und schnell geht etwas verloren. Mit digitalen Automatisierungen schafft STRUKTIVA einfache Systeme, die Anfragen, Kommunikation und Übersicht sinnvoll verbinden."
+            />
+          </Reveal>
+        </section>
+
+        <section className="mt-8">
+          <Reveal>
+            <SectionHeader
+              eyebrow="Leistungen"
+              title="Praktische Unterstützung für wiederkehrende Abläufe"
+              text="Statt unnötiger Technikbegriffe stehen verständliche Lösungen im Vordergrund, die kleine Unternehmen im Alltag wirklich entlasten können."
+            />
+          </Reveal>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.08 }}
+            variants={stagger}
+            className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3"
+          >
+            {kiAutomationCards.map(([Icon, title, text]) => (
+              <motion.article
+                key={title}
+                variants={fadeUp}
+                transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
+                className="service-card-3d rounded-[1.8rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-5 shadow-premium"
+              >
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D8B45A]/28 bg-[#D8B45A]/10 text-[#D8B45A]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h2 className="mt-4 text-2xl font-semibold text-white">{title}</h2>
+                <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+              </motion.article>
+            ))}
+          </motion.div>
+        </section>
+
+        <section className="mt-8 rounded-[1.9rem] border border-white/14 bg-white/[0.04] p-6 shadow-premium md:p-8">
+          <Reveal>
+            <SectionHeader
+              eyebrow="Zielgruppen"
+              title="Für wen ist das sinnvoll?"
+              text="Besonders sinnvoll ist KI & Automatisierung für Betriebe, die regelmäßig Kundenanfragen erhalten, schnell reagieren möchten und mehr Übersicht in ihre Abläufe bringen wollen."
+            />
+          </Reveal>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {kiAutomationAudience.map(([label, Icon]) => (
+              <Reveal key={label}>
+                <article className="rounded-[1.4rem] border border-[#D8B45A]/18 bg-[linear-gradient(160deg,rgba(5,5,5,0.82),rgba(11,15,20,0.88),rgba(16,23,34,0.92))] p-4">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-[#D8B45A]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <p className="mt-4 text-base font-semibold text-white">{label}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1.06fr_0.94fr]">
+          <Reveal>
+            <section className="h-full rounded-[1.9rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/82">Wichtig</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white">Verständlich statt kompliziert</h2>
+              <p className="mt-4 text-base leading-8 text-[#D7DCE5]">
+                STRUKTIVA setzt KI und Automatisierung nicht als Spielerei ein, sondern als praktische Unterstützung
+                im Alltag. Im Mittelpunkt stehen einfache Abläufe, klare Vorlagen und Systeme, die ein kleiner Betrieb
+                wirklich nutzen kann.
+              </p>
+            </section>
+          </Reveal>
+
+          <Reveal delay={0.06}>
+            <section className="h-full rounded-[1.9rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium md:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/82">Umsetzung nach Bedarf</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white">Passend zum vorhandenen Ablauf</h2>
+              <p className="mt-4 text-base leading-8 text-[#D7DCE5]">
+                Jede Automatisierung hängt vom vorhandenen System, den gewünschten Abläufen und dem Umfang ab. Kleine
+                Lösungen wie Anfrage- und Antwortsysteme sind ebenso möglich wie umfangreichere digitale Strukturen.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-[#94A3B8]">
+                Einzelne Automatisierungen können projektbezogen umgesetzt werden. Eine monatliche Betreuung ist nur
+                sinnvoll, wenn regelmäßig Inhalte, Anpassungen oder laufende Optimierung benötigt werden.
+              </p>
+            </section>
+          </Reveal>
+        </div>
+
+        <section className="mt-8 overflow-hidden rounded-[2rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(5,5,5,0.95),rgba(11,15,20,0.96),rgba(16,23,34,0.98))] p-6 shadow-premium md:p-8 lg:p-10">
+          <Reveal>
+            <div className="max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/82">Nächster Schritt</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">Bereit für weniger manuelle Arbeit?</h2>
+              <p className="mt-4 text-base leading-8 text-[#D7DCE5] md:text-lg">
+                Dann prüfen wir gemeinsam, welche Abläufe in deinem Unternehmen einfacher, klarer und digitaler werden können.
+              </p>
+              <a
+                href={siteLinks.contact}
+                className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.22)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
+              >
+                Jetzt unverbindlich anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </Reveal>
         </section>
       </div>
     </main>
@@ -5877,6 +6097,8 @@ function Page() {
     content = <AppsPage />
   } else if (pathname === '/google-ads') {
     content = <GoogleAdsPage />
+  } else if (pathname === '/ki-automatisierung') {
+    content = <KiAutomatisierungPage />
   } else if (pathname === '/bewertungs-qr-code') {
     content = <BewertungsQrCodePage />
   } else if (pathname === '/digitale-soforthilfe') {
