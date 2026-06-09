@@ -16,7 +16,7 @@
       "destination": "/demos/lokaler-dienstleister/index.html"
     },
     {
-      "source": "/((?!.*\\..*).*)",
+      "source": "/((?!api/)(?!.*\\..*).*)",
       "destination": "/index.html"
     }
   ]

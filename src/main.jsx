@@ -42,6 +42,8 @@ const siteLinks = {
   apps: '/apps',
   googleAds: '/google-ads',
   kiAutomatisierung: '/ki-automatisierung',
+  projectRequest: '/projekt-anfragen',
+  projectRequestForm: '/projekt-anfragen#lead-form',
   process: '/#ablauf',
   contact: '/kontakt',
   contactSection: '/#kontakt',
@@ -168,6 +170,33 @@ const kiAutomationAudience = [
   ['Beratungsbetriebe', BriefcaseBusiness],
   ['Lokale kleine Unternehmen', BadgeCheck],
 ]
+
+const leadInterestOptions = [
+  'Website / Landingpage',
+  'Google-Sichtbarkeit',
+  'KI & Automatisierung',
+  'Kundenanfragen-System',
+  'Digitale Ordnung',
+  'Unternehmens-App / Dashboard',
+  'Ich bin mir noch unsicher',
+]
+
+const leadProjectStartOptions = [
+  'Sofort',
+  'In den nächsten Wochen',
+  'In den nächsten Monaten',
+  'Noch offen',
+]
+
+const leadBudgetOptions = [
+  'Unter 500 €',
+  '500 € – 1.000 €',
+  '1.000 € – 2.500 €',
+  'Über 2.500 €',
+  'Noch offen',
+]
+
+const leadPreferredContactOptions = ['E-Mail', 'Telefon', 'WhatsApp']
 
 const demoDropdownItems = [
   ['Referenzprojekt Salon Karola', 'Echte Umsetzung: vom Baukasten-Auftritt zur modernen digitalen Salon-Struktur.', 'https://salon-karola-webseite.vercel.app/', Sparkles],
@@ -576,6 +605,7 @@ function useDocumentTitleSafe(pathname) {
       '/apps': 'Unternehmens-Apps - STRUKTIVA Unternehmensarchitektur',
       '/google-ads': 'Google Ads - STRUKTIVA Unternehmensarchitektur',
       '/ki-automatisierung': 'KI & Automatisierung für kleine Unternehmen - STRUKTIVA',
+      '/projekt-anfragen': 'Projekt anfragen - STRUKTIVA Unternehmensarchitektur',
       '/bewertungs-qr-code': 'Google-Bewertungssystem mit QR-Code | STRUKTIVA',
       '/digitale-ordnungssysteme': 'Digitale Ordnungssysteme fuer kleine Betriebe - STRUKTIVA',
       '/website-fuer-kleine-unternehmen': 'Website-Erstellung fuer kleine Unternehmen - STRUKTIVA',
@@ -623,6 +653,8 @@ function useDocumentTitleSafe(pathname) {
         'Schnelle digitale Unterstützung für Website-Anpassungen, Landingpages, Google-Texte, Social-Media-Beiträge, WhatsApp- und Bewertungstexte. STRUKTIVA Digitale Soforthilfe ab 99 € inklusive Mehrwertsteuer.',
       '/ki-automatisierung':
         'KI & Automatisierung für kleine Unternehmen: STRUKTIVA verbindet Anfragen, Kommunikation und digitale Abläufe zu klaren, alltagstauglichen Systemen.',
+      '/projekt-anfragen':
+        'Projekt anfragen bei STRUKTIVA: professionelle Ersteinschätzung für Website, Google-Sichtbarkeit, Automatisierung, digitale Ordnung und Unternehmenssysteme.',
       '/website-fuer-kleine-unternehmen':
         'Moderne Website-Erstellung fuer kleine Unternehmen und Selbststaendige mit klarer Struktur und professioneller Kundenfuehrung.',
       '/landingpage-erstellen-lassen':
@@ -1031,7 +1063,7 @@ function Header({ pathname, isHomeRoute = false }) {
 
         <div className="hidden lg:block">
           <a
-            href={siteLinks.contact}
+            href={siteLinks.projectRequestForm}
             className="inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full bg-[#D8B45A] px-4 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(17,24,39,0.14)] transition hover:bg-[#C9A247] hover:-translate-y-0.5"
           >
             Ersteinschätzung
@@ -1168,7 +1200,7 @@ function Header({ pathname, isHomeRoute = false }) {
                 </a>
               ))}
               <a
-                href={siteLinks.contact}
+                href={siteLinks.projectRequestForm}
                 onClick={closeMobileMenu}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
               >
@@ -5080,7 +5112,7 @@ function WebsiteFuerKleineUnternehmenPage() {
             ))}
           </div>
           <a
-            href={siteLinks.contact}
+            href={siteLinks.projectRequestForm}
             className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
           >
             Kostenlose Ersteinschätzung anfragen
@@ -5212,7 +5244,7 @@ function OfferDetailPage({ title, intro, points, pathname }) {
             </div>
           )}
           <a
-            href={siteLinks.contact}
+            href={siteLinks.projectRequestForm}
             className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
           >
             Kostenlose Ersteinschätzung anfragen
@@ -5331,7 +5363,7 @@ function KiAutomatisierungPage() {
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
-                    href={siteLinks.contact}
+                    href={siteLinks.projectRequestForm}
                     className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.22)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
                   >
                     Automatisierung anfragen
@@ -5481,7 +5513,7 @@ function KiAutomatisierungPage() {
                 Dann prüfen wir gemeinsam, welche Abläufe in deinem Unternehmen einfacher, klarer und digitaler werden können.
               </p>
               <a
-                href={siteLinks.contact}
+                href={siteLinks.projectRequestForm}
                 className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.22)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
               >
                 Jetzt unverbindlich anfragen
@@ -5490,6 +5522,401 @@ function KiAutomatisierungPage() {
             </div>
           </Reveal>
         </section>
+      </div>
+    </main>
+  )
+}
+
+function LeadField({ label, name, type = 'text', value, onChange, error, placeholder, autoComplete, required = false }) {
+  return (
+    <label className="block">
+      <span className="mb-2 block text-sm font-semibold text-white">
+        {label}
+        {required ? <span className="ml-1 text-[#D8B45A]">*</span> : null}
+      </span>
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        autoComplete={autoComplete}
+        className={`w-full rounded-[1.1rem] border bg-[#05080d] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-[#7f8ca0] focus:border-[#D8B45A] focus:ring-2 focus:ring-[#D8B45A]/20 ${
+          error ? 'border-[#d97757]' : 'border-white/12'
+        }`}
+      />
+      {error ? <span className="mt-2 block text-sm text-[#f3b6a1]">{error}</span> : null}
+    </label>
+  )
+}
+
+function LeadSelect({ label, name, value, onChange, options, error, placeholder, helper }) {
+  return (
+    <label className="block">
+      <span className="mb-2 block text-sm font-semibold text-white">{label}</span>
+      <select
+        name={name}
+        value={value}
+        onChange={onChange}
+        className={`w-full rounded-[1.1rem] border bg-[#05080d] px-4 py-3.5 text-sm text-white outline-none transition focus:border-[#D8B45A] focus:ring-2 focus:ring-[#D8B45A]/20 ${
+          error ? 'border-[#d97757]' : 'border-white/12'
+        }`}
+      >
+        <option value="">{placeholder}</option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      {helper ? <span className="mt-2 block text-xs leading-6 text-[#94A3B8]">{helper}</span> : null}
+      {error ? <span className="mt-2 block text-sm text-[#f3b6a1]">{error}</span> : null}
+    </label>
+  )
+}
+
+function ProjectRequestPage() {
+  const initialFormState = {
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    preferredContact: '',
+    interest: '',
+    projectStart: '',
+    budgetRange: '',
+    message: '',
+    privacyConsent: false,
+    website: '',
+  }
+
+  const [form, setForm] = useState(initialFormState)
+  const [errors, setErrors] = useState({})
+  const [submitState, setSubmitState] = useState('idle')
+  const [responseMessage, setResponseMessage] = useState('')
+
+  const handleChange = (event) => {
+    const target = event.target
+    const { name, type } = target
+    const value = type === 'checkbox' ? target.checked : target.value
+
+    setForm((current) => ({
+      ...current,
+      [name]: value,
+    }))
+
+    setErrors((current) => {
+      if (!current[name]) return current
+      const next = { ...current }
+      delete next[name]
+      return next
+    })
+  }
+
+  const validateForm = () => {
+    const nextErrors = {}
+
+    if (!form.name.trim()) nextErrors.name = 'Bitte Namen eingeben.'
+    if (!form.email.trim()) {
+      nextErrors.email = 'Bitte E-Mail-Adresse eingeben.'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      nextErrors.email = 'Bitte eine gültige E-Mail-Adresse eingeben.'
+    }
+
+    if (!form.message.trim()) {
+      nextErrors.message = 'Bitte kurz beschreiben, worum es geht.'
+    } else if (form.message.trim().length < 12) {
+      nextErrors.message = 'Bitte Nachricht etwas genauer beschreiben.'
+    }
+
+    if (!form.privacyConsent) {
+      nextErrors.privacyConsent = 'Bitte der Verarbeitung der Anfrage zustimmen.'
+    }
+
+    return nextErrors
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    const nextErrors = validateForm()
+    setErrors(nextErrors)
+    setResponseMessage('')
+
+    if (Object.keys(nextErrors).length > 0) return
+
+    setSubmitState('submitting')
+
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          company: form.company.trim(),
+          email: form.email.trim(),
+          phone: form.phone.trim(),
+          preferredContact: form.preferredContact,
+          interest: form.interest,
+          projectStart: form.projectStart,
+          budgetRange: form.budgetRange,
+          message: form.message.trim(),
+          privacyConsent: form.privacyConsent,
+          website: form.website,
+          source: 'Website',
+        }),
+      })
+
+      const payload = await response.json().catch(() => ({}))
+
+      if (!response.ok) {
+        throw new Error(payload?.error || 'Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es erneut.')
+      }
+
+      setSubmitState('success')
+      setResponseMessage('Vielen Dank für deine Anfrage. Deine Nachricht wurde erfolgreich übermittelt. STRUKTIVA meldet sich zeitnah bei dir.')
+      setForm(initialFormState)
+      setErrors({})
+    } catch (error) {
+      setSubmitState('error')
+      setResponseMessage(error.message || 'Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es erneut.')
+    }
+  }
+
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <section className="rounded-[2.2rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(5,5,5,0.95),rgba(11,15,20,0.96),rgba(16,23,34,0.98))] p-7 shadow-premium md:p-10 lg:p-12">
+          <Reveal>
+            <div className="max-w-4xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Projekt anfragen</p>
+              <h1 className="text-gold-glow mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-[3.4rem] lg:leading-[1.05]">
+                Projekt anfragen
+              </h1>
+              <p className="mt-5 text-xl font-medium text-[#F2D98B]">
+                Kostenlose Ersteinschätzung für dein digitales System
+              </p>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+                STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Betriebe bei Website-Struktur,
+                Kundenanfragen, Google-Sichtbarkeit, Automatisierung und digitalen Abläufen. Über dieses Formular kann
+                dein Anliegen klar und vollständig übermittelt werden.
+              </p>
+            </div>
+          </Reveal>
+        </section>
+
+        <div className="mt-8 grid gap-6 xl:grid-cols-[0.82fr_1.18fr]">
+          <Reveal>
+            <section className="h-full rounded-[1.9rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B45A]/82">Anfrage-System</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white">Klare Angaben für eine passende Rückmeldung</h2>
+              <p className="mt-4 text-base leading-8 text-[#D7DCE5]">
+                Je genauer das Anliegen beschrieben ist, desto besser lässt sich einschätzen, welche digitale Lösung,
+                welcher Umfang und welcher nächste Schritt sinnvoll sind.
+              </p>
+
+              <div className="mt-6 grid gap-3">
+                {[
+                  'Website, Landingpage oder Sichtbarkeit einschätzen',
+                  'KI & Automatisierung oder Anfrage-Systeme anfragen',
+                  'Digitale Ordnung, Dashboard oder App-Vorhaben beschreiben',
+                  'Kontaktweg und zeitlichen Rahmen direkt mitgeben',
+                ].map((item) => (
+                  <div key={item} className="rounded-[1.1rem] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-[#D7DCE5]">
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 rounded-[1.35rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-5">
+                <p className="text-sm font-semibold text-white">Direkter Kontakt</p>
+                <a href={`mailto:${contactDetails.email}`} className="mt-3 block text-sm text-[#D8B45A] transition hover:text-[#F2D98B]">
+                  {contactDetails.email}
+                </a>
+                <a href={contactDetails.phoneHref} className="mt-1 block text-sm text-[#D8B45A] transition hover:text-[#F2D98B]">
+                  {contactDetails.phoneLabel}
+                </a>
+                <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
+                  Das Formular ist der strukturierte Weg für neue Projektanfragen. Für kurze Rückfragen bleiben E-Mail
+                  und Telefon selbstverständlich möglich.
+                </p>
+              </div>
+            </section>
+          </Reveal>
+
+          <Reveal delay={0.06}>
+            <section id="lead-form" className="rounded-[1.9rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-6 shadow-premium md:p-8">
+              <div className="mb-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Lead-Formular</p>
+                <h2 className="mt-3 text-3xl font-semibold text-white">Projekt unverbindlich anfragen</h2>
+                <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
+                  Bitte die wichtigsten Angaben eintragen. So kann STRUKTIVA dein Anliegen besser einordnen.
+                </p>
+              </div>
+
+              <form className="grid gap-5" onSubmit={handleSubmit} noValidate>
+                <div className="grid gap-5 md:grid-cols-2">
+                  <LeadField
+                    label="Name"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    error={errors.name}
+                    placeholder="Vor- und Nachname"
+                    autoComplete="name"
+                    required
+                  />
+                  <LeadField
+                    label="Firma"
+                    name="company"
+                    value={form.company}
+                    onChange={handleChange}
+                    error={errors.company}
+                    placeholder="Optional"
+                    autoComplete="organization"
+                  />
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2">
+                  <LeadField
+                    label="E-Mail"
+                    name="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    error={errors.email}
+                    placeholder="name@unternehmen.de"
+                    autoComplete="email"
+                    required
+                  />
+                  <LeadField
+                    label="Telefon"
+                    name="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={handleChange}
+                    error={errors.phone}
+                    placeholder="Optional"
+                    autoComplete="tel"
+                  />
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2">
+                  <LeadSelect
+                    label="Gewünschter Kontaktweg"
+                    name="preferredContact"
+                    value={form.preferredContact}
+                    onChange={handleChange}
+                    options={leadPreferredContactOptions}
+                    error={errors.preferredContact}
+                    placeholder="Bitte auswählen"
+                  />
+                  <LeadSelect
+                    label="Interesse / Bedarf"
+                    name="interest"
+                    value={form.interest}
+                    onChange={handleChange}
+                    options={leadInterestOptions}
+                    error={errors.interest}
+                    placeholder="Bitte auswählen"
+                  />
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2">
+                  <LeadSelect
+                    label="Projektstart"
+                    name="projectStart"
+                    value={form.projectStart}
+                    onChange={handleChange}
+                    options={leadProjectStartOptions}
+                    error={errors.projectStart}
+                    placeholder="Bitte auswählen"
+                  />
+                  <LeadSelect
+                    label="Budgetrahmen"
+                    name="budgetRange"
+                    value={form.budgetRange}
+                    onChange={handleChange}
+                    options={leadBudgetOptions}
+                    error={errors.budgetRange}
+                    placeholder="Bitte auswählen"
+                    helper="Grobe Orientierung, falls schon bekannt."
+                  />
+                </div>
+
+                <label className="block">
+                  <span className="mb-2 block text-sm font-semibold text-white">
+                    Nachricht
+                    <span className="ml-1 text-[#D8B45A]">*</span>
+                  </span>
+                  <textarea
+                    name="message"
+                    rows={6}
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Worum geht es, was ist bereits vorhanden und was soll verbessert oder aufgebaut werden?"
+                    className={`w-full rounded-[1.1rem] border bg-[#05080d] px-4 py-3.5 text-sm leading-7 text-white outline-none transition placeholder:text-[#7f8ca0] focus:border-[#D8B45A] focus:ring-2 focus:ring-[#D8B45A]/20 ${
+                      errors.message ? 'border-[#d97757]' : 'border-white/12'
+                    }`}
+                  />
+                  {errors.message ? <span className="mt-2 block text-sm text-[#f3b6a1]">{errors.message}</span> : null}
+                </label>
+
+                <div className="hidden" aria-hidden="true">
+                  <label>
+                    Website
+                    <input type="text" name="website" tabIndex="-1" autoComplete="off" value={form.website} onChange={handleChange} />
+                  </label>
+                </div>
+
+                <label className="rounded-[1.2rem] border border-white/12 bg-white/[0.03] px-4 py-4">
+                  <span className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      name="privacyConsent"
+                      checked={form.privacyConsent}
+                      onChange={handleChange}
+                      className="mt-1 h-4 w-4 rounded border-white/30 bg-[#05080d] text-[#D8B45A] focus:ring-[#D8B45A]"
+                    />
+                    <span className="text-sm leading-7 text-[#D7DCE5]">
+                      Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Weitere
+                      Informationen finden sich in der{' '}
+                      <a href={siteLinks.datenschutz} className="font-semibold text-[#D8B45A] underline underline-offset-4">
+                        Datenschutzerklärung
+                      </a>
+                      .
+                    </span>
+                  </span>
+                  {errors.privacyConsent ? <span className="mt-2 block text-sm text-[#f3b6a1]">{errors.privacyConsent}</span> : null}
+                </label>
+
+                {responseMessage ? (
+                  <div
+                    aria-live="polite"
+                    className={`rounded-[1.2rem] border px-4 py-3 text-sm leading-7 ${
+                      submitState === 'success'
+                        ? 'border-[#D8B45A]/24 bg-[#D8B45A]/10 text-[#F2D98B]'
+                        : 'border-[#d97757]/30 bg-[#4a1f14]/40 text-[#f3b6a1]'
+                    }`}
+                  >
+                    {responseMessage}
+                  </div>
+                ) : null}
+
+                <button
+                  type="submit"
+                  disabled={submitState === 'submitting'}
+                  className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(17,24,39,0.24)] transition hover:bg-[#A9822D] hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {submitState === 'submitting' ? 'Anfrage wird gesendet ...' : 'Anfrage senden'}
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </form>
+            </section>
+          </Reveal>
+        </div>
       </div>
     </main>
   )
@@ -5596,19 +6023,26 @@ function DatenschutzPage() {
         <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit einem möglichen Vertrag oder einer Leistung zusammenhängt. In anderen Fällen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
       </LegalSection>
 
-      <LegalSection title="4. Cookies und Tracking">
-        <p>Diese Webseite verwendet derzeit keine eigenen Analyse- oder Marketing-Cookies.</p>
+      <LegalSection title="4. Projekt-Anfrageformular">
+        <p>Wenn du das Projekt-Anfrageformular auf dieser Webseite nutzt, werden die von dir eingegebenen Angaben verarbeitet, um deine Anfrage zu prüfen und zu beantworten.</p>
+        <p>Dazu können insbesondere Name, Firma, E-Mail-Adresse, Telefonnummer, gewünschter Kontaktweg, Projektinformationen, Nachrichteninhalte und weitere freiwillige Angaben gehören.</p>
+        <p>Die Verarbeitung erfolgt zur Bearbeitung deiner Anfrage und zur Vorbereitung möglicher Leistungen.</p>
       </LegalSection>
 
-      <LegalSection title="5. Speicherdauer">
+      <LegalSection title="5. Cookies und Tracking">
+        <p>Diese Webseite verwendet notwendige technische Funktionen sowie - nach Auswahl des Besuchers - optionale Statistik- und Marketing-Technologien.</p>
+        <p>Optionale Technologien werden erst geladen, wenn eine entsprechende Einwilligung im Cookie-Bereich erteilt wurde.</p>
+      </LegalSection>
+
+      <LegalSection title="6. Speicherdauer">
         <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
       </LegalSection>
 
-      <LegalSection title="6. Deine Rechte">
+      <LegalSection title="7. Deine Rechte">
         <p>Du hast im Rahmen der gesetzlichen Vorgaben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch gegen die Verarbeitung und Beschwerde bei einer Datenschutzaufsichtsbehörde.</p>
       </LegalSection>
 
-      <LegalSection title="7. Stand">
+      <LegalSection title="8. Stand">
         <p>Stand: Mai 2026</p>
       </LegalSection>
     </LegalLayout>
@@ -5673,6 +6107,17 @@ function ContactPage() {
       title="Kontakt"
       intro="Du möchtest dein Unternehmen sichtbarer, professioneller oder digital besser organisiert aufstellen? Schreibe kurz, wobei du Unterstützung brauchst."
     >
+      <LegalSection title="Projekt anfragen">
+        <p>Für neue Website-, Sichtbarkeits-, Automatisierungs- oder Systemanfragen gibt es jetzt eine strukturierte Anfrage-Seite mit allen wichtigen Angaben.</p>
+        <a
+          href={siteLinks.projectRequestForm}
+          className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+        >
+          Projekt unverbindlich anfragen
+          <ArrowRight className="h-4 w-4" />
+        </a>
+      </LegalSection>
+
       <LegalSection title="Kontakt zu STRUKTIVA Unternehmensarchitektur">
         <p>Mögliche Themen:</p>
         <p>- Professionelle Webseite</p>
@@ -6099,6 +6544,8 @@ function Page() {
     content = <GoogleAdsPage />
   } else if (pathname === '/ki-automatisierung') {
     content = <KiAutomatisierungPage />
+  } else if (pathname === '/projekt-anfragen') {
+    content = <ProjectRequestPage />
   } else if (pathname === '/bewertungs-qr-code') {
     content = <BewertungsQrCodePage />
   } else if (pathname === '/digitale-soforthilfe') {
