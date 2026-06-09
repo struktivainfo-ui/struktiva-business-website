@@ -31,6 +31,7 @@ import {
   X,
 } from 'lucide-react'
 import './styles.css'
+import { CookieConsentLayer, openCookieSettings, trackMarketingLead } from './cookieConsent.jsx'
 
 const siteLinks = {
   home: '/#start',
@@ -2532,6 +2533,13 @@ function Footer() {
               <a href={siteLinks.impressum} className="transition hover:text-[#F2D98B]">Impressum</a>
               <a href={siteLinks.datenschutz} className="transition hover:text-[#F2D98B]">Datenschutz</a>
               <a href={siteLinks.widerruf} className="transition hover:text-[#F2D98B]">Widerruf</a>
+              <button
+                type="button"
+                className="text-left transition hover:text-[#F2D98B]"
+                onClick={openCookieSettings}
+              >
+                Cookie-Einstellungen ändern
+              </button>
             </div>
             <div className="mt-4 rounded-xl border border-white/12 bg-white/[0.03] px-3.5 py-3">
               <p className="text-sm font-medium text-white">Zufrieden mit STRUKTIVA?</p>
@@ -5804,9 +5812,7 @@ function Page() {
 
   useEffect(() => {
     const safeTrackLead = () => {
-      if (typeof window !== 'undefined' && typeof window.pintrk === 'function') {
-        window.pintrk('track', 'lead')
-      }
+      trackMarketingLead()
     }
 
     const isContactHref = (href) => {
@@ -5917,6 +5923,7 @@ function Page() {
       {!isDemoRoute ? <Header pathname={pathname} isHomeRoute={isHomeRoute} /> : null}
       {content}
       {!isDemoRoute ? <Footer /> : null}
+      <CookieConsentLayer pathname={pathname} />
       <FloatingWhatsAppButton />
     </div>
   )
