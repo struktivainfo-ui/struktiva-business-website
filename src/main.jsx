@@ -109,7 +109,7 @@ const struktivaImages = {
 }
 
 const contactDetails = {
-  email: '<LEAD_RECEIVER_EMAIL>',
+  email: 'struktiva.info@gmail.com',
   phoneLabel: '07051 8162292',
   phoneHref: 'tel:+4970518162292',
   whatsappLabel: '07051 8162292',
@@ -5970,34 +5970,13 @@ function ImpressumPage() {
       title="Impressum"
       intro="Rechtliche Angaben und Kontaktinformationen zu STRUKTIVA Unternehmensarchitektur."
     >
-      <div style={{ border: '2px solid red', padding: '1rem', margin: '1rem 0', borderRadius: '6px' }}>
-        <strong style={{ color: 'red' }}>⚠ Rechtlicher Inhalt fehlt – vor Veröffentlichung ergänzen</strong>
-      </div>
-      <LegalSection title="Angaben gemäß § 5 DDG">
-        <ContactBlock />
+      <LegalSection title="Angaben gemäß § 5 TMG">
+        <p>Jessica Wacker<br />Ostlandstraße 3<br />75365 Calw</p>
+        <p>Kontakt:<br />Telefon: 07051 8162292<br />E-Mail: <a href="mailto:struktiva.info@gmail.com" className="text-[#D8B45A]">struktiva.info@gmail.com</a></p>
       </LegalSection>
 
-      <LegalSection title="Vertreten durch">
-        <p>Jessica Wacker</p>
-      </LegalSection>
-
-      <LegalSection title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
-        <p>Jessica Wacker</p>
-        <p>{contactDetails.addressLine1}</p>
-        <p>{contactDetails.addressLine2}</p>
-        <p>{contactDetails.country}</p>
-      </LegalSection>
-
-      <LegalSection title="Haftung für Inhalte">
-        <p>Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
-      </LegalSection>
-
-      <LegalSection title="Haftung für Links">
-        <p>Diese Webseite kann Links zu externen Webseiten Dritter enthalten. Auf deren Inhalte habe ich keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
-      </LegalSection>
-
-      <LegalSection title="Urheberrecht">
-        <p>Die auf dieser Webseite erstellten Inhalte, Texte, Grafiken und Designs unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung oder Verbreitung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.</p>
+      <LegalSection title="Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV">
+        <p>Jessica Wacker<br />Ostlandstraße 3<br />75365 Calw</p>
       </LegalSection>
     </LegalLayout>
   )
@@ -6009,47 +5988,40 @@ function DatenschutzPage() {
       title="Datenschutzerklärung"
       intro="Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Webseite und bei einer Kontaktaufnahme verarbeitet werden."
     >
-      <div style={{ border: '2px solid red', padding: '1rem', margin: '1rem 0', borderRadius: '6px' }}>
-        <strong style={{ color: 'red' }}>⚠ Rechtlicher Inhalt fehlt – vor Veröffentlichung ergänzen</strong>
-      </div>
       <LegalSection title="1. Verantwortlicher">
-        <ContactBlock />
+        <p>Jessica Wacker (STRUKTIVA)<br />Ostlandstraße 3, 75365 Calw<br />E-Mail: <a href="mailto:struktiva.info@gmail.com" className="text-[#D8B45A]">struktiva.info@gmail.com</a><br />Telefon: 07051 8162292</p>
       </LegalSection>
 
-      <LegalSection title="2. Hosting der Webseite">
-        <p>Diese Webseite wird über Vercel bereitgestellt.</p>
-        <p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA</p>
-        <p>Beim Aufruf der Webseite können durch den Hosting-Anbieter technische Daten verarbeitet werden. Dazu gehören insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp und Browserversion, verwendetes Betriebssystem, aufgerufene Seiten, Referrer-URL und technische Logdaten.</p>
-        <p>Die Verarbeitung erfolgt, um die Webseite sicher, stabil und zuverlässig bereitzustellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <LegalSection title="2. Erhebung und Verarbeitung personenbezogener Daten">
+        <p>Wir erheben personenbezogene Daten nur, soweit Sie uns diese im Rahmen<br />des Kontakt- bzw. Anfrageformulars freiwillig mitteilen. Dies umfasst:<br />Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Nachricht sowie<br />projektbezogene Angaben (Interesse, Projektstart, Budget).</p>
       </LegalSection>
 
-      <LegalSection title="3. Kontakt per E-Mail, Telefon und WhatsApp Business">
-        <p>Wenn du per E-Mail, Telefon oder WhatsApp Business Kontakt aufnimmst, werden die von dir übermittelten Daten verarbeitet, um deine Anfrage zu beantworten.</p>
-        <p>Dazu können insbesondere Name, E-Mail-Adresse, Telefonnummer, Nachrichteninhalte und weitere freiwillig übermittelte Angaben gehören.</p>
-        <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit einem möglichen Vertrag oder einer Leistung zusammenhängt. In anderen Fällen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <LegalSection title="3. Zweck der Datenverarbeitung">
+        <p>Die übermittelten Daten werden ausschließlich zur Bearbeitung Ihrer<br />Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht, außer an<br />den E-Mail-Versanddienstleister Resend (siehe unten).</p>
       </LegalSection>
 
-      <LegalSection title="4. Projekt-Anfrageformular">
-        <p>Wenn du das Projekt-Anfrageformular auf dieser Webseite nutzt, werden die von dir eingegebenen Angaben verarbeitet, um deine Anfrage zu prüfen und zu beantworten.</p>
-        <p>Dazu können insbesondere Name, Firma, E-Mail-Adresse, Telefonnummer, gewünschter Kontaktweg, Projektinformationen, Nachrichteninhalte und weitere freiwillige Angaben gehören.</p>
-        <p>Die Verarbeitung erfolgt zur Bearbeitung deiner Anfrage und zur Vorbereitung möglicher Leistungen.</p>
+      <LegalSection title="4. E-Mail-Versand über Resend">
+        <p>Für den Versand von Bestätigungs- und Benachrichtigungs-E-Mails nutzen<br />wir den Dienst Resend der Resend Inc., 2261 Market Street #4008,<br />San Francisco, CA 94114, USA. Resend ist als Auftragsverarbeiter gemäß<br />Art. 28 DSGVO vertraglich gebunden. Weitere Informationen:<br /><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#D8B45A]">https://resend.com/legal/privacy-policy</a></p>
       </LegalSection>
 
-      <LegalSection title="5. Cookies und Tracking">
-        <p>Diese Webseite verwendet notwendige technische Funktionen sowie - nach Auswahl des Besuchers - optionale Statistik- und Marketing-Technologien.</p>
-        <p>Optionale Technologien werden erst geladen, wenn eine entsprechende Einwilligung im Cookie-Bereich erteilt wurde.</p>
+      <LegalSection title="5. Rechtsgrundlage">
+        <p>Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO<br />(Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes<br />Interesse an der Bearbeitung von Geschäftsanfragen).</p>
       </LegalSection>
 
       <LegalSection title="6. Speicherdauer">
-        <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
+        <p>Ihre Daten werden gelöscht, sobald sie für die Erreichung des Zwecks<br />nicht mehr erforderlich sind, spätestens nach 6 Monaten, sofern keine<br />gesetzlichen Aufbewahrungspflichten bestehen.</p>
       </LegalSection>
 
-      <LegalSection title="7. Deine Rechte">
-        <p>Du hast im Rahmen der gesetzlichen Vorgaben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch gegen die Verarbeitung und Beschwerde bei einer Datenschutzaufsichtsbehörde.</p>
+      <LegalSection title="7. Ihre Rechte">
+        <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung<br />(Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der<br />Verarbeitung (Art. 18 DSGVO) sowie Datenübertragbarkeit (Art. 20 DSGVO).<br />Zur Geltendmachung Ihrer Rechte wenden Sie sich an:<br /><a href="mailto:struktiva.info@gmail.com" className="text-[#D8B45A]">struktiva.info@gmail.com</a></p>
       </LegalSection>
 
-      <LegalSection title="8. Stand">
-        <p>Stand: Mai 2026</p>
+      <LegalSection title="8. Beschwerderecht">
+        <p>Sie haben das Recht, sich bei der zuständigen Datenschutzaufsichtsbehörde<br />zu beschweren. Zuständig ist der Landesbeauftragte für den Datenschutz<br />Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart.</p>
+      </LegalSection>
+
+      <LegalSection title="9. Hosting">
+        <p>Diese Website wird über Vercel Inc., 340 Pine Street Suite 701,<br />San Francisco, CA 94104, USA gehostet. Beim Aufruf der Website werden<br />automatisch Server-Logdaten (IP-Adresse, Browsertyp, Zeitstempel)<br />erhoben. Weitere Informationen:<br /><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#D8B45A]">https://vercel.com/legal/privacy-policy</a></p>
       </LegalSection>
     </LegalLayout>
   )
@@ -6058,53 +6030,12 @@ function DatenschutzPage() {
 function WiderrufPage() {
   return (
     <LegalLayout
-      title="Widerrufsbelehrung"
-      intro="Hinweise zum gesetzlichen Widerrufsrecht für Verbraucher und zum Muster-Widerrufsformular."
+      title="Kein Widerrufsrecht"
+      intro="Hinweis zum fehlenden gesetzlichen Widerrufsrecht für die angebotenen Dienstleistungen."
     >
-      <div style={{ border: '2px solid red', padding: '1rem', margin: '1rem 0', borderRadius: '6px' }}>
-        <strong style={{ color: 'red' }}>⚠ Rechtlicher Inhalt fehlt – vor Veröffentlichung ergänzen</strong>
-      </div>
-      <LegalSection title="Widerrufsrecht für Verbraucher">
-        <p>Verbraucher haben grundsätzlich das Recht, binnen vierzehn Tagen ohne Angabe von Gründen einen Vertrag zu widerrufen, sofern ein gesetzliches Widerrufsrecht besteht.</p>
-        <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses.</p>
-        <p>Um dein Widerrufsrecht auszuüben, musst du mich mittels einer eindeutigen Erklärung über deinen Entschluss informieren, diesen Vertrag zu widerrufen.</p>
-      </LegalSection>
-
-      <LegalSection title="Kontakt für Widerruf">
-        <ContactBlock />
-      </LegalSection>
-
-      <LegalSection title="Folgen des Widerrufs">
-        <p>Wenn du diesen Vertrag widerrufst, werden alle Zahlungen, die ich von dir erhalten habe, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückgezahlt, an dem die Mitteilung über deinen Widerruf eingegangen ist.</p>
-        <p>Für diese Rückzahlung wird dasselbe Zahlungsmittel verwendet, das du bei der ursprünglichen Zahlung eingesetzt hast, sofern nicht ausdrücklich etwas anderes vereinbart wurde.</p>
-      </LegalSection>
-
-      <LegalSection title="Widerruf bei Dienstleistungen und digitalen Inhalten">
-        <p>Hast du verlangt, dass die Dienstleistung bereits während der Widerrufsfrist beginnen soll, so ist für bereits erbrachte Leistungen ein angemessener Betrag zu zahlen, sofern dies gesetzlich vorgesehen ist.</p>
-        <p>Bei digitalen Inhalten oder digitalen Leistungen kann das Widerrufsrecht unter bestimmten gesetzlichen Voraussetzungen vorzeitig erlöschen, wenn mit der Ausführung begonnen wurde und der Verbraucher ausdrücklich zugestimmt hat, dass mit der Ausführung vor Ablauf der Widerrufsfrist begonnen wird.</p>
-      </LegalSection>
-
-      <LegalSection title="Muster-Widerrufsformular">
-        <p>Wenn du den Vertrag widerrufen möchtest, kannst du dieses Formular ausfüllen und per E-Mail senden.</p>
-        <p>An:</p>
-        <p>{brand.name}</p>
-        <p>Jessica Wacker</p>
-        <p>E-Mail: {contactDetails.email}</p>
-        <p>Telefon: {contactDetails.phoneLabel}</p>
-        <p className="pt-2">Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung:</p>
-        <p>__________________________________________________</p>
-        <p>Bestellt am:</p>
-        <p>__________________________________________________</p>
-        <p>Name des Verbrauchers:</p>
-        <p>__________________________________________________</p>
-        <p>Anschrift des Verbrauchers:</p>
-        <p>__________________________________________________</p>
-        <p>E-Mail-Adresse:</p>
-        <p>__________________________________________________</p>
-        <p>Datum:</p>
-        <p>__________________________________________________</p>
-        <p>Unterschrift nur bei Mitteilung auf Papier:</p>
-        <p>__________________________________________________</p>
+      <LegalSection title="Kein Widerrufsrecht">
+        <p>STRUKTIVA erbringt Dienstleistungen ausschließlich auf Basis<br />individueller Auftragsvereinbarungen. Ein gesetzliches Widerrufsrecht<br />nach § 312g BGB besteht für diese Art von Dienstleistungsverträgen<br />nicht, sofern die Leistung auf ausdrücklichen Wunsch des Auftraggebers<br />vor Ablauf der Widerrufsfrist vollständig erbracht wurde.</p>
+        <p>Bei Fragen wenden Sie sich an: <a href="mailto:struktiva.info@gmail.com" className="text-[#D8B45A]">struktiva.info@gmail.com</a></p>
       </LegalSection>
     </LegalLayout>
   )
