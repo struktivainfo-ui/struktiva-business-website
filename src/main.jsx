@@ -109,7 +109,7 @@ const struktivaImages = {
 }
 
 const contactDetails = {
-  email: 'struktiva.info@gmail.com',
+  email: '<LEAD_RECEIVER_EMAIL>',
   phoneLabel: '07051 8162292',
   phoneHref: 'tel:+4970518162292',
   whatsappLabel: '07051 8162292',
@@ -5970,6 +5970,9 @@ function ImpressumPage() {
       title="Impressum"
       intro="Rechtliche Angaben und Kontaktinformationen zu STRUKTIVA Unternehmensarchitektur."
     >
+      <p style={{ color: 'red', fontWeight: 'bold' }}>
+        ⚠ Rechtlicher Inhalt fehlt – vor Veröffentlichung ergänzen
+      </p>
       <LegalSection title="Angaben gemäß § 5 DDG">
         <ContactBlock />
       </LegalSection>
@@ -6006,6 +6009,9 @@ function DatenschutzPage() {
       title="Datenschutzerklärung"
       intro="Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Webseite und bei einer Kontaktaufnahme verarbeitet werden."
     >
+      <p style={{ color: 'red', fontWeight: 'bold' }}>
+        ⚠ Rechtlicher Inhalt fehlt – vor Veröffentlichung ergänzen
+      </p>
       <LegalSection title="1. Verantwortlicher">
         <ContactBlock />
       </LegalSection>
@@ -6055,6 +6061,9 @@ function WiderrufPage() {
       title="Widerrufsbelehrung"
       intro="Hinweise zum gesetzlichen Widerrufsrecht für Verbraucher und zum Muster-Widerrufsformular."
     >
+      <p style={{ color: 'red', fontWeight: 'bold' }}>
+        ⚠ Rechtlicher Inhalt fehlt – vor Veröffentlichung ergänzen
+      </p>
       <LegalSection title="Widerrufsrecht für Verbraucher">
         <p>Verbraucher haben grundsätzlich das Recht, binnen vierzehn Tagen ohne Angabe von Gründen einen Vertrag zu widerrufen, sofern ein gesetzliches Widerrufsrecht besteht.</p>
         <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses.</p>

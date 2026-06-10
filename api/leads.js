@@ -1,4 +1,6 @@
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
+
+const rateLimit = new Map()
 
 const ALLOWED_INTERESTS = new Set([
   'Website / Landingpage',
@@ -122,7 +124,7 @@ function validateLeadInput(input) {
   }
 }
 
-function buildAdminEmailHtml(lead) {
+function buildInternalMailHtml(lead) {
   const rows = [
     ['Datum/Uhrzeit', lead.createdAt],
     ['Name', lead.name],
@@ -162,28 +164,7 @@ function buildAdminEmailHtml(lead) {
   `
 }
 
-function buildAdminEmailText(lead) {
-  return [
-    'Neue STRUKTIVA-Anfrage über die Website',
-    '',
-    `Datum/Uhrzeit: ${lead.createdAt}`,
-    `Name: ${lead.name}`,
-    `Firma: ${lead.company || '—'}`,
-    `E-Mail: ${lead.email}`,
-    `Telefon: ${lead.phone || '—'}`,
-    `Gewünschter Kontaktweg: ${lead.preferredContact || '—'}`,
-    `Interesse / Bedarf: ${lead.interest || '—'}`,
-    `Projektstart: ${lead.projectStart || '—'}`,
-    `Budgetrahmen: ${lead.budgetRange || '—'}`,
-    `Quelle: ${lead.source}`,
-    `Status: ${lead.status}`,
-    '',
-    'Nachricht:',
-    lead.message,
-  ].join('\n')
-}
-
-function buildConfirmationHtml(lead) {
+function buildConfirmationMailHtml(lead) {
   return `
     <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
       <p>Hallo ${escapeHtml(lead.name)},</p>
@@ -194,69 +175,25 @@ function buildConfirmationHtml(lead) {
   `
 }
 
-function buildConfirmationText(lead) {
-  return [
-    `Hallo ${lead.name},`,
-    '',
-    'vielen Dank für deine Anfrage bei STRUKTIVA Unternehmensarchitektur.',
-    '',
-    'Deine Nachricht ist eingegangen. Ich prüfe dein Anliegen und melde mich mit einer passenden Rückmeldung.',
-    '',
-    'Viele Grüße',
-    'Sven Matzke',
-    'STRUKTIVA Unternehmensarchitektur',
-  ].join('\n')
-}
-
-function createSmtpTransporter() {
-  const host = process.env.SMTP_HOST
-  const portValue = process.env.SMTP_PORT
-  const user = process.env.SMTP_USER
-  const pass = process.env.SMTP_PASS
-
-  const port = Number.parseInt(String(portValue || ''), 10)
-  if (!host || !Number.isFinite(port) || !user || !pass) {
-    throw new Error('SMTP environment variables are incomplete.')
-  }
-
-  const secure = port === 465
-
-  return nodemailer.createTransport({
-    host,
-    port,
-    secure,
-    auth: {
-      user,
-      pass,
-    },
-  })
-}
-
 async function sendLeadEmails(lead) {
-  const to = process.env.LEAD_RECEIVER_EMAIL
-  const from = process.env.SMTP_FROM
-
-  if (!to || !from) {
+  if (!process.env.RESEND_API_KEY || !process.env.SMTP_FROM || !process.env.LEAD_RECEIVER_EMAIL) {
     throw new Error('Lead email environment variables are incomplete.')
   }
 
-  const transporter = createSmtpTransporter()
+  const resend = new Resend(process.env.RESEND_API_KEY)
 
-  await transporter.sendMail({
-    from,
-    to,
-    replyTo: lead.email,
-    subject: 'Neue STRUKTIVA-Anfrage über die Website',
-    html: buildAdminEmailHtml(lead),
-    text: buildAdminEmailText(lead),
+  await resend.emails.send({
+    from: process.env.SMTP_FROM,
+    to: process.env.LEAD_RECEIVER_EMAIL,
+    subject: `Neue Anfrage von ${lead.name}`,
+    html: buildInternalMailHtml(lead),
   })
 
-  await transporter.sendMail({
-    from,
+  await resend.emails.send({
+    from: process.env.SMTP_FROM,
     to: lead.email,
-    subject: 'Deine Anfrage bei STRUKTIVA ist eingegangen',
-    html: buildConfirmationHtml(lead),
-    text: buildConfirmationText(lead),
+    subject: 'Deine Anfrage bei STRUKTIVA',
+    html: buildConfirmationMailHtml(lead),
   })
 }
 
@@ -282,6 +219,23 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST')
     return json(res, 405, { error: 'Methode nicht erlaubt.' })
+  }
+
+  const ip =
+    req.headers['x-forwarded-for']?.split(',')[0].trim() ||
+    req.socket?.remoteAddress ||
+    'unknown'
+
+  const now = Date.now()
+  const entry = rateLimit.get(ip) || { count: 0, start: now }
+
+  if (now - entry.start > 60_000) {
+    rateLimit.set(ip, { count: 1, start: now })
+  } else if (entry.count >= 5) {
+    return json(res, 429, { error: 'Zu viele Anfragen. Bitte warte kurz.' })
+  } else {
+    entry.count++
+    rateLimit.set(ip, entry)
   }
 
   try {

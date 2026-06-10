@@ -9,7 +9,7 @@ Professionelle Onepage-Webseite für STRUKTIVA Unternehmensarchitektur.
 - Tailwind CSS
 - lucide-react Icons
 - Vercel Serverless Function unter `/api/leads`
-- SMTP-Versand mit `nodemailer`
+- Resend-Versand mit dem Paket `resend`
 
 ## Lokal starten
 
@@ -44,9 +44,9 @@ Der Ablauf:
 
 1. Besucher füllt das Anfrageformular aus.
 2. Das Frontend sendet die Daten an `/api/leads`.
-3. Die Serverless Function prüft Pflichtfelder, Datenschutz-Zustimmung und Honeypot-Spamschutz.
-4. Danach wird per SMTP eine interne E-Mail an STRUKTIVA gesendet.
-5. Zusätzlich wird per SMTP eine Bestätigungs-E-Mail an den Interessenten versendet.
+3. Die Serverless Function prüft Pflichtfelder, Datenschutz-Zustimmung, Honeypot-Spamschutz und Rate-Limiting.
+4. Danach wird über Resend eine interne E-Mail an `<LEAD_RECEIVER_EMAIL>` gesendet.
+5. Zusätzlich wird über Resend eine Bestätigungs-E-Mail an den Interessenten versendet.
 6. Wenn `LEAD_WEBHOOK_URL` gesetzt ist, werden die Lead-Daten zusätzlich per `POST` an diese URL übertragen.
 
 ### Benötigte Umgebungsvariablen
@@ -54,35 +54,18 @@ Der Ablauf:
 Diese Variablen in Vercel hinterlegen:
 
 ```env
-SMTP_HOST=
-SMTP_PORT=
-SMTP_USER=
-SMTP_PASS=
+RESEND_API_KEY=
 SMTP_FROM=
-LEAD_RECEIVER_EMAIL=struktiva.info@gmail.com
+LEAD_RECEIVER_EMAIL=<LEAD_RECEIVER_EMAIL>
 LEAD_WEBHOOK_URL=
 ```
 
 Hinweise:
 
-- `SMTP_PORT` wird numerisch verarbeitet.
-- Bei `SMTP_PORT=465` wird `secure=true` verwendet.
-- Bei `SMTP_PORT=587` wird `secure=false` verwendet.
-- `SMTP_FROM` ist die sichtbare Absenderadresse für interne und externe E-Mails.
+- `RESEND_API_KEY` wird für den E-Mail-Versand mit Resend genutzt.
+- `SMTP_FROM` ist die verifizierte sichtbare Absenderadresse bei Resend.
 - `LEAD_RECEIVER_EMAIL` ist die interne Empfängeradresse für neue Leads.
 - `LEAD_WEBHOOK_URL` ist optional. Wenn gesetzt, werden Leads zusätzlich an Google Sheets, Airtable, Make, Zapier oder ein eigenes Dashboard weitergegeben.
-
-### Beispiel für Gmail SMTP
-
-```env
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_USER=deine-email@gmail.com
-SMTP_PASS=dein-app-passwort
-SMTP_FROM=STRUKTIVA <deine-email@gmail.com>
-LEAD_RECEIVER_EMAIL=struktiva.info@gmail.com
-LEAD_WEBHOOK_URL=
-```
 
 ### Webhook-Format
 
@@ -114,7 +97,7 @@ Wenn `LEAD_WEBHOOK_URL` gesetzt ist, wird ein JSON-Objekt mit diesen Feldern ges
 
 ## Vor Veröffentlichung anpassen
 
-- rechtliche Platzhalter in `src/main.jsx` mit echten Angaben ergänzen
+- rechtliche Inhalte in `src/main.jsx` final juristisch ergänzen
 - WhatsApp-Link bei Bedarf durch die echte Nummer ersetzen
 - Impressum, Datenschutz und Widerruf final juristisch prüfen
 - optional eigene Domain in Vercel verbinden
