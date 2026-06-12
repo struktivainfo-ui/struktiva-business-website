@@ -1045,3 +1045,186 @@ body.cookie-modal-open {
     bottom: 306px;
   }
 }
+
+.hero-premium-section {
+  min-height: calc(100svh - 82px);
+}
+
+.hero-video-layer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+  filter: saturate(0.86) contrast(0.94) brightness(1.02);
+}
+
+.theme-band-shell {
+  overflow: hidden;
+  border-top: 1px solid rgba(188, 146, 55, 0.22);
+  border-bottom: 1px solid rgba(188, 146, 55, 0.22);
+  background: linear-gradient(180deg, rgba(250, 245, 234, 0.96), rgba(245, 236, 218, 0.96));
+}
+
+.theme-band-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  min-width: 100%;
+  padding: 1.15rem 0;
+  animation: themeBandScroll 34s linear infinite;
+}
+
+.theme-band-item {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0 1.6rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #17130f;
+  white-space: nowrap;
+}
+
+.theme-band-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -0.18rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #e0bf68, #b8862f);
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 3px rgba(216, 180, 90, 0.08);
+}
+
+.theme-band-item:last-child::after {
+  display: none;
+}
+
+@keyframes themeBandScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Bright 2026 refinement for homepage */
+.struktiva-home {
+  color: #16120e;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(227, 201, 151, 0.28), transparent 28%),
+    radial-gradient(circle at 84% 10%, rgba(255, 255, 255, 0.82), transparent 24%),
+    linear-gradient(180deg, #fbf7ef 0%, #f6efdf 46%, #f4ead5 100%);
+}
+
+.struktiva-home::after {
+  opacity: 0.9;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(216, 180, 90, 0.13), transparent 30%),
+    radial-gradient(circle at 86% 16%, rgba(255, 255, 255, 0.45), transparent 36%),
+    radial-gradient(circle at 68% 76%, rgba(216, 180, 90, 0.08), transparent 42%);
+}
+
+.struktiva-home .shadow-premium {
+  box-shadow:
+    0 26px 56px rgba(106, 81, 30, 0.08),
+    0 10px 24px rgba(121, 95, 41, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.54);
+}
+
+.struktiva-home section::before {
+  background: linear-gradient(90deg, rgba(214, 168, 79, 0), rgba(214, 168, 79, 0.28), rgba(214, 168, 79, 0));
+  opacity: 0.5;
+}
+
+.struktiva-home .hero-orb-left {
+  background: rgba(216, 180, 90, 0.22);
+}
+
+.struktiva-home .hero-orb-right {
+  background: rgba(173, 144, 90, 0.14);
+}
+
+.struktiva-home .text-gold-glow {
+  text-shadow: 0 6px 18px rgba(216, 180, 90, 0.08);
+}
+
+.struktiva-home header.sticky {
+  background: linear-gradient(180deg, rgba(252, 247, 238, 0.96), rgba(247, 239, 225, 0.94)) !important;
+  border-bottom: 1px solid rgba(214, 168, 79, 0.28) !important;
+  box-shadow:
+    0 10px 35px rgba(106, 81, 30, 0.08),
+    0 0 24px rgba(214, 168, 79, 0.06) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+.struktiva-home header.sticky > div {
+  background: rgba(255, 251, 244, 0.84) !important;
+  border-color: rgba(214, 168, 79, 0.22) !important;
+}
+
+.struktiva-home header.sticky nav a,
+.struktiva-home header.sticky nav button,
+.struktiva-home header.sticky .text-white,
+.struktiva-home header.sticky .text-\[\#D7DCE5\] {
+  color: #1b1712 !important;
+}
+
+.struktiva-home header.sticky nav a:hover,
+.struktiva-home header.sticky nav button:hover {
+  color: #a9822d !important;
+}
+
+.struktiva-home #start .hero-architecture-grid {
+  opacity: 0.18;
+}
+
+.struktiva-home #start .hero-image-overlay {
+  background: linear-gradient(180deg, rgba(7, 8, 11, 0), rgba(18, 16, 14, 0.76));
+}
+
+.struktiva-home #root::before {
+  opacity: 0.03;
+}
+
+@media (max-width: 980px) {
+  .hero-premium-section {
+    min-height: auto;
+  }
+
+  .theme-band-track {
+    padding: 1rem 0;
+    animation-duration: 28s;
+  }
+
+  .theme-band-item {
+    padding: 0 1.1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-band-shell {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .theme-band-track {
+    animation-duration: 24s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-band-track {
+    animation: none;
+  }
+
+  .hero-video-layer {
+    display: none;
+  }
+}
