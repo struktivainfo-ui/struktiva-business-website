@@ -981,7 +981,7 @@ function Header({ pathname, isHomeRoute = false }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute left-1/2 top-[calc(100%+12px)] z-[10000] w-[360px] max-w-[92vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/40 bg-[#050505] p-2.5 shadow-[0_20px_45px_rgba(3,8,16,0.62)]"
+                  className="header-dropdown-panel absolute left-1/2 top-[calc(100%+12px)] z-[10000] w-[360px] max-w-[92vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/46 bg-[linear-gradient(135deg,rgba(18,18,18,0.98),rgba(35,35,35,0.94))] p-2.5 shadow-[0_20px_45px_rgba(3,8,16,0.62)] backdrop-blur-xl"
                 >
                   <div className="mb-2 h-px w-full bg-gradient-to-r from-transparent via-[#D8B45A]/55 to-transparent" />
                   <div className="grid gap-1">
@@ -991,7 +991,7 @@ function Header({ pathname, isHomeRoute = false }) {
                         href={href}
                         role="menuitem"
                         onClick={closeDesktopDropdown}
-                        className="rounded-xl px-3 py-2.5 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.06] hover:text-[#D8B45A]"
+                        className="header-dropdown-link rounded-xl border border-transparent px-3 py-2.5 text-sm font-medium text-[#FFF8E8] transition hover:border-[#D8B45A]/28 hover:bg-white/[0.08] hover:text-[#F0C45C]"
                       >
                         {label}
                       </a>
@@ -1000,7 +1000,7 @@ function Header({ pathname, isHomeRoute = false }) {
                       href={siteLinks.leistungenPage}
                       role="menuitem"
                       onClick={closeDesktopDropdown}
-                      className="mt-1 rounded-xl border border-[#D8B45A]/28 bg-white/[0.03] px-3 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                      className="header-dropdown-cta mt-1 rounded-xl border border-[#D8B45A]/34 bg-[#141414] px-3 py-2.5 text-sm font-semibold text-[#F0C45C] transition hover:bg-[#D8B45A] hover:text-[#16120E]"
                     >
                       Alle Leistungen ansehen
                     </a>
@@ -1144,7 +1144,7 @@ function Header({ pathname, isHomeRoute = false }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.18 }}
-                    className="rounded-2xl border border-[#D6A84F]/35 bg-[#050505] p-2"
+                    className="rounded-2xl border border-[#D6A84F]/40 bg-[linear-gradient(135deg,rgba(18,18,18,0.98),rgba(35,35,35,0.94))] p-2"
                   >
                     <div className="grid gap-1">
                       {leistungenDropdownItems.map(([label, href]) => (
@@ -1152,7 +1152,7 @@ function Header({ pathname, isHomeRoute = false }) {
                           key={label}
                           href={href}
                           onClick={closeMobileMenu}
-                          className="rounded-lg px-2.5 py-2 text-sm text-[#D7DCE5] transition hover:bg-[#111827] hover:text-[#D8B45A]"
+                          className="rounded-lg border border-transparent px-2.5 py-2 text-sm text-[#FFF8E8] transition hover:border-[#D8B45A]/28 hover:bg-[#1A1A1A] hover:text-[#F0C45C]"
                         >
                           {label}
                         </a>
@@ -1160,7 +1160,7 @@ function Header({ pathname, isHomeRoute = false }) {
                       <a
                         href={siteLinks.leistungenPage}
                         onClick={closeMobileMenu}
-                        className="mt-1 rounded-lg border border-[#D8B45A]/35 bg-[#0B0F14] px-2.5 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                        className="mt-1 rounded-lg border border-[#D8B45A]/38 bg-[#141414] px-2.5 py-2 text-sm font-semibold text-[#F0C45C] transition hover:bg-[#D8B45A] hover:text-[#16120E]"
                       >
                         Alle Leistungen ansehen
                       </a>
@@ -3192,15 +3192,15 @@ function WhatStruktivaBuildsSection() {
                   key={step}
                   variants={fadeUp}
                   transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}
-                  className="rounded-[1.5rem] border border-white/75 bg-white/70 p-4 shadow-[0_18px_42px_rgba(83,62,22,0.06)] backdrop-blur-md md:p-5"
+                  className="rounded-[1.5rem] border border-[#D8B45A]/26 bg-[linear-gradient(135deg,rgba(18,18,18,0.96),rgba(35,35,35,0.92))] p-4 shadow-[0_18px_42px_rgba(3,8,16,0.2)] backdrop-blur-md md:p-5"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D8B45A]/34 bg-[#D8B45A]/12 text-sm font-semibold text-[#9C7424]">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#F0C45C]/44 bg-[#D8B45A]/18 text-sm font-semibold text-[#FFF4D0] shadow-[0_6px_18px_rgba(0,0,0,0.16)]">
                       {step}
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-[#16120E]">{title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-[#5B5348]">{text}</p>
+                      <h3 className="text-lg font-semibold text-[#FFF8E8]">{title}</h3>
+                      <p className="mt-2 text-sm leading-7 text-[rgba(248,241,227,0.78)]">{text}</p>
                     </div>
                   </div>
                 </motion.article>
@@ -3512,14 +3512,14 @@ function BranchenSection() {
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {items.map(([title, problemText, solutionText, cta, href, image, overlay]) => (
-            <article key={title} className="group relative overflow-hidden rounded-2xl border border-white/80 bg-white/76 p-4 shadow-[0_18px_38px_rgba(83,62,22,0.05)] transition hover:-translate-y-1 hover:border-[#D8B45A]/30">
-              <img src={image} alt="" aria-hidden="true" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-16 transition duration-500 group-hover:scale-105 group-hover:opacity-24" />
-              <div className={`absolute inset-0 bg-gradient-to-b ${overlay}`} />
-              <div className="relative">
-                <h3 className="text-lg font-semibold text-[#FFF9F1]">{title}</h3>
-                <p className="mt-2 text-sm leading-7 text-[#F3EDE3]">{problemText}</p>
-                <p className="mt-2 text-sm leading-7 text-[#F3EDE3]">{solutionText}</p>
-                <a href={href} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#F1C968]">
+            <article key={title} className="industry-card group relative overflow-hidden rounded-2xl border border-[#E8D9B8]/72 bg-[linear-gradient(135deg,rgba(23,19,16,0.82),rgba(33,28,23,0.72))] p-4 shadow-[0_18px_38px_rgba(83,62,22,0.05)] transition hover:-translate-y-1 hover:border-[#D8B45A]/40">
+              <img src={image} alt="" aria-hidden="true" loading="lazy" decoding="async" className="industry-card-image absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <div className={`industry-card-overlay absolute inset-0 bg-gradient-to-b ${overlay}`} />
+              <div className="industry-card-content relative rounded-[1.2rem]">
+                <h3 className="text-lg font-semibold text-[#FFF8E8]">{title}</h3>
+                <p className="mt-2 text-sm leading-7 text-[rgba(255,248,232,0.88)]">{problemText}</p>
+                <p className="mt-2 text-sm leading-7 text-[rgba(255,248,232,0.88)]">{solutionText}</p>
+                <a href={href} className="industry-card-link mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#F0C45C]">
                   {cta}
                   <ArrowRight className="h-4 w-4" />
                 </a>
@@ -3943,10 +3943,10 @@ function PricingArchitectureSection() {
         </Reveal>
 
         <div className="mt-10 grid gap-5 xl:grid-cols-[0.82fr_1.18fr]">
-          <article className="rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,252,246,0.98),rgba(247,238,222,0.95))] p-6 shadow-[0_24px_52px_rgba(83,62,22,0.08)] md:p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/85">Preislogik</p>
-            <h3 className="mt-3 text-3xl font-semibold text-[#16120E] md:text-4xl">Nicht das größte Paket zuerst. Sondern der sinnvollste Einstieg.</h3>
-            <p className="mt-4 text-sm leading-8 text-[#5B5348] md:text-base">
+          <article className="rounded-[2rem] border border-[#D8B45A]/28 bg-[linear-gradient(135deg,rgba(18,18,18,0.96),rgba(35,35,35,0.92))] p-6 shadow-[0_24px_52px_rgba(3,8,16,0.2)] md:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Preislogik</p>
+            <h3 className="mt-3 text-3xl font-semibold text-[#FFF8E8] md:text-4xl">Nicht das größte Paket zuerst. Sondern der sinnvollste Einstieg.</h3>
+            <p className="mt-4 text-sm leading-8 text-[rgba(248,241,227,0.76)] md:text-base">
               Die Pakete geben Orientierung. Sie zeigen, mit welchem Umfang Unternehmen meist starten und wie sich daraus eine klare digitale Struktur entwickeln lässt.
             </p>
             <div className="mt-6 space-y-3">
@@ -3956,15 +3956,15 @@ function PricingArchitectureSection() {
                 'Struktur für professionelle Verbindung von Vertrauen, Sichtbarkeit und Anfragewegen.',
                 'System für Unternehmen, die auch intern digitale Ordnung aufbauen wollen.',
               ].map((item, index) => (
-                <div key={item} className="flex items-start gap-3 rounded-[1.15rem] border border-white/80 bg-white/72 px-4 py-3 text-sm leading-7 text-[#5B5348]">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#D8B45A]/30 bg-[#D8B45A]/12 text-[11px] font-semibold text-[#F2D98B]">
+                <div key={item} className="flex items-start gap-3 rounded-[1.15rem] border border-white/10 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[rgba(248,241,227,0.76)]">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#F0C45C]/44 bg-[#D8B45A]/16 text-[11px] font-semibold text-[#FFF4D0]">
                     {index + 1}
                   </span>
                   <span>{item}</span>
                 </div>
               ))}
             </div>
-            <a href={siteLinks.contact} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+            <a href={siteLinks.contact} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-[#16120E] transition hover:bg-[#F0C45C]">
               Passendes Paket anfragen
               <ArrowRight className="h-4 w-4" />
             </a>
@@ -3972,22 +3972,22 @@ function PricingArchitectureSection() {
 
           <div className="grid gap-5 md:grid-cols-2">
             {packages.map((pkg, index) => (
-              <article key={pkg.title} className={`rounded-[1.8rem] border p-5 shadow-[0_20px_44px_rgba(83,62,22,0.07)] ${index === 2 ? 'border-[#D8B45A]/34 bg-[linear-gradient(160deg,rgba(255,250,240,0.98),rgba(249,239,220,0.96),rgba(244,231,203,0.92))]' : 'border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.96),rgba(247,239,225,0.94))]'}`}>
+              <article key={pkg.title} className={`rounded-[1.8rem] border p-5 shadow-[0_20px_44px_rgba(3,8,16,0.18)] ${index === 2 ? 'border-[#D8B45A]/38 bg-[linear-gradient(135deg,rgba(24,20,15,0.98),rgba(47,37,21,0.95),rgba(35,29,22,0.94))]' : 'border-[#D8B45A]/24 bg-[linear-gradient(135deg,rgba(18,18,18,0.96),rgba(35,35,35,0.92))]'}`}>
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#94A3B8]">Paket {index + 1}</p>
-                    <h4 className="mt-2 text-xl font-semibold text-[#16120E]">{pkg.title}</h4>
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/88">Paket {index + 1}</p>
+                    <h4 className="mt-2 text-xl font-semibold text-[#FFF8E8]">{pkg.title}</h4>
                   </div>
                   {index === 2 ? (
-                    <span className="rounded-full border border-[#D8B45A]/34 bg-[#D8B45A]/12 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#9C7424]">
+                    <span className="rounded-full border border-[#F0C45C]/38 bg-[#D8B45A]/16 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#FFF4D0]">
                       häufig gewählt
                     </span>
                   ) : null}
                 </div>
-                <p className="mt-3 text-sm font-semibold text-[#D8B45A]">{pkg.price}</p>
-                <p className="mt-3 text-sm leading-7 text-[#5B5348]">{pkg.text}</p>
-                <div className="mt-4 space-y-2 text-sm text-[#5B5348]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
-                <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                <p className="mt-3 text-sm font-semibold text-[#F0C45C]">{pkg.price}</p>
+                <p className="mt-3 text-sm leading-7 text-[rgba(248,241,227,0.76)]">{pkg.text}</p>
+                <div className="mt-4 space-y-2 text-sm text-[rgba(248,241,227,0.76)]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
+                <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 bg-white/[0.03] px-4 py-2 text-sm font-semibold text-[#F0C45C] transition hover:bg-[#D8B45A] hover:text-[#16120E]">
                   {pkg.cta}
                   <ArrowRight className="h-4 w-4" />
                 </a>
