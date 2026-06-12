@@ -1201,6 +1201,42 @@ body.cookie-modal-open {
   color: #16120e !important;
 }
 
+.struktiva-home header.sticky .header-demo-dropdown-panel,
+.struktiva-home .header-demo-mobile-panel {
+  background: rgba(10, 10, 10, 0.96) !important;
+  border: 1px solid rgba(216, 170, 69, 0.35) !important;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35) !important;
+}
+
+.struktiva-home header.sticky .header-demo-dropdown-item,
+.struktiva-home .header-demo-mobile-item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.struktiva-home header.sticky .header-demo-dropdown-item:hover,
+.struktiva-home .header-demo-mobile-item:hover {
+  background: rgba(216, 170, 69, 0.1) !important;
+  border-color: rgba(216, 170, 69, 0.55) !important;
+}
+
+.struktiva-home header.sticky .header-demo-dropdown-title,
+.struktiva-home .header-demo-mobile-title {
+  color: #fff8e8 !important;
+  font-weight: 700 !important;
+}
+
+.struktiva-home header.sticky .header-demo-dropdown-description,
+.struktiva-home .header-demo-mobile-description {
+  color: rgba(255, 248, 232, 0.72) !important;
+}
+
+.struktiva-home header.sticky .header-demo-dropdown-icon,
+.struktiva-home .header-demo-mobile-icon {
+  color: #d8aa45 !important;
+  border-color: rgba(216, 170, 69, 0.45) !important;
+}
+
 .struktiva-home #start .hero-architecture-grid {
   opacity: 0.18;
 }
@@ -1242,8 +1278,7 @@ body.cookie-modal-open {
 
 /* Homepage readability pass: keep the premium look, raise contrast in dark cards */
 .struktiva-home #leistungen article,
-.struktiva-home #preise article,
-.struktiva-home #kontakt > div {
+.struktiva-home #preise article {
   border-color: rgba(216, 170, 69, 0.28) !important;
   box-shadow:
     0 24px 54px rgba(3, 8, 16, 0.46),
@@ -1258,41 +1293,81 @@ body.cookie-modal-open {
 
 .struktiva-home #leistungen article h3,
 .struktiva-home #preise article h3,
-.struktiva-home #preise article h4,
-.struktiva-home #kontakt > div h2,
-.struktiva-home #kontakt > div h3 {
+.struktiva-home #preise article h4 {
   color: #fff8e8 !important;
 }
 
 .struktiva-home #leistungen article p,
 .struktiva-home #preise article p,
-.struktiva-home #preise article li,
-.struktiva-home #kontakt > div p {
+.struktiva-home #preise article li {
   color: rgba(248, 241, 227, 0.78) !important;
 }
 
 .struktiva-home #leistungen article a,
-.struktiva-home #preise article a,
-.struktiva-home #kontakt > div a {
+.struktiva-home #preise article a {
   color: #f0c45c;
 }
 
 .struktiva-home #leistungen article a:hover,
-.struktiva-home #preise article a:hover,
-.struktiva-home #kontakt > div a:hover {
+.struktiva-home #preise article a:hover {
   color: #fff8e8;
 }
 
 .struktiva-home #leistungen article a[class*='bg-'],
-.struktiva-home #preise article a[class*='bg-'],
-.struktiva-home #kontakt > div a[class*='bg-'] {
+.struktiva-home #preise article a[class*='bg-'] {
   color: #16120e !important;
 }
 
 .struktiva-home #leistungen article a[class*='bg-']:hover,
-.struktiva-home #preise article a[class*='bg-']:hover,
-.struktiva-home #kontakt > div a[class*='bg-']:hover {
+.struktiva-home #preise article a[class*='bg-']:hover {
   color: #16120e !important;
+}
+
+.struktiva-home #ablauf .text-white,
+.struktiva-home #wissen .text-white {
+  color: #151515 !important;
+}
+
+.struktiva-home #ablauf p:not(.text-\[\#D8B45A\]),
+.struktiva-home #wissen p:not(.text-\[\#D8B45A\]):not(.text-\[\#B98524\]) {
+  color: rgba(21, 21, 21, 0.68);
+}
+
+.struktiva-home #kontakt .contact-backdrop-image {
+  filter: blur(2px) brightness(1.02);
+  transform: scale(1.04);
+}
+
+.struktiva-home #kontakt .contact-surface-overlay {
+  background: linear-gradient(90deg, rgba(246, 241, 231, 0.94), rgba(246, 241, 231, 0.84)) !important;
+}
+
+.struktiva-home #kontakt h2,
+.struktiva-home #kontakt h3,
+.struktiva-home #kontakt .text-white {
+  color: #151515 !important;
+}
+
+.struktiva-home #kontakt p,
+.struktiva-home #kontakt .text-\[\#D7DCE5\] {
+  color: rgba(21, 21, 21, 0.7) !important;
+}
+
+.struktiva-home #kontakt .contact-info-card {
+  background: rgba(255, 255, 255, 0.62) !important;
+  border: 1px solid rgba(185, 133, 36, 0.22) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.struktiva-home #kontakt .contact-info-card a,
+.struktiva-home #kontakt .contact-info-card div,
+.struktiva-home #kontakt .contact-info-card span {
+  color: #151515;
+}
+
+.struktiva-home #kontakt .contact-info-card p {
+  color: rgba(21, 21, 21, 0.68) !important;
 }
 
 .struktiva-home .industry-card-image {

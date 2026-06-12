@@ -1034,7 +1034,7 @@ function Header({ pathname, isHomeRoute = false }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute left-1/2 top-[calc(100%+12px)] z-[10000] w-[460px] max-w-[94vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/40 bg-[#050505] p-3 shadow-[0_20px_45px_rgba(3,8,16,0.62)]"
+                  className="header-demo-dropdown-panel absolute left-1/2 top-[calc(100%+12px)] z-[10000] w-[460px] max-w-[94vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/40 bg-[#050505] p-3 shadow-[0_20px_45px_rgba(3,8,16,0.62)]"
                 >
                   <div className="mb-2 h-px w-full bg-gradient-to-r from-transparent via-[#D8B45A]/55 to-transparent" />
                   <div className="grid gap-2">
@@ -1044,15 +1044,15 @@ function Header({ pathname, isHomeRoute = false }) {
                         href={href}
                         role="menuitem"
                         onClick={closeDesktopDemoDropdown}
-                        className="group rounded-xl border border-white/10 bg-white/[0.03] p-3 transition hover:border-[#D8B45A]/35 hover:bg-white/[0.06]"
+                        className="header-demo-dropdown-item group rounded-xl border border-white/10 bg-white/[0.03] p-3 transition hover:border-[#D8B45A]/35 hover:bg-white/[0.06]"
                       >
                         <div className="flex items-start gap-3">
-                          <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-[#D8B45A]/30 bg-[#D8B45A]/10 text-[#D8B45A]">
+                          <span className="header-demo-dropdown-icon mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-[#D8B45A]/30 bg-[#D8B45A]/10 text-[#D8B45A]">
                             <Icon className="h-4 w-4" />
                           </span>
                           <div>
-                            <p className="text-sm font-semibold text-white group-hover:text-[#F2D98B]">{label}</p>
-                            <p className="mt-1 text-xs leading-6 text-[#D7DCE5]">{text}</p>
+                            <p className="header-demo-dropdown-title text-sm font-semibold text-white group-hover:text-[#F2D98B]">{label}</p>
+                            <p className="header-demo-dropdown-description mt-1 text-xs leading-6 text-[#D7DCE5]">{text}</p>
                           </div>
                         </div>
                       </a>
@@ -1184,7 +1184,7 @@ function Header({ pathname, isHomeRoute = false }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.18 }}
-                    className="rounded-2xl border border-[#D6A84F]/35 bg-[#050505] p-2"
+                    className="header-demo-mobile-panel rounded-2xl border border-[#D6A84F]/35 bg-[#050505] p-2"
                   >
                     <div className="grid gap-1">
                       {demoDropdownItems.map(([label, text, href, Icon]) => (
@@ -1192,10 +1192,10 @@ function Header({ pathname, isHomeRoute = false }) {
                           key={label}
                           href={href}
                           onClick={closeMobileMenu}
-                          className="rounded-lg border border-[#D6A84F]/25 bg-[#0B0F14] px-2.5 py-2.5 text-sm text-[#D7DCE5] transition hover:bg-[#111827] hover:text-[#D8B45A]"
+                          className="header-demo-mobile-item rounded-lg border border-[#D6A84F]/25 bg-[#0B0F14] px-2.5 py-2.5 text-sm text-[#D7DCE5] transition hover:bg-[#111827] hover:text-[#D8B45A]"
                         >
-                          <span className="inline-flex items-center gap-2 font-semibold"><Icon className="h-3.5 w-3.5" />{label}</span>
-                          <span className="mt-1 block text-xs leading-6 text-[#94A3B8]">{text}</span>
+                          <span className="header-demo-mobile-title inline-flex items-center gap-2 font-semibold"><Icon className="header-demo-mobile-icon h-3.5 w-3.5" />{label}</span>
+                          <span className="header-demo-mobile-description mt-1 block text-xs leading-6 text-[#94A3B8]">{text}</span>
                         </a>
                       ))}
                     </div>
@@ -1961,6 +1961,7 @@ function ProcessSection() {
             eyebrow="Ablauf"
             title="So läuft die Zusammenarbeit ab"
             text="Klar, verständlich und auf den Betrieb abgestimmt – von der Ersteinschätzung bis zur laufenden Optimierung."
+            tone="light"
           />
         </Reveal>
 
@@ -1976,13 +1977,13 @@ function ProcessSection() {
               key={step}
               variants={fadeUp}
               transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-[1.7rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium"
+              className="rounded-[1.7rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.94),rgba(247,239,225,0.9))] p-5 shadow-premium"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#D8B45A]/12 text-lg font-semibold text-[#D8B45A]">
                 {step}
               </div>
-              <h3 className="mt-5 text-xl font-semibold text-white">{title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+              <h3 className="mt-5 text-xl font-semibold text-[#151515]">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[rgba(21,21,21,0.68)]">{text}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -2204,8 +2205,8 @@ function ContactSection() {
   return (
     <section id="kontakt" className="scroll-mt-28 px-5 py-18 lg:px-8 lg:py-24">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,252,246,0.98),rgba(248,241,229,0.96),rgba(244,235,218,0.92))] p-6 shadow-[0_24px_56px_rgba(83,62,22,0.08)] md:p-8 lg:p-10">
-        <img src={struktivaImages.ctaBackdrop} alt="Moderner Arbeitsplatz als Hintergrund im Kontaktbereich" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-[linear-gradient(150deg,rgba(255,249,239,0.9),rgba(247,238,222,0.88),rgba(243,232,212,0.9))]" />
+        <img src={struktivaImages.ctaBackdrop} alt="Moderner Arbeitsplatz als Hintergrund im Kontaktbereich" loading="lazy" decoding="async" className="contact-backdrop-image absolute inset-0 h-full w-full object-cover" />
+        <div className="contact-surface-overlay absolute inset-0 bg-[linear-gradient(150deg,rgba(255,249,239,0.9),rgba(247,238,222,0.88),rgba(243,232,212,0.9))]" />
         <div className="relative z-[1]">
         <Reveal>
           <SectionHeader
@@ -2219,7 +2220,7 @@ function ContactSection() {
 
         <Reveal className="mt-5">
           <div className="grid gap-4 lg:grid-cols-[1.04fr_0.96fr]">
-            <div className="rounded-[1.7rem] border border-white/80 bg-white/76 p-5 shadow-[0_18px_38px_rgba(83,62,22,0.05)] backdrop-blur-sm">
+            <div className="contact-info-card rounded-[1.7rem] border border-white/80 bg-white/76 p-5 shadow-[0_18px_38px_rgba(83,62,22,0.05)] backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#A9822D]">Wofür Sie anfragen können</p>
               <div className="mt-4 grid gap-3 text-sm leading-7 text-[#5B5348] md:grid-cols-2">
                 {[
@@ -2236,7 +2237,7 @@ function ContactSection() {
                 ))}
               </div>
             </div>
-            <div className="rounded-[1.7rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,249,238,0.88),rgba(248,240,225,0.82),rgba(243,233,214,0.76))] p-5 shadow-[0_18px_38px_rgba(83,62,22,0.05)]">
+            <div className="contact-info-card rounded-[1.7rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,249,238,0.88),rgba(248,240,225,0.82),rgba(243,233,214,0.76))] p-5 shadow-[0_18px_38px_rgba(83,62,22,0.05)]">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#A9822D]">Schneller Start</p>
               <p className="mt-3 text-sm leading-7 text-[#5B5348]">
                 Sie müssen noch nicht alles genau wissen. Beschreiben Sie kurz Ihr Unternehmen und die aktuelle Ausgangslage. STRUKTIVA sortiert den sinnvollen nächsten Schritt mit Ihnen gemeinsam.
@@ -2252,7 +2253,7 @@ function ContactSection() {
 
         <div className="mt-10 grid gap-8 xl:grid-cols-[0.88fr_0.64fr_0.9fr] xl:items-start">
           <Reveal>
-            <div className="rounded-[1.8rem] border border-white/80 bg-white/76 p-6 shadow-[0_18px_38px_rgba(83,62,22,0.05)] backdrop-blur-sm">
+            <div className="contact-info-card rounded-[1.8rem] border border-white/80 bg-white/76 p-6 shadow-[0_18px_38px_rgba(83,62,22,0.05)] backdrop-blur-sm">
               <div className="grid gap-4 text-sm leading-7 text-[#5B5348]">
                 <a href={`mailto:${contactDetails.email}`} className="transition hover:text-[#D8B45A]">
                   <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-[#8B7A62]">E-Mail</span>
@@ -2289,7 +2290,7 @@ function ContactSection() {
           </Reveal>
 
           <Reveal>
-            <div className="rounded-[1.8rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,252,246,0.92),rgba(248,240,225,0.88))] p-6 shadow-[0_18px_38px_rgba(83,62,22,0.05)]">
+            <div className="contact-info-card rounded-[1.8rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,252,246,0.92),rgba(248,240,225,0.88))] p-6 shadow-[0_18px_38px_rgba(83,62,22,0.05)]">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#A9822D]">Direkte Wege</p>
               <div className="mt-4 grid gap-3">
                 <a
@@ -2353,7 +2354,7 @@ function ContactSection() {
                 href={contactDetails.instagramHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/14 bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-[#D7DCE5] transition hover:border-[#D8B45A]/30 hover:text-[#D8B45A]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5D7B9] bg-[#FFF9EE] px-6 py-3.5 text-sm font-semibold text-[#5B5348] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D]"
               >
                 <Instagram className="h-4 w-4" />
                 STRUKTIVA auf Instagram
@@ -2362,7 +2363,7 @@ function ContactSection() {
           </Reveal>
         </div>
         <Reveal className="mt-5">
-          <p className="text-sm leading-7 text-[#D7DCE5]">
+          <p className="text-sm leading-7 text-[rgba(21,21,21,0.7)]">
             Vernetzen Sie sich mit STRUKTIVA auf LinkedIn:{' '}
             <a
               href={contactDetails.linkedinHref}
@@ -3020,6 +3021,7 @@ function WissenSection() {
             title="STRUKTIVA Wissen"
             text="Praxisnahe Beiträge für kleine Unternehmen, Selbstständige und lokale Betriebe, die ihren digitalen Auftritt klarer und wirksamer strukturieren möchten."
             centered={false}
+            tone="light"
           />
         </Reveal>
         <motion.div
@@ -3035,12 +3037,12 @@ function WissenSection() {
               href={article.href}
               variants={fadeUp}
               transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-              className="group rounded-[1.7rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35"
+              className="group rounded-[1.7rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.94),rgba(247,239,225,0.9))] p-6 shadow-premium transition hover:-translate-y-1 hover:border-[#D8B45A]/35"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/85">Wissen</p>
-              <h3 className="mt-3 text-xl font-semibold leading-8 text-white">{article.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">{article.description}</p>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#D8B45A]">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#B98524]">Wissen</p>
+              <h3 className="mt-3 text-xl font-semibold leading-8 text-[#151515]">{article.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[rgba(21,21,21,0.68)]">{article.description}</p>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B98524]">
                 Artikel lesen
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </span>
