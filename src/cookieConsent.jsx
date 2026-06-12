@@ -56,22 +56,12 @@ function loadScriptOnce({ id, src }) {
 
   const existingById = id ? document.getElementById(id) : null
   if (existingById) {
-    if (existingById.dataset.loaded === 'true') return Promise.resolve()
-
-    return new Promise((resolve, reject) => {
-      existingById.addEventListener('load', () => resolve(), { once: true })
-      existingById.addEventListener('error', () => reject(new Error(`Failed to load script: ${src}`)), { once: true })
-    })
+    return Promise.resolve()
   }
 
   const existingBySrc = document.querySelector(`script[src="${src}"]`)
   if (existingBySrc) {
-    if (existingBySrc.dataset.loaded === 'true') return Promise.resolve()
-
-    return new Promise((resolve, reject) => {
-      existingBySrc.addEventListener('load', () => resolve(), { once: true })
-      existingBySrc.addEventListener('error', () => reject(new Error(`Failed to load script: ${src}`)), { once: true })
-    })
+    return Promise.resolve()
   }
 
   return new Promise((resolve, reject) => {
@@ -119,7 +109,6 @@ async function ensureGoogleAnalytics() {
 
   if (!window.__struktivaAnalyticsInitialized) {
     window.gtag('js', new Date())
-    // This ID is currently used as analytics/statistics tracking only.
     window.gtag('config', GOOGLE_ANALYTICS_ID, { send_page_view: false })
     window.__struktivaAnalyticsInitialized = true
   }
