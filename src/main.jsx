@@ -114,6 +114,10 @@ const contactDetails = {
   phoneHref: 'tel:+4970518162292',
   whatsappLabel: '07051 8162292',
   whatsappHref: 'https://wa.me/4970518162292',
+  youtubeHref: 'https://www.youtube.com/@Struktiva',
+  pinterestHref: 'https://de.pinterest.com/struktiva/',
+  xHref: 'https://x.com/matzke_sven',
+  maltHref: 'https://www.malt.de/profile/svenmatzke',
   linkedinHref: 'https://www.linkedin.com/in/sven-matzke-960b63411',
   instagramHref: 'https://www.instagram.com/struktiva1',
   founderSvenImage: '/images/founder-sven.jpg',
@@ -123,6 +127,15 @@ const contactDetails = {
   addressLine2: '75365 Calw',
   country: 'Deutschland',
 }
+
+const externalProfileLinks = [
+  ['YouTube', 'YouTube ansehen', contactDetails.youtubeHref],
+  ['Pinterest', 'Pinterest ansehen', contactDetails.pinterestHref],
+  ['X', 'X-Profil ansehen', contactDetails.xHref],
+  ['Malt', 'Malt-Profil ansehen', contactDetails.maltHref],
+  ['LinkedIn', 'LinkedIn-Profil ansehen', contactDetails.linkedinHref],
+  ['Instagram', 'Instagram ansehen', contactDetails.instagramHref],
+]
 
 const navItems = [
   ['Start', siteLinks.home],
@@ -2359,6 +2372,20 @@ function ContactSection() {
                 <Instagram className="h-4 w-4" />
                 STRUKTIVA auf Instagram
               </a>
+              <div className="contact-profile-grid grid gap-3 sm:grid-cols-2">
+                {externalProfileLinks.slice(0, 4).map(([label, buttonLabel, href]) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-between rounded-full border border-[#E5D7B9] bg-[#FFF9EE] px-5 py-3 text-sm font-semibold text-[#151515] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D]"
+                  >
+                    <span>{buttonLabel}</span>
+                    <ArrowRight className="h-4 w-4 text-[#D8B45A]" />
+                  </a>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
@@ -2561,24 +2588,19 @@ function Footer() {
             <a href={`mailto:${contactDetails.email}`} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.email}</a>
             <a href={contactDetails.phoneHref} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.phoneLabel}</a>
             <a href={contactDetails.whatsappHref} className="mt-1 block transition hover:text-[#F2D98B]">WhatsApp Business</a>
-            <a
-              href={contactDetails.linkedinHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-1 inline-flex items-center gap-2 transition hover:text-[#F2D98B]"
-            >
-              <Linkedin className="h-4 w-4" />
-              LinkedIn
-            </a>
-            <a
-              href={contactDetails.instagramHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-1 inline-flex items-center gap-2 transition hover:text-[#F2D98B]"
-            >
-              <Instagram className="h-4 w-4" />
-              Instagram
-            </a>
+            <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#94A3B8]">
+              {externalProfileLinks.map(([label, , href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-[#F2D98B]"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
             <p className="mt-3 text-xs leading-6 text-[#94A3B8]">Digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.</p>
           </div>
 
@@ -2632,7 +2654,24 @@ function Footer() {
           </div>
         </div>
         <div className="border-t border-white/10 px-6 py-3.5 text-xs text-[#94A3B8] md:flex md:items-center md:justify-between">
-          <p>© 2026 STRUKTIVA Unternehmensarchitektur. Alle Rechte vorbehalten.</p>
+          <div>
+            <p>© 2026 STRUKTIVA Unternehmensarchitektur. Alle Rechte vorbehalten.</p>
+            <p className="mt-1 flex flex-wrap gap-x-2 gap-y-1">
+              {externalProfileLinks.map(([label, , href], index) => (
+                <React.Fragment key={label}>
+                  {index > 0 ? <span aria-hidden="true">·</span> : null}
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition hover:text-[#F2D98B]"
+                  >
+                    {label}
+                  </a>
+                </React.Fragment>
+              ))}
+            </p>
+          </div>
           <p className="mt-1 md:mt-0">Digitale Strukturen. Klare Systeme. Mehr Wirkung.</p>
         </div>
       </div>
