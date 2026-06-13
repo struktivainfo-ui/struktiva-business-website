@@ -134,10 +134,10 @@ img {
   color: #0b0b0b;
   letter-spacing: -0.02em;
   text-shadow:
-    0 1px 0 rgba(255, 245, 214, 0.55),
-    0 0 14px rgba(201, 162, 74, 0.18),
-    0 0 30px rgba(201, 162, 74, 0.1);
-  -webkit-text-stroke: 0.8px rgba(201, 162, 74, 0.88);
+    0 1px 0 rgba(255, 245, 214, 0.42),
+    0 0 8px rgba(201, 162, 74, 0.12),
+    0 0 18px rgba(201, 162, 74, 0.05);
+  -webkit-text-stroke: 0.45px rgba(201, 162, 74, 0.72);
 }
 
 .metallic-dark-title {
@@ -145,8 +145,8 @@ img {
   color: #fff8e8;
   letter-spacing: -0.02em;
   text-shadow:
-    0 0 12px rgba(201, 162, 74, 0.18),
-    0 0 24px rgba(201, 162, 74, 0.08);
+    0 0 8px rgba(201, 162, 74, 0.14),
+    0 0 16px rgba(201, 162, 74, 0.05);
 }
 
 .metallic-body-muted {
@@ -200,6 +200,12 @@ img {
 .metallic-btn-secondary:hover {
   border-color: rgba(201, 162, 74, 0.78);
   color: #8f6d27;
+}
+
+.metallic-light-panel {
+  border: 1px solid rgba(229, 215, 185, 0.9);
+  background: linear-gradient(160deg, rgba(255, 254, 250, 0.96), rgba(247, 239, 225, 0.94));
+  box-shadow: 0 24px 56px rgba(83, 62, 22, 0.07);
 }
 
 .hero-3d-shell {

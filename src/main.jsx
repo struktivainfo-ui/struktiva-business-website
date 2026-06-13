@@ -4283,16 +4283,17 @@ function HomeAudienceSection() {
 function HomeAboutTeaserSection() {
   return (
     <section className="px-5 py-10 lg:px-8 lg:py-14">
-      <div className="mx-auto max-w-6xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
+      <div className="metallic-light-panel mx-auto max-w-6xl rounded-[2rem] p-6 md:p-8">
         <SectionHeader
           eyebrow="Über STRUKTIVA"
           title="Digitale Strukturen verständlich, nutzbar und sinnvoll aufbauen."
           text="STRUKTIVA wurde entwickelt, um digitale Strukturen verständlich, nutzbar und sinnvoll aufzubauen. Im Mittelpunkt stehen keine Einzellösungen, sondern Systeme, die Website, Sichtbarkeit, Kontaktwege und interne Abläufe verbinden."
           centered={false}
+          tone="light"
         />
         <a
           href={siteLinks.about}
-          className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+          className="metallic-btn-secondary mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition"
         >
           Mehr über STRUKTIVA
           <ArrowRight className="h-4 w-4" />
@@ -4382,30 +4383,13 @@ function AboutPage() {
           </section>
 
           <section className="mt-8 rounded-[1.9rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
-            <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-              <figure className="rounded-[1.7rem] border border-[#D8B45A]/24 bg-white/[0.04] p-5">
-                <div className="h-32 w-32 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
-                  <img
-                    src={contactDetails.founderSvenImage}
-                    alt="Sven Matzke"
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover object-[50%_18%]"
-                  />
-                </div>
-                <figcaption className="mt-4">
-                  <p className="text-base font-semibold text-white">Sven Matzke</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[#D8B45A]/82">
-                    Hinter STRUKTIVA
-                  </p>
-                </figcaption>
-              </figure>
-              <div className="rounded-[1.7rem] border border-white/12 bg-white/[0.04] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Arbeitsweise</p>
-                <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
+            <div className="mx-auto max-w-4xl">
+              <div className="rounded-[1.7rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.96),rgba(247,239,225,0.94))] p-6 shadow-[0_18px_40px_rgba(83,62,22,0.05)] md:p-7">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8f6d27]">Arbeitsweise</p>
+                <p className="mt-4 text-sm leading-8 text-[#1a1a1a] md:text-base">
                   Hinter STRUKTIVA steht Sven Matzke. Der Fokus liegt auf praktischen Lösungen, die im Alltag wirklich nutzbar sind: klare Kontaktwege, verständliche Websites, bessere Übersicht über Anfragen und digitale Strukturen, die Schritt für Schritt erweitert werden können.
                 </p>
-                <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
+                <p className="mt-3 text-sm leading-8 text-[#1a1a1a] md:text-base">
                   STRUKTIVA arbeitet direkt, verständlich und lösungsorientiert. Ziel ist nicht, Unternehmen mit Technik zu überfordern, sondern digitale Möglichkeiten sinnvoll zu ordnen und nutzbar zu machen.
                 </p>
               </div>
