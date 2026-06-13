@@ -42,6 +42,7 @@ const siteLinks = {
   leadSysteme: '/lead-systeme',
   paketePage: '/pakete',
   referenzen: '/referenzen',
+  salonKarolaReferenz: '/referenzen/salon-karola',
   pricing: '/preise',
   demos: '/demos',
   apps: '/apps',
@@ -649,6 +650,7 @@ function useDocumentTitleSafe(pathname) {
       '/lead-systeme': 'Lead-Systeme & Kundenanfragen - STRUKTIVA Unternehmensarchitektur',
       '/pakete': 'Pakete & Betreuung - STRUKTIVA Unternehmensarchitektur',
       '/referenzen': 'Referenzen - STRUKTIVA Unternehmensarchitektur',
+      '/referenzen/salon-karola': 'Salon Karola Referenz - STRUKTIVA Unternehmensarchitektur',
       '/demos': 'Demos - STRUKTIVA Unternehmensarchitektur',
       '/webseiten': 'Professionelle Webseiten - STRUKTIVA Unternehmensarchitektur',
       '/landingpages': 'Landingpages - STRUKTIVA Unternehmensarchitektur',
@@ -704,6 +706,8 @@ function useDocumentTitleSafe(pathname) {
         'Pakete und Betreuung von STRUKTIVA: vier klare Einstiege für Website, Sichtbarkeit, Kundenführung und digitale Systeme.',
       '/referenzen':
         'Referenzen, Branchenlösungen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
+      '/referenzen/salon-karola':
+        'Salon Karola als echte STRUKTIVA Referenz: Website-Relaunch, Kundenführung, mobile Optimierung, Bewertungsstruktur und lokale Sichtbarkeit.',
       '/demos':
         'Demo-Beispiele von STRUKTIVA für Handwerk, Beauty und lokale Dienstleister sowie weitere digitale Musterseiten für klare Unternehmensstrukturen.',
       '/bewertungs-qr-code':
@@ -3620,6 +3624,14 @@ function ReferenceShowcaseSection() {
     ['Struktur', 'Leistungen, Produkte, Öffnungszeiten, FAQ und Kontakt sauber geordnet.'],
     ['Conversion', 'Besucher werden besser geführt und finden schneller den passenden Kontaktweg.'],
   ]
+  const salonKarolaTags = [
+    'Website-Relaunch',
+    'mobile Optimierung',
+    'Kundenführung',
+    'Google-Bewertungsstruktur',
+    'WhatsApp-Kontaktweg',
+    'lokale Sichtbarkeit',
+  ]
 
   return (
     <>
@@ -3638,14 +3650,34 @@ function ReferenceShowcaseSection() {
         STRUKTIVA entwickelt keine Webseiten von der Stange. Am Beispiel von Salon Karola sieht man, wie aus einem einfachen Online-Auftritt ein moderner, vertrauensstarker Salon-Auftritt wurde.
       </p>
 
-      <div className="mt-9 rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,252,246,0.98),rgba(247,238,222,0.95),rgba(242,232,213,0.9))] p-5 shadow-[0_24px_56px_rgba(83,62,22,0.07)] md:mt-10 md:p-8">
+      <div id="salon-karola" className="mt-9 rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,252,246,0.98),rgba(247,238,222,0.95),rgba(242,232,213,0.9))] p-5 shadow-[0_24px_56px_rgba(83,62,22,0.07)] md:mt-10 md:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#A9822D]">Echtes Referenzprojekt</p>
-        <h3 className="mt-2 text-2xl font-semibold text-[#16120E] md:text-4xl">Echtes Referenzprojekt: Salon Karola</h3>
-        <p className="mt-3 text-sm font-medium text-[#9C7424] md:text-base">Von der einfachen Baukasten-Webseite zur modernen digitalen Salon-Struktur.</p>
+        <h3 className="mt-2 text-2xl font-semibold text-[#16120E] md:text-4xl">Salon Karola – Website, Kundenführung und digitale Struktur</h3>
+        <p className="mt-3 text-sm leading-7 text-[#5B5348] md:text-base md:leading-8">
+          Für Salon Karola wurde eine moderne digitale Präsenz aufgebaut, die Leistungen, Kontaktwege, Bewertungen und Kundeninformationen klarer strukturiert. Ziel war eine verständliche, mobil optimierte Website mit hochwertiger Darstellung und einfacher Kontaktaufnahme.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {salonKarolaTags.map((tag) => (
+            <span key={tag} className="inline-flex rounded-full border border-[#D8B45A]/32 bg-[#FFF6E4] px-3 py-1.5 text-[11px] font-semibold text-[#A9822D]">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <p className="mt-4 text-sm font-medium text-[#9C7424] md:text-base">Von der einfachen Baukasten-Webseite zur modernen digitalen Salon-Struktur.</p>
         <p className="mt-4 max-w-5xl text-sm leading-7 text-[#5B5348] md:text-base md:leading-8">
           Aus einer einfachen Webseite wurde ein moderner Salon-Auftritt mit klarer Kundenführung, hochwertigem Design und besserer lokaler Struktur.
           STRUKTIVA hat die Seite für Salon Karola in Calw-Wimberg neu aufgebaut und um WhatsApp, Google-Bewertungen, Leistungen, Galerie, FAQ und lokale SEO-Struktur erweitert.
         </p>
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+          <a href={siteLinks.salonKarolaReferenz} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5D7B9] bg-white/88 px-5 py-3 text-sm font-semibold text-[#16120E] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D]">
+            Referenz ansehen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a href="https://salon-karola-webseite.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+            Live-Website öffnen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </div>
 
         <div className="mt-6 grid gap-4 md:mt-7 lg:grid-cols-2">
           <article className="rounded-2xl border border-white/85 bg-white/82 p-5 shadow-[0_16px_36px_rgba(83,62,22,0.05)]">
@@ -3725,10 +3757,12 @@ function DemosShowcaseSection() {
       image: struktivaImages.localBusiness,
     },
     {
-      title: 'Friseur-Demo',
-      text: 'Branchenseite für Friseursalons mit Leistungen, Bewertungen, Terminlogik und lokaler Sichtbarkeit.',
-      href: siteLinks.brancheFriseursalons,
+      title: 'Friseur & Salon',
+      text: 'Ein Beispiel dafür, wie eine moderne Salon-Website Leistungen, Kontaktwege, Bewertungen und Kundenführung klar verbinden kann – umgesetzt am Projekt Salon Karola.',
+      href: siteLinks.salonKarolaReferenz,
       image: demoV2Images.friseurHero,
+      ctaLabel: 'Salon-Karola-Referenz ansehen',
+      badgeLabel: 'Beispiel aus der Praxis: Salon Karola',
     },
     {
       title: 'Bewertungsstruktur-Demo',
@@ -3768,12 +3802,12 @@ function DemosShowcaseSection() {
                 <h4 className="text-2xl font-semibold text-[#16120E]">{demo.title}</h4>
                 <p className="mt-2 text-sm leading-6 text-[#5B5348] md:leading-7">{demo.text}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="inline-flex rounded-full border border-[#D8B45A]/32 bg-[#FFF6E4] px-2.5 py-1 text-[11px] font-semibold text-[#A9822D]">Demo-Beispiel</span>
+                  <span className="inline-flex rounded-full border border-[#D8B45A]/32 bg-[#FFF6E4] px-2.5 py-1 text-[11px] font-semibold text-[#A9822D]">{demo.badgeLabel || 'Demo-Beispiel'}</span>
                   <span className="inline-flex rounded-full border border-[#E5D7B9] bg-white/82 px-2.5 py-1 text-[11px] text-[#5B5348]">Branchenvorschau</span>
                 </div>
                 <div className="mt-auto pt-6">
                   <a href={demo.href} className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#E5D7B9] bg-white/88 px-4 py-2 text-sm font-semibold text-[#16120E] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D] sm:w-auto">
-                    Demo ansehen
+                    {demo.ctaLabel || 'Demo ansehen'}
                     <ArrowRight className="h-3.5 w-3.5" />
                   </a>
                 </div>
@@ -4598,6 +4632,92 @@ function DemosPage() {
       </section>
       <StructureCtaSection />
     </>
+  )
+}
+
+function SalonKarolaReferencePage() {
+  const salonKarolaTags = [
+    'Website-Relaunch',
+    'mobile Optimierung',
+    'Kundenführung',
+    'Google-Bewertungsstruktur',
+    'WhatsApp-Kontaktweg',
+    'lokale Sichtbarkeit',
+  ]
+
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-7xl">
+        <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Echte Referenz</p>
+          <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+            Salon Karola – Website, Kundenführung und digitale Struktur
+          </h1>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+            Für Salon Karola wurde eine moderne digitale Präsenz aufgebaut, die Leistungen, Kontaktwege, Bewertungen und Kundeninformationen klarer strukturiert. Ziel war eine verständliche, mobil optimierte Website mit hochwertiger Darstellung und einfacher Kontaktaufnahme.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {salonKarolaTags.map((tag) => (
+              <span key={tag} className="inline-flex rounded-full border border-[#D8B45A]/32 bg-[#D8B45A]/12 px-3 py-1.5 text-[11px] font-semibold text-[#F2D98B]">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a href="https://salon-karola-webseite.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+              Live-Website öffnen
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+              Ähnliches Projekt anfragen
+            </a>
+          </div>
+        </section>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium lg:col-span-1">
+            <h2 className="text-gold-glow text-2xl font-semibold text-white">Ausgangslage</h2>
+            <p className="mt-4 text-sm leading-7 text-[#D7DCE5]">
+              Vorher bestand eine einfache Baukasten-Webseite mit Basisinformationen, aber wenig moderner Markenwirkung, wenig emotionaler Kundenführung und ohne starke digitale Struktur.
+            </p>
+          </section>
+          <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium lg:col-span-1">
+            <h2 className="text-gold-glow text-2xl font-semibold text-white">Ziel der Umsetzung</h2>
+            <p className="mt-4 text-sm leading-7 text-[#D7DCE5]">
+              Entstehen sollte ein moderner Salon-Auftritt mit hochwertiger Darstellung, verständlicher mobiler Nutzung, klarer Termin-Anfrage und sauberer Verbindung von Leistungen, Bewertungen und Kontaktwegen.
+            </p>
+          </section>
+          <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium lg:col-span-1">
+            <h2 className="text-gold-glow text-2xl font-semibold text-white">Ergebnis & Nutzen</h2>
+            <p className="mt-4 text-sm leading-7 text-[#D7DCE5]">
+              Die neue Struktur verbindet Leistungen, Galerie, FAQ, WhatsApp, Google-Bewertung und lokale SEO-Elemente zu einem klareren, mobil optimierten digitalen Auftritt.
+            </p>
+          </section>
+        </div>
+
+        <section className="mt-8 rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
+          <h2 className="text-2xl font-semibold text-white">Umgesetzte digitale Struktur</h2>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {[
+              'moderner Premium-Auftritt',
+              'klare Termin-Anfrage',
+              'WhatsApp direkt sichtbar',
+              'Google-Bewertung eingebunden',
+              'Leistungen übersichtlich strukturiert',
+              'Galerie und echte Eindrücke',
+              'Vorher-Nachher-Bereich',
+              'FAQ-Bereich',
+              'lokale SEO-Struktur für Calw-Wimberg',
+              'bessere mobile Nutzerführung',
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[#D7DCE5]">
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
   )
 }
 
@@ -6935,6 +7055,8 @@ function Page() {
     content = <PaketePage />
   } else if (pathname === '/referenzen') {
     content = <ReferenzenPage />
+  } else if (pathname === '/referenzen/salon-karola') {
+    content = <SalonKarolaReferencePage />
   } else if (pathname === '/demos') {
     content = <DemosPage />
   } else if (pathname === '/projekt-anfragen') {
