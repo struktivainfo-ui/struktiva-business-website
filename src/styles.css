@@ -1065,6 +1065,16 @@ body.cookie-modal-open {
   background: linear-gradient(180deg, rgba(250, 245, 234, 0.96), rgba(245, 236, 218, 0.96));
 }
 
+.theme-band-shell-dark {
+  border-color: rgba(216, 170, 69, 0.24);
+  background:
+    linear-gradient(180deg, rgba(216, 170, 69, 0.06), rgba(216, 170, 69, 0.02)),
+    linear-gradient(135deg, rgba(10, 10, 10, 0.98), rgba(21, 18, 13, 0.98), rgba(12, 12, 12, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 244, 221, 0.04),
+    0 24px 54px rgba(0, 0, 0, 0.22);
+}
+
 .theme-band-track {
   display: flex;
   align-items: center;
@@ -1101,6 +1111,10 @@ body.cookie-modal-open {
 
 .theme-band-item:last-child::after {
   display: none;
+}
+
+.theme-band-shell-dark .theme-band-item {
+  color: #f6ecda;
 }
 
 @keyframes themeBandScroll {

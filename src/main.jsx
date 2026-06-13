@@ -366,15 +366,21 @@ const trustCards = [
 ]
 
 const homeThemeBandItems = [
-  'Website',
+  'Webseiten',
+  'Landingpages',
   'Google-Sichtbarkeit',
-  'WhatsApp-Struktur',
-  'Bewertungen',
-  'Kundenführung',
   'Lead-Systeme',
+  'KI & Automatisierung',
+  'Kundenanfragen',
+  'WhatsApp-Kontaktwege',
+  'Bewertungsstruktur',
+  'QR-Code-Systeme',
   'Unternehmens-Apps',
-  'Dashboards',
-  'Digitale Ordnung',
+  'Betriebs-Dashboards',
+  'Digitale Ordnungssysteme',
+  'Social Media Struktur',
+  'Pinterest Struktur',
+  'Kundenführung',
 ]
 
 const problemCards = [
@@ -4162,6 +4168,7 @@ function HomePage() {
   return (
     <>
       <HeroSectionPremium />
+      <HomeServiceTickerSection />
       <HomeIntroSection />
       <HomePrimarySystemsSection />
       <HomeAudienceSection />
@@ -4169,6 +4176,29 @@ function HomePage() {
       <HomeReferencesDemosTeaserSection />
       <HomeFinalCtaSection />
     </>
+  )
+}
+
+function HomeServiceTickerSection() {
+  return (
+    <section
+      aria-label="Leistungen im Überblick"
+      className="px-5 pb-6 lg:px-8 lg:pb-8"
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="theme-band-shell theme-band-shell-dark rounded-[1.8rem]">
+          <div className="theme-band-track" aria-hidden="true">
+            {[0, 1].flatMap((copyIndex) =>
+              homeThemeBandItems.map((item) => (
+                <span key={`${copyIndex}-${item}`} className="theme-band-item">
+                  {item}
+                </span>
+              )),
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 
