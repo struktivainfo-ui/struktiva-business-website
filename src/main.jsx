@@ -4363,34 +4363,37 @@ function AboutPage() {
     <>
       <main className="px-5 pb-8 pt-10 lg:px-8 lg:pb-10 lg:pt-14">
         <div className="mx-auto max-w-7xl">
-          <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
+          <section className="metallic-card rounded-[2.3rem] p-7 shadow-premium md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Über STRUKTIVA</p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+            <h1 className="metallic-dark-title mt-4 max-w-4xl text-4xl font-semibold tracking-tight md:text-5xl">
               Über STRUKTIVA
             </h1>
-            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-              STRUKTIVA steht für klare digitale Systeme statt unübersichtlicher Einzellösungen. Entwickelt werden Websites, Kundenführungen, Lead-Systeme, KI-Automatisierungen und digitale Abläufe, die Unternehmen verständlicher, sichtbarer und strukturierter machen.
+            <p className="mt-4 max-w-4xl text-base leading-8 text-[#E0BF6A] md:text-lg">
+              STRUKTIVA steht für digitale Systeme, die verständlich aufgebaut, klar strukturiert und im Alltag wirklich nutzbar sind. Im Mittelpunkt stehen keine einzelnen Insellösungen, sondern digitale Strukturen, die Website, Sichtbarkeit, Kundenanfragen, Kontaktwege und interne Abläufe sinnvoll verbinden.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+              <a href={siteLinks.projectRequestForm} className="metallic-btn-primary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition">
                 Projekt anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+              <a href={siteLinks.contact} className="metallic-btn-secondary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition">
                 Kontakt aufnehmen
               </a>
             </div>
           </section>
 
-          <section className="mt-8 rounded-[1.9rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+          <section className="metallic-light-panel mt-8 rounded-[1.9rem] p-6 shadow-premium md:p-7">
             <div className="mx-auto max-w-4xl">
-              <div className="rounded-[1.7rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.96),rgba(247,239,225,0.94))] p-6 shadow-[0_18px_40px_rgba(83,62,22,0.05)] md:p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8f6d27]">Arbeitsweise</p>
+              <div className="rounded-[1.8rem] border border-white/40 bg-[linear-gradient(135deg,rgba(255,255,255,0.3),rgba(214,209,194,0.2))] p-6 shadow-[0_18px_44px_rgba(83,62,22,0.05),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-sm md:p-7">
+                <h2 className="metallic-section-title text-2xl font-semibold md:text-[2rem]">Menschen hinter STRUKTIVA</h2>
                 <p className="mt-4 text-sm leading-8 text-[#1a1a1a] md:text-base">
-                  Hinter STRUKTIVA steht Sven Matzke. Der Fokus liegt auf praktischen Lösungen, die im Alltag wirklich nutzbar sind: klare Kontaktwege, verständliche Websites, bessere Übersicht über Anfragen und digitale Strukturen, die Schritt für Schritt erweitert werden können.
+                  Hinter STRUKTIVA stehen Sven Matzke und Jessica Wacker. Gemeinsam steht STRUKTIVA für praktische digitale Lösungen, klare Kommunikation und Systeme, die nicht nur gut aussehen, sondern im täglichen Betrieb helfen sollen.
                 </p>
                 <p className="mt-3 text-sm leading-8 text-[#1a1a1a] md:text-base">
-                  STRUKTIVA arbeitet direkt, verständlich und lösungsorientiert. Ziel ist nicht, Unternehmen mit Technik zu überfordern, sondern digitale Möglichkeiten sinnvoll zu ordnen und nutzbar zu machen.
+                  Der Fokus liegt auf verständlichen Websites, geordneten Kundenanfragen, digitalen Abläufen, Lead-Systemen, KI-gestützten Vorlagen und Lösungen, die Schritt für Schritt erweitert werden können. STRUKTIVA arbeitet direkt, nachvollziehbar und lösungsorientiert – ohne unnötige technische Überforderung.
+                </p>
+                <p className="mt-3 text-sm leading-8 text-[#1a1a1a] md:text-base">
+                  Ziel ist es, digitale Möglichkeiten so aufzubauen, dass sie für Unternehmen wirklich nutzbar werden.
                 </p>
               </div>
             </div>
