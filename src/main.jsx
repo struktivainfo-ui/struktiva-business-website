@@ -36,7 +36,12 @@ import { CookieConsentLayer, openCookieSettings, trackMarketingLead } from './co
 const siteLinks = {
   home: '/#start',
   services: '/#leistungen',
+  about: '/ueber-uns',
   leistungenPage: '/leistungen',
+  websites: '/websites',
+  leadSysteme: '/lead-systeme',
+  paketePage: '/pakete',
+  referenzen: '/referenzen',
   pricing: '/preise',
   demos: '/demos',
   apps: '/apps',
@@ -153,19 +158,19 @@ const navItems = [
 
 const desktopNavItems = [
   ['KI & Automatisierung', siteLinks.kiAutomatisierung],
-  ['Preise', siteLinks.pricing],
-  ['Wissen', siteLinks.wissen],
+  ['Lead-Systeme', siteLinks.leadSysteme],
+  ['Pakete', siteLinks.paketePage],
+  ['Über uns', siteLinks.about],
   ['Kontakt', siteLinks.contact],
 ]
 
 const leistungenDropdownItems = [
-  ['Website & Landingpage', siteLinks.websiteFuerKleineUnternehmen],
-  ['Google-Sichtbarkeit', siteLinks.googleSichtbarkeitKleineUnternehmen],
+  ['Leistungen im Überblick', siteLinks.leistungenPage],
+  ['Websites & Landingpages', siteLinks.websites],
   ['KI & Automatisierung', siteLinks.kiAutomatisierung],
-  ['Digitale Kundenführung', siteLinks.digitaleUnternehmensstruktur],
-  ['Digitale Soforthilfe', siteLinks.digitaleSoforthilfe],
-  ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme],
-  ['Unternehmens-Apps & Dashboards', siteLinks.unternehmensApps],
+  ['Lead-Systeme & Kundenanfragen', siteLinks.leadSysteme],
+  ['Pakete & Betreuung', siteLinks.paketePage],
+  ['Referenzen & Demos', siteLinks.referenzen],
 ]
 
 const kiAutomationCards = [
@@ -625,6 +630,11 @@ function useDocumentTitleSafe(pathname) {
   useEffect(() => {
     const titles = {
       '/': 'STRUKTIVA Unternehmensarchitektur | Digitale Struktur für kleine Unternehmen',
+      '/ueber-uns': 'Über uns - STRUKTIVA Unternehmensarchitektur',
+      '/websites': 'Websites & Landingpages - STRUKTIVA Unternehmensarchitektur',
+      '/lead-systeme': 'Lead-Systeme & Kundenanfragen - STRUKTIVA Unternehmensarchitektur',
+      '/pakete': 'Pakete & Betreuung - STRUKTIVA Unternehmensarchitektur',
+      '/referenzen': 'Referenzen - STRUKTIVA Unternehmensarchitektur',
       '/webseiten': 'Professionelle Webseiten - STRUKTIVA Unternehmensarchitektur',
       '/landingpages': 'Landingpages - STRUKTIVA Unternehmensarchitektur',
       '/apps': 'Unternehmens-Apps - STRUKTIVA Unternehmensarchitektur',
@@ -670,6 +680,16 @@ function useDocumentTitleSafe(pathname) {
     }
 
     const descriptions = {
+      '/ueber-uns':
+        'Mehr über STRUKTIVA Unternehmensarchitektur: digitale Struktur für kleine Unternehmen, lokale Dienstleister und Selbstständige.',
+      '/websites':
+        'Websites und Landingpages von STRUKTIVA: klare Struktur, professionelle Darstellung, mobile Optimierung und saubere Anfrageführung.',
+      '/lead-systeme':
+        'Lead-Systeme, Kundenanfragen und Kontaktwege von STRUKTIVA: Formular, WhatsApp, Bewertungen und klare digitale Kundenführung.',
+      '/pakete':
+        'Pakete und Betreuung von STRUKTIVA: vier klare Einstiege für Website, Sichtbarkeit, Kundenführung und digitale Systeme.',
+      '/referenzen':
+        'Referenzen, Branchenlösungen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
       '/bewertungs-qr-code':
         'STRUKTIVA erstellt ein einfaches Google-Bewertungssystem mit QR-Code, Bewertungslink und Anleitung fuer lokale Unternehmen wie Salons, Handwerker, Kosmetikstudios und Dienstleister.',
       '/digitale-ordnungssysteme':
@@ -1023,59 +1043,6 @@ function Header({ pathname, isHomeRoute = false }) {
             </AnimatePresence>
           </div>
 
-          <div
-            ref={desktopDemoDropdownRef}
-            className="relative"
-            onMouseEnter={() => setDesktopDemoDropdownOpen(true)}
-            onMouseLeave={closeDesktopDemoDropdown}
-          >
-            <button
-              type="button"
-              aria-haspopup="menu"
-              aria-expanded={desktopDemoDropdownOpen}
-              className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]"
-              onClick={() => setDesktopDemoDropdownOpen((open) => !open)}
-            >
-              Demos
-              <ChevronDown className={`h-3.5 w-3.5 transition ${desktopDemoDropdownOpen ? 'rotate-180 text-[#D8B45A]' : 'rotate-0'}`} />
-            </button>
-
-            <AnimatePresence>
-              {desktopDemoDropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="header-demo-dropdown-panel absolute left-1/2 top-[calc(100%+12px)] z-[10000] w-[460px] max-w-[94vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/40 bg-[#050505] p-3 shadow-[0_20px_45px_rgba(3,8,16,0.62)]"
-                >
-                  <div className="mb-2 h-px w-full bg-gradient-to-r from-transparent via-[#D8B45A]/55 to-transparent" />
-                  <div className="grid gap-2">
-                    {demoDropdownItems.map(([label, text, href, Icon]) => (
-                      <a
-                        key={label}
-                        href={href}
-                        role="menuitem"
-                        onClick={closeDesktopDemoDropdown}
-                        className="header-demo-dropdown-item group rounded-xl border border-white/10 bg-white/[0.03] p-3 transition hover:border-[#D8B45A]/35 hover:bg-white/[0.06]"
-                      >
-                        <div className="flex items-start gap-3">
-                          <span className="header-demo-dropdown-icon mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-[#D8B45A]/30 bg-[#D8B45A]/10 text-[#D8B45A]">
-                            <Icon className="h-4 w-4" />
-                          </span>
-                          <div>
-                            <p className="header-demo-dropdown-title text-sm font-semibold text-white group-hover:text-[#F2D98B]">{label}</p>
-                            <p className="header-demo-dropdown-description mt-1 text-xs leading-6 text-[#D7DCE5]">{text}</p>
-                          </div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
           {desktopNavItems.map(([label, href]) => (
             <a
               key={label}
@@ -1177,40 +1144,6 @@ function Header({ pathname, isHomeRoute = false }) {
                       >
                         Alle Leistungen ansehen
                       </a>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              <button
-                type="button"
-                aria-expanded={mobileDemosOpen}
-                onClick={() => setMobileDemosOpen((open) => !open)}
-                className="inline-flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
-              >
-                Demos
-                <ChevronDown className={`h-4 w-4 transition ${mobileDemosOpen ? 'rotate-180 text-[#D8B45A]' : 'rotate-0'}`} />
-              </button>
-              <AnimatePresence>
-                {mobileDemosOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.18 }}
-                    className="header-demo-mobile-panel rounded-2xl border border-[#D6A84F]/35 bg-[#050505] p-2"
-                  >
-                    <div className="grid gap-1">
-                      {demoDropdownItems.map(([label, text, href, Icon]) => (
-                        <a
-                          key={label}
-                          href={href}
-                          onClick={closeMobileMenu}
-                          className="header-demo-mobile-item rounded-lg border border-[#D6A84F]/25 bg-[#0B0F14] px-2.5 py-2.5 text-sm text-[#D7DCE5] transition hover:bg-[#111827] hover:text-[#D8B45A]"
-                        >
-                          <span className="header-demo-mobile-title inline-flex items-center gap-2 font-semibold"><Icon className="header-demo-mobile-icon h-3.5 w-3.5" />{label}</span>
-                          <span className="header-demo-mobile-description mt-1 block text-xs leading-6 text-[#94A3B8]">{text}</span>
-                        </a>
-                      ))}
                     </div>
                   </motion.div>
                 )}
@@ -2307,7 +2240,7 @@ function ContactSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#A9822D]">Direkte Wege</p>
               <div className="mt-4 grid gap-3">
                 <a
-                  href={siteLinks.contact}
+                  href={siteLinks.projectRequestForm}
                   className="inline-flex items-center justify-between rounded-[1.1rem] border border-[#E5D7B9] bg-white/88 px-4 py-3 text-sm font-semibold text-[#16120E] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D]"
                 >
                   Kontaktformular / Ersteinschätzung
@@ -2334,7 +2267,7 @@ function ContactSection() {
           <Reveal>
             <div className="flex flex-col gap-4">
               <a
-                href={siteLinks.contact}
+                href={siteLinks.projectRequestForm}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.16)] transition hover:bg-[#A9822D] hover:-translate-y-0.5"
               >
                 Kostenlose Ersteinschätzung anfragen
@@ -2607,21 +2540,23 @@ function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]">Leistungen</p>
             <div className="mt-3 grid gap-2">
-              <a href={siteLinks.webseitenPage} className="transition hover:text-[#F2D98B]">Webseiten</a>
-              <a href={siteLinks.landingpagesPage} className="transition hover:text-[#F2D98B]">Landingpages</a>
-              <a href={siteLinks.googleSichtbarkeitKleineUnternehmen} className="transition hover:text-[#F2D98B]">Google-Sichtbarkeit</a>
-              <a href={siteLinks.unternehmensApps} className="transition hover:text-[#F2D98B]">Unternehmens-Apps</a>
-              <a href={siteLinks.digitaleOrdnungssysteme} className="transition hover:text-[#F2D98B]">Digitale Ordnungssysteme</a>
+              <a href={siteLinks.websites} className="transition hover:text-[#F2D98B]">Websites & Landingpages</a>
+              <a href={siteLinks.kiAutomatisierung} className="transition hover:text-[#F2D98B]">KI & Automatisierung</a>
+              <a href={siteLinks.leadSysteme} className="transition hover:text-[#F2D98B]">Lead-Systeme</a>
+              <a href={siteLinks.paketePage} className="transition hover:text-[#F2D98B]">Pakete & Betreuung</a>
+              <a href={siteLinks.referenzen} className="transition hover:text-[#F2D98B]">Referenzen</a>
             </div>
           </div>
 
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]">Unternehmen</p>
             <div className="mt-3 grid gap-2">
+              <a href={siteLinks.home} className="transition hover:text-[#F2D98B]">Start</a>
               <a href={siteLinks.leistungenPage} className="transition hover:text-[#F2D98B]">Leistungen</a>
-              <a href={siteLinks.pricing} className="transition hover:text-[#F2D98B]">Preise</a>
-              <a href={siteLinks.demos} className="transition hover:text-[#F2D98B]">Demos</a>
+              <a href={siteLinks.about} className="transition hover:text-[#F2D98B]">Über uns</a>
+              <a href={siteLinks.projectRequest} className="transition hover:text-[#F2D98B]">Projekt anfragen</a>
               <a href={siteLinks.contact} className="transition hover:text-[#F2D98B]">Kontakt</a>
+              <a href={siteLinks.wissen} className="transition hover:text-[#F2D98B]">Wissen</a>
             </div>
           </div>
 
@@ -2732,7 +2667,7 @@ function HeroSectionPremium() {
               </p>
             </motion.div>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 flex flex-col gap-2.5 sm:flex-row">
-              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.2)] transition hover:bg-[#A9822D] hover:-translate-y-0.5">
+              <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.2)] transition hover:bg-[#A9822D] hover:-translate-y-0.5">
                 Digitale Struktur anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -4005,7 +3940,7 @@ function PricingArchitectureSection() {
                 </div>
               ))}
             </div>
-            <a href={siteLinks.contact} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-[#16120E] transition hover:bg-[#F0C45C]">
+            <a href={siteLinks.projectRequestForm} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-[#16120E] transition hover:bg-[#F0C45C]">
               Passendes Paket anfragen
               <ArrowRight className="h-4 w-4" />
             </a>
@@ -4028,7 +3963,7 @@ function PricingArchitectureSection() {
                 <p className="mt-3 text-sm font-semibold text-[#F0C45C]">{pkg.price}</p>
                 <p className="mt-3 text-sm leading-7 text-[rgba(248,241,227,0.76)]">{pkg.text}</p>
                 <div className="mt-4 space-y-2 text-sm text-[rgba(248,241,227,0.76)]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
-                <a href={siteLinks.contact} className="package-card-cta mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/42 bg-[linear-gradient(135deg,rgba(216,180,90,0.18),rgba(216,180,90,0.08))] px-4 py-2 text-sm font-semibold text-[#FFF8E8] shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition hover:bg-[#D8B45A] hover:text-[#16120E]">
+                <a href={siteLinks.projectRequestForm} className="package-card-cta mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/42 bg-[linear-gradient(135deg,rgba(216,180,90,0.18),rgba(216,180,90,0.08))] px-4 py-2 text-sm font-semibold text-[#FFF8E8] shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition hover:bg-[#D8B45A] hover:text-[#16120E]">
                   {pkg.cta}
                   <ArrowRight className="h-4 w-4" />
                 </a>
@@ -4181,6 +4116,273 @@ function HomePage() {
       <FAQSection />
       <WissenSection />
       <ContactSection />
+    </>
+  )
+}
+
+function AboutPage() {
+  return (
+    <>
+      <main className="px-5 pb-8 pt-10 lg:px-8 lg:pb-10 lg:pt-14">
+        <div className="mx-auto max-w-7xl">
+          <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Über STRUKTIVA</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+              Digitale Unternehmensarchitektur statt isolierter Einzellösungen.
+            </h1>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+              STRUKTIVA entwickelt digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister. Im Mittelpunkt stehen klare Websites, verständliche Angebote, sichtbare Kontaktwege und Systeme, die im Alltag wirklich nutzbar bleiben.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Projekt anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                Kontakt aufnehmen
+              </a>
+            </div>
+          </section>
+
+          <section className="mt-8 rounded-[1.9rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+            <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+              <figure className="rounded-[1.7rem] border border-[#D8B45A]/24 bg-white/[0.04] p-5">
+                <div className="flex flex-wrap items-center gap-4">
+                  <div className="h-28 w-28 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
+                    <img
+                      src={contactDetails.founderSvenImage}
+                      alt="Sven Matzke"
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover object-[50%_18%]"
+                    />
+                  </div>
+                  <div className="h-28 w-28 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
+                    <img
+                      src={contactDetails.founderJessicaImage}
+                      alt="Jessica Wacker"
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full scale-160 object-cover object-[52%_84%]"
+                    />
+                  </div>
+                </div>
+                <figcaption className="mt-4">
+                  <p className="text-base font-semibold text-white">Sven Matzke & Jessica Wacker</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[#D8B45A]/82">
+                    Gründer von STRUKTIVA Unternehmensarchitektur
+                  </p>
+                </figcaption>
+              </figure>
+              <div className="rounded-[1.7rem] border border-white/12 bg-white/[0.04] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Persönlich geführt</p>
+                <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
+                  STRUKTIVA Unternehmensarchitektur wird von Jessica Wacker und Sven Matzke geführt. Gemeinsam entwickeln wir digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.
+                </p>
+                <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
+                  Unser Anspruch ist ein professioneller Auftritt, der Leistungen verständlich macht, Vertrauen aufbaut und den passenden nächsten Schritt klar sichtbar werden lässt.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <WhyStruktivaSection />
+      <DifferentiatorSection />
+      <QualitySection />
+      <StructureCtaSection />
+    </>
+  )
+}
+
+function WebsitesLandingpagesPage() {
+  return (
+    <ServiceDetailLayout
+      title="Websites und Landingpages mit klarer digitaler Führung."
+      intro="STRUKTIVA entwickelt professionelle Unternehmenswebsites, Landingpages und digitale Einstiegsseiten für kleine Unternehmen, Selbstständige und lokale Dienstleister."
+    >
+      <ServiceSection title="Worum geht es?">
+        <p>Eine gute Website erklärt auf den ersten Blick, was ein Unternehmen anbietet, warum es vertrauenswürdig ist und wie der schnellste Kontaktweg aussieht.</p>
+        <p>Landingpages konzentrieren sich auf ein konkretes Angebot, eine Aktion oder eine gezielte Anfrage. Beide Formate funktionieren am besten, wenn Struktur, Inhalt und Kontaktführung sauber aufeinander abgestimmt sind.</p>
+      </ServiceSection>
+
+      <ServiceSection title="Welche Formate STRUKTIVA umsetzt">
+        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {websiteFormatsCards.map((item) => (
+            <article key={item.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+              <h3 className="text-base font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </ServiceSection>
+
+      <ServiceSection title="Was dabei mitgedacht wird">
+        <p>- klare Leistungsdarstellung statt allgemeiner Floskeln</p>
+        <p>- mobile Optimierung und saubere Lesbarkeit</p>
+        <p>- sichtbare Kontaktwege über Formular, Telefon, E-Mail und WhatsApp</p>
+        <p>- Verbindung zu Google-Sichtbarkeit, Bewertungen und Angebotsseiten</p>
+        <p>- rechtliche Seiten und technische Veröffentlichung</p>
+      </ServiceSection>
+
+      <ServiceSection title="Wann welches Format sinnvoll ist">
+        <div className="grid gap-3 md:grid-cols-2">
+          {websiteFormats.slice(0, 8).map(([title, text]) => (
+            <div key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3">
+              <p className="text-sm font-semibold text-white">{title}</p>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+            </div>
+          ))}
+        </div>
+      </ServiceSection>
+
+      <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
+        <h2 className="text-2xl font-semibold text-white">Website oder Landingpage unverbindlich anfragen</h2>
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+          Wenn Sie schon wissen, welches Format benötigt wird, oder erst eine Einschätzung möchten, nutzt STRUKTIVA dafür das bestehende Anfrageformular.
+        </p>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+            Projekt anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a href={siteLinks.leistungenPage} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+            Zur Leistungsübersicht
+          </a>
+        </div>
+      </section>
+    </ServiceDetailLayout>
+  )
+}
+
+function LeadSystemePage() {
+  const leadSystemCards = [
+    ['Digitale Kundenführung', 'Klare Wege von Interesse zur Anfrage – damit Besucher schneller verstehen, was angeboten wird und wie sie Kontakt aufnehmen.'],
+    ['WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Landingpage – professionell eingebunden und alltagstauglich aufgebaut.'],
+    ['Bewertungs- & QR-System', 'Ein klarer Prozess für Bewertungslink, QR-Code, Bewertungskarte und Anfrage-Texte.'],
+    ['Angebotsarchitektur', 'Leistungen so darstellen, dass Kunden den Nutzen schneller verstehen und eher anfragen.'],
+  ]
+
+  return (
+    <ServiceDetailLayout
+      title="Lead-Systeme und Kundenanfragen mit klarer Struktur."
+      intro="STRUKTIVA verbindet Website, Angebot, WhatsApp, Formular, Bewertungen und Kontaktlogik so, dass aus Besuchern nachvollziehbare Anfragen werden."
+    >
+      <ServiceSection title="Worum geht es?">
+        <p>Viele Unternehmen haben mehrere Kontaktwege, aber keine klare Führung dazwischen. Dann gehen Anfragen unter, Besucher brechen ab oder melden sich über unpassende Wege.</p>
+        <p>Lead-Systeme von STRUKTIVA sorgen dafür, dass Kontaktwege sichtbar, verständlich und passend zum Unternehmen aufgebaut werden.</p>
+      </ServiceSection>
+
+      <ServiceSection title="Bausteine für klarere Kundenanfragen">
+        <div className="grid gap-3 md:grid-cols-2">
+          {leadSystemCards.map(([title, text]) => (
+            <article key={title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-4">
+              <h3 className="text-base font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+            </article>
+          ))}
+        </div>
+      </ServiceSection>
+
+      <ServiceSection title="Was dabei verbessert wird">
+        <p>- Kontaktformulare werden klarer eingebunden und sinnvoll platziert</p>
+        <p>- WhatsApp wird nicht zufällig, sondern als echter Anfrageweg eingesetzt</p>
+        <p>- Google-Bewertungen und Vertrauenselemente unterstützen die Anfrage</p>
+        <p>- Leistungen, Nutzen und nächste Schritte werden verständlicher kommuniziert</p>
+        <p>- Anfragen laufen strukturierter im Betrieb an</p>
+      </ServiceSection>
+
+      <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
+        <h2 className="text-gold-glow text-2xl font-semibold text-white">Passend für Betriebe mit direktem Kundenkontakt</h2>
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {['Handwerker', 'Friseursalons', 'Kosmetikstudios', 'lokale Dienstleister'].map((item) => (
+            <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white">
+              {item}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
+        <h2 className="text-2xl font-semibold text-white">Lead-System mit bestehendem Anfrageformular starten</h2>
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+          Für neue Projekte nutzt STRUKTIVA weiterhin das bestehende Lead-Formular. So bleibt die Anfrage strukturiert und landet im vorhandenen System.
+        </p>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+            Lead-System anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a href={siteLinks.bewertungsQrCode} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+            Bewertungsstruktur ansehen
+          </a>
+        </div>
+      </section>
+    </ServiceDetailLayout>
+  )
+}
+
+function PaketePage() {
+  return (
+    <>
+      <main className="px-5 pb-4 pt-10 lg:px-8 lg:pt-14">
+        <div className="mx-auto max-w-7xl">
+          <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Pakete & Betreuung</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+              Klare Einstiegspakete für Website, Sichtbarkeit und digitale Struktur.
+            </h1>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+              Die Pakete geben Orientierung und helfen beim sinnvollen Start. Ergänzend dazu zeigt STRUKTIVA, wann laufende Betreuung sinnvoll ist und wann einzelne Änderungen ausreichen.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Paket anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                Betreuung besprechen
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+      <PricingArchitectureSection />
+      <BetreuungSection />
+      <FAQSection />
+      <StructureCtaSection />
+    </>
+  )
+}
+
+function ReferenzenPage() {
+  return (
+    <>
+      <main className="px-5 pb-4 pt-10 lg:px-8 lg:pt-14">
+        <div className="mx-auto max-w-7xl">
+          <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Referenzen & Demos</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+              Branchenlösungen und Demo-Beispiele für digitale Struktur.
+            </h1>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
+              STRUKTIVA zeigt anhand von Branchenlösungen und Demo-Projekten, wie klare Website-Struktur, Vertrauen, Kontaktwege und digitale Wirkung in verschiedenen Betrieben zusammenspielen können.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+                Ähnliches Projekt anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                Referenz besprechen
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+      <BranchenSection />
+      <DemoUseCasesSection />
+      <StructureCtaSection />
     </>
   )
 }
@@ -4527,7 +4729,7 @@ function ServiceDetailLayout({ title, intro, children }) {
               <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(7,17,31,0.68),rgba(11,31,58,0.4),rgba(5,10,18,0.72))]" />
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+              <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
                 Anfrage stellen
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -4561,7 +4763,7 @@ function UniversalServiceCTA() {
         Schreibe kurz, worum es bei deinem Unternehmen geht. Danach erhältst du eine klare Einschätzung, welcher nächste Schritt sinnvoll ist.
       </p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-        <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+        <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
           Anfrage stellen
           <ArrowRight className="h-4 w-4" />
         </a>
@@ -5429,10 +5631,10 @@ function KiAutomatisierungPage() {
                     <ArrowRight className="h-4 w-4" />
                   </a>
                   <a
-                    href={siteLinks.contactSection}
+                    href={siteLinks.projectRequestForm}
                     className="inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/28 bg-white/[0.05] px-5 py-3.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
                   >
-                    Zum Kontaktbereich
+                    Zum Anfrageformular
                   </a>
                 </div>
               </div>
@@ -6525,14 +6727,30 @@ function Page() {
 
   let content = <HomePage />
 
-  if (pathname === '/impressum') {
+  if (pathname === '/ueber-uns') {
+    content = <AboutPage />
+  } else if (pathname === '/leistungen') {
+    content = <LeistungenPage />
+  } else if (pathname === '/websites') {
+    content = <WebsitesLandingpagesPage />
+  } else if (pathname === '/ki-automatisierung') {
+    content = <KiAutomatisierungPage />
+  } else if (pathname === '/lead-systeme') {
+    content = <LeadSystemePage />
+  } else if (pathname === '/pakete') {
+    content = <PaketePage />
+  } else if (pathname === '/referenzen') {
+    content = <ReferenzenPage />
+  } else if (pathname === '/projekt-anfragen') {
+    content = <ProjectRequestPage />
+  } else if (pathname === '/kontakt') {
+    content = <ContactPage />
+  } else if (pathname === '/impressum') {
     content = <ImpressumPage />
   } else if (pathname === '/datenschutz') {
     content = <DatenschutzPage />
   } else if (pathname === '/widerruf') {
     content = <WiderrufPage />
-  } else if (pathname === '/kontakt') {
-    content = <ContactPage />
   } else if (pathname === '/webseiten') {
     content = <WebseitenPage />
   } else if (pathname === '/landingpages') {
@@ -6541,10 +6759,6 @@ function Page() {
     content = <AppsPage />
   } else if (pathname === '/google-ads') {
     content = <GoogleAdsPage />
-  } else if (pathname === '/ki-automatisierung') {
-    content = <KiAutomatisierungPage />
-  } else if (pathname === '/projekt-anfragen') {
-    content = <ProjectRequestPage />
   } else if (pathname === '/bewertungs-qr-code') {
     content = <BewertungsQrCodePage />
   } else if (pathname === '/digitale-soforthilfe') {
@@ -6553,8 +6767,6 @@ function Page() {
     content = <DigitaleOrdnungssystemePage />
   } else if (pathname === '/website-fuer-kleine-unternehmen') {
     content = <WebsiteFuerKleineUnternehmenPage />
-  } else if (pathname === '/leistungen') {
-    content = <LeistungenPage />
   } else if (pathname === '/wissen') {
     content = <WissenOverviewPage />
   } else if (wissenArticle) {
