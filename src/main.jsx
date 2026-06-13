@@ -5518,23 +5518,6 @@ function OfferDetailPage({ title, intro, points, pathname }) {
 }
 
 function LeistungenPage() {
-  const allLeistungPrices = {
-    'Website-Erstellung': 'ab 599 €',
-    Landingpages: 'ab 299 €',
-    'Google-Sichtbarkeit': 'ab 299 €',
-    'KI & Automatisierung': 'projektbezogen',
-    'Digitale Soforthilfe': 'ab 99 €',
-    'Digitale Kundenführung': 'ab 299 €',
-    'WhatsApp-Kontaktstruktur': 'ab 149 €',
-    'Social-Media-Struktur': 'ab 249 €',
-    'Newsletter-Einbindung': 'ab 199 €',
-    'Unternehmens-Apps': 'ab 999 €',
-    'Betriebs-Dashboards': 'ab 799 €',
-    'Digitale Ordnungssysteme': 'ab 899 €',
-    Angebotsarchitektur: 'ab 299 €',
-    'Beratung & Ersteinschätzung': 'Kostenlos',
-  }
-
   const allLeistungen = [
     ['Website-Erstellung', 'STRUKTIVA erstellt unterschiedliche Webseiten-Formate – von Onepager, Unternehmenswebsite und Landingpage bis zu mehrseitigen Premium-Webauftritten, Branchenwebsites, Angebotsseiten und Websites mit Newsletter-, QR-Code- oder Kontaktstruktur.'],
     ['Landingpages', 'Verkaufsstarke Seiten für Angebote, Aktionen und Anfragen.'],
@@ -5572,29 +5555,31 @@ function LeistungenPage() {
                 className="rounded-2xl border border-white/12 bg-white/[0.04] p-4"
               >
                 <h2 className="text-base font-semibold text-white">{title}</h2>
-                {allLeistungPrices[title] && (
-                  <p className="mt-1 text-sm font-semibold text-[#D8B45A]">
-                    {allLeistungPrices[title] === 'Kostenlos'
-                      ? 'Kostenlos'
-                      : allLeistungPrices[title] === 'projektbezogen'
-                      ? 'Projektbezogen'
-                      : `${allLeistungPrices[title]} inklusive Mehrwertsteuer`}
-                  </p>
-                )}
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
               </article>
             ))}
           </div>
-          <p className="mt-6 text-sm leading-7 text-[#94A3B8]">
-            Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
-          </p>
-          <a
-            href={siteLinks.contact}
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
-          >
-            Kostenlose Ersteinschätzung anfragen
-            <ArrowRight className="h-4 w-4" />
-          </a>
+          <div className="mt-6 rounded-[1.5rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.78),rgba(11,31,58,0.72),rgba(5,10,18,0.82))] p-5 shadow-premium">
+            <p className="text-sm leading-7 text-[#D7DCE5] md:text-base">
+              Der genaue Umfang hängt vom jeweiligen Projekt, den vorhandenen Strukturen und den gewünschten Funktionen ab. Konkrete Preise und passende Einstiegsmöglichkeiten findest du im Bereich Pakete oder erhältst nach einer kurzen Ersteinschätzung.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={siteLinks.paketePage}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/38 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+              >
+                Pakete ansehen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href={siteLinks.projectRequestForm}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+              >
+                Projekt anfragen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </section>
       </div>
     </main>
