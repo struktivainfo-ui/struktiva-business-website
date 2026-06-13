@@ -95,7 +95,7 @@ const siteLinks = {
 
 const brand = {
   name: 'STRUKTIVA Unternehmensarchitektur',
-  descriptor: 'Unternehmensarchitektur',
+  descriptor: 'Digitale Systeme',
   line: 'Professionelle Online-Präsenz. Kundengewinnung. Digitale Struktur. Optionale App-Lösungen.',
 }
 
@@ -158,24 +158,14 @@ const navItems = [
 ]
 
 const desktopNavItems = [
-  ['Websites', siteLinks.websites],
-  ['Lead-Systeme', siteLinks.leadSysteme],
-  ['KI & Automatisierung', siteLinks.kiAutomatisierung],
   ['Pakete', siteLinks.paketePage],
-  ['Über uns', siteLinks.about],
   ['Referenzen', siteLinks.referenzen],
-  ['Demos', siteLinks.demos],
   ['Kontakt', siteLinks.contact],
 ]
 
 const mobileNavItems = [
-  ['Websites', siteLinks.websites],
-  ['Lead-Systeme', siteLinks.leadSysteme],
-  ['KI & Automatisierung', siteLinks.kiAutomatisierung],
   ['Pakete', siteLinks.paketePage],
-  ['Über uns', siteLinks.about],
   ['Referenzen', siteLinks.referenzen],
-  ['Demos', siteLinks.demos],
   ['Kontakt', siteLinks.contact],
 ]
 
@@ -184,7 +174,6 @@ const leistungenDropdownItems = [
   ['Websites', siteLinks.websites],
   ['Lead-Systeme', siteLinks.leadSysteme],
   ['KI & Automatisierung', siteLinks.kiAutomatisierung],
-  ['Referenzen', siteLinks.referenzen],
   ['Demos', siteLinks.demos],
 ]
 
@@ -876,23 +865,18 @@ function Header({ pathname, isHomeRoute = false }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false)
-  const [desktopDemoDropdownOpen, setDesktopDemoDropdownOpen] = useState(false)
   const [mobileLeistungenOpen, setMobileLeistungenOpen] = useState(false)
-  const [mobileDemosOpen, setMobileDemosOpen] = useState(false)
   const menuPanelRef = useRef(null)
   const desktopDropdownRef = useRef(null)
-  const desktopDemoDropdownRef = useRef(null)
 
   const closeMobileMenu = () => {
     setMenuOpen(false)
     setMobileLeistungenOpen(false)
-    setMobileDemosOpen(false)
     document.body.classList.remove('menu-open', 'open', 'active', 'is-open', 'mobile-menu-open')
     document.body.style.overflow = ''
   }
 
   const closeDesktopDropdown = () => setDesktopDropdownOpen(false)
-  const closeDesktopDemoDropdown = () => setDesktopDemoDropdownOpen(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 14)
@@ -904,7 +888,6 @@ function Header({ pathname, isHomeRoute = false }) {
   useEffect(() => {
     closeMobileMenu()
     closeDesktopDropdown()
-    closeDesktopDemoDropdown()
   }, [pathname])
 
   useEffect(() => {
@@ -922,7 +905,6 @@ function Header({ pathname, isHomeRoute = false }) {
       if (event.key === 'Escape') {
         closeMobileMenu()
         closeDesktopDropdown()
-        closeDesktopDemoDropdown()
       }
     }
 
@@ -939,7 +921,6 @@ function Header({ pathname, isHomeRoute = false }) {
       }
       if (window.innerWidth < 1024) {
         closeDesktopDropdown()
-        closeDesktopDemoDropdown()
       }
     }
 
@@ -950,13 +931,6 @@ function Header({ pathname, isHomeRoute = false }) {
         !desktopDropdownRef.current.contains(event.target)
       ) {
         closeDesktopDropdown()
-      }
-      if (
-        desktopDemoDropdownOpen &&
-        desktopDemoDropdownRef.current &&
-        !desktopDemoDropdownRef.current.contains(event.target)
-      ) {
-        closeDesktopDemoDropdown()
       }
     }
 
@@ -973,7 +947,7 @@ function Header({ pathname, isHomeRoute = false }) {
       document.removeEventListener('mousedown', onClickOutsideDesktopDropdown)
       window.removeEventListener('resize', onResize)
     }
-  }, [menuOpen, desktopDropdownOpen, desktopDemoDropdownOpen])
+  }, [menuOpen, desktopDropdownOpen])
 
   return (
     <motion.header
@@ -989,7 +963,7 @@ function Header({ pathname, isHomeRoute = false }) {
       }`}
     >
       <div
-        className={`mx-auto flex w-full max-w-[1240px] items-center justify-between rounded-full border px-4 py-2.5 transition md:px-5 lg:py-3 ${
+        className={`mx-auto flex w-full max-w-[1240px] items-center justify-between gap-4 rounded-[1.8rem] border px-4 py-2.5 transition md:px-5 lg:py-2.5 ${
           scrolled
             ? 'border-white/75 bg-[linear-gradient(145deg,rgba(255,255,255,0.82),rgba(218,218,213,0.72))] shadow-[0_10px_35px_rgba(0,0,0,0.12)]'
             : isHomeRoute
@@ -997,15 +971,15 @@ function Header({ pathname, isHomeRoute = false }) {
             : 'border-white/70 bg-[linear-gradient(145deg,rgba(255,255,255,0.8),rgba(223,223,218,0.68))]'
         }`}
       >
-        <a href={siteLinks.home} className="flex min-w-0 max-w-[320px] items-center gap-3 xl:max-w-[380px]">
+        <a href={siteLinks.home} className="flex min-w-0 shrink-0 items-center gap-3">
           <img
             src="/struktiva-logo.jpeg"
             alt="STRUKTIVA Unternehmensarchitektur Logo"
             className="h-8 w-8 rounded-full object-contain md:h-10 md:w-10"
           />
-          <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-[#111111] lg:text-[14px] xl:text-[15px]">{brand.name}</p>
-            <p className="truncate text-[10px] uppercase tracking-[0.24em] text-[#6b6b66] lg:text-[11px]">{brand.descriptor}</p>
+          <div className="leading-none">
+            <p className="text-sm font-semibold tracking-[0.02em] text-[#111111] md:text-[15px]">STRUKTIVA</p>
+            <p className="mt-1 hidden text-[10px] uppercase tracking-[0.2em] text-[#6b6b66] md:block">{brand.descriptor}</p>
           </div>
         </a>
 
@@ -1080,11 +1054,11 @@ function Header({ pathname, isHomeRoute = false }) {
 
         <div className="hidden lg:block">
           <a
-            href={siteLinks.projectRequestForm}
-            className="metallic-btn-primary inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full px-4 text-sm font-semibold transition hover:-translate-y-0.5"
+            href={siteLinks.projectRequest}
+            className="metallic-btn-primary inline-flex h-10 items-center gap-1 whitespace-nowrap rounded-full px-3.5 text-sm font-semibold transition hover:-translate-y-0.5"
           >
-            Ersteinschätzung
-            <ArrowRight className="h-3.5 w-3.5" />
+            Projekt anfragen
+            <ArrowRight className="h-3 w-3" />
           </a>
         </div>
 
@@ -1176,11 +1150,11 @@ function Header({ pathname, isHomeRoute = false }) {
                 </a>
               ))}
               <a
-                href={siteLinks.projectRequestForm}
+                href={siteLinks.projectRequest}
                 onClick={closeMobileMenu}
                 className="metallic-btn-primary mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition"
               >
-                  Kostenlose Ersteinschätzung anfragen
+                  Projekt anfragen
                   <ArrowRight className="h-4 w-4" />
               </a>
             </div>
