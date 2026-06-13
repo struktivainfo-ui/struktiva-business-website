@@ -864,10 +864,10 @@ function SectionHeader({ eyebrow, title, text, centered = true, tone = 'dark' })
   return (
     <div className={centered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
       <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${isLight ? 'text-[#A9822D]' : 'text-[#D8B45A]/80'}`}>{eyebrow}</p>
-      <h2 className={`mt-4 text-3xl font-semibold tracking-tight md:text-4xl lg:text-[2.9rem] lg:leading-[1.08] ${isLight ? 'text-[#16120E]' : 'text-gold-glow text-white'}`}>
+      <h2 className={`mt-4 text-3xl font-semibold tracking-tight md:text-4xl lg:text-[2.9rem] lg:leading-[1.08] ${isLight ? 'metallic-section-title' : 'metallic-dark-title'}`}>
         {title}
       </h2>
-      <p className={`mt-4 text-base leading-8 md:text-lg ${isLight ? 'text-[#5B5348]' : 'text-[#D7DCE5]'}`}>{text}</p>
+      <p className={`mt-4 text-base leading-8 md:text-lg ${isLight ? 'text-[#3f3f3b]' : 'text-[#E0BF6A]'}`}>{text}</p>
     </div>
   )
 }
@@ -982,7 +982,7 @@ function Header({ pathname, isHomeRoute = false }) {
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       className={`sticky top-0 z-[9999] px-4 pt-3 lg:px-6 ${
         isHomeRoute
-          ? 'border-b border-[#D6A84F]/45 bg-[linear-gradient(180deg,rgba(5,5,5,0.98),rgba(11,15,20,0.96))] shadow-[0_10px_35px_rgba(0,0,0,0.45),0_0_24px_rgba(214,168,79,0.12)] backdrop-blur-[14px]'
+          ? 'border-b border-white/55 bg-[linear-gradient(180deg,rgba(248,248,244,0.94),rgba(223,223,217,0.9))] shadow-[0_10px_35px_rgba(0,0,0,0.12),0_0_24px_rgba(214,168,79,0.08)] backdrop-blur-[18px]'
           : scrolled
           ? 'backdrop-blur-[18px]'
           : ''
@@ -991,10 +991,10 @@ function Header({ pathname, isHomeRoute = false }) {
       <div
         className={`mx-auto flex w-full max-w-[1240px] items-center justify-between rounded-full border px-4 py-2.5 transition md:px-5 lg:py-3 ${
           scrolled
-            ? 'border-[#D6A84F]/35 bg-[rgba(5,5,5,0.96)] shadow-[0_10px_35px_rgba(0,0,0,0.35)]'
+            ? 'border-white/75 bg-[linear-gradient(145deg,rgba(255,255,255,0.82),rgba(218,218,213,0.72))] shadow-[0_10px_35px_rgba(0,0,0,0.12)]'
             : isHomeRoute
-            ? 'border-[#D6A84F]/32 bg-[rgba(5,5,5,0.95)] shadow-[0_10px_30px_rgba(0,0,0,0.3)]'
-            : 'border-white/12 bg-white/[0.05]'
+            ? 'border-white/75 bg-[linear-gradient(145deg,rgba(255,255,255,0.84),rgba(218,218,213,0.74))] shadow-[0_10px_30px_rgba(0,0,0,0.1)]'
+            : 'border-white/70 bg-[linear-gradient(145deg,rgba(255,255,255,0.8),rgba(223,223,218,0.68))]'
         }`}
       >
         <a href={siteLinks.home} className="flex min-w-0 max-w-[320px] items-center gap-3 xl:max-w-[380px]">
@@ -1004,13 +1004,13 @@ function Header({ pathname, isHomeRoute = false }) {
             className="h-8 w-8 rounded-full object-contain md:h-10 md:w-10"
           />
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-white lg:text-[14px] xl:text-[15px]">{brand.name}</p>
-            <p className="truncate text-[10px] uppercase tracking-[0.24em] text-[#94A3B8] lg:text-[11px]">{brand.descriptor}</p>
+            <p className="truncate text-sm font-semibold text-[#111111] lg:text-[14px] xl:text-[15px]">{brand.name}</p>
+            <p className="truncate text-[10px] uppercase tracking-[0.24em] text-[#6b6b66] lg:text-[11px]">{brand.descriptor}</p>
           </div>
         </a>
 
         <nav className="hidden items-center gap-4 xl:gap-6 lg:flex">
-          <a href={siteLinks.home} className="whitespace-nowrap text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]">
+          <a href={siteLinks.home} className="whitespace-nowrap text-sm font-medium text-[#111111] transition hover:text-[#8f6d27]">
             Start
           </a>
 
@@ -1024,7 +1024,7 @@ function Header({ pathname, isHomeRoute = false }) {
               type="button"
               aria-haspopup="menu"
               aria-expanded={desktopDropdownOpen}
-              className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]"
+              className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-[#111111] transition hover:text-[#8f6d27]"
               onClick={() => setDesktopDropdownOpen((open) => !open)}
             >
               Leistungen
@@ -1038,7 +1038,7 @@ function Header({ pathname, isHomeRoute = false }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="header-dropdown-panel absolute left-1/2 top-[calc(100%+12px)] z-[10000] w-[360px] max-w-[92vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#D8B45A]/46 bg-[linear-gradient(135deg,rgba(18,18,18,0.98),rgba(35,35,35,0.94))] p-2.5 shadow-[0_20px_45px_rgba(3,8,16,0.62)] backdrop-blur-xl"
+                  className="header-dropdown-panel absolute left-1/2 top-[calc(100%+12px)] z-[10000] w-[360px] max-w-[92vw] -translate-x-1/2 overflow-hidden rounded-2xl border border-white/75 bg-[linear-gradient(145deg,rgba(250,250,247,0.98),rgba(221,221,216,0.96))] p-2.5 shadow-[0_20px_45px_rgba(0,0,0,0.14)] backdrop-blur-xl"
                 >
                   <div className="mb-2 h-px w-full bg-gradient-to-r from-transparent via-[#D8B45A]/55 to-transparent" />
                   <div className="grid gap-1">
@@ -1048,7 +1048,7 @@ function Header({ pathname, isHomeRoute = false }) {
                         href={href}
                         role="menuitem"
                         onClick={closeDesktopDropdown}
-                        className="header-dropdown-link rounded-xl border border-transparent px-3 py-2.5 text-sm font-medium text-[#FFF8E8] transition hover:border-[#D8B45A]/28 hover:bg-white/[0.08] hover:text-[#F0C45C]"
+                        className="header-dropdown-link rounded-xl border border-transparent px-3 py-2.5 text-sm font-medium text-[#111111] transition hover:border-[#D8B45A]/38 hover:bg-white/60 hover:text-[#8f6d27]"
                       >
                         {label}
                       </a>
@@ -1057,7 +1057,7 @@ function Header({ pathname, isHomeRoute = false }) {
                       href={siteLinks.leistungenPage}
                       role="menuitem"
                       onClick={closeDesktopDropdown}
-                      className="header-dropdown-cta mt-1 rounded-xl border border-[#D8B45A]/34 bg-[#141414] px-3 py-2.5 text-sm font-semibold text-[#F0C45C] transition hover:bg-[#D8B45A] hover:text-[#16120E]"
+                      className="header-dropdown-cta metallic-btn-primary mt-1 rounded-xl px-3 py-2.5 text-sm font-semibold transition"
                     >
                       Alle Leistungen ansehen
                     </a>
@@ -1071,7 +1071,7 @@ function Header({ pathname, isHomeRoute = false }) {
             <a
               key={label}
               href={href}
-              className="whitespace-nowrap text-sm font-medium text-[#D7DCE5] transition hover:text-[#D8B45A]"
+              className="whitespace-nowrap text-sm font-medium text-[#111111] transition hover:text-[#8f6d27]"
             >
               {label}
             </a>
@@ -1081,7 +1081,7 @@ function Header({ pathname, isHomeRoute = false }) {
         <div className="hidden lg:block">
           <a
             href={siteLinks.projectRequestForm}
-            className="inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full bg-[#D8B45A] px-4 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(17,24,39,0.14)] transition hover:bg-[#C9A247] hover:-translate-y-0.5"
+            className="metallic-btn-primary inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full px-4 text-sm font-semibold transition hover:-translate-y-0.5"
           >
             Ersteinschätzung
             <ArrowRight className="h-3.5 w-3.5" />
@@ -1100,7 +1100,7 @@ function Header({ pathname, isHomeRoute = false }) {
             }
             setMenuOpen(true)
           }}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/14 bg-white/[0.05] text-white lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/80 bg-white/70 text-[#111111] lg:hidden"
         >
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -1115,13 +1115,13 @@ function Header({ pathname, isHomeRoute = false }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-[9999] mx-auto mt-3 max-w-7xl rounded-[1.8rem] border border-[#D6A84F]/40 bg-[rgba(5,5,5,0.98)] p-4 shadow-premium backdrop-blur-[14px] lg:hidden"
+            className="relative z-[9999] mx-auto mt-3 max-w-7xl rounded-[1.8rem] border border-white/80 bg-[linear-gradient(145deg,rgba(250,250,247,0.98),rgba(221,221,216,0.96))] p-4 shadow-premium backdrop-blur-[18px] lg:hidden"
           >
             <div className="grid gap-2">
       <a
         href={siteLinks.home}
         onClick={closeMobileMenu}
-        className="rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
+        className="rounded-2xl px-4 py-3 text-sm font-medium text-[#111111] transition hover:bg-white/60 hover:text-[#8f6d27]"
       >
         Start
       </a>
@@ -1129,7 +1129,7 @@ function Header({ pathname, isHomeRoute = false }) {
         type="button"
         aria-expanded={mobileLeistungenOpen}
         onClick={() => setMobileLeistungenOpen((open) => !open)}
-                className="inline-flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
+                className="inline-flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[#111111] transition hover:bg-white/60 hover:text-[#8f6d27]"
               >
                 Leistungen
                 <ChevronDown className={`h-4 w-4 transition ${mobileLeistungenOpen ? 'rotate-180 text-[#D8B45A]' : 'rotate-0'}`} />
@@ -1141,7 +1141,7 @@ function Header({ pathname, isHomeRoute = false }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.18 }}
-                    className="rounded-2xl border border-[#D6A84F]/40 bg-[linear-gradient(135deg,rgba(18,18,18,0.98),rgba(35,35,35,0.94))] p-2"
+                    className="rounded-2xl border border-white/80 bg-[linear-gradient(145deg,rgba(250,250,247,0.98),rgba(221,221,216,0.96))] p-2"
                   >
                     <div className="grid gap-1">
                       {leistungenDropdownItems.map(([label, href]) => (
@@ -1149,7 +1149,7 @@ function Header({ pathname, isHomeRoute = false }) {
                           key={label}
                           href={href}
                           onClick={closeMobileMenu}
-                          className="rounded-lg border border-transparent px-2.5 py-2 text-sm text-[#FFF8E8] transition hover:border-[#D8B45A]/28 hover:bg-[#1A1A1A] hover:text-[#F0C45C]"
+                          className="rounded-lg border border-transparent px-2.5 py-2 text-sm text-[#111111] transition hover:border-[#D8B45A]/38 hover:bg-white/60 hover:text-[#8f6d27]"
                         >
                           {label}
                         </a>
@@ -1157,7 +1157,7 @@ function Header({ pathname, isHomeRoute = false }) {
                       <a
                         href={siteLinks.leistungenPage}
                         onClick={closeMobileMenu}
-                        className="mt-1 rounded-lg border border-[#D8B45A]/38 bg-[#141414] px-2.5 py-2 text-sm font-semibold text-[#F0C45C] transition hover:bg-[#D8B45A] hover:text-[#16120E]"
+                        className="metallic-btn-primary mt-1 rounded-lg px-2.5 py-2 text-sm font-semibold transition"
                       >
                         Alle Leistungen ansehen
                       </a>
@@ -1170,7 +1170,7 @@ function Header({ pathname, isHomeRoute = false }) {
                   key={label}
                   href={href}
                   onClick={closeMobileMenu}
-                  className="rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
+                  className="rounded-2xl px-4 py-3 text-sm font-medium text-[#111111] transition hover:bg-white/60 hover:text-[#8f6d27]"
                 >
                   {label}
                 </a>
@@ -1178,7 +1178,7 @@ function Header({ pathname, isHomeRoute = false }) {
               <a
                 href={siteLinks.projectRequestForm}
                 onClick={closeMobileMenu}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+                className="metallic-btn-primary mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition"
               >
                   Kostenlose Ersteinschätzung anfragen
                   <ArrowRight className="h-4 w-4" />
@@ -2529,16 +2529,16 @@ function DemoDienstleisterPagePremium() {
 function Footer() {
   return (
     <footer className="px-5 pb-24 pt-8 lg:px-8 lg:pb-10">
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.7rem] border border-white/12 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] shadow-premium">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.7rem] border border-white/65 bg-[linear-gradient(145deg,rgba(5,5,5,0.98),rgba(21,21,21,0.96),rgba(42,42,42,0.94))] shadow-premium">
         <div className="h-px w-full bg-[linear-gradient(90deg,rgba(216,180,90,0),rgba(216,180,90,0.75),rgba(216,180,90,0))]" />
-        <div className="grid gap-8 px-6 py-7 text-sm text-[#D7DCE5] md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+        <div className="grid gap-8 px-6 py-7 text-sm text-[#E0BF6A] md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           <div>
-            <p className="text-base font-semibold text-white">STRUKTIVA Unternehmensarchitektur</p>
+            <p className="text-base font-semibold text-[#FFF8E8]">STRUKTIVA Unternehmensarchitektur</p>
             <p className="mt-3">Geführt von Jessica Wacker und Sven Matzke</p>
             <a href={`mailto:${contactDetails.email}`} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.email}</a>
             <a href={contactDetails.phoneHref} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.phoneLabel}</a>
             <a href={contactDetails.whatsappHref} className="mt-1 block transition hover:text-[#F2D98B]">WhatsApp Business</a>
-            <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#94A3B8]">
+            <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#CFC8B5]">
               {externalProfileLinks.map(([label, , href]) => (
                 <a
                   key={label}
@@ -2551,7 +2551,7 @@ function Footer() {
                 </a>
               ))}
             </div>
-            <p className="mt-3 text-xs leading-6 text-[#94A3B8]">Digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.</p>
+            <p className="mt-3 text-xs leading-6 text-[#CFC8B5]">Digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.</p>
           </div>
 
           <div>
@@ -2591,8 +2591,8 @@ function Footer() {
                 Cookie-Einstellungen ändern
               </button>
             </div>
-            <div className="mt-4 rounded-xl border border-white/12 bg-white/[0.03] px-3.5 py-3">
-              <p className="text-sm font-medium text-white">Zufrieden mit STRUKTIVA?</p>
+            <div className="mt-4 rounded-xl border border-white/18 bg-white/[0.04] px-3.5 py-3">
+              <p className="text-sm font-medium text-[#FFF8E8]">Zufrieden mit STRUKTIVA?</p>
               <a
                 href={contactDetails.googleReviewHref}
                 target="_blank"
@@ -2605,7 +2605,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-white/10 px-6 py-3.5 text-xs text-[#94A3B8] md:flex md:items-center md:justify-between">
+        <div className="border-t border-white/12 px-6 py-3.5 text-xs text-[#CFC8B5] md:flex md:items-center md:justify-between">
           <div>
             <p>© 2026 STRUKTIVA Unternehmensarchitektur. Alle Rechte vorbehalten.</p>
             <p className="mt-1 flex flex-wrap gap-x-2 gap-y-1">
@@ -2671,7 +2671,7 @@ function HeroSectionPremium() {
             <motion.p variants={fadeUp} transition={{ duration: 0.56, ease: [0.22, 1, 0.36, 1] }} className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-[#A9822D]">
               Keine Einzellösung.
             </motion.p>
-            <motion.h1 variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-3 max-w-[42rem] text-4xl font-semibold tracking-tight text-[#14110D] sm:text-5xl lg:text-[62px] lg:leading-[1.02]">
+            <motion.h1 variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="metallic-display-title mt-3 max-w-[42rem] text-4xl font-semibold tracking-tight sm:text-5xl lg:text-[62px] lg:leading-[1.02]">
               Digitale Lösungen für Webseiten, Kundenanfragen und klare Abläufe.
             </motion.h1>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[38rem] text-[15px] leading-7 text-[#4E463A] md:text-[17px] md:leading-8">
@@ -2684,11 +2684,11 @@ function HeroSectionPremium() {
               </p>
             </motion.div>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 flex flex-col gap-2.5 sm:flex-row">
-              <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.2)] transition hover:bg-[#A9822D] hover:-translate-y-0.5">
+              <a href={siteLinks.projectRequestForm} className="metallic-btn-primary inline-flex items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold transition hover:-translate-y-0.5">
                 Projekt anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={siteLinks.leistungenPage} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/35 bg-white/56 px-5 py-3.5 text-sm font-semibold text-[#1E1A15] transition hover:border-[#D8B45A]/60 hover:text-[#A9822D]">
+              <a href={siteLinks.leistungenPage} className="metallic-btn-secondary inline-flex items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold transition">
                 Leistungen ansehen
               </a>
             </motion.div>
@@ -5084,20 +5084,20 @@ function ServiceDetailLayout({ title, intro, children }) {
     <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <div className="rounded-[2.3rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
+          <div className="metallic-card rounded-[2.3rem] p-7 shadow-premium md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Leistung</p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-semibold text-white md:text-5xl">{title}</h1>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">{intro}</p>
+            <h1 className="metallic-dark-title mt-4 max-w-3xl text-4xl font-semibold md:text-5xl">{title}</h1>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-[#E0BF6A] md:text-lg">{intro}</p>
             <div className="relative mt-6 overflow-hidden rounded-[1.2rem] border border-white/14">
               <img src={struktivaImages.structurePlanning} alt="Strategische digitale Planung im Unternehmenskontext" loading="lazy" decoding="async" className="h-28 w-full object-cover md:h-32" />
               <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(7,17,31,0.68),rgba(11,31,58,0.4),rgba(5,10,18,0.72))]" />
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+              <a href={siteLinks.projectRequestForm} className="metallic-btn-primary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition">
                 Anfrage stellen
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={siteLinks.services} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+              <a href={siteLinks.services} className="metallic-btn-secondary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition">
                 Zurück zur Übersicht
               </a>
             </div>
@@ -5112,26 +5112,26 @@ function ServiceDetailLayout({ title, intro, children }) {
 
 function ServiceSection({ title, children }) {
   return (
-    <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
-      <h2 className="text-gold-glow text-2xl font-semibold text-white">{title}</h2>
-      <div className="mt-4 space-y-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{children}</div>
+    <section className="metallic-card rounded-[1.8rem] p-5 shadow-premium md:p-6">
+      <h2 className="metallic-dark-title text-2xl font-semibold">{title}</h2>
+      <div className="mt-4 space-y-3 text-sm leading-7 md:text-base">{children}</div>
     </section>
   )
 }
 
 function UniversalServiceCTA() {
   return (
-    <section className="rounded-[1.9rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium">
-      <h2 className="text-2xl font-semibold text-white">Möchtest du wissen, ob diese Lösung zu deinem Unternehmen passt?</h2>
-      <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5] md:text-base">
+    <section className="metallic-card rounded-[1.9rem] p-6 shadow-premium">
+      <h2 className="metallic-dark-title text-2xl font-semibold">Möchtest du wissen, ob diese Lösung zu deinem Unternehmen passt?</h2>
+      <p className="mt-3 max-w-3xl text-sm leading-7 md:text-base">
         Schreibe kurz, worum es bei deinem Unternehmen geht. Danach erhältst du eine klare Einschätzung, welcher nächste Schritt sinnvoll ist.
       </p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-        <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+        <a href={siteLinks.projectRequestForm} className="metallic-btn-primary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition">
           Anfrage stellen
           <ArrowRight className="h-4 w-4" />
         </a>
-        <a href={contactDetails.whatsappHref} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+        <a href={contactDetails.whatsappHref} className="metallic-btn-secondary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition">
           Per WhatsApp Business kontaktieren
         </a>
       </div>
@@ -6530,9 +6530,9 @@ function ProjectRequestPage() {
 
 function LegalSection({ title, children }) {
   return (
-    <section className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
-      <h2 className="text-xl font-semibold text-white">{title}</h2>
-      <div className="mt-4 space-y-3 text-sm leading-7 text-[#D7DCE5] md:text-base">{children}</div>
+    <section className="metallic-card rounded-[1.6rem] p-5 shadow-premium md:p-6">
+      <h2 className="metallic-dark-title text-xl font-semibold">{title}</h2>
+      <div className="mt-4 space-y-3 text-sm leading-7 md:text-base">{children}</div>
     </section>
   )
 }
@@ -6542,10 +6542,10 @@ function LegalLayout({ title, intro, children }) {
     <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <div className="rounded-[2.3rem] border border-white/14 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
+          <div className="metallic-card rounded-[2.3rem] p-7 shadow-premium md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/78">{brand.name}</p>
-            <h1 className="mt-4 text-4xl font-semibold text-white md:text-5xl">{title}</h1>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">{intro}</p>
+            <h1 className="metallic-dark-title mt-4 text-4xl font-semibold md:text-5xl">{title}</h1>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-[#E0BF6A] md:text-lg">{intro}</p>
           </div>
         </Reveal>
 
@@ -7147,7 +7147,7 @@ function Page() {
   }
 
   return (
-    <div className={`${isHomeRoute ? 'struktiva-home' : ''} min-h-screen text-white`}>
+    <div className={`struktiva-metallic ${isHomeRoute ? 'struktiva-home' : ''} min-h-screen`}>
       {!isDemoRoute ? <Header pathname={pathname} isHomeRoute={isHomeRoute} /> : null}
       {content}
       {!isDemoRoute ? <Footer /> : null}

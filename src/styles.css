@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Marcellus&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,24 +6,32 @@
 
 :root {
   font-family: 'Manrope', 'Segoe UI', sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
-  --struktiva-navy: #07111f;
-  --struktiva-blue: #0b1f3a;
-  --struktiva-black-blue: #050a12;
-  --struktiva-gold: #d8b45a;
-  --struktiva-champagne: #f2d98b;
-  --struktiva-gold-dark: #a9822d;
-  --struktiva-text: #ffffff;
-  --struktiva-text-muted: #d7dce5;
-  --struktiva-text-cool: #94a3b8;
+  --struktiva-heading-font: 'Marcellus', 'Georgia', serif;
+  --struktiva-navy: #151515;
+  --struktiva-blue: #2a2a2a;
+  --struktiva-black-blue: #050505;
+  --struktiva-gold: #c9a24a;
+  --struktiva-champagne: #f0d37a;
+  --struktiva-gold-dark: #8f6d27;
+  --struktiva-silver: #c9c9c3;
+  --struktiva-silver-light: #f4f4f1;
+  --struktiva-silver-deep: #9f9f98;
+  --struktiva-text: #111111;
+  --struktiva-text-muted: rgba(17, 17, 17, 0.72);
+  --struktiva-text-cool: rgba(17, 17, 17, 0.56);
+  --struktiva-card-text: #e0bf6a;
+  --struktiva-card-border: rgba(255, 255, 255, 0.74);
+  --struktiva-card-bg: linear-gradient(145deg, #050505 0%, #151515 45%, #2a2a2a 100%);
+  --struktiva-shell-bg: linear-gradient(135deg, #f4f4f1 0%, #c9c9c3 35%, #f8f7f2 65%, #9f9f98 100%);
 }
 
 html {
   background:
-    radial-gradient(circle at 20% 12%, rgba(216, 180, 90, 0.14), transparent 26%),
-    radial-gradient(circle at 82% 18%, rgba(11, 31, 58, 0.42), transparent 36%),
-    linear-gradient(180deg, #07111f 0%, #0b1f3a 52%, #050a12 100%);
+    radial-gradient(circle at 14% 12%, rgba(255, 255, 255, 0.84), transparent 22%),
+    radial-gradient(circle at 82% 18%, rgba(201, 162, 74, 0.16), transparent 28%),
+    linear-gradient(135deg, #f4f4f1 0%, #c9c9c3 35%, #f8f7f2 65%, #9f9f98 100%);
 }
 
 body {
@@ -38,6 +46,9 @@ body {
 
 #root {
   min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.45), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
 }
 
 a {
@@ -115,6 +126,80 @@ img {
 
 .text-gold-glow-animated {
   animation: premiumGlow 6.8s ease-in-out infinite;
+}
+
+.metallic-display-title,
+.metallic-section-title {
+  font-family: var(--struktiva-heading-font);
+  color: #0b0b0b;
+  letter-spacing: -0.02em;
+  text-shadow:
+    0 1px 0 rgba(255, 245, 214, 0.55),
+    0 0 14px rgba(201, 162, 74, 0.18),
+    0 0 30px rgba(201, 162, 74, 0.1);
+  -webkit-text-stroke: 0.8px rgba(201, 162, 74, 0.88);
+}
+
+.metallic-dark-title {
+  font-family: var(--struktiva-heading-font);
+  color: #fff8e8;
+  letter-spacing: -0.02em;
+  text-shadow:
+    0 0 12px rgba(201, 162, 74, 0.18),
+    0 0 24px rgba(201, 162, 74, 0.08);
+}
+
+.metallic-body-muted {
+  color: var(--struktiva-text-muted);
+}
+
+.metallic-card {
+  border: 1px solid var(--struktiva-card-border);
+  background: var(--struktiva-card-bg);
+  color: var(--struktiva-card-text);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 24px 56px rgba(0, 0, 0, 0.28);
+}
+
+.metallic-card h2,
+.metallic-card h3,
+.metallic-card h4,
+.metallic-card strong {
+  color: #fff8e8;
+}
+
+.metallic-card p,
+.metallic-card li,
+.metallic-card a:not(.metallic-btn-primary):not(.metallic-btn-secondary) {
+  color: rgba(224, 191, 106, 0.94);
+}
+
+.metallic-btn-primary {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background:
+    linear-gradient(180deg, rgba(240, 211, 122, 0.96), rgba(201, 162, 74, 0.96)),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+  color: #111111;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+}
+
+.metallic-btn-primary:hover {
+  background:
+    linear-gradient(180deg, rgba(248, 223, 140, 0.98), rgba(216, 183, 95, 0.98)),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+}
+
+.metallic-btn-secondary {
+  border: 1px solid rgba(201, 162, 74, 0.56);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(230, 230, 225, 0.74));
+  color: #111111;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.metallic-btn-secondary:hover {
+  border-color: rgba(201, 162, 74, 0.78);
+  color: #8f6d27;
 }
 
 .hero-3d-shell {
@@ -471,6 +556,24 @@ img {
 }
 
 /* STRUKTIVA home-only premium layer */
+.struktiva-metallic {
+  position: relative;
+  min-height: 100vh;
+  color: var(--struktiva-text);
+}
+
+.struktiva-metallic::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(255, 255, 255, 0.45), transparent 24%),
+    radial-gradient(circle at 84% 18%, rgba(201, 162, 74, 0.14), transparent 30%),
+    radial-gradient(circle at 70% 76%, rgba(111, 111, 107, 0.18), transparent 34%);
+}
+
 .struktiva-home {
   position: relative;
   isolation: isolate;
@@ -482,18 +585,19 @@ img {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.72;
   background:
-    radial-gradient(circle at 10% 10%, rgba(214, 168, 79, 0.26), transparent 30%),
-    radial-gradient(circle at 86% 16%, rgba(16, 23, 34, 0.46), transparent 36%),
-    radial-gradient(circle at 68% 76%, rgba(11, 15, 20, 0.36), transparent 42%);
+    radial-gradient(circle at 12% 10%, rgba(255, 255, 255, 0.52), transparent 26%),
+    radial-gradient(circle at 86% 16%, rgba(201, 162, 74, 0.18), transparent 32%),
+    radial-gradient(circle at 68% 76%, rgba(111, 111, 107, 0.16), transparent 40%);
 }
 
+.struktiva-metallic .shadow-premium,
 .struktiva-home .shadow-premium {
   box-shadow:
-    0 32px 72px rgba(0, 0, 0, 0.52),
-    0 12px 24px rgba(6, 14, 27, 0.36),
-    inset 0 1px 0 rgba(248, 245, 237, 0.05);
+    0 32px 72px rgba(0, 0, 0, 0.22),
+    0 12px 24px rgba(94, 94, 90, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .struktiva-home section {
@@ -521,17 +625,76 @@ img {
   display: none;
 }
 
+.struktiva-metallic .service-card-3d,
+.struktiva-metallic .pricing-card-3d,
+.struktiva-metallic .app-preview-3d,
+.struktiva-metallic .industry-card,
+.struktiva-metallic .contact-info-card,
+.struktiva-metallic .hero-architecture-card {
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 24px 56px rgba(0, 0, 0, 0.22) !important;
+}
+
+.struktiva-metallic .industry-card {
+  background: var(--struktiva-card-bg) !important;
+}
+
+.struktiva-metallic .industry-card::before {
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.18), rgba(5, 5, 5, 0.58)),
+    linear-gradient(90deg, rgba(5, 5, 5, 0.76), rgba(5, 5, 5, 0.34), rgba(5, 5, 5, 0.18));
+}
+
+.struktiva-metallic .industry-card-content,
+.struktiva-metallic .contact-info-card,
+.struktiva-metallic .service-card-3d,
+.struktiva-metallic .pricing-card-3d,
+.struktiva-metallic .app-preview-3d {
+  color: rgba(224, 191, 106, 0.94);
+}
+
+.struktiva-metallic .industry-card h3,
+.struktiva-metallic .industry-card p,
+.struktiva-metallic .industry-card a,
+.struktiva-metallic .contact-info-card h3,
+.struktiva-metallic .contact-info-card h4,
+.struktiva-metallic .service-card-3d h3,
+.struktiva-metallic .pricing-card-3d h3,
+.struktiva-metallic .app-preview-3d h2,
+.struktiva-metallic .app-preview-3d h3 {
+  color: #fff8e8 !important;
+}
+
+.struktiva-metallic .industry-card .industry-card-link,
+.struktiva-metallic .contact-info-card a,
+.struktiva-metallic .service-card-3d a {
+  color: #f0d37a;
+}
+
+.struktiva-metallic .theme-band-shell-dark {
+  border-color: rgba(255, 255, 255, 0.48);
+  background:
+    linear-gradient(180deg, rgba(240, 211, 122, 0.08), rgba(240, 211, 122, 0.03)),
+    var(--struktiva-card-bg);
+}
+
+.struktiva-metallic .theme-band-shell-dark .theme-band-item {
+  color: #fff8e8;
+}
+
 .struktiva-home .hero-orb-left {
   width: 15rem;
   height: 15rem;
-  background: rgba(214, 168, 79, 0.3);
+  background: rgba(255, 255, 255, 0.36);
   filter: blur(95px);
 }
 
 .struktiva-home .hero-orb-right {
   width: 16rem;
   height: 16rem;
-  background: rgba(16, 23, 34, 0.52);
+  background: rgba(201, 162, 74, 0.18);
   filter: blur(102px);
 }
 
