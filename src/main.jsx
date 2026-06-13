@@ -1269,8 +1269,8 @@ function HeroSection() {
                   ))}
                 </div>
 
-                <div className="mt-4 rounded-[1rem] border border-[#D8B45A]/18 bg-white/[0.06] p-3.5">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">Ergebnis</p>
+                <div className="metallic-result-box mt-4 rounded-[1rem] p-3.5">
+                  <p className="metallic-result-label text-[11px] font-semibold uppercase tracking-[0.15em]">Ergebnis</p>
                   <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">
                     Ein klarer digitaler Aufbau für Sichtbarkeit, Anfragen und bessere Abläufe.
                   </p>
@@ -1500,8 +1500,8 @@ function AppsSection() {
                   </div>
                 ))}
               </div>
-              <div className="mt-4 rounded-[1.2rem] border border-white/14 bg-white/[0.06] p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Ergebnis</p>
+              <div className="metallic-result-box mt-4 rounded-[1.2rem] p-4">
+                <p className="metallic-result-label text-xs font-semibold uppercase tracking-[0.18em]">Ergebnis</p>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">
                   Ein digitaler Ort für Kunden, Termine, Aufgaben und interne Abläufe.
                 </p>
@@ -2720,8 +2720,8 @@ function HeroSectionPremium() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 rounded-[1rem] border border-[#D8B45A]/18 bg-white/[0.06] p-3.5">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">Ergebnis</p>
+                <div className="metallic-result-box mt-4 rounded-[1rem] p-3.5">
+                  <p className="metallic-result-label text-[11px] font-semibold uppercase tracking-[0.15em]">Ergebnis</p>
                   <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">Ein klarer Einstieg, der digitale Systeme strukturiert zusammenführt.</p>
                 </div>
               </div>
@@ -4493,11 +4493,11 @@ function LeadSystemePage() {
         <p>- Anfragen laufen strukturierter im Betrieb an</p>
       </ServiceSection>
 
-      <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
+      <section className="metallic-panel-dark rounded-[1.8rem] p-5 md:p-6">
         <h2 className="text-gold-glow text-2xl font-semibold text-white">Passend für Betriebe mit direktem Kundenkontakt</h2>
         <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {['Handwerker', 'Friseursalons', 'Kosmetikstudios', 'lokale Dienstleister'].map((item) => (
-            <div key={item} className="rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white">
+            <div key={item} className="metallic-tag-box rounded-2xl px-4 py-3 text-sm font-medium">
               {item}
             </div>
           ))}
@@ -5867,20 +5867,20 @@ function LeistungenPage() {
           </p>
         </section>
 
-        <section className="mt-8 rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
+        <section className="metallic-panel-dark mt-8 rounded-[1.8rem] p-6 md:p-7">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {allLeistungen.map(([title, text]) => (
               <article
                 key={title}
                 id={title === 'Digitale Soforthilfe' ? 'digitale-soforthilfe' : undefined}
-                className="rounded-2xl border border-white/12 bg-white/[0.04] p-4"
+                className="metallic-feature-card rounded-2xl p-4"
               >
                 <h2 className="text-base font-semibold text-white">{title}</h2>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
               </article>
             ))}
           </div>
-          <div className="mt-6 rounded-[1.5rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.78),rgba(11,31,58,0.72),rgba(5,10,18,0.82))] p-5 shadow-premium">
+          <div className="metallic-result-box mt-6 rounded-[1.5rem] p-5">
             <p className="text-sm leading-7 text-[#D7DCE5] md:text-base">
               Leistungen zeigen, was möglich ist. Konkrete Einstiegsmöglichkeiten und Preise findest du im Bereich Pakete oder nach einer kurzen Ersteinschätzung.
             </p>
