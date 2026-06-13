@@ -4028,7 +4028,7 @@ function PricingArchitectureSection() {
                 <p className="mt-3 text-sm font-semibold text-[#F0C45C]">{pkg.price}</p>
                 <p className="mt-3 text-sm leading-7 text-[rgba(248,241,227,0.76)]">{pkg.text}</p>
                 <div className="mt-4 space-y-2 text-sm text-[rgba(248,241,227,0.76)]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
-                <a href={siteLinks.contact} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/40 bg-white/[0.03] px-4 py-2 text-sm font-semibold text-[#F0C45C] transition hover:bg-[#D8B45A] hover:text-[#16120E]">
+                <a href={siteLinks.contact} className="package-card-cta mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/42 bg-[linear-gradient(135deg,rgba(216,180,90,0.18),rgba(216,180,90,0.08))] px-4 py-2 text-sm font-semibold text-[#FFF8E8] shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition hover:bg-[#D8B45A] hover:text-[#16120E]">
                   {pkg.cta}
                   <ArrowRight className="h-4 w-4" />
                 </a>

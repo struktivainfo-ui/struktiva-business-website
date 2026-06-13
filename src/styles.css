@@ -1323,6 +1323,16 @@ body.cookie-modal-open {
   color: #16120e !important;
 }
 
+.struktiva-home #preise .package-card-cta {
+  color: #fff8e8 !important;
+  background: linear-gradient(135deg, rgba(216, 180, 90, 0.18), rgba(216, 180, 90, 0.08)) !important;
+  border-color: rgba(216, 180, 90, 0.42) !important;
+}
+
+.struktiva-home #preise .package-card-cta:hover {
+  color: #16120e !important;
+}
+
 .struktiva-home #ablauf .text-white,
 .struktiva-home #wissen .text-white {
   color: #151515 !important;
