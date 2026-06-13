@@ -2656,10 +2656,10 @@ function HeroSectionPremium() {
               Keine Einzellösung.
             </motion.p>
             <motion.h1 variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-3 max-w-[42rem] text-4xl font-semibold tracking-tight text-[#14110D] sm:text-5xl lg:text-[62px] lg:leading-[1.02]">
-              Digitale Systeme für klare Abläufe, bessere Sichtbarkeit und mehr Struktur.
+              Digitale Lösungen für Webseiten, Kundenanfragen und klare Abläufe.
             </motion.h1>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[38rem] text-[15px] leading-7 text-[#4E463A] md:text-[17px] md:leading-8">
-              STRUKTIVA verbindet Websites, Kundenanfragen, KI-Automatisierung und digitale Prozesse zu klaren Systemen.
+              STRUKTIVA erstellt moderne Webseiten, Lead-Systeme, KI-gestützte Vorlagen und digitale Strukturen, die Unternehmen im Alltag wirklich nutzen können. Verständlich aufgebaut, professionell umgesetzt und Schritt für Schritt erweiterbar.
             </motion.p>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 max-w-[39rem] rounded-[1.8rem] border border-white/75 bg-white/66 p-4 shadow-[0_26px_54px_rgba(83,62,22,0.1)] backdrop-blur-md md:p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A9822D]">Digitale Unternehmensarchitektur</p>
