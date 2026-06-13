@@ -201,7 +201,7 @@ const kiAutomationAudience = [
   ['Friseure & Beauty-Betriebe', Sparkles],
   ['Handwerker & Dienstleister', Building2],
   ['Beratungsbetriebe', BriefcaseBusiness],
-  ['Lokale kleine Unternehmen', BadgeCheck],
+  ['Lokale Betriebe & Dienstleister', BadgeCheck],
 ]
 
 const leadInterestOptions = [
@@ -362,7 +362,7 @@ const trustCards = [
   [PanelsTopLeft, 'Professionelle Wirkung', 'Ein klarer digitaler Auftritt zeigt sofort, wofür dein Unternehmen steht und warum Kunden dir vertrauen können.'],
   [MousePointerClick, 'Kundenführung statt Zufall', 'Website, Landingpage, WhatsApp und Angebotsstruktur werden so aufgebaut, dass aus Besuchern konkrete Anfragen werden.'],
   [Workflow, 'Digitale Ordnung im Alltag', 'Google-Struktur, Social-Media-Logik und interne Abläufe werden sinnvoll verbunden statt einzeln verwaltet.'],
-  [ShieldCheck, 'Verständlich und umsetzbar', 'Keine Technik-Überforderung, sondern ein System, das kleine Betriebe wirklich nutzen und weiterführen können.'],
+  [ShieldCheck, 'Verständlich und umsetzbar', 'Keine Technik-Überforderung, sondern ein System, das Betriebe wirklich nutzen und weiterführen können.'],
 ]
 
 const homeThemeBandItems = [
@@ -396,7 +396,7 @@ const coreServices = [
   {
     icon: LayoutTemplate,
     title: 'Professionelle Webseiten',
-    description: 'Moderne Webseiten für kleine Unternehmen, die Vertrauen aufbauen, Leistungen klar darstellen und Kontaktwege sinnvoll verbinden.',
+    description: 'Moderne Webseiten für Unternehmen, die Vertrauen aufbauen, Leistungen klar darstellen und Kontaktwege sinnvoll verbinden.',
     price: 'ab 599 € inklusive Mehrwertsteuer',
     href: siteLinks.webseitenPage,
   },
@@ -571,7 +571,7 @@ const targetGroups = [
   'Einzelunternehmer',
   'Selbstständige',
   'Coaches und Berater',
-  'kleine und mittlere Unternehmen',
+  'Unternehmen und Betriebe',
 ]
 
 const whyPoints = [
@@ -579,7 +579,7 @@ const whyPoints = [
   'Fokus auf Anfragen, Vertrauen und Kontakt',
   'Website, Landingpage, WhatsApp, Google, Social Media und Newsletter als zusammenhängende Struktur',
   'Verständliche Umsetzung ohne Technik-Blabla',
-  'Systeme, die kleine Unternehmen wirklich im Alltag nutzen können',
+  'Systeme, die Unternehmen wirklich im Alltag nutzen können',
 ]
 
 const qualityPoints = [
@@ -590,7 +590,7 @@ const qualityPoints = [
 
 const differentiatorCards = [
   ['Mehr als Webdesign', 'Wir verbinden Website, Google, Kontaktwege und Kundenführung.'],
-  ['Für kleine Unternehmen gebaut', 'Klare Lösungen ohne unnötige Komplexität.'],
+  ['Für Unternehmen gebaut', 'Klare Lösungen ohne unnötige Komplexität.'],
   ['Transparente Einstiegspreise', 'Planbare Pakete inklusive Mehrwertsteuer.'],
   ['Struktur statt Einzellösung', 'Digitale Systeme, die im Alltag funktionieren.'],
 ]
@@ -650,7 +650,7 @@ function useCurrentPath() {
 function useDocumentTitleSafe(pathname) {
   useEffect(() => {
     const titles = {
-      '/': 'STRUKTIVA Unternehmensarchitektur | Digitale Struktur für kleine Unternehmen',
+      '/': 'STRUKTIVA Unternehmensarchitektur | Digitale Struktur für Unternehmen',
       '/ueber-uns': 'Über uns - STRUKTIVA Unternehmensarchitektur',
       '/websites': 'Websites & Landingpages - STRUKTIVA Unternehmensarchitektur',
       '/lead-systeme': 'Lead-Systeme & Kundenanfragen - STRUKTIVA Unternehmensarchitektur',
@@ -662,13 +662,13 @@ function useDocumentTitleSafe(pathname) {
       '/landingpages': 'Landingpages - STRUKTIVA Unternehmensarchitektur',
       '/apps': 'Unternehmens-Apps - STRUKTIVA Unternehmensarchitektur',
       '/google-ads': 'Google Ads - STRUKTIVA Unternehmensarchitektur',
-      '/ki-automatisierung': 'KI & Automatisierung für kleine Unternehmen - STRUKTIVA',
+      '/ki-automatisierung': 'KI & Automatisierung für Unternehmen - STRUKTIVA',
       '/projekt-anfragen': 'Projekt anfragen - STRUKTIVA Unternehmensarchitektur',
       '/bewertungs-qr-code': 'Google-Bewertungssystem mit QR-Code | STRUKTIVA',
-      '/digitale-ordnungssysteme': 'Digitale Ordnungssysteme fuer kleine Betriebe - STRUKTIVA',
-      '/website-fuer-kleine-unternehmen': 'Website-Erstellung fuer kleine Unternehmen - STRUKTIVA',
+      '/digitale-ordnungssysteme': 'Digitale Ordnungssysteme fuer Betriebe - STRUKTIVA',
+      '/website-fuer-kleine-unternehmen': 'Website-Erstellung fuer Unternehmen - STRUKTIVA',
       '/landingpage-erstellen-lassen': 'Landingpages erstellen lassen - STRUKTIVA',
-      '/google-sichtbarkeit-kleine-unternehmen': 'Google-Sichtbarkeit fuer kleine Unternehmen - STRUKTIVA',
+      '/google-sichtbarkeit-kleine-unternehmen': 'Google-Sichtbarkeit fuer Unternehmen - STRUKTIVA',
       '/digitale-kundenfuehrung': 'Digitale Kundenfuehrung - STRUKTIVA',
       '/whatsapp-kontaktstruktur': 'WhatsApp-Kontaktstruktur - STRUKTIVA',
       '/social-media-struktur': 'Social-Media-Struktur - STRUKTIVA',
@@ -677,7 +677,7 @@ function useDocumentTitleSafe(pathname) {
       '/betriebs-dashboards': 'Betriebs-Dashboards - STRUKTIVA',
       '/angebotsarchitektur': 'Angebotsarchitektur - STRUKTIVA',
       '/digitale-unternehmensstruktur': 'Digitale Unternehmensstruktur - STRUKTIVA',
-      '/digitale-soforthilfe': 'Digitale Soforthilfe für kleine Unternehmen | STRUKTIVA',
+      '/digitale-soforthilfe': 'Digitale Soforthilfe für Unternehmen | STRUKTIVA',
       '/demos/handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/kosmetik': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/lokaler-dienstleister': 'Lokaler Dienstleister Demo | STRUKTIVA Unternehmensarchitektur',
@@ -688,10 +688,10 @@ function useDocumentTitleSafe(pathname) {
       '/branchen/kosmetikstudios': 'Digitale Struktur für Kosmetikstudios | STRUKTIVA',
       '/branchen/lokale-dienstleister': 'Digitale Struktur für lokale Dienstleister | STRUKTIVA',
       '/branchen/beratung': 'Digitale Struktur für Beratungsbetriebe | STRUKTIVA',
-      '/landingpage-digitale-struktur': 'Digitale Struktur fuer kleine Unternehmen - STRUKTIVA Unternehmensarchitektur',
-      '/wissen': 'STRUKTIVA Wissen - Digitale Unternehmensstruktur für kleine Unternehmen',
+      '/landingpage-digitale-struktur': 'Digitale Struktur fuer Unternehmen - STRUKTIVA Unternehmensarchitektur',
+      '/wissen': 'STRUKTIVA Wissen - Digitale Unternehmensstruktur für Unternehmen',
       '/wissen/warum-eine-schoene-website-keine-kunden-bringt': 'Warum eine schöne Website allein keine Kunden bringt - STRUKTIVA Wissen',
-      '/wissen/digitale-grundsysteme-kleine-unternehmen': 'Die 5 digitalen Grundsysteme für kleine Unternehmen - STRUKTIVA Wissen',
+      '/wissen/digitale-grundsysteme-kleine-unternehmen': 'Die 5 digitalen Grundsysteme für Unternehmen - STRUKTIVA Wissen',
       '/wissen/website-landingpage-funnel-unterschied': 'Website, Landingpage oder Funnel - STRUKTIVA Wissen',
       '/leistungen': 'Leistungen - STRUKTIVA Unternehmensarchitektur',
       '/impressum': 'Impressum - STRUKTIVA Unternehmensarchitektur',
@@ -703,7 +703,7 @@ function useDocumentTitleSafe(pathname) {
 
     const descriptions = {
       '/ueber-uns':
-        'Mehr über STRUKTIVA Unternehmensarchitektur: digitale Struktur für kleine Unternehmen, lokale Dienstleister und Selbstständige.',
+        'Mehr über STRUKTIVA Unternehmensarchitektur: digitale Struktur für Unternehmen, lokale Dienstleister und Selbstständige.',
       '/websites':
         'Websites und Landingpages von STRUKTIVA: klare Struktur, professionelle Darstellung, mobile Optimierung und saubere Anfrageführung.',
       '/lead-systeme':
@@ -719,23 +719,23 @@ function useDocumentTitleSafe(pathname) {
       '/bewertungs-qr-code':
         'STRUKTIVA erstellt ein einfaches Google-Bewertungssystem mit QR-Code, Bewertungslink und Anleitung fuer lokale Unternehmen wie Salons, Handwerker, Kosmetikstudios und Dienstleister.',
       '/digitale-ordnungssysteme':
-        'STRUKTIVA entwickelt digitale Ordnungssysteme fuer kleine Betriebe - mit Tagesabschluss, Kassenstruktur, Monatsuebersicht, Exportfunktionen und steuerberaterfreundlicher Vorbereitung.',
+        'STRUKTIVA entwickelt digitale Ordnungssysteme fuer Betriebe - mit Tagesabschluss, Kassenstruktur, Monatsuebersicht, Exportfunktionen und steuerberaterfreundlicher Vorbereitung.',
       '/digitale-soforthilfe':
         'Schnelle digitale Unterstützung für Website-Anpassungen, Landingpages, Google-Texte, Social-Media-Beiträge, WhatsApp- und Bewertungstexte. STRUKTIVA Digitale Soforthilfe ab 99 € inklusive Mehrwertsteuer.',
       '/ki-automatisierung':
-        'KI & Automatisierung für kleine Unternehmen: STRUKTIVA verbindet Anfragen, Kommunikation und digitale Abläufe zu klaren, alltagstauglichen Systemen.',
+        'KI & Automatisierung für Unternehmen: STRUKTIVA verbindet Anfragen, Kommunikation und digitale Abläufe zu klaren, alltagstauglichen Systemen.',
       '/projekt-anfragen':
         'Projekt anfragen bei STRUKTIVA: professionelle Ersteinschätzung für Website, Google-Sichtbarkeit, Automatisierung, digitale Ordnung und Unternehmenssysteme.',
       '/website-fuer-kleine-unternehmen':
-        'Moderne Website-Erstellung fuer kleine Unternehmen und Selbststaendige mit klarer Struktur und professioneller Kundenfuehrung.',
+        'Moderne Website-Erstellung fuer Unternehmen und Selbststaendige mit klarer Struktur und professioneller Kundenfuehrung.',
       '/landingpage-erstellen-lassen':
         'Verkaufsstarke Landingpages fuer Angebote, Aktionen und Anfragen - klar aufgebaut und professionell umgesetzt.',
       '/google-sichtbarkeit-kleine-unternehmen':
-        'Google-Sichtbarkeit fuer kleine Unternehmen mit klarer Struktur, lokaler Auffindbarkeit und professioneller Praesenz.',
+        'Google-Sichtbarkeit fuer Unternehmen mit klarer Struktur, lokaler Auffindbarkeit und professioneller Praesenz.',
       '/leistungen':
         'Alle STRUKTIVA Leistungen im Ueberblick: Website, Landingpages, Google-Sichtbarkeit, Kundenfuehrung, Systeme, Dashboards und strukturierte Umsetzung.',
       '/preise':
-        'Einstiegspreise fuer kleine Unternehmen: Sichtbarkeit, Kundengewinnung und Unternehmensarchitektur mit transparenter, strukturierter Umsetzung.',
+        'Einstiegspreise fuer Unternehmen: Sichtbarkeit, Kundengewinnung und Unternehmensarchitektur mit transparenter, strukturierter Umsetzung.',
       '/demos/handwerker':
         'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.',
       '/demos/kosmetik':
@@ -745,7 +745,7 @@ function useDocumentTitleSafe(pathname) {
       '/demos/bewertungsstruktur':
         'Beispielhafte Bewertungsstruktur mit QR-Code, Bewertungslink, WhatsApp-Text und Website-Einbindung.',
       '/demos/dashboard':
-        'Beispielhaftes Betriebs-Dashboard für kleine Unternehmen mit Aufgaben, Terminen, Tagesübersicht und Kennzahlen.',
+        'Beispielhaftes Betriebs-Dashboard für Unternehmen mit Aufgaben, Terminen, Tagesübersicht und Kennzahlen.',
       '/branchen/friseursalons':
         'Digitale Struktur für Friseursalons mit Website, Leistungsstruktur, Bewertungen, Google-Profil und WhatsApp-Terminführung.',
       '/branchen/handwerker':
@@ -757,17 +757,17 @@ function useDocumentTitleSafe(pathname) {
       '/branchen/beratung':
         'Digitale Struktur für Beratungsbetriebe mit Angebotslogik, Vertrauensaufbau und klarer Termin-Anfrageführung.',
       '/wissen':
-        'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen Abläufen für kleine Unternehmen.',
+        'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen Abläufen für Unternehmen.',
       '/wissen/warum-eine-schoene-website-keine-kunden-bringt':
-        'Warum Design allein nicht reicht und wie kleine Unternehmen mit klarer digitaler Struktur mehr qualifizierte Anfragen erhalten.',
+        'Warum Design allein nicht reicht und wie Unternehmen mit klarer digitaler Struktur mehr qualifizierte Anfragen erhalten.',
       '/wissen/digitale-grundsysteme-kleine-unternehmen':
-        'Die 5 digitalen Grundsysteme, die kleine Unternehmen für Sichtbarkeit, Vertrauen und verlässliche Kundenanfragen wirklich brauchen.',
+        'Die 5 digitalen Grundsysteme, die Unternehmen für Sichtbarkeit, Vertrauen und verlässliche Kundenanfragen wirklich brauchen.',
       '/wissen/website-landingpage-funnel-unterschied':
-        'Website, Landingpage oder Funnel: welche Struktur kleine Unternehmen wirklich brauchen, um online klar und anfragebereit aufzutreten.',
+        'Website, Landingpage oder Funnel: welche Struktur Unternehmen wirklich brauchen, um online klar und anfragebereit aufzutreten.',
     }
 
     const defaultDescription =
-      'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege, Apps, Dashboards und digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.'
+      'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege, Apps, Dashboards und digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister.'
 
     document.title = titles[pathname] || titles['/']
 
@@ -1346,7 +1346,7 @@ function ProblemSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Ausgangslage"
-            title="Viele kleine Unternehmen verlieren Kunden, bevor sie überhaupt Kontakt aufnehmen."
+            title="Viele Unternehmen verlieren Kunden, bevor sie überhaupt Kontakt aufnehmen."
             text="Viele Betriebe haben gute Leistungen, aber keinen klaren digitalen Auftritt. Die Webseite wirkt veraltet, Google-Bewertungen werden nicht aktiv genutzt, WhatsApp ist nicht sauber eingebunden, Social Media wirkt unregelmäßig und potenzielle Kunden wissen nicht sofort, warum sie genau hier anfragen sollen."
             centered={false}
           />
@@ -1617,7 +1617,7 @@ function DemoOverviewSectionPremium() {
           <SectionHeader
             eyebrow="Live-Demos"
             title="So könnte dein digitaler Auftritt aussehen"
-            text="Wähle eine Beispielbranche und sieh dir an, wie STRUKTIVA digitale Struktur, klare Angebote, Kontaktwege und Kundengewinnung für kleine Unternehmen sichtbar macht."
+            text="Wähle eine Beispielbranche und sieh dir an, wie STRUKTIVA digitale Struktur, klare Angebote, Kontaktwege und Kundengewinnung für Unternehmen sichtbar macht."
           />
         </Reveal>
 
@@ -1841,7 +1841,7 @@ function PricingSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/80">Faire Kennenlernpreise zum Start</p>
               <h3 className="mt-3 text-2xl font-semibold text-white md:text-[1.75rem]">Professioneller Einstieg mit klarer Struktur statt Agentur-Standard</h3>
               <p className="mt-4 max-w-4xl text-sm leading-7 text-[#D7DCE5] md:text-base">
-                STRUKTIVA positioniert sich bewusst als digitaler Systemanbieter für kleine Unternehmen. Die Umsetzung verbindet Präsenz, Kundenführung und Kontaktwege in einer Struktur, die im Alltag funktioniert und verkaufsfähig bleibt.
+                STRUKTIVA positioniert sich bewusst als digitaler Systemanbieter für Unternehmen. Die Umsetzung verbindet Präsenz, Kundenführung und Kontaktwege in einer Struktur, die im Alltag funktioniert und verkaufsfähig bleibt.
               </p>
                 </div>
               </div>
@@ -1898,7 +1898,7 @@ function PricingSection() {
 
           <Reveal className="mt-8">
             <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
-              <p>Aktuelle Einstiegspreise für kleine Unternehmen und Selbstständige.</p>
+              <p>Aktuelle Einstiegspreise für Unternehmen und Selbstständige.</p>
               <p className="mt-2">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
               <p className="mt-2">Individuelle digitale Systeme werden nach Umfang, Betrieb und benötigten Funktionen kalkuliert.</p>
               <a
@@ -1962,8 +1962,8 @@ function TargetSection() {
         <Reveal>
           <SectionHeader
             eyebrow="Für wen"
-            title="Für kleine Unternehmen, die digital professioneller auftreten wollen."
-            text="STRUKTIVA richtet sich an kleine und mittlere Unternehmen, Selbstständige und lokale Betriebe, die mehr Anfragen, mehr Ordnung und eine professionelle Online-Präsenz brauchen."
+            title="Für Unternehmen, die digital professioneller auftreten wollen."
+            text="STRUKTIVA richtet sich an Unternehmen, Selbstständige und lokale Betriebe, die mehr Anfragen, mehr Ordnung und eine professionelle Online-Präsenz brauchen."
             centered={false}
           />
         </Reveal>
@@ -2085,7 +2085,7 @@ function OrdnungssystemeSection() {
           <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="rounded-[1.5rem] border border-white/14 bg-white/[0.05] p-5">
               <p className="text-sm leading-8 text-[#D7DCE5] md:text-base">
-                Viele kleine Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und Rückfragen vom Steuerberater.
+                Viele Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und Rückfragen vom Steuerberater.
               </p>
               <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
                 STRUKTIVA entwickelt einfache digitale Erfassungssysteme, mit denen betriebliche Werte strukturiert dokumentiert, gespeichert und übersichtlich bereitgestellt werden können.
@@ -2551,7 +2551,7 @@ function Footer() {
                 </a>
               ))}
             </div>
-            <p className="mt-3 text-xs leading-6 text-[#CFC8B5]">Digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.</p>
+            <p className="mt-3 text-xs leading-6 text-[#CFC8B5]">Digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister.</p>
           </div>
 
           <div>
@@ -2799,7 +2799,7 @@ function ServicesSectionPremium() {
           <SectionHeader
             eyebrow="Leistungen"
             title="Leistungen"
-            text="Digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister."
+            text="Digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister."
           />
         </Reveal>
         <Reveal className="mt-8">
@@ -2910,7 +2910,7 @@ const wissenArticles = [
     href: siteLinks.wissenWebsiteAllein,
     title: 'Warum eine schöne Website allein keine Kunden bringt',
     description:
-      'Viele kleine Unternehmen investieren in Design, aber nicht in Kundenführung. Dieser Beitrag zeigt, warum Struktur wichtiger ist als reine Optik.',
+      'Viele Unternehmen investieren in Design, aber nicht in Kundenführung. Dieser Beitrag zeigt, warum Struktur wichtiger ist als reine Optik.',
     sections: [
       {
         heading: 'Eine schöne Website ist kein Verkaufssystem',
@@ -2936,9 +2936,9 @@ const wissenArticles = [
   {
     slug: 'digitale-grundsysteme-kleine-unternehmen',
     href: siteLinks.wissenGrundsysteme,
-    title: 'Die 5 digitalen Grundsysteme für kleine Unternehmen',
+    title: 'Die 5 digitalen Grundsysteme für Unternehmen',
     description:
-      'Diese fünf Grundlagen sorgen dafür, dass kleine Unternehmen online klar auftreten, Vertrauen aufbauen und dauerhaft anfragebereit sind.',
+      'Diese fünf Grundlagen sorgen dafür, dass Unternehmen online klar auftreten, Vertrauen aufbauen und dauerhaft anfragebereit sind.',
     sections: [
       {
         heading: '1. Website-Grundsystem',
@@ -2990,7 +2990,7 @@ const wissenArticles = [
           'Ein Funnel ist nur dann sinnvoll, wenn mehrere Schritte und Zielgruppen sauber strukturiert geführt werden sollen.',
       },
       {
-        heading: 'Was kleine Unternehmen in der Regel brauchen',
+        heading: 'Was Unternehmen in der Regel brauchen',
         bullets: [
           'eine professionelle Website als Basis',
           'ein bis zwei starke Landingpages für Kernangebote',
@@ -3010,7 +3010,7 @@ function WissenSection() {
           <SectionHeader
             eyebrow="STRUKTIVA Wissen"
             title="STRUKTIVA Wissen"
-            text="Praxisnahe Beiträge für kleine Unternehmen, Selbstständige und lokale Betriebe, die ihren digitalen Auftritt klarer und wirksamer strukturieren möchten."
+            text="Praxisnahe Beiträge für Unternehmen, Selbstständige und lokale Betriebe, die ihren digitalen Auftritt klarer und wirksamer strukturieren möchten."
             centered={false}
             tone="light"
           />
@@ -3064,7 +3064,7 @@ function WissenOverviewPage() {
             Wissen für digitale Unternehmensstruktur
           </h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-            STRUKTIVA zeigt, wie kleine Unternehmen, Selbstständige und lokale Betriebe digitale Systeme sinnvoll aufbauen: mit Website, Landingpages, Google-Sichtbarkeit, klaren Kontaktwegen und sauberen Abläufen.
+            STRUKTIVA zeigt, wie Unternehmen, Selbstständige und lokale Betriebe digitale Systeme sinnvoll aufbauen: mit Website, Landingpages, Google-Sichtbarkeit, klaren Kontaktwegen und sauberen Abläufen.
           </p>
         </section>
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -3224,7 +3224,7 @@ function SuitableForSection() {
           <SectionHeader
             eyebrow="Zielgruppen"
             title="Für wen STRUKTIVA entwickelt wurde"
-            text="Bezahlbare digitale Struktur für kleine Unternehmen, die professioneller auftreten und mehr Anfragen gewinnen möchten."
+            text="Bezahlbare digitale Struktur für Unternehmen, die professioneller auftreten und mehr Anfragen gewinnen möchten."
             centered={false}
           />
         </Reveal>
@@ -3326,7 +3326,7 @@ function ModulesSection() {
       text: 'Für Unternehmen, die online klarer auftreten, Leistungen verständlicher zeigen und Besucher gezielt zur Anfrage führen möchten.',
       highlights: ['Professionelle Webseiten', 'Landingpages'],
       details: [
-        'Professionelle Webseiten: Der digitale Hauptstandort Ihres Unternehmens. Geeignet für kleine Unternehmen, Selbstständige und lokale Betriebe. Löst unklare Leistungsdarstellung und schwache Anfrageführung. Preis: ab 599 € inklusive Mehrwertsteuer.',
+        'Professionelle Webseiten: Der digitale Hauptstandort Ihres Unternehmens. Geeignet für Unternehmen, Selbstständige und lokale Betriebe. Löst unklare Leistungsdarstellung und schwache Anfrageführung. Preis: ab 599 € inklusive Mehrwertsteuer.',
         'Landingpages: Gezielte Einzelseiten für ein konkretes Angebot oder eine Aktion. Geeignet für Kampagnen, Dienstleistungen und Angebotsseiten. Preis: ab 299 € inklusive Mehrwertsteuer.',
       ],
     },
@@ -3778,7 +3778,7 @@ function DemosShowcaseSection() {
     },
     {
       title: 'Dashboard-Demo',
-      text: 'Digitale Übersicht für Aufgaben, Kennzahlen, Abläufe und interne Struktur in kleinen Unternehmen.',
+      text: 'Digitale Übersicht für Aufgaben, Kennzahlen, Abläufe und interne Struktur in Unternehmen.',
       href: siteLinks.demoDashboardV2,
       image: demoV2Images.dashboardHero,
     },
@@ -3825,7 +3825,7 @@ function DemosShowcaseSection() {
         <div className="mt-9 rounded-[1.8rem] border border-[#E5D7B9] bg-[linear-gradient(155deg,rgba(255,250,240,0.98),rgba(248,240,224,0.94),rgba(243,232,212,0.9))] p-5 shadow-[0_22px_48px_rgba(83,62,22,0.07)] md:mt-10 md:p-6">
           <h3 className="text-3xl font-semibold text-[#16120E]">Soll dein Unternehmen auch so klar wirken?</h3>
           <p className="mt-3 max-w-4xl text-sm leading-7 text-[#5B5348] md:text-base md:leading-8">
-            STRUKTIVA erstellt digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister – von der Website über Google-Sichtbarkeit bis zu klaren Kontaktwegen.
+            STRUKTIVA erstellt digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister – von der Website über Google-Sichtbarkeit bis zu klaren Kontaktwegen.
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:flex-wrap">
             <a href={siteLinks.projectRequestForm} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D] sm:w-auto">
@@ -3848,7 +3848,7 @@ function DemosShowcaseSection() {
 function WhyStruktivaSection() {
   const points = [
     ['Mehr als Webdesign', 'STRUKTIVA verbindet Website, Google, Kontaktwege, Bewertungen und digitale Abläufe.'],
-    ['Für kleine Unternehmen entwickelt', 'Keine überkomplizierten Systeme, sondern verständliche digitale Struktur.'],
+    ['Für Unternehmen entwickelt', 'Keine überkomplizierten Systeme, sondern verständliche digitale Struktur.'],
     ['Klarer Aufbau statt Einzelbaustellen', 'Alle digitalen Bausteine sollen sinnvoll zusammenarbeiten.'],
     ['Persönliche und direkte Umsetzung', 'Kurze Wege, klare Abstimmung und verständliche Entscheidungen.'],
     ['Erweiterbar statt starr', 'Sie können klein starten und später weitere Strukturbausteine ergänzen.'],
@@ -3944,7 +3944,7 @@ function PricingArchitectureSection() {
     {
       title: 'STRUKTIVA Einstieg',
       price: 'ab 199 € inklusive Mehrwertsteuer',
-      text: 'Für kleine Unternehmen, Selbstständige und lokale Dienstleister, die schnell eine klare digitale Grundlage brauchen.',
+      text: 'Für Unternehmen, Selbstständige und lokale Dienstleister, die schnell eine klare digitale Grundlage brauchen.',
       points: ['kurze digitale Erststruktur', 'Analyse von Website, Google-Auftritt oder Kontaktwegen', 'klare Handlungsempfehlung', 'einfache Kontaktstruktur', 'Prioritätenplan für die nächsten Schritte'],
       cta: 'Einstieg anfragen',
     },
@@ -4074,7 +4074,7 @@ function FAQSection() {
     ['Ist STRUKTIVA nur ein Webdesign-Angebot?', 'Nein. STRUKTIVA erstellt Webseiten und verbindet diese mit Google-Sichtbarkeit, Kontaktwegen, Bewertungen, Kundenführung und auf Wunsch internen digitalen Strukturen.'],
     ['Kann ich klein starten?', 'Ja. Sie können mit Landingpage, Onepager oder Bewertungsstruktur starten und später sinnvoll erweitern.'],
     ['Sind die Preise inklusive Mehrwertsteuer?', 'Ja. Alle genannten Preise verstehen sich inklusive Mehrwertsteuer.'],
-    ['Für welche Branchen ist STRUKTIVA geeignet?', 'Für kleine Unternehmen, Selbstständige, lokale Dienstleister, Handwerker, Friseursalons, Kosmetikstudios und Beratungsbetriebe.'],
+    ['Für welche Branchen ist STRUKTIVA geeignet?', 'Für Unternehmen, Selbstständige, lokale Dienstleister, Handwerker, Friseursalons, Kosmetikstudios und Beratungsbetriebe.'],
     ['Ist Google-Sichtbarkeit garantiert?', 'Nein. Seriöse Sichtbarkeit kann nicht garantiert werden. STRUKTIVA schafft eine bessere strukturelle Grundlage für Auffindbarkeit, Vertrauen und klare Kontaktwege.'],
     ['Ersetzt STRUKTIVA ein Kassensystem?', 'Nein. STRUKTIVA ersetzt keine zertifizierte Kassensoftware. Wir entwickeln digitale Strukturbausteine für Übersicht, Tageskontrolle und interne Abläufe.'],
     ['Kann meine bestehende Website verbessert werden?', 'Ja. Bestehende Websites können analysiert, strukturiert, modernisiert oder neu aufgebaut werden.'],
@@ -4755,7 +4755,7 @@ function LandingpageDigitaleStrukturPage() {
           <section className="rounded-[2.4rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Landingpage</p>
             <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
-              Digitale Struktur für kleine Unternehmen, die online professioneller wirken wollen.
+              Digitale Struktur für Unternehmen, die online professioneller wirken wollen.
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
               STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und klare Kundenführung zu einem digitalen System, das verständlich, hochwertig und professionell wirkt.
@@ -4777,7 +4777,7 @@ function LandingpageDigitaleStrukturPage() {
 
         <div className="mt-8 grid gap-6">
           <ServiceSection title="Viele Unternehmen verlieren online Vertrauen, bevor ein Kunde überhaupt anfragt.">
-            <p>Viele kleine Unternehmen haben gute Leistungen, aber ihr digitaler Auftritt zeigt es nicht klar genug. Die Website wirkt unstrukturiert, Kontaktwege sind unklar, Google wird nicht richtig genutzt und Social Media läuft ohne System.</p>
+            <p>Viele Unternehmen haben gute Leistungen, aber ihr digitaler Auftritt zeigt es nicht klar genug. Die Website wirkt unstrukturiert, Kontaktwege sind unklar, Google wird nicht richtig genutzt und Social Media läuft ohne System.</p>
             <p>- Besucher verstehen nicht sofort, was angeboten wird</p>
             <p>- Kontaktmöglichkeiten sind nicht klar genug sichtbar</p>
             <p>- Google-Auftritt und Website wirken nicht verbunden</p>
@@ -4802,7 +4802,7 @@ function LandingpageDigitaleStrukturPage() {
             </div>
           </section>
 
-          <ServiceSection title="Geeignet für kleine Unternehmen, die digital klarer auftreten wollen.">
+          <ServiceSection title="Geeignet für Unternehmen, die digital klarer auftreten wollen.">
             <p>- Handwerker</p>
             <p>- Beauty & Kosmetik</p>
             <p>- Friseursalons</p>
@@ -4811,7 +4811,7 @@ function LandingpageDigitaleStrukturPage() {
             <p>- lokale Dienstleister</p>
             <p>- Berater</p>
             <p>- Selbstständige</p>
-            <p>- kleine Händler</p>
+            <p>- Händler</p>
           </ServiceSection>
 
           <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
@@ -4826,7 +4826,7 @@ function LandingpageDigitaleStrukturPage() {
             </div>
           </section>
 
-          <ServiceSection title="Einstiegspreise für kleine Unternehmen">
+          <ServiceSection title="Einstiegspreise für Unternehmen">
             <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA Start – ab 599 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
             <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA Wachstum – ab 899 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
             <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA System – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
@@ -4901,7 +4901,7 @@ function LandingpageDigitaleStrukturPageV2() {
               <div className="p-7 md:p-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">STRUKTIVA Landingpage</p>
                 <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
-                  Digitale Struktur für kleine Unternehmen, die online professioneller wirken wollen.
+                  Digitale Struktur für Unternehmen, die online professioneller wirken wollen.
                 </h1>
                 <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
                   STRUKTIVA verbindet Website, Landingpage, Google-Sichtbarkeit, WhatsApp-Kontaktwege, Social Media und klare Kundenführung zu einem digitalen System, das verständlich, hochwertig und professionell wirkt.
@@ -4933,7 +4933,7 @@ function LandingpageDigitaleStrukturPageV2() {
               <div className="p-5 md:p-6">
                 <h2 className="text-2xl font-semibold text-white">Viele Unternehmen verlieren online Vertrauen, bevor ein Kunde überhaupt anfragt.</h2>
                 <div className="mt-4 space-y-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
-                  <p>Viele kleine Unternehmen haben gute Leistungen, aber ihr digitaler Auftritt zeigt es nicht klar genug. Die Website wirkt unstrukturiert, Kontaktwege sind unklar, Google wird nicht richtig genutzt und Social Media läuft ohne System.</p>
+                  <p>Viele Unternehmen haben gute Leistungen, aber ihr digitaler Auftritt zeigt es nicht klar genug. Die Website wirkt unstrukturiert, Kontaktwege sind unklar, Google wird nicht richtig genutzt und Social Media läuft ohne System.</p>
                   <p>- Besucher verstehen nicht sofort, was angeboten wird</p>
                   <p>- Kontaktmöglichkeiten sind nicht klar genug sichtbar</p>
                   <p>- Google-Auftritt und Website wirken nicht verbunden</p>
@@ -4974,7 +4974,7 @@ function LandingpageDigitaleStrukturPageV2() {
             </div>
           </section>
 
-          <ServiceSection title="Geeignet für kleine Unternehmen, die digital klarer auftreten wollen.">
+          <ServiceSection title="Geeignet für Unternehmen, die digital klarer auftreten wollen.">
             <p>- Handwerker</p>
             <p>- Beauty & Kosmetik</p>
             <p>- Friseursalons</p>
@@ -4983,7 +4983,7 @@ function LandingpageDigitaleStrukturPageV2() {
             <p>- lokale Dienstleister</p>
             <p>- Berater</p>
             <p>- Selbstständige</p>
-            <p>- kleine Händler</p>
+            <p>- Händler</p>
           </ServiceSection>
 
           <section className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] p-5 shadow-premium md:p-6">
@@ -5016,7 +5016,7 @@ function LandingpageDigitaleStrukturPageV2() {
             </div>
           </section>
 
-          <ServiceSection title="Einstiegspreise für kleine Unternehmen">
+          <ServiceSection title="Einstiegspreise für Unternehmen">
             <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA Start – ab 599 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
             <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA Wachstum – ab 899 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
             <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA System – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
@@ -5136,7 +5136,7 @@ function WebseitenPage() {
         <p>STRUKTIVA erstellt hochwertige Unternehmenswebseiten mit klarer Struktur, professionellen Texten, mobiler Optimierung und sauberer Kundenführung. Ziel ist kein überladener Internetauftritt, sondern eine Webseite, die verständlich, seriös und anfrageorientiert aufgebaut ist.</p>
       </ServiceSection>
       <ServiceSection title="Für wen ist das sinnvoll?">
-        <p>- kleine und mittlere Unternehmen</p><p>- lokale Betriebe</p><p>- Selbstständige</p><p>- Dienstleister</p><p>- Salons, Studios, Praxen und Handwerksbetriebe</p><p>- Unternehmen mit veralteter oder unklarer Website</p>
+        <p>- Unternehmen und Betriebe</p><p>- lokale Betriebe</p><p>- Selbstständige</p><p>- Dienstleister</p><p>- Salons, Studios, Praxen und Handwerksbetriebe</p><p>- Unternehmen mit veralteter oder unklarer Website</p>
       </ServiceSection>
       <ServiceSection title="Was wird gemacht?">
         <p>- Seitenstruktur planen</p><p>- Startseite aufbauen</p><p>- Leistungsbereiche formulieren</p><p>- Kontaktführung verbessern</p><p>- mobile Darstellung optimieren</p><p>- Texte professionell strukturieren</p><p>- Impressum/Datenschutz/Widerruf verlinken</p><p>- technische Veröffentlichung vorbereiten</p>
@@ -5461,7 +5461,7 @@ function DigitaleSoforthilfePage() {
               Nicht jede digitale Aufgabe braucht ein großes Projekt. Manchmal muss eine Webseite kurzfristig angepasst werden, ein Angebot schnell raus, eine Aktion online sichtbar werden oder ein professioneller Text erstellt werden.
             </p>
             <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-              STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Dienstleister mit klarer digitaler Soforthilfe – schnell, sauber und strukturiert.
+              STRUKTIVA unterstützt Unternehmen, Selbstständige und lokale Dienstleister mit klarer digitaler Soforthilfe – schnell, sauber und strukturiert.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={contactDetails.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
@@ -5557,7 +5557,7 @@ function DigitaleOrdnungssystemePage() {
               Kassenstruktur, Tagesabschluss und Monatsübersicht – klar erfasst, digital gespeichert und für den Steuerberater vorbereitet.
             </p>
             <div className="mt-6 space-y-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
-              <p>Viele kleine Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und wiederkehrende Rückfragen.</p>
+              <p>Viele Betriebe verlieren Zeit durch Zettel, Excel-Listen, unklare Ablagen und wiederkehrende Rückfragen.</p>
               <p>STRUKTIVA entwickelt einfache digitale Erfassungssysteme, mit denen tägliche Werte strukturiert dokumentiert, gespeichert und übersichtlich bereitgestellt werden können.</p>
               <p>Ob Tagesabschluss, Kassenkontrolle, Beleg-Hinweise, Monatsübersicht oder Exportfunktion – das System wird an den tatsächlichen Ablauf des Betriebs angepasst.</p>
             </div>
@@ -5624,8 +5624,8 @@ function DigitaleOrdnungssystemePage() {
 
 const offerPageContent = {
   '/website-fuer-kleine-unternehmen': {
-    title: 'Website-Erstellung für kleine Unternehmen',
-    intro: 'Moderne Websites für kleine Unternehmen und Selbstständige – klar strukturiert, mobil optimiert und auf Anfragen ausgerichtet.',
+    title: 'Website-Erstellung für Unternehmen',
+    intro: 'Moderne Websites für Unternehmen und Selbstständige – klar strukturiert, mobil optimiert und auf Anfragen ausgerichtet.',
     points: ['klare Seitenstruktur', 'professionelle Darstellung', 'mobile Optimierung', 'saubere Kontaktführung'],
   },
   '/landingpage-erstellen-lassen': {
@@ -5634,7 +5634,7 @@ const offerPageContent = {
     points: ['Angebotsstruktur', 'Nutzenkommunikation', 'CTA-Bereiche', 'messbare Anfrageziele'],
   },
   '/google-sichtbarkeit-kleine-unternehmen': {
-    title: 'Google-Sichtbarkeit für kleine Unternehmen',
+    title: 'Google-Sichtbarkeit für Unternehmen',
     intro: 'Saubere Grundlagen für lokale Auffindbarkeit, bessere Präsenz und klare Verknüpfung mit Website und Kontaktwegen.',
     points: ['Google-Unternehmensprofil', 'lokale Struktur', 'Angebotsverknüpfung', 'Sichtbarkeit mit System'],
   },
@@ -5660,7 +5660,7 @@ const offerPageContent = {
   },
   '/unternehmens-apps': {
     title: 'Unternehmens-Apps',
-    intro: 'Individuelle App- und Dashboard-Konzepte für kleine Unternehmen – alltagstauglich, klar und funktional aufgebaut.',
+    intro: 'Individuelle App- und Dashboard-Konzepte für Unternehmen – alltagstauglich, klar und funktional aufgebaut.',
     points: ['Prozessdigitalisierung', 'Rollen & Rechte', 'mobile Nutzung', 'strukturierte Datenführung'],
   },
   '/betriebs-dashboards': {
@@ -5681,7 +5681,7 @@ const offerPageContent = {
 }
 
 const websiteFormats = [
-  ['Unternehmenswebsite', 'Für kleine Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.'],
+  ['Unternehmenswebsite', 'Für Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.'],
   ['Landingpage', 'Für einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage geführt werden sollen.'],
   ['Onepager', 'Eine kompakte Website auf einer Seite – ideal für klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.'],
   ['Mehrseitige Website', 'Für Unternehmen mit mehreren Leistungen, Referenzen, Team, Preisen, Kontaktbereich und ausführlicher Struktur.'],
@@ -5699,7 +5699,7 @@ const websiteFormats = [
 ]
 
 const websiteFormatsCards = [
-  { title: 'Unternehmenswebsite', text: 'Für kleine Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.' },
+  { title: 'Unternehmenswebsite', text: 'Für Unternehmen, Selbstständige und Dienstleister, die professionell sichtbar werden und Vertrauen aufbauen möchten.' },
   { title: 'Landingpage', text: 'Für einzelne Angebote, Aktionen, Kampagnen oder Dienstleistungen, bei denen Besucher gezielt zur Anfrage geführt werden sollen.' },
   { title: 'Onepager', text: 'Eine kompakte Website auf einer Seite – ideal für klare Angebote, lokale Dienstleister oder den schnellen professionellen Start.' },
   { title: 'Mehrseitige Website', text: 'Für Unternehmen mit mehreren Leistungen, Referenzen, Team, Kontaktbereich und ausführlicher Struktur.' },
@@ -5712,9 +5712,9 @@ function WebsiteFuerKleineUnternehmenPage() {
     <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-6xl">
         <section className="rounded-[2.1rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-7 shadow-premium md:p-10">
-          <h1 className="text-3xl font-semibold text-white md:text-5xl">Website für kleine Unternehmen professionell erstellen lassen</h1>
+          <h1 className="text-3xl font-semibold text-white md:text-5xl">Website für Unternehmen professionell erstellen lassen</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-            STRUKTIVA entwickelt professionelle Unternehmenswebsites, Onepager, Landingpages und Relaunch-Konzepte für kleine Unternehmen, Selbstständige und lokale Dienstleister – mit klarer Struktur, verständlicher Kundenführung und mobiler Optimierung.
+            STRUKTIVA entwickelt professionelle Unternehmenswebsites, Onepager, Landingpages und Relaunch-Konzepte für Unternehmen, Selbstständige und lokale Dienstleister – mit klarer Struktur, verständlicher Kundenführung und mobiler Optimierung.
           </p>
           <div className="mt-7 grid gap-3 md:grid-cols-2">
             {['klare Seitenstruktur', 'professionelle Darstellung', 'mobile Optimierung', 'saubere Kontaktführung'].map((item) => (
@@ -5800,7 +5800,7 @@ const offerPriceInfo = {
   },
   '/social-media-struktur': {
     main: 'ab 249 €',
-    extras: ['Content-Grundstruktur für kleine Unternehmen ab 299 €', 'Pinterest-/Instagram-Startstruktur ab 249 €'],
+    extras: ['Content-Grundstruktur für Unternehmen ab 299 €', 'Pinterest-/Instagram-Startstruktur ab 249 €'],
   },
   '/newsletter-einbindung': {
     main: 'ab 199 €',
@@ -5876,7 +5876,7 @@ function LeistungenPage() {
     ['KI & Automatisierung', 'Einfache Systeme für Anfragen, Kommunikation, Antwortvorlagen und nachvollziehbare digitale Abläufe.'],
     ['WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Landingpage.'],
     ['Bewertungs- & QR-Strukturen', 'Klare Bewertungswege mit QR-Code, Bewertungslink und passender Kundenführung.'],
-    ['Unternehmens-Apps', 'Individuelle App- und Dashboard-Konzepte für kleine Unternehmen.'],
+    ['Unternehmens-Apps', 'Individuelle App- und Dashboard-Konzepte für Unternehmen.'],
     ['Betriebs-Dashboards', 'Übersichten für Termine, Kunden, Zahlen und interne Abläufe.'],
     ['Digitale Ordnungssysteme', 'Tagesabschluss, Kassenstruktur und steuerberaterfreundliche Abläufe.'],
     ['Social-Media- & Pinterest-Struktur', 'Inhalte und Kanäle mit klarer Richtung statt Zufall.'],
@@ -6007,7 +6007,7 @@ function KiAutomatisierungPage() {
             <SectionHeader
               eyebrow="Einordnung"
               title="Eine Webseite ist nur der Anfang."
-              text="Viele kleine Unternehmen haben eine Webseite, aber dahinter fehlt oft ein klarer Ablauf. Kundenanfragen kommen per Formular, WhatsApp, E-Mail oder Telefon rein – und schnell geht etwas verloren. Mit digitalen Automatisierungen schafft STRUKTIVA einfache Systeme für Antwortvorlagen, Kundenkommunikation, Bewertungsantworten, Termintexte und wiederkehrende Aufgaben."
+              text="Viele Unternehmen haben eine Webseite, aber dahinter fehlt oft ein klarer Ablauf. Kundenanfragen kommen per Formular, WhatsApp, E-Mail oder Telefon rein – und schnell geht etwas verloren. Mit digitalen Automatisierungen schafft STRUKTIVA einfache Systeme für Antwortvorlagen, Kundenkommunikation, Bewertungsantworten, Termintexte und wiederkehrende Aufgaben."
             />
           </Reveal>
         </section>
@@ -6017,7 +6017,7 @@ function KiAutomatisierungPage() {
             <SectionHeader
               eyebrow="Leistungen"
               title="Praktische Unterstützung für wiederkehrende Abläufe"
-              text="Statt unnötiger Technikbegriffe stehen verständliche Lösungen im Vordergrund, die kleine Unternehmen im Alltag wirklich entlasten können."
+              text="Statt unnötiger Technikbegriffe stehen verständliche Lösungen im Vordergrund, die Unternehmen im Alltag wirklich entlasten können."
             />
           </Reveal>
 
@@ -6292,7 +6292,7 @@ function ProjectRequestPage() {
                 Kostenlose Ersteinschätzung für dein digitales System
               </p>
               <p className="mt-5 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-                STRUKTIVA unterstützt kleine Unternehmen, Selbstständige und lokale Betriebe bei Website-Struktur,
+                STRUKTIVA unterstützt Unternehmen, Selbstständige und lokale Betriebe bei Website-Struktur,
                 Kundenanfragen, Google-Sichtbarkeit, Automatisierung und digitalen Abläufen. Über dieses Formular kann
                 dein Anliegen klar und vollständig übermittelt werden.
               </p>
@@ -6692,7 +6692,7 @@ function ContactPage() {
           <div className="space-y-2">
             <p className="text-base font-semibold text-white">STRUKTIVA Unternehmensarchitektur wird von Jessica Wacker und Sven Matzke geführt.</p>
             <p>
-              Gemeinsam entwickeln wir digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister – mit klaren Websites, Google-Sichtbarkeit, Kontaktwegen und digitalen Systemen.
+              Gemeinsam entwickeln wir digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister – mit klaren Websites, Google-Sichtbarkeit, Kontaktwegen und digitalen Systemen.
             </p>
           </div>
         </div>
@@ -7726,7 +7726,7 @@ function DemoDashboardPage() {
         />
         <section className="rounded-[2.1rem] bg-[linear-gradient(155deg,rgba(7,20,39,0.93),rgba(8,29,55,0.86))] p-7 shadow-[0_18px_44px_rgba(0,0,0,0.3)]">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7dd3fc]">Beispielhafte Demo von STRUKTIVA</p>
-          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Digitale Übersicht für kleine Unternehmen</h1>
+          <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Digitale Übersicht für Unternehmen</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#dbe7ff]">Eine beispielhafte Dashboard-Struktur für Termine, Aufgaben, offene Punkte, Tagesübersicht, Monatsstruktur und Kennzahlen.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteLinks.contact} className="rounded-full bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white">Dashboard anfragen</a>
@@ -7740,7 +7740,7 @@ function DemoDashboardPage() {
           </div>
           <div className="mt-6 overflow-hidden rounded-2xl border border-[#38bdf8]/25">
             <div className="relative h-64 md:h-80">
-              <img src={demoV2Images.dashboardHero} alt="Beispielhafte Dashboard-Ansicht für kleine Unternehmen" loading="lazy" className="h-full w-full object-cover" />
+              <img src={demoV2Images.dashboardHero} alt="Beispielhafte Dashboard-Ansicht für Unternehmen" loading="lazy" className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
             </div>
           </div>
