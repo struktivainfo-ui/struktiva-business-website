@@ -157,8 +157,18 @@ const navItems = [
 ]
 
 const desktopNavItems = [
-  ['KI & Automatisierung', siteLinks.kiAutomatisierung],
+  ['Websites', siteLinks.websites],
   ['Lead-Systeme', siteLinks.leadSysteme],
+  ['KI & Automatisierung', siteLinks.kiAutomatisierung],
+  ['Pakete', siteLinks.paketePage],
+  ['Über uns', siteLinks.about],
+  ['Kontakt', siteLinks.contact],
+]
+
+const mobileNavItems = [
+  ['Websites', siteLinks.websites],
+  ['Lead-Systeme', siteLinks.leadSysteme],
+  ['KI & Automatisierung', siteLinks.kiAutomatisierung],
   ['Pakete', siteLinks.paketePage],
   ['Über uns', siteLinks.about],
   ['Kontakt', siteLinks.contact],
@@ -166,11 +176,9 @@ const desktopNavItems = [
 
 const leistungenDropdownItems = [
   ['Leistungen im Überblick', siteLinks.leistungenPage],
-  ['Websites & Landingpages', siteLinks.websites],
+  ['Websites', siteLinks.websites],
+  ['Lead-Systeme', siteLinks.leadSysteme],
   ['KI & Automatisierung', siteLinks.kiAutomatisierung],
-  ['Lead-Systeme & Kundenanfragen', siteLinks.leadSysteme],
-  ['Pakete & Betreuung', siteLinks.paketePage],
-  ['Referenzen & Demos', siteLinks.referenzen],
 ]
 
 const kiAutomationCards = [
@@ -1101,13 +1109,6 @@ function Header({ pathname, isHomeRoute = false }) {
       >
         Start
       </a>
-      <a
-        href={siteLinks.kiAutomatisierung}
-        onClick={closeMobileMenu}
-        className="rounded-2xl px-4 py-3 text-sm font-medium text-[#D7DCE5] transition hover:bg-white/[0.08] hover:text-[#D8B45A]"
-      >
-        KI & Automatisierung
-      </a>
       <button
         type="button"
         aria-expanded={mobileLeistungenOpen}
@@ -1148,7 +1149,7 @@ function Header({ pathname, isHomeRoute = false }) {
                   </motion.div>
                 )}
               </AnimatePresence>
-              {desktopNavItems.map(([label, href]) => (
+              {mobileNavItems.map(([label, href]) => (
                 <a
                   key={label}
                   href={href}
@@ -2655,31 +2656,31 @@ function HeroSectionPremium() {
               Keine Einzellösung.
             </motion.p>
             <motion.h1 variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-3 max-w-[42rem] text-4xl font-semibold tracking-tight text-[#14110D] sm:text-5xl lg:text-[62px] lg:leading-[1.02]">
-              Eine klare digitale Struktur für mehr Sichtbarkeit, mehr Vertrauen und mehr Anfragen.
+              Digitale Systeme für klare Abläufe, bessere Sichtbarkeit und mehr Struktur.
             </motion.h1>
             <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-4 max-w-[38rem] text-[15px] leading-7 text-[#4E463A] md:text-[17px] md:leading-8">
-              STRUKTIVA entwickelt digitale Unternehmensarchitektur für kleine Unternehmen, Selbstständige und lokale Dienstleister. Website, Google-Sichtbarkeit, Kontaktwege, WhatsApp, Bewertungen und interne Systeme werden sinnvoll verbunden statt einzeln nebeneinandergestellt.
+              STRUKTIVA verbindet Websites, Kundenanfragen, KI-Automatisierung und digitale Prozesse zu klaren Systemen.
             </motion.p>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 max-w-[39rem] rounded-[1.8rem] border border-white/75 bg-white/66 p-4 shadow-[0_26px_54px_rgba(83,62,22,0.1)] backdrop-blur-md md:p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A9822D]">Digitale Unternehmensarchitektur</p>
               <p className="mt-2 text-sm leading-7 text-[#4E463A] md:text-base">
-                Der Besucher soll sofort verstehen, was Sie anbieten, warum er Ihnen vertrauen kann und wie der schnellste Kontaktweg aussieht. Genau darauf baut STRUKTIVA die digitale Struktur Ihres Unternehmens auf.
+                Der Einstieg soll sofort zeigen, welche digitalen Systeme sinnvoll zusammenarbeiten: Website, Sichtbarkeit, Kundenanfragen und interne Abläufe.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 flex flex-col gap-2.5 sm:flex-row">
               <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(17,24,39,0.2)] transition hover:bg-[#A9822D] hover:-translate-y-0.5">
-                Digitale Struktur anfragen
+                Projekt anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={siteLinks.pricing} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/35 bg-white/56 px-5 py-3.5 text-sm font-semibold text-[#1E1A15] transition hover:border-[#D8B45A]/60 hover:text-[#A9822D]">
-                Pakete & Preise ansehen
+              <a href={siteLinks.leistungenPage} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/35 bg-white/56 px-5 py-3.5 text-sm font-semibold text-[#1E1A15] transition hover:border-[#D8B45A]/60 hover:text-[#A9822D]">
+                Leistungen ansehen
               </a>
             </motion.div>
             <motion.div variants={fadeUp} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="mt-6 grid gap-3 sm:grid-cols-3">
               {[
-                ['Website & Google', 'Außenstruktur für Sichtbarkeit und ersten Eindruck.'],
-                ['Kontaktwege & WhatsApp', 'Klare Wege zur Anfrage statt digitalem Chaos.'],
-                ['Systeme & Dashboards', 'Interne Struktur für Abläufe, Übersicht und Ordnung.'],
+                ['Website & Sichtbarkeit', 'Professioneller Einstieg für Angebot, Vertrauen und Auffindbarkeit.'],
+                ['Lead-Systeme', 'Klare Anfragewege statt verstreuter Kontaktpunkte.'],
+                ['KI & Automatisierung', 'Einfachere Abläufe, Vorlagen und digitale Ordnung im Alltag.'],
               ].map(([title, text]) => (
                 <div key={title} className="rounded-[1.45rem] border border-white/75 bg-white/58 p-4 shadow-[0_20px_40px_rgba(83,62,22,0.08)] backdrop-blur-md">
                   <p className="text-sm font-semibold text-[#1E1A15]">{title}</p>
@@ -2712,9 +2713,9 @@ function HeroSectionPremium() {
                 <h2 className="mt-2 text-[1.35rem] font-semibold text-white">Verstehen. Vertrauen. Kontakt.</h2>
                 <div className="mt-5 space-y-3">
                   {[
-                    ['1', 'Angebot sofort verstehen', 'Leistungen, Nutzen und Positionierung werden klar und hochwertig dargestellt.'],
-                    ['2', 'Vertrauen digital aufbauen', 'Google, Bewertungen, Referenzen und Kontaktlogik arbeiten professionell zusammen.'],
-                    ['3', 'Kontaktwege sichtbar führen', 'Website, WhatsApp, Telefon und Anfragewege werden gezielt verbunden.'],
+                    ['1', 'Sichtbarkeit', 'Website, Landingpages und digitale Präsenz greifen klar ineinander.'],
+                    ['2', 'Anfragen', 'Kontaktwege, Formulare und Weiterleitungen werden systematisch aufgebaut.'],
+                    ['3', 'Abläufe', 'Digitale Prozesse bleiben verständlich, nutzbar und erweiterbar.'],
                   ].map(([step, title, text]) => (
                     <div key={step} className="rounded-[1.1rem] border border-white/12 bg-white/[0.05] p-3.5">
                       <div className="flex items-start gap-3">
@@ -2731,7 +2732,7 @@ function HeroSectionPremium() {
                 </div>
                 <div className="mt-4 rounded-[1rem] border border-[#D8B45A]/18 bg-white/[0.06] p-3.5">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/82">Ergebnis</p>
-                  <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">Ein klarer digitaler Aufbau, der ruhig wirkt, Vertrauen schafft und logisch verkauft.</p>
+                  <p className="mt-1.5 text-[13px] leading-6 text-[#D7DCE5]">Ein klarer Einstieg, der digitale Systeme strukturiert zusammenführt.</p>
                 </div>
               </div>
             </div>
@@ -4102,21 +4103,135 @@ function HomePage() {
   return (
     <>
       <HeroSectionPremium />
-      <WhatStruktivaBuildsSection />
-      <WhyStruktivaSection />
-      <ThreeStructureFieldsSection />
-      <PricingArchitectureSection />
-      <ModulesSection />
-      <OfferMatchSection />
-      <BranchenSection />
-      <DemoUseCasesSection />
-      <ProcessSection />
-      <StructureCtaSection />
-      <BetreuungSection />
-      <FAQSection />
-      <WissenSection />
-      <ContactSection />
+      <HomeIntroSection />
+      <HomePrimarySystemsSection />
+      <HomeAudienceSection />
+      <HomeAboutTeaserSection />
+      <HomeFinalCtaSection />
     </>
+  )
+}
+
+function HomeIntroSection() {
+  return (
+    <section className="px-5 py-14 lg:px-8 lg:py-18">
+      <div className="mx-auto max-w-6xl rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,253,248,0.96),rgba(248,241,228,0.94),rgba(243,233,214,0.9))] p-6 shadow-[0_24px_56px_rgba(83,62,22,0.07)] md:p-8">
+        <SectionHeader
+          eyebrow="Einstieg"
+          title="Eine Website ist nur der Anfang."
+          text="Viele Unternehmen haben einzelne digitale Bausteine: eine Website, ein Kontaktformular, WhatsApp, Google oder Social Media. STRUKTIVA bringt diese Bausteine in eine klare Struktur, damit Sichtbarkeit, Kundenanfragen und Abläufe besser zusammenarbeiten."
+          centered={false}
+          tone="light"
+        />
+      </div>
+    </section>
+  )
+}
+
+function HomePrimarySystemsSection() {
+  const cards = [
+    [
+      'Websites & Sichtbarkeit',
+      'Moderne Websites, Landingpages und digitale Präsenz, die Vertrauen schaffen und verständlich erklären, was ein Unternehmen anbietet.',
+      'Websites ansehen',
+      siteLinks.websites,
+    ],
+    [
+      'Lead-Systeme',
+      'Kundenanfragen werden sauber erfasst, weitergeleitet und übersichtlich vorbereitet, damit nichts verloren geht.',
+      'Lead-Systeme ansehen',
+      siteLinks.leadSysteme,
+    ],
+    [
+      'KI & Automatisierung',
+      'Wiederkehrende Aufgaben, Kundenkommunikation und Antwortvorlagen werden einfacher, klarer und besser nutzbar.',
+      'KI & Automatisierung ansehen',
+      siteLinks.kiAutomatisierung,
+    ],
+  ]
+
+  return (
+    <section className="px-5 py-10 lg:px-8 lg:py-14">
+      <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
+        {cards.map(([title, text, cta, href]) => (
+          <article
+            key={title}
+            className="rounded-[1.9rem] border border-white/14 bg-[linear-gradient(165deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium"
+          >
+            <h2 className="text-2xl font-semibold text-white">{title}</h2>
+            <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">{text}</p>
+            <a
+              href={href}
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/38 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+            >
+              {cta}
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function HomeAudienceSection() {
+  return (
+    <section className="px-5 py-12 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-6xl rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.96),rgba(247,239,225,0.94))] p-6 shadow-[0_24px_56px_rgba(83,62,22,0.07)] md:p-8">
+        <SectionHeader
+          eyebrow="Vertrauen"
+          title="Für wen STRUKTIVA arbeitet"
+          text="STRUKTIVA unterstützt Selbstständige, Dienstleister, lokale Betriebe, Handwerker, Beauty-Betriebe, Beratungen und Unternehmen, die digitale Abläufe verständlicher und professioneller aufbauen möchten."
+          centered={false}
+          tone="light"
+        />
+      </div>
+    </section>
+  )
+}
+
+function HomeAboutTeaserSection() {
+  return (
+    <section className="px-5 py-10 lg:px-8 lg:py-14">
+      <div className="mx-auto max-w-6xl rounded-[2rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-8">
+        <SectionHeader
+          eyebrow="Über STRUKTIVA"
+          title="Digitale Strukturen verständlich, nutzbar und sinnvoll aufbauen."
+          text="STRUKTIVA wurde entwickelt, um digitale Strukturen verständlich, nutzbar und sinnvoll aufzubauen. Im Mittelpunkt stehen keine Einzellösungen, sondern Systeme, die Website, Sichtbarkeit, Kontaktwege und interne Abläufe verbinden."
+          centered={false}
+        />
+        <a
+          href={siteLinks.about}
+          className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/35 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+        >
+          Mehr über STRUKTIVA
+          <ArrowRight className="h-4 w-4" />
+        </a>
+      </div>
+    </section>
+  )
+}
+
+function HomeFinalCtaSection() {
+  return (
+    <section className="px-5 pb-12 pt-8 lg:px-8 lg:pb-18 lg:pt-10">
+      <div className="mx-auto max-w-6xl rounded-[2.1rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,252,246,0.98),rgba(247,238,222,0.95))] p-6 shadow-[0_24px_52px_rgba(83,62,22,0.08)] md:p-8">
+        <SectionHeader
+          eyebrow="Nächster Schritt"
+          title="Bereit für mehr digitale Struktur?"
+          text="Dann prüfen wir gemeinsam, welche Website, welches Lead-System oder welche digitale Lösung zu deinem Unternehmen passt."
+          centered={false}
+          tone="light"
+        />
+        <a
+          href={siteLinks.projectRequestForm}
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
+        >
+          Projekt anfragen
+          <ArrowRight className="h-4 w-4" />
+        </a>
+      </div>
+    </section>
   )
 }
 
@@ -4128,10 +4243,10 @@ function AboutPage() {
           <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Über STRUKTIVA</p>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
-              Digitale Unternehmensarchitektur statt isolierter Einzellösungen.
+              Über STRUKTIVA
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-              STRUKTIVA entwickelt digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister. Im Mittelpunkt stehen klare Websites, verständliche Angebote, sichtbare Kontaktwege und Systeme, die im Alltag wirklich nutzbar bleiben.
+              STRUKTIVA steht für klare digitale Systeme statt unübersichtlicher Einzellösungen. Entwickelt werden Websites, Kundenführungen, Lead-Systeme, KI-Automatisierungen und digitale Abläufe, die Unternehmen verständlicher, sichtbarer und strukturierter machen.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
@@ -4147,49 +4262,46 @@ function AboutPage() {
           <section className="mt-8 rounded-[1.9rem] border border-white/14 bg-white/[0.05] p-6 shadow-premium md:p-7">
             <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
               <figure className="rounded-[1.7rem] border border-[#D8B45A]/24 bg-white/[0.04] p-5">
-                <div className="flex flex-wrap items-center gap-4">
-                  <div className="h-28 w-28 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
-                    <img
-                      src={contactDetails.founderSvenImage}
-                      alt="Sven Matzke"
-                      loading="lazy"
-                      decoding="async"
-                      className="h-full w-full object-cover object-[50%_18%]"
-                    />
-                  </div>
-                  <div className="h-28 w-28 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
-                    <img
-                      src={contactDetails.founderJessicaImage}
-                      alt="Jessica Wacker"
-                      loading="lazy"
-                      decoding="async"
-                      className="h-full w-full scale-160 object-cover object-[52%_84%]"
-                    />
-                  </div>
+                <div className="h-32 w-32 overflow-hidden rounded-full border border-[#D8B45A]/45 shadow-[0_0_22px_rgba(212,175,55,0.12)]">
+                  <img
+                    src={contactDetails.founderSvenImage}
+                    alt="Sven Matzke"
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover object-[50%_18%]"
+                  />
                 </div>
                 <figcaption className="mt-4">
-                  <p className="text-base font-semibold text-white">Sven Matzke & Jessica Wacker</p>
+                  <p className="text-base font-semibold text-white">Sven Matzke</p>
                   <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[#D8B45A]/82">
-                    Gründer von STRUKTIVA Unternehmensarchitektur
+                    Hinter STRUKTIVA
                   </p>
                 </figcaption>
               </figure>
               <div className="rounded-[1.7rem] border border-white/12 bg-white/[0.04] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Persönlich geführt</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Arbeitsweise</p>
                 <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">
-                  STRUKTIVA Unternehmensarchitektur wird von Jessica Wacker und Sven Matzke geführt. Gemeinsam entwickeln wir digitale Strukturen für kleine Unternehmen, Selbstständige und lokale Dienstleister.
+                  Hinter STRUKTIVA steht Sven Matzke. Der Fokus liegt auf praktischen Lösungen, die im Alltag wirklich nutzbar sind: klare Kontaktwege, verständliche Websites, bessere Übersicht über Anfragen und digitale Strukturen, die Schritt für Schritt erweitert werden können.
                 </p>
                 <p className="mt-3 text-sm leading-8 text-[#D7DCE5] md:text-base">
-                  Unser Anspruch ist ein professioneller Auftritt, der Leistungen verständlich macht, Vertrauen aufbaut und den passenden nächsten Schritt klar sichtbar werden lässt.
+                  STRUKTIVA arbeitet direkt, verständlich und lösungsorientiert. Ziel ist nicht, Unternehmen mit Technik zu überfordern, sondern digitale Möglichkeiten sinnvoll zu ordnen und nutzbar zu machen.
                 </p>
               </div>
             </div>
           </section>
         </div>
       </main>
-      <WhyStruktivaSection />
-      <DifferentiatorSection />
-      <QualitySection />
+      <section className="px-5 py-10 lg:px-8 lg:py-14">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.96),rgba(247,239,225,0.94))] p-6 shadow-[0_24px_56px_rgba(83,62,22,0.07)] md:p-8">
+          <SectionHeader
+            eyebrow="Was wichtig ist"
+            title="Klare Systeme statt technischer Überforderung."
+            text="STRUKTIVA entwickelt digitale Lösungen so, dass sie verständlich, professionell und im Alltag nutzbar bleiben. Schritt für Schritt, passend zur vorhandenen Struktur und ohne unnötige Komplexität."
+            centered={false}
+            tone="light"
+          />
+        </div>
+      </section>
       <StructureCtaSection />
     </>
   )
@@ -4198,12 +4310,12 @@ function AboutPage() {
 function WebsitesLandingpagesPage() {
   return (
     <ServiceDetailLayout
-      title="Websites und Landingpages mit klarer digitaler Führung."
-      intro="STRUKTIVA entwickelt professionelle Unternehmenswebsites, Landingpages und digitale Einstiegsseiten für kleine Unternehmen, Selbstständige und lokale Dienstleister."
+      title="Websites & Sichtbarkeit"
+      intro="STRUKTIVA entwickelt professionelle Websites, Landingpages, Relaunches und klare Sichtbarkeitsstrukturen für Unternehmen, die online verständlicher und vertrauenswürdiger auftreten möchten."
     >
       <ServiceSection title="Worum geht es?">
-        <p>Eine gute Website erklärt auf den ersten Blick, was ein Unternehmen anbietet, warum es vertrauenswürdig ist und wie der schnellste Kontaktweg aussieht.</p>
-        <p>Landingpages konzentrieren sich auf ein konkretes Angebot, eine Aktion oder eine gezielte Anfrage. Beide Formate funktionieren am besten, wenn Struktur, Inhalt und Kontaktführung sauber aufeinander abgestimmt sind.</p>
+        <p>Eine gute Website erklärt auf den ersten Blick, was ein Unternehmen anbietet, warum es vertrauenswürdig ist und wie der passende nächste Schritt aussieht.</p>
+        <p>Landingpages konzentrieren sich auf ein konkretes Angebot, einen Schwerpunkt oder eine Kampagne. Zusammen mit Google-Sichtbarkeit, mobiler Darstellung und klarer Kundenführung entsteht daraus ein professioneller digitaler Einstieg.</p>
       </ServiceSection>
 
       <ServiceSection title="Welche Formate STRUKTIVA umsetzt">
@@ -4223,6 +4335,10 @@ function WebsitesLandingpagesPage() {
         <p>- sichtbare Kontaktwege über Formular, Telefon, E-Mail und WhatsApp</p>
         <p>- Verbindung zu Google-Sichtbarkeit, Bewertungen und Angebotsseiten</p>
         <p>- rechtliche Seiten und technische Veröffentlichung</p>
+      </ServiceSection>
+
+      <ServiceSection title="Sichtbarkeit gehört dazu">
+        <p>Websites und Landingpages wirken am stärksten, wenn sie nicht isoliert stehen. STRUKTIVA verbindet deshalb digitale Präsenz, Google-Sichtbarkeit, Vertrauenselemente und Kontaktwege so, dass Besucher schneller verstehen, warum sie anfragen sollten.</p>
       </ServiceSection>
 
       <ServiceSection title="Wann welches Format sinnvoll ist">
@@ -4265,8 +4381,8 @@ function LeadSystemePage() {
 
   return (
     <ServiceDetailLayout
-      title="Lead-Systeme und Kundenanfragen mit klarer Struktur."
-      intro="STRUKTIVA verbindet Website, Angebot, WhatsApp, Formular, Bewertungen und Kontaktlogik so, dass aus Besuchern nachvollziehbare Anfragen werden."
+      title="Lead-Systeme & Kundenanfragen"
+      intro="STRUKTIVA verbindet Website, Angebot, Formular, automatische E-Mail, Kundenbestätigung und Kontaktlogik so, dass Kundenanfragen klar erfasst und nachvollziehbar weitergeführt werden."
     >
       <ServiceSection title="Worum geht es?">
         <p>Viele Unternehmen haben mehrere Kontaktwege, aber keine klare Führung dazwischen. Dann gehen Anfragen unter, Besucher brechen ab oder melden sich über unpassende Wege.</p>
@@ -4286,8 +4402,10 @@ function LeadSystemePage() {
 
       <ServiceSection title="Was dabei verbessert wird">
         <p>- Kontaktformulare werden klarer eingebunden und sinnvoll platziert</p>
+        <p>- automatische E-Mail und Kundenbestätigung werden sauber vorbereitet</p>
         <p>- WhatsApp wird nicht zufällig, sondern als echter Anfrageweg eingesetzt</p>
         <p>- Google-Bewertungen und Vertrauenselemente unterstützen die Anfrage</p>
+        <p>- Lead-Übersicht, Status und Nachfassen werden verständlicher vorbereitet</p>
         <p>- Leistungen, Nutzen und nächste Schritte werden verständlicher kommuniziert</p>
         <p>- Anfragen laufen strukturierter im Betrieb an</p>
       </ServiceSection>
@@ -4330,7 +4448,7 @@ function PaketePage() {
           <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Pakete & Betreuung</p>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
-              Klare Einstiegspakete für Website, Sichtbarkeit und digitale Struktur.
+              Pakete & Einstiegsmöglichkeiten
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
               Die Pakete geben Orientierung und helfen beim sinnvollen Start. Ergänzend dazu zeigt STRUKTIVA, wann laufende Betreuung sinnvoll ist und wann einzelne Änderungen ausreichen.
@@ -5519,20 +5637,16 @@ function OfferDetailPage({ title, intro, points, pathname }) {
 
 function LeistungenPage() {
   const allLeistungen = [
-    ['Website-Erstellung', 'STRUKTIVA erstellt unterschiedliche Webseiten-Formate – von Onepager, Unternehmenswebsite und Landingpage bis zu mehrseitigen Premium-Webauftritten, Branchenwebsites, Angebotsseiten und Websites mit Newsletter-, QR-Code- oder Kontaktstruktur.'],
-    ['Landingpages', 'Verkaufsstarke Seiten für Angebote, Aktionen und Anfragen.'],
-    ['Google-Sichtbarkeit', 'Struktur für bessere Auffindbarkeit und lokale Präsenz.'],
+    ['Websites & Landingpages', 'Moderne Website-Formate für Angebote, Vertrauen, mobile Darstellung und klare Kundenführung.'],
+    ['Google-Sichtbarkeit', 'Struktur für bessere Auffindbarkeit, professionelle Präsenz und saubere Verbindung zur Website.'],
+    ['Lead-Systeme', 'Anfragen werden sauber erfasst, vorbereitet und klarer weitergeführt.'],
     ['KI & Automatisierung', 'Einfache Systeme für Anfragen, Kommunikation, Antwortvorlagen und nachvollziehbare digitale Abläufe.'],
-    ['Digitale Soforthilfe', 'Wenn online schnell etwas funktionieren muss. Schnelle Unterstützung bei Website-Anpassungen, Landingpages, Google-Texten, Social-Media-Beiträgen, WhatsApp- und Bewertungstexten sowie digitalen Kleinkorrekturen.'],
-    ['Digitale Kundenführung', 'Klare Wege von Interesse zur Anfrage.'],
     ['WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Landingpage.'],
-    ['Social-Media-Struktur', 'Inhalte und Kanäle mit klarer Richtung statt Zufall.'],
-    ['Newsletter-Einbindung', 'Dezente Kundenbindung über professionelle Newsletter-Systeme.'],
+    ['Bewertungs- & QR-Strukturen', 'Klare Bewertungswege mit QR-Code, Bewertungslink und passender Kundenführung.'],
     ['Unternehmens-Apps', 'Individuelle App- und Dashboard-Konzepte für kleine Unternehmen.'],
     ['Betriebs-Dashboards', 'Übersichten für Termine, Kunden, Zahlen und interne Abläufe.'],
     ['Digitale Ordnungssysteme', 'Tagesabschluss, Kassenstruktur und steuerberaterfreundliche Abläufe.'],
-    ['Angebotsarchitektur', 'Leistungen klar darstellen, damit Kunden schneller verstehen.'],
-    ['Beratung & Ersteinschätzung', 'Kostenlose Einschätzung für den passenden digitalen Aufbau.'],
+    ['Social-Media- & Pinterest-Struktur', 'Inhalte und Kanäle mit klarer Richtung statt Zufall.'],
   ]
 
   return (
@@ -5561,7 +5675,7 @@ function LeistungenPage() {
           </div>
           <div className="mt-6 rounded-[1.5rem] border border-[#D8B45A]/22 bg-[linear-gradient(160deg,rgba(7,17,31,0.78),rgba(11,31,58,0.72),rgba(5,10,18,0.82))] p-5 shadow-premium">
             <p className="text-sm leading-7 text-[#D7DCE5] md:text-base">
-              Der genaue Umfang hängt vom jeweiligen Projekt, den vorhandenen Strukturen und den gewünschten Funktionen ab. Konkrete Preise und passende Einstiegsmöglichkeiten findest du im Bereich Pakete oder erhältst nach einer kurzen Ersteinschätzung.
+              Leistungen zeigen, was möglich ist. Konkrete Einstiegsmöglichkeiten und Preise findest du im Bereich Pakete oder nach einer kurzen Ersteinschätzung.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a
@@ -5595,9 +5709,9 @@ function KiAutomatisierungPage() {
           <div className="relative z-[1] grid gap-8 xl:grid-cols-[1.02fr_0.98fr] xl:items-center">
             <Reveal>
               <div className="max-w-3xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Neue Leistungsseite</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Detailseite</p>
                 <h1 className="text-gold-glow mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-[3.5rem] lg:leading-[1.03]">
-                  KI & Automatisierung für kleine Unternehmen
+                  KI & Automatisierung
                 </h1>
                 <p className="mt-5 max-w-2xl text-xl font-medium text-[#F2D98B]">
                   Weniger manuelle Arbeit. Schnellere Reaktion. Mehr digitale Ordnung.
@@ -5660,7 +5774,7 @@ function KiAutomatisierungPage() {
             <SectionHeader
               eyebrow="Einordnung"
               title="Eine Webseite ist nur der Anfang."
-              text="Viele kleine Unternehmen haben eine Webseite, aber dahinter fehlt oft ein klarer Ablauf. Kundenanfragen kommen per Formular, WhatsApp, E-Mail oder Telefon rein – und schnell geht etwas verloren. Mit digitalen Automatisierungen schafft STRUKTIVA einfache Systeme, die Anfragen, Kommunikation und Übersicht sinnvoll verbinden."
+              text="Viele kleine Unternehmen haben eine Webseite, aber dahinter fehlt oft ein klarer Ablauf. Kundenanfragen kommen per Formular, WhatsApp, E-Mail oder Telefon rein – und schnell geht etwas verloren. Mit digitalen Automatisierungen schafft STRUKTIVA einfache Systeme für Antwortvorlagen, Kundenkommunikation, Bewertungsantworten, Termintexte und wiederkehrende Aufgaben."
             />
           </Reveal>
         </section>
