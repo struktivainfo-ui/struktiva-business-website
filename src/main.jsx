@@ -1103,7 +1103,11 @@ function Header({ pathname, isHomeRoute = false }) {
         type="button"
         aria-expanded={mobileLeistungenOpen}
         onClick={() => setMobileLeistungenOpen((open) => !open)}
-                className="inline-flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[#111111] transition hover:bg-white/60 hover:text-[#8f6d27]"
+                className={`mobile-leistungen-toggle inline-flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium transition ${
+                  mobileLeistungenOpen
+                    ? 'bg-[linear-gradient(145deg,rgba(20,20,20,0.98),rgba(38,38,38,0.95))] text-[#F3DEAF]'
+                    : 'text-[#111111] hover:bg-white/60 hover:text-[#8f6d27]'
+                }`}
               >
                 Leistungen
                 <ChevronDown className={`h-4 w-4 transition ${mobileLeistungenOpen ? 'rotate-180 text-[#D8B45A]' : 'rotate-0'}`} />
@@ -1115,7 +1119,7 @@ function Header({ pathname, isHomeRoute = false }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.18 }}
-                    className="rounded-2xl border border-white/80 bg-[linear-gradient(145deg,rgba(250,250,247,0.98),rgba(221,221,216,0.96))] p-2"
+                    className="mobile-leistungen-submenu rounded-2xl border border-white/80 bg-[linear-gradient(145deg,rgba(250,250,247,0.98),rgba(221,221,216,0.96))] p-2"
                   >
                     <div className="grid gap-1">
                       {leistungenDropdownItems.map(([label, href]) => (
@@ -1123,7 +1127,7 @@ function Header({ pathname, isHomeRoute = false }) {
                           key={label}
                           href={href}
                           onClick={closeMobileMenu}
-                          className="rounded-lg border border-transparent px-2.5 py-2 text-sm text-[#111111] transition hover:border-[#D8B45A]/38 hover:bg-white/60 hover:text-[#8f6d27]"
+                          className="mobile-leistungen-link rounded-lg border border-transparent px-2.5 py-2 text-sm text-[#111111] transition hover:border-[#D8B45A]/38 hover:bg-white/60 hover:text-[#8f6d27]"
                         >
                           {label}
                         </a>
@@ -1131,7 +1135,7 @@ function Header({ pathname, isHomeRoute = false }) {
                       <a
                         href={siteLinks.leistungenPage}
                         onClick={closeMobileMenu}
-                        className="metallic-btn-primary mt-1 rounded-lg px-2.5 py-2 text-sm font-semibold transition"
+                        className="mobile-leistungen-cta metallic-btn-primary mt-1 rounded-lg px-2.5 py-2 text-sm font-semibold transition"
                       >
                         Alle Leistungen ansehen
                       </a>

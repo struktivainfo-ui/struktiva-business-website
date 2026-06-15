@@ -1555,6 +1555,41 @@ body.cookie-modal-open {
   opacity: 0.03;
 }
 
+@media (max-width: 1023px) {
+  .struktiva-metallic .mobile-leistungen-toggle {
+    border: 1px solid transparent;
+  }
+
+  .struktiva-metallic .mobile-leistungen-toggle[aria-expanded='true'] {
+    border-color: rgba(216, 170, 69, 0.42);
+    box-shadow:
+      0 16px 34px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .struktiva-metallic .mobile-leistungen-submenu {
+    background: linear-gradient(150deg, rgba(8, 8, 8, 0.985), rgba(20, 20, 20, 0.965), rgba(34, 34, 34, 0.94)) !important;
+    border-color: rgba(216, 170, 69, 0.34) !important;
+    box-shadow: 0 24px 54px rgba(0, 0, 0, 0.32) !important;
+  }
+
+  .struktiva-metallic .mobile-leistungen-link {
+    color: #fff8e8 !important;
+  }
+
+  .struktiva-metallic .mobile-leistungen-link:hover,
+  .struktiva-metallic .mobile-leistungen-link:focus-visible {
+    color: #f3d27b !important;
+    background: rgba(216, 170, 69, 0.12) !important;
+    border-color: rgba(216, 170, 69, 0.4) !important;
+  }
+
+  .struktiva-metallic .mobile-leistungen-cta {
+    color: #16120e !important;
+    box-shadow: 0 14px 26px rgba(216, 170, 69, 0.18);
+  }
+}
+
 @media (max-width: 980px) {
   .hero-premium-section {
     min-height: auto;
