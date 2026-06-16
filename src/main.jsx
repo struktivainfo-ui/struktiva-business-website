@@ -64,6 +64,7 @@ const siteLinks = {
   demoKosmetikstudioV2: '/demos/kosmetik',
   demoBewertungsstrukturV2: '/demos/bewertungsstruktur',
   demoDashboardV2: '/demos/dashboard',
+  demoPersoenlicheProfilseite: '/demos/persoenliche-profilseite',
   brancheFriseursalons: '/branchen/friseursalons',
   brancheHandwerker: '/branchen/handwerker',
   brancheKosmetikstudios: '/branchen/kosmetikstudios',
@@ -674,6 +675,7 @@ function useDocumentTitleSafe(pathname) {
       '/demos/lokaler-dienstleister': 'Lokaler Dienstleister Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/bewertungsstruktur': 'Bewertungsstruktur Demo | STRUKTIVA Unternehmensarchitektur',
       '/demos/dashboard': 'Dashboard Demo | STRUKTIVA Unternehmensarchitektur',
+      '/demos/persoenliche-profilseite': 'Persönliche Profilseite Demo | STRUKTIVA Unternehmensarchitektur',
       '/branchen/friseursalons': 'Digitale Struktur für Friseursalons | STRUKTIVA',
       '/branchen/handwerker': 'Digitale Struktur für Handwerker | STRUKTIVA',
       '/branchen/kosmetikstudios': 'Digitale Struktur für Kosmetikstudios | STRUKTIVA',
@@ -737,6 +739,8 @@ function useDocumentTitleSafe(pathname) {
         'Beispielhafte Bewertungsstruktur mit QR-Code, Bewertungslink, WhatsApp-Text und Website-Einbindung.',
       '/demos/dashboard':
         'Beispielhaftes Betriebs-Dashboard für Unternehmen mit Aufgaben, Terminen, Tagesübersicht und Kennzahlen.',
+      '/demos/persoenliche-profilseite':
+        'Beispielhafte persönliche Profil- und Bewerbungsseite für Einzelpersonen, Bewerber, Künstler, Freelancer und Selbstständige.',
       '/branchen/friseursalons':
         'Digitale Struktur für Friseursalons mit Website, Leistungsstruktur, Bewertungen, Google-Profil und WhatsApp-Terminführung.',
       '/branchen/handwerker':
@@ -3762,6 +3766,13 @@ function DemosShowcaseSection() {
       href: siteLinks.demoDashboardV2,
       image: demoV2Images.dashboardHero,
     },
+    {
+      title: 'Persönliche Profilseite',
+      text: 'Digitale Bewerbungs- und Portfolioseite für Einzelpersonen, Bewerber, Künstler und Selbstständige.',
+      href: siteLinks.demoPersoenlicheProfilseite,
+      image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
+      badgeLabel: 'Profil- & Bewerbungsdemo',
+    },
   ]
 
   return (
@@ -5878,7 +5889,7 @@ function LeistungenPage() {
     ['Social-Media-Struktur', 'Strukturierte Inhalte, klare Kanäle und ein professioneller Social-Media-Auftritt.'],
     [
       'Persönliche Profil- & Bewerbungsseite',
-      'Eine eigene digitale Seite für Bewerbung, Portfolio, Lebenslauf und persönliche Vorstellung. Ideal für Bewerber, Künstler, Einzelpersonen und Selbstständige, die sich professionell präsentieren möchten – mit persönlichem Link statt nur klassischer PDF-Bewerbung. Lebenslauf, Projekte, Arbeitsproben, Kontaktmöglichkeiten und ein PDF-Download können übersichtlich eingebunden werden; optional auch mit QR-Code. 299 € inklusive Mehrwertsteuer.',
+      'Eine eigene digitale Seite für Bewerbung, Portfolio, Lebenslauf und persönliche Vorstellung. Ideal für Bewerber, Künstler, Einzelpersonen und Selbstständige, die sich professionell präsentieren möchten – mit persönlichem Link statt nur klassischer PDF-Bewerbung. Lebenslauf, Projekte, Arbeitsproben, Kontaktmöglichkeiten und ein PDF-Download können übersichtlich eingebunden werden; optional auch mit QR-Code. Festpreis: 299 € inklusive Mehrwertsteuer.',
     ],
   ]
 
@@ -5914,6 +5925,15 @@ function LeistungenPage() {
               >
                 <h2 className="text-base font-semibold text-white">{title}</h2>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
+                {title === 'Persönliche Profil- & Bewerbungsseite' ? (
+                  <a
+                    href={siteLinks.demoPersoenlicheProfilseite}
+                    className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/35 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                  >
+                    Demo ansehen
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                ) : null}
               </article>
             ))}
           </div>
@@ -7130,6 +7150,8 @@ function Page() {
     content = <DemoBewertungsstrukturPage />
   } else if (pathname === '/demos/dashboard') {
     content = <DemoDashboardPage />
+  } else if (pathname === '/demos/persoenliche-profilseite') {
+    content = <DemoPersoenlicheProfilseiteHtmlPage />
   } else if (pathname === '/branchen/friseursalons') {
     content = <BrancheFriseursalonsPage />
   } else if (pathname === '/branchen/handwerker') {
@@ -7416,6 +7438,19 @@ function DemoDienstleisterHtmlPage() {
       <iframe
         src="/demos/lokaler-dienstleister/index.html"
         title="STRUKTIVA Lokaler Dienstleister Demo"
+        className="block h-screen w-full border-0"
+        loading="lazy"
+      />
+    </main>
+  )
+}
+
+function DemoPersoenlicheProfilseiteHtmlPage() {
+  return (
+    <main className="min-h-screen bg-[#f4f8ff]">
+      <iframe
+        src="/demos/persoenliche-profilseite/index.html"
+        title="STRUKTIVA Persönliche Profilseite Demo"
         className="block h-screen w-full border-0"
         loading="lazy"
       />
