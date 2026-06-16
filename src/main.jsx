@@ -386,49 +386,49 @@ const coreServices = [
     icon: LayoutTemplate,
     title: 'Professionelle Webseiten',
     description: 'Moderne Webseiten für Unternehmen, die Vertrauen aufbauen, Leistungen klar darstellen und Kontaktwege sinnvoll verbinden.',
-    price: 'ab 699 € inklusive Mehrwertsteuer',
+    price: '699 € inklusive Mehrwertsteuer',
     href: siteLinks.webseitenPage,
   },
   {
     icon: Target,
     title: 'Landingpages',
     description: 'Klar fokussierte Seiten für Angebote, Aktionen, Produkte oder Dienstleistungen mit sauberer Struktur und direkter Handlungsaufforderung.',
-    price: 'ab 399 € inklusive Mehrwertsteuer',
+    price: '399 € inklusive Mehrwertsteuer',
     href: siteLinks.landingpagesPage,
   },
   {
     icon: Search,
     title: 'Google-Sichtbarkeit',
     description: 'Strukturierte Unterstützung für bessere Auffindbarkeit über Google, lokale Suchanfragen, Unternehmensprofil-Texte und saubere Online-Grundlagen.',
-    price: 'ab 199 € inklusive Mehrwertsteuer',
+    price: '199 € inklusive Mehrwertsteuer',
     href: siteLinks.googleSichtbarkeit,
   },
   {
     icon: MousePointerClick,
     title: 'Digitale Kundenführung',
     description: 'Klare Kontaktwege über Webseite, WhatsApp, Bewertungssysteme, Anfrageformulare und sinnvolle digitale Abläufe.',
-    price: 'ab 149 € inklusive Mehrwertsteuer',
+    price: '299 € inklusive Mehrwertsteuer',
     href: siteLinks.digitaleUnternehmensstruktur,
   },
   {
     icon: Smartphone,
     title: 'Unternehmens-Apps',
     description: 'Individuelle Web-Apps für interne Abläufe, Kundenverwaltung, Aufgaben, Termine, Checklisten und mobile Nutzung im Betrieb.',
-    price: 'ab 999 € inklusive Mehrwertsteuer',
+    price: '999 € inklusive Mehrwertsteuer',
     href: siteLinks.unternehmensApps,
   },
   {
     icon: PanelsTopLeft,
     title: 'Betriebs-Dashboards',
     description: 'Übersichtliche digitale Steuerungsflächen für Aufgaben, Tagesplanung, Kennzahlen, Abläufe und betriebliche Kontrolle.',
-    price: 'ab 799 € inklusive Mehrwertsteuer',
+    price: '799 € inklusive Mehrwertsteuer',
     href: siteLinks.unternehmensApps,
   },
   {
     icon: ClipboardList,
     title: 'Digitale Ordnungssysteme',
     description: 'Digitale Strukturen für wiederkehrende Aufgaben, Checklisten, Dokumentation, Vorlagen, Ablage und klare Zuständigkeiten.',
-    price: 'ab 899 € inklusive Mehrwertsteuer',
+    price: '899 € inklusive Mehrwertsteuer',
     href: siteLinks.digitaleOrdnungssysteme,
   },
   {
@@ -436,7 +436,7 @@ const coreServices = [
     title: 'Digitale Soforthilfe',
     subtitle: 'Wenn online schnell etwas funktionieren muss.',
     description: 'Schnelle Unterstützung bei Website-Anpassungen, Landingpages, Google-Texten, Social-Media-Beiträgen, WhatsApp- und Bewertungstexten sowie digitalen Kleinkorrekturen.',
-    price: 'ab 99 € inklusive Mehrwertsteuer',
+    price: '99 € inklusive Mehrwertsteuer',
     ctaLabel: 'Mehr zur Soforthilfe',
     href: siteLinks.digitaleSoforthilfe,
   },
@@ -469,7 +469,7 @@ const googleAdsCards = [
 const pricingPackages = [
   {
     title: 'STRUKTIVA Soforthilfe',
-    price: 'ab 99 € inklusive Mehrwertsteuer',
+    price: '99 € inklusive Mehrwertsteuer',
     badge: 'Kleine Einzelmaßnahme',
     description: 'Für einzelne digitale Aufgaben, schnelle Anpassungen oder professionelle Soforthilfe.',
     features: [
@@ -484,7 +484,7 @@ const pricingPackages = [
   },
   {
     title: 'Website Start',
-    price: 'ab 499 € inklusive Mehrwertsteuer',
+    price: '499 € inklusive Mehrwertsteuer',
     badge: 'Webseiten-Einstieg',
     description: 'Für Betriebe, die eine saubere erste Website- oder Onepager-Grundlage brauchen.',
     features: [
@@ -499,7 +499,7 @@ const pricingPackages = [
   },
   {
     title: 'Sichtbarkeits-Paket',
-    price: 'ab 799 € inklusive Mehrwertsteuer',
+    price: '799 € inklusive Mehrwertsteuer',
     badge: 'Website & Sichtbarkeit',
     description: 'Für Unternehmen, die Website, Google-Grundlage und Kontaktwege sinnvoll verbinden möchten.',
     features: [
@@ -514,7 +514,7 @@ const pricingPackages = [
   },
   {
     title: 'Struktur-Paket',
-    price: 'ab 1.199 € inklusive Mehrwertsteuer',
+    price: '1.199 € inklusive Mehrwertsteuer',
     badge: 'Mehr Bausteine',
     description: 'Für Unternehmen, die mehrere digitale Bausteine professionell zusammenführen möchten.',
     features: [
@@ -528,7 +528,7 @@ const pricingPackages = [
   },
   {
     title: 'Premium-Struktur',
-    price: 'ab 1.499 € inklusive Mehrwertsteuer',
+    price: '1.499 € inklusive Mehrwertsteuer',
     badge: 'Umfassende Struktur',
     description: 'Für Betriebe, die eine umfangreichere digitale Struktur mit mehreren Systembausteinen brauchen.',
     features: [
@@ -712,7 +712,7 @@ function useDocumentTitleSafe(pathname) {
       '/digitale-ordnungssysteme':
         'STRUKTIVA entwickelt digitale Ordnungssysteme fuer Betriebe - mit Tagesabschluss, Kassenstruktur, Monatsuebersicht, Exportfunktionen und steuerberaterfreundlicher Vorbereitung.',
       '/digitale-soforthilfe':
-        'Schnelle digitale Unterstützung für Website-Anpassungen, Landingpages, Google-Texte, Social-Media-Beiträge, WhatsApp- und Bewertungstexte. STRUKTIVA Digitale Soforthilfe ab 99 € inklusive Mehrwertsteuer.',
+        'Schnelle digitale Unterstützung für Website-Anpassungen, Landingpages, Google-Texte, Social-Media-Beiträge, WhatsApp- und Bewertungstexte. STRUKTIVA Digitale Soforthilfe 99 € inklusive Mehrwertsteuer.',
       '/ki-automatisierung':
         'KI & Automatisierung für Unternehmen: STRUKTIVA verbindet Anfragen, Kommunikation und digitale Abläufe zu klaren, alltagstauglichen Systemen.',
       '/projekt-anfragen':
@@ -1872,14 +1872,14 @@ function PricingSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">ab 99 € inklusive Mehrwertsteuer</p>
+            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">Digitaler Kurzcheck 49 € inklusive Mehrwertsteuer</p>
           </div>
         </Reveal>
 
           <Reveal className="mt-8">
             <div className="rounded-[1.6rem] border border-white/14 bg-white/[0.05] p-6 text-center text-sm leading-7 text-[#D7DCE5]">
               <p>Aktuelle Einstiegspreise für Unternehmen und Selbstständige.</p>
-              <p className="mt-2">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
+              <p className="mt-2">Alle Festpreise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Zusätzliche Seiten, Sonderfunktionen oder größere Erweiterungen werden vorab transparent besprochen und erst nach Zustimmung umgesetzt.</p>
               <p className="mt-2">Individuelle digitale Systeme werden nach Umfang, Betrieb und benötigten Funktionen kalkuliert.</p>
               <a
                 href={siteLinks.landingpageDigitaleStruktur}
@@ -3306,8 +3306,8 @@ function ModulesSection() {
       text: 'Für Unternehmen, die online klarer auftreten, Leistungen verständlicher zeigen und Besucher gezielt zur Anfrage führen möchten.',
       highlights: ['Professionelle Webseiten', 'Landingpages'],
       details: [
-        'Professionelle Webseiten: Der digitale Hauptstandort Ihres Unternehmens. Geeignet für Unternehmen, Selbstständige und lokale Betriebe. Löst unklare Leistungsdarstellung und schwache Anfrageführung. Preis: ab 699 € inklusive Mehrwertsteuer.',
-        'Landingpages: Gezielte Einzelseiten für ein konkretes Angebot oder eine Aktion. Geeignet für Kampagnen, Dienstleistungen und Angebotsseiten. Preis: ab 399 € inklusive Mehrwertsteuer.',
+        'Professionelle Webseiten: Der digitale Hauptstandort Ihres Unternehmens. Geeignet für Unternehmen, Selbstständige und lokale Betriebe. Löst unklare Leistungsdarstellung und schwache Anfrageführung. Festpreis: 699 € inklusive Mehrwertsteuer.',
+        'Landingpages: Gezielte Einzelseiten für ein konkretes Angebot oder eine Aktion. Geeignet für Kampagnen, Dienstleistungen und Angebotsseiten. Festpreis: 399 € inklusive Mehrwertsteuer.',
       ],
     },
     {
@@ -3318,7 +3318,7 @@ function ModulesSection() {
       highlights: ['Google-Unternehmensprofil-Struktur', 'lokale Auffindbarkeit', 'klare Profilbausteine'],
       details: [
         'Google-Unternehmensprofil-Struktur: Strukturierter Aufbau der wichtigsten lokalen Google-Bausteine mit Leistungsbereichen, Beschreibung, Kontaktwegen, Bildstruktur und Profilklarheit.',
-        'Geeignet für alle lokal arbeitenden Unternehmen. Preis: ab 199 € inklusive Mehrwertsteuer.',
+        'Geeignet für alle lokal arbeitenden Unternehmen. Festpreis: 199 € inklusive Mehrwertsteuer.',
       ],
     },
     {
@@ -3340,7 +3340,7 @@ function ModulesSection() {
       highlights: ['Direkte Buttons', 'vorbereitete Nachrichten', 'klare Anfrageführung'],
       details: [
         'WhatsApp-Kontaktstruktur: Ein professioneller Anfrageweg über WhatsApp mit direkter Einbindung über Website, Angebotsseiten oder Google.',
-        'Geeignet für Betriebe mit schnellen Kontaktanfragen. Preis: ab 149 € inklusive Mehrwertsteuer.',
+        'Geeignet für Betriebe mit schnellen Kontaktanfragen. Festpreis: 149 € inklusive Mehrwertsteuer.',
       ],
     },
     {
@@ -3351,7 +3351,7 @@ function ModulesSection() {
       highlights: ['Bewertungslink', 'QR-Code', 'Bewertungskarte'],
       details: [
         'Bewertungs- und QR-Code-System: Ein klarer Prozess für mehr und bessere Kundenbewertungen mit Bewertungslink, QR-Code, Bewertungskarte und Anfrage-Texten.',
-        'Geeignet für Betriebe mit direktem Kundenkontakt. Preis: ab 149 € inklusive Mehrwertsteuer.',
+        'Geeignet für Betriebe mit direktem Kundenkontakt. Festpreis: 149 € inklusive Mehrwertsteuer.',
       ],
     },
     {
@@ -3362,7 +3362,7 @@ function ModulesSection() {
       highlights: ['Termin-App', 'Kundenverwaltungs-App', 'Mitarbeiter-App', 'Aufgaben-App'],
       details: [
         'Unternehmens-App / Web-App: Digitaler Arbeitsbereich für wiederkehrende Abläufe und verteilte Informationen.',
-        'Geeignet für Betriebe mit internen Prozessen und Tagesaufgaben. Preis: ab 999 € inklusive Mehrwertsteuer.',
+        'Geeignet für Betriebe mit internen Prozessen und Tagesaufgaben. Festpreis: 999 € inklusive Mehrwertsteuer.',
       ],
     },
     {
@@ -3373,7 +3373,7 @@ function ModulesSection() {
       highlights: ['Tagesübersicht', 'Aufgaben', 'Kennzahlen', 'Notizbereiche'],
       details: [
         'Betriebs-Dashboard: Übersicht aller wichtigen Betriebsinformationen an einem Ort.',
-        'Geeignet für Unternehmen mit mehreren Aufgabenbereichen. Preis: ab 799 € inklusive Mehrwertsteuer.',
+        'Geeignet für Unternehmen mit mehreren Aufgabenbereichen. Festpreis: 799 € inklusive Mehrwertsteuer.',
       ],
     },
     {
@@ -3383,8 +3383,8 @@ function ModulesSection() {
       text: 'Für Teams und Selbstständige, die digitale Unordnung in Ablage, Prozessen und Tagesabläufen reduzieren möchten.',
       highlights: ['Digitale Ordnungssysteme', 'Tagesabschluss-Systeme', 'kassennahe Struktur'],
       details: [
-        'Digitale Ordnungssysteme: Vorlagen, Checklisten, Ablagestruktur, Kundenprozesse und interne Standards. Preis: ab 899 € inklusive Mehrwertsteuer.',
-        'Tagesabschluss-Systeme: Struktur für Tagesübersicht und interne Kontrolle. Preis: ab 899 € inklusive Mehrwertsteuer.',
+        'Digitale Ordnungssysteme: Vorlagen, Checklisten, Ablagestruktur, Kundenprozesse und interne Standards. Festpreis: 899 € inklusive Mehrwertsteuer.',
+        'Tagesabschluss-Systeme: Struktur für Tagesübersicht und interne Kontrolle. Festpreis: 899 € inklusive Mehrwertsteuer.',
         'Kassennahe Struktur und Tagesübersicht: Keine Kassensoftware, keine rechtliche Zertifizierung, sondern Struktur für interne Abläufe. Der Umfang wird passend zum Bedarf kalkuliert.',
       ],
     },
@@ -3395,8 +3395,8 @@ function ModulesSection() {
       text: 'Für Betriebe, die regelmäßig sichtbar sein wollen und dafür eine klare Content-Struktur statt zufälliger Einzelbeiträge brauchen.',
       highlights: ['Profilstruktur', 'Beitragsideen', 'Kanalstruktur', 'Newsletter-Grundstruktur'],
       details: [
-        'Social-Media-Struktur: Profilstruktur, Beitragsideen, Kanalplanung, Beschreibungstexte und Verlinkung. Preis: ab 199 € inklusive Mehrwertsteuer.',
-        'Newsletter-Grundstruktur: Einfacher Einstieg in professionelle Kundenkommunikation mit Anmeldeeinbindung, Listenstruktur und Versandgrundlage. Preis: ab 199 € inklusive Mehrwertsteuer.',
+        'Social-Media-Struktur: Profilstruktur, Beitragsideen, Kanalplanung, Beschreibungstexte und Verlinkung. Festpreis: 199 € inklusive Mehrwertsteuer.',
+        'Newsletter-Grundstruktur: Einfacher Einstieg in professionelle Kundenkommunikation mit Anmeldeeinbindung, Listenstruktur und Versandgrundlage. Festpreis: 199 € inklusive Mehrwertsteuer.',
       ],
     },
   ]
@@ -3923,35 +3923,35 @@ function PricingArchitectureSection() {
   const packages = [
     {
       title: 'STRUKTIVA Soforthilfe',
-      price: 'ab 99 € inklusive Mehrwertsteuer',
+      price: '99 € inklusive Mehrwertsteuer',
       text: 'Für kleine Einzelmaßnahmen, schnelle Anpassungen und klar begrenzte digitale Aufgaben.',
       points: ['Website-Anpassungen', 'kurze Texte', 'Google- oder Social-Media-Texte', 'WhatsApp- und Bewertungstexte'],
       cta: 'Soforthilfe anfragen',
     },
     {
       title: 'Website Start',
-      price: 'ab 499 € inklusive Mehrwertsteuer',
+      price: '499 € inklusive Mehrwertsteuer',
       text: 'Für Betriebe, die eine faire und saubere erste Website- oder Onepager-Grundlage brauchen.',
       points: ['Onepager-Grundstruktur', 'klare Leistungsdarstellung', 'Kontaktbereich', 'mobile Optimierung', 'einfache Kundenführung'],
       cta: 'Website Start anfragen',
     },
     {
       title: 'Sichtbarkeits-Paket',
-      price: 'ab 799 € inklusive Mehrwertsteuer',
+      price: '799 € inklusive Mehrwertsteuer',
       text: 'Für Unternehmen, die Website, lokale Sichtbarkeit, Bewertungen und Kontaktwege professioneller verbinden möchten.',
       points: ['Website- oder Landingpage-Struktur', 'Google-Sichtbarkeitsgrundlage', 'Bewertungs- und QR-Struktur', 'WhatsApp- und Kontaktweg', 'Vertrauenselemente'],
       cta: 'Sichtbarkeits-Paket anfragen',
     },
     {
       title: 'Struktur-Paket',
-      price: 'ab 1.199 € inklusive Mehrwertsteuer',
+      price: '1.199 € inklusive Mehrwertsteuer',
       text: 'Für Betriebe, die mehrere digitale Bausteine als zusammenhängende Struktur brauchen.',
       points: ['mehrseitige Website-Struktur', 'Lead- oder Anfrage-System', 'digitale Angebotslogik', 'Kontakt- und Bewertungsstruktur', 'erweiterbare Strukturbausteine'],
       cta: 'Struktur-Paket anfragen',
     },
     {
       title: 'Premium-Struktur',
-      price: 'ab 1.499 € inklusive Mehrwertsteuer',
+      price: '1.499 € inklusive Mehrwertsteuer',
       text: 'Für umfangreichere Vorhaben mit hochwertiger digitaler Struktur und mehreren Systembausteinen.',
       points: ['Premium-Webauftritt', 'digitale Kundenführung', 'Dashboard- oder App-Konzept möglich', 'interne Strukturbausteine', 'skalierbare Weiterentwicklung'],
       cta: 'Premium-Struktur anfragen',
@@ -3968,7 +3968,7 @@ function PricingArchitectureSection() {
     <section id="preise" className="scroll-mt-28 px-5 py-14 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeader eyebrow="Pakete & Preise" title="Fünf klare Einstiegsmöglichkeiten" text="Die Pakete geben Orientierung und machen den Start planbar." tone="light" />
+          <SectionHeader eyebrow="Pakete & Preise" title="Fünf klare Festpreis-Einstiege" text="Die Pakete geben Orientierung und machen den Start planbar." tone="light" />
         </Reveal>
 
         <div className="mt-10 grid gap-5 xl:grid-cols-[0.82fr_1.18fr]">
@@ -3976,10 +3976,13 @@ function PricingArchitectureSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Preislogik</p>
             <h3 className="mt-3 text-3xl font-semibold text-[#FFF8E8] md:text-4xl">Nicht das größte Paket zuerst. Sondern der sinnvollste Einstieg.</h3>
             <p className="mt-4 text-sm leading-8 text-[rgba(248,241,227,0.76)] md:text-base">
-              Die Pakete geben Orientierung. Sie zeigen, mit welchem Umfang Unternehmen meist starten und wie sich daraus eine klare digitale Struktur entwickeln lässt.
+              Die Pakete geben Orientierung. Sie zeigen feste Einstiegspreise für klar beschriebene Leistungen und wie sich daraus eine klare digitale Struktur entwickeln lässt.
             </p>
             <p className="mt-4 text-sm leading-8 text-[rgba(248,241,227,0.76)] md:text-base">
               Sie können einzelne Leistungen gezielt buchen oder mehrere Bausteine zu einem passenden STRUKTIVA-Paket kombinieren. So bleibt der Einstieg fair und die Umsetzung wächst mit dem tatsächlichen Bedarf.
+            </p>
+            <p className="mt-4 text-sm leading-8 text-[rgba(248,241,227,0.76)] md:text-base">
+              Die genannten Festpreise gelten für den beschriebenen Leistungsumfang. Zusätzliche Seiten, Sonderfunktionen oder größere Erweiterungen werden vorab transparent besprochen und erst nach Zustimmung umgesetzt.
             </p>
             <div className="mt-6 space-y-3">
               {[
@@ -4818,12 +4821,12 @@ function LandingpageDigitaleStrukturPage() {
           </section>
 
           <ServiceSection title="Einstiegspreise für Unternehmen">
-            <p><span className="font-semibold text-[#D8B45A]">Website Start – ab 499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeits-Paket – ab 799 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Struktur-Paket – ab 1.199 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehrere digitale Bausteine verbinden möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Premium-Struktur – ab 1.499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die eine umfangreichere digitale Struktur brauchen.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Website Start – 499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeits-Paket – 799 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Struktur-Paket – 1.199 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehrere digitale Bausteine verbinden möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Premium-Struktur – 1.499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die eine umfangreichere digitale Struktur brauchen.</p>
             <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat inklusive Mehrwertsteuer</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
-            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
+            <p className="text-sm text-[#94A3B8]">Alle Festpreise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Zusätzliche Seiten, Sonderfunktionen oder größere Erweiterungen werden vorab transparent besprochen und erst nach Zustimmung umgesetzt.</p>
           </ServiceSection>
 
           <ServiceSection title="So läuft die Zusammenarbeit ab.">
@@ -5009,12 +5012,12 @@ function LandingpageDigitaleStrukturPageV2() {
           </section>
 
           <ServiceSection title="Einstiegspreise für Unternehmen">
-            <p><span className="font-semibold text-[#D8B45A]">Website Start – ab 499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeits-Paket – ab 799 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Struktur-Paket – ab 1.199 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehrere digitale Bausteine verbinden möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Premium-Struktur – ab 1.499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Website Start – 499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeits-Paket – 799 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Struktur-Paket – 1.199 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehrere digitale Bausteine verbinden möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Premium-Struktur – 1.499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
             <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat inklusive Mehrwertsteuer</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
-            <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
+            <p className="text-sm text-[#94A3B8]">Alle Festpreise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Zusätzliche Seiten, Sonderfunktionen oder größere Erweiterungen werden vorab transparent besprochen und erst nach Zustimmung umgesetzt.</p>
           </ServiceSection>
 
           <ServiceSection title="So läuft die Zusammenarbeit ab.">
@@ -5142,7 +5145,7 @@ function WebseitenPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Unternehmenswebsite – ab 699 € inklusive Mehrwertsteuer</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Unternehmenswebsite klein – 699 € inklusive Mehrwertsteuer</p>
         <p>Für strukturierte Unternehmenswebseiten mit professioneller Außendarstellung, klarer Angebotsführung und sauberer Kontaktstruktur.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
@@ -5176,7 +5179,7 @@ function LandingpagesPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Landingpage – ab 399 € inklusive Mehrwertsteuer</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Landingpage – 399 € inklusive Mehrwertsteuer</p>
         <p>Für verkaufsstarke Landingpages mit Angebotsarchitektur, WhatsApp-CTA und klarer Anfrageführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
@@ -5225,7 +5228,7 @@ function AppsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Unternehmens-App – ab 999 € inklusive Mehrwertsteuer</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Unternehmens-App einfach – 999 € inklusive Mehrwertsteuer</p>
         <p>App- oder Dashboard-Lösungen sind eine hochwertige Zusatzoption für Unternehmen, die neben Sichtbarkeit auch mehr interne Struktur brauchen.</p>
         <p className="text-lg font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat inklusive Mehrwertsteuer</p>
       </ServiceSection>
@@ -5260,7 +5263,7 @@ function GoogleAdsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Google Ads Startpaket – ab 299 € inklusive Mehrwertsteuer</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Lead-/Anfrage-System einfach – 299 € inklusive Mehrwertsteuer</p>
         <p><span className="font-semibold text-white">Wichtig:</span> Werbebudget ist nicht enthalten und wird separat direkt bei Google oder der jeweiligen Werbeplattform eingesetzt.</p>
         <p>Google Ads wird bei STRUKTIVA nicht isoliert, sondern mit Landingpage, Angebotsstruktur und Kontaktführung verbunden.</p>
       </ServiceSection>
@@ -5373,12 +5376,12 @@ function BewertungsQrCodePage() {
           <Reveal>
             <section className="rounded-[1.8rem] border border-[#D8B45A]/28 bg-white/[0.05] p-6 shadow-premium md:p-7">
               <h2 className="text-2xl font-semibold text-white">Startpreis</h2>
-              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Google-Bewertungssystem mit QR-Code ab 149 € inklusive Mehrwertsteuer</p>
+              <p className="mt-4 text-lg font-semibold text-[#D8B45A]">Bewertungs- & QR-Struktur 149 € inklusive Mehrwertsteuer</p>
               <p className="mt-3 text-sm leading-7 text-[#D7DCE5] md:text-base">
                 Ideal als einzelnes Mini-Angebot oder als Teil des STRUKTIVA Sichtbarkeitspakets.
               </p>
               <p className="mt-2 text-sm leading-7 text-[#94A3B8]">
-                Der finale Preis richtet sich nach Umfang, Einbindung, Druckvorlage, Textbausteinen und technischer Umsetzung.
+                Zusätzliche Druckvorlagen, Textbausteine oder technische Erweiterungen werden vorab transparent besprochen und erst nach Zustimmung umgesetzt.
               </p>
               <a
                 href={whatsappRequestHref}
@@ -5401,7 +5404,7 @@ function DigitaleSoforthilfePage() {
   const soforthilfePakete = [
     {
       title: 'Soforthilfe S',
-      price: 'ab 99 € inklusive Mehrwertsteuer',
+      price: '99 € inklusive Mehrwertsteuer',
       description: 'Für kleine digitale Aufgaben, die schnell und sauber erledigt werden sollen.',
       items: [
         'kurze Website-Texte',
@@ -5415,7 +5418,7 @@ function DigitaleSoforthilfePage() {
     },
     {
       title: 'Soforthilfe M',
-      price: 'ab 299 € inklusive Mehrwertsteuer',
+      price: '299 € inklusive Mehrwertsteuer',
       description: 'Für mittlere digitale Aufgaben mit mehr Struktur, Textumfang oder mehreren Elementen.',
       items: [
         'Angebotsseiten',
@@ -5429,7 +5432,7 @@ function DigitaleSoforthilfePage() {
     },
     {
       title: 'Soforthilfe L',
-      price: 'ab 499 € inklusive Mehrwertsteuer',
+      price: '499 € inklusive Mehrwertsteuer',
       description: 'Für größere kurzfristige Aufgaben, bei denen mehrere digitale Bausteine zusammengeführt werden.',
       items: [
         'vollständige Landingpages',
@@ -5579,11 +5582,11 @@ function DigitaleOrdnungssystemePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Preisorientierung</p>
             <div className="mt-3 grid gap-2 md:grid-cols-2">
               {[
-                'Digitale Ordnungssysteme ab 899 € inklusive Mehrwertsteuer',
-                'Tagesabschluss-System ab 899 € inklusive Mehrwertsteuer',
-                'Kassenstruktur-System ab 899 € inklusive Mehrwertsteuer',
-                'Monatsübersicht / Export-System ab 899 € inklusive Mehrwertsteuer',
-                'Steuerberaterfreundliche Erfassungsstruktur ab 899 € inklusive Mehrwertsteuer',
+                'Digitales Ordnungssystem 899 € inklusive Mehrwertsteuer',
+                'Tagesabschluss-System 899 € inklusive Mehrwertsteuer',
+                'Kassenstruktur-System 899 € inklusive Mehrwertsteuer',
+                'Monatsübersicht / Export-System 899 € inklusive Mehrwertsteuer',
+                'Steuerberaterfreundliche Erfassungsstruktur 899 € inklusive Mehrwertsteuer',
               ].map((item) => (
                 <p key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[#D7DCE5]">
                   {item}
@@ -5591,7 +5594,7 @@ function DigitaleOrdnungssystemePage() {
               ))}
             </div>
             <p className="mt-3 text-sm leading-7 text-[#94A3B8]">
-              Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
+              Alle Festpreise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Zusätzliche Seiten, Sonderfunktionen oder größere Erweiterungen werden vorab transparent besprochen und erst nach Zustimmung umgesetzt.
             </p>
             <p className="mt-2 text-sm leading-7 text-[#94A3B8]">
               Individuelle digitale Systeme werden nach Umfang, Betrieb und benötigten Funktionen kalkuliert.
@@ -5772,48 +5775,48 @@ function WebsiteFuerKleineUnternehmenPage() {
 
 const offerPriceInfo = {
   '/website-fuer-kleine-unternehmen': {
-    main: 'ab 699 €',
-    extras: ['Landingpage ab 399 €', 'Onepager ab 499 €', 'Mehrseitige Website ab 999 €', 'Website-Relaunch ab 599 €'],
+    main: '699 €',
+    extras: ['Landingpage 399 €', 'Onepager 499 €', 'Mehrseitige Website 999 €', 'Website-Relaunch 599 €'],
   },
   '/landingpage-erstellen-lassen': {
-    main: 'ab 399 €',
-    extras: ['Kleine Einzelmaßnahme ab 99 €', 'Onepager ab 499 €'],
+    main: '399 €',
+    extras: ['Digitaler Kurzcheck 49 €', 'STRUKTIVA Soforthilfe klein 99 €', 'Onepager 499 €'],
   },
   '/google-sichtbarkeit-kleine-unternehmen': {
-    main: 'ab 199 €',
-    extras: ['Google-Unternehmensprofil / lokale Sichtbarkeit ab 199 €', 'Sichtbarkeits-Paket ab 799 €'],
+    main: '199 €',
+    extras: ['Google-Profil Kurzoptimierung 199 €', 'Website + Google Startpaket 799 €'],
   },
   '/digitale-kundenfuehrung': {
-    main: 'ab 299 €',
-    extras: ['WhatsApp- & Kontaktstruktur ab 149 €', 'Lead-System / Anfrage-System ab 299 €'],
+    main: '299 €',
+    extras: ['WhatsApp- & Kontaktstruktur 149 €', 'Lead-/Anfrage-System einfach 299 €'],
   },
   '/whatsapp-kontaktstruktur': {
-    main: 'ab 149 €',
-    extras: ['Kundenführungsstruktur ab 299 €'],
+    main: '149 €',
+    extras: ['Lead-/Anfrage-System einfach 299 €'],
   },
   '/social-media-struktur': {
-    main: 'ab 199 €',
-    extras: ['Content-Grundstruktur für Unternehmen ab 199 €', 'Social-Media-Struktur ab 199 €'],
+    main: '199 €',
+    extras: ['Content-Grundstruktur für Unternehmen 199 €', 'Social-Media-Struktur 199 €'],
   },
   '/newsletter-einbindung': {
-    main: 'ab 199 €',
-    extras: ['Newsletter-Grundstruktur ab 299 €'],
+    main: '199 €',
+    extras: ['Newsletter-Grundstruktur 199 €'],
   },
   '/unternehmens-apps': {
-    main: 'ab 999 €',
-    extras: ['App-Konzept / Demo-App ab 499 €', 'Betriebs-Dashboard ab 799 €', 'Kundenverwaltungs-System ab 899 €', 'Termin-/Planungsübersicht ab 699 €', 'Digitale Kundenkartei ab 799 €'],
+    main: '999 €',
+    extras: ['Unternehmens-App einfach 999 €', 'Betriebs-Dashboard 799 €', 'Digitales Ordnungssystem 899 €'],
   },
   '/betriebs-dashboards': {
-    main: 'ab 799 €',
-    extras: ['Kundenverwaltungs-System ab 899 €', 'Termin-/Planungsübersicht ab 699 €'],
+    main: '799 €',
+    extras: ['Betriebs-Dashboard 799 €', 'Digitales Ordnungssystem 899 €'],
   },
   '/angebotsarchitektur': {
-    main: 'ab 299 €',
-    extras: ['Kleine Einzelmaßnahme ab 99 €', 'Lead-System / Anfrage-System ab 299 €'],
+    main: '299 €',
+    extras: ['Digitaler Kurzcheck 49 €', 'Lead-/Anfrage-System einfach 299 €'],
   },
   '/digitale-unternehmensstruktur': {
-    main: 'ab 1.199 €',
-    extras: ['Kleine Einzelmaßnahme ab 99 €', 'Struktur-Paket ab 1.199 €', 'Premium-Struktur ab 1.499 €'],
+    main: '1.199 €',
+    extras: ['STRUKTIVA Struktur-Paket 1.199 €', 'Premium-Struktur 1.499 €'],
   },
 }
 
@@ -5844,7 +5847,7 @@ function OfferDetailPage({ title, intro, points, pathname }) {
                 </div>
               )}
               <p className="mt-3 text-sm leading-7 text-[#94A3B8]">
-                Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.
+                Alle Festpreise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Zusätzliche Seiten, Sonderfunktionen oder größere Erweiterungen werden vorab transparent besprochen und erst nach Zustimmung umgesetzt.
               </p>
             </div>
           )}
@@ -5875,7 +5878,7 @@ function LeistungenPage() {
     ['Social-Media-Struktur', 'Strukturierte Inhalte, klare Kanäle und ein professioneller Social-Media-Auftritt.'],
     [
       'Persönliche Profil- & Bewerbungsseite',
-      'Eine eigene digitale Seite für Bewerbung, Portfolio, Lebenslauf und persönliche Vorstellung. Ideal für Bewerber, Künstler, Einzelpersonen und Selbstständige, die sich professionell präsentieren möchten – mit persönlichem Link statt nur klassischer PDF-Bewerbung. Lebenslauf, Projekte, Arbeitsproben, Kontaktmöglichkeiten und ein PDF-Download können übersichtlich eingebunden werden; optional auch mit QR-Code. Ab 299 € inklusive Mehrwertsteuer.',
+      'Eine eigene digitale Seite für Bewerbung, Portfolio, Lebenslauf und persönliche Vorstellung. Ideal für Bewerber, Künstler, Einzelpersonen und Selbstständige, die sich professionell präsentieren möchten – mit persönlichem Link statt nur klassischer PDF-Bewerbung. Lebenslauf, Projekte, Arbeitsproben, Kontaktmöglichkeiten und ein PDF-Download können übersichtlich eingebunden werden; optional auch mit QR-Code. 299 € inklusive Mehrwertsteuer.',
     ],
   ]
 
@@ -5895,11 +5898,11 @@ function LeistungenPage() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Einzelmaßnahmen & Pakete</p>
               <p className="mt-2 max-w-3xl text-sm leading-7 text-[#F2E6C8] md:text-base">
-                Einzelmaßnahmen starten ab 99 € inklusive Mehrwertsteuer. Größere Leistungen können einzeln gebucht oder sinnvoll zu einem STRUKTIVA-Paket kombiniert werden. Der genaue Preis richtet sich nach Umfang, Ziel und gewünschter Umsetzung.
+                Bei STRUKTIVA arbeiten wir mit klaren Festpreisen statt unklaren Überraschungen. Einzelne Leistungen können separat gebucht oder sinnvoll zu passenden Paketen kombiniert werden. Erweiterungen werden immer vorab transparent besprochen.
               </p>
             </div>
             <div className="inline-flex h-[5.5rem] w-[5.5rem] shrink-0 items-center justify-center rounded-full border border-[#F0C45C]/60 bg-[radial-gradient(circle_at_30%_20%,rgba(255,248,224,0.28),transparent_38%),linear-gradient(145deg,rgba(216,180,90,0.24),rgba(143,109,39,0.1))] px-3 text-center text-sm font-semibold leading-tight text-[#FFF4D0] shadow-[0_16px_34px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.18)]">
-              ab 99 €
+              Klare Festpreise
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -5916,7 +5919,7 @@ function LeistungenPage() {
           </div>
           <div className="metallic-result-box mt-6 rounded-[1.5rem] p-5">
             <p className="text-sm leading-7 text-[#D7DCE5] md:text-base">
-              Sie können mit einer kleinen Einzelmaßnahme starten oder mehrere Bausteine passend zum Bedarf bündeln. So bleibt die Preislogik transparent und die Umsetzung wächst mit dem tatsächlichen Umfang.
+              Festpreise gelten für den beschriebenen Leistungsumfang. Zusätzliche Seiten, Sonderfunktionen oder größere Erweiterungen werden vorab transparent besprochen und erst nach Zustimmung umgesetzt.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a
