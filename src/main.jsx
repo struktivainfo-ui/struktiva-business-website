@@ -4532,7 +4532,7 @@ function PaketePage() {
     <>
       <main className="px-5 pb-4 pt-10 lg:px-8 lg:pt-14">
         <div className="mx-auto max-w-7xl">
-          <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
+          <section id="pakete" className="scroll-mt-28 rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Pakete & Betreuung</p>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
               Pakete & Einstiegsmöglichkeiten
@@ -5857,7 +5857,7 @@ function LeistungenPage() {
     ['Unternehmens-Apps', 'Individuelle App- und Dashboard-Konzepte für Unternehmen.'],
     ['Betriebs-Dashboards', 'Übersichten für Termine, Kunden, Zahlen und interne Abläufe.'],
     ['Digitale Ordnungssysteme', 'Tagesabschluss, Kassenstruktur und steuerberaterfreundliche Abläufe.'],
-    ['Social-Media- & Pinterest-Struktur', 'Inhalte und Kanäle mit klarer Richtung statt Zufall.'],
+    ['Social-Media-Struktur', 'Strukturierte Inhalte, klare Kanäle und ein professioneller Social-Media-Auftritt.'],
   ]
 
   return (
@@ -5879,18 +5879,26 @@ function LeistungenPage() {
                 id={title === 'Digitale Soforthilfe' ? 'digitale-soforthilfe' : undefined}
                 className="metallic-feature-card rounded-2xl p-4"
               >
-                <h2 className="text-base font-semibold text-white">{title}</h2>
+                <div className="flex items-start justify-between gap-4">
+                  <h2 className="min-w-0 text-base font-semibold text-white">{title}</h2>
+                  <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[#F0C45C]/55 bg-[radial-gradient(circle_at_30%_20%,rgba(255,248,224,0.24),transparent_38%),linear-gradient(145deg,rgba(216,180,90,0.22),rgba(143,109,39,0.1))] px-2 text-center text-[11px] font-semibold leading-tight text-[#FFF4D0] shadow-[0_12px_26px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.18)] sm:h-[4.5rem] sm:w-[4.5rem]">
+                    ab 99 €
+                  </span>
+                </div>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
               </article>
             ))}
           </div>
           <div className="metallic-result-box mt-6 rounded-[1.5rem] p-5">
             <p className="text-sm leading-7 text-[#D7DCE5] md:text-base">
-              Leistungen zeigen, was möglich ist. Konkrete Einstiegsmöglichkeiten und Preise findest du im Bereich Pakete oder nach einer kurzen Ersteinschätzung.
+              Alle Leistungen können einzeln gebucht oder sinnvoll zu einem STRUKTIVA-Paket kombiniert werden. Der genaue Preis richtet sich nach Umfang, Ziel und gewünschter Umsetzung.
+            </p>
+            <p className="mt-3 text-sm font-semibold leading-7 text-[#F0C45C] md:text-base">
+              Einstieg ab 99 €. Preise auf Anfrage – abhängig von Umfang und Umsetzung.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a
-                href={siteLinks.paketePage}
+                href={`${siteLinks.paketePage}#pakete`}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/38 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
               >
                 Pakete ansehen
