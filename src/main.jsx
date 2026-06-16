@@ -5877,20 +5877,92 @@ function OfferDetailPage({ title, intro, points, pathname }) {
 
 function LeistungenPage() {
   const allLeistungen = [
-    ['Websites & Landingpages', 'Moderne Website-Formate für Angebote, Vertrauen, mobile Darstellung und klare Kundenführung.'],
-    ['Google-Sichtbarkeit', 'Struktur für bessere Auffindbarkeit, professionelle Präsenz und saubere Verbindung zur Website.'],
-    ['Lead-Systeme', 'Anfragen werden sauber erfasst, vorbereitet und klarer weitergeführt.'],
-    ['KI & Automatisierung', 'Einfache Systeme für Anfragen, Kommunikation, Antwortvorlagen und nachvollziehbare digitale Abläufe.'],
-    ['WhatsApp-Kontaktstruktur', 'Direkte Kontaktwege über Website, Google und Landingpage.'],
-    ['Bewertungs- & QR-Strukturen', 'Klare Bewertungswege mit QR-Code, Bewertungslink und passender Kundenführung.'],
-    ['Unternehmens-Apps', 'Individuelle App- und Dashboard-Konzepte für Unternehmen.'],
-    ['Betriebs-Dashboards', 'Übersichten für Termine, Kunden, Zahlen und interne Abläufe.'],
-    ['Digitale Ordnungssysteme', 'Tagesabschluss, Kassenstruktur und steuerberaterfreundliche Abläufe.'],
-    ['Social-Media-Struktur', 'Strukturierte Inhalte, klare Kanäle und ein professioneller Social-Media-Auftritt.'],
-    [
-      'Persönliche Profil- & Bewerbungsseite',
-      'Eine eigene digitale Seite für Bewerbung, Portfolio, Lebenslauf und persönliche Vorstellung. Ideal für Bewerber, Künstler, Einzelpersonen und Selbstständige, die sich professionell präsentieren möchten – mit persönlichem Link statt nur klassischer PDF-Bewerbung. Lebenslauf, Projekte, Arbeitsproben, Kontaktmöglichkeiten und ein PDF-Download können übersichtlich eingebunden werden; optional auch mit QR-Code. Festpreis: 299 € inklusive Mehrwertsteuer.',
-    ],
+    {
+      title: 'Digitaler Kurzcheck',
+      price: 'Festpreis: 49 € inklusive Mehrwertsteuer',
+      text: 'Wir prüfen kurz Ihren bestehenden digitalen Auftritt: Website, Google-Sichtbarkeit, Kontaktwege und erste Außenwirkung. Sie erhalten eine verständliche Einschätzung mit konkreten Punkten, wo Ihre digitale Struktur verbessert werden kann.',
+    },
+    {
+      title: 'STRUKTIVA Soforthilfe',
+      price: 'Festpreis: 99 € inklusive Mehrwertsteuer',
+      text: 'Für kleine, gezielte Verbesserungen an Website, Kontaktwegen, Texten, Buttons oder digitalen Abläufen. Ideal, wenn schnell etwas korrigiert, ergänzt oder verständlicher gemacht werden soll.',
+    },
+    {
+      title: 'Landingpage',
+      price: 'Festpreis: 399 € inklusive Mehrwertsteuer',
+      text: 'Eine fokussierte Seite für ein Angebot, eine Aktion, eine Dienstleistung oder eine Kampagne. Die Landingpage führt Besucher klar zu einem Ziel: Kontakt aufnehmen, anfragen oder mehr erfahren.',
+    },
+    {
+      title: 'Onepager',
+      price: 'Festpreis: 499 € inklusive Mehrwertsteuer',
+      text: 'Eine kompakte professionelle Website auf einer Seite. Ideal für Selbstständige, Dienstleister, kleine Betriebe oder neue Projekte, die Leistungen, Vertrauen und Kontakt klar darstellen möchten.',
+    },
+    {
+      title: 'Unternehmenswebsite klein',
+      price: 'Festpreis: 699 € inklusive Mehrwertsteuer',
+      text: 'Eine professionelle Website mit klarer Struktur für Unternehmen, Selbstständige und lokale Betriebe. Inhalte, Leistungen, Vertrauen, Kontaktwege und digitale Außenwirkung werden sauber aufgebaut.',
+    },
+    {
+      title: 'Mehrseitige Website',
+      price: 'Festpreis: 999 € inklusive Mehrwertsteuer',
+      text: 'Für Unternehmen, die mehr Inhalte, mehrere Leistungsbereiche oder eine stärkere digitale Präsenz benötigen. Mehrere Unterseiten sorgen für bessere Übersicht, mehr Tiefe und professionellere Darstellung.',
+    },
+    {
+      title: 'Website-Relaunch',
+      price: 'Festpreis: 599 € inklusive Mehrwertsteuer',
+      text: 'Wir überarbeiten einen bestehenden Internetauftritt und bringen Struktur, Lesbarkeit, Kontaktführung, mobile Darstellung und professionelle Wirkung auf ein besseres Niveau.',
+    },
+    {
+      title: 'Google-Profil Kurzoptimierung',
+      price: 'Festpreis: 199 € inklusive Mehrwertsteuer',
+      text: 'Wir prüfen und optimieren die wichtigsten Grundlagen Ihres Google-Unternehmensprofils: Beschreibung, Leistungen, Bilder, Kontaktangaben, Website-Verbindung und lokale Außenwirkung.',
+    },
+    {
+      title: 'WhatsApp- & Kontaktstruktur',
+      price: 'Festpreis: 149 € inklusive Mehrwertsteuer',
+      text: 'Wir sorgen dafür, dass Kunden schneller und einfacher Kontakt aufnehmen können. Dazu gehören klare Kontaktbuttons, WhatsApp-Verlinkung, Anfragetexte und eine verständliche Kontaktführung.',
+    },
+    {
+      title: 'Bewertungs- & QR-Struktur',
+      price: 'Festpreis: 149 € inklusive Mehrwertsteuer',
+      text: 'Wir erstellen eine einfache Struktur, mit der Kunden leichter Bewertungen abgeben können. Auf Wunsch mit QR-Code, Bewertungslink, Aushang oder digitaler Einbindung auf Website und Kontaktwegen.',
+    },
+    {
+      title: 'Lead- / Anfrage-System einfach',
+      price: 'Festpreis: 299 € inklusive Mehrwertsteuer',
+      text: 'Ein einfaches System, damit Anfragen sauber ankommen und besser verarbeitet werden können. Zum Beispiel über Formular, E-Mail-Benachrichtigung, WhatsApp-Hinweis oder strukturierte Anfrageführung.',
+    },
+    {
+      title: 'KI- & Automatisierung',
+      price: 'Festpreis: 299 € inklusive Mehrwertsteuer',
+      text: 'Einfache Automatisierungen für wiederkehrende Aufgaben: Anfrage-Antworten, Textvorschläge, Bewertungsantworten, interne Abläufe oder kleine digitale Helfer, die Zeit sparen und Struktur bringen.',
+    },
+    {
+      title: 'Social-Media-Struktur',
+      price: 'Festpreis: 199 € inklusive Mehrwertsteuer',
+      text: 'Strukturierte Inhalte, klare Kanäle und ein professioneller Social-Media-Auftritt. Wir helfen dabei, Themen, Profiltexte, Beiträge und Weiterleitungen sinnvoll mit Website und Kontaktwegen zu verbinden.',
+    },
+    {
+      title: 'Persönliche Profil- & Bewerbungsseite',
+      price: 'Festpreis: 299 € inklusive Mehrwertsteuer',
+      text: 'Eine eigene digitale Seite für Bewerbung, Portfolio, Lebenslauf und persönliche Vorstellung. Ideal für Bewerber, Künstler, Selbstständige und Einzelpersonen, die sich professionell mit einem eigenen Link präsentieren möchten.',
+      demoHref: siteLinks.demoPersoenlicheProfilseite,
+    },
+    {
+      title: 'Betriebs-Dashboard',
+      price: 'Festpreis: 799 € inklusive Mehrwertsteuer',
+      text: 'Ein übersichtliches digitales Dashboard für wichtige Informationen, Aufgaben, Zahlen oder Abläufe im Betrieb. Ideal, um interne Struktur zu verbessern und wiederkehrende Informationen an einem Ort sichtbar zu machen.',
+    },
+    {
+      title: 'Digitales Ordnungssystem',
+      price: 'Festpreis: 899 € inklusive Mehrwertsteuer',
+      text: 'Ein digitales System für mehr Übersicht im Alltag: Abläufe, Listen, Aufgaben, Dokumente, Tagesabschluss oder interne Strukturen werden sinnvoll geordnet und verständlich nutzbar gemacht.',
+    },
+    {
+      title: 'Unternehmens-App einfach',
+      price: 'Festpreis: 999 € inklusive Mehrwertsteuer',
+      text: 'Eine einfache digitale App-Lösung für interne Abläufe, Kundenverwaltung, Termine, Informationen oder betriebliche Strukturen. Besonders geeignet, wenn Prozesse nicht mehr nur über Papier, WhatsApp oder einzelne Listen laufen sollen.',
+    },
   ]
 
   return (
@@ -5909,31 +5981,40 @@ function LeistungenPage() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Einzelmaßnahmen & Pakete</p>
               <p className="mt-2 max-w-3xl text-sm leading-7 text-[#F2E6C8] md:text-base">
-                Bei STRUKTIVA arbeiten wir mit klaren Festpreisen statt unklaren Überraschungen. Einzelne Leistungen können separat gebucht oder sinnvoll zu passenden Paketen kombiniert werden. Erweiterungen werden immer vorab transparent besprochen.
+                Alle Leistungen können einzeln gebucht oder sinnvoll zu einem passenden STRUKTIVA-Paket kombiniert werden. Die genannten Festpreise gelten für den beschriebenen Leistungsumfang. Erweiterungen oder Sonderfunktionen werden vorab transparent besprochen.
               </p>
             </div>
-            <div className="inline-flex h-[5.5rem] w-[5.5rem] shrink-0 items-center justify-center rounded-full border border-[#F0C45C]/60 bg-[radial-gradient(circle_at_30%_20%,rgba(255,248,224,0.28),transparent_38%),linear-gradient(145deg,rgba(216,180,90,0.24),rgba(143,109,39,0.1))] px-3 text-center text-sm font-semibold leading-tight text-[#FFF4D0] shadow-[0_16px_34px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.18)]">
-              Klare Festpreise
+            <div className="inline-flex h-auto min-h-[5.5rem] w-[6.3rem] shrink-0 flex-col items-center justify-center rounded-full border border-[#F0C45C]/60 bg-[radial-gradient(circle_at_30%_20%,rgba(255,248,224,0.28),transparent_38%),linear-gradient(145deg,rgba(216,180,90,0.24),rgba(143,109,39,0.1))] px-3 py-3 text-center text-sm font-semibold leading-tight text-[#FFF4D0] shadow-[0_16px_34px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.18)]">
+              <span>Klare Festpreise</span>
+              <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.12em] text-[#FFF4D0]/78">Einzeln oder als Paket</span>
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {allLeistungen.map(([title, text]) => (
+            {allLeistungen.map((service) => (
               <article
-                key={title}
-                id={title === 'Digitale Soforthilfe' ? 'digitale-soforthilfe' : undefined}
-                className="metallic-feature-card rounded-2xl p-4"
+                key={service.title}
+                id={service.title === 'STRUKTIVA Soforthilfe' ? 'digitale-soforthilfe' : undefined}
+                className="metallic-feature-card flex h-full flex-col rounded-2xl p-4"
               >
-                <h2 className="text-base font-semibold text-white">{title}</h2>
-                <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
-                {title === 'Persönliche Profil- & Bewerbungsseite' ? (
-                  <a
-                    href={siteLinks.demoPersoenlicheProfilseite}
-                    className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/35 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
-                  >
-                    Demo ansehen
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </a>
-                ) : null}
+                <div className="rounded-[1.1rem] border border-[#D8B45A]/20 bg-[linear-gradient(160deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#D8B45A]/78">Leistung</p>
+                  <h2 className="mt-2 text-base font-semibold text-white">{service.title}</h2>
+                </div>
+                <div className="mt-4 inline-flex w-fit rounded-full border border-[#D8B45A]/28 bg-[#D8B45A]/10 px-4 py-2 text-sm font-semibold text-[#F3D48A]">
+                  {service.price}
+                </div>
+                <p className="mt-4 text-sm leading-7 text-[#D7DCE5]">{service.text}</p>
+                <div className="mt-auto pt-4">
+                  {service.demoHref ? (
+                    <a
+                      href={service.demoHref}
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/35 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
+                    >
+                      Demo ansehen
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                  ) : null}
+                </div>
               </article>
             ))}
           </div>
