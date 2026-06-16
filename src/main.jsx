@@ -5873,6 +5873,10 @@ function LeistungenPage() {
     ['Betriebs-Dashboards', 'Übersichten für Termine, Kunden, Zahlen und interne Abläufe.'],
     ['Digitale Ordnungssysteme', 'Tagesabschluss, Kassenstruktur und steuerberaterfreundliche Abläufe.'],
     ['Social-Media-Struktur', 'Strukturierte Inhalte, klare Kanäle und ein professioneller Social-Media-Auftritt.'],
+    [
+      'Persönliche Profil- & Bewerbungsseite',
+      'Eine eigene digitale Seite für Bewerbung, Portfolio, Lebenslauf und persönliche Vorstellung. Ideal für Bewerber, Künstler, Einzelpersonen und Selbstständige, die sich professionell präsentieren möchten – mit persönlichem Link statt nur klassischer PDF-Bewerbung. Lebenslauf, Projekte, Arbeitsproben, Kontaktmöglichkeiten und ein PDF-Download können übersichtlich eingebunden werden; optional auch mit QR-Code. Ab 299 € inklusive Mehrwertsteuer.',
+    ],
   ]
 
   return (
