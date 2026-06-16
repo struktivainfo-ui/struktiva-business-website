@@ -386,28 +386,28 @@ const coreServices = [
     icon: LayoutTemplate,
     title: 'Professionelle Webseiten',
     description: 'Moderne Webseiten für Unternehmen, die Vertrauen aufbauen, Leistungen klar darstellen und Kontaktwege sinnvoll verbinden.',
-    price: 'ab 599 € inklusive Mehrwertsteuer',
+    price: 'ab 699 € inklusive Mehrwertsteuer',
     href: siteLinks.webseitenPage,
   },
   {
     icon: Target,
     title: 'Landingpages',
     description: 'Klar fokussierte Seiten für Angebote, Aktionen, Produkte oder Dienstleistungen mit sauberer Struktur und direkter Handlungsaufforderung.',
-    price: 'ab 299 € inklusive Mehrwertsteuer',
+    price: 'ab 399 € inklusive Mehrwertsteuer',
     href: siteLinks.landingpagesPage,
   },
   {
     icon: Search,
     title: 'Google-Sichtbarkeit',
     description: 'Strukturierte Unterstützung für bessere Auffindbarkeit über Google, lokale Suchanfragen, Unternehmensprofil-Texte und saubere Online-Grundlagen.',
-    price: 'auf Anfrage',
+    price: 'ab 199 € inklusive Mehrwertsteuer',
     href: siteLinks.googleSichtbarkeit,
   },
   {
     icon: MousePointerClick,
     title: 'Digitale Kundenführung',
     description: 'Klare Kontaktwege über Webseite, WhatsApp, Bewertungssysteme, Anfrageformulare und sinnvolle digitale Abläufe.',
-    price: 'auf Anfrage',
+    price: 'ab 149 € inklusive Mehrwertsteuer',
     href: siteLinks.digitaleUnternehmensstruktur,
   },
   {
@@ -468,76 +468,78 @@ const googleAdsCards = [
 
 const pricingPackages = [
   {
-    title: 'Sichtbarkeit',
-    price: 'ab 599 €',
-    badge: 'Professioneller Einstieg',
-    description: 'Für Betriebe, die online professioneller gefunden werden wollen.',
+    title: 'STRUKTIVA Soforthilfe',
+    price: 'ab 99 € inklusive Mehrwertsteuer',
+    badge: 'Kleine Einzelmaßnahme',
+    description: 'Für einzelne digitale Aufgaben, schnelle Anpassungen oder professionelle Soforthilfe.',
     features: [
-      'moderne Onepage-Webseite',
+      'kleine Website-Anpassungen',
+      'kurze Texte oder Korrekturen',
+      'Google- oder Social-Media-Texte',
+      'WhatsApp- und Bewertungstexte',
+    ],
+    note: 'Für einzelne Aufgaben mit klar begrenztem Umfang.',
+    cta: 'Soforthilfe anfragen',
+    strong: true,
+  },
+  {
+    title: 'Website Start',
+    price: 'ab 499 € inklusive Mehrwertsteuer',
+    badge: 'Webseiten-Einstieg',
+    description: 'Für Betriebe, die eine saubere erste Website- oder Onepager-Grundlage brauchen.',
+    features: [
+      'Onepager-Grundstruktur',
       'mobile Optimierung',
-      'klare Angebotsstruktur',
-      'WhatsApp-Kontakt',
-      'Google-Bewertungslink',
-      'einfache Kontaktführung',
-      'Newsletter-Einbindung',
+      'klare Angebotsdarstellung',
+      'Kontaktführung',
     ],
-    note: 'Ein klarer Start für Betriebe, die digital professioneller auftreten und erreichbar sein möchten.',
-    cta: 'Sichtbarkeit anfragen',
+    note: 'Der Einstieg bleibt fair und kann später erweitert werden.',
+    cta: 'Website Start anfragen',
     strong: true,
   },
   {
-    title: 'Kundengewinnung',
-    price: 'ab 899 €',
-    badge: 'Verkaufsstarke Struktur',
-    description: 'Für Unternehmen, die mehr Anfragen aus ihrem digitalen Auftritt machen wollen.',
+    title: 'Sichtbarkeits-Paket',
+    price: 'ab 799 € inklusive Mehrwertsteuer',
+    badge: 'Website & Sichtbarkeit',
+    description: 'Für Unternehmen, die Website, Google-Grundlage und Kontaktwege sinnvoll verbinden möchten.',
     features: [
-      'verkaufsstarke Landingpage',
-      'Angebotsarchitektur',
-      'WhatsApp-CTA',
-      'Google-Bewertungsstrategie',
-      'Social-Media-Startstruktur',
+      'Website- oder Landingpage-Struktur',
+      'Google-Unternehmensprofil-Grundlage',
+      'Bewertungs- und Kontaktwege',
       'klare Kundenführung',
-      'einfache Newsletter-Einbindung auf Wunsch',
     ],
-    note: 'Der Fokus liegt auf verständlicher Angebotskommunikation und qualifizierter Anfrageführung.',
-    cta: 'Kundengewinnung anfragen',
-    strong: true,
-  },
-  {
-    title: 'Unternehmensarchitektur',
-    price: 'ab 1.499 €',
-    subtitle: 'Optionale App- oder Dashboard-Lösung möglich',
-    badge: 'Ganzheitliches System',
-    description: 'Für Betriebe, die ein vollständiges digitales System brauchen.',
-    features: [
-      'Website oder Mehrseiten-Struktur',
-      'Landingpages',
-      'Google-Struktur',
-      'Social-Media-System',
-      'Kundenanfrage-System',
-      'App- oder Dashboard-Konzept',
-      'Newsletter-System als zusätzlicher Baustein möglich',
-      '30 Tage Begleitung',
-    ],
-    note: 'Für Unternehmen, die nicht nur einen Auftritt, sondern ein klares digitales Unternehmenssystem aufbauen wollen.',
-    cta: 'Unternehmensarchitektur anfragen',
+    note: 'Für mehr Klarheit in Sichtbarkeit, Vertrauen und Kontaktaufnahme.',
+    cta: 'Sichtbarkeit anfragen',
     premium: true,
   },
   {
-    title: 'Monatliche Betreuung',
-    price: 'ab 199 € / Monat',
-    badge: 'Laufende Begleitung',
-    description: 'Für Unternehmen, die nach der Erstellung dauerhaft Unterstützung bei Webseite, Landingpage, Google Ads oder App-Systemen möchten.',
+    title: 'Struktur-Paket',
+    price: 'ab 1.199 € inklusive Mehrwertsteuer',
+    badge: 'Mehr Bausteine',
+    description: 'Für Unternehmen, die mehrere digitale Bausteine professionell zusammenführen möchten.',
     features: [
-      'kleine Änderungen',
-      'neue Inhalte',
-      'Social-Media-Vorlagen',
-      'Google-Bewertungen',
-      'technische Pflege',
-      'Auswertung und Optimierung',
+      'mehrseitige Website-Struktur',
+      'Lead- oder Anfrage-System',
+      'Bewertungs- und QR-Struktur',
+      'digitale Angebotslogik',
     ],
-    note: 'Der genaue monatliche Umfang wird im persönlichen Gespräch festgelegt. Die monatliche Betreuung erfolgt im vereinbarten Umfang. Zusätzliche Arbeiten werden nach Aufwand angeboten. Basis-Betreuung ab 199 € / Monat, Struktur-Betreuung ab 299 € / Monat und Premium-Betreuung ab 499 € / Monat.',
-    cta: 'Betreuung anfragen',
+    note: 'Der Umfang richtet sich nach Ziel, Ausgangslage und gewünschter Umsetzung.',
+    cta: 'Struktur-Paket anfragen',
+  },
+  {
+    title: 'Premium-Struktur',
+    price: 'ab 1.499 € inklusive Mehrwertsteuer',
+    badge: 'Umfassende Struktur',
+    description: 'Für Betriebe, die eine umfangreichere digitale Struktur mit mehreren Systembausteinen brauchen.',
+    features: [
+      'vollständigere Website-Struktur',
+      'digitale Kundenführung',
+      'Dashboard- oder App-Konzept möglich',
+      'erweiterbare Unternehmensarchitektur',
+    ],
+    note: 'Für größere Vorhaben mit hochwertiger, klar abgestimmter Umsetzung.',
+    cta: 'Premium-Struktur anfragen',
+    premium: true,
   },
 ]
 
@@ -2762,7 +2764,7 @@ function ServicesSectionPremium() {
     },
     {
       title: 'Kommunikation & Reichweite',
-      items: ['Social-Media- und Pinterest-Struktur', 'Newsletter-Einbindung'],
+      items: ['Social-Media-Struktur', 'Newsletter-Einbindung'],
     },
     {
       title: 'Systeme & Unternehmensstruktur',
@@ -3304,8 +3306,8 @@ function ModulesSection() {
       text: 'Für Unternehmen, die online klarer auftreten, Leistungen verständlicher zeigen und Besucher gezielt zur Anfrage führen möchten.',
       highlights: ['Professionelle Webseiten', 'Landingpages'],
       details: [
-        'Professionelle Webseiten: Der digitale Hauptstandort Ihres Unternehmens. Geeignet für Unternehmen, Selbstständige und lokale Betriebe. Löst unklare Leistungsdarstellung und schwache Anfrageführung. Preis: ab 599 € inklusive Mehrwertsteuer.',
-        'Landingpages: Gezielte Einzelseiten für ein konkretes Angebot oder eine Aktion. Geeignet für Kampagnen, Dienstleistungen und Angebotsseiten. Preis: ab 299 € inklusive Mehrwertsteuer.',
+        'Professionelle Webseiten: Der digitale Hauptstandort Ihres Unternehmens. Geeignet für Unternehmen, Selbstständige und lokale Betriebe. Löst unklare Leistungsdarstellung und schwache Anfrageführung. Preis: ab 699 € inklusive Mehrwertsteuer.',
+        'Landingpages: Gezielte Einzelseiten für ein konkretes Angebot oder eine Aktion. Geeignet für Kampagnen, Dienstleistungen und Angebotsseiten. Preis: ab 399 € inklusive Mehrwertsteuer.',
       ],
     },
     {
@@ -3316,7 +3318,7 @@ function ModulesSection() {
       highlights: ['Google-Unternehmensprofil-Struktur', 'lokale Auffindbarkeit', 'klare Profilbausteine'],
       details: [
         'Google-Unternehmensprofil-Struktur: Strukturierter Aufbau der wichtigsten lokalen Google-Bausteine mit Leistungsbereichen, Beschreibung, Kontaktwegen, Bildstruktur und Profilklarheit.',
-        'Geeignet für alle lokal arbeitenden Unternehmen. Preis: ab 299 € inklusive Mehrwertsteuer.',
+        'Geeignet für alle lokal arbeitenden Unternehmen. Preis: ab 199 € inklusive Mehrwertsteuer.',
       ],
     },
     {
@@ -3338,7 +3340,7 @@ function ModulesSection() {
       highlights: ['Direkte Buttons', 'vorbereitete Nachrichten', 'klare Anfrageführung'],
       details: [
         'WhatsApp-Kontaktstruktur: Ein professioneller Anfrageweg über WhatsApp mit direkter Einbindung über Website, Angebotsseiten oder Google.',
-        'Geeignet für Betriebe mit schnellen Kontaktanfragen. Preis: ab 199 € inklusive Mehrwertsteuer.',
+        'Geeignet für Betriebe mit schnellen Kontaktanfragen. Preis: ab 149 € inklusive Mehrwertsteuer.',
       ],
     },
     {
@@ -3382,19 +3384,19 @@ function ModulesSection() {
       highlights: ['Digitale Ordnungssysteme', 'Tagesabschluss-Systeme', 'kassennahe Struktur'],
       details: [
         'Digitale Ordnungssysteme: Vorlagen, Checklisten, Ablagestruktur, Kundenprozesse und interne Standards. Preis: ab 899 € inklusive Mehrwertsteuer.',
-        'Tagesabschluss-Systeme: Struktur für Tagesübersicht und interne Kontrolle. Preis: ab 499 € inklusive Mehrwertsteuer.',
-        'Kassennahe Struktur und Tagesübersicht: Keine Kassensoftware, keine rechtliche Zertifizierung, sondern Struktur für interne Abläufe. Preis: auf Anfrage.',
+        'Tagesabschluss-Systeme: Struktur für Tagesübersicht und interne Kontrolle. Preis: ab 899 € inklusive Mehrwertsteuer.',
+        'Kassennahe Struktur und Tagesübersicht: Keine Kassensoftware, keine rechtliche Zertifizierung, sondern Struktur für interne Abläufe. Der Umfang wird passend zum Bedarf kalkuliert.',
       ],
     },
     {
-      id: 'social-media-pinterest',
+      id: 'social-media-struktur',
       eyebrow: 'Leistungsbereich 09',
-      title: 'Social Media & Pinterest-Struktur',
+      title: 'Social-Media-Struktur',
       text: 'Für Betriebe, die regelmäßig sichtbar sein wollen und dafür eine klare Content-Struktur statt zufälliger Einzelbeiträge brauchen.',
-      highlights: ['Profilstruktur', 'Beitragsideen', 'Pin-/Post-Planung', 'Newsletter-Grundstruktur'],
+      highlights: ['Profilstruktur', 'Beitragsideen', 'Kanalstruktur', 'Newsletter-Grundstruktur'],
       details: [
-        'Social-Media- und Pinterest-Grundstruktur: Profilstruktur, Beitragsideen, Pin-/Post-Planung, Beschreibungstexte und Verlinkung. Preis: ab 249 € inklusive Mehrwertsteuer.',
-        'Newsletter-Grundstruktur: Einfacher Einstieg in professionelle Kundenkommunikation mit Anmeldeeinbindung, Listenstruktur und Versandgrundlage. Preis: ab 249 € inklusive Mehrwertsteuer.',
+        'Social-Media-Struktur: Profilstruktur, Beitragsideen, Kanalplanung, Beschreibungstexte und Verlinkung. Preis: ab 199 € inklusive Mehrwertsteuer.',
+        'Newsletter-Grundstruktur: Einfacher Einstieg in professionelle Kundenkommunikation mit Anmeldeeinbindung, Listenstruktur und Versandgrundlage. Preis: ab 199 € inklusive Mehrwertsteuer.',
       ],
     },
   ]
@@ -3852,9 +3854,9 @@ function WhyStruktivaSection() {
 
 function BetreuungSection() {
   const plans = [
-    ['Basis-Betreuung', 'ab 99 € / Monat', 'inklusive Mehrwertsteuer', 'Für kleinere laufende Anpassungen, Pflege und einfache Aktualisierungen.'],
-    ['Struktur-Betreuung', 'ab 199 € / Monat', 'inklusive Mehrwertsteuer', 'Für regelmäßige Weiterentwicklung, Strukturpflege, Inhalte, Kontaktwege und Sichtbarkeit.'],
-    ['Premium-Betreuung', 'ab 399 € / Monat', 'inklusive Mehrwertsteuer', 'Für intensive laufende Betreuung, Erweiterungen, Systeme, Strukturaufbau und digitale Weiterentwicklung.'],
+    ['Basis-Betreuung', 'ab 199 € / Monat', 'inklusive Mehrwertsteuer', 'Für kleinere laufende Anpassungen, Pflege und einfache Aktualisierungen.'],
+    ['Struktur-Betreuung', 'ab 299 € / Monat', 'inklusive Mehrwertsteuer', 'Für regelmäßige Weiterentwicklung, Strukturpflege, Inhalte, Kontaktwege und Sichtbarkeit.'],
+    ['Premium-Betreuung', 'ab 499 € / Monat', 'inklusive Mehrwertsteuer', 'Für intensive laufende Betreuung, Erweiterungen, Systeme, Strukturaufbau und digitale Weiterentwicklung.'],
   ]
 
   return (
@@ -3920,46 +3922,53 @@ function BetreuungSection() {
 function PricingArchitectureSection() {
   const packages = [
     {
-      title: 'STRUKTIVA Einstieg',
-      price: 'ab 199 € inklusive Mehrwertsteuer',
-      text: 'Für Unternehmen, Selbstständige und lokale Dienstleister, die schnell eine klare digitale Grundlage brauchen.',
-      points: ['kurze digitale Erststruktur', 'Analyse von Website, Google-Auftritt oder Kontaktwegen', 'klare Handlungsempfehlung', 'einfache Kontaktstruktur', 'Prioritätenplan für die nächsten Schritte'],
-      cta: 'Einstieg anfragen',
+      title: 'STRUKTIVA Soforthilfe',
+      price: 'ab 99 € inklusive Mehrwertsteuer',
+      text: 'Für kleine Einzelmaßnahmen, schnelle Anpassungen und klar begrenzte digitale Aufgaben.',
+      points: ['Website-Anpassungen', 'kurze Texte', 'Google- oder Social-Media-Texte', 'WhatsApp- und Bewertungstexte'],
+      cta: 'Soforthilfe anfragen',
     },
     {
-      title: 'STRUKTIVA Start',
-      price: 'ab 299 € inklusive Mehrwertsteuer',
-      text: 'Für Betriebe, die eine einfache Website-, Landingpage- oder Onepager-Struktur brauchen.',
-      points: ['einfache Website- oder Landingpage-Struktur', 'klare Leistungsdarstellung', 'Kontaktbereich', 'mobile Optimierung', 'SEO-Grundstruktur', 'Impressum-/Datenschutz-Verlinkung', 'einfache Kundenführung'],
-      cta: 'Start-Paket anfragen',
+      title: 'Website Start',
+      price: 'ab 499 € inklusive Mehrwertsteuer',
+      text: 'Für Betriebe, die eine faire und saubere erste Website- oder Onepager-Grundlage brauchen.',
+      points: ['Onepager-Grundstruktur', 'klare Leistungsdarstellung', 'Kontaktbereich', 'mobile Optimierung', 'einfache Kundenführung'],
+      cta: 'Website Start anfragen',
     },
     {
-      title: 'STRUKTIVA Struktur',
-      price: 'ab 599 € inklusive Mehrwertsteuer',
-      text: 'Für Unternehmen, die Website, Vertrauen, Kontaktwege und Kundenführung professioneller verbinden möchten.',
-      points: ['Unternehmenswebsite-Grundstruktur', 'klare Angebots- und Leistungsstruktur', 'Kontakt- und Anfrageführung', 'Google-Sichtbarkeitsgrundlage', 'Bewertungsstruktur', 'WhatsApp-Kontaktweg', 'Vertrauenselemente', 'strukturierter Seitenaufbau'],
+      title: 'Sichtbarkeits-Paket',
+      price: 'ab 799 € inklusive Mehrwertsteuer',
+      text: 'Für Unternehmen, die Website, lokale Sichtbarkeit, Bewertungen und Kontaktwege professioneller verbinden möchten.',
+      points: ['Website- oder Landingpage-Struktur', 'Google-Sichtbarkeitsgrundlage', 'Bewertungs- und QR-Struktur', 'WhatsApp- und Kontaktweg', 'Vertrauenselemente'],
+      cta: 'Sichtbarkeits-Paket anfragen',
+    },
+    {
+      title: 'Struktur-Paket',
+      price: 'ab 1.199 € inklusive Mehrwertsteuer',
+      text: 'Für Betriebe, die mehrere digitale Bausteine als zusammenhängende Struktur brauchen.',
+      points: ['mehrseitige Website-Struktur', 'Lead- oder Anfrage-System', 'digitale Angebotslogik', 'Kontakt- und Bewertungsstruktur', 'erweiterbare Strukturbausteine'],
       cta: 'Struktur-Paket anfragen',
     },
     {
-      title: 'STRUKTIVA System',
-      price: 'ab 799 € inklusive Mehrwertsteuer',
-      text: 'Für Betriebe, die nicht nur sichtbar werden möchten, sondern digitale Struktur im Außenauftritt und im Alltag brauchen.',
-      points: ['digitale Ordnungssysteme', 'Betriebs-Dashboard-Grundstruktur', 'App-Grundkonzept oder interne Systemstruktur', 'Tagesabschluss- oder Kassenstruktur-Grundlage', 'Kundenführungsstruktur', 'interne Strukturbausteine', 'erweiterbare Unternehmensarchitektur'],
-      cta: 'System-Paket anfragen',
+      title: 'Premium-Struktur',
+      price: 'ab 1.499 € inklusive Mehrwertsteuer',
+      text: 'Für umfangreichere Vorhaben mit hochwertiger digitaler Struktur und mehreren Systembausteinen.',
+      points: ['Premium-Webauftritt', 'digitale Kundenführung', 'Dashboard- oder App-Konzept möglich', 'interne Strukturbausteine', 'skalierbare Weiterentwicklung'],
+      cta: 'Premium-Struktur anfragen',
     },
   ]
 
   const betreuung = [
-    'Basis-Betreuung ab 99 € / Monat inklusive Mehrwertsteuer',
-    'Struktur-Betreuung ab 199 € / Monat inklusive Mehrwertsteuer',
-    'Premium-Betreuung ab 399 € / Monat inklusive Mehrwertsteuer',
+    'Basis-Betreuung ab 199 € / Monat inklusive Mehrwertsteuer',
+    'Struktur-Betreuung ab 299 € / Monat inklusive Mehrwertsteuer',
+    'Premium-Betreuung ab 499 € / Monat inklusive Mehrwertsteuer',
   ]
 
   return (
     <section id="preise" className="scroll-mt-28 px-5 py-14 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeader eyebrow="Pakete & Preise" title="Vier klare Pakete für einen einfachen Einstieg" text="Die Pakete geben Orientierung und machen den Start planbar." tone="light" />
+          <SectionHeader eyebrow="Pakete & Preise" title="Fünf klare Einstiegsmöglichkeiten" text="Die Pakete geben Orientierung und machen den Start planbar." tone="light" />
         </Reveal>
 
         <div className="mt-10 grid gap-5 xl:grid-cols-[0.82fr_1.18fr]">
@@ -3969,12 +3978,16 @@ function PricingArchitectureSection() {
             <p className="mt-4 text-sm leading-8 text-[rgba(248,241,227,0.76)] md:text-base">
               Die Pakete geben Orientierung. Sie zeigen, mit welchem Umfang Unternehmen meist starten und wie sich daraus eine klare digitale Struktur entwickeln lässt.
             </p>
+            <p className="mt-4 text-sm leading-8 text-[rgba(248,241,227,0.76)] md:text-base">
+              Sie können einzelne Leistungen gezielt buchen oder mehrere Bausteine zu einem passenden STRUKTIVA-Paket kombinieren. So bleibt der Einstieg fair und die Umsetzung wächst mit dem tatsächlichen Bedarf.
+            </p>
             <div className="mt-6 space-y-3">
               {[
-                'Einstieg für erste Klarheit und Prioritäten.',
-                'Start für einfache Website- oder Landingpage-Struktur.',
-                'Struktur für professionelle Verbindung von Vertrauen, Sichtbarkeit und Anfragewegen.',
-                'System für Unternehmen, die auch intern digitale Ordnung aufbauen wollen.',
+                'Soforthilfe für kleine Einzelmaßnahmen.',
+                'Website Start für die erste digitale Grundlage.',
+                'Sichtbarkeit für Website, Google und Kontaktwege.',
+                'Struktur für mehrere verbundene Bausteine.',
+                'Premium-Struktur für umfangreichere Vorhaben.',
               ].map((item, index) => (
                 <div key={item} className="flex items-start gap-3 rounded-[1.15rem] border border-white/10 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[rgba(248,241,227,0.76)]">
                   <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#F0C45C]/44 bg-[#D8B45A]/16 text-[11px] font-semibold text-[#FFF4D0]">
@@ -4534,7 +4547,7 @@ function PaketePage() {
         <div className="mx-auto max-w-7xl">
           <section id="pakete" className="scroll-mt-28 rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Pakete & Betreuung</p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+            <h1 className="mt-4 max-w-4xl break-words text-4xl font-semibold tracking-tight text-white md:text-5xl">
               Pakete & Einstiegsmöglichkeiten
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
@@ -4805,10 +4818,11 @@ function LandingpageDigitaleStrukturPage() {
           </section>
 
           <ServiceSection title="Einstiegspreise für Unternehmen">
-            <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA Start – ab 599 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA Wachstum – ab 899 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA System – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Website Start – ab 499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeits-Paket – ab 799 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Struktur-Paket – ab 1.199 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehrere digitale Bausteine verbinden möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Premium-Struktur – ab 1.499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die eine umfangreichere digitale Struktur brauchen.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat inklusive Mehrwertsteuer</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
             <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
           </ServiceSection>
 
@@ -4995,10 +5009,11 @@ function LandingpageDigitaleStrukturPageV2() {
           </section>
 
           <ServiceSection title="Einstiegspreise für Unternehmen">
-            <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA Start – ab 599 €</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA Wachstum – ab 899 €</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
-            <p><span className="font-semibold text-[#D8B45A]">STRUKTIVA System – ab 1.499 €</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
-            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Website Start – ab 499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die online professioneller auftreten möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Sichtbarkeits-Paket – ab 799 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehr Struktur in Website, Angebot und Kontaktwege bringen möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Struktur-Paket – ab 1.199 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die mehrere digitale Bausteine verbinden möchten.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Premium-Struktur – ab 1.499 € inklusive Mehrwertsteuer</span><br />Für Unternehmen, die eine vollständige digitale Struktur brauchen.</p>
+            <p><span className="font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat inklusive Mehrwertsteuer</span><br />Für regelmäßige Pflege, Inhalte, kleine Änderungen und Optimierung.</p>
             <p className="text-sm text-[#94A3B8]">Alle Preise verstehen sich inklusive gesetzlicher Mehrwertsteuer. Der finale Preis richtet sich nach Umfang, Seitenanzahl, Funktionen, Textaufwand, Bildern und gewünschter technischer Umsetzung.</p>
           </ServiceSection>
 
@@ -5127,7 +5142,7 @@ function WebseitenPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Unternehmenswebsite – ab 599 € inklusive Mehrwertsteuer</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Unternehmenswebsite – ab 699 € inklusive Mehrwertsteuer</p>
         <p>Für strukturierte Unternehmenswebseiten mit professioneller Außendarstellung, klarer Angebotsführung und sauberer Kontaktstruktur.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
@@ -5161,7 +5176,7 @@ function LandingpagesPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Landingpage – ab 299 € inklusive Mehrwertsteuer</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Landingpage – ab 399 € inklusive Mehrwertsteuer</p>
         <p>Für verkaufsstarke Landingpages mit Angebotsarchitektur, WhatsApp-CTA und klarer Anfrageführung.</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
@@ -5210,9 +5225,9 @@ function AppsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">STRUKTIVA System – ab 1.499 € inklusive Mehrwertsteuer</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Unternehmens-App – ab 999 € inklusive Mehrwertsteuer</p>
         <p>App- oder Dashboard-Lösungen sind eine hochwertige Zusatzoption für Unternehmen, die neben Sichtbarkeit auch mehr interne Struktur brauchen.</p>
-        <p className="text-lg font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Monatliche Betreuung – ab 199 € / Monat inklusive Mehrwertsteuer</p>
       </ServiceSection>
       <ServiceSection title="Ablauf">
         <p>1. Kostenlose Ersteinschätzung</p><p>2. Ablaufanalyse und Funktionsrahmen</p><p>3. Strukturplanung und Umsetzung</p><p>4. Testphase und Freigabe</p><p>5. Go-live mit Betreuung</p>
@@ -5245,7 +5260,7 @@ function GoogleAdsPage() {
         </div>
       </ServiceSection>
       <ServiceSection title="Preis & Umfang">
-        <p className="text-lg font-semibold text-[#D8B45A]">Google Ads Startpaket – ab 249 €</p>
+        <p className="text-lg font-semibold text-[#D8B45A]">Google Ads Startpaket – ab 299 € inklusive Mehrwertsteuer</p>
         <p><span className="font-semibold text-white">Wichtig:</span> Werbebudget ist nicht enthalten und wird separat direkt bei Google oder der jeweiligen Werbeplattform eingesetzt.</p>
         <p>Google Ads wird bei STRUKTIVA nicht isoliert, sondern mit Landingpage, Angebotsstruktur und Kontaktführung verbunden.</p>
       </ServiceSection>
@@ -5400,7 +5415,7 @@ function DigitaleSoforthilfePage() {
     },
     {
       title: 'Soforthilfe M',
-      price: 'ab 249 € inklusive Mehrwertsteuer',
+      price: 'ab 299 € inklusive Mehrwertsteuer',
       description: 'Für mittlere digitale Aufgaben mit mehr Struktur, Textumfang oder mehreren Elementen.',
       items: [
         'Angebotsseiten',
@@ -5414,7 +5429,7 @@ function DigitaleSoforthilfePage() {
     },
     {
       title: 'Soforthilfe L',
-      price: 'ab 449 € inklusive Mehrwertsteuer',
+      price: 'ab 499 € inklusive Mehrwertsteuer',
       description: 'Für größere kurzfristige Aufgaben, bei denen mehrere digitale Bausteine zusammengeführt werden.',
       items: [
         'vollständige Landingpages',
@@ -5564,11 +5579,11 @@ function DigitaleOrdnungssystemePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Preisorientierung</p>
             <div className="mt-3 grid gap-2 md:grid-cols-2">
               {[
-                'Digitale Ordnungssysteme ab 899 €',
-                'Tagesabschluss-System ab 699 €',
-                'Kassenstruktur-System ab 799 €',
-                'Monatsübersicht / Export-System ab 699 €',
-                'Steuerberaterfreundliche Erfassungsstruktur ab 899 €',
+                'Digitale Ordnungssysteme ab 899 € inklusive Mehrwertsteuer',
+                'Tagesabschluss-System ab 899 € inklusive Mehrwertsteuer',
+                'Kassenstruktur-System ab 899 € inklusive Mehrwertsteuer',
+                'Monatsübersicht / Export-System ab 899 € inklusive Mehrwertsteuer',
+                'Steuerberaterfreundliche Erfassungsstruktur ab 899 € inklusive Mehrwertsteuer',
               ].map((item) => (
                 <p key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[#D7DCE5]">
                   {item}
@@ -5757,28 +5772,28 @@ function WebsiteFuerKleineUnternehmenPage() {
 
 const offerPriceInfo = {
   '/website-fuer-kleine-unternehmen': {
-    main: 'ab 599 €',
-    extras: ['Onepager ab 349 €', 'Mehrseitige Website ab 899 €', 'Website-Relaunch ab 499 €'],
+    main: 'ab 699 €',
+    extras: ['Landingpage ab 399 €', 'Onepager ab 499 €', 'Mehrseitige Website ab 999 €', 'Website-Relaunch ab 599 €'],
   },
   '/landingpage-erstellen-lassen': {
-    main: 'ab 299 €',
-    extras: ['Angebotsseite ab 249 €', 'Vertrauensseite ab 299 €'],
+    main: 'ab 399 €',
+    extras: ['Kleine Einzelmaßnahme ab 99 €', 'Onepager ab 499 €'],
   },
   '/google-sichtbarkeit-kleine-unternehmen': {
-    main: 'ab 299 €',
-    extras: ['Google-Unternehmensprofil Einrichtung ab 249 €', 'Lokale Sichtbarkeits-Grundstruktur ab 349 €', 'Website + Google-Grundstruktur ab 699 €'],
+    main: 'ab 199 €',
+    extras: ['Google-Unternehmensprofil / lokale Sichtbarkeit ab 199 €', 'Sichtbarkeits-Paket ab 799 €'],
   },
   '/digitale-kundenfuehrung': {
     main: 'ab 299 €',
-    extras: ['Kontaktformular-Integration ab 149 €', 'WhatsApp-Kontaktstruktur ab 149 €'],
+    extras: ['WhatsApp- & Kontaktstruktur ab 149 €', 'Lead-System / Anfrage-System ab 299 €'],
   },
   '/whatsapp-kontaktstruktur': {
     main: 'ab 149 €',
     extras: ['Kundenführungsstruktur ab 299 €'],
   },
   '/social-media-struktur': {
-    main: 'ab 249 €',
-    extras: ['Content-Grundstruktur für Unternehmen ab 299 €', 'Pinterest-/Instagram-Startstruktur ab 249 €'],
+    main: 'ab 199 €',
+    extras: ['Content-Grundstruktur für Unternehmen ab 199 €', 'Social-Media-Struktur ab 199 €'],
   },
   '/newsletter-einbindung': {
     main: 'ab 199 €',
@@ -5794,11 +5809,11 @@ const offerPriceInfo = {
   },
   '/angebotsarchitektur': {
     main: 'ab 299 €',
-    extras: ['Digitale Strukturberatung ab 149 €'],
+    extras: ['Kleine Einzelmaßnahme ab 99 €', 'Lead-System / Anfrage-System ab 299 €'],
   },
   '/digitale-unternehmensstruktur': {
-    main: 'ab 499 €',
-    extras: ['Digitale Strukturberatung ab 149 €', 'Digitale Ersteinschätzung kostenlos'],
+    main: 'ab 1.199 €',
+    extras: ['Kleine Einzelmaßnahme ab 99 €', 'Struktur-Paket ab 1.199 €', 'Premium-Struktur ab 1.499 €'],
   },
 }
 
@@ -5824,7 +5839,7 @@ function OfferDetailPage({ title, intro, points, pathname }) {
               {priceInfo.extras && (
                 <div className="mt-3 grid gap-2 md:grid-cols-2">
                   {priceInfo.extras.map((item) => (
-                    <p key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[#D7DCE5]">{item}</p>
+                    <p key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[#D7DCE5]">{item} inklusive Mehrwertsteuer</p>
                   ))}
                 </div>
               )}
@@ -5872,6 +5887,17 @@ function LeistungenPage() {
         </section>
 
         <section className="metallic-panel-dark mt-8 rounded-[1.8rem] p-6 md:p-7">
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Einzelmaßnahmen & Pakete</p>
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-[#F2E6C8] md:text-base">
+                Einzelmaßnahmen starten ab 99 € inklusive Mehrwertsteuer. Größere Leistungen können einzeln gebucht oder sinnvoll zu einem STRUKTIVA-Paket kombiniert werden. Der genaue Preis richtet sich nach Umfang, Ziel und gewünschter Umsetzung.
+              </p>
+            </div>
+            <div className="inline-flex h-[5.5rem] w-[5.5rem] shrink-0 items-center justify-center rounded-full border border-[#F0C45C]/60 bg-[radial-gradient(circle_at_30%_20%,rgba(255,248,224,0.28),transparent_38%),linear-gradient(145deg,rgba(216,180,90,0.24),rgba(143,109,39,0.1))] px-3 text-center text-sm font-semibold leading-tight text-[#FFF4D0] shadow-[0_16px_34px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.18)]">
+              ab 99 €
+            </div>
+          </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {allLeistungen.map(([title, text]) => (
               <article
@@ -5879,22 +5905,14 @@ function LeistungenPage() {
                 id={title === 'Digitale Soforthilfe' ? 'digitale-soforthilfe' : undefined}
                 className="metallic-feature-card rounded-2xl p-4"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <h2 className="min-w-0 text-base font-semibold text-white">{title}</h2>
-                  <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[#F0C45C]/55 bg-[radial-gradient(circle_at_30%_20%,rgba(255,248,224,0.24),transparent_38%),linear-gradient(145deg,rgba(216,180,90,0.22),rgba(143,109,39,0.1))] px-2 text-center text-[11px] font-semibold leading-tight text-[#FFF4D0] shadow-[0_12px_26px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.18)] sm:h-[4.5rem] sm:w-[4.5rem]">
-                    ab 99 €
-                  </span>
-                </div>
+                <h2 className="text-base font-semibold text-white">{title}</h2>
                 <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">{text}</p>
               </article>
             ))}
           </div>
           <div className="metallic-result-box mt-6 rounded-[1.5rem] p-5">
             <p className="text-sm leading-7 text-[#D7DCE5] md:text-base">
-              Alle Leistungen können einzeln gebucht oder sinnvoll zu einem STRUKTIVA-Paket kombiniert werden. Der genaue Preis richtet sich nach Umfang, Ziel und gewünschter Umsetzung.
-            </p>
-            <p className="mt-3 text-sm font-semibold leading-7 text-[#F0C45C] md:text-base">
-              Einstieg ab 99 €. Preise auf Anfrage – abhängig von Umfang und Umsetzung.
+              Sie können mit einer kleinen Einzelmaßnahme starten oder mehrere Bausteine passend zum Bedarf bündeln. So bleibt die Preislogik transparent und die Umsetzung wächst mit dem tatsächlichen Umfang.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a
