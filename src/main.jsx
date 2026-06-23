@@ -33,6 +33,10 @@ import {
 import './styles.css'
 import { CookieConsentLayer, openCookieSettings, trackMarketingLead } from './cookieConsent.jsx'
 
+const SITE_URL = 'https://struktiva.de/'
+const SITE_HOST = new URL(SITE_URL).host
+const absoluteSiteUrl = (path = '/') => new URL(path, SITE_URL).toString()
+
 const siteLinks = {
   home: '/#start',
   services: '/#leistungen',
@@ -222,7 +226,7 @@ const leadBudgetOptions = [
 const leadPreferredContactOptions = ['E-Mail', 'Telefon', 'WhatsApp']
 
 const demoDropdownItems = [
-  ['Referenzprojekt Salon Karola', 'Echte Umsetzung: vom Baukasten-Auftritt zur modernen digitalen Salon-Struktur.', 'https://salon-karola-webseite.vercel.app/', Sparkles],
+  ['Referenzprojekt Salon Karola', 'Echte Umsetzung: vom Baukasten-Auftritt zur modernen digitalen Salon-Struktur.', siteLinks.salonKarolaReferenz, Sparkles],
   ['Handwerker-Demo', 'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.', siteLinks.demoHandwerkerV2, Building2],
   ['Kosmetikstudio-Demo', 'Moderne Website-Struktur für Kosmetikstudios mit Leistungen, Atmosphäre, Vertrauen, Termin-Anfrage und klarer Kundenführung.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
   ['Lokaler-Dienstleister-Demo', 'Digitale Struktur für lokale Betriebe mit Leistungen, Einsatzgebiet, Vertrauen, Anfragewegen und klarer Kundenführung.', siteLinks.demoDienstleister, BriefcaseBusiness],
@@ -771,7 +775,7 @@ function useDocumentTitleSafe(pathname) {
       metaDescription.setAttribute('content', descriptions[pathname] || defaultDescription)
     }
 
-    const canonicalHref = `https://struktiva-unternehmensarchitektur.vercel.app${pathname === '/' ? '/' : pathname}`
+    const canonicalHref = absoluteSiteUrl(pathname === '/' ? '/' : pathname)
     let canonicalLink = document.querySelector('link[rel="canonical"]')
     if (!canonicalLink) {
       canonicalLink = document.createElement('link')
@@ -804,11 +808,11 @@ function useDocumentTitleSafe(pathname) {
     setMeta('property', 'og:title', activeTitle)
     setMeta('property', 'og:description', activeDescription)
     setMeta('property', 'og:url', canonicalHref)
-    setMeta('property', 'og:image', 'https://struktiva-unternehmensarchitektur.vercel.app/struktiva-logo.jpeg')
+    setMeta('property', 'og:image', absoluteSiteUrl('/struktiva-logo.jpeg'))
     setMeta('name', 'twitter:card', 'summary_large_image')
     setMeta('name', 'twitter:title', activeTitle)
     setMeta('name', 'twitter:description', activeDescription)
-    setMeta('name', 'twitter:image', 'https://struktiva-unternehmensarchitektur.vercel.app/struktiva-logo.jpeg')
+    setMeta('name', 'twitter:image', absoluteSiteUrl('/struktiva-logo.jpeg'))
     const noIndexPaths = new Set([
       '/demos/handwerker',
       '/demos/kosmetik',
@@ -3663,7 +3667,7 @@ function ReferenceShowcaseSection() {
             Referenz ansehen
             <ArrowRight className="h-4 w-4" />
           </a>
-          <a href="https://salon-karola-webseite.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+          <a href={siteLinks.salonKarolaReferenz} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
             Live-Website öffnen
             <ArrowRight className="h-4 w-4" />
           </a>
@@ -3703,7 +3707,7 @@ function ReferenceShowcaseSection() {
               <li>• bessere mobile Nutzerführung</li>
               <li>• stärkere Vertrauenswirkung</li>
             </ul>
-            <a href="https://salon-karola-webseite.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+            <a href={siteLinks.salonKarolaReferenz} className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
               Neue Seite ansehen
               <ArrowRight className="h-4 w-4" />
             </a>
@@ -4686,7 +4690,7 @@ function SalonKarolaReferencePage() {
             ))}
           </div>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a href="https://salon-karola-webseite.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
+            <a href={siteLinks.salonKarolaReferenz} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
               Live-Website öffnen
               <ArrowRight className="h-4 w-4" />
             </a>
@@ -4866,7 +4870,7 @@ function LandingpageDigitaleStrukturPage() {
             </div>
             <div className="mt-4 grid gap-1 text-sm text-[#D7DCE5]">
               <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-[#D8B45A]">{contactDetails.email}</a></p>
-              <p>Website: <a href="https://struktiva-unternehmensarchitektur.vercel.app/" className="text-[#D8B45A]" target="_blank" rel="noopener noreferrer">struktiva-unternehmensarchitektur.vercel.app</a></p>
+              <p>Website: <a href={SITE_URL} className="text-[#D8B45A]" target="_blank" rel="noopener noreferrer">{SITE_HOST}</a></p>
             </div>
             <p className="mt-4 text-xs text-[#94A3B8]">
               Du hast bereits mit STRUKTIVA gearbeitet? <a href={contactDetails.googleReviewHref} target="_blank" rel="noopener noreferrer" className="text-[#D8B45A]">Google-Bewertung schreiben</a>
@@ -5060,7 +5064,7 @@ function LandingpageDigitaleStrukturPageV2() {
               </div>
               <div className="mt-4 grid gap-1 text-sm text-[#D7DCE5]">
                 <p>E-Mail: <a href={`mailto:${contactDetails.email}`} className="text-[#D8B45A]">{contactDetails.email}</a></p>
-                <p>Website: <a href="https://struktiva-unternehmensarchitektur.vercel.app/" className="text-[#D8B45A]" target="_blank" rel="noopener noreferrer">struktiva-unternehmensarchitektur.vercel.app</a></p>
+                <p>Website: <a href={SITE_URL} className="text-[#D8B45A]" target="_blank" rel="noopener noreferrer">{SITE_HOST}</a></p>
               </div>
               <p className="mt-4 text-xs text-[#94A3B8]">
                 Du hast bereits mit STRUKTIVA gearbeitet? <a href={contactDetails.googleReviewHref} target="_blank" rel="noopener noreferrer" className="text-[#D8B45A]">Google-Bewertung schreiben</a>
