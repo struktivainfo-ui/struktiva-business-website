@@ -3221,3 +3221,361 @@ body.cookie-modal-open {
     gap: 0.18rem;
   }
 }
+
+/* STRUKTIVA design integrity pass */
+.struktiva-metallic {
+  --site-muted: #333333;
+  --site-line: rgba(0, 0, 0, 0.1);
+  color: #111111;
+}
+
+.struktiva-metallic :is(p, li, dd, dt, small, label, figcaption) {
+  color: rgba(17, 17, 17, 0.78);
+}
+
+.struktiva-metallic :is(h1, h2, h3, h4, h5, h6, strong) {
+  color: #111111;
+}
+
+.struktiva-metallic :is(.text-white, .text-\[\#FFF8E8\], .text-\[\#D7DCE5\], .text-\[\#E7DDD0\], .text-\[\#F2E6C8\]) {
+  color: #111111 !important;
+}
+
+.struktiva-metallic :is(.text-\[\#94A3B8\], .text-\[\#C8D6EA\], .text-\[\#E0BF6A\]) {
+  color: rgba(17, 17, 17, 0.78) !important;
+}
+
+.struktiva-metallic .text-gold-glow,
+.struktiva-metallic .text-gold-glow-soft,
+.struktiva-metallic .text-gold-glow-animated {
+  color: #111111 !important;
+  text-shadow: none !important;
+}
+
+.struktiva-metallic :is(header.sticky, header:not(.demo-header)),
+.struktiva-home header.sticky {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 12px 34px rgba(63, 48, 18, 0.08) !important;
+}
+
+.struktiva-metallic header.sticky > div,
+.struktiva-home header.sticky > div {
+  border-color: rgba(154, 116, 46, 0.18) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  box-shadow: 0 14px 34px rgba(63, 48, 18, 0.08) !important;
+}
+
+.struktiva-metallic header :is(a, button, p, span),
+.struktiva-home header.sticky :is(a, button, p, span) {
+  color: #111111 !important;
+}
+
+.struktiva-metallic .header-primary-cta,
+.struktiva-metallic header .header-primary-cta,
+.struktiva-metallic #mobile-menu-panel .header-primary-cta {
+  min-width: max-content;
+  border: 1px solid rgba(214, 178, 94, 0.72) !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 26px rgba(17, 17, 17, 0.12) !important;
+}
+
+.struktiva-metallic .header-primary-cta :is(span, svg),
+.struktiva-metallic header .header-primary-cta :is(span, svg) {
+  color: #ffffff !important;
+}
+
+.struktiva-metallic .header-primary-cta:hover {
+  border-color: rgba(154, 116, 46, 0.82) !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.struktiva-metallic :is(.header-dropdown-panel, .header-demo-dropdown-panel, .header-demo-mobile-panel, #mobile-menu-panel, .mobile-leistungen-submenu),
+.struktiva-home :is(.header-dropdown-panel, .header-demo-dropdown-panel, .header-demo-mobile-panel, #mobile-menu-panel, .mobile-leistungen-submenu) {
+  border-color: rgba(154, 116, 46, 0.2) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 22px 54px rgba(63, 48, 18, 0.12) !important;
+}
+
+.struktiva-metallic :is(.header-dropdown-link, .header-demo-dropdown-item, .mobile-leistungen-link, #mobile-menu-panel a, #mobile-menu-panel button) {
+  color: #111111 !important;
+}
+
+.struktiva-metallic .mobile-leistungen-toggle {
+  background: transparent !important;
+  color: #111111 !important;
+}
+
+.struktiva-metallic .mobile-leistungen-toggle[aria-expanded='true'] {
+  border: 1px solid rgba(154, 116, 46, 0.18) !important;
+  background: rgba(243, 227, 176, 0.34) !important;
+}
+
+.struktiva-metallic main :is(section, article, aside, form, figure)[class*='rounded'],
+.struktiva-metallic main :is(div)[class*='rounded'][class*='border'] {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #111111 !important;
+}
+
+.struktiva-metallic main :is(section, article, aside, form, figure)[class*='bg-white'],
+.struktiva-metallic main :is(div)[class*='bg-white'] {
+  background-color: #ffffff !important;
+}
+
+.struktiva-metallic main :is([class*='bg-[#07111F'], [class*='bg-[#050'], [class*='bg-[#081'], [class*='bg-[#0b1f'], [class*='bg-[#111827'], [class*='bg-black'], [class*='bg-gray-900'], [class*='from-[#07111F']) {
+  background:
+    radial-gradient(circle at 88% 14%, rgba(214, 178, 94, 0.12), transparent 24%),
+    linear-gradient(180deg, #ffffff, #faf8f2) !important;
+}
+
+.struktiva-metallic main :is(a, button):not(.floating-whatsapp-button) {
+  min-height: 0;
+}
+
+.struktiva-metallic main :is(a, button)[class*='rounded-full']:empty,
+.struktiva-metallic header :is(a, button)[class*='rounded-full']:empty {
+  display: none !important;
+}
+
+.struktiva-metallic main :is(a, button)[class*="bg-[#D8B45A"],
+.struktiva-metallic main :is(a, button)[class*="bg-[#f59e0b"],
+.struktiva-metallic main :is(a, button).metallic-btn-primary {
+  border: 1px solid rgba(214, 178, 94, 0.72) !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.struktiva-metallic main :is(a, button)[class*='border']:not(.metallic-btn-primary):not(.package-card-cta):not(.package-primary-link),
+.struktiva-metallic main .metallic-btn-secondary {
+  border-color: rgba(154, 116, 46, 0.34) !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.struktiva-metallic main :is(a, button)[class*='border']:not(.metallic-btn-primary):not(.package-card-cta):not(.package-primary-link):hover {
+  background: rgba(243, 227, 176, 0.34) !important;
+  color: #111111 !important;
+}
+
+.struktiva-metallic .metallic-panel-dark,
+.struktiva-metallic .metallic-feature-card,
+.struktiva-metallic .metallic-result-box,
+.struktiva-metallic .service-card-3d {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(214, 178, 94, 0.12), transparent 24%),
+    #ffffff !important;
+  color: #111111 !important;
+  box-shadow: 0 14px 34px rgba(63, 48, 18, 0.06) !important;
+}
+
+.struktiva-metallic .metallic-panel-dark :is(h1, h2, h3, h4, p, li, span, a),
+.struktiva-metallic .metallic-feature-card :is(h1, h2, h3, h4, p, li, span, a),
+.struktiva-metallic .metallic-result-box :is(h1, h2, h3, h4, p, li, span, a),
+.struktiva-metallic .service-card-3d :is(h1, h2, h3, h4, p, li, span, a) {
+  color: #111111 !important;
+}
+
+.struktiva-metallic .metallic-feature-card [class*="text-[#D8B45A"],
+.struktiva-metallic .metallic-result-box [class*="text-[#D8B45A"],
+.struktiva-metallic .service-card-3d [class*="text-[#D8B45A"] {
+  color: #9a742e !important;
+}
+
+.struktiva-metallic main [class*='bg-[#D8B45A]/10'],
+.struktiva-metallic main [class*='bg-[#D8B45A]/12'],
+.struktiva-metallic main [class*='bg-[#D8B45A]/16'] {
+  background: rgba(243, 227, 176, 0.46) !important;
+}
+
+.struktiva-metallic main [class*='text-xs'][class*='uppercase'],
+.struktiva-metallic .package-kicker {
+  color: #9a742e !important;
+  opacity: 1 !important;
+}
+
+.struktiva-ki-page > div > section:first-child {
+  border-color: rgba(154, 116, 46, 0.18) !important;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(214, 178, 94, 0.18), transparent 28%),
+    linear-gradient(180deg, #ffffff, #faf8f2) !important;
+  color: #111111 !important;
+  box-shadow: 0 18px 48px rgba(63, 48, 18, 0.08) !important;
+}
+
+.struktiva-ki-page > div > section:first-child > div:first-child {
+  opacity: 0.42;
+}
+
+.struktiva-ki-page h1 {
+  max-width: 760px;
+  color: #111111 !important;
+  font-size: clamp(2.35rem, 5vw, 4.7rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: 0 !important;
+}
+
+.struktiva-ki-page > div > section:first-child p,
+.struktiva-ki-page > div > section:first-child h2,
+.struktiva-ki-page > div > section:first-child span {
+  color: #111111 !important;
+}
+
+.struktiva-ki-page > div > section:first-child p:not([class*='uppercase']) {
+  color: rgba(17, 17, 17, 0.78) !important;
+}
+
+.struktiva-ki-page > div > section:first-child [class*='bg-white'],
+.struktiva-ki-page > div > section:first-child [class*='border-white'] {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+}
+
+.struktiva-ki-page section {
+  color: #111111;
+}
+
+.struktiva-ki-page section :is(h2, h3, p, li, span) {
+  color: #111111 !important;
+}
+
+.struktiva-ki-page section p:not([class*='uppercase']) {
+  color: rgba(17, 17, 17, 0.78) !important;
+}
+
+.struktiva-ki-page .service-card-3d {
+  min-height: 0;
+  padding: 1.25rem !important;
+}
+
+.struktiva-ki-page .service-card-3d h2 {
+  font-size: clamp(1.25rem, 2vw, 1.6rem) !important;
+  line-height: 1.18 !important;
+}
+
+.struktiva-metallic .floating-whatsapp-button {
+  right: 24px;
+  bottom: 32px;
+  width: 52px;
+  height: 52px;
+  z-index: 70;
+  box-shadow:
+    0 12px 24px rgba(17, 17, 17, 0.18),
+    0 0 0 5px rgba(255, 255, 255, 0.82) !important;
+}
+
+body.cookie-banner-visible .floating-whatsapp-button {
+  bottom: 184px;
+}
+
+@media (max-width: 768px) {
+  .struktiva-metallic {
+    padding-bottom: 6rem;
+  }
+
+  .struktiva-metallic .floating-whatsapp-button {
+    right: 16px;
+    bottom: 20px;
+    width: 46px;
+    height: 46px;
+  }
+
+  body.cookie-banner-visible .floating-whatsapp-button {
+    bottom: 316px;
+  }
+
+  .struktiva-ki-page h1 {
+    font-size: clamp(2rem, 11vw, 3.2rem) !important;
+  }
+}
+
+.struktiva-metallic header a.header-primary-cta,
+.struktiva-metallic header button.header-primary-cta,
+.struktiva-metallic #mobile-menu-panel a.header-primary-cta {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.struktiva-metallic header a.header-primary-cta *,
+.struktiva-metallic header button.header-primary-cta *,
+.struktiva-metallic #mobile-menu-panel a.header-primary-cta * {
+  color: #ffffff !important;
+  stroke: currentColor !important;
+}
+
+.struktiva-metallic .metallic-feature-card :is([class*="text-[#FFF8E8"], [class*="text-[#D7DCE5"], [class*="text-white"]),
+.struktiva-metallic .service-card-3d :is([class*="text-[#FFF8E8"], [class*="text-[#D7DCE5"], [class*="text-white"]),
+.struktiva-metallic .metallic-result-box :is([class*="text-[#FFF8E8"], [class*="text-[#D7DCE5"], [class*="text-white"]) {
+  color: #111111 !important;
+}
+
+.struktiva-metallic main :is(a, button).metallic-btn-primary,
+.struktiva-metallic main :is(a, button)[class*='bg-[#D8B45A]'],
+.struktiva-metallic main :is(a, button)[class*='bg-[#f59e0b]'],
+.struktiva-metallic main :is(a, button)[class*='bg-[#b8894b]'] {
+  border: 1px solid rgba(214, 178, 94, 0.72) !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.struktiva-metallic main :is(a, button).metallic-btn-primary *,
+.struktiva-metallic main :is(a, button)[class*='bg-[#D8B45A]'] *,
+.struktiva-metallic main :is(a, button)[class*='bg-[#f59e0b]'] *,
+.struktiva-metallic main :is(a, button)[class*='bg-[#b8894b]'] * {
+  color: #ffffff !important;
+  stroke: currentColor !important;
+}
+
+.struktiva-metallic main :is(a, button).metallic-btn-primary:hover,
+.struktiva-metallic main :is(a, button)[class*='bg-[#D8B45A]']:hover,
+.struktiva-metallic main :is(a, button)[class*='bg-[#f59e0b]']:hover,
+.struktiva-metallic main :is(a, button)[class*='bg-[#b8894b]']:hover {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.struktiva-metallic main :is(.metallic-panel-dark, .metallic-feature-card, .metallic-result-box, .service-card-3d) :is(a, button).metallic-btn-primary,
+.struktiva-metallic main :is(.metallic-panel-dark, .metallic-feature-card, .metallic-result-box, .service-card-3d) :is(a, button)[class*='bg-[#D8B45A]'],
+.struktiva-metallic main :is(.metallic-panel-dark, .metallic-feature-card, .metallic-result-box, .service-card-3d) :is(a, button)[class*='bg-[#f59e0b]'],
+.struktiva-metallic main :is(.metallic-panel-dark, .metallic-feature-card, .metallic-result-box, .service-card-3d) :is(a, button)[class*='bg-[#b8894b]'] {
+  border: 1px solid rgba(214, 178, 94, 0.72) !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.struktiva-metallic.route-leistungen .floating-whatsapp-button {
+  top: 132px;
+  right: 18px;
+  bottom: auto;
+  width: 44px;
+  height: 44px;
+}
+
+@media (max-width: 900px) {
+  .struktiva-metallic.route-leistungen .floating-whatsapp-button {
+    top: 112px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.struktiva-metallic .metallic-display-title,
+.struktiva-metallic .metallic-section-title,
+.struktiva-metallic .metallic-dark-title {
+  font-family: var(--site-font) !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important;
+  -webkit-text-stroke: 0 transparent !important;
+  text-shadow: none !important;
+  color: #111111 !important;
+}
+
+.struktiva-metallic .text-gold-glow,
+.struktiva-metallic .text-gold-glow-soft,
+.struktiva-metallic .text-gold-glow-animated {
+  animation: none !important;
+  text-shadow: none !important;
+}

@@ -1072,9 +1072,9 @@ function Header({ pathname, isHomeRoute = false }) {
         <div className="hidden lg:block">
           <a
             href={siteLinks.projectRequest}
-            className="metallic-btn-primary inline-flex h-10 items-center gap-1 whitespace-nowrap rounded-full px-3.5 text-sm font-semibold transition hover:-translate-y-0.5"
+            className="header-primary-cta inline-flex h-10 items-center gap-1 whitespace-nowrap rounded-full px-3.5 text-sm font-semibold transition hover:-translate-y-0.5"
           >
-            Projekt anfragen
+            Erstgespräch anfragen
             <ArrowRight className="h-3 w-3" />
           </a>
         </div>
@@ -1152,7 +1152,7 @@ function Header({ pathname, isHomeRoute = false }) {
                       <a
                         href={siteLinks.leistungenPage}
                         onClick={closeMobileMenu}
-                        className="mobile-leistungen-cta metallic-btn-primary mt-1 rounded-lg px-2.5 py-2 text-sm font-semibold transition"
+                        className="mobile-leistungen-cta header-primary-cta mt-1 rounded-lg px-2.5 py-2 text-sm font-semibold transition"
                       >
                         Alle Leistungen ansehen
                       </a>
@@ -1173,9 +1173,9 @@ function Header({ pathname, isHomeRoute = false }) {
               <a
                 href={siteLinks.projectRequest}
                 onClick={closeMobileMenu}
-                className="metallic-btn-primary mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition"
+                className="header-primary-cta mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition"
               >
-                  Projekt anfragen
+                  Erstgespräch anfragen
                   <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -6272,7 +6272,7 @@ function LeistungenPage() {
 
 function KiAutomatisierungPage() {
   return (
-    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+    <main className="struktiva-ki-page px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl">
         <section className="relative overflow-hidden rounded-[2.2rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(5,5,5,0.95),rgba(11,15,20,0.96),rgba(16,23,34,0.98))] p-7 shadow-premium md:p-10 lg:p-12">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(216,180,90,0.14),transparent_28%),radial-gradient(circle_at_left_center,rgba(11,31,58,0.32),transparent_38%)]" />
@@ -7473,8 +7473,10 @@ function Page() {
     content = <LandingpageDigitaleStrukturPageV2 />
   }
 
+  const routeClass = pathname === '/' ? 'route-home' : `route-${pathname.replace(/^\/+/, '').replace(/[^a-z0-9-]/gi, '-') || 'home'}`
+
   return (
-    <div className={`struktiva-metallic ${isHomeRoute ? 'struktiva-home' : ''} ${isPricingRoute ? 'struktiva-pricing-route' : ''} min-h-screen`}>
+    <div className={`struktiva-metallic ${routeClass} ${isHomeRoute ? 'struktiva-home' : ''} ${isPricingRoute ? 'struktiva-pricing-route' : ''} min-h-screen`}>
       {!isDemoRoute ? <Header pathname={pathname} isHomeRoute={isHomeRoute} /> : null}
       {content}
       {!isDemoRoute ? <Footer /> : null}
