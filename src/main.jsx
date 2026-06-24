@@ -472,6 +472,12 @@ const googleAdsCards = [
   ['Betreuung', 'Auf Wunsch können Kampagnenstruktur und Zielseiten regelmäßig geprüft und verbessert werden.'],
 ]
 
+const splitPackagePrice = (price = '') => {
+  const taxNote = 'inklusive Mehrwertsteuer'
+  if (!price.includes(taxNote)) return { amount: price, taxNote: '' }
+  return { amount: price.replace(taxNote, '').trim(), taxNote }
+}
+
 const pricingPackages = [
   {
     title: 'STRUKTIVA Soforthilfe',
@@ -1668,6 +1674,7 @@ function DemoOverviewSectionPremium() {
 }
 
 function PricingCard({ pkg }) {
+  const { amount, taxNote } = splitPackagePrice(pkg.price)
   const packageImage =
     pkg.title === 'Sichtbarkeit'
       ? struktivaImages.localBusiness
@@ -1724,7 +1731,8 @@ function PricingCard({ pkg }) {
       </div>
 
       <div className="mt-6 rounded-[1.4rem] border border-white/14 bg-white/[0.04] p-4">
-        <p className="text-3xl font-semibold tracking-tight text-[#D8B45A]">{pkg.price}</p>
+        <p className="package-price text-3xl font-semibold tracking-tight text-[#D8B45A]">{amount}</p>
+        {taxNote ? <p className="tax-note mt-1 text-sm font-medium text-[#D7DCE5]">{taxNote}</p> : null}
         {pkg.subtitle && <p className="mt-2 text-sm font-medium text-[#D7DCE5]">{pkg.subtitle}</p>}
       </div>
 
@@ -3980,73 +3988,93 @@ function PricingArchitectureSection() {
     'Premium-Betreuung ab 499 € / Monat inklusive Mehrwertsteuer',
   ]
 
+  const comparisonRows = [
+    ['Soforthilfe', 'kleine Korrekturen, Texte, schnelle Einzelaufgaben'],
+    ['Website Start', 'erste Website- oder Onepager-Struktur mit klarer Kontaktführung'],
+    ['Sichtbarkeit', 'Website, Google-Grundlage, Bewertungen und Kontaktwege verbunden'],
+    ['Struktur', 'mehrere digitale Bausteine als zusammenhängendes System'],
+    ['Premium', 'umfangreichere Struktur mit Website, Kundenführung und Erweiterungslogik'],
+  ]
+
   return (
-    <section id="preise" className="scroll-mt-28 px-5 py-14 lg:px-8 lg:py-20">
+    <section id="preise" className="package-pricing-section scroll-mt-28 px-5 py-14 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeader eyebrow="Pakete & Preise" title="Fünf klare Festpreis-Einstiege" text="Die Pakete geben Orientierung und machen den Start planbar." tone="light" />
         </Reveal>
 
-        <div className="mt-10 grid gap-5 xl:grid-cols-[0.82fr_1.18fr]">
-          <article className="rounded-[2rem] border border-[#D8B45A]/28 bg-[linear-gradient(135deg,rgba(18,18,18,0.96),rgba(35,35,35,0.92))] p-6 shadow-[0_24px_52px_rgba(3,8,16,0.2)] md:p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]">Preislogik</p>
-            <h3 className="mt-3 text-3xl font-semibold text-[#FFF8E8] md:text-4xl">Nicht das größte Paket zuerst. Sondern der sinnvollste Einstieg.</h3>
-            <p className="mt-4 text-sm leading-8 text-[rgba(248,241,227,0.76)] md:text-base">
-              Die Pakete geben Orientierung. Sie zeigen feste Einstiegspreise für klar beschriebene Leistungen und wie sich daraus eine klare digitale Struktur entwickeln lässt.
-            </p>
-            <p className="mt-4 text-sm leading-8 text-[rgba(248,241,227,0.76)] md:text-base">
-              Sie können einzelne Leistungen gezielt buchen oder mehrere Bausteine zu einem passenden STRUKTIVA-Paket kombinieren. So bleibt der Einstieg fair und die Umsetzung wächst mit dem tatsächlichen Bedarf.
-            </p>
-            <p className="mt-4 text-sm leading-8 text-[rgba(248,241,227,0.76)] md:text-base">
-              Die genannten Festpreise gelten für den beschriebenen Leistungsumfang. Zusätzliche Seiten, Sonderfunktionen oder größere Erweiterungen werden vorab transparent besprochen und erst nach Zustimmung umgesetzt.
-            </p>
-            <div className="mt-6 space-y-3">
-              {[
-                'Soforthilfe für kleine Einzelmaßnahmen.',
-                'Website Start für die erste digitale Grundlage.',
-                'Sichtbarkeit für Website, Google und Kontaktwege.',
-                'Struktur für mehrere verbundene Bausteine.',
-                'Premium-Struktur für umfangreichere Vorhaben.',
-              ].map((item, index) => (
-                <div key={item} className="flex items-start gap-3 rounded-[1.15rem] border border-white/10 bg-white/[0.04] px-4 py-3 text-sm leading-7 text-[rgba(248,241,227,0.76)]">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#F0C45C]/44 bg-[#D8B45A]/16 text-[11px] font-semibold text-[#FFF4D0]">
-                    {index + 1}
-                  </span>
-                  <span>{item}</span>
-                </div>
-              ))}
+        <Reveal className="mt-8">
+          <article className="package-pricing-intro">
+            <div>
+              <p className="package-kicker">Preislogik</p>
+              <h3>Nicht das größte Paket zuerst. Sondern der sinnvollste Einstieg.</h3>
+              <p>
+                Die Pakete geben Orientierung. Sie zeigen feste Einstiegspreise für klar beschriebene Leistungen und wie daraus eine digitale Struktur entsteht.
+              </p>
             </div>
-            <a href={siteLinks.projectRequestForm} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-[#16120E] transition hover:bg-[#F0C45C]">
+            <a href={siteLinks.projectRequestForm} className="package-primary-link">
               Passendes Paket anfragen
               <ArrowRight className="h-4 w-4" />
             </a>
           </article>
+        </Reveal>
 
-          <div className="grid gap-5 md:grid-cols-2">
+        <div className="package-card-grid mt-8">
             {packages.map((pkg, index) => (
-              <article key={pkg.title} className={`rounded-[1.8rem] border p-5 shadow-[0_20px_44px_rgba(3,8,16,0.18)] ${index === 2 ? 'border-[#D8B45A]/38 bg-[linear-gradient(135deg,rgba(24,20,15,0.98),rgba(47,37,21,0.95),rgba(35,29,22,0.94))]' : 'border-[#D8B45A]/24 bg-[linear-gradient(135deg,rgba(18,18,18,0.96),rgba(35,35,35,0.92))]'}`}>
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#D8B45A]/88">Paket {index + 1}</p>
-                    <h4 className="mt-2 text-xl font-semibold text-[#FFF8E8]">{pkg.title}</h4>
-                  </div>
+              <article key={pkg.title} className={index === 2 ? 'package-summary-card package-summary-card-featured' : 'package-summary-card'}>
+                {(() => {
+                  const { amount, taxNote } = splitPackagePrice(pkg.price)
+                  return (
+                    <>
+                <div className="package-card-head">
+                  <p className="package-kicker">Paket {index + 1}</p>
                   {index === 2 ? (
-                    <span className="rounded-full border border-[#F0C45C]/38 bg-[#D8B45A]/16 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#FFF4D0]">
+                    <span>
                       häufig gewählt
                     </span>
                   ) : null}
                 </div>
-                <p className="mt-3 text-sm font-semibold text-[#F0C45C]">{pkg.price}</p>
-                <p className="mt-3 text-sm leading-7 text-[rgba(248,241,227,0.76)]">{pkg.text}</p>
-                <div className="mt-4 space-y-2 text-sm text-[rgba(248,241,227,0.76)]">{pkg.points.map((point) => <p key={point}>- {point}</p>)}</div>
-                <a href={siteLinks.projectRequestForm} className="package-card-cta mt-5 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/42 bg-[linear-gradient(135deg,rgba(216,180,90,0.18),rgba(216,180,90,0.08))] px-4 py-2 text-sm font-semibold text-[#FFF8E8] shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition hover:bg-[#D8B45A] hover:text-[#16120E]">
+                <h4>{pkg.title}</h4>
+                <p className="package-card-text">{pkg.text}</p>
+                <div className="package-price-block">
+                  <p className="package-price">{amount}</p>
+                  {taxNote ? <p className="tax-note">{taxNote}</p> : null}
+                </div>
+                <ul>
+                  {pkg.points.slice(0, 4).map((point) => (
+                    <li key={point}>
+                      <CheckCircle2 className="h-4 w-4" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a href={siteLinks.projectRequestForm} className="package-card-cta">
                   {pkg.cta}
                   <ArrowRight className="h-4 w-4" />
                 </a>
+                    </>
+                  )
+                })()}
               </article>
             ))}
-          </div>
         </div>
+
+        <Reveal className="mt-8">
+          <section className="package-comparison-panel">
+            <div>
+              <p className="package-kicker">Details ohne überladene Karten</p>
+              <h3>Welche Einstiegsebene passt?</h3>
+            </div>
+            <div className="package-comparison-list">
+              {comparisonRows.map(([label, text]) => (
+                <div key={label}>
+                  <strong>{label}</strong>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        </Reveal>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-[0.92fr_1.08fr]">
           <div className="rounded-[1.7rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.96),rgba(247,239,225,0.94))] p-6 shadow-[0_20px_44px_rgba(83,62,22,0.06)]">
@@ -4420,10 +4448,17 @@ function HomePricingSection() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.06 }} variants={stagger} className="home-pricing-grid">
           {pricingPackages.map((pkg) => (
             <motion.article key={pkg.title} variants={fadeUp} className={pkg.premium ? 'home-price-card home-price-card-featured' : 'home-price-card'}>
+              {(() => {
+                const { amount, taxNote } = splitPackagePrice(pkg.price)
+                return (
+                  <>
               <p className="home-price-badge">{pkg.badge}</p>
               <h3>{pkg.title}</h3>
               <p className="home-price-description">{pkg.description}</p>
-              <p className="home-price-value">{pkg.price}</p>
+              <div className="home-price-block">
+                <p className="home-price-value">{amount}</p>
+                {taxNote ? <p className="home-tax-note">{taxNote}</p> : null}
+              </div>
               <ul>
                 {pkg.features.slice(0, 4).map((feature) => (
                   <li key={feature}>
@@ -4437,6 +4472,9 @@ function HomePricingSection() {
                 {pkg.cta}
                 <ArrowRight className="h-4 w-4" />
               </a>
+                  </>
+                )
+              })()}
             </motion.article>
           ))}
         </motion.div>
@@ -7288,6 +7326,7 @@ function Page() {
   useDocumentTitleSafe(pathname)
   const isDemoRoute = pathname.startsWith('/demos/')
   const isHomeRoute = pathname === '/' || pathname === '/preise' || pathname === '/demos'
+  const isPricingRoute = pathname === '/' || pathname === '/preise' || pathname === '/pakete'
   const wissenArticle = wissenArticles.find((article) => article.href === pathname)
   const homeSectionByPath = {
     '/preise': 'preise',
@@ -7435,7 +7474,7 @@ function Page() {
   }
 
   return (
-    <div className={`struktiva-metallic ${isHomeRoute ? 'struktiva-home' : ''} min-h-screen`}>
+    <div className={`struktiva-metallic ${isHomeRoute ? 'struktiva-home' : ''} ${isPricingRoute ? 'struktiva-pricing-route' : ''} min-h-screen`}>
       {!isDemoRoute ? <Header pathname={pathname} isHomeRoute={isHomeRoute} /> : null}
       {content}
       {!isDemoRoute ? <Footer /> : null}

@@ -2310,7 +2310,8 @@ body.cookie-modal-open {
   border-color: rgba(154, 116, 46, 0.26);
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, rgba(243, 227, 176, 0.82), rgba(154, 116, 46, 0.42)) border-box !important;
+    linear-gradient(135deg, rgba(243, 227, 176, 0.82), rgba(154, 116, 46, 0.42)) border-box,
+    #ffffff !important;
 }
 
 .home-price-badge {
@@ -2828,5 +2829,395 @@ body.cookie-modal-open {
   .struktiva-metallic main :is(section, article, aside, form, figure)[class*='rounded'],
   .struktiva-metallic main :is(div)[class*='rounded'][class*='border'] {
     border-radius: 1.35rem !important;
+  }
+}
+
+/* Compact package and price system */
+.struktiva-pricing-route {
+  padding-bottom: 7rem;
+}
+
+.struktiva-pricing-route .floating-whatsapp-button {
+  right: 24px;
+  bottom: 38px;
+  width: 54px;
+  height: 54px;
+}
+
+.package-pricing-section {
+  color: #111111;
+}
+
+.package-pricing-intro,
+.package-comparison-panel {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+  border: 1px solid rgba(154, 116, 46, 0.18);
+  border-radius: 28px 40px 32px 46px;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  background:
+    radial-gradient(circle at 86% 18%, rgba(214, 178, 94, 0.2), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 242, 0.94));
+  box-shadow: 0 18px 48px rgba(63, 48, 18, 0.07);
+}
+
+.package-pricing-intro {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.package-kicker {
+  margin: 0;
+  color: #9a742e !important;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.package-pricing-intro h3,
+.package-comparison-panel h3,
+.package-summary-card h4 {
+  margin: 0;
+  color: #111111 !important;
+  letter-spacing: 0;
+  text-shadow: none !important;
+}
+
+.package-pricing-intro h3,
+.package-comparison-panel h3 {
+  margin-top: 0.45rem;
+  max-width: 820px;
+  font-size: clamp(1.55rem, 3vw, 2.45rem);
+  line-height: 1.08;
+}
+
+.package-pricing-intro p:not(.package-kicker),
+.package-card-text,
+.package-comparison-list span {
+  color: rgba(17, 17, 17, 0.72) !important;
+  line-height: 1.65;
+}
+
+.package-primary-link,
+.package-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 178, 94, 0.72) !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 14px 28px rgba(17, 17, 17, 0.12) !important;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.package-primary-link {
+  padding: 0.9rem 1.15rem;
+}
+
+.package-card-cta {
+  margin-top: auto;
+  padding: 0.78rem 1rem;
+}
+
+.package-primary-link:hover,
+.package-card-cta:hover {
+  transform: translateY(-1px);
+  border-color: rgba(154, 116, 46, 0.82) !important;
+}
+
+.package-card-grid,
+.home-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.package-card-grid > *,
+.home-pricing-grid > * {
+  grid-column: span 2;
+}
+
+.package-card-grid {
+  gap: 1.1rem;
+}
+
+.package-card-grid > :nth-child(4),
+.home-pricing-grid > :nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.package-card-grid > :nth-child(5),
+.home-pricing-grid > :nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.package-summary-card,
+.home-price-card {
+  min-width: 0;
+  overflow: visible !important;
+}
+
+.package-summary-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 24px !important;
+  padding: clamp(1.05rem, 2vw, 1.35rem);
+  background:
+    radial-gradient(circle at 90% 8%, rgba(214, 178, 94, 0.14), transparent 24%),
+    #ffffff !important;
+  color: #111111 !important;
+  box-shadow: 0 16px 38px rgba(63, 48, 18, 0.06) !important;
+}
+
+.package-summary-card-featured {
+  border-color: rgba(154, 116, 46, 0.26) !important;
+  background:
+    radial-gradient(circle at 86% 14%, rgba(154, 116, 46, 0.18), transparent 30%),
+    linear-gradient(145deg, rgba(243, 227, 176, 0.86), rgba(255, 255, 255, 0.94)),
+    #f3e3b0 !important;
+}
+
+.package-card-head {
+  display: flex;
+  min-height: 1.7rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.package-card-head span {
+  flex: 0 0 auto;
+  border: 1px solid rgba(154, 116, 46, 0.22);
+  border-radius: 999px;
+  padding: 0.28rem 0.55rem;
+  background: rgba(255, 255, 255, 0.72);
+  color: #9a742e !important;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.package-summary-card h4 {
+  margin-top: 0.8rem;
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.14;
+}
+
+.package-card-text {
+  margin: 0.75rem 0 0;
+  font-size: 0.94rem;
+}
+
+.package-price-block,
+.home-price-block {
+  margin-top: 1rem;
+}
+
+.package-price,
+.home-price-value {
+  margin: 0;
+  color: #111111 !important;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 850;
+  line-height: 0.98;
+  letter-spacing: 0;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  text-shadow: none !important;
+}
+
+.tax-note,
+.home-tax-note {
+  margin: 0.38rem 0 0;
+  color: rgba(17, 17, 17, 0.66) !important;
+  font-size: 0.86rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.package-summary-card ul {
+  display: grid;
+  gap: 0.58rem;
+  margin: 1rem 0 1.1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.package-summary-card li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: start;
+  color: rgba(17, 17, 17, 0.74) !important;
+  font-size: 0.93rem;
+  line-height: 1.42;
+}
+
+.package-summary-card li svg {
+  margin-top: 0.12rem;
+  color: #9a742e;
+}
+
+.package-comparison-panel {
+  grid-template-columns: 0.82fr 1.18fr;
+}
+
+.package-comparison-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.package-comparison-list div {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.38fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 0.65rem;
+}
+
+.package-comparison-list div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.package-comparison-list strong {
+  color: #111111 !important;
+}
+
+.home-price-card {
+  padding: 1.15rem;
+}
+
+.struktiva-home #preise .home-price-card {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  background:
+    radial-gradient(circle at 90% 8%, rgba(214, 178, 94, 0.14), transparent 24%),
+    #ffffff !important;
+  color: #111111 !important;
+  box-shadow: 0 16px 38px rgba(63, 48, 18, 0.06) !important;
+}
+
+.struktiva-home #preise .home-price-card-featured {
+  border-color: rgba(154, 116, 46, 0.26) !important;
+  background:
+    radial-gradient(circle at 86% 14%, rgba(154, 116, 46, 0.16), transparent 30%),
+    linear-gradient(145deg, rgba(243, 227, 176, 0.82), rgba(255, 255, 255, 0.94)),
+    #f3e3b0 !important;
+}
+
+.struktiva-home #preise .home-price-card :is(h3, p, li, span) {
+  color: rgba(17, 17, 17, 0.74) !important;
+}
+
+.struktiva-home #preise .home-price-card :is(h3, .home-price-value) {
+  color: #111111 !important;
+}
+
+.struktiva-home #preise .home-price-card :is(.home-price-badge, .home-tax-note),
+.struktiva-home #preise .home-price-card li svg {
+  color: #9a742e !important;
+}
+
+.struktiva-home #preise .home-price-card .home-price-link {
+  color: #111111 !important;
+}
+
+.home-price-card h3 {
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.16;
+}
+
+.home-price-description,
+.home-price-note {
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.home-price-card ul {
+  gap: 0.52rem;
+  margin-top: 1rem;
+}
+
+.home-price-card li {
+  font-size: 0.93rem;
+  line-height: 1.42;
+}
+
+@media (max-width: 1180px) {
+  .package-card-grid,
+  .home-pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .package-card-grid > *,
+  .home-pricing-grid > * {
+    grid-column: auto;
+  }
+
+  .package-card-grid > :nth-child(4),
+  .package-card-grid > :nth-child(5),
+  .home-pricing-grid > :nth-child(4),
+  .home-pricing-grid > :nth-child(5) {
+    grid-column: auto;
+  }
+
+  .package-card-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 780px) {
+  .struktiva-pricing-route {
+    padding-bottom: 8rem;
+  }
+
+  .struktiva-pricing-route .floating-whatsapp-button {
+    right: 16px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .package-pricing-section {
+    padding-bottom: 6rem;
+  }
+
+  .package-pricing-intro,
+  .package-comparison-panel {
+    grid-template-columns: 1fr;
+    border-radius: 24px 30px 26px 34px;
+  }
+
+  .package-card-grid,
+  .home-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .package-card-grid > :last-child {
+    grid-column: auto;
+  }
+
+  .package-primary-link,
+  .package-card-cta {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .package-comparison-list div {
+    grid-template-columns: 1fr;
+    gap: 0.18rem;
   }
 }
