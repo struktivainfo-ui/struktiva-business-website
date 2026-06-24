@@ -4176,192 +4176,374 @@ function StructureCtaSection() {
 function HomePage() {
   return (
     <>
-      <HeroSectionPremium />
+      <HomeHeroSection />
       <HomeServiceTickerSection />
-      <HomeIntroSection />
-      <HomePrimarySystemsSection />
+      <HomeProblemSection />
+      <HomeFlowSection />
+      <HomeServicesSection />
       <HomeAudienceSection />
-      <HomeAboutTeaserSection />
+      <HomePricingSection />
       <HomeReferencesDemosTeaserSection />
-      <HomeFinalCtaSection />
+      <HomeTrustSection />
+      <HomeContactSection />
     </>
   )
 }
 
-function HomeServiceTickerSection() {
+function HomeSectionHeading({ eyebrow, title, text, align = 'center' }) {
   return (
-    <section
-      aria-label="Leistungen im Überblick"
-      className="px-5 pb-6 lg:px-8 lg:pb-8"
-    >
-      <div className="mx-auto max-w-7xl">
-        <div className="theme-band-shell theme-band-shell-dark rounded-[1.8rem]">
-          <div className="theme-band-track" aria-hidden="true">
-            {[0, 1].flatMap((copyIndex) =>
-              homeThemeBandItems.map((item) => (
-                <span key={`${copyIndex}-${item}`} className="theme-band-item">
-                  {item}
-                </span>
-              )),
-            )}
+    <div className={`home-section-heading ${align === 'left' ? 'home-section-heading-left' : ''}`}>
+      <p className="home-eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+      {text ? <p className="home-section-text">{text}</p> : null}
+    </div>
+  )
+}
+
+function HomeHeroSection() {
+  const systemPoints = [
+    'Website',
+    'Google-Sichtbarkeit',
+    'Kundenanfragen',
+    'Bewertungen',
+    'Kontaktwege',
+    'digitale Abläufe',
+  ]
+
+  return (
+    <section id="start" className="home-hero hero-premium-section">
+      <div className="home-hero-visual" aria-hidden="true">
+        <div className="home-hero-flow home-hero-flow-one" />
+        <div className="home-hero-flow home-hero-flow-two" />
+      </div>
+      <div className="home-container home-hero-grid">
+        <motion.div initial="hidden" animate="visible" variants={stagger} className="home-hero-copy">
+          <motion.p variants={fadeUp} className="home-eyebrow">
+            STRUKTIVA Unternehmensberatung
+          </motion.p>
+          <motion.h1 variants={fadeUp}>
+            Digitale Struktur für Unternehmen, die klarer wirken und leichter anfragbar sein wollen.
+          </motion.h1>
+          <motion.p variants={fadeUp} className="home-hero-lead">
+            STRUKTIVA verbindet Website, Google-Sichtbarkeit, Kundenanfragen, Bewertungen, Kontaktwege und digitale Abläufe zu einem klaren System.
+          </motion.p>
+          <motion.div variants={fadeUp} className="home-hero-actions">
+            <a href="#kontakt" className="home-button home-button-primary">
+              Kostenloses Erstgespräch anfragen
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href="#leistungen" className="home-button home-button-secondary">
+              Leistungen ansehen
+            </a>
+          </motion.div>
+        </motion.div>
+
+        <motion.div initial="hidden" animate="visible" variants={fadeRight} className="home-system-panel">
+          <p className="home-system-kicker">Digitales Betriebssystem</p>
+          <h2>Ein ruhiger Ablauf statt einzelner digitaler Baustellen.</h2>
+          <div className="home-system-map" aria-label="STRUKTIVA Systembereiche">
+            {systemPoints.map((point, index) => (
+              <div key={point} className="home-system-node" style={{ '--node-index': index }}>
+                {point}
+              </div>
+            ))}
           </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+function HomeServiceTickerSection() {
+  const tickerItems = [
+    'Webseiten',
+    'Google-Sichtbarkeit',
+    'Digitale Kundenführung',
+    'KI-Assistenten',
+    'Betriebs-Dashboards',
+    'Bewertungsstrukturen',
+    'Unternehmens-Apps',
+    'Digitale Ordnung',
+  ]
+
+  return (
+    <section aria-label="Leistungen im Überblick" className="home-ticker-section">
+      <div className="theme-band-shell">
+        <div className="theme-band-track" aria-hidden="true">
+          {[0, 1, 2].flatMap((copyIndex) =>
+            tickerItems.map((item) => (
+              <span key={`${copyIndex}-${item}`} className="theme-band-item">
+                {item}
+              </span>
+            )),
+          )}
         </div>
       </div>
     </section>
   )
 }
 
-function HomeIntroSection() {
+function HomeProblemSection() {
+  const problems = [
+    'unklare Website',
+    'zu wenig Vertrauen',
+    'schlechte Auffindbarkeit',
+    'verstreute Kontaktwege',
+    'keine digitale Ordnung',
+  ]
+
   return (
-    <section className="px-5 py-14 lg:px-8 lg:py-18">
-      <div className="mx-auto max-w-6xl rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,253,248,0.96),rgba(248,241,228,0.94),rgba(243,233,214,0.9))] p-6 shadow-[0_24px_56px_rgba(83,62,22,0.07)] md:p-8">
-        <SectionHeader
-          eyebrow="Einstieg"
-          title="Eine Website ist nur der Anfang."
-          text="Viele Unternehmen haben einzelne digitale Bausteine: eine Website, ein Kontaktformular, WhatsApp, Google oder Social Media. STRUKTIVA bringt diese Bausteine in eine klare Struktur, damit Sichtbarkeit, Kundenanfragen und Abläufe besser zusammenarbeiten."
-          centered={false}
-          tone="light"
-        />
+    <section className="home-section">
+      <div className="home-container home-problem-grid">
+        <Reveal>
+          <HomeSectionHeading
+            eyebrow="Ausgangslage"
+            title="Viele Betriebe haben einzelne digitale Baustellen, aber kein klares System."
+            text="Wenn Website, Google, Bewertungen und Kontaktwege nicht zusammenarbeiten, wirkt der Auftritt schnell unruhig und Anfragen bleiben dem Zufall überlassen."
+            align="left"
+          />
+        </Reveal>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger} className="home-problem-list">
+          {problems.map((problem) => (
+            <motion.div key={problem} variants={fadeUp} className="home-problem-item">
+              <span />
+              {problem}
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )
 }
 
-function HomePrimarySystemsSection() {
-  const cards = [
-    [
-      'Websites & Sichtbarkeit',
-      'Moderne Websites, Landingpages und digitale Präsenz, die Vertrauen schaffen und verständlich erklären, was ein Unternehmen anbietet.',
-      'Websites ansehen',
-      siteLinks.websites,
-    ],
-    [
-      'Lead-Systeme',
-      'Kundenanfragen werden sauber erfasst, weitergeleitet und übersichtlich vorbereitet, damit nichts verloren geht.',
-      'Lead-Systeme ansehen',
-      siteLinks.leadSysteme,
-    ],
-    [
-      'KI & Automatisierung',
-      'Wiederkehrende Aufgaben, Kundenkommunikation und Antwortvorlagen werden einfacher, klarer und besser nutzbar.',
-      'KI & Automatisierung ansehen',
-      siteLinks.kiAutomatisierung,
-    ],
+function HomeFlowSection() {
+  return (
+    <section className="home-section home-section-flow">
+      <div className="home-container">
+        <Reveal>
+          <div className="home-flow-panel">
+            <div className="home-flow-content">
+              <p className="home-eyebrow">Was STRUKTIVA macht</p>
+              <h2>STRUKTIVA bringt Struktur in digitale Unternehmensbereiche.</h2>
+              <p>
+                Website, Google, Kontaktwege, Bewertungen, Kundenführung und interne Abläufe werden nicht einzeln betrachtet, sondern zu einem verständlichen System verbunden. So entsteht ein digitaler Auftritt, der im Alltag Orientierung gibt und professionell Vertrauen aufbaut.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
+function HomeServicesSection() {
+  const services = [
+    ['Webseiten & Landingpages', 'Klare digitale Auftritte, die Leistungen verständlich zeigen und Besucher zur passenden Anfrage führen.', LayoutTemplate],
+    ['Google-Sichtbarkeit', 'Grundlagen für lokale Auffindbarkeit, Unternehmensprofil-Texte und saubere digitale Signale.', Search],
+    ['Digitale Kundenführung', 'Strukturen, die vom ersten Eindruck bis zur Anfrage logisch und ruhig führen.', MousePointerClick],
+    ['WhatsApp-Kontaktstruktur', 'Kontaktwege werden sichtbar, sinnvoll priorisiert und für Kunden einfach nutzbar gemacht.', MessageCircle],
+    ['Bewertungs- und QR-Code-Strukturen', 'Bewertungslinks, QR-Codes und klare Anfragepunkte für mehr Vertrauen im Alltag.', QrCode],
+    ['Unternehmens-Apps', 'Individuelle Web-Apps für Aufgaben, Kundenverwaltung, Termine und mobile Ablauforganisation.', Smartphone],
+    ['Betriebs-Dashboards', 'Übersichten für Planung, Aufgaben, Kennzahlen und betriebliche Kontrolle.', PanelsTopLeft],
+    ['Digitale Ordnungssysteme', 'Wiederkehrende Aufgaben, Checklisten, Dokumentation und Vorlagen werden nachvollziehbar geordnet.', ClipboardList],
+    ['KI-Assistenten für Betriebe', 'Vorlagen und Assistenten für häufige Fragen, Antworten, Kommunikation und interne Routineaufgaben.', Sparkles],
   ]
 
   return (
-    <section className="px-5 py-10 lg:px-8 lg:py-14">
-      <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
-        {cards.map(([title, text, cta, href]) => (
-          <article
-            key={title}
-            className="rounded-[1.9rem] border border-white/14 bg-[linear-gradient(165deg,rgba(7,17,31,0.92),rgba(11,31,58,0.88),rgba(5,10,18,0.95))] p-6 shadow-premium"
-          >
-            <h2 className="text-2xl font-semibold text-white">{title}</h2>
-            <p className="mt-4 text-sm leading-8 text-[#D7DCE5] md:text-base">{text}</p>
-            <a
-              href={href}
-              className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D8B45A]/38 px-5 py-2.5 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white"
-            >
-              {cta}
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </article>
-        ))}
+    <section id="leistungen" className="home-section">
+      <div className="home-container">
+        <Reveal>
+          <HomeSectionHeading
+            eyebrow="Leistungen"
+            title="Digitale Bausteine, weich eingebettet in ein gemeinsames System."
+            text="Jede Leistung ist kurz, nachvollziehbar und auf den Unternehmensalltag ausgerichtet. Keine Garantien, keine Show, sondern klare digitale Ordnung."
+          />
+        </Reveal>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="home-service-grid">
+          {services.map(([title, text, Icon]) => (
+            <motion.article key={title} variants={fadeUp} className="home-gold-block">
+              <Icon className="home-gold-icon" />
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
       </div>
     </section>
   )
 }
 
 function HomeAudienceSection() {
+  const audiences = [
+    'lokale Dienstleister',
+    'Friseursalons',
+    'Kosmetikstudios',
+    'Handwerksbetriebe',
+    'Beratungsbetriebe',
+    'Selbstständige',
+    'inhabergeführte Betriebe',
+  ]
+
   return (
-    <section className="px-5 py-12 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-6xl rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.96),rgba(247,239,225,0.94))] p-6 shadow-[0_24px_56px_rgba(83,62,22,0.07)] md:p-8">
-        <SectionHeader
-          eyebrow="Vertrauen"
-          title="Für wen STRUKTIVA arbeitet"
-          text="STRUKTIVA unterstützt Selbstständige, Dienstleister, lokale Betriebe, Handwerker, Beauty-Betriebe, Beratungen und Unternehmen, die digitale Abläufe verständlicher und professioneller aufbauen möchten."
-          centered={false}
-          tone="light"
-        />
+    <section className="home-section home-section-quiet">
+      <div className="home-container home-audience-grid">
+        <Reveal>
+          <HomeSectionHeading
+            eyebrow="Für wen"
+            title="Für Betriebe, die professioneller auftreten und digital ruhiger arbeiten wollen."
+            text="STRUKTIVA richtet sich an Unternehmen, die nicht größer wirken müssen als sie sind, sondern klarer, vertrauenswürdiger und besser erreichbar."
+            align="left"
+          />
+        </Reveal>
+        <div className="home-audience-list">
+          {audiences.map((audience) => (
+            <span key={audience}>{audience}</span>
+          ))}
+        </div>
       </div>
     </section>
   )
 }
 
-function HomeAboutTeaserSection() {
+function HomePricingSection() {
   return (
-    <section className="px-5 py-10 lg:px-8 lg:py-14">
-      <div className="metallic-light-panel mx-auto max-w-6xl rounded-[2rem] p-6 md:p-8">
-        <SectionHeader
-          eyebrow="Über STRUKTIVA"
-          title="Digitale Strukturen verständlich, nutzbar und sinnvoll aufbauen."
-          text="STRUKTIVA wurde entwickelt, um digitale Strukturen verständlich, nutzbar und sinnvoll aufzubauen. Im Mittelpunkt stehen keine Einzellösungen, sondern Systeme, die Website, Sichtbarkeit, Kontaktwege und interne Abläufe verbinden."
-          centered={false}
-          tone="light"
-        />
-        <a
-          href={siteLinks.about}
-          className="metallic-btn-secondary mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition"
-        >
-          Mehr über STRUKTIVA
-          <ArrowRight className="h-4 w-4" />
-        </a>
-      </div>
-    </section>
-  )
-}
-
-function HomeFinalCtaSection() {
-  return (
-    <section className="px-5 pb-12 pt-8 lg:px-8 lg:pb-18 lg:pt-10">
-      <div className="mx-auto max-w-6xl rounded-[2.1rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,252,246,0.98),rgba(247,238,222,0.95))] p-6 shadow-[0_24px_52px_rgba(83,62,22,0.08)] md:p-8">
-        <SectionHeader
-          eyebrow="Nächster Schritt"
-          title="Bereit für mehr digitale Struktur?"
-          text="Dann prüfen wir gemeinsam, welche Website, welches Lead-System oder welche digitale Lösung zu deinem Unternehmen passt."
-          centered={false}
-          tone="light"
-        />
-        <a
-          href={siteLinks.projectRequestForm}
-          className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
-        >
-          Projekt anfragen
-          <ArrowRight className="h-4 w-4" />
-        </a>
+    <section id="preise" className="home-section">
+      <div className="home-container">
+        <Reveal>
+          <HomeSectionHeading
+            eyebrow="Pakete & Preise"
+            title="Saubere Einstiegspakete ohne Discounter-Auftritt."
+            text="Die bestehenden Preise bleiben transparent inklusive Mehrwertsteuer. Der Umfang wird vor der Umsetzung klar besprochen."
+          />
+        </Reveal>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.06 }} variants={stagger} className="home-pricing-grid">
+          {pricingPackages.map((pkg) => (
+            <motion.article key={pkg.title} variants={fadeUp} className={pkg.premium ? 'home-price-card home-price-card-featured' : 'home-price-card'}>
+              <p className="home-price-badge">{pkg.badge}</p>
+              <h3>{pkg.title}</h3>
+              <p className="home-price-description">{pkg.description}</p>
+              <p className="home-price-value">{pkg.price}</p>
+              <ul>
+                {pkg.features.slice(0, 4).map((feature) => (
+                  <li key={feature}>
+                    <CheckCircle2 className="h-4 w-4" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="home-price-note">{pkg.note}</p>
+              <a href="#kontakt" className="home-price-link">
+                {pkg.cta}
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </motion.article>
+          ))}
+        </motion.div>
+        <Reveal className="mt-6">
+          <div className="home-care-note">
+            <strong>Monatliche Betreuung</strong>
+            <span>
+              Monatliche Betreuung ist für regelmäßige Weiterentwicklung, Pflege, Struktur und laufende Unterstützung gedacht. Kleine Einzeländerungen oder seltene Anpassungen können individuell besprochen werden.
+            </span>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
 }
 
 function HomeReferencesDemosTeaserSection() {
+  const teasers = [
+    ['Referenzprojekt Salon Karola', 'Echte Umsetzung vom Baukasten-Auftritt zur modernen digitalen Salon-Struktur.', siteLinks.salonKarolaReferenz],
+    ['Demos für Branchen', 'Beispielseiten für Handwerker, Kosmetikstudios und lokale Dienstleister.', siteLinks.demos],
+    ['Digitale Struktur', 'Ein kompakter Blick darauf, wie STRUKTIVA einzelne digitale Themen verbindet.', siteLinks.landingpageDigitaleStruktur],
+  ]
+
   return (
-    <section className="px-5 py-10 lg:px-8 lg:py-14">
-      <div className="mx-auto max-w-6xl rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,254,250,0.96),rgba(247,239,225,0.94))] p-6 shadow-[0_24px_56px_rgba(83,62,22,0.07)] md:p-8">
-        <SectionHeader
-          eyebrow="Referenzen & Demos"
-          title="Referenzen & Demos"
-          text="Einblicke in umgesetzte Projekte und Beispielseiten zeigen, wie digitale Strukturen in der Praxis aussehen können."
-          centered={false}
-          tone="light"
-        />
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <a
-            href={siteLinks.referenzen}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/38 bg-white/82 px-6 py-3 text-sm font-semibold text-[#16120E] transition hover:border-[#D8B45A]/55 hover:text-[#A9822D]"
-          >
-            Referenzen ansehen
-            <ArrowRight className="h-4 w-4 text-[#D8B45A]" />
-          </a>
-          <a
-            href={siteLinks.demos}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
-          >
-            Demos ansehen
-            <ArrowRight className="h-4 w-4" />
-          </a>
+    <section id="demos" className="home-section home-section-quiet">
+      <div className="home-container">
+        <Reveal>
+          <HomeSectionHeading
+            eyebrow="Referenzen & Demos"
+            title="Bestehende Beispiele bleiben sichtbar, aber ruhiger präsentiert."
+            text="Referenzen und Demo-Seiten zeigen kompakt, wie digitale Struktur in unterschiedlichen Unternehmenssituationen aussehen kann."
+          />
+        </Reveal>
+        <div className="home-reference-grid">
+          {teasers.map(([title, text, href]) => (
+            <a key={title} href={href} className="home-reference-link">
+              <span>{title}</span>
+              <p>{text}</p>
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+function HomeTrustSection() {
+  const trust = [
+    ['Keine reine Website', 'STRUKTIVA denkt den digitalen Auftritt als zusammenhängendes System.'],
+    ['Kein digitales Flickwerk', 'Einzelne Bausteine werden geordnet, priorisiert und verständlich verbunden.'],
+    ['Verständlich im Alltag', 'Die Struktur soll nutzbar bleiben, auch wenn der Betrieb wenig Zeit für digitale Themen hat.'],
+    ['Persönlich umgesetzt', 'Die Umsetzung bleibt nah am Betrieb, nicht an generischen Agentur-Vorlagen.'],
+  ]
+
+  return (
+    <section className="home-section">
+      <div className="home-container home-trust-grid">
+        <Reveal>
+          <HomeSectionHeading
+            eyebrow="Warum anders"
+            title="Ein klares digitales Gesamtsystem statt einzelner Oberflächen."
+            text="STRUKTIVA ordnet, verbindet und übersetzt digitale Themen so, dass sie für Kunden und Betrieb nachvollziehbar bleiben."
+            align="left"
+          />
+        </Reveal>
+        <div className="home-trust-list">
+          {trust.map(([title, text]) => (
+            <article key={title}>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function HomeContactSection() {
+  return (
+    <section id="kontakt" className="home-section home-contact-section">
+      <div className="home-container">
+        <Reveal>
+          <div className="home-contact-panel">
+            <div>
+              <p className="home-eyebrow">Kontakt</p>
+              <h2>Lass uns deine digitale Struktur gemeinsam ordnen.</h2>
+              <p>
+                Sven Matzke<br />
+                STRUKTIVA Unternehmensberatung
+              </p>
+            </div>
+            <div className="home-contact-details">
+              <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
+              <a href={contactDetails.phoneHref}>{contactDetails.phoneLabel}</a>
+              <div className="home-contact-actions">
+                <a href={siteLinks.projectRequestForm} className="home-button home-button-primary">
+                  Jetzt Anfrage senden
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <a href={contactDetails.phoneHref} className="home-button home-button-secondary">
+                  Direkt Kontakt aufnehmen
+                </a>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
