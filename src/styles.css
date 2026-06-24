@@ -2598,3 +2598,235 @@ body.cookie-modal-open {
     min-height: auto;
   }
 }
+
+/* STRUKTIVA sitewide bright system */
+.struktiva-metallic {
+  --site-bg: #faf8f2;
+  --site-surface: #ffffff;
+  --site-text: #111111;
+  --site-muted: #3a3a3a;
+  --site-gold: #d6b25e;
+  --site-gold-light: #f3e3b0;
+  --site-gold-dark: #9a742e;
+  --site-line: rgba(0, 0, 0, 0.08);
+  --site-shadow: 0 24px 58px rgba(63, 48, 18, 0.08);
+  color: var(--site-text);
+  background:
+    radial-gradient(circle at 10% 6%, rgba(243, 227, 176, 0.34), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(214, 178, 94, 0.14), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, var(--site-bg) 48%, #ffffff 100%) !important;
+}
+
+.struktiva-metallic::after {
+  display: none;
+}
+
+.struktiva-metallic main {
+  color: var(--site-text);
+  background: transparent !important;
+}
+
+.struktiva-metallic main :is(h1, h2, h3, h4, h5, h6, strong),
+.struktiva-metallic main :is(.text-white, .metallic-display-title, .metallic-section-title, .metallic-dark-title),
+.struktiva-metallic main [class*='text-[#fff'],
+.struktiva-metallic main [class*='text-[#F8'],
+.struktiva-metallic main [class*='text-[#E7'],
+.struktiva-metallic main [class*='text-[#D7'] {
+  color: var(--site-text) !important;
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+.struktiva-metallic main :is(p, li, dd, dt, small, label, figcaption),
+.struktiva-metallic main [class*='text-gray'],
+.struktiva-metallic main [class*='text-[#94'],
+.struktiva-metallic main [class*='text-[#C8'],
+.struktiva-metallic main [class*='text-[#dbe'],
+.struktiva-metallic main [class*='text-[#E0'] {
+  color: rgba(17, 17, 17, 0.74) !important;
+}
+
+.struktiva-metallic main :is(a:not(.home-button), button:not(.home-button)) {
+  text-shadow: none !important;
+}
+
+.struktiva-metallic :is(.metallic-card, .metallic-light-panel, .metallic-panel-dark, .metallic-feature-card, .metallic-tag-box, .metallic-result-box, .service-card-3d, .pricing-card-3d, .app-preview-3d, .service-image-spotlight, .contact-info-card, .industry-card, .package-card-cta),
+.struktiva-metallic main :is(section, article, aside, form, figure)[class*='rounded'],
+.struktiva-metallic main :is(div)[class*='rounded'][class*='border'] {
+  border-color: var(--site-line) !important;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(214, 178, 94, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 242, 0.9)) !important;
+  color: var(--site-text) !important;
+  box-shadow: var(--site-shadow) !important;
+  backdrop-filter: none !important;
+}
+
+.struktiva-metallic main :is(article, section)[class*='rounded']:nth-child(3n + 2),
+.struktiva-metallic main .grid > :is(article, a)[class*='rounded']:nth-child(3n + 1),
+.struktiva-metallic main :is(.service-card-3d, .pricing-card-3d):nth-child(odd) {
+  border-color: rgba(154, 116, 46, 0.18) !important;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.7), transparent 22%),
+    radial-gradient(circle at 80% 20%, rgba(154, 116, 46, 0.18), transparent 28%),
+    linear-gradient(145deg, rgba(243, 227, 176, 0.86), rgba(214, 178, 94, 0.58), rgba(250, 248, 242, 0.76)) !important;
+}
+
+.struktiva-metallic main :is([class*='bg-[#07111F'], [class*='bg-[#050'], [class*='bg-[#081'], [class*='bg-[#0b1f'], [class*='bg-[#111827'], [class*='bg-gray-900'], [class*='bg-gray-800'], [class*='bg-black'], [class*='from-[#07111F'], [class*='from-[#0b'], [class*='from-[#111827'], [class*='from-[#120']) {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(214, 178, 94, 0.13), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 242, 0.9)) !important;
+}
+
+.struktiva-metallic main :is([class*='bg-[#D8B45A'], [class*='bg-[#f59e0b'], [class*='bg-[#b8894b']):is(a, button),
+.struktiva-metallic main :is(a, button).metallic-btn-primary {
+  border: 1px solid rgba(214, 178, 94, 0.72) !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  box-shadow: 0 16px 34px rgba(17, 17, 17, 0.14) !important;
+}
+
+.struktiva-metallic main :is(a, button)[class*='border']:not([class*='bg-[#D8B45A']):not(.metallic-btn-primary),
+.struktiva-metallic main .metallic-btn-secondary {
+  border-color: rgba(154, 116, 46, 0.36) !important;
+  background: rgba(255, 255, 255, 0.78) !important;
+  color: var(--site-text) !important;
+  box-shadow: none !important;
+}
+
+.struktiva-metallic main :is(a, button):hover {
+  border-color: rgba(154, 116, 46, 0.48) !important;
+  color: var(--site-gold-dark) !important;
+  transform: translateY(-1px);
+}
+
+.struktiva-metallic main :is(a, button)[class*='bg-[#D8B45A']:hover,
+.struktiva-metallic main :is(a, button).metallic-btn-primary:hover {
+  color: #ffffff !important;
+  background: #111111 !important;
+}
+
+.struktiva-metallic main :is(.rounded-full, .rounded-xl, .rounded-2xl)[class*='text-[#D8B45A'],
+.struktiva-metallic main :is(.rounded-full, .rounded-xl, .rounded-2xl)[class*='text-[#A9822D'],
+.struktiva-metallic main [class*='text-[#D8B45A'],
+.struktiva-metallic main [class*='text-[#A9822D'],
+.struktiva-metallic main [class*='text-[#F2D98B'],
+.struktiva-metallic main [class*='text-[#fbbf24'] {
+  color: var(--site-gold-dark) !important;
+}
+
+.struktiva-metallic main :is(img, video, iframe) {
+  border-color: rgba(154, 116, 46, 0.14) !important;
+}
+
+.struktiva-metallic .text-gold-glow,
+.struktiva-metallic .text-gold-glow-soft,
+.struktiva-metallic .text-gold-glow-animated {
+  text-shadow: none !important;
+}
+
+.struktiva-metallic :is(header.sticky, header:not(.demo-header)) {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-bottom: 1px solid var(--site-line) !important;
+  box-shadow: 0 12px 34px rgba(63, 48, 18, 0.08) !important;
+}
+
+.struktiva-metallic header.sticky > div,
+.struktiva-metallic #mobile-menu-panel,
+.struktiva-metallic .header-dropdown-panel,
+.struktiva-metallic .header-demo-dropdown-panel,
+.struktiva-metallic .header-demo-mobile-panel,
+.struktiva-metallic .mobile-leistungen-submenu {
+  border-color: rgba(154, 116, 46, 0.2) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: var(--site-text) !important;
+  box-shadow: 0 18px 44px rgba(63, 48, 18, 0.1) !important;
+}
+
+.struktiva-metallic header :is(a, button, p, span, .text-white, .text-\[\#D7DCE5\]) {
+  color: var(--site-text) !important;
+}
+
+.struktiva-metallic header :is(a, button):hover {
+  color: var(--site-gold-dark) !important;
+}
+
+.struktiva-metallic footer {
+  border-top: 1px solid var(--site-line);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(243, 227, 176, 0.35), transparent 28%),
+    linear-gradient(180deg, #ffffff, #faf8f2) !important;
+  color: rgba(17, 17, 17, 0.74) !important;
+}
+
+.struktiva-metallic footer > div,
+.struktiva-metallic footer :is([class*='bg-[linear-gradient'], [class*='bg-[#'], [class*='bg-black'], [class*='bg-white/[0.04]']) {
+  border-color: rgba(154, 116, 46, 0.18) !important;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(214, 178, 94, 0.2), transparent 28%),
+    radial-gradient(circle at 6% 100%, rgba(243, 227, 176, 0.42), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 242, 0.9)) !important;
+  box-shadow: 0 18px 48px rgba(63, 48, 18, 0.09) !important;
+}
+
+.struktiva-metallic footer > div > div:first-child {
+  background: linear-gradient(90deg, rgba(214, 178, 94, 0), rgba(214, 178, 94, 0.62), rgba(214, 178, 94, 0)) !important;
+}
+
+.struktiva-metallic footer [class*='border-t'] {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.struktiva-metallic footer :is(strong, h2, h3, a, p, span) {
+  color: var(--site-text) !important;
+}
+
+.struktiva-metallic footer :is(a, button):hover {
+  color: var(--site-gold-dark) !important;
+}
+
+.struktiva-metallic .cookie-banner-panel,
+.struktiva-metallic .cookie-modal-panel {
+  border-color: rgba(154, 116, 46, 0.24) !important;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(214, 178, 94, 0.2), transparent 28%),
+    linear-gradient(180deg, #ffffff, #faf8f2) !important;
+  color: var(--site-text) !important;
+  box-shadow: 0 24px 60px rgba(63, 48, 18, 0.14) !important;
+}
+
+.struktiva-metallic .cookie-banner-title,
+.struktiva-metallic .cookie-modal-title,
+.struktiva-metallic .cookie-toggle-label {
+  color: var(--site-text) !important;
+}
+
+.struktiva-metallic .cookie-banner-text,
+.struktiva-metallic .cookie-modal-text,
+.struktiva-metallic .cookie-toggle-description {
+  color: rgba(17, 17, 17, 0.72) !important;
+}
+
+.struktiva-metallic .cookie-button-primary {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.struktiva-metallic .cookie-button-secondary,
+.struktiva-metallic .cookie-button-ghost,
+.struktiva-metallic .cookie-close-button {
+  border-color: rgba(154, 116, 46, 0.3) !important;
+  background: rgba(255, 255, 255, 0.74) !important;
+  color: var(--site-text) !important;
+}
+
+@media (max-width: 768px) {
+  .struktiva-metallic main {
+    overflow-x: hidden;
+  }
+
+  .struktiva-metallic main :is(section, article, aside, form, figure)[class*='rounded'],
+  .struktiva-metallic main :is(div)[class*='rounded'][class*='border'] {
+    border-radius: 1.35rem !important;
+  }
+}

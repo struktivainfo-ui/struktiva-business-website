@@ -36,6 +36,7 @@ import { CookieConsentLayer, openCookieSettings, trackMarketingLead } from './co
 const SITE_URL = 'https://struktiva.de/'
 const SITE_HOST = new URL(SITE_URL).host
 const absoluteSiteUrl = (path = '/') => new URL(path, SITE_URL).toString()
+const SALON_KAROLA_URL = 'https://salonkarola.de/'
 
 const siteLinks = {
   home: '/#start',
@@ -46,7 +47,7 @@ const siteLinks = {
   leadSysteme: '/lead-systeme',
   paketePage: '/pakete',
   referenzen: '/referenzen',
-  salonKarolaReferenz: '/referenzen/salon-karola',
+  salonKarolaReferenz: SALON_KAROLA_URL,
   pricing: '/preise',
   demos: '/demos',
   apps: '/apps',
@@ -3685,8 +3686,8 @@ function ReferenceShowcaseSection() {
               <li>• Kontakt vorhanden, aber nicht verkaufsstark geführt</li>
               <li>• klassische Informationsseite ohne starke digitale Struktur</li>
             </ul>
-            <a href="https://salonkarola.simdif.com/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#E5D7B9] bg-[#FFF9EE] px-4 py-2 text-sm font-semibold text-[#16120E] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D]">
-              Alte Seite ansehen
+            <a href={SALON_KAROLA_URL} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#E5D7B9] bg-[#FFF9EE] px-4 py-2 text-sm font-semibold text-[#16120E] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D]">
+              Aktuelle Live-Seite ansehen
               <ArrowRight className="h-4 w-4" />
             </a>
           </article>
