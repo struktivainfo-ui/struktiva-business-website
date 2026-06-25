@@ -37,68 +37,66 @@ const SITE_URL = 'https://struktiva.de/'
 const SITE_HOST = new URL(SITE_URL).host
 const absoluteSiteUrl = (path = '/') => new URL(path, SITE_URL).toString()
 const SALON_KAROLA_URL = 'https://salonkarola.de/'
-const SALON_KAROLA_OLD_URL = 'https://salonkarola.simdif.com/'
 
 const siteLinks = {
-  home: '/#start',
-  services: '/#leistungen',
+  home: '/',
+  services: '/leistungen',
   about: '/ueber-uns',
   leistungenPage: '/leistungen',
-  websites: '/websites',
-  leadSysteme: '/lead-systeme',
+  websites: '/leistungen',
+  leadSysteme: '/leistungen',
   paketePage: '/pakete',
   referenzen: '/referenzen',
   salonKarolaReferenz: SALON_KAROLA_URL,
-  salonKarolaBaukasten: SALON_KAROLA_OLD_URL,
-  pricing: '/preise',
+  pricing: '/pakete',
   demos: '/demos',
-  apps: '/apps',
-  googleAds: '/google-ads',
+  apps: '/leistungen',
+  googleAds: '/leistungen',
   kiAutomatisierung: '/ki-automatisierung',
-  projectRequest: '/projekt-anfragen',
-  projectRequestForm: '/projekt-anfragen#lead-form',
-  process: '/#ablauf',
+  projectRequest: '/kontakt',
+  projectRequestForm: '/kontakt#lead-form',
+  process: '/leistungen',
   contact: '/kontakt',
-  contactSection: '/#kontakt',
-  webseitenPage: '/webseiten',
-  landingpagesPage: '/landingpages',
-  appsPage: '/apps',
-  googleAdsPage: '/google-ads',
+  contactSection: '/kontakt',
+  webseitenPage: '/leistungen',
+  landingpagesPage: '/leistungen',
+  appsPage: '/leistungen',
+  googleAdsPage: '/leistungen',
   demoHandwerker: '/demos/handwerker',
   demoBeauty: '/demos/kosmetik',
   demoDienstleister: '/demos/lokaler-dienstleister',
   demoHandwerkerV2: '/demos/handwerker',
   demoKosmetikstudioV2: '/demos/kosmetik',
-  demoBewertungsstrukturV2: '/demos/bewertungsstruktur',
-  demoDashboardV2: '/demos/dashboard',
-  demoPersoenlicheProfilseite: '/demos/persoenliche-profilseite',
-  brancheFriseursalons: '/branchen/friseursalons',
-  brancheHandwerker: '/branchen/handwerker',
-  brancheKosmetikstudios: '/branchen/kosmetikstudios',
-  brancheLokaleDienstleister: '/branchen/lokale-dienstleister',
-  brancheBeratung: '/branchen/beratung',
-  landingpageDigitaleStruktur: '/landingpage-digitale-struktur',
-  bewertungsQrCode: '/bewertungs-qr-code',
-  digitaleSoforthilfe: '/digitale-soforthilfe',
-  digitaleOrdnungssysteme: '/digitale-ordnungssysteme',
-  websiteFuerKleineUnternehmen: '/website-fuer-kleine-unternehmen',
-  landingpageErstellenLassen: '/landingpage-erstellen-lassen',
-  googleSichtbarkeitKleineUnternehmen: '/google-sichtbarkeit-kleine-unternehmen',
-  digitaleKundenfuehrung: '/digitale-kundenfuehrung',
-  whatsappKontaktstruktur: '/whatsapp-kontaktstruktur',
-  socialMediaStruktur: '/social-media-struktur',
-  newsletterEinbindung: '/newsletter-einbindung',
-  unternehmensApps: '/unternehmens-apps',
-  betriebsDashboards: '/betriebs-dashboards',
-  angebotsarchitektur: '/angebotsarchitektur',
-  digitaleUnternehmensstruktur: '/digitale-unternehmensstruktur',
+  demoBewertungsstrukturV2: '/demos',
+  demoDashboardV2: '/demos',
+  demoPersoenlicheProfilseite: '/demos',
+  brancheFriseursalons: '/demos',
+  brancheHandwerker: '/demos',
+  brancheKosmetikstudios: '/demos',
+  brancheLokaleDienstleister: '/demos',
+  brancheBeratung: '/demos',
+  landingpageDigitaleStruktur: '/leistungen',
+  bewertungsQrCode: '/leistungen',
+  digitaleSoforthilfe: '/leistungen',
+  digitaleOrdnungssysteme: '/leistungen',
+  websiteFuerKleineUnternehmen: '/leistungen',
+  landingpageErstellenLassen: '/leistungen',
+  googleSichtbarkeitKleineUnternehmen: '/leistungen',
+  digitaleKundenfuehrung: '/leistungen',
+  whatsappKontaktstruktur: '/leistungen',
+  socialMediaStruktur: '/leistungen',
+  newsletterEinbindung: '/leistungen',
+  unternehmensApps: '/leistungen',
+  betriebsDashboards: '/leistungen',
+  angebotsarchitektur: '/leistungen',
+  digitaleUnternehmensstruktur: '/leistungen',
   impressum: '/impressum',
   datenschutz: '/datenschutz',
-  widerruf: '/widerruf',
-  wissen: '/wissen',
-  wissenWebsiteAllein: '/wissen/warum-eine-schoene-website-keine-kunden-bringt',
-  wissenGrundsysteme: '/wissen/digitale-grundsysteme-kleine-unternehmen',
-  wissenWebsiteLandingpageFunnel: '/wissen/website-landingpage-funnel-unterschied',
+  widerruf: '/datenschutz',
+  wissen: '/leistungen',
+  wissenWebsiteAllein: '/leistungen',
+  wissenGrundsysteme: '/leistungen',
+  wissenWebsiteLandingpageFunnel: '/leistungen',
 }
 
 const brand = {
@@ -153,35 +151,32 @@ const externalProfileLinks = [
 
 const navItems = [
   ['Start', siteLinks.home],
-  ['Leistungen', siteLinks.services],
-  ['Preise', siteLinks.pricing],
+  ['Leistungen', siteLinks.leistungenPage],
+  ['Pakete', siteLinks.paketePage],
+  ['Referenzen', siteLinks.referenzen],
   ['Demos', siteLinks.demos],
-  ['Wissen', siteLinks.wissen],
-  ['Apps', siteLinks.apps],
-  ['Google Ads', siteLinks.googleAds],
-  ['Bewertungs-QR-Code', siteLinks.bewertungsQrCode],
-  ['Ablauf', siteLinks.process],
+  ['Über uns', siteLinks.about],
   ['Kontakt', siteLinks.contact],
-  ['Digitale Ordnungssysteme', siteLinks.digitaleOrdnungssysteme],
 ]
 
 const desktopNavItems = [
   ['Pakete', siteLinks.paketePage],
-  ['Referenzen', siteLinks.referenzen],
+  ['Referenzen / Demos', siteLinks.referenzen],
+  ['Über uns', siteLinks.about],
   ['Kontakt', siteLinks.contact],
 ]
 
 const mobileNavItems = [
   ['Pakete', siteLinks.paketePage],
-  ['Referenzen', siteLinks.referenzen],
+  ['Referenzen / Demos', siteLinks.referenzen],
+  ['Über uns', siteLinks.about],
   ['Kontakt', siteLinks.contact],
 ]
 
 const leistungenDropdownItems = [
   ['Leistungen im Überblick', siteLinks.leistungenPage],
-  ['Websites', siteLinks.websites],
-  ['Lead-Systeme', siteLinks.leadSysteme],
-  ['KI & Automatisierung', siteLinks.kiAutomatisierung],
+  ['Pakete & Angebote', siteLinks.paketePage],
+  ['Referenzen', siteLinks.referenzen],
   ['Demos', siteLinks.demos],
 ]
 
@@ -233,7 +228,6 @@ const demoDropdownItems = [
   ['Handwerker-Demo', 'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.', siteLinks.demoHandwerkerV2, Building2],
   ['Kosmetikstudio-Demo', 'Moderne Website-Struktur für Kosmetikstudios mit Leistungen, Atmosphäre, Vertrauen, Termin-Anfrage und klarer Kundenführung.', siteLinks.demoKosmetikstudioV2, BadgeCheck],
   ['Lokaler-Dienstleister-Demo', 'Digitale Struktur für lokale Betriebe mit Leistungen, Einsatzgebiet, Vertrauen, Anfragewegen und klarer Kundenführung.', siteLinks.demoDienstleister, BriefcaseBusiness],
-  ['Bewertungsstruktur-Demo', 'QR-Code, Bewertungslink und klare Kundenführung zur Bewertung.', siteLinks.demoBewertungsstrukturV2, QrCode],
 ]
 
 const demoCards = [
@@ -656,132 +650,63 @@ function useDocumentTitleSafe(pathname) {
   useEffect(() => {
     const titles = {
       '/': 'STRUKTIVA Unternehmensarchitektur | Digitale Struktur für Unternehmen',
-      '/ueber-uns': 'Über uns - STRUKTIVA Unternehmensarchitektur',
-      '/websites': 'Websites & Landingpages - STRUKTIVA Unternehmensarchitektur',
-      '/lead-systeme': 'Lead-Systeme & Kundenanfragen - STRUKTIVA Unternehmensarchitektur',
+      '/leistungen': 'Leistungen - STRUKTIVA Unternehmensarchitektur',
       '/pakete': 'Pakete & Betreuung - STRUKTIVA Unternehmensarchitektur',
       '/referenzen': 'Referenzen - STRUKTIVA Unternehmensarchitektur',
-      '/referenzen/salon-karola': 'Salon Karola Referenz - STRUKTIVA Unternehmensarchitektur',
       '/demos': 'Demos - STRUKTIVA Unternehmensarchitektur',
-      '/webseiten': 'Professionelle Webseiten - STRUKTIVA Unternehmensarchitektur',
-      '/landingpages': 'Landingpages - STRUKTIVA Unternehmensarchitektur',
-      '/apps': 'Unternehmens-Apps - STRUKTIVA Unternehmensarchitektur',
-      '/google-ads': 'Google Ads - STRUKTIVA Unternehmensarchitektur',
-      '/ki-automatisierung': 'KI & Automatisierung für Unternehmen - STRUKTIVA',
-      '/projekt-anfragen': 'Projekt anfragen - STRUKTIVA Unternehmensarchitektur',
-      '/bewertungs-qr-code': 'Google-Bewertungssystem mit QR-Code | STRUKTIVA',
-      '/digitale-ordnungssysteme': 'Digitale Ordnungssysteme fuer Betriebe - STRUKTIVA',
-      '/website-fuer-kleine-unternehmen': 'Website-Erstellung fuer Unternehmen - STRUKTIVA',
-      '/landingpage-erstellen-lassen': 'Landingpages erstellen lassen - STRUKTIVA',
-      '/google-sichtbarkeit-kleine-unternehmen': 'Google-Sichtbarkeit fuer Unternehmen - STRUKTIVA',
-      '/digitale-kundenfuehrung': 'Digitale Kundenfuehrung - STRUKTIVA',
-      '/whatsapp-kontaktstruktur': 'WhatsApp-Kontaktstruktur - STRUKTIVA',
-      '/social-media-struktur': 'Social-Media-Struktur - STRUKTIVA',
-      '/newsletter-einbindung': 'Newsletter-Einbindung - STRUKTIVA',
-      '/unternehmens-apps': 'Unternehmens-Apps - STRUKTIVA',
-      '/betriebs-dashboards': 'Betriebs-Dashboards - STRUKTIVA',
-      '/angebotsarchitektur': 'Angebotsarchitektur - STRUKTIVA',
-      '/digitale-unternehmensstruktur': 'Digitale Unternehmensstruktur - STRUKTIVA',
-      '/digitale-soforthilfe': 'Digitale Soforthilfe für Unternehmen | STRUKTIVA',
-      '/demos/handwerker': 'Handwerker Demo | STRUKTIVA Unternehmensarchitektur',
-      '/demos/kosmetik': 'Kosmetikstudio Demo | STRUKTIVA Unternehmensarchitektur',
-      '/demos/lokaler-dienstleister': 'Lokaler Dienstleister Demo | STRUKTIVA Unternehmensarchitektur',
-      '/demos/bewertungsstruktur': 'Bewertungsstruktur Demo | STRUKTIVA Unternehmensarchitektur',
-      '/demos/dashboard': 'Dashboard Demo | STRUKTIVA Unternehmensarchitektur',
-      '/demos/persoenliche-profilseite': 'Persönliche Profilseite Demo | STRUKTIVA Unternehmensarchitektur',
-      '/branchen/friseursalons': 'Digitale Struktur für Friseursalons | STRUKTIVA',
-      '/branchen/handwerker': 'Digitale Struktur für Handwerker | STRUKTIVA',
-      '/branchen/kosmetikstudios': 'Digitale Struktur für Kosmetikstudios | STRUKTIVA',
-      '/branchen/lokale-dienstleister': 'Digitale Struktur für lokale Dienstleister | STRUKTIVA',
-      '/branchen/beratung': 'Digitale Struktur für Beratungsbetriebe | STRUKTIVA',
-      '/landingpage-digitale-struktur': 'Digitale Struktur fuer Unternehmen - STRUKTIVA Unternehmensarchitektur',
-      '/wissen': 'STRUKTIVA Wissen - Digitale Unternehmensstruktur für Unternehmen',
-      '/wissen/warum-eine-schoene-website-keine-kunden-bringt': 'Warum eine schöne Website allein keine Kunden bringt - STRUKTIVA Wissen',
-      '/wissen/digitale-grundsysteme-kleine-unternehmen': 'Die 5 digitalen Grundsysteme für Unternehmen - STRUKTIVA Wissen',
-      '/wissen/website-landingpage-funnel-unterschied': 'Website, Landingpage oder Funnel - STRUKTIVA Wissen',
-      '/leistungen': 'Leistungen - STRUKTIVA Unternehmensarchitektur',
-      '/impressum': 'Impressum - STRUKTIVA Unternehmensarchitektur',
-      '/datenschutz': 'Datenschutz - STRUKTIVA Unternehmensarchitektur',
-      '/widerruf': 'Widerruf - STRUKTIVA Unternehmensarchitektur',
+      '/ueber-uns': 'Über uns - STRUKTIVA Unternehmensarchitektur',
       '/kontakt': 'Kontakt - STRUKTIVA Unternehmensarchitektur',
-      '/preise': 'Preise - STRUKTIVA Unternehmensarchitektur',
+      '/datenschutz': 'Datenschutz - STRUKTIVA Unternehmensarchitektur',
+      '/impressum': 'Impressum - STRUKTIVA Unternehmensarchitektur',
     }
 
     const descriptions = {
-      '/ueber-uns':
-        'Mehr über STRUKTIVA Unternehmensarchitektur: digitale Struktur für Unternehmen, lokale Dienstleister und Selbstständige.',
-      '/websites':
-        'Websites und Landingpages von STRUKTIVA: klare Struktur, professionelle Darstellung, mobile Optimierung und saubere Anfrageführung.',
-      '/lead-systeme':
-        'Lead-Systeme, Kundenanfragen und Kontaktwege von STRUKTIVA: Formular, WhatsApp, Bewertungen und klare digitale Kundenführung.',
-      '/pakete':
-        'Pakete und Betreuung von STRUKTIVA: vier klare Einstiege für Website, Sichtbarkeit, Kundenführung und digitale Systeme.',
-      '/referenzen':
-        'Referenzen, Branchenlösungen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
-      '/referenzen/salon-karola':
-        'Salon Karola als echte STRUKTIVA Referenz: Website-Relaunch, Kundenführung, mobile Optimierung, Bewertungsstruktur und lokale Sichtbarkeit.',
-      '/demos':
-        'Demo-Beispiele von STRUKTIVA für Handwerk, Beauty und lokale Dienstleister sowie weitere digitale Musterseiten für klare Unternehmensstrukturen.',
-      '/bewertungs-qr-code':
-        'STRUKTIVA erstellt ein einfaches Google-Bewertungssystem mit QR-Code, Bewertungslink und Anleitung fuer lokale Unternehmen wie Salons, Handwerker, Kosmetikstudios und Dienstleister.',
-      '/digitale-ordnungssysteme':
-        'STRUKTIVA entwickelt digitale Ordnungssysteme fuer Betriebe - mit Tagesabschluss, Kassenstruktur, Monatsuebersicht, Exportfunktionen und steuerberaterfreundlicher Vorbereitung.',
-      '/digitale-soforthilfe':
-        'Schnelle digitale Unterstützung für Website-Anpassungen, Landingpages, Google-Texte, Social-Media-Beiträge, WhatsApp- und Bewertungstexte. STRUKTIVA Digitale Soforthilfe 99 € inklusive Mehrwertsteuer.',
-      '/ki-automatisierung':
-        'KI & Automatisierung für Unternehmen: STRUKTIVA verbindet Anfragen, Kommunikation und digitale Abläufe zu klaren, alltagstauglichen Systemen.',
-      '/projekt-anfragen':
-        'Projekt anfragen bei STRUKTIVA: professionelle Ersteinschätzung für Website, Google-Sichtbarkeit, Automatisierung, digitale Ordnung und Unternehmenssysteme.',
-      '/website-fuer-kleine-unternehmen':
-        'Moderne Website-Erstellung fuer Unternehmen und Selbststaendige mit klarer Struktur und professioneller Kundenfuehrung.',
-      '/landingpage-erstellen-lassen':
-        'Verkaufsstarke Landingpages fuer Angebote, Aktionen und Anfragen - klar aufgebaut und professionell umgesetzt.',
-      '/google-sichtbarkeit-kleine-unternehmen':
-        'Google-Sichtbarkeit fuer Unternehmen mit klarer Struktur, lokaler Auffindbarkeit und professioneller Praesenz.',
-      '/leistungen':
-        'Alle STRUKTIVA Leistungen im Ueberblick: Website, Landingpages, Google-Sichtbarkeit, Kundenfuehrung, Systeme, Dashboards und strukturierte Umsetzung.',
-      '/preise':
-        'Einstiegspreise fuer Unternehmen: Sichtbarkeit, Kundengewinnung und Unternehmensarchitektur mit transparenter, strukturierter Umsetzung.',
-      '/demos/handwerker':
-        'Professionelle Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Kontaktwegen, Kundenvertrauen und klarer Anfrageführung.',
-      '/demos/kosmetik':
-        'Moderne Website-Struktur für Kosmetikstudios mit Leistungen, Atmosphäre, Vertrauen, Termin-Anfrage und klarer Kundenführung.',
-      '/demos/lokaler-dienstleister':
-        'Digitale Struktur für lokale Betriebe mit Leistungen, Einsatzgebiet, Vertrauen, Anfragewegen und klarer Kundenführung.',
-      '/demos/bewertungsstruktur':
-        'Beispielhafte Bewertungsstruktur mit QR-Code, Bewertungslink, WhatsApp-Text und Website-Einbindung.',
-      '/demos/dashboard':
-        'Beispielhaftes Betriebs-Dashboard für Unternehmen mit Aufgaben, Terminen, Tagesübersicht und Kennzahlen.',
-      '/demos/persoenliche-profilseite':
-        'Beispielhafte persönliche Profil- und Bewerbungsseite für Einzelpersonen, Bewerber, Künstler, Freelancer und Selbstständige.',
-      '/branchen/friseursalons':
-        'Digitale Struktur für Friseursalons mit Website, Leistungsstruktur, Bewertungen, Google-Profil und WhatsApp-Terminführung.',
-      '/branchen/handwerker':
-        'Digitale Struktur für Handwerker mit Leistungsseiten, Referenzen, regionaler Sichtbarkeit und klaren Anfragewegen.',
-      '/branchen/kosmetikstudios':
-        'Digitale Struktur für Kosmetikstudios mit Behandlungen, Preisen, Vertrauen, Bewertungen und Terminführung.',
-      '/branchen/lokale-dienstleister':
-        'Digitale Struktur für lokale Dienstleister mit professionellem Auftritt, Kontaktwegen und klarer Kundenführung.',
-      '/branchen/beratung':
-        'Digitale Struktur für Beratungsbetriebe mit Angebotslogik, Vertrauensaufbau und klarer Termin-Anfrageführung.',
-      '/wissen':
-        'STRUKTIVA Wissen: praxisnahe Artikel zu Website-Struktur, Landingpages, Google-Sichtbarkeit, WhatsApp-Kontaktwegen und digitalen Abläufen für Unternehmen.',
-      '/wissen/warum-eine-schoene-website-keine-kunden-bringt':
-        'Warum Design allein nicht reicht und wie Unternehmen mit klarer digitaler Struktur mehr qualifizierte Anfragen erhalten.',
-      '/wissen/digitale-grundsysteme-kleine-unternehmen':
-        'Die 5 digitalen Grundsysteme, die Unternehmen für Sichtbarkeit, Vertrauen und verlässliche Kundenanfragen wirklich brauchen.',
-      '/wissen/website-landingpage-funnel-unterschied':
-        'Website, Landingpage oder Funnel: welche Struktur Unternehmen wirklich brauchen, um online klar und anfragebereit aufzutreten.',
+      '/': 'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege und digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister.',
+      '/leistungen': 'Alle STRUKTIVA Leistungen im Überblick: Website, Landingpages, Google-Sichtbarkeit, Kundenführung, Systeme, Dashboards und strukturierte Umsetzung.',
+      '/pakete': 'Pakete und Betreuung von STRUKTIVA: klare Einstiege für Website, Sichtbarkeit, Kundenführung und digitale Systeme.',
+      '/referenzen': 'Referenzen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
+      '/demos': 'Demo-Beispiele von STRUKTIVA für Handwerk, Beauty und lokale Dienstleister.',
+      '/ueber-uns': 'Mehr über STRUKTIVA Unternehmensarchitektur: digitale Struktur für Unternehmen, lokale Dienstleister und Selbstständige.',
+      '/kontakt': 'Kontakt und Projektanfrage bei STRUKTIVA Unternehmensarchitektur.',
+      '/datenschutz': 'Datenschutzerklärung von STRUKTIVA Unternehmensarchitektur.',
+      '/impressum': 'Impressum und rechtliche Angaben von STRUKTIVA Unternehmensarchitektur.',
     }
 
     const defaultDescription =
-      'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege, Apps, Dashboards und digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister.'
+      'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege und digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister.'
+    const currentTitles = {
+      '/': titles['/'],
+      '/leistungen': titles['/leistungen'],
+      '/pakete': titles['/pakete'],
+      '/referenzen': titles['/referenzen'],
+      '/demos': titles['/demos'],
+      '/ueber-uns': titles['/ueber-uns'],
+      '/kontakt': titles['/kontakt'],
+      '/datenschutz': titles['/datenschutz'],
+      '/impressum': titles['/impressum'],
+    }
 
-    document.title = titles[pathname] || titles['/']
+    const currentDescriptions = {
+      '/': defaultDescription,
+      '/leistungen': descriptions['/leistungen'],
+      '/pakete': descriptions['/pakete'],
+      '/referenzen': descriptions['/referenzen'],
+      '/demos': descriptions['/demos'],
+      '/ueber-uns': descriptions['/ueber-uns'],
+      '/kontakt': 'Kontakt und Projektanfrage bei STRUKTIVA Unternehmensarchitektur.',
+      '/datenschutz': 'Datenschutzerklärung von STRUKTIVA Unternehmensarchitektur.',
+      '/impressum': 'Impressum und rechtliche Angaben von STRUKTIVA Unternehmensarchitektur.',
+    }
+
+    const activeTitle = currentTitles[pathname] || 'Seite nicht gefunden - STRUKTIVA Unternehmensarchitektur'
+    const activeDescription =
+      currentDescriptions[pathname] || 'Diese Seite gehört nicht mehr zur aktuellen STRUKTIVA Website-Struktur.'
+
+    document.title = activeTitle
 
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', descriptions[pathname] || defaultDescription)
+      metaDescription.setAttribute('content', activeDescription)
     }
 
     const canonicalHref = absoluteSiteUrl(pathname === '/' ? '/' : pathname)
@@ -811,8 +736,6 @@ function useDocumentTitleSafe(pathname) {
       meta.setAttribute('content', content)
     }
 
-    const activeTitle = titles[pathname] || titles['/']
-    const activeDescription = descriptions[pathname] || defaultDescription
     setMeta('property', 'og:type', 'website')
     setMeta('property', 'og:title', activeTitle)
     setMeta('property', 'og:description', activeDescription)
@@ -822,12 +745,12 @@ function useDocumentTitleSafe(pathname) {
     setMeta('name', 'twitter:title', activeTitle)
     setMeta('name', 'twitter:description', activeDescription)
     setMeta('name', 'twitter:image', absoluteSiteUrl('/struktiva-logo.jpeg'))
-    const noIndexPaths = new Set([
-      '/demos/handwerker',
-      '/demos/kosmetik',
-      '/demos/lokaler-dienstleister',
-    ])
+    const indexablePaths = new Set(Object.keys(currentTitles))
+    const noIndexPaths = new Set(['/demos/handwerker', '/demos/kosmetik', '/demos/lokaler-dienstleister'])
     setMeta('name', 'robots', noIndexPaths.has(pathname) ? 'noindex, nofollow' : 'index, follow')
+    if (!indexablePaths.has(pathname)) {
+      setMeta('name', 'robots', 'noindex, nofollow')
+    }
   }, [pathname])
 }
 
@@ -2556,11 +2479,10 @@ function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D8B45A]">Leistungen</p>
             <div className="mt-3 grid gap-2">
-              <a href={siteLinks.websites} className="transition hover:text-[#F2D98B]">Websites & Landingpages</a>
-              <a href={siteLinks.kiAutomatisierung} className="transition hover:text-[#F2D98B]">KI & Automatisierung</a>
-              <a href={siteLinks.leadSysteme} className="transition hover:text-[#F2D98B]">Lead-Systeme</a>
+              <a href={siteLinks.leistungenPage} className="transition hover:text-[#F2D98B]">Leistungen</a>
               <a href={siteLinks.paketePage} className="transition hover:text-[#F2D98B]">Pakete & Betreuung</a>
               <a href={siteLinks.referenzen} className="transition hover:text-[#F2D98B]">Referenzen</a>
+              <a href={siteLinks.demos} className="transition hover:text-[#F2D98B]">Demos</a>
             </div>
           </div>
 
@@ -2570,9 +2492,7 @@ function Footer() {
               <a href={siteLinks.home} className="transition hover:text-[#F2D98B]">Start</a>
               <a href={siteLinks.leistungenPage} className="transition hover:text-[#F2D98B]">Leistungen</a>
               <a href={siteLinks.about} className="transition hover:text-[#F2D98B]">Über uns</a>
-              <a href={siteLinks.projectRequest} className="transition hover:text-[#F2D98B]">Projekt anfragen</a>
               <a href={siteLinks.contact} className="transition hover:text-[#F2D98B]">Kontakt</a>
-              <a href={siteLinks.wissen} className="transition hover:text-[#F2D98B]">Wissen</a>
             </div>
           </div>
 
@@ -2581,7 +2501,6 @@ function Footer() {
             <div className="mt-3 grid gap-2">
               <a href={siteLinks.impressum} className="transition hover:text-[#F2D98B]">Impressum</a>
               <a href={siteLinks.datenschutz} className="transition hover:text-[#F2D98B]">Datenschutz</a>
-              <a href={siteLinks.widerruf} className="transition hover:text-[#F2D98B]">Widerruf</a>
               <button
                 type="button"
                 className="text-left transition hover:text-[#F2D98B]"
@@ -3678,10 +3597,6 @@ function ReferenceShowcaseSection() {
             Neue Webseite ansehen
             <ArrowRight className="h-4 w-4" />
           </a>
-          <a href={siteLinks.salonKarolaBaukasten} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5D7B9] bg-white/88 px-5 py-3 text-sm font-semibold text-[#16120E] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D]">
-            Alte Baukasten-Seite ansehen
-            <ArrowRight className="h-4 w-4" />
-          </a>
         </div>
 
         <div className="mt-6 grid gap-4 md:mt-7 lg:grid-cols-2">
@@ -3696,10 +3611,6 @@ function ReferenceShowcaseSection() {
               <li>• Kontakt vorhanden, aber nicht verkaufsstark geführt</li>
               <li>• klassische Informationsseite ohne starke digitale Struktur</li>
             </ul>
-            <a href={siteLinks.salonKarolaBaukasten} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#E5D7B9] bg-[#FFF9EE] px-4 py-2 text-sm font-semibold text-[#16120E] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D]">
-              Alte Baukasten-Seite ansehen
-              <ArrowRight className="h-4 w-4" />
-            </a>
           </article>
 
           <article className="rounded-2xl border border-[#D8B45A]/36 bg-[linear-gradient(160deg,rgba(255,247,231,0.98),rgba(248,237,211,0.94),rgba(241,227,191,0.88))] p-5 shadow-[0_18px_40px_rgba(169,130,45,0.09)]">
@@ -3768,25 +3679,6 @@ function DemosShowcaseSection() {
       image: demoV2Images.friseurHero,
       ctaLabel: 'Salon-Karola-Referenz ansehen',
       badgeLabel: 'Beispiel aus der Praxis: Salon Karola',
-    },
-    {
-      title: 'Bewertungsstruktur-Demo',
-      text: 'Beispielseite für QR-Code, Bewertungslink und digitale Bewertungsführung im Alltag.',
-      href: siteLinks.demoBewertungsstrukturV2,
-      image: demoV2Images.bewertungHero,
-    },
-    {
-      title: 'Dashboard-Demo',
-      text: 'Digitale Übersicht für Aufgaben, Kennzahlen, Abläufe und interne Struktur in Unternehmen.',
-      href: siteLinks.demoDashboardV2,
-      image: demoV2Images.dashboardHero,
-    },
-    {
-      title: 'Persönliche Profilseite',
-      text: 'Digitale Bewerbungs- und Portfolioseite für Einzelpersonen, Bewerber, Künstler und Selbstständige.',
-      href: siteLinks.demoPersoenlicheProfilseite,
-      image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
-      badgeLabel: 'Profil- & Bewerbungsdemo',
     },
   ]
 
@@ -4915,10 +4807,6 @@ function SalonKarolaReferencePage() {
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a href={siteLinks.salonKarolaReferenz} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
               Neue Webseite ansehen
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <a href={siteLinks.salonKarolaBaukasten} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-              Alte Baukasten-Seite ansehen
               <ArrowRight className="h-4 w-4" />
             </a>
             <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
@@ -7070,6 +6958,31 @@ function ContactPage() {
   )
 }
 
+function NotFoundPage() {
+  return (
+    <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="mx-auto max-w-5xl">
+        <section className="metallic-card rounded-[2.3rem] p-7 shadow-premium md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/78">Seite nicht gefunden</p>
+          <h1 className="metallic-dark-title mt-4 text-4xl font-semibold md:text-5xl">Diese Seite gehört nicht mehr zur aktuellen Struktur.</h1>
+          <p className="mt-4 max-w-3xl text-base leading-8 text-[#E0BF6A] md:text-lg">
+            Die neue Website ist auf Startseite, Leistungen, Pakete, Referenzen, Demos, Über uns, Kontakt, Datenschutz und Impressum reduziert.
+          </p>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a href={siteLinks.home} className="metallic-btn-primary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition">
+              Zur Startseite
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href={siteLinks.contact} className="metallic-btn-secondary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition">
+              Kontakt aufnehmen
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+  )
+}
+
 function DemoSectionCard({ title, children, className = '' }) {
   return (
     <section className={`rounded-[1.6rem] border p-5 shadow-premium md:p-6 ${className}`}>
@@ -7331,25 +7244,8 @@ function Page() {
   const pathname = useCurrentPath()
   useDocumentTitleSafe(pathname)
   const isDemoRoute = pathname.startsWith('/demos/')
-  const isHomeRoute = pathname === '/' || pathname === '/preise' || pathname === '/demos'
-  const isPricingRoute = pathname === '/' || pathname === '/preise' || pathname === '/pakete'
-  const wissenArticle = wissenArticles.find((article) => article.href === pathname)
-  const homeSectionByPath = {
-    '/preise': 'preise',
-  }
-
-  useEffect(() => {
-    const targetId = homeSectionByPath[pathname]
-    if (!targetId) return
-    const scrollToSection = () => {
-      const target = document.getElementById(targetId)
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }
-    const timer = window.setTimeout(scrollToSection, 0)
-    return () => window.clearTimeout(timer)
-  }, [pathname])
+  const isHomeRoute = pathname === '/' || pathname === '/demos'
+  const isPricingRoute = pathname === '/' || pathname === '/pakete'
 
   useEffect(() => {
     const safeTrackLead = () => {
@@ -7400,83 +7296,34 @@ function Page() {
     }
   }, [])
 
-  let content = <HomePage />
+  let content = null
 
-  if (pathname === '/ueber-uns') {
+  if (pathname === '/') {
+    content = <HomePage />
+  } else if (pathname === '/ueber-uns') {
     content = <AboutPage />
   } else if (pathname === '/leistungen') {
     content = <LeistungenPage />
-  } else if (pathname === '/websites') {
-    content = <WebsitesLandingpagesPage />
-  } else if (pathname === '/ki-automatisierung') {
-    content = <KiAutomatisierungPage />
-  } else if (pathname === '/lead-systeme') {
-    content = <LeadSystemePage />
   } else if (pathname === '/pakete') {
     content = <PaketePage />
   } else if (pathname === '/referenzen') {
     content = <ReferenzenPage />
-  } else if (pathname === '/referenzen/salon-karola') {
-    content = <SalonKarolaReferencePage />
   } else if (pathname === '/demos') {
     content = <DemosPage />
-  } else if (pathname === '/projekt-anfragen') {
-    content = <ProjectRequestPage />
   } else if (pathname === '/kontakt') {
-    content = <ContactPage />
+    content = <ProjectRequestPage />
   } else if (pathname === '/impressum') {
     content = <ImpressumPage />
   } else if (pathname === '/datenschutz') {
     content = <DatenschutzPage />
-  } else if (pathname === '/widerruf') {
-    content = <WiderrufPage />
-  } else if (pathname === '/webseiten') {
-    content = <WebseitenPage />
-  } else if (pathname === '/landingpages') {
-    content = <LandingpagesPage />
-  } else if (pathname === '/apps') {
-    content = <AppsPage />
-  } else if (pathname === '/google-ads') {
-    content = <GoogleAdsPage />
-  } else if (pathname === '/bewertungs-qr-code') {
-    content = <BewertungsQrCodePage />
-  } else if (pathname === '/digitale-soforthilfe') {
-    content = <DigitaleSoforthilfePage />
-  } else if (pathname === '/digitale-ordnungssysteme') {
-    content = <DigitaleOrdnungssystemePage />
-  } else if (pathname === '/website-fuer-kleine-unternehmen') {
-    content = <WebsiteFuerKleineUnternehmenPage />
-  } else if (pathname === '/wissen') {
-    content = <WissenOverviewPage />
-  } else if (wissenArticle) {
-    content = <WissenArticlePage article={wissenArticle} />
-  } else if (offerPageContent[pathname]) {
-    const page = offerPageContent[pathname]
-    content = <OfferDetailPage title={page.title} intro={page.intro} points={page.points} pathname={pathname} />
   } else if (pathname === '/demos/handwerker') {
     content = <DemoHandwerkerHtmlPage />
   } else if (pathname === '/demos/kosmetik') {
     content = <DemoKosmetikHtmlPage />
   } else if (pathname === '/demos/lokaler-dienstleister') {
     content = <DemoDienstleisterHtmlPage />
-  } else if (pathname === '/demos/bewertungsstruktur') {
-    content = <DemoBewertungsstrukturPage />
-  } else if (pathname === '/demos/dashboard') {
-    content = <DemoDashboardPage />
-  } else if (pathname === '/demos/persoenliche-profilseite') {
-    content = <DemoPersoenlicheProfilseiteHtmlPage />
-  } else if (pathname === '/branchen/friseursalons') {
-    content = <BrancheFriseursalonsPage />
-  } else if (pathname === '/branchen/handwerker') {
-    content = <BrancheHandwerkerPage />
-  } else if (pathname === '/branchen/kosmetikstudios') {
-    content = <BrancheKosmetikstudiosPage />
-  } else if (pathname === '/branchen/lokale-dienstleister') {
-    content = <BrancheLokaleDienstleisterPage />
-  } else if (pathname === '/branchen/beratung') {
-    content = <BrancheBeratungPage />
-  } else if (pathname === '/landingpage-digitale-struktur') {
-    content = <LandingpageDigitaleStrukturPageV2 />
+  } else {
+    content = <NotFoundPage />
   }
 
   const routeClass = pathname === '/' ? 'route-home' : `route-${pathname.replace(/^\/+/, '').replace(/[^a-z0-9-]/gi, '-') || 'home'}`
@@ -7764,8 +7611,8 @@ function DemoPersoenlicheProfilseiteHtmlPage() {
   return (
     <main className="min-h-screen bg-[#f4f8ff]">
       <iframe
-        src="/demos/persoenliche-profilseite/index.html"
-        title="STRUKTIVA Persönliche Profilseite Demo"
+        src="/demos"
+        title="STRUKTIVA Demos"
         className="block h-screen w-full border-0"
         loading="lazy"
       />
