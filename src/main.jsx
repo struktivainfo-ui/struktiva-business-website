@@ -4507,18 +4507,34 @@ function AboutPage() {
           </section>
 
           <section className="metallic-light-panel mt-8 rounded-[1.9rem] p-6 shadow-premium md:p-7">
-            <div className="mx-auto max-w-4xl">
-              <div className="rounded-[1.8rem] border border-white/40 bg-[linear-gradient(135deg,rgba(255,255,255,0.3),rgba(214,209,194,0.2))] p-6 shadow-[0_18px_44px_rgba(83,62,22,0.05),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-sm md:p-7">
-                <h2 className="metallic-section-title text-2xl font-semibold md:text-[2rem]">Menschen hinter STRUKTIVA</h2>
-                <p className="mt-4 text-sm leading-8 text-[#1a1a1a] md:text-base">
-                  Hinter STRUKTIVA stehen Sven Matzke und Jessica Wacker. Gemeinsam steht STRUKTIVA für praktische digitale Lösungen, klare Kommunikation und Systeme, die nicht nur gut aussehen, sondern im täglichen Betrieb helfen sollen.
-                </p>
-                <p className="mt-3 text-sm leading-8 text-[#1a1a1a] md:text-base">
-                  Der Fokus liegt auf verständlichen Websites, geordneten Kundenanfragen, digitalen Abläufen, Lead-Systemen, KI-gestützten Vorlagen und Lösungen, die Schritt für Schritt erweitert werden können. STRUKTIVA arbeitet direkt, nachvollziehbar und lösungsorientiert – ohne unnötige technische Überforderung.
-                </p>
-                <p className="mt-3 text-sm leading-8 text-[#1a1a1a] md:text-base">
-                  Ziel ist es, digitale Möglichkeiten so aufzubauen, dass sie für Unternehmen wirklich nutzbar werden.
-                </p>
+            <div className="mx-auto max-w-5xl">
+              <div className="grid gap-7 rounded-[1.8rem] border border-white/40 bg-[linear-gradient(135deg,rgba(255,255,255,0.3),rgba(214,209,194,0.2))] p-5 shadow-[0_18px_44px_rgba(83,62,22,0.05),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-sm md:grid-cols-[0.82fr_1.18fr] md:items-center md:p-7">
+                <figure className="mx-auto w-full max-w-[21rem] overflow-hidden rounded-[1.7rem] border border-[#D8B45A]/30 bg-white/70 p-2 shadow-[0_18px_38px_rgba(83,62,22,0.12)] md:mx-0">
+                  <img
+                    src="/images/inhaber-sven-jessica.webp"
+                    alt="Sven Matzke und Jessica Wacker – Inhaber von STRUKTIVA"
+                    width="810"
+                    height="780"
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[1.04/1] w-full rounded-[1.25rem] object-cover object-center"
+                  />
+                </figure>
+                <div>
+                  <h2 className="metallic-section-title text-2xl font-semibold md:text-[2rem]">Menschen hinter STRUKTIVA</h2>
+                  <p className="mt-4 text-xl font-semibold leading-tight text-[#111111] md:text-2xl">
+                    Sven Matzke und Jessica Wacker
+                  </p>
+                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#9a742e]">
+                    Inhaber von STRUKTIVA Unternehmensberatung
+                  </p>
+                  <p className="mt-4 text-sm leading-8 text-[#1a1a1a] md:text-base">
+                    Hinter STRUKTIVA stehen Sven Matzke und Jessica Wacker. Gemeinsam verbinden wir digitale Struktur, klare Abläufe und verständliche Kundenführung zu professionellen Lösungen für Unternehmen, Selbstständige und lokale Dienstleister.
+                  </p>
+                  <p className="mt-3 text-sm leading-8 text-[#1a1a1a] md:text-base">
+                    Der Fokus liegt auf verständlichen Websites, geordneten Kundenanfragen, digitalen Abläufen und Lösungen, die Schritt für Schritt erweitert werden können.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
