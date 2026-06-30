@@ -7,6 +7,13 @@ const COOKIE_SETTINGS_EVENT = 'struktiva:open-cookie-settings'
 const GOOGLE_ANALYTICS_ID = 'G-FN6JXMXCSP'
 const GOOGLE_ADS_ID = 'AW-18101020705'
 const PINTEREST_TAG_ID = '2612362769403'
+const GOOGLE_CONSENT_DEFAULT = {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 500,
+}
 
 function createDefaultConsent() {
   return {
@@ -89,6 +96,21 @@ function ensureGtagBootstrap() {
       window.dataLayer.push(arguments)
     }
   }
+
+  if (!window.__struktivaGoogleConsentDefaultSet) {
+    window.gtag('consent', 'default', GOOGLE_CONSENT_DEFAULT)
+    window.gtag('set', 'ads_data_redaction', true)
+    window.__struktivaGoogleConsentDefaultSet = true
+  }
+}
+
+function getGoogleConsentUpdate(consent) {
+  return {
+    analytics_storage: consent.statistics ? 'granted' : 'denied',
+    ad_storage: consent.marketing ? 'granted' : 'denied',
+    ad_user_data: consent.marketing ? 'granted' : 'denied',
+    ad_personalization: consent.marketing ? 'granted' : 'denied',
+  }
 }
 
 async function ensureGoogleTag(consent) {
@@ -101,12 +123,7 @@ async function ensureGoogleTag(consent) {
     src: `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`,
   })
 
-  window.gtag('consent', 'update', {
-    analytics_storage: consent.statistics ? 'granted' : 'denied',
-    ad_storage: consent.marketing ? 'granted' : 'denied',
-    ad_user_data: consent.marketing ? 'granted' : 'denied',
-    ad_personalization: consent.marketing ? 'granted' : 'denied',
-  })
+  window.gtag('consent', 'update', getGoogleConsentUpdate(consent))
 
   if (!window.__struktivaGoogleTagInitialized) {
     window.gtag('js', new Date())
@@ -127,12 +144,7 @@ async function ensureGoogleTag(consent) {
 function updateGoogleConsent(consent) {
   if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
 
-  window.gtag('consent', 'update', {
-    analytics_storage: consent.statistics ? 'granted' : 'denied',
-    ad_storage: consent.marketing ? 'granted' : 'denied',
-    ad_user_data: consent.marketing ? 'granted' : 'denied',
-    ad_personalization: consent.marketing ? 'granted' : 'denied',
-  })
+  window.gtag('consent', 'update', getGoogleConsentUpdate(consent))
 }
 
 function trackStatisticsPageView(pathname) {
@@ -314,6 +326,8 @@ export function CookieConsentLayer({ pathname }) {
 
   useEffect(() => {
     const storedConsent = readStoredConsent()
+
+    ensureGtagBootstrap()
 
     if (storedConsent) {
       setConsent(storedConsent)
