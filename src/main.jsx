@@ -37,6 +37,7 @@ const SITE_URL = 'https://struktiva.de/'
 const SITE_HOST = new URL(SITE_URL).host
 const absoluteSiteUrl = (path = '/') => new URL(path, SITE_URL).toString()
 const SALON_KAROLA_URL = 'https://salonkarola.de/'
+const SALON_KAROLA_OLD_URL = 'https://salonkarola.simdif.com/'
 
 const siteLinks = {
   home: '/',
@@ -48,6 +49,7 @@ const siteLinks = {
   paketePage: '/pakete',
   referenzen: '/referenzen',
   salonKarolaReferenz: SALON_KAROLA_URL,
+  salonKarolaAltReferenz: SALON_KAROLA_OLD_URL,
   pricing: '/pakete',
   demos: '/demos',
   apps: '/leistungen',
@@ -3592,12 +3594,19 @@ function ReferenceShowcaseSection() {
           Aus einer einfachen Webseite wurde ein moderner Salon-Auftritt mit klarer Kundenführung, hochwertigem Design und besserer lokaler Struktur.
           STRUKTIVA hat die Seite für Salon Karola in Calw-Wimberg neu aufgebaut und um WhatsApp, Google-Bewertungen, Leistungen, Galerie, FAQ und lokale SEO-Struktur erweitert.
         </p>
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a href={siteLinks.salonKarolaReferenz} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
             Neue Webseite ansehen
             <ArrowRight className="h-4 w-4" />
           </a>
+          <a href={siteLinks.salonKarolaAltReferenz} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5D7B9] bg-white/88 px-5 py-3 text-sm font-semibold text-[#16120E] transition hover:border-[#D8B45A]/45 hover:text-[#A9822D]">
+            Alte Webseite zum Vergleich ansehen
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-[#5B5348]">
+          So wird sichtbar, wie aus einer alten Baukasten-Seite ein klarer, professioneller digitaler Auftritt wurde.
+        </p>
 
         <div className="mt-6 grid gap-4 md:mt-7 lg:grid-cols-2">
           <article className="rounded-2xl border border-white/85 bg-white/82 p-5 shadow-[0_16px_36px_rgba(83,62,22,0.05)]">
@@ -3629,10 +3638,6 @@ function ReferenceShowcaseSection() {
               <li>• bessere mobile Nutzerführung</li>
               <li>• stärkere Vertrauenswirkung</li>
             </ul>
-            <a href={siteLinks.salonKarolaReferenz} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-              Neue Webseite ansehen
-              <ArrowRight className="h-4 w-4" />
-            </a>
           </article>
         </div>
 
@@ -4820,15 +4825,22 @@ function SalonKarolaReferencePage() {
               </span>
             ))}
           </div>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={siteLinks.salonKarolaReferenz} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
               Neue Webseite ansehen
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href={siteLinks.salonKarolaAltReferenz} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+              Alte Webseite zum Vergleich ansehen
               <ArrowRight className="h-4 w-4" />
             </a>
             <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
               Ähnliches Projekt anfragen
             </a>
           </div>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#D7DCE5]">
+            So wird sichtbar, wie aus einer alten Baukasten-Seite ein klarer, professioneller digitaler Auftritt wurde.
+          </p>
         </section>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
