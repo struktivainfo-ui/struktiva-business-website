@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 const COOKIE_CONSENT_STORAGE_KEY = 'struktiva-cookie-consent-v1'
 const COOKIE_SETTINGS_EVENT = 'struktiva:open-cookie-settings'
 
-// Existing IDs from the current site setup.
+// Google Analytics is loaded only after statistics consent.
 const GOOGLE_ANALYTICS_ID = 'G-FN6JXMXCSP'
 const PINTEREST_TAG_ID = '2612362769403'
 
