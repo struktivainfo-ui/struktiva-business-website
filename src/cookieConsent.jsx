@@ -3,8 +3,9 @@ import React, { useEffect, useRef, useState } from 'react'
 const COOKIE_CONSENT_STORAGE_KEY = 'struktiva-cookie-consent-v1'
 const COOKIE_SETTINGS_EVENT = 'struktiva:open-cookie-settings'
 
-// Google Analytics is loaded only after statistics consent.
+// Google Tag is loaded only after statistics or marketing consent.
 const GOOGLE_ANALYTICS_ID = 'G-FN6JXMXCSP'
+const GOOGLE_ADS_ID = 'AW-18101020705'
 const PINTEREST_TAG_ID = '2612362769403'
 
 function createDefaultConsent() {
@@ -90,7 +91,7 @@ function ensureGtagBootstrap() {
   }
 }
 
-async function ensureGoogleAnalytics() {
+async function ensureGoogleTag(consent) {
   if (typeof window === 'undefined') return
 
   ensureGtagBootstrap()
@@ -101,27 +102,36 @@ async function ensureGoogleAnalytics() {
   })
 
   window.gtag('consent', 'update', {
-    analytics_storage: 'granted',
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
+    analytics_storage: consent.statistics ? 'granted' : 'denied',
+    ad_storage: consent.marketing ? 'granted' : 'denied',
+    ad_user_data: consent.marketing ? 'granted' : 'denied',
+    ad_personalization: consent.marketing ? 'granted' : 'denied',
   })
 
-  if (!window.__struktivaAnalyticsInitialized) {
+  if (!window.__struktivaGoogleTagInitialized) {
     window.gtag('js', new Date())
+    window.__struktivaGoogleTagInitialized = true
+  }
+
+  if (consent.statistics && !window.__struktivaAnalyticsInitialized) {
     window.gtag('config', GOOGLE_ANALYTICS_ID, { send_page_view: false })
     window.__struktivaAnalyticsInitialized = true
   }
+
+  if (consent.marketing && !window.__struktivaGoogleAdsInitialized) {
+    window.gtag('config', GOOGLE_ADS_ID)
+    window.__struktivaGoogleAdsInitialized = true
+  }
 }
 
-function revokeGoogleAnalyticsConsent() {
+function updateGoogleConsent(consent) {
   if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
 
   window.gtag('consent', 'update', {
-    analytics_storage: 'denied',
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
+    analytics_storage: consent.statistics ? 'granted' : 'denied',
+    ad_storage: consent.marketing ? 'granted' : 'denied',
+    ad_user_data: consent.marketing ? 'granted' : 'denied',
+    ad_personalization: consent.marketing ? 'granted' : 'denied',
   })
 }
 
@@ -347,15 +357,19 @@ export function CookieConsentLayer({ pathname }) {
     let cancelled = false
 
     const syncTracking = async () => {
+      if (consent.statistics || consent.marketing) {
+        await ensureGoogleTag(consent)
+      } else {
+        updateGoogleConsent(consent)
+      }
+
       if (consent.statistics) {
-        await ensureGoogleAnalytics()
         if (!cancelled && statisticsPathRef.current !== pathname) {
           trackStatisticsPageView(pathname)
           statisticsPathRef.current = pathname
         }
       } else {
         statisticsPathRef.current = ''
-        revokeGoogleAnalyticsConsent()
       }
 
       if (consent.marketing) {
