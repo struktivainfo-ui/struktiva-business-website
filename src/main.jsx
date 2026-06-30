@@ -47,7 +47,7 @@ const siteLinks = {
   websites: '/leistungen',
   leadSysteme: '/leistungen',
   paketePage: '/pakete',
-  referenzen: '/referenzen',
+  referenzen: '/demos',
   salonKarolaReferenz: SALON_KAROLA_URL,
   salonKarolaAltReferenz: SALON_KAROLA_OLD_URL,
   pricing: '/pakete',
@@ -654,8 +654,8 @@ function useDocumentTitleSafe(pathname) {
       '/': 'STRUKTIVA Unternehmensarchitektur | Digitale Struktur für Unternehmen',
       '/leistungen': 'Leistungen - STRUKTIVA Unternehmensarchitektur',
       '/pakete': 'Pakete & Betreuung - STRUKTIVA Unternehmensarchitektur',
-      '/referenzen': 'Referenzen - STRUKTIVA Unternehmensarchitektur',
-      '/demos': 'Demos - STRUKTIVA Unternehmensarchitektur',
+      '/referenzen': 'Referenzen & Demos - STRUKTIVA Unternehmensarchitektur',
+      '/demos': 'Referenzen & Demos - STRUKTIVA Unternehmensarchitektur',
       '/ueber-uns': 'Über uns - STRUKTIVA Unternehmensarchitektur',
       '/kontakt': 'Kontakt - STRUKTIVA Unternehmensarchitektur',
       '/datenschutz': 'Datenschutz - STRUKTIVA Unternehmensarchitektur',
@@ -667,7 +667,7 @@ function useDocumentTitleSafe(pathname) {
       '/leistungen': 'Alle STRUKTIVA Leistungen im Überblick: Website, Landingpages, Google-Sichtbarkeit, Kundenführung, Systeme, Dashboards und strukturierte Umsetzung.',
       '/pakete': 'Pakete und Betreuung von STRUKTIVA: klare Einstiege für Website, Sichtbarkeit, Kundenführung und digitale Systeme.',
       '/referenzen': 'Referenzen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
-      '/demos': 'Demo-Beispiele von STRUKTIVA für Handwerk, Beauty und lokale Dienstleister.',
+      '/demos': 'Echte Referenzen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
       '/ueber-uns': 'Mehr über STRUKTIVA Unternehmensarchitektur: digitale Struktur für Unternehmen, lokale Dienstleister und Selbstständige.',
       '/kontakt': 'Kontakt und Projektanfrage bei STRUKTIVA Unternehmensarchitektur.',
       '/datenschutz': 'Datenschutzerklärung von STRUKTIVA Unternehmensarchitektur.',
@@ -711,7 +711,8 @@ function useDocumentTitleSafe(pathname) {
       metaDescription.setAttribute('content', activeDescription)
     }
 
-    const canonicalHref = absoluteSiteUrl(pathname === '/' ? '/' : pathname)
+    const canonicalPath = pathname === '/referenzen' ? '/demos' : pathname
+    const canonicalHref = absoluteSiteUrl(canonicalPath === '/' ? '/' : canonicalPath)
     let canonicalLink = document.querySelector('link[rel="canonical"]')
     if (!canonicalLink) {
       canonicalLink = document.createElement('link')
@@ -3563,19 +3564,15 @@ function ReferenceShowcaseSection() {
     <>
       <div className="flex flex-wrap items-end justify-between gap-4 md:gap-5">
         <SectionHeader
-          eyebrow="Referenzen"
-          title="Referenzen"
-          text="Echte Umsetzung statt Theorie: vorhandene Projekte zeigen, wie STRUKTIVA digitale Struktur in der Praxis aufbaut."
+          eyebrow="Echte Referenz"
+          title="Echte Referenz"
+          text="Salon Karola zeigt, wie aus einer alten Baukasten-Seite ein klarer, professioneller digitaler Auftritt wurde."
           tone="light"
         />
         <p className="rounded-full border border-[#D8B45A]/22 bg-[#FFF9EB] px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#A9822D]">
           Echtes Referenzprojekt
         </p>
       </div>
-      <p className="mt-5 max-w-4xl text-sm leading-7 text-[#5B5348] md:mt-6 md:text-base md:leading-8">
-        STRUKTIVA entwickelt keine Webseiten von der Stange. Am Beispiel von Salon Karola sieht man, wie aus einem einfachen Online-Auftritt ein moderner, vertrauensstarker Salon-Auftritt wurde.
-      </p>
-
       <div id="salon-karola" className="mt-9 rounded-[2rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,rgba(255,252,246,0.98),rgba(247,238,222,0.95),rgba(242,232,213,0.9))] p-5 shadow-[0_24px_56px_rgba(83,62,22,0.07)] md:mt-10 md:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#A9822D]">Echtes Referenzprojekt</p>
         <h3 className="mt-2 text-2xl font-semibold text-[#16120E] md:text-4xl">Salon Karola – Website, Kundenführung und digitale Struktur</h3>
@@ -3660,30 +3657,38 @@ function ReferenceShowcaseSection() {
 function DemosShowcaseSection() {
   const industryDemos = [
     {
-      title: 'Handwerker-Demo',
+      title: 'Handwerker',
       text: 'Klare Website-Struktur für Handwerker mit Leistungen, Einsatzgebiet, Vertrauen und direkter Anfrageführung.',
       href: siteLinks.demoHandwerkerV2,
       image: demoV2Images.handwerkerHero,
     },
     {
-      title: 'Kosmetikstudio-Demo',
+      title: 'Kosmetik / Beauty',
       text: 'Elegante Website-Struktur für Kosmetikstudios mit Behandlungen, Buchungswegen, Bildern und klarer Kundenführung.',
       href: siteLinks.demoKosmetikstudioV2,
       image: demoV2Images.kosmetikHero,
     },
     {
-      title: 'Lokaler-Dienstleister-Demo',
+      title: 'Lokaler Dienstleister',
       text: 'Digitale Struktur für lokale Betriebe mit Leistungen, Vertrauen, Anfragewegen und sauberer Kundenführung.',
       href: siteLinks.demoDienstleister,
       image: struktivaImages.localBusiness,
     },
     {
-      title: 'Friseur & Salon',
+      title: 'Friseur / Salon',
       text: 'Ein Beispiel dafür, wie eine moderne Salon-Website Leistungen, Kontaktwege, Bewertungen und Kundenführung klar verbinden kann – umgesetzt am Projekt Salon Karola.',
       href: siteLinks.salonKarolaReferenz,
       image: demoV2Images.friseurHero,
       ctaLabel: 'Salon-Karola-Referenz ansehen',
       badgeLabel: 'Beispiel aus der Praxis: Salon Karola',
+    },
+    {
+      title: 'Einzelpersonen / Persönliche Webseite',
+      text: 'Eine klare persönliche Seite für Profil, Bewerbung, Portfolio oder Selbstständigkeit mit professioneller Vorstellung und einfachem Kontaktweg.',
+      href: siteLinks.projectRequestForm,
+      image: struktivaImages.workspace,
+      ctaLabel: 'Persönliche Webseite anfragen',
+      badgeLabel: 'Persönliche Webseite',
     },
   ]
 
@@ -3692,9 +3697,9 @@ function DemosShowcaseSection() {
       <div className="mt-10 md:mt-12">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <h3 className="text-3xl font-semibold text-[#16120E]">Demo-Beispiele für weitere Branchen</h3>
+            <h3 className="text-3xl font-semibold text-[#16120E]">Demo-Beispiele</h3>
             <p className="mt-3 max-w-3xl text-sm leading-7 text-[#5B5348] md:text-base md:leading-8">
-              Einblicke in bestehende Beispielseiten zeigen, wie digitale Strukturen in verschiedenen Branchen konkret aussehen können.
+              Vorhandene Beispielseiten zeigen, wie digitale Strukturen in verschiedenen Branchen und Situationen konkret aussehen können.
             </p>
           </div>
           <a href={siteLinks.projectRequestForm} className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#D8B45A]/35 bg-[#FFF9EE] px-5 py-2.5 text-sm font-semibold text-[#A9822D] transition hover:bg-[#D8B45A] hover:text-white sm:w-fit">
@@ -4728,38 +4733,7 @@ function PaketePage() {
 }
 
 function ReferenzenPage() {
-  return (
-    <>
-      <main className="px-5 pb-4 pt-10 lg:px-8 lg:pt-14">
-        <div className="mx-auto max-w-7xl">
-          <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Referenzen</p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
-              Referenzen
-            </h1>
-            <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-              Bestehende Referenzprojekte zeigen, wie STRUKTIVA digitale Struktur, Kundenführung und Sichtbarkeit in der Praxis umsetzt.
-            </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
-                Ähnliches Projekt anfragen
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a href={siteLinks.contact} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                Referenz besprechen
-              </a>
-            </div>
-          </section>
-        </div>
-      </main>
-      <section className="px-5 py-12 md:py-14 lg:px-8 lg:py-20">
-        <div className="mx-auto max-w-7xl">
-          <ReferenceShowcaseSection />
-        </div>
-      </section>
-      <StructureCtaSection />
-    </>
-  )
+  return <DemosPage />
 }
 
 function DemosPage() {
@@ -4768,20 +4742,20 @@ function DemosPage() {
       <main className="px-5 pb-4 pt-10 lg:px-8 lg:pt-14">
         <div className="mx-auto max-w-7xl">
           <section className="rounded-[2.3rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.95),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-7 shadow-premium md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Demos</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Referenzen & Demos</p>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
-              Demos
+              Referenzen & Demos
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-              Vorhandene Demo-Seiten und Branchenbeispiele zeigen, wie digitale Strukturen für verschiedene Betriebe aufgebaut sein können.
+              Hier zeigen wir echte Projekte und beispielhafte digitale Lösungen, wie STRUKTIVA Unternehmen, Selbstständige und lokale Dienstleister sichtbar, klar und professionell aufstellen kann.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href={siteLinks.projectRequestForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]">
                 Demo-Struktur anfragen
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={siteLinks.referenzen} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
-                Referenzen ansehen
+              <a href="#salon-karola" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D8B45A]/30 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-[#D8B45A] transition hover:bg-[#D8B45A] hover:text-white">
+                Echte Referenz ansehen
               </a>
             </div>
           </section>
@@ -4789,6 +4763,7 @@ function DemosPage() {
       </main>
       <section className="px-5 py-12 md:py-14 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
+          <ReferenceShowcaseSection />
           <DemosShowcaseSection />
         </div>
       </section>
