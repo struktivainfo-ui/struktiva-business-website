@@ -1958,6 +1958,16 @@ body.cookie-modal-open {
   line-height: 1.75;
 }
 
+.home-architecture-note {
+  margin: 1rem 0 0;
+  max-width: 690px;
+  border-left: 3px solid rgba(154, 116, 46, 0.5);
+  padding-left: 1rem;
+  color: rgba(17, 17, 17, 0.76);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
 .home-hero-actions,
 .home-contact-actions {
   display: flex;
@@ -2271,6 +2281,49 @@ body.cookie-modal-open {
   line-height: 1.7;
 }
 
+.home-gold-block .home-service-benefit {
+  color: rgba(17, 17, 17, 0.84) !important;
+  font-weight: 700;
+}
+
+.home-gold-block .home-service-example {
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  padding-top: 0.85rem;
+  font-size: 0.92rem;
+}
+
+.struktiva-metallic main .leistung-core-panel {
+  border: 1px solid #e5d7b9 !important;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(214, 178, 94, 0.13), transparent 24%),
+    linear-gradient(160deg, rgba(255, 254, 250, 0.98), rgba(247, 239, 225, 0.94)) !important;
+  color: #111111 !important;
+  box-shadow: 0 24px 56px rgba(83, 62, 22, 0.07) !important;
+}
+
+.struktiva-metallic main .leistung-core-panel :is(h2, h3, strong) {
+  color: #111111 !important;
+}
+
+.struktiva-metallic main .leistung-core-panel :is(p, li, small) {
+  color: #3a3a3a !important;
+}
+
+.struktiva-metallic main .leistung-core-panel [class*='uppercase'] {
+  color: #9a742e !important;
+}
+
+.struktiva-metallic main .leistung-core-card {
+  border: 1px solid rgba(216, 180, 90, 0.22) !important;
+  background: #ffffff !important;
+  box-shadow: 0 16px 36px rgba(63, 48, 18, 0.06) !important;
+}
+
+.struktiva-metallic main .leistung-before-after {
+  border: 1px solid #e5d7b9 !important;
+  background: #faf8f2 !important;
+}
+
 .home-audience-list {
   display: flex;
   flex-wrap: wrap;
@@ -2579,6 +2632,11 @@ body.cookie-modal-open {
 
   .home-button {
     width: 100%;
+  }
+
+  .home-architecture-note {
+    padding-left: 0.8rem;
+    font-size: 0.95rem;
   }
 
   .home-system-panel {

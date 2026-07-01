@@ -4136,11 +4136,11 @@ function HomeSectionHeading({ eyebrow, title, text, align = 'center' }) {
 function HomeHeroSection() {
   const systemPoints = [
     'Website',
+    'Landingpages',
     'Google-Sichtbarkeit',
     'Kundenanfragen',
-    'Bewertungen',
     'Kontaktwege',
-    'digitale Abläufe',
+    'Prozesse',
   ]
 
   return (
@@ -4152,17 +4152,20 @@ function HomeHeroSection() {
       <div className="home-container home-hero-grid">
         <motion.div initial="hidden" animate="visible" variants={stagger} className="home-hero-copy">
           <motion.p variants={fadeUp} className="home-eyebrow">
-            STRUKTIVA Unternehmensberatung
+            STRUKTIVA Unternehmensarchitektur
           </motion.p>
           <motion.h1 variants={fadeUp}>
-            Digitale Struktur für Unternehmen, die klarer wirken und leichter anfragbar sein wollen.
+            Websites, Landingpages und digitale Systeme für kleine Unternehmen.
           </motion.h1>
           <motion.p variants={fadeUp} className="home-hero-lead">
-            STRUKTIVA verbindet Website, Google-Sichtbarkeit, Kundenanfragen, Bewertungen, Kontaktwege und digitale Abläufe zu einem klaren System.
+            STRUKTIVA baut digitale Strukturen für Unternehmen, Selbstständige und lokale Betriebe: klare Websites, fokussierte Landingpages und Systeme, die Abläufe, Tools und Kundenanfragen ordnen.
+          </motion.p>
+          <motion.p variants={fadeUp} className="home-architecture-note">
+            Unternehmensarchitektur bedeutet: die Struktur, in der Ihr Unternehmen läuft - Prozesse, Tools, Dokumente und Ihre Website, abgestimmt aufeinander. Das Ergebnis: weniger digitales Chaos, bessere Übersicht und Kontaktwege, die Kunden wirklich nutzen können.
           </motion.p>
           <motion.div variants={fadeUp} className="home-hero-actions">
-            <a href="#kontakt" className="home-button home-button-primary">
-              Kostenloses Erstgespräch anfragen
+            <a href={siteLinks.projectRequestForm} className="home-button home-button-primary">
+              Kostenloses Erstgespräch vereinbaren
               <ArrowRight className="h-4 w-4" />
             </a>
             <a href="#leistungen" className="home-button home-button-secondary">
@@ -4189,14 +4192,15 @@ function HomeHeroSection() {
 
 function HomeServiceTickerSection() {
   const tickerItems = [
-    'Webseiten',
+    'Website für Selbstständige',
+    'Landingpage für lokale Betriebe',
     'Google-Sichtbarkeit',
     'Digitale Kundenführung',
-    'KI-Assistenten',
+    'Digitale Struktur für kleine Unternehmen',
+    'Prozesse strukturieren',
     'Betriebs-Dashboards',
     'Bewertungsstrukturen',
-    'Unternehmens-Apps',
-    'Digitale Ordnung',
+    'Digitale Ordnungssysteme',
   ]
 
   return (
@@ -4257,9 +4261,9 @@ function HomeFlowSection() {
           <div className="home-flow-panel">
             <div className="home-flow-content">
               <p className="home-eyebrow">Was STRUKTIVA macht</p>
-              <h2>STRUKTIVA bringt Struktur in digitale Unternehmensbereiche.</h2>
+              <h2>STRUKTIVA bringt Struktur in Website, Abläufe und digitale Werkzeuge.</h2>
               <p>
-                Website, Google, Kontaktwege, Bewertungen, Kundenführung und interne Abläufe werden nicht einzeln betrachtet, sondern zu einem verständlichen System verbunden. So entsteht ein digitaler Auftritt, der im Alltag Orientierung gibt und professionell Vertrauen aufbaut.
+                Website, Landingpages, Kontaktwege, Dokumente, Tools und interne Abläufe werden nicht einzeln betrachtet, sondern zu einem verständlichen System verbunden. So entsteht eine digitale Struktur, die im Alltag Orientierung gibt und Kunden schneller zum nächsten Schritt führt.
               </p>
             </div>
           </div>
@@ -4271,15 +4275,48 @@ function HomeFlowSection() {
 
 function HomeServicesSection() {
   const services = [
-    ['Webseiten & Landingpages', 'Klare digitale Auftritte, die Leistungen verständlich zeigen und Besucher zur passenden Anfrage führen.', LayoutTemplate],
-    ['Google-Sichtbarkeit', 'Grundlagen für lokale Auffindbarkeit, Unternehmensprofil-Texte und saubere digitale Signale.', Search],
-    ['Digitale Kundenführung', 'Strukturen, die vom ersten Eindruck bis zur Anfrage logisch und ruhig führen.', MousePointerClick],
-    ['WhatsApp-Kontaktstruktur', 'Kontaktwege werden sichtbar, sinnvoll priorisiert und für Kunden einfach nutzbar gemacht.', MessageCircle],
-    ['Bewertungs- und QR-Code-Strukturen', 'Bewertungslinks, QR-Codes und klare Anfragepunkte für mehr Vertrauen im Alltag.', QrCode],
-    ['Unternehmens-Apps', 'Individuelle Web-Apps für Aufgaben, Kundenverwaltung, Termine und mobile Ablauforganisation.', Smartphone],
-    ['Betriebs-Dashboards', 'Übersichten für Planung, Aufgaben, Kennzahlen und betriebliche Kontrolle.', PanelsTopLeft],
-    ['Digitale Ordnungssysteme', 'Wiederkehrende Aufgaben, Checklisten, Dokumentation und Vorlagen werden nachvollziehbar geordnet.', ClipboardList],
-    ['KI-Assistenten für Betriebe', 'Vorlagen und Assistenten für häufige Fragen, Antworten, Kommunikation und interne Routineaufgaben.', Sparkles],
+    {
+      title: 'Website-Entwicklung',
+      text: 'Eine Website für Selbstständige, kleine Unternehmen oder lokale Betriebe erklärt Angebot, Vertrauen und Kontaktweg auf einen Blick.',
+      benefit: 'Besucher verstehen schneller, ob Sie der passende Anbieter sind - und finden ohne Umwege zu Anfrage, Telefon oder WhatsApp.',
+      example: 'Vorher: Leistungen stehen verstreut und unklar. Nachher: klare Startseite, greifbare Leistungen, sichtbarer Kontakt.',
+      icon: LayoutTemplate,
+    },
+    {
+      title: 'Landingpages für Kampagnen',
+      text: 'Eine Landingpage für lokale Betriebe bündelt ein konkretes Angebot, eine Aktion oder Dienstleistung auf einer fokussierten Seite.',
+      benefit: 'Das reduziert Ablenkung, macht den Nutzen greifbar und führt Besucher direkt zur passenden Anfrage.',
+      example: 'Vorher: eine Aktion geht auf der normalen Website unter. Nachher: eine klare Seite mit Nutzen, Belegen und CTA.',
+      icon: Target,
+    },
+    {
+      title: 'Digitale Unternehmenssysteme',
+      text: 'Digitale Struktur für kleine Unternehmen bedeutet: Prozesse strukturieren, Ablagen ordnen, Anfragewege verbinden und Tools sinnvoll nutzbar machen.',
+      benefit: 'Weniger Doppelarbeit, weniger Sucherei und mehr Übersicht für wiederkehrende Aufgaben im Betrieb.',
+      example: 'Vorher: Dokumente, Notizen und Anfragen liegen verstreut. Nachher: fester Prozess, strukturierte Ablage, zentrale Übersicht.',
+      icon: Workflow,
+    },
+    {
+      title: 'Kontakt- und Bewertungsstruktur',
+      text: 'Telefon, E-Mail, WhatsApp, Formular und Bewertungen werden sichtbar, sinnvoll priorisiert und verständlich eingebunden.',
+      benefit: 'Kunden müssen nicht suchen, sondern erkennen sofort, wie sie den nächsten Schritt machen können.',
+      example: 'Vorher: Kontaktwege sind verteilt. Nachher: ein klarer Anfrageweg mit passenden Texten und Bewertungslink.',
+      icon: MessageCircle,
+    },
+    {
+      title: 'Betriebs-Dashboards',
+      text: 'Übersichten für Aufgaben, Tagesplanung, Kennzahlen und wiederkehrende Abläufe machen interne Arbeit nachvollziehbarer.',
+      benefit: 'Das Team sieht schneller, was wichtig ist, was offen ist und wo nachgefasst werden muss.',
+      example: 'Vorher: Aufgaben stehen in Chats. Nachher: Status, Verantwortliche und Termine sind an einem Ort sichtbar.',
+      icon: PanelsTopLeft,
+    },
+    {
+      title: 'Google- und Sichtbarkeitsgrundlagen',
+      text: 'STRUKTIVA ordnet Texte, Leistungen, Kontaktangaben und lokale Signale so, dass Ihr digitaler Auftritt verständlicher auffindbar wird.',
+      benefit: 'Gerade lokale Dienstleister und Betriebe gewinnen Vertrauen, wenn Website und Google-Profil sauber zusammenpassen.',
+      example: 'Vorher: Profil und Website erzählen Unterschiedliches. Nachher: einheitliche Leistungen, klare Region, bessere Orientierung.',
+      icon: Search,
+    },
   ]
 
   return (
@@ -4288,16 +4325,18 @@ function HomeServicesSection() {
         <Reveal>
           <HomeSectionHeading
             eyebrow="Leistungen"
-            title="Digitale Bausteine, weich eingebettet in ein gemeinsames System."
-            text="Jede Leistung ist kurz, nachvollziehbar und auf den Unternehmensalltag ausgerichtet. Keine Garantien, keine Show, sondern klare digitale Ordnung."
+            title="Konkrete Leistungen, die im Alltag spürbar Ordnung schaffen."
+            text="Website, Landingpage und digitales System werden so aufgebaut, dass Kunden schneller verstehen, was Sie anbieten, und Ihr Betrieb intern klarer arbeiten kann."
           />
         </Reveal>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.08 }} variants={stagger} className="home-service-grid">
-          {services.map(([title, text, Icon]) => (
+          {services.map(({ title, text, benefit, example, icon: Icon }) => (
             <motion.article key={title} variants={fadeUp} className="home-gold-block">
               <Icon className="home-gold-icon" />
               <h3>{title}</h3>
               <p>{text}</p>
+              <p className="home-service-benefit">{benefit}</p>
+              <p className="home-service-example">{example}</p>
             </motion.article>
           ))}
         </motion.div>
@@ -4466,10 +4505,9 @@ function HomeContactSection() {
           <div className="home-contact-panel">
             <div>
               <p className="home-eyebrow">Kontakt</p>
-              <h2>Lass uns deine digitale Struktur gemeinsam ordnen.</h2>
+              <h2>Lassen Sie uns Ihre digitale Struktur gemeinsam ordnen.</h2>
               <p>
-                Sven Matzke<br />
-                STRUKTIVA Unternehmensberatung
+                Schreiben Sie kurz, was Sie gerade bewegt - ich antworte in der Regel innerhalb von 24 Stunden. Im ersten Gespräch klären wir, ob wir zusammenpassen und welcher nächste Schritt sinnvoll ist.
               </p>
             </div>
             <div className="home-contact-details">
@@ -4477,11 +4515,11 @@ function HomeContactSection() {
               <a href={contactDetails.phoneHref}>{contactDetails.phoneLabel}</a>
               <div className="home-contact-actions">
                 <a href={siteLinks.projectRequestForm} className="home-button home-button-primary">
-                  Jetzt Anfrage senden
+                  Kurzanalyse anfragen
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href={contactDetails.phoneHref} className="home-button home-button-secondary">
-                  Direkt Kontakt aufnehmen
+                  15 Minuten Erstgespräch
                 </a>
               </div>
             </div>
@@ -4503,7 +4541,7 @@ function AboutPage() {
               Über STRUKTIVA
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-[#E0BF6A] md:text-lg">
-              STRUKTIVA steht für digitale Systeme, die verständlich aufgebaut, klar strukturiert und im Alltag wirklich nutzbar sind. Im Mittelpunkt stehen keine einzelnen Insellösungen, sondern digitale Strukturen, die Website, Sichtbarkeit, Kundenanfragen, Kontaktwege und interne Abläufe sinnvoll verbinden.
+              STRUKTIVA steht für digitale Systeme, die verständlich aufgebaut, klar strukturiert und im Alltag wirklich nutzbar sind. Im Mittelpunkt stehen keine einzelnen Insellösungen, sondern Websites, Landingpages und digitale Strukturen, die Sichtbarkeit, Kundenanfragen, Kontaktwege und interne Abläufe sinnvoll verbinden.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href={siteLinks.projectRequestForm} className="metallic-btn-primary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition">
@@ -4539,14 +4577,36 @@ function AboutPage() {
                     Inhaber von STRUKTIVA Unternehmensberatung
                   </p>
                   <p className="mt-4 text-sm leading-8 text-[#1a1a1a] md:text-base">
-                    Hinter STRUKTIVA stehen Sven Matzke und Jessica Wacker. Gemeinsam verbinden wir digitale Struktur, klare Abläufe und verständliche Kundenführung zu professionellen Lösungen für Unternehmen, Selbstständige und lokale Dienstleister.
+                    Hinter STRUKTIVA stehen Sven Matzke und Jessica Wacker. Gemeinsam verbinden wir digitale Struktur, klare Abläufe und verständliche Kundenführung zu professionellen Lösungen für kleine Unternehmen, Selbstständige und lokale Dienstleister.
                   </p>
                   <p className="mt-3 text-sm leading-8 text-[#1a1a1a] md:text-base">
-                    Der Fokus liegt auf verständlichen Websites, geordneten Kundenanfragen, digitalen Abläufen und Lösungen, die Schritt für Schritt erweitert werden können.
+                    Der Fokus liegt auf Struktur statt auf reiner Optik: verständliche Websites, geordnete Kundenanfragen, digitale Abläufe und Lösungen, die Schritt für Schritt erweitert werden können.
                   </p>
                 </div>
               </div>
             </div>
+          </section>
+
+          <section className="mt-8 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+            <article className="rounded-[1.7rem] border border-[#E5D7B9] bg-white p-6 shadow-[0_18px_42px_rgba(63,48,18,0.06)] md:p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#9a742e]">Warum STRUKTIVA</p>
+              <h2 className="mt-3 text-2xl font-semibold text-[#111111] md:text-3xl">Damit Digitalisierung nicht zur Dauerbaustelle wird.</h2>
+              <p className="mt-4 text-sm leading-8 text-[#3a3a3a] md:text-base">
+                Ich habe gesehen, wie viele kleine Unternehmen an ihrer eigenen digitalen Struktur scheitern: eine Website hier, ein Formular dort, Dokumente in verschiedenen Ordnern und Anfragen über mehrere Kanäle. STRUKTIVA sorgt dafür, dass Ihre Website kein Fremdkörper ist, sondern zur Struktur Ihres Unternehmens passt.
+              </p>
+              <p className="mt-3 text-sm leading-8 text-[#3a3a3a] md:text-base">
+                Am liebsten arbeiten wir mit Menschen, die ihr Unternehmen ernsthaft weiterbringen wollen: Handwerker, Dienstleister, Solo-Selbstständige, Beratungsbetriebe, Friseure, Kosmetikstudios und lokale Betriebe mit direktem Kundenkontakt.
+              </p>
+            </article>
+            <article className="rounded-[1.7rem] border border-[#E5D7B9] bg-[linear-gradient(160deg,#fff,#faf8f2)] p-6 shadow-[0_18px_42px_rgba(63,48,18,0.06)] md:p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#9a742e]">Typische Kundensituationen</p>
+              <h2 className="mt-3 text-2xl font-semibold text-[#111111] md:text-3xl">Wenn Klarheit wichtiger ist als noch ein weiteres Tool.</h2>
+              <div className="mt-5 grid gap-3 text-sm leading-7 text-[#3a3a3a]">
+                <p><strong>Chaos reduzieren:</strong> Leistungen, Kontaktwege und Abläufe werden sortiert, damit Kunden und Betrieb schneller Orientierung finden.</p>
+                <p><strong>Digitalisierung fertig bekommen:</strong> Aus losen Ideen entsteht ein umsetzbarer nächster Schritt, passend zu Budget, Zeit und vorhandenen Werkzeugen.</p>
+                <p><strong>Alltag entlasten:</strong> Wiederkehrende Anfragen, Dokumente, Vorlagen und Aufgaben werden so strukturiert, dass sie nicht ständig neu gesucht oder erklärt werden müssen.</p>
+              </div>
+            </article>
           </section>
         </div>
       </main>
@@ -6087,6 +6147,33 @@ function LeistungenPage() {
     },
   ]
 
+  const coreLeistungDetails = [
+    {
+      title: 'Website-Entwicklung',
+      keyword: 'Website für Selbstständige und kleine Unternehmen',
+      what: 'STRUKTIVA entwickelt Websites, die Angebot, Leistungen, Vertrauen und Kontaktwege klar erklären. Es geht nicht nur um eine schöne Oberfläche, sondern um eine Website-Struktur, die Besucher schnell verstehen.',
+      benefit: 'Der Nutzen: bessere Orientierung, professionellere Wirkung und mehr passende Anfragen, weil Kunden sofort sehen, ob Ihr Betrieb der richtige Ansprechpartner ist.',
+      before: 'Unklare Startseite, verstreute Leistungen, Kontakt erst nach langem Suchen.',
+      after: 'Klare Startseite, verständliche Leistungsbereiche, sichtbare Anfragewege über Formular, Telefon oder WhatsApp.',
+    },
+    {
+      title: 'Landingpages für Kampagnen',
+      keyword: 'Landingpage für lokale Betriebe',
+      what: 'Eine Landingpage bündelt ein konkretes Angebot, eine Aktion, ein Produkt oder eine Dienstleistung auf einer fokussierten Seite. Sie führt Besucher ohne Umwege zu einem klaren Ziel.',
+      benefit: 'Der Nutzen: weniger Ablenkung, ein greifbarer Kundenvorteil und eine direkte Handlungsaufforderung für Anfrage, Termin oder Rückruf.',
+      before: 'Ein Angebot ist irgendwo auf der Website versteckt und wird kaum verstanden.',
+      after: 'Eine eigene Seite erklärt Problem, Lösung, Nutzen und nächsten Schritt in logischer Reihenfolge.',
+    },
+    {
+      title: 'Digitale Unternehmenssysteme',
+      keyword: 'Digitale Struktur für kleine Unternehmen',
+      what: 'Digitale Unternehmenssysteme ordnen Abläufe, Dokumente, Aufgaben, Anfragen und einfache Tools so, dass sie im Betrieb zusammenarbeiten. Ziel ist es, Prozesse zu strukturieren, statt immer neue Einzellösungen anzuhäufen.',
+      benefit: 'Der Nutzen: weniger Doppelarbeit, weniger Sucherei und eine zentrale Übersicht für wiederkehrende Aufgaben, Kundenanfragen und interne Abläufe.',
+      before: 'Dokumente liegen verstreut, Aufgaben stehen in Chats, Anfragen werden mehrfach kopiert.',
+      after: 'Fester Prozess, strukturierte Ablage, klare Zuständigkeiten und eine zentrale Übersicht.',
+    },
+  ]
+
   return (
     <main className="px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
       <div className="mx-auto max-w-7xl">
@@ -6094,8 +6181,34 @@ function LeistungenPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Leistungsübersicht</p>
           <h1 className="mt-4 text-3xl font-semibold text-white md:text-5xl">Alle STRUKTIVA Leistungen im Überblick</h1>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#D7DCE5] md:text-lg">
-            Die Leistungen sind bewusst so aufgebaut, dass Sichtbarkeit, Kundenführung und digitale Abläufe als zusammenhängendes System funktionieren.
+            Die Leistungen sind bewusst so aufgebaut, dass Website, Landingpage, Kundenführung und digitale Abläufe als zusammenhängendes System funktionieren. So entsteht digitale Struktur für kleine Unternehmen, Selbstständige und lokale Betriebe.
           </p>
+        </section>
+
+        <section className="leistung-core-panel mt-8 rounded-[1.9rem] p-6 md:p-8">
+          <div className="max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a742e]">Kernleistungen</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#111111] md:text-4xl">
+              Website, Landingpage und digitales System - klar erklärt.
+            </h2>
+            <p className="mt-4 text-base leading-8 text-[#3a3a3a]">
+              Die folgenden drei Bereiche bilden den Kern von STRUKTIVA. Sie können einzeln starten oder sinnvoll kombiniert werden, wenn Ihr Unternehmen online klarer auftreten und intern geordneter arbeiten soll.
+            </p>
+          </div>
+          <div className="mt-7 grid gap-5 lg:grid-cols-3">
+            {coreLeistungDetails.map((item) => (
+              <article key={item.title} className="leistung-core-card rounded-[1.4rem] p-5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9a742e]">{item.keyword}</p>
+                <h3 className="mt-3 text-xl font-semibold text-[#111111]">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#3a3a3a]">{item.what}</p>
+                <p className="mt-3 text-sm leading-7 text-[#3a3a3a]">{item.benefit}</p>
+                <div className="leistung-before-after mt-4 rounded-[1rem] p-4 text-sm leading-7">
+                  <p><strong>Vorher:</strong> {item.before}</p>
+                  <p className="mt-2"><strong>Nachher:</strong> {item.after}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="metallic-panel-dark mt-8 rounded-[1.8rem] p-6 md:p-7">
@@ -6872,15 +6985,16 @@ function ContactPage() {
   return (
     <LegalLayout
       title="Kontakt"
-      intro="Du möchtest dein Unternehmen sichtbarer, professioneller oder digital besser organisiert aufstellen? Schreibe kurz, wobei du Unterstützung brauchst."
+      intro="Sie möchten Ihr Unternehmen sichtbarer, professioneller oder digital besser organisiert aufstellen? Schreiben Sie kurz, wobei Sie Unterstützung brauchen."
     >
       <LegalSection title="Projekt anfragen">
-        <p>Für neue Website-, Sichtbarkeits-, Automatisierungs- oder Systemanfragen gibt es jetzt eine strukturierte Anfrage-Seite mit allen wichtigen Angaben.</p>
+        <p>Für neue Website-, Landingpage-, Sichtbarkeits- oder Systemanfragen gibt es eine strukturierte Anfrage-Seite mit allen wichtigen Angaben. Schreiben Sie kurz, was Sie gerade bewegt - ich antworte in der Regel innerhalb von 24 Stunden.</p>
+        <p className="mt-3">Im ersten Gespräch klären wir, ob wir zusammenpassen, welches Problem zuerst gelöst werden sollte und ob eine Website, Landingpage oder digitale Struktur der sinnvollste nächste Schritt ist.</p>
         <a
           href={siteLinks.projectRequestForm}
           className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
         >
-          Projekt unverbindlich anfragen
+          Kurzanalyse anfragen
           <ArrowRight className="h-4 w-4" />
         </a>
       </LegalSection>
@@ -6889,6 +7003,8 @@ function ContactPage() {
         <p>Mögliche Themen:</p>
         <p>- Professionelle Webseite</p>
         <p>- Landingpage</p>
+        <p>- digitale Struktur für kleine Unternehmen</p>
+        <p>- Prozesse strukturieren</p>
         <p>- Google Ads</p>
         <p>- kostenlose App-Ersteinschätzung</p>
         <p>- Unternehmens-App</p>
@@ -6955,7 +7071,7 @@ function ContactPage() {
       </LegalSection>
 
       <LegalSection title="Hinweis">
-        <p>Bitte beschreibe kurz dein Unternehmen und wobei du Unterstützung brauchst. Danach kann ich besser einschätzen, welches Paket oder welche Lösung sinnvoll ist.</p>
+        <p>Bitte beschreiben Sie kurz Ihr Unternehmen, Ihre aktuelle Situation und den gewünschten nächsten Schritt. Wenn Sie möchten, nennen Sie direkt einen Wunschtermin für ein kostenloses 15-Minuten-Erstgespräch.</p>
       </LegalSection>
     </LegalLayout>
   )
