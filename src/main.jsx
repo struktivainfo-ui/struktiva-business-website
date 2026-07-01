@@ -4160,18 +4160,24 @@ function HomeHeroSection() {
           <motion.p variants={fadeUp} className="home-hero-lead">
             STRUKTIVA baut digitale Strukturen für Unternehmen, Selbstständige und lokale Betriebe: klare Websites, fokussierte Landingpages und Systeme, die Abläufe, Tools und Kundenanfragen ordnen.
           </motion.p>
-          <motion.p variants={fadeUp} className="home-architecture-note">
-            Unternehmensarchitektur bedeutet: die Struktur, in der Ihr Unternehmen läuft - Prozesse, Tools, Dokumente und Ihre Website, abgestimmt aufeinander. Das Ergebnis: weniger digitales Chaos, bessere Übersicht und Kontaktwege, die Kunden wirklich nutzen können.
+          <motion.p variants={fadeUp} className="home-cta-lead">
+            Ihre Website und digitalen Abläufe sollen endlich zu Ihrem Alltag passen?
           </motion.p>
           <motion.div variants={fadeUp} className="home-hero-actions">
             <a href={siteLinks.projectRequestForm} className="home-button home-button-primary">
-              Kostenloses Erstgespräch vereinbaren
+              Erstgespräch buchen
               <ArrowRight className="h-4 w-4" />
             </a>
             <a href="#leistungen" className="home-button home-button-secondary">
               Leistungen ansehen
             </a>
           </motion.div>
+          <motion.p variants={fadeUp} className="home-cta-note">
+            Im kostenlosen 15-Minuten-Erstgespräch klären wir, ob und wie STRUKTIVA Ihnen helfen kann.
+          </motion.p>
+          <motion.p variants={fadeUp} className="home-architecture-note">
+            Unternehmensarchitektur bedeutet: die Struktur, in der Ihr Unternehmen läuft - Prozesse, Tools, Dokumente und Ihre Website, abgestimmt aufeinander. Das Ergebnis: weniger digitales Chaos, bessere Übersicht und Kontaktwege, die Kunden wirklich nutzen können.
+          </motion.p>
         </motion.div>
 
         <motion.div initial="hidden" animate="visible" variants={fadeRight} className="home-system-panel">
@@ -4582,6 +4588,13 @@ function AboutPage() {
                   <p className="mt-3 text-sm leading-8 text-[#1a1a1a] md:text-base">
                     Der Fokus liegt auf Struktur statt auf reiner Optik: verständliche Websites, geordnete Kundenanfragen, digitale Abläufe und Lösungen, die Schritt für Schritt erweitert werden können.
                   </p>
+                  <div className="about-talk-cta mt-6">
+                    <a href={siteLinks.projectRequestForm} className="home-button home-button-primary">
+                      Mit mir sprechen
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                    <p>Schreiben Sie mir kurz Ihr Anliegen - ich melde mich in der Regel innerhalb von 24 Stunden für ein Erstgespräch.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -6155,6 +6168,8 @@ function LeistungenPage() {
       benefit: 'Der Nutzen: bessere Orientierung, professionellere Wirkung und mehr passende Anfragen, weil Kunden sofort sehen, ob Ihr Betrieb der richtige Ansprechpartner ist.',
       before: 'Unklare Startseite, verstreute Leistungen, Kontakt erst nach langem Suchen.',
       after: 'Klare Startseite, verständliche Leistungsbereiche, sichtbare Anfragewege über Formular, Telefon oder WhatsApp.',
+      cta: 'Website-Erstgespräch anfragen',
+      ctaText: 'Wir schauen gemeinsam, ob Ihre aktuelle Website Sie ausbremst - und welche Struktur Sie wirklich brauchen.',
     },
     {
       title: 'Landingpages für Kampagnen',
@@ -6163,6 +6178,8 @@ function LeistungenPage() {
       benefit: 'Der Nutzen: weniger Ablenkung, ein greifbarer Kundenvorteil und eine direkte Handlungsaufforderung für Anfrage, Termin oder Rückruf.',
       before: 'Ein Angebot ist irgendwo auf der Website versteckt und wird kaum verstanden.',
       after: 'Eine eigene Seite erklärt Problem, Lösung, Nutzen und nächsten Schritt in logischer Reihenfolge.',
+      cta: 'Landingpage-Erstgespräch buchen',
+      ctaText: 'In 15 Minuten klären wir, wie eine strukturierte Landingpage für mehr Anfragen sorgen kann.',
     },
     {
       title: 'Digitale Unternehmenssysteme',
@@ -6171,6 +6188,8 @@ function LeistungenPage() {
       benefit: 'Der Nutzen: weniger Doppelarbeit, weniger Sucherei und eine zentrale Übersicht für wiederkehrende Aufgaben, Kundenanfragen und interne Abläufe.',
       before: 'Dokumente liegen verstreut, Aufgaben stehen in Chats, Anfragen werden mehrfach kopiert.',
       after: 'Fester Prozess, strukturierte Ablage, klare Zuständigkeiten und eine zentrale Übersicht.',
+      cta: 'Struktur-Check starten',
+      ctaText: 'Sie zeigen uns kurz Ihren aktuellen Ablauf - wir skizzieren eine digitale Struktur, die im Alltag funktioniert.',
     },
   ]
 
@@ -6205,6 +6224,13 @@ function LeistungenPage() {
                 <div className="leistung-before-after mt-4 rounded-[1rem] p-4 text-sm leading-7">
                   <p><strong>Vorher:</strong> {item.before}</p>
                   <p className="mt-2"><strong>Nachher:</strong> {item.after}</p>
+                </div>
+                <div className="leistung-cta-row mt-5">
+                  <p>{item.ctaText}</p>
+                  <a href={siteLinks.projectRequestForm} className="leistung-cta-button">
+                    {item.cta}
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
                 </div>
               </article>
             ))}
@@ -6633,15 +6659,15 @@ function ProjectRequestPage() {
             <div className="max-w-4xl">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D8B45A]/82">Projekt anfragen</p>
               <h1 className="text-gold-glow mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-[3.4rem] lg:leading-[1.05]">
-                Projekt anfragen
+                Erstgespräch anfragen
               </h1>
               <p className="mt-5 text-xl font-medium text-[#F2D98B]">
-                Kostenlose Ersteinschätzung für dein digitales System
+                Kostenloses 15-Minuten-Erstgespräch für Website, Landingpage oder digitale Struktur
               </p>
               <p className="mt-5 max-w-3xl text-base leading-8 text-[#D7DCE5] md:text-lg">
                 STRUKTIVA unterstützt Unternehmen, Selbstständige und lokale Betriebe bei Website-Struktur,
                 Kundenanfragen, Google-Sichtbarkeit, Automatisierung und digitalen Abläufen. Über dieses Formular kann
-                dein Anliegen klar und vollständig übermittelt werden.
+                Ihr Anliegen klar und vollständig übermittelt werden.
               </p>
             </div>
           </Reveal>
@@ -6690,9 +6716,9 @@ function ProjectRequestPage() {
             <section id="lead-form" className="rounded-[1.9rem] border border-[#D8B45A]/24 bg-[linear-gradient(160deg,rgba(7,17,31,0.94),rgba(11,31,58,0.9),rgba(5,10,18,0.96))] p-6 shadow-premium md:p-8">
               <div className="mb-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8B45A]/82">Lead-Formular</p>
-                <h2 className="mt-3 text-3xl font-semibold text-white">Projekt unverbindlich anfragen</h2>
+                <h2 className="mt-3 text-3xl font-semibold text-white">Erstgespräch anfragen</h2>
                 <p className="mt-3 text-sm leading-7 text-[#D7DCE5]">
-                  Bitte die wichtigsten Angaben eintragen. So kann STRUKTIVA dein Anliegen besser einordnen.
+                  Bitte die wichtigsten Angaben eintragen. So kann STRUKTIVA Ihr Anliegen besser einordnen.
                 </p>
               </div>
 
@@ -6796,7 +6822,7 @@ function ProjectRequestPage() {
                     rows={6}
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Worum geht es, was ist bereits vorhanden und was soll verbessert oder aufgebaut werden?"
+                    placeholder="Beschreiben Sie kurz Ihr Unternehmen und was Sie gerade bewegt."
                     className={`w-full rounded-[1.1rem] border bg-[#05080d] px-4 py-3.5 text-sm leading-7 text-white outline-none transition placeholder:text-[#7f8ca0] focus:border-[#D8B45A] focus:ring-2 focus:ring-[#D8B45A]/20 ${
                       errors.message ? 'border-[#d97757]' : 'border-white/12'
                     }`}
@@ -6850,10 +6876,23 @@ function ProjectRequestPage() {
                   disabled={submitState === 'submitting'}
                   className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(17,24,39,0.24)] transition hover:bg-[#A9822D] hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  {submitState === 'submitting' ? 'Anfrage wird gesendet ...' : 'Anfrage senden'}
+                  {submitState === 'submitting' ? 'Anfrage wird gesendet ...' : 'Erstgespräch anfragen'}
                   <ArrowRight className="h-4 w-4" />
                 </button>
+                <p className="text-sm leading-7 text-[#D7DCE5]">
+                  Ich melde mich meist noch am gleichen oder nächsten Werktag mit Terminvorschlägen.
+                </p>
               </form>
+              <div className="direct-talk-box mt-6">
+                <div>
+                  <p className="text-sm font-semibold text-white">Lieber direkt sprechen?</p>
+                  <p className="mt-2 text-sm leading-7 text-[#D7DCE5]">Telefon und E-Mail stehen direkt daneben bereit, wenn Sie kurz vorab etwas klären möchten.</p>
+                </div>
+                <div className="direct-talk-links">
+                  <a href={contactDetails.phoneHref}>{contactDetails.phoneLabel}</a>
+                  <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
+                </div>
+              </div>
             </section>
           </Reveal>
         </div>
@@ -6987,16 +7026,28 @@ function ContactPage() {
       title="Kontakt"
       intro="Sie möchten Ihr Unternehmen sichtbarer, professioneller oder digital besser organisiert aufstellen? Schreiben Sie kurz, wobei Sie Unterstützung brauchen."
     >
-      <LegalSection title="Projekt anfragen">
+      <LegalSection title="Erstgespräch anfragen">
         <p>Für neue Website-, Landingpage-, Sichtbarkeits- oder Systemanfragen gibt es eine strukturierte Anfrage-Seite mit allen wichtigen Angaben. Schreiben Sie kurz, was Sie gerade bewegt - ich antworte in der Regel innerhalb von 24 Stunden.</p>
         <p className="mt-3">Im ersten Gespräch klären wir, ob wir zusammenpassen, welches Problem zuerst gelöst werden sollte und ob eine Website, Landingpage oder digitale Struktur der sinnvollste nächste Schritt ist.</p>
         <a
           href={siteLinks.projectRequestForm}
           className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#D8B45A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#A9822D]"
         >
-          Kurzanalyse anfragen
+          Erstgespräch anfragen
           <ArrowRight className="h-4 w-4" />
         </a>
+      </LegalSection>
+
+      <LegalSection title="Lieber direkt sprechen?">
+        <p>Wenn Sie erst kurz einordnen möchten, ob STRUKTIVA passt, erreichen Sie uns auch direkt per Telefon oder E-Mail.</p>
+        <div className="grid gap-3 pt-2 sm:grid-cols-2">
+          <a href={contactDetails.phoneHref} className="rounded-2xl border border-[#D8B45A]/24 bg-white/[0.04] px-4 py-3 text-[#D8B45A] transition hover:bg-[#D8B45A]/10">
+            Telefon: {contactDetails.phoneLabel}
+          </a>
+          <a href={`mailto:${contactDetails.email}`} className="rounded-2xl border border-[#D8B45A]/24 bg-white/[0.04] px-4 py-3 text-[#D8B45A] transition hover:bg-[#D8B45A]/10">
+            E-Mail: {contactDetails.email}
+          </a>
+        </div>
       </LegalSection>
 
       <LegalSection title="Kontakt zu STRUKTIVA Unternehmensarchitektur">
