@@ -2,7 +2,7 @@
 
 Stand: 2026-07-04
 
-Ziel dieses Dokuments ist eine technische Bestandsaufnahme des bestehenden STRUKTIVA-Webprojekts vor einem spaeteren kontrollierten Neuaufbau zur Positionierung "STRUKTIVA Unternehmensberatung". Es wurden keine Inhalte, Seiten, Formulare oder Tracking-Konfigurationen veraendert.
+Ziel dieses Dokuments ist eine technische Bestandsaufnahme des bestehenden STRUKTIVA-Webprojekts vor einem spaeteren kontrollierten Neuaufbau zur Positionierung "STRUKTIVA Digitale Unternehmensberatung". Es wurden keine Inhalte, Seiten, Formulare oder Tracking-Konfigurationen veraendert.
 
 ## 1. Technischer Ueberblick
 
@@ -50,15 +50,15 @@ Die Routing-Logik sitzt in `Page()` und prueft `window.location.pathname` manuel
 
 | Route | Seitentitel | H1 | Hauptzweck | Wichtigste CTA | Weiter sinnvoll? | Ueberschneidungen / Altbegriffe |
 | --- | --- | --- | --- | --- | --- | --- |
-| `/` | `STRUKTIVA Unternehmensarchitektur | Digitale Struktur fuer Unternehmen` | Websites, Landingpages und digitale Systeme fuer kleine Unternehmen. | Erstgespraech buchen, Leistungen ansehen, mehrere Paket-CTA | Ja, aber strategisch neu ausrichten | Titel/Brand noch "Unternehmensarchitektur"; Fokus stark Website/Landingpage |
-| `/leistungen` | `Leistungen - STRUKTIVA Unternehmensarchitektur` | Alle STRUKTIVA Leistungen im Ueberblick | Leistungsuebersicht von Website bis Systeme/Dashboards | Website-Erstgespraech, Landingpage-Erstgespraech, Struktur-Check, Projekt anfragen | Ja, als neue Beratungs-/Leistungsstruktur | Sehr viele Einzelleistungen; mehrere vorbereitete Detailseiten sind auf diese Route zurueckgefuehrt |
-| `/pakete` | `Pakete & Betreuung - STRUKTIVA Unternehmensarchitektur` | Pakete & Einstiegsmoeglichkeiten | Festpreis-Einstiege und Betreuung | Paket anfragen, Betreuung besprechen, Einzelleistung anfragen | Eher ja, aber mit Beratungslogik pruefen | Viele gleichartige CTA; Preis-/Paketlogik muss zur neuen Positionierung passen |
-| `/demos` | `Referenzen & Demos - STRUKTIVA Unternehmensarchitektur` | Referenzen & Demos | Referenz Salon Karola und Demo-Beispiele | Demo-Struktur anfragen, neue Website ansehen, Demo ansehen | Ja, aber Demos sauber trennen von Referenzen | Demo-/Referenz-Mischung; alte Vergleichsseite `salonkarola.simdif.com` bewusst als Altvergleich verlinkt |
-| `/referenzen` | `Referenzen & Demos - STRUKTIVA Unternehmensarchitektur` | Referenzen & Demos | Alias/Alternative zur Demo-Seite | identisch zu `/demos` | Nur wenn bewusst als Alias; sonst konsolidieren | Canonical zeigt auf `/demos`; nicht in Sitemap |
-| `/ueber-uns` | `Ueber uns - STRUKTIVA Unternehmensarchitektur` | Ueber STRUKTIVA | Personen, Herkunft, Arbeitsweise | Kontakt/Erstgespraech | Ja | "Gruender von STRUKTIVA Unternehmensarchitektur"; rechtliche/personelle Aussagen spaeter pruefen |
-| `/kontakt` | `Kontakt - STRUKTIVA Unternehmensarchitektur` | Erstgespraech anfragen | Projektanfrage und direkte Kontaktwege | Erstgespraech anfragen | Ja, zentrale Lead-Seite | Anfrage-Fokus passt, Brandbegriff alt |
-| `/impressum` | `Impressum - STRUKTIVA Unternehmensarchitektur` | Impressum | Rechtliche Anbieterangaben | E-Mail/Telefon indirekt | Ja, rechtlich erforderlich | Kontakt-/Anbieterangaben spaeter rechtlich validieren |
-| `/datenschutz` | `Datenschutz - STRUKTIVA Unternehmensarchitektur` | Datenschutzerklaerung | Datenschutz, Hosting, Resend | E-Mail-Kontakt | Ja, rechtlich erforderlich | Muss bei Tracking-/Consent-Aenderungen aktualisiert werden |
+| `/` | `STRUKTIVA Digitale Unternehmensberatung | Digitale Struktur fuer Unternehmen` | Websites, Landingpages und digitale Systeme fuer kleine Unternehmen. | Erstgespraech buchen, Leistungen ansehen, mehrere Paket-CTA | Ja, aber strategisch neu ausrichten | Titel/Brand auf neue Firmenbezeichnung umgestellt; Fokus stark Website/Landingpage |
+| `/leistungen` | `Leistungen - STRUKTIVA Digitale Unternehmensberatung` | Alle STRUKTIVA Leistungen im Ueberblick | Leistungsuebersicht von Website bis Systeme/Dashboards | Website-Erstgespraech, Landingpage-Erstgespraech, Struktur-Check, Projekt anfragen | Ja, als neue Beratungs-/Leistungsstruktur | Sehr viele Einzelleistungen; mehrere vorbereitete Detailseiten sind auf diese Route zurueckgefuehrt |
+| `/pakete` | `Pakete & Betreuung - STRUKTIVA Digitale Unternehmensberatung` | Pakete & Einstiegsmoeglichkeiten | Festpreis-Einstiege und Betreuung | Paket anfragen, Betreuung besprechen, Einzelleistung anfragen | Eher ja, aber mit Beratungslogik pruefen | Viele gleichartige CTA; Preis-/Paketlogik muss zur neuen Positionierung passen |
+| `/demos` | `Referenzen & Demos - STRUKTIVA Digitale Unternehmensberatung` | Referenzen & Demos | Referenz Salon Karola und Demo-Beispiele | Demo-Struktur anfragen, neue Website ansehen, Demo ansehen | Ja, aber Demos sauber trennen von Referenzen | Demo-/Referenz-Mischung; alte Vergleichsseite `salonkarola.simdif.com` bewusst als Altvergleich verlinkt |
+| `/referenzen` | `Referenzen & Demos - STRUKTIVA Digitale Unternehmensberatung` | Referenzen & Demos | Alias/Alternative zur Demo-Seite | identisch zu `/demos` | Nur wenn bewusst als Alias; sonst konsolidieren | Canonical zeigt auf `/demos`; nicht in Sitemap |
+| `/ueber-uns` | `Ueber uns - STRUKTIVA Digitale Unternehmensberatung` | Ueber STRUKTIVA | Personen, Herkunft, Arbeitsweise | Kontakt/Erstgespraech | Ja | Personen-/Rechtsaussagen spaeter pruefen |
+| `/kontakt` | `Kontakt - STRUKTIVA Digitale Unternehmensberatung` | Erstgespraech anfragen | Projektanfrage und direkte Kontaktwege | Erstgespraech anfragen | Ja, zentrale Lead-Seite | Anfrage-Fokus passt |
+| `/impressum` | `Impressum - STRUKTIVA Digitale Unternehmensberatung` | Impressum | Rechtliche Anbieterangaben | E-Mail/Telefon indirekt | Ja, rechtlich erforderlich | Kontakt-/Anbieterangaben spaeter rechtlich validieren |
+| `/datenschutz` | `Datenschutz - STRUKTIVA Digitale Unternehmensberatung` | Datenschutzerklaerung | Datenschutz, Hosting, Resend | E-Mail-Kontakt | Ja, rechtlich erforderlich | Muss bei Tracking-/Consent-Aenderungen aktualisiert werden |
 
 ### Statische Demo-Routen
 
@@ -215,8 +215,8 @@ Positive Befunde:
 
 Probleme und Risiken:
 
-- Viele Titel/Descriptions enthalten noch "STRUKTIVA Unternehmensarchitektur".
-- Initiales `index.html` enthaelt ebenfalls alte Positionierung und Schema.org-Name "STRUKTIVA Unternehmensarchitektur".
+- Viele Titel/Descriptions wurden auf "STRUKTIVA Digitale Unternehmensberatung" umgestellt.
+- Initiales `index.html` enthaelt die neue Firmenbezeichnung im Schema.org-Name.
 - Clientseitige Meta-Aenderungen sind fuer moderne Crawler meist sichtbar, aber serverseitig wird fuer SPA-Fallback zunaechst immer `index.html` ausgeliefert. Fuer SEO-kritische Seiten ist das nicht ideal.
 - Sitemap listet `/referenzen` nicht, obwohl die Route existiert.
 - Sitemap listet die statischen Demo-Routen nicht; vermutlich passend, weil diese `noindex` sind.
@@ -380,7 +380,7 @@ Wahrscheinlich ersetzen oder stark refaktorisieren:
 
 ## 12. Empfohlene Reihenfolge fuer den Umbau
 
-1. Zielarchitektur festlegen: neue Hauptnavigation fuer STRUKTIVA Unternehmensberatung definieren.
+1. Zielarchitektur festlegen: neue Hauptnavigation fuer STRUKTIVA Digitale Unternehmensberatung definieren.
 2. Routenmodell entscheiden: `/`, `/leistungen` oder Beratungsseiten, `/referenzen`, `/kontakt`, Rechtliches; Alias `/referenzen` vs `/demos` klaeren.
 3. Content-Inventar bereinigen: aktive Inhalte, wiederverwendbare Inhalte und Altkomponenten markieren.
 4. Technische Struktur refaktorisieren: `main.jsx` in Seiten, Komponenten, Daten und Utilities splitten.
@@ -408,4 +408,3 @@ Noch nicht ausgefuehrt:
 - Kein echtes Absenden des Lead-Formulars.
 - Kein externer Linkcheck gegen alle Fremddomains.
 - Keine rechtliche Pruefung von Impressum/Datenschutz.
-

@@ -13,7 +13,7 @@ export default function Footer() {
           <a className="struktiva-footer-brand__name" href="/">
             STRUKTIVA
           </a>
-          <p className="struktiva-footer-brand__descriptor">Unternehmensberatung</p>
+          <p className="struktiva-footer-brand__descriptor">Digitale Unternehmensberatung</p>
           <p className="struktiva-footer-brand__text">
             STRUKTIVA verbindet Sichtbarkeit, Kundenführung und digitale Abläufe zu einer klaren Struktur für Unternehmen.
           </p>
@@ -54,7 +54,7 @@ export default function Footer() {
       </div>
 
       <div className="struktiva-global-footer__bottom">
-        <p>© {currentYear} STRUKTIVA Unternehmensberatung. Alle Rechte vorbehalten.</p>
+        <p>© {currentYear} STRUKTIVA Digitale Unternehmensberatung. Alle Rechte vorbehalten.</p>
       </div>
     </footer>
   )

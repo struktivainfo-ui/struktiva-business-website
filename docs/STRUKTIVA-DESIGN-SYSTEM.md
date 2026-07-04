@@ -8,7 +8,7 @@ Dieses Dokument definiert die naechste technische und gestalterische Grundlage f
 
 Neue Markenbezeichnung:
 
-STRUKTIVA Unternehmensberatung
+STRUKTIVA Digitale Unternehmensberatung
 
 Kernpositionierung:
 
@@ -68,7 +68,7 @@ Zielrouten:
 
 | Zielroute | Zweck | Status fuer naechsten Umbau |
 | --- | --- | --- |
-| `/` | neue Startseite fuer STRUKTIVA Unternehmensberatung | bestehende Route ersetzen |
+| `/` | neue Startseite fuer STRUKTIVA Digitale Unternehmensberatung | bestehende Route ersetzen |
 | `/loesungen` | Ueberblick ueber die drei Loesungswelten | neu anlegen, aus `/leistungen` ableiten |
 | `/praxisbeispiele` | Referenzen, reale Beispiele, ausgewaehlte Demo-Einordnung | neu anlegen, `/demos` und `/referenzen` zusammenfuehren |
 | `/praxisbeispiele/salon-karola` | echter Praxisbeweis Salon Karola | neu planen oder als Abschnitt in Praxisbeispiele starten |
@@ -483,7 +483,7 @@ Phase 4: SEO und Redirects
 - statische Demo-Routen zunaechst erhalten.
 - Sitemap aktualisieren.
 - Canonicals aktualisieren.
-- Schema.org von "Unternehmensarchitektur" auf "Unternehmensberatung" umstellen.
+- Schema.org von "Unternehmensarchitektur" auf "STRUKTIVA Digitale Unternehmensberatung" umstellen.
 
 Phase 5: Launch-Pruefung
 
@@ -506,4 +506,3 @@ Ergaenzt in `src/styles.css`:
 - sichtbarer globaler `:focus-visible`-Grundzustand.
 
 Diese Grundlagen sind additiv. Sie ersetzen keine bestehende Route und bauen keine Seite neu.
-

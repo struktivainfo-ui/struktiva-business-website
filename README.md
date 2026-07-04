@@ -1,6 +1,6 @@
-﻿# STRUKTIVA Unternehmensarchitektur Website
+﻿# STRUKTIVA Digitale Unternehmensberatung Website
 
-Professionelle mehrseitige Webseite fuer STRUKTIVA Unternehmensarchitektur.
+Professionelle mehrseitige Webseite fuer STRUKTIVA Digitale Unternehmensberatung.
 
 ## Technik
 

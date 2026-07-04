@@ -101,7 +101,7 @@ const siteLinks = {
 }
 
 const brand = {
-  name: 'STRUKTIVA Unternehmensarchitektur',
+  name: 'STRUKTIVA Digitale Unternehmensberatung',
   descriptor: 'Digitale Systeme',
   line: 'Professionelle Online-Präsenz. Kundengewinnung. Digitale Struktur. Optionale App-Lösungen.',
 }
@@ -839,7 +839,7 @@ function Header({ pathname, isHomeRoute = false }) {
         <a href={siteLinks.home} className="flex min-w-0 shrink-0 items-center gap-3">
           <img
             src="/struktiva-logo.jpeg"
-            alt="STRUKTIVA Unternehmensarchitektur Logo"
+            alt="STRUKTIVA Digitale Unternehmensberatung Logo"
             className="h-8 w-8 rounded-full object-contain md:h-10 md:w-10"
           />
           <div className="leading-none">
@@ -2378,7 +2378,7 @@ function Footer() {
         <div className="h-px w-full bg-[linear-gradient(90deg,rgba(216,180,90,0),rgba(216,180,90,0.75),rgba(216,180,90,0))]" />
         <div className="grid gap-8 px-6 py-7 text-sm text-[#E0BF6A] md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           <div>
-            <p className="text-base font-semibold text-[#FFF8E8]">STRUKTIVA Unternehmensarchitektur</p>
+            <p className="text-base font-semibold text-[#FFF8E8]">STRUKTIVA Digitale Unternehmensberatung</p>
             <p className="mt-3">Geführt von Jessica Wacker und Sven Matzke</p>
             <a href={`mailto:${contactDetails.email}`} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.email}</a>
             <a href={contactDetails.phoneHref} className="mt-1 block transition hover:text-[#F2D98B]">{contactDetails.phoneLabel}</a>
@@ -2448,7 +2448,7 @@ function Footer() {
         </div>
         <div className="border-t border-white/12 px-6 py-3.5 text-xs text-[#CFC8B5] md:flex md:items-center md:justify-between">
           <div>
-            <p>© 2026 STRUKTIVA Unternehmensarchitektur. Alle Rechte vorbehalten.</p>
+            <p>© 2026 STRUKTIVA Digitale Unternehmensberatung. Alle Rechte vorbehalten.</p>
             <p className="mt-1 flex flex-wrap gap-x-2 gap-y-1">
               {externalProfileLinks.map(([label, , href], index) => (
                 <React.Fragment key={label}>
@@ -4072,7 +4072,7 @@ function HomeHeroSection() {
       <div className="home-container home-hero-grid">
         <motion.div initial="hidden" animate="visible" variants={stagger} className="home-hero-copy">
           <motion.p variants={fadeUp} className="home-eyebrow">
-            STRUKTIVA Unternehmensarchitektur
+            STRUKTIVA Digitale Unternehmensberatung
           </motion.p>
           <motion.h1 variants={fadeUp}>
             Websites, Landingpages und digitale Systeme für kleine Unternehmen.
@@ -4500,7 +4500,7 @@ function AboutPage() {
                     Sven Matzke und Jessica Wacker
                   </p>
                   <p className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#9a742e]">
-                    Inhaber von STRUKTIVA Unternehmensberatung
+                    Inhaber von STRUKTIVA Digitale Unternehmensberatung
                   </p>
                   <p className="mt-4 text-sm leading-8 text-[#1a1a1a] md:text-base">
                     Hinter STRUKTIVA stehen Sven Matzke und Jessica Wacker. Gemeinsam verbinden wir digitale Struktur, klare Abläufe und verständliche Kundenführung zu professionellen Lösungen für kleine Unternehmen, Selbstständige und lokale Dienstleister.
@@ -6867,7 +6867,7 @@ function ImpressumPage() {
   return (
     <LegalLayout
       title="Impressum"
-      intro="Rechtliche Angaben und Kontaktinformationen zu STRUKTIVA Unternehmensarchitektur."
+      intro="Rechtliche Angaben und Kontaktinformationen zu STRUKTIVA Digitale Unternehmensberatung."
     >
       <LegalSection title="Angaben gemäß § 5 TMG">
         <p>Jessica Wacker<br />Ostlandstraße 3<br />75365 Calw</p>
@@ -6970,7 +6970,7 @@ function ContactPage() {
         </div>
       </LegalSection>
 
-      <LegalSection title="Kontakt zu STRUKTIVA Unternehmensarchitektur">
+      <LegalSection title="Kontakt zu STRUKTIVA Digitale Unternehmensberatung">
         <p>Mögliche Themen:</p>
         <p>- Professionelle Webseite</p>
         <p>- Landingpage</p>
@@ -7007,11 +7007,11 @@ function ContactPage() {
             </div>
             <figcaption className="mt-3 text-center">
               <p className="text-sm font-semibold text-white">Sven Matzke & Jessica Wacker</p>
-              <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-[#D8B45A]/85">Gründer von STRUKTIVA Unternehmensarchitektur</p>
+              <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-[#D8B45A]/85">Gründer von STRUKTIVA Digitale Unternehmensberatung</p>
             </figcaption>
           </figure>
           <div className="space-y-2">
-            <p className="text-base font-semibold text-white">STRUKTIVA Unternehmensarchitektur wird von Jessica Wacker und Sven Matzke geführt.</p>
+            <p className="text-base font-semibold text-white">STRUKTIVA Digitale Unternehmensberatung wird von Jessica Wacker und Sven Matzke geführt.</p>
             <p>
               Gemeinsam entwickeln wir digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister – mit klaren Websites, Google-Sichtbarkeit, Kontaktwegen und digitalen Systemen.
             </p>

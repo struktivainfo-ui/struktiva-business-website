@@ -371,7 +371,7 @@ In Schritt 4 wurde ausschliesslich der globale Rahmen neu aufgebaut. Legacy-Seit
 
 Der Header enthaelt:
 
-- STRUKTIVA-Markenbereich mit Logo und Bezeichnung `Unternehmensberatung`
+- STRUKTIVA-Markenbereich mit Logo und Bezeichnung `Digitale Unternehmensberatung`
 - Desktop-Navigation aus `currentNavigation.primary`
 - primaeren CTA `Digital-Check anfragen`
 - mobile Menue-Schaltflaeche
@@ -427,7 +427,7 @@ Demo-Routen mit `hideChrome` behalten weiterhin ihre reduzierte Darstellung ohne
 
 Der Footer enthaelt:
 
-- Markenbereich `STRUKTIVA Unternehmensberatung`
+- Markenbereich `STRUKTIVA Digitale Unternehmensberatung`
 - kurzen Positionierungssatz
 - CTA `Digital-Check anfragen`
 - Navigation aus zentraler Konfiguration

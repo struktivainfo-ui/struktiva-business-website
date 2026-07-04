@@ -3,73 +3,73 @@
 
 export const ACTIVE_ROUTE_META = {
   '/': {
-    title: 'STRUKTIVA Unternehmensarchitektur | Digitale Struktur für Unternehmen',
+    title: 'STRUKTIVA Digitale Unternehmensberatung | Digitale Struktur für Unternehmen',
     description: defaultDescription,
     canonicalPath: '/',
     isHomeRoute: true,
     isPricingRoute: true,
   },
   '/leistungen': {
-    title: 'Leistungen - STRUKTIVA Unternehmensarchitektur',
+    title: 'Leistungen - STRUKTIVA Digitale Unternehmensberatung',
     description:
       'Alle STRUKTIVA Leistungen im Überblick: Website, Landingpages, Google-Sichtbarkeit, Kundenführung, Systeme, Dashboards und strukturierte Umsetzung.',
     canonicalPath: '/leistungen',
   },
   '/pakete': {
-    title: 'Pakete & Betreuung - STRUKTIVA Unternehmensarchitektur',
+    title: 'Pakete & Betreuung - STRUKTIVA Digitale Unternehmensberatung',
     description:
       'Pakete und Betreuung von STRUKTIVA: klare Einstiege für Website, Sichtbarkeit, Kundenführung und digitale Systeme.',
     canonicalPath: '/pakete',
     isPricingRoute: true,
   },
   '/referenzen': {
-    title: 'Referenzen & Demos - STRUKTIVA Unternehmensarchitektur',
+    title: 'Referenzen & Demos - STRUKTIVA Digitale Unternehmensberatung',
     description: 'Referenzen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
     canonicalPath: '/demos',
   },
   '/demos': {
-    title: 'Referenzen & Demos - STRUKTIVA Unternehmensarchitektur',
+    title: 'Referenzen & Demos - STRUKTIVA Digitale Unternehmensberatung',
     description:
       'Echte Referenzen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
     canonicalPath: '/demos',
     isHomeRoute: true,
   },
   '/ueber-uns': {
-    title: 'Über uns - STRUKTIVA Unternehmensarchitektur',
-    description: 'Mehr über STRUKTIVA Unternehmensarchitektur: digitale Struktur für Unternehmen, lokale Dienstleister und Selbstständige.',
+    title: 'Über uns - STRUKTIVA Digitale Unternehmensberatung',
+    description: 'Mehr über STRUKTIVA Digitale Unternehmensberatung: digitale Struktur für Unternehmen, lokale Dienstleister und Selbstständige.',
     canonicalPath: '/ueber-uns',
   },
   '/kontakt': {
-    title: 'Kontakt - STRUKTIVA Unternehmensarchitektur',
-    description: 'Kontakt und Projektanfrage bei STRUKTIVA Unternehmensarchitektur.',
+    title: 'Kontakt - STRUKTIVA Digitale Unternehmensberatung',
+    description: 'Kontakt und Projektanfrage bei STRUKTIVA Digitale Unternehmensberatung.',
     canonicalPath: '/kontakt',
   },
   '/datenschutz': {
-    title: 'Datenschutz - STRUKTIVA Unternehmensarchitektur',
-    description: 'Datenschutzerklärung von STRUKTIVA Unternehmensarchitektur.',
+    title: 'Datenschutz - STRUKTIVA Digitale Unternehmensberatung',
+    description: 'Datenschutzerklärung von STRUKTIVA Digitale Unternehmensberatung.',
     canonicalPath: '/datenschutz',
   },
   '/impressum': {
-    title: 'Impressum - STRUKTIVA Unternehmensarchitektur',
-    description: 'Impressum und rechtliche Angaben von STRUKTIVA Unternehmensarchitektur.',
+    title: 'Impressum - STRUKTIVA Digitale Unternehmensberatung',
+    description: 'Impressum und rechtliche Angaben von STRUKTIVA Digitale Unternehmensberatung.',
     canonicalPath: '/impressum',
   },
   '/demos/handwerker': {
-    title: 'Seite nicht gefunden - STRUKTIVA Unternehmensarchitektur',
+    title: 'Seite nicht gefunden - STRUKTIVA Digitale Unternehmensberatung',
     description: 'Diese Seite gehört nicht mehr zur aktuellen STRUKTIVA Website-Struktur.',
     canonicalPath: '/demos/handwerker',
     hideChrome: true,
     noindex: true,
   },
   '/demos/kosmetik': {
-    title: 'Seite nicht gefunden - STRUKTIVA Unternehmensarchitektur',
+    title: 'Seite nicht gefunden - STRUKTIVA Digitale Unternehmensberatung',
     description: 'Diese Seite gehört nicht mehr zur aktuellen STRUKTIVA Website-Struktur.',
     canonicalPath: '/demos/kosmetik',
     hideChrome: true,
     noindex: true,
   },
   '/demos/lokaler-dienstleister': {
-    title: 'Seite nicht gefunden - STRUKTIVA Unternehmensarchitektur',
+    title: 'Seite nicht gefunden - STRUKTIVA Digitale Unternehmensberatung',
     description: 'Diese Seite gehört nicht mehr zur aktuellen STRUKTIVA Website-Struktur.',
     canonicalPath: '/demos/lokaler-dienstleister',
     hideChrome: true,
@@ -78,7 +78,7 @@ export const ACTIVE_ROUTE_META = {
 }
 
 export const DEFAULT_ROUTE_META = {
-  title: 'Seite nicht gefunden - STRUKTIVA Unternehmensarchitektur',
+  title: 'Seite nicht gefunden - STRUKTIVA Digitale Unternehmensberatung',
   description: 'Diese Seite gehört nicht mehr zur aktuellen STRUKTIVA Website-Struktur.',
   noindex: true,
 }
@@ -147,7 +147,7 @@ export const futureNavigation = {
 }
 
 export const FUTURE_ROUTE_PLAN = [
-  { path: '/', role: 'Startseite für STRUKTIVA Unternehmensberatung', status: 'replace-existing-route-later' },
+  { path: '/', role: 'Startseite für STRUKTIVA Digitale Unternehmensberatung', status: 'replace-existing-route-later' },
   { path: '/loesungen', role: 'Drei Lösungswelten bündeln', status: 'planned' },
   { path: '/praxisbeispiele', role: 'Referenzen und echte Praxisbeweise bündeln', status: 'planned' },
   { path: '/praxisbeispiele/salon-karola', role: 'Detail-Praxisbeispiel Salon Karola', status: 'planned' },

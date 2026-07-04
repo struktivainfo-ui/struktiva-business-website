@@ -31,7 +31,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
   --struktiva-shell-bg: linear-gradient(135deg, #f2f1ee 0%, #d0d0cb 24%, #faf8f3 56%, #bbbcb6 100%);
 
-  /* STRUKTIVA Unternehmensberatung design-system foundation.
+  /* STRUKTIVA Digitale Unternehmensberatung design-system foundation.
      These tokens are intentionally additive so the later rebuild can adopt them
      route by route without changing the current pages in this step. */
   --background-primary: #ffffff;

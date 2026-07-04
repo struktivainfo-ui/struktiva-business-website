@@ -122,7 +122,7 @@ export default function Header({ pathname }) {
           <img src="/struktiva-logo.jpeg" alt="" className="struktiva-brand__mark" />
           <span className="struktiva-brand__text">
             <span className="struktiva-brand__name">STRUKTIVA</span>
-            <span className="struktiva-brand__descriptor">Unternehmensberatung</span>
+            <span className="struktiva-brand__descriptor">Digitale Unternehmensberatung</span>
           </span>
         </a>
 
