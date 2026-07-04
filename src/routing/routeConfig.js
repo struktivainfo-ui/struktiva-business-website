@@ -1,4 +1,4 @@
-const defaultDescription =
+﻿const defaultDescription =
   'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege und digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister.'
 
 export const ACTIVE_ROUTE_META = {
@@ -103,31 +103,35 @@ export function createRouteClass(pathname) {
 export const currentNavigation = {
   primary: [
     { label: 'Start', href: '/' },
-    { label: 'Leistungen', href: '/leistungen' },
-    { label: 'Pakete', href: '/pakete' },
-    { label: 'Referenzen', href: '/demos' },
-    { label: 'Demos', href: '/demos' },
-    { label: 'Über uns', href: '/ueber-uns' },
+    { label: 'Lösungen', href: '/leistungen', transitionFor: '/loesungen' },
+    { label: 'Praxisbeispiele', href: '/demos', transitionFor: '/praxisbeispiele' },
+    { label: 'Digital-Check', href: '/kontakt#lead-form', transitionFor: '/digital-check', ctaRole: 'primary' },
+    { label: 'Über STRUKTIVA', href: '/ueber-uns' },
     { label: 'Kontakt', href: '/kontakt' },
   ],
   desktop: [
-    { label: 'Pakete', href: '/pakete' },
-    { label: 'Referenzen / Demos', href: '/demos' },
-    { label: 'Über uns', href: '/ueber-uns' },
+    { label: 'Start', href: '/' },
+    { label: 'Lösungen', href: '/leistungen', transitionFor: '/loesungen' },
+    { label: 'Praxisbeispiele', href: '/demos', transitionFor: '/praxisbeispiele' },
+    { label: 'Digital-Check', href: '/kontakt#lead-form', transitionFor: '/digital-check', ctaRole: 'primary' },
+    { label: 'Über STRUKTIVA', href: '/ueber-uns' },
     { label: 'Kontakt', href: '/kontakt' },
   ],
   mobile: [
-    { label: 'Pakete', href: '/pakete' },
-    { label: 'Referenzen / Demos', href: '/demos' },
-    { label: 'Über uns', href: '/ueber-uns' },
+    { label: 'Start', href: '/' },
+    { label: 'Lösungen', href: '/leistungen', transitionFor: '/loesungen' },
+    { label: 'Praxisbeispiele', href: '/demos', transitionFor: '/praxisbeispiele' },
+    { label: 'Digital-Check', href: '/kontakt#lead-form', transitionFor: '/digital-check', ctaRole: 'primary' },
+    { label: 'Über STRUKTIVA', href: '/ueber-uns' },
     { label: 'Kontakt', href: '/kontakt' },
   ],
   leistungenDropdown: [
-    { label: 'Leistungen im Überblick', href: '/leistungen' },
-    { label: 'Pakete & Angebote', href: '/pakete' },
-    { label: 'Referenzen', href: '/demos' },
-    { label: 'Demos', href: '/demos' },
+    { label: 'Lösungen', href: '/leistungen', transitionFor: '/loesungen' },
+    { label: 'Praxisbeispiele', href: '/demos', transitionFor: '/praxisbeispiele' },
+    { label: 'Kontakt', href: '/kontakt' },
   ],
+  primaryCta: { label: 'Digital-Check anfragen', href: '/kontakt#lead-form', transitionFor: '/digital-check' },
+  secondaryCta: { label: 'Praxisbeispiel ansehen', href: '/demos', transitionFor: '/praxisbeispiele' },
 }
 
 export const futureNavigation = {

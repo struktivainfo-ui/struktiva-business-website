@@ -360,3 +360,118 @@ Naechster sinnvoller Split:
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
 
 Diese Schulden wurden bewusst dokumentiert statt in einem riskanten Massenumbau geloest.
+
+## 20. Update Schritt 4: Globaler Website-Rahmen
+
+In Schritt 4 wurde ausschliesslich der globale Rahmen neu aufgebaut. Legacy-Seiten, Hero, Seiteninhalte, Kontaktformular, Consent und Tracking wurden nicht inhaltlich umgebaut.
+
+### Neue Header-Struktur
+
+`src/components/layout/Header.jsx` ist jetzt eine eigene Implementierung und kein Legacy-Reexport mehr.
+
+Der Header enthaelt:
+
+- STRUKTIVA-Markenbereich mit Logo und Bezeichnung `Unternehmensberatung`
+- Desktop-Navigation aus `currentNavigation.primary`
+- primaeren CTA `Digital-Check anfragen`
+- mobile Menue-Schaltflaeche
+- Sticky-/Scroll-Zustand mit dezenter Verdichtung
+
+Der Header nutzt eine helle Oberflaeche, schwarze Typografie und Gold nur fuer aktive Navigation und feine Akzente.
+
+### Neue Navigation
+
+Die sichtbare Uebergangsnavigation lautet:
+
+- Start -> `/`
+- Loesungen -> `/leistungen`
+- Praxisbeispiele -> `/demos`
+- Digital-Check -> `/kontakt#lead-form`
+- Ueber STRUKTIVA -> `/ueber-uns`
+- Kontakt -> `/kontakt`
+
+Damit wirkt die Navigation bereits wie die geplante Zielstruktur, fuehrt aber nur auf vorhandene funktionierende Ziele. `/loesungen`, `/praxisbeispiele` und `/digital-check` wurden nicht als unfertige Live-Routen aktiviert.
+
+Die Navigation bleibt zentral in `src/routing/routeConfig.js` gepflegt. Desktop, Mobile und Footer lesen aus derselben Quelle.
+
+### Mobile Navigation
+
+Die mobile Navigation wurde neu aufgebaut:
+
+- grosse Touch-Ziele
+- `aria-expanded`
+- `aria-controls`
+- Escape-Schliessen
+- Body Scroll Lock waehrend geoeffnetem Menue
+- Fokus-Rueckgabe an den Menuebutton
+- CTA innerhalb des Panels
+
+Das mobile Menue ist als eigener Panel-Bereich umgesetzt und ersetzt das alte Dropdown-Verhalten im globalen Rahmen.
+
+### App-Shell-Verhalten
+
+`src/components/layout/AppShell.jsx` enthaelt nun:
+
+- Skip Link zu `#main-content`
+- Header fuer normale Routen
+- Content-Ziel `#main-content` ohne zusaetzliches `main`, damit Legacy-Seiten ihre bestehenden `main`-Landmarks behalten
+- Footer fuer normale Routen
+- Cookie Consent Layer
+- Floating WhatsApp Button
+
+Demo-Routen mit `hideChrome` behalten weiterhin ihre reduzierte Darstellung ohne globalen Header/Footer.
+
+### Footer-Struktur
+
+`src/components/layout/Footer.jsx` ist jetzt eine eigene globale Footer-Komponente.
+
+Der Footer enthaelt:
+
+- Markenbereich `STRUKTIVA Unternehmensberatung`
+- kurzen Positionierungssatz
+- CTA `Digital-Check anfragen`
+- Navigation aus zentraler Konfiguration
+- bestehende Kontaktangaben aus dem Projekt
+- Impressum
+- Datenschutz
+- Cookie-Einstellungen
+- dynamisches Copyright-Jahr
+
+### CTA-Hierarchie
+
+Global gilt:
+
+- Primaerer CTA: `Digital-Check anfragen`
+- Uebergangsziel: `/kontakt#lead-form`
+- Sekundaerer CTA in der Konfiguration: `Praxisbeispiel ansehen` -> `/demos`
+
+Es wurde keine unfertige `/digital-check`-Seite angelegt.
+
+### Floating WhatsApp Button
+
+`src/components/layout/FloatingWhatsAppButton.jsx` ist jetzt eine eigene Komponente.
+
+Der Button nutzt weiterhin die vorhandene STRUKTIVA-WhatsApp-Nummer aus den bestehenden Projektdaten. Er wurde optisch ruhiger in das neue globale System integriert und bleibt bei sichtbarem Cookie-Banner versetzt.
+
+### CSS-Erweiterung
+
+`src/styles.css` wurde nur additiv erweitert:
+
+- Skip Link
+- globaler Header
+- Desktop Navigation
+- Mobile Navigation
+- globale CTA-Stile
+- globaler Footer
+- Floating WhatsApp Button
+- responsive Regeln
+- Reduced-Motion-Regeln
+
+Die Legacy-Seiten-CSS-Struktur wurde nicht neu geschrieben.
+
+### Bekannte verbleibende Risiken
+
+- Die sichtbaren Seitentexte enthalten weiterhin alte Positionierungsbegriffe wie `Unternehmensarchitektur`.
+- `src/legacy/legacyContent.jsx` bleibt gross und enthaelt alte Header/Footer-Implementierungen, die aber nicht mehr im globalen Shell genutzt werden.
+- `/leistungen`, `/demos` und `/kontakt#lead-form` sind Uebergangsziele fuer neue Navigationsbegriffe.
+- SEO-Metadaten wurden bewusst nicht neu formuliert und muessen in einem spaeteren SEO-Schritt angepasst werden.

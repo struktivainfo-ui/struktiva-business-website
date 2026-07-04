@@ -8207,6 +8207,7 @@ export {
   PaketePage,
   ProjectRequestPage,
   ReferenzenPage,
+  contactDetails,
   useCurrentPath,
   useDocumentTitleSafe,
 }

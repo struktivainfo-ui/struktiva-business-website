@@ -12,8 +12,15 @@ export default function AppShell({ pathname, routeMeta, children }) {
 
   return (
     <div className={`struktiva-metallic ${routeClass} ${isHomeRoute ? 'struktiva-home' : ''} ${isPricingRoute ? 'struktiva-pricing-route' : ''} min-h-screen`}>
+      {!isDemoRoute ? (
+        <a className="struktiva-skip-link" href="#main-content">
+          Zum Inhalt springen
+        </a>
+      ) : null}
       {!isDemoRoute ? <Header pathname={pathname} isHomeRoute={isHomeRoute} /> : null}
-      {children}
+      <div id="main-content" tabIndex={-1} className="struktiva-main-content">
+        {children}
+      </div>
       {!isDemoRoute ? <Footer /> : null}
       <CookieConsentLayer pathname={pathname} />
       <FloatingWhatsAppButton />
