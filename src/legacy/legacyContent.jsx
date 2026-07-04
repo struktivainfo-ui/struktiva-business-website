@@ -4030,6 +4030,14 @@ function HomePage() {
   return (
     <>
       <HomeHeroSection />
+      <HomeLegacyContinuation />
+    </>
+  )
+}
+
+function HomeLegacyContinuation() {
+  return (
+    <>
       <HomeServiceTickerSection />
       <HomeProblemSection />
       <HomeFlowSection />
@@ -8200,6 +8208,7 @@ export {
   FloatingWhatsAppButton,
   Footer,
   Header,
+  HomeLegacyContinuation,
   HomePage,
   ImpressumPage,
   LeistungenPage,

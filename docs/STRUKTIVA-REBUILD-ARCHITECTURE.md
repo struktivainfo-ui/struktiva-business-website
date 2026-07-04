@@ -475,3 +475,114 @@ Die Legacy-Seiten-CSS-Struktur wurde nicht neu geschrieben.
 - `src/legacy/legacyContent.jsx` bleibt gross und enthaelt alte Header/Footer-Implementierungen, die aber nicht mehr im globalen Shell genutzt werden.
 - `/leistungen`, `/demos` und `/kontakt#lead-form` sind Uebergangsziele fuer neue Navigationsbegriffe.
 - SEO-Metadaten wurden bewusst nicht neu formuliert und muessen in einem spaeteren SEO-Schritt angepasst werden.
+
+## 21. Update Schritt 5: Neuer Startseiten-Hero
+
+In Schritt 5 wurde ausschliesslich der Hero der Startseite neu aufgebaut. Problemsektion, Loesungswelten, Fallstudie, Digital-Check-Seite, neue Zielrouten, Kontaktformular, Consent und Tracking wurden nicht umgebaut.
+
+### Neue HomePage-Struktur
+
+`src/pages/HomePage.jsx` ist jetzt eine echte modulare Page-Komponente und kein reiner Legacy-Reexport mehr.
+
+Die Startseite rendert:
+
+- `HomeHero` aus `src/components/home/HomeHero.jsx`
+- `HomeLegacyContinuation` aus `src/legacy/legacyContent.jsx`
+
+Damit ist der neue Hero ausserhalb des Legacy-Moduls umgesetzt, waehrend die bestehenden Folgeabschnitte kontrolliert weiterverwendet werden.
+
+### Hero-Komponente
+
+`src/components/home/HomeHero.jsx` enthaelt:
+
+- Eyebrow `Digitale Struktur fuer Unternehmen`
+- H1 `Mehr Sichtbarkeit. Klare Kundenwege. Digitale Ablaeufe, die zusammenarbeiten.`
+- Lead-Text mit korrektem Firmennamen `STRUKTIVA Digitale Unternehmensberatung`
+- primaeren CTA `Digital-Check anfragen`
+- sekundaeren CTA `Praxisbeispiel ansehen`
+- dezente Orientierungszeile `Strategie · Umsetzung · Weiterentwicklung`
+- Systemvisualisierung als Bestandteil des Hero
+
+Die CTA-Ziele werden aus `currentNavigation` gelesen:
+
+- `currentNavigation.primaryCta.href` -> `/kontakt#lead-form`
+- `currentNavigation.secondaryCta.href` -> `/demos`
+
+Es wurde keine unfertige Route wie `/digital-check`, `/loesungen` oder `/praxisbeispiele` aktiviert.
+
+### Systemvisualisierung
+
+Die rechte Hero-Seite zeigt eine eigenstaendige STRUKTIVA-Systemdarstellung:
+
+- Sichtbarkeit -> Website & Google
+- Kundenfuehrung -> Kontakt & Bindung
+- Ablaeufe -> Systeme & Automatisierung
+- Zentrum: `Ihr Unternehmen`
+
+Die Visualisierung nutzt semantisches HTML, CSS und ein dekoratives Inline-SVG fuer Verbindungslinien. Es wurden keine neuen Visualisierungsbibliotheken, kein Three.js und keine Canvas-Loesung eingefuehrt.
+
+### Alter Hero
+
+Der bisherige Legacy-Hero `HomeHeroSection()` bleibt im Legacy-Modul vorhanden, wird von der aktiven Startseite aber nicht mehr gerendert.
+
+Dafuer wurde `HomeLegacyContinuation()` ergaenzt. Diese Komponente rendert nur die bestehenden Startseitenbereiche nach dem alten Hero:
+
+- Service-Ticker
+- Problemsektion
+- Flow-Sektion
+- Leistungsbereiche
+- Zielgruppen
+- Preise
+- Referenzen/Demos
+- Vertrauen
+- Kontaktsektion
+
+So gibt es auf `/` keinen doppelten Hero und keine doppelte H1.
+
+### Uebergang zum Legacy-Inhalt
+
+Der neue Hero enthaelt einen subtilen visuellen Brueckenbereich:
+
+- helle Flaechenfuehrung
+- feine Trennlinie
+- kontrollierter Abstand zum bestehenden Service-Ticker
+
+Es wurde kein neuer Inhaltsblock zwischen Hero und Legacy-Folgeinhalt gebaut.
+
+### Responsive Strategie
+
+Desktop:
+
+- asymmetrisches Zweispaltenlayout
+- Text links, Systemvisualisierung rechts
+- kompakte Hero-Hoehe ohne `100vh`-Zwang
+
+Tablet:
+
+- kontrollierter Stack, wenn die Zweispalte zu eng wird
+- Visualisierung bleibt in voller Breite lesbar
+
+Mobile:
+
+- Reihenfolge: Eyebrow, H1, Lead, primaerer CTA, sekundaerer CTA, Orientierung, Systemvisualisierung
+- Systemvisualisierung wird vertikal geordnet: Sichtbarkeit, Ihr Unternehmen, Kundenfuehrung, Ablaeufe
+- keine horizontale Scrollbar
+
+### Motion-Strategie
+
+Die Bewegung bleibt zurueckhaltend:
+
+- kurzer Entrance fuer Hero-Text
+- leicht zeitversetztes Erscheinen der System-Nodes
+- dezent gezeichnete Verbindungslinien
+- kleiner Statuspunkt als Verbindungssignal
+- Hover-Reaktionen auf CTA und Nodes
+
+`prefers-reduced-motion` wird beruecksichtigt. Bei Reduced Motion bleiben Hero und Visualisierung vollstaendig sichtbar, Animationen werden entfernt.
+
+### Verbleibende Legacy-Abhaengigkeiten
+
+- Die bestehenden Folgeabschnitte kommen weiterhin aus `src/legacy/legacyContent.jsx`.
+- Die alte `HomeHeroSection()` existiert noch im Legacy-Modul, ist aber auf der aktiven Startseite isoliert.
+- Alte Startseiten-Folgeabschnitte enthalten weiterhin alte Positionierungs- und CTA-Texte. Diese wurden in Schritt 5 bewusst nicht migriert.
+- Die grossen globalen CSS-Dateien bleiben weiterhin additiv erweitert und sollten spaeter kontrolliert bereinigt werden.
