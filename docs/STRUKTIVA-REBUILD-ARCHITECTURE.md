@@ -586,3 +586,109 @@ Die Bewegung bleibt zurueckhaltend:
 - Die alte `HomeHeroSection()` existiert noch im Legacy-Modul, ist aber auf der aktiven Startseite isoliert.
 - Alte Startseiten-Folgeabschnitte enthalten weiterhin alte Positionierungs- und CTA-Texte. Diese wurden in Schritt 5 bewusst nicht migriert.
 - Die grossen globalen CSS-Dateien bleiben weiterhin additiv erweitert und sollten spaeter kontrolliert bereinigt werden.
+
+## 22. Update Schritt 6: Problem-Erkennung auf der Startseite
+
+In Schritt 6 wurde ausschliesslich eine neue Problem- und Erkennungssektion direkt nach dem Hero umgesetzt. Loesungswelten, Fallstudie, Digital-Check-Seite, Preise, neue Zielrouten, Kontaktformular, Consent, Tracking und SEO-Grundlagen wurden nicht umgebaut.
+
+### Neue HomeProblemSection
+
+`src/components/home/HomeProblemSection.jsx` ist eine neue modulare Home-Komponente ausserhalb des Legacy-Moduls.
+
+Die aktive Startseite rendert jetzt:
+
+- `HomeHero`
+- `HomeProblemSection`
+- `HomeLegacyContinuation`
+
+Damit folgt die Problem-Erkennung direkt auf den neuen Hero.
+
+### Inhaltliche Struktur
+
+Die Sektion enthaelt:
+
+- Eyebrow `Wenn digital vieles da ist, aber wenig zusammenspielt`
+- H2 `Viele Unternehmen haben digitale Loesungen. Das Problem: Sie arbeiten nicht als System.`
+- Einleitung zur vorhandenen, aber getrennten digitalen Struktur aus Website, Google-Unternehmensprofil, WhatsApp, E-Mail, interner Datenpflege, Terminen und Aufgaben
+- drei Problembereiche
+- Abschlussbotschaft `Nicht mehr Technik. Mehr Struktur.`
+- dezenten Textlink `Wie STRUKTIVA diese Bereiche verbindet`
+
+Der Textlink nutzt die bestehende Uebergangsroute aus der Navigation fuer Loesungen und zeigt auf `/leistungen`. `/loesungen` wurde nicht aktiviert.
+
+### Visuelle Kundenreise
+
+Die Sektion visualisiert einen digitalen Kundenweg mit Bruchstellen:
+
+- Gefunden werden
+- Website
+- Kontakt
+- Anfrage
+- Bearbeitung
+- Kunde
+- Wiederkehr oder Bewertung
+
+Die Stationen werden als semantische Liste ausgegeben. Visuell entstehen Brueche durch:
+
+- versetzte Stationen
+- unterbrochene Verbindungslinien
+- dezente goldene Statuspunkte
+- fragmentierte Zwischenlinien
+- ruhige Tiefenwirkung ohne Alarmfarbe
+
+Die Aussage bleibt bewusst: Viele Einzelteile sind vorhanden, aber nicht sinnvoll verbunden.
+
+### Drei Problembereiche
+
+Die drei Problembereiche sind nicht als Standard-Card-Grid umgesetzt, sondern als versetzte erklaerende Ebenen neben beziehungsweise unter der Kundenreise:
+
+1. Interessenten finden den Betrieb - aber der naechste Schritt ist unklar
+2. Kundenkontakt verteilt sich auf zu viele einzelne Wege
+3. Wiederkehrende Aufgaben bleiben unnoetig manuell
+
+Es wurden keine erfundenen Zahlen, Erfolgsversprechen oder Marktstatistiken verwendet.
+
+### Legacy-Integration
+
+`HomeLegacyContinuation()` akzeptiert nun `skipProblemSection`.
+
+Auf der aktiven Startseite wird der alte Legacy-Problemblock `HomeProblemSection()` uebersprungen, damit direkt nach dem neuen Problemabschnitt keine inhaltlich redundante Problemsektion erscheint.
+
+Der naechste verbleibende Legacy-Bereich nach der neuen Problemsektion ist der bestehende Service-Ticker `HomeServiceTickerSection()`. Danach folgt direkt `HomeFlowSection()` statt der alten Legacy-Problemsektion.
+
+Es wurden keine neuen Inhalte in `src/legacy/legacyContent.jsx` gebaut.
+
+### Mobile-Strategie
+
+Mobile wird eigenstaendig vertikal aufgebaut:
+
+- Eyebrow
+- H2
+- Einleitung
+- vertikale Kundenreise
+- Problembereich 1
+- Problembereich 2
+- Problembereich 3
+- Abschlussbotschaft
+- dezenter Textlink
+
+Die Journey wird unter 900px von der horizontalen Desktop-Komposition in eine vertikale Liste umgebaut. Verbindungslinien wechseln von horizontalen Bruchlinien zu vertikalen Zwischenlinien. Es entsteht keine horizontale Scrollbar.
+
+### Motion-Strategie
+
+Die Motion bleibt zurueckhaltend:
+
+- Journey-Stationen erscheinen zeitversetzt
+- Problembereiche erscheinen leicht versetzt
+- ein kleiner Statuspunkt bewegt sich entlang der fragmentierten Desktop-Journey
+- Abschlussbotschaft erscheint ruhig beim Eintritt in den Viewport
+- Textlink hat nur eine dezente Hover-Reaktion
+
+Bei `prefers-reduced-motion: reduce` sind alle Inhalte sofort sichtbar, Animationen und dauerhafte Bewegung werden deaktiviert.
+
+### Verbleibende Abhaengigkeiten und Risiken
+
+- Die restlichen Startseiten-Folgeabschnitte bleiben Legacy-Content und enthalten weiterhin alte CTA- und Positionierungslogik.
+- Der Service-Ticker folgt weiterhin direkt nach der neuen Problemsektion und ist noch nicht Teil des neuen Rebuild-Systems.
+- Die neue Problemsektion erklaert Reibung, baut aber bewusst noch keine vollstaendige Loesungssektion.
+- Die CSS-Erweiterung bleibt additiv in `src/styles.css`; spaeter sollte eine kontrollierte Home-CSS-Struktur entstehen.
