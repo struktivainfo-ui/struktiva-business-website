@@ -218,3 +218,145 @@ Als naechstes sollte nicht direkt die komplette Website neu gebaut werden. Sinnv
 4. Erst wenn diese Seiten fertig sind, die sichtbare Navigation umstellen.
 
 So bleibt der Lead-Weg stabil, waehrend die neue STRUKTIVA-Architektur sichtbar wird.
+
+## 19. Update Schritt 3.5: App-Modularisierung
+
+Stand nach dem kontrollierten Refactoring:
+
+- `src/App.jsx` wurde von 7860 Zeilen auf eine schlanke App-Koordination reduziert.
+- Die bisherigen grossen Seiten-, Layout-, Formular- und Content-Bloecke liegen vorerst in `src/legacy/legacyContent.jsx`.
+- Die aktiven Routen werden ueber `src/routing/pageRegistry.jsx` auf Page-Module gemappt.
+- Header, Footer und Floating WhatsApp Button werden ueber `src/components/layout/` bereitgestellt.
+- Pfad- und Meta-Hooks werden ueber `src/hooks/` angebunden.
+- Das sichtbare Design, die Inhalte und die Live-Navigation wurden nicht absichtlich veraendert.
+
+Neue Struktur:
+
+```text
+src/
+  App.jsx
+  main.jsx
+  cookieConsent.jsx
+  styles.css
+  components/
+    layout/
+      AppShell.jsx
+      FloatingWhatsAppButton.jsx
+      Footer.jsx
+      Header.jsx
+  hooks/
+    useCurrentPath.js
+    useDocumentTitleSafe.js
+    useMarketingLeadTracking.js
+  legacy/
+    legacyContent.jsx
+  pages/
+    AboutPage.jsx
+    ContactPage.jsx
+    DatenschutzPage.jsx
+    DemoDienstleisterPage.jsx
+    DemoHandwerkerPage.jsx
+    DemoKosmetikPage.jsx
+    DemosPage.jsx
+    HomePage.jsx
+    ImpressumPage.jsx
+    NotFoundPage.jsx
+    PackagesPage.jsx
+    ReferencesPage.jsx
+    ServicesPage.jsx
+  routing/
+    pageRegistry.jsx
+    routeConfig.js
+```
+
+### Verantwortung von App.jsx
+
+`src/App.jsx` koordiniert nur noch:
+
+- aktuellen Pfad lesen
+- Routenmetadaten laden
+- aktive Page-Komponente bestimmen
+- Dokument-Metadaten-Hook ausfuehren
+- Marketing-Lead-Tracking-Hook registrieren
+- `AppShell` rendern
+
+Damit enthaelt App.jsx keine vollstaendigen Seitentexte, keine Header-/Footer-Implementierung, keine Formularimplementierung und keine langen Datenstrukturen mehr.
+
+### Verantwortung der Seitenkomponenten
+
+Die Page-Dateien in `src/pages/` sind derzeit stabile Einstiegsmodule fuer die aktiven Routen. Sie re-exportieren bewusst die bestehenden Implementierungen aus `src/legacy/legacyContent.jsx`, damit keine sichtbaren Inhalte oder Layouts im Refactoring-Schritt veraendert werden.
+
+Aktive Page-Module:
+
+- `HomePage.jsx`
+- `ServicesPage.jsx`
+- `PackagesPage.jsx`
+- `DemosPage.jsx`
+- `ReferencesPage.jsx`
+- `AboutPage.jsx`
+- `ContactPage.jsx`
+- `ImpressumPage.jsx`
+- `DatenschutzPage.jsx`
+- `NotFoundPage.jsx`
+- `DemoHandwerkerPage.jsx`
+- `DemoKosmetikPage.jsx`
+- `DemoDienstleisterPage.jsx`
+
+### Layout-Komponenten
+
+`src/components/layout/AppShell.jsx` enthaelt die globale Shell:
+
+- Route-CSS-Klasse
+- Home-/Pricing-/Demo-Layout-Flags
+- Header/Footer-Ausblendung fuer Demo-Routen
+- Cookie Consent Mounting
+- Floating WhatsApp Button
+
+`Header.jsx`, `Footer.jsx` und `FloatingWhatsAppButton.jsx` sind eigene Layout-Einstiegsmodule und verweisen vorerst auf die unveraenderten Legacy-Implementierungen.
+
+### Navigation
+
+Die sichtbare Navigation wurde nicht umgestellt. Die aktuellen Live-Links bleiben ueber `currentNavigation` in `src/routing/routeConfig.js` zentral gepflegt. Die zukuenftige Navigation bleibt weiterhin als geplant, aber nicht oeffentlich aktiviert.
+
+### Formulare
+
+Das Kontaktformular wurde funktional nicht veraendert. `api/leads.js`, Resend-Konfiguration, Environment-Variablen, Honeypot, Validierung, Erfolgs- und Fehlerstatus bleiben unveraendert.
+
+Bewusste verbleibende Schuld: Die eigentliche Formular-JSX-Implementierung liegt weiterhin innerhalb der bestehenden `ProjectRequestPage` in `src/legacy/legacyContent.jsx`. Ein spaeterer Schritt sollte daraus ein dediziertes Formularmodul machen, idealerweise erst zusammen mit `/digital-check`.
+
+### Content-Daten
+
+Grosse statische Daten wie Leistungslisten, Paketdaten, Demo-Daten, Kontaktangaben und vorbereitete Altseiten liegen weiterhin in `src/legacy/legacyContent.jsx`. Sie wurden nicht in ein kuenstliches CMS- oder Datenmodell verschoben, weil dieser Schritt keine Inhalte veraendern sollte.
+
+Naechster sinnvoller Split:
+
+- `src/content/siteLinks.js`
+- `src/content/contactDetails.js`
+- `src/content/services.js`
+- `src/content/pricing.js`
+- `src/content/demos.js`
+
+### Route-Konfiguration
+
+`src/routing/routeConfig.js` bleibt die Quelle fuer:
+
+- aktive Route-Metadaten
+- Canonicals
+- Robots
+- Layout-Flags
+- aktuelle Navigation
+- geplante Navigation
+- Route-Migrationsplan
+
+`src/routing/pageRegistry.jsx` ist neu hinzugekommen und mappt aktive Pfade auf Page-Komponenten.
+
+### Verbleibende technische Schulden
+
+- `src/legacy/legacyContent.jsx` ist weiterhin sehr gross.
+- Viele nicht aktive Alt-/Demo-Komponenten sind noch im Legacy-Modul enthalten.
+- Das Kontaktformular ist noch nicht als eigene Formular-Komponente extrahiert.
+- Content-Daten und UI sind innerhalb des Legacy-Moduls weiterhin gemischt.
+- CSS bleibt global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+
+Diese Schulden wurden bewusst dokumentiert statt in einem riskanten Massenumbau geloest.
