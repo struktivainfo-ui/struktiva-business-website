@@ -692,3 +692,133 @@ Bei `prefers-reduced-motion: reduce` sind alle Inhalte sofort sichtbar, Animatio
 - Der Service-Ticker folgt weiterhin direkt nach der neuen Problemsektion und ist noch nicht Teil des neuen Rebuild-Systems.
 - Die neue Problemsektion erklaert Reibung, baut aber bewusst noch keine vollstaendige Loesungssektion.
 - Die CSS-Erweiterung bleibt additiv in `src/styles.css`; spaeter sollte eine kontrollierte Home-CSS-Struktur entstehen.
+
+## 23. Update Schritt 7: Loesungswelten auf der Startseite
+
+In Schritt 7 wurde ausschliesslich eine neue modulare Loesungssektion direkt nach der neuen Problemsektion umgesetzt. Fallstudie, Digital-Check-Seite, neue Zielrouten, Preise, Kontaktformular, Consent, Tracking und SEO-Grundlagen wurden nicht umgebaut.
+
+### Neue HomeSolutionsSection
+
+`src/components/home/HomeSolutionsSection.jsx` ist eine neue modulare Home-Komponente ausserhalb des Legacy-Moduls.
+
+Die aktive Startseite rendert jetzt:
+
+- `HomeHero`
+- `HomeProblemSection`
+- `HomeSolutionsSection`
+- `HomeLegacyContinuation`
+
+Damit folgt die Loesungslogik unmittelbar auf die Problem-Erkennung.
+
+### Inhaltliche Struktur
+
+Die Sektion enthaelt:
+
+- Eyebrow `Drei Bereiche. Eine digitale Struktur.`
+- H2 `STRUKTIVA verbindet Sichtbarkeit, Kundenfuehrung und Ablaeufe zu einem System.`
+- Einleitung zur Verbindung von Auffindbarkeit, Kundenkontakt und internen Ablaeufen
+- drei Loesungswelten
+- zurueckhaltende Verbindungsdarstellung
+- Abschlussbotschaft `Die Technik ist nicht das Ziel. Sie ist das Werkzeug.`
+- dezenten Textlink `Loesungen im Ueberblick ansehen`
+
+Der Textlink nutzt die bestehende Uebergangsroute aus der Navigation fuer Loesungen und zeigt auf `/leistungen`. `/loesungen` wurde nicht aktiviert.
+
+### Drei Loesungswelten
+
+Die drei Bereiche sind:
+
+1. Sichtbarkeit und Kundengewinnung
+2. Kundenfuehrung und Kundenbindung
+3. Digitale Ablaeufe und Automatisierung
+
+Jeder Bereich enthaelt eine kurze Kernbotschaft, eine erklaerende Beschreibung und eine Liste dezenter Bausteine. Es wurden keine erfundenen Erfolgsversprechen, Prozentwerte, Rankings oder Marktfuehrer-Aussagen verwendet.
+
+### Visuelle Differenzierung
+
+Die drei Bereiche sind bewusst nicht als dreispaltiges Standard-Card-Grid umgesetzt.
+
+Sichtbarkeit und Kundengewinnung nutzt eine helle, offene Such- und Kontaktreise mit abstrakter Suchzeile, Browserrahmen, Bewertungsimpuls und Kontaktpfad.
+
+Kundenfuehrung und Kundenbindung nutzt eine waermere Darstellung mit Smartphone, Kontaktverlauf, Kundenkarte, Statusentwicklung und Wiederkehr-Impuls.
+
+Digitale Ablaeufe und Automatisierung nutzt eine praezisere technische Darstellung mit dunklerem Workflow-Panel, Prozess-Nodes, Statuslinien und Datenchips.
+
+Gold bleibt in allen drei Bereichen der verbindende Akzent. Es wurden keine geschuetzten Logos, keine Fake-Suchergebnisse, keine erfundenen Kundennamen und keine Roboter-/KI-Gehirn-Motive verwendet.
+
+### Verbindungsdarstellung
+
+Nach den drei Loesungswelten zeigt eine kompakte Darstellung:
+
+- Sichtbarkeit
+- Kundenfuehrung
+- Ablaeufe
+
+Diese Bereiche fuehren sichtbar zu `einer klaren digitalen Struktur`. Die Darstellung bleibt Teil derselben Sektion und wurde nicht als eigene grosse Formel- oder Statistiksektion inszeniert.
+
+### CTA-Ziel
+
+Der einzige Link am Ende der Sektion lautet `Loesungen im Ueberblick ansehen` und fuehrt auf `/leistungen`.
+
+Der Haupt-CTA der Website bleibt weiterhin `Digital-Check anfragen` ueber die zentrale Navigation. Es wurde kein weiterer grosser Primaer-CTA direkt nach der Loesungssektion gebaut.
+
+### Mobile-Strategie
+
+Mobile wird eigenstaendig vertikal aufgebaut:
+
+- Eyebrow
+- H2
+- Einleitung
+- Loesungswelt 1 Text
+- Visual 1
+- Loesungswelt 2 Text
+- Visual 2
+- Loesungswelt 3 Text
+- Visual 3
+- Verbindungsdarstellung
+- Abschlussbotschaft
+- Textlink
+
+Die Desktop-Diagramme werden unter 900px in vertikale, lesbare Visualisierungen umgebaut. Browser-, Smartphone- und Workflow-Darstellungen bleiben innerhalb des Viewports und erzeugen keine horizontale Scrollbar.
+
+### Motion-Strategie
+
+Die Motion bleibt erklaerend und zurueckhaltend:
+
+- Abschnitts- und Welt-Reveals beim Eintritt in den Viewport
+- dezente Bewegung entlang der Sichtbarkeitsreise
+- kleiner Statusimpuls in der Kundenfuehrung
+- kontrollierter Linienaufbau im Workflow
+
+Es gibt kein starkes Pulsieren, keine Bounce-Effekte, keine aggressive Parallax-Bewegung und keine fliegenden Karten.
+
+### Reduced Motion
+
+Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerhalb der neuen Loesungssektion deaktiviert. Alle Inhalte bleiben sofort sichtbar und keine Information haengt von Bewegung ab.
+
+### Legacy-Integration und Service-Ticker-Entscheidung
+
+`HomeLegacyContinuation()` akzeptiert nun zusaetzliche Skip-Flags:
+
+- `skipServiceTicker`
+- `skipProblemSection`
+- `skipFlowSection`
+- `skipServicesSection`
+
+Auf der aktiven Startseite werden nach der neuen Loesungssektion bewusst folgende Legacy-Leistungsbereiche uebersprungen:
+
+- `HomeServiceTickerSection()`
+- die alte Legacy-`HomeProblemSection()`
+- `HomeFlowSection()`
+- `HomeServicesSection()`
+
+Der Service-Ticker wurde fuer die aktive Startseite uebersprungen, weil nach Problemsektion und neuer Loesungssektion sonst mehrere Leistungslisten beziehungsweise Leistungslogiken direkt nacheinander erscheinen wuerden.
+
+Der naechste verbleibende Legacy-Bereich nach der neuen Loesungssektion ist `HomeAudienceSection()`. Danach folgen die bestehenden Legacy-Bereiche fuer Preise, Referenzen/Demos, Vertrauen und Kontakt weiterhin unveraendert.
+
+### Verbleibende Abhaengigkeiten und Risiken
+
+- Die restlichen Startseiten-Folgeabschnitte bleiben Legacy-Content und enthalten weiterhin alte Preis-, Demo-, Vertrauens- und Kontaktlogik.
+- Die neue Loesungssektion erklaert die drei Bereiche, baut aber bewusst noch keine vollstaendige `/loesungen`-Unterseite.
+- Die konkrete Salon-Karola-Fallstudie und eine Digital-Check-Sektion wurden noch nicht gebaut.
+- Die CSS-Erweiterung bleibt additiv in `src/styles.css`; spaeter sollte eine kontrollierte Home-CSS-Struktur entstehen.

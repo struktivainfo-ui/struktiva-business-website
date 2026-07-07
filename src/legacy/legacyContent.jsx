@@ -4035,13 +4035,18 @@ function HomePage() {
   )
 }
 
-function HomeLegacyContinuation({ skipProblemSection = false } = {}) {
+function HomeLegacyContinuation({
+  skipServiceTicker = false,
+  skipProblemSection = false,
+  skipFlowSection = false,
+  skipServicesSection = false,
+} = {}) {
   return (
     <>
-      <HomeServiceTickerSection />
+      {!skipServiceTicker ? <HomeServiceTickerSection /> : null}
       {!skipProblemSection ? <HomeProblemSection /> : null}
-      <HomeFlowSection />
-      <HomeServicesSection />
+      {!skipFlowSection ? <HomeFlowSection /> : null}
+      {!skipServicesSection ? <HomeServicesSection /> : null}
       <HomeAudienceSection />
       <HomePricingSection />
       <HomeReferencesDemosTeaserSection />
