@@ -4041,6 +4041,7 @@ function HomeLegacyContinuation({
   skipFlowSection = false,
   skipServicesSection = false,
   skipReferencesDemosSection = false,
+  skipTrustSection = false,
 } = {}) {
   return (
     <>
@@ -4051,7 +4052,7 @@ function HomeLegacyContinuation({
       <HomeAudienceSection />
       <HomePricingSection />
       {!skipReferencesDemosSection ? <HomeReferencesDemosTeaserSection /> : null}
-      <HomeTrustSection />
+      {!skipTrustSection ? <HomeTrustSection /> : null}
       <HomeContactSection />
     </>
   )

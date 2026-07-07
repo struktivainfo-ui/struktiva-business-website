@@ -6676,3 +6676,378 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
     scroll-behavior: auto !important;
   }
 }
+
+/* STRUKTIVA homepage trust and working method v9 */
+.struktiva-home-trust {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(4.4rem, 7vw, 7.4rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+  background:
+    linear-gradient(180deg, rgba(250, 248, 242, 0.96) 0%, rgba(255, 255, 255, 0.98) 42%, rgba(242, 237, 226, 0.98) 100%),
+    linear-gradient(90deg, rgba(168, 127, 42, 0.06), rgba(255, 255, 255, 0), rgba(17, 17, 17, 0.04));
+  color: var(--text-primary, #111111);
+}
+
+.struktiva-home-trust::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(17, 17, 17, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.035) 1px, transparent 1px);
+  background-size: 4.5rem 4.5rem;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 76%, transparent 100%);
+}
+
+.struktiva-home-trust__inner {
+  width: min(100%, var(--container-wide, 1360px));
+  margin: 0 auto;
+}
+
+.struktiva-home-trust__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.74fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 4.6rem);
+}
+
+.struktiva-home-trust__eyebrow,
+.struktiva-trust-statement__kicker {
+  margin: 0;
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.struktiva-home-trust h2 {
+  margin: 0.95rem 0 0;
+  max-width: 920px;
+  color: var(--text-primary, #111111);
+  font-family: var(--site-font, "Manrope", "Segoe UI", sans-serif);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 850;
+  letter-spacing: 0;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.struktiva-home-trust__lead {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 650px;
+  color: var(--text-secondary, #4a4a45);
+  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+  line-height: 1.72;
+}
+
+.struktiva-home-trust__lead p,
+.struktiva-trust-statement__copy p,
+.struktiva-trust-people__copy p,
+.struktiva-trust-close p {
+  margin: 0;
+}
+
+.struktiva-trust-body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(380px, 0.72fr);
+  align-items: stretch;
+  gap: clamp(1.4rem, 3vw, 2rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.struktiva-trust-statement,
+.struktiva-trust-people,
+.struktiva-trust-close {
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 24px 58px rgba(63, 48, 18, 0.07);
+}
+
+.struktiva-trust-statement {
+  border-radius: 30px;
+  padding: clamp(1.5rem, 3.5vw, 3rem);
+}
+
+.struktiva-trust-statement h3,
+.struktiva-trust-close h3 {
+  margin: 0.85rem 0 0;
+  color: var(--text-primary, #111111);
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.struktiva-trust-statement__copy {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.25rem;
+  max-width: 760px;
+  color: var(--text-secondary, #4a4a45);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.struktiva-trust-people {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.struktiva-trust-people__image {
+  margin: 0;
+  min-height: clamp(15rem, 25vw, 22rem);
+  background: #221f1a;
+}
+
+.struktiva-trust-people__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+
+.struktiva-trust-people__copy {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--text-secondary, #4a4a45);
+  font-size: 0.94rem;
+  line-height: 1.64;
+}
+
+.struktiva-trust-people__names {
+  color: var(--text-primary, #111111);
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.struktiva-trust-process {
+  margin-top: clamp(2.2rem, 5vw, 4.2rem);
+}
+
+.struktiva-trust-process ol {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.4rem);
+  list-style: none;
+  margin: 0;
+  padding: 1.3rem 0 0;
+}
+
+.struktiva-trust-process ol::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1.18rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(168, 127, 42, 0.18), rgba(168, 127, 42, 0.54), rgba(168, 127, 42, 0.18));
+}
+
+.struktiva-trust-process li {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.85rem;
+  padding-top: 1.15rem;
+}
+
+.struktiva-trust-process li:nth-child(even) {
+  padding-top: 3.2rem;
+}
+
+.struktiva-trust-process li::before {
+  content: "";
+  position: absolute;
+  left: 1.1rem;
+  top: -0.14rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  border: 2px solid rgba(168, 127, 42, 0.66);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 0.35rem rgba(168, 127, 42, 0.1);
+}
+
+.struktiva-trust-process li > span {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(168, 127, 42, 0.26);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.74rem;
+  font-weight: 950;
+}
+
+.struktiva-trust-process h3 {
+  margin: 0;
+  color: var(--text-primary, #111111);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.struktiva-trust-process p {
+  margin: 0.45rem 0 0;
+  color: var(--text-secondary, #4a4a45);
+  font-size: 0.94rem;
+  line-height: 1.58;
+}
+
+.struktiva-trust-close {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: clamp(1.4rem, 4vw, 3rem);
+  margin-top: clamp(2.2rem, 5vw, 4rem);
+  border-radius: 30px;
+  padding: clamp(1.45rem, 3vw, 2.4rem);
+}
+
+.struktiva-trust-close div {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.struktiva-trust-close p {
+  max-width: 760px;
+  color: var(--text-secondary, #4a4a45);
+  font-size: 0.98rem;
+  line-height: 1.64;
+}
+
+.struktiva-trust-close__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.9rem;
+  border: 1px solid rgba(17, 17, 17, 0.9);
+  border-radius: 999px;
+  background: #111111;
+  color: #ffffff;
+  padding: 0.82rem 1.05rem;
+  font-size: 0.92rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+  white-space: nowrap;
+}
+
+.struktiva-trust-close__link:hover {
+  transform: translateY(-1px);
+  background: #24201a;
+}
+
+.struktiva-trust-close__link svg {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1180px) {
+  .struktiva-home-trust__intro,
+  .struktiva-trust-body,
+  .struktiva-trust-close {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-home-trust__lead {
+    max-width: 790px;
+  }
+
+  .struktiva-trust-close {
+    align-items: start;
+  }
+
+  .struktiva-trust-close__link {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 920px) {
+  .struktiva-trust-process ol {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 0 0 1.1rem;
+  }
+
+  .struktiva-trust-process ol::before {
+    left: 1.38rem;
+    right: auto;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(168, 127, 42, 0.16), rgba(168, 127, 42, 0.52), rgba(168, 127, 42, 0.16));
+  }
+
+  .struktiva-trust-process li,
+  .struktiva-trust-process li:nth-child(even) {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 0 0 1.7rem 1rem;
+  }
+
+  .struktiva-trust-process li::before {
+    left: -0.04rem;
+    top: 0.95rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .struktiva-home-trust {
+    padding: 3.6rem 1rem 4.3rem;
+  }
+
+  .struktiva-home-trust h2 {
+    font-size: clamp(1.82rem, 8vw, 2.55rem);
+    line-height: 1.1;
+  }
+
+  .struktiva-home-trust__lead,
+  .struktiva-trust-statement__copy {
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  .struktiva-trust-statement,
+  .struktiva-trust-people,
+  .struktiva-trust-close {
+    border-radius: 24px;
+  }
+
+  .struktiva-trust-people__image {
+    min-height: 18rem;
+  }
+
+  .struktiva-trust-close__link {
+    width: 100%;
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .struktiva-home-trust *,
+  .struktiva-home-trust *::before,
+  .struktiva-home-trust *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

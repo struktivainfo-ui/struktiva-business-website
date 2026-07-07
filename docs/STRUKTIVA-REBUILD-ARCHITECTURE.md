@@ -966,3 +966,114 @@ Der naechste verbleibende Legacy-Bereich nach der neuen Fallstudie ist `HomeAudi
 - Die Startseite nutzt fuer die Fallstudie keine echten Screenshots, weil keine geeigneten lokalen Projektbilder vorhanden sind.
 - Die restlichen Startseiten-Folgeabschnitte bleiben Legacy-Content.
 - Die CSS-Erweiterung bleibt additiv in `src/styles.css`; spaeter sollte eine kontrollierte Home-CSS-Struktur entstehen.
+
+## 25. Update Schritt 9: Trust- und Arbeitsweise-Sektion auf der Startseite
+
+In Schritt 9 wurde ausschliesslich eine neue modulare Trust- und Arbeitsweise-Sektion direkt nach der Salon-Karola-Fallstudie umgesetzt. Es wurden keine neue Ueber-uns-Seite, keine Digital-Check-Seite, keine Preis-/Paketlogik, keine Kontaktsektion, keine SEO-Migration und keine neuen Zielrouten gebaut.
+
+### Neue HomeTrustSection
+
+`src/components/home/HomeTrustSection.jsx` ist eine neue modulare Home-Komponente ausserhalb des Legacy-Moduls.
+
+Die aktive Startseite rendert jetzt:
+
+- `HomeHero`
+- `HomeProblemSection`
+- `HomeSolutionsSection`
+- `HomeCaseStudySection`
+- `HomeTrustSection`
+- `HomeLegacyContinuation`
+
+Damit folgt auf den konkreten Praxisbeweis eine ruhige Vertrauens- und Arbeitsweise-Erklaerung.
+
+### Inhaltliche Struktur
+
+Die Sektion enthaelt:
+
+- Eyebrow `Zusammenarbeit mit Klarheit`
+- H2 `Digitale Beratung sollte verstaendlich beginnen - nicht mit einem Produktkatalog.`
+- Einstieg mit der Aussage, dass STRUKTIVA nicht mit Software-, Website- oder Automatisierungsverkauf beginnt
+- Kernstatement `Erst verstehen. Dann strukturieren. Danach gezielt umsetzen.`
+- Erklaerung, dass nicht jedes Unternehmen dieselben Systeme braucht
+- persoenliche Einordnung mit Sven Matzke und Jessica Wacker
+- vierstufige Arbeitsweise
+- Abschlussblock mit der Aussage, dass Kunden die technische Loesung nicht vorab kennen muessen
+- Textlink `Mehr ueber STRUKTIVA erfahren` auf `/ueber-uns`
+
+### Personen und Portrait-Asset
+
+Die Sektion nutzt das vorhandene lokale Asset:
+
+- `/images/inhaber-sven-jessica.webp`
+
+Die Personen werden nur mit den belegten Namen genannt:
+
+- Sven Matzke
+- Jessica Wacker
+
+Es wurden keine neuen Rollen, Titel, Zertifikate, Teamgroessen, Partnerlogos, Kundenzahlen oder Testimonials erfunden. Die Formulierung bleibt neutral und bestaetigt lediglich, dass hinter STRUKTIVA Sven Matzke und Jessica Wacker stehen.
+
+### Arbeitsweise
+
+Die Vorgehensweise wird als ruhige Prozesslinie dargestellt, nicht als klassisches Vier-Karten-Raster:
+
+1. Verstehen
+2. Strukturieren
+3. Umsetzen
+4. Weiterentwickeln
+
+Desktop nutzt eine horizontale, leicht gestaffelte Linie. Mobile wird daraus eine vertikale Prozessfuehrung. Die Inhalte bleiben semantisch als geordnete Liste vorhanden.
+
+### CTA und Route
+
+Der einzige neue Link ist:
+
+- `Mehr ueber STRUKTIVA erfahren` -> `/ueber-uns`
+
+Die Route ist bereits aktiv. Es wurde keine unfertige Route wie `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola` oder `/digital-check` verlinkt.
+
+### Mobile-Strategie
+
+Mobile wird eigenstaendig vertikal aufgebaut:
+
+- Eyebrow und H2
+- Einstiegstext
+- Arbeitsweise-Statement
+- Personenbild und persoenliche Einordnung
+- vertikale Prozesslinie
+- Abschluss und Ueber-uns-Link
+
+Die Sektion erzeugt keine horizontale Scrollbar und der Link bricht auf kleinen Viewports sauber um.
+
+### Motion und Reduced Motion
+
+Motion bleibt zurueckhaltend:
+
+- Abschnitts-Reveals
+- sanftes Erscheinen von Statement, Personenbereich, Prozess und Abschluss
+
+Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerhalb der Trust-Sektion deaktiviert. Alle Inhalte bleiben sofort sichtbar und keine Information haengt von Bewegung ab.
+
+### Legacy-Integration
+
+`HomeLegacyContinuation()` akzeptiert nun zusaetzlich `skipTrustSection`.
+
+Auf der aktiven Startseite wird der alte Legacy-Block `HomeTrustSection()` uebersprungen, weil nach der neuen Trust- und Arbeitsweise-Sektion eine Wiederholung inhaltlich redundant waere.
+
+Nicht veraendert wurden:
+
+- `/ueber-uns`
+- Kontaktformular und Lead-Logik
+- Consent-Logik
+- Tracking-IDs
+- Sitemap, Robots und Canonicals
+- globale SEO-Texte
+- die bestehenden Legacy-Trust-Komponenten ausserhalb der aktiven Startseitenfolge
+
+Der naechste verbleibende Legacy-Bereich nach der neuen Trust-Sektion ist `HomeAudienceSection()`, danach folgen Preise und Kontakt weiterhin unveraendert.
+
+### Verbleibende Abhaengigkeiten und Risiken
+
+- Die Ueber-uns-Seite selbst bleibt Legacy-Content und wurde in diesem Schritt nicht neu aufgebaut.
+- Die restlichen Startseiten-Folgeabschnitte bleiben Legacy-Content.
+- Die CSS-Erweiterung bleibt additiv in `src/styles.css`; spaeter sollte eine kontrollierte Home-CSS-Struktur entstehen.
