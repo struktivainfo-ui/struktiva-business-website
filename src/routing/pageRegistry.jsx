@@ -1,4 +1,5 @@
 import HomePage from '../pages/HomePage.jsx'
+import SolutionsPage from '../pages/SolutionsPage.jsx'
 import ServicesPage from '../pages/ServicesPage.jsx'
 import PackagesPage from '../pages/PackagesPage.jsx'
 import DemosPage from '../pages/DemosPage.jsx'
@@ -15,6 +16,7 @@ import DemoDienstleisterPage from '../pages/DemoDienstleisterPage.jsx'
 export const activePageComponents = {
   '/': HomePage,
   '/ueber-uns': AboutPage,
+  '/loesungen': SolutionsPage,
   '/leistungen': ServicesPage,
   '/pakete': PackagesPage,
   '/referenzen': ReferencesPage,

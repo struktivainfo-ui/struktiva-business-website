@@ -1321,7 +1321,7 @@ Mobile wurde als komplette Nutzerreise geprueft: Hero, Problem, Loesungswelten, 
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
 - Vercel CLI ist lokal nicht vorhanden; Deployment wurde nicht direkt ueber Vercel verifiziert.
 
-### Verbleibende inhaltliche Schulden
+### Verbleibende inhaltliche Schulden nach Schritt 11
 
 - `/loesungen` ist noch nicht als echte Zielseite gebaut.
 - `/praxisbeispiele` und eine Detailseite fuer Salon Karola sind noch nicht gebaut.
@@ -1329,6 +1329,93 @@ Mobile wurde als komplette Nutzerreise geprueft: Hero, Problem, Loesungswelten, 
 - `/ueber-uns`, `/leistungen`, `/demos`, `/pakete` und die rechtlichen Inhalte bleiben in spaeteren Schritten zu pruefen beziehungsweise neu auszurichten.
 - Globale SEO-, Sitemap-, Canonical- und Schema.org-Migrationen stehen noch aus.
 
-### Empfohlener naechster Rebuild-Schritt
+### Empfohlener naechster Rebuild-Schritt nach Schritt 11
 
 Als naechstes sollte `/loesungen` als echte Zielseite aufgebaut werden. Diese Route kann die drei bereits auf der Startseite etablierten Loesungswelten vertiefen, ohne den stabilen Lead-Weg oder das bestehende Kontaktformular zu veraendern.
+
+## 28. Update Schritt 12: Neue Loesungen-Seite
+
+Stand nach Schritt 12: `/loesungen` ist als echte Zielseite aktiv. Die Seite erklaert digitale Loesungen aus Unternehmenssicht und ersetzt auf dieser Route bewusst keine Preis-, Paket- oder Produktkataloglogik.
+
+### Neue Route und Module
+
+Neue Dateien:
+
+- `src/pages/SolutionsPage.jsx`
+- `src/components/solutions/SolutionsHero.jsx`
+- `src/components/solutions/SolutionsIntro.jsx`
+- `src/components/solutions/SolutionsWorlds.jsx`
+- `src/components/solutions/SolutionsFinalSections.jsx`
+
+Geaenderte Routing-Dateien:
+
+- `src/routing/pageRegistry.jsx`
+- `src/routing/routeConfig.js`
+
+`/loesungen` ist in `pageRegistry` registriert und besitzt eigene aktive Meta-Daten:
+
+- Title: `Digitale Lösungen für Unternehmen | STRUKTIVA`
+- Description: STRUKTIVA verbindet digitale Sichtbarkeit, Kundenführung und interne Abläufe zu Lösungen, die zum Unternehmen und seinem Alltag passen.
+- Canonical: `/loesungen`
+- Robots: index, follow
+
+### Inhaltliche Struktur
+
+Die Seite besteht aus:
+
+1. Hero mit dem Leitgedanken, dass digitale Loesungen nicht bei Technik beginnen, sondern bei dem, was besser funktionieren soll.
+2. Einordnung, dass die drei Bereiche keine starren Pakete sind.
+3. Loesungswelt `Sichtbarkeit und Kundengewinnung`.
+4. Loesungswelt `Kundenführung und Kundenbindung`.
+5. Loesungswelt `Digitale Abläufe und Automatisierung`.
+6. Zusammenhangssektion von Sichtbarkeit ueber Kontakt und Kunde bis zum internen Ablauf.
+7. Arbeitsweise mit Analyse, Strukturierung, Umsetzung und Weiterentwicklung.
+8. Abgrenzung gegen wahllose Digitalisierung.
+9. Abschluss-CTA zum bestehenden Kontaktweg.
+
+### Navigationsumstellung
+
+Die zentrale Navigation verweist jetzt fuer `Loesungen` auf `/loesungen`.
+
+Betroffene Stellen:
+
+- Desktop-Header
+- Mobile Navigation
+- Footer/Primaernavigation
+- Leistungs-Dropdown-Ziel fuer `Loesungen`
+- Startseiten-Loesungslinks, die aus `currentNavigation` abgeleitet werden
+
+Die Startseitenlinks `Wie STRUKTIVA diese Bereiche verbindet` und `Loesungen im Ueberblick ansehen` fuehren dadurch jetzt auf `/loesungen`.
+
+### Bewusst nicht geaendert
+
+- `/leistungen` bleibt aktiv, indexierbar und ohne Redirect.
+- Es wurde keine Sitemap-, Robots-, Tracking- oder globale Canonical-Migration vorgenommen.
+- Das Kontaktformular, `api/leads.js`, Resend, Consent und Tracking-IDs wurden nicht angefasst.
+- Es wurden keine Preise, Pakete, Produktlisten oder SaaS-Vergleichstabellen auf `/loesungen` eingefuehrt.
+- KI wird nur als moeglicher unterstuetzender Baustein innerhalb der Ablaufwelt genannt, nicht als Agenturversprechen.
+
+### Technische und visuelle Pruefung
+
+Nach der Umsetzung wurde `npm run build` erfolgreich ausgefuehrt. Die Browserpruefung deckte `/loesungen`, `/leistungen`, `/kontakt#lead-form`, mobile Navigation, Canonical, Meta-Description, Robots, H1-Anzahl, 404-Verhalten und mehrere Viewports ab.
+
+Gepruefte Viewports:
+
+- 360 x 740
+- 390 x 844
+- 768 x 1024
+- 1024 x 768
+- 1280 x 800
+- 1440 x 900
+- 1728 x 1000
+
+Es wurden keine horizontalen Overflows und keine Console Errors festgestellt.
+
+### Verbleibende Schulden nach Schritt 12
+
+- `/leistungen` enthaelt weiterhin alte Leistungs- und Preislogik und muss spaeter separat entschieden werden.
+- `/praxisbeispiele`, `/praxisbeispiele/salon-karola` und `/digital-check` bleiben weiterhin nicht gebaut.
+- Sitemap, Robots, globale SEO-Struktur und moegliche Redirects bleiben fuer spaetere Schritte offen.
+- CSS liegt weiterhin global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+- Vercel CLI ist lokal nicht vorhanden; Deployment kann lokal nicht direkt verifiziert werden.

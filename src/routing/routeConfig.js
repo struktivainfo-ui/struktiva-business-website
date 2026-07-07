@@ -15,6 +15,12 @@ export const ACTIVE_ROUTE_META = {
       'Alle STRUKTIVA Leistungen im Überblick: Website, Landingpages, Google-Sichtbarkeit, Kundenführung, Systeme, Dashboards und strukturierte Umsetzung.',
     canonicalPath: '/leistungen',
   },
+  '/loesungen': {
+    title: 'Digitale Lösungen für Unternehmen | STRUKTIVA',
+    description:
+      'STRUKTIVA verbindet digitale Sichtbarkeit, Kundenführung und interne Abläufe zu Lösungen, die zum Unternehmen und seinem Alltag passen.',
+    canonicalPath: '/loesungen',
+  },
   '/pakete': {
     title: 'Pakete & Betreuung - STRUKTIVA Digitale Unternehmensberatung',
     description:
@@ -103,7 +109,7 @@ export function createRouteClass(pathname) {
 export const currentNavigation = {
   primary: [
     { label: 'Start', href: '/' },
-    { label: 'Lösungen', href: '/leistungen', transitionFor: '/loesungen' },
+    { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
     { label: 'Praxisbeispiele', href: '/demos', transitionFor: '/praxisbeispiele' },
     { label: 'Digital-Check', href: '/kontakt#lead-form', transitionFor: '/digital-check', ctaRole: 'primary' },
     { label: 'Über STRUKTIVA', href: '/ueber-uns' },
@@ -111,7 +117,7 @@ export const currentNavigation = {
   ],
   desktop: [
     { label: 'Start', href: '/' },
-    { label: 'Lösungen', href: '/leistungen', transitionFor: '/loesungen' },
+    { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
     { label: 'Praxisbeispiele', href: '/demos', transitionFor: '/praxisbeispiele' },
     { label: 'Digital-Check', href: '/kontakt#lead-form', transitionFor: '/digital-check', ctaRole: 'primary' },
     { label: 'Über STRUKTIVA', href: '/ueber-uns' },
@@ -119,14 +125,14 @@ export const currentNavigation = {
   ],
   mobile: [
     { label: 'Start', href: '/' },
-    { label: 'Lösungen', href: '/leistungen', transitionFor: '/loesungen' },
+    { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
     { label: 'Praxisbeispiele', href: '/demos', transitionFor: '/praxisbeispiele' },
     { label: 'Digital-Check', href: '/kontakt#lead-form', transitionFor: '/digital-check', ctaRole: 'primary' },
     { label: 'Über STRUKTIVA', href: '/ueber-uns' },
     { label: 'Kontakt', href: '/kontakt' },
   ],
   leistungenDropdown: [
-    { label: 'Lösungen', href: '/leistungen', transitionFor: '/loesungen' },
+    { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
     { label: 'Praxisbeispiele', href: '/demos', transitionFor: '/praxisbeispiele' },
     { label: 'Kontakt', href: '/kontakt' },
   ],
@@ -135,10 +141,10 @@ export const currentNavigation = {
 }
 
 export const futureNavigation = {
-  status: 'planned-not-publicly-linked',
+  status: 'partially-active',
   primary: [
     { label: 'Start', href: '/', plannedSource: 'rebuild-home' },
-    { label: 'Lösungen', href: '/loesungen', plannedSource: '/leistungen' },
+    { label: 'Lösungen', href: '/loesungen', plannedSource: 'active-step-12' },
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', plannedSource: '/demos + /referenzen' },
     { label: 'Digital-Check', href: '/digital-check', plannedSource: '/kontakt#lead-form' },
     { label: 'Über STRUKTIVA', href: '/ueber-uns', plannedSource: '/ueber-uns' },
@@ -148,7 +154,7 @@ export const futureNavigation = {
 
 export const FUTURE_ROUTE_PLAN = [
   { path: '/', role: 'Startseite für STRUKTIVA Digitale Unternehmensberatung', status: 'replace-existing-route-later' },
-  { path: '/loesungen', role: 'Drei Lösungswelten bündeln', status: 'planned' },
+  { path: '/loesungen', role: 'Drei Lösungswelten bündeln', status: 'active-step-12' },
   { path: '/praxisbeispiele', role: 'Referenzen und echte Praxisbeweise bündeln', status: 'planned' },
   { path: '/praxisbeispiele/salon-karola', role: 'Detail-Praxisbeispiel Salon Karola', status: 'planned' },
   { path: '/digital-check', role: 'Primärer Lead-Einstieg', status: 'planned' },
@@ -160,7 +166,7 @@ export const FUTURE_ROUTE_PLAN = [
 
 export const ROUTE_MIGRATION_PLAN = [
   { from: '/', to: '/', action: 'REBUILD', redirectType: 'none', seoRisk: 'medium', activateWhen: 'new home is ready' },
-  { from: '/leistungen', to: '/loesungen', action: 'REDIRECT LATER', redirectType: '301 later', seoRisk: 'high', activateWhen: '/loesungen is complete and indexed plan is approved' },
+  { from: '/leistungen', to: '/loesungen', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 12', seoRisk: 'high', activateWhen: 'only after SEO, sitemap and content decision' },
   { from: '/pakete', to: '/loesungen', action: 'MERGE', redirectType: '301 or keep as support route later', seoRisk: 'medium', activateWhen: 'pricing role is decided' },
   { from: '/demos', to: '/praxisbeispiele', action: 'REDIRECT LATER', redirectType: '301 later', seoRisk: 'medium', activateWhen: '/praxisbeispiele is complete' },
   { from: '/referenzen', to: '/praxisbeispiele', action: 'REDIRECT LATER', redirectType: '301 later', seoRisk: 'low', activateWhen: '/praxisbeispiele is complete' },

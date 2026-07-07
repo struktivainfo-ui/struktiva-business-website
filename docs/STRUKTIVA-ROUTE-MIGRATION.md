@@ -1,8 +1,8 @@
 # STRUKTIVA Route Migration
 
-Stand: 2026-07-04
+Stand: 2026-07-07
 
-Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. In diesem Schritt wurden keine Redirects aktiviert, keine alten Routen geloescht und keine unfertigen Zielseiten in der Live-Navigation verlinkt.
+Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 12 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen` ist jetzt als echte Zielseite aktiv und in der Navigation verlinkt; `/leistungen` bleibt weiterhin erreichbar.
 
 ## Grundprinzipien
 
@@ -17,7 +17,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | Aktuelle Route | Aktueller Zweck | Zukuenftige Zielroute | Aktion | Redirect-Typ | SEO-Risiko | Aktivierung |
 | --- | --- | --- | --- | --- | --- | --- |
 | `/` | Startseite mit Website-, Sichtbarkeits- und Strukturangebot | `/` | REBUILD | keiner | mittel | wenn neue Startseite fertig ist |
-| `/leistungen` | Leistungsuebersicht mit vielen Einzelangeboten | `/loesungen` | REDIRECT LATER | 301 spaeter | hoch | erst wenn `/loesungen` fertig, intern verlinkt und SEO abgestimmt ist |
+| `/leistungen` | Leistungsuebersicht mit vielen Einzelangeboten | `/loesungen` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 12 | hoch | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Inhaltsentscheidung geplant |
 | `/pakete` | Pakete, Einstiegspreise und Betreuung | `/loesungen` oder Support-Unterseite | MERGE | 301 oder KEEP spaeter | mittel | nach Entscheidung zur Preis-/Paketrolle |
 | `/demos` | Referenzen und Demo-Beispiele | `/praxisbeispiele` | REDIRECT LATER | 301 spaeter | mittel | erst wenn `/praxisbeispiele` fertig ist |
 | `/referenzen` | Alias-artiger Einstieg zu Referenzen/Demos | `/praxisbeispiele` | REDIRECT LATER | 301 spaeter | niedrig | zusammen mit `/demos`-Konsolidierung |
@@ -39,7 +39,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | Zielroute | Status | Quelle | Hinweis |
 | --- | --- | --- | --- |
 | `/` | bestehend, spaeter neu bauen | aktuelle Startseite | keine Inhalte in diesem Schritt ersetzt |
-| `/loesungen` | geplant, noch nicht live verlinkt | `/leistungen` | soll die drei Loesungswelten buendeln |
+| `/loesungen` | aktiv, live verlinkt | `/leistungen` und Startseiten-Loesungslogik | buendelt die drei Loesungswelten ohne Preislisten- oder Produktkatalog-Logik |
 | `/praxisbeispiele` | geplant, noch nicht live verlinkt | `/demos`, `/referenzen` | soll echte Beweise und ausgewaehlte Beispiele buendeln |
 | `/praxisbeispiele/salon-karola` | geplant, noch nicht live verlinkt | Salon-Karola-Inhalte | Detailseite erst bauen, wenn Content final ist |
 | `/digital-check` | geplant, noch nicht live verlinkt | Formularlogik aus `/kontakt` | primaerer CTA der neuen Struktur |
@@ -47,6 +47,23 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/kontakt` | bestehend | aktuelle Kontaktseite | funktional stabil halten |
 | `/impressum` | bestehend | Rechtliches | beibehalten |
 | `/datenschutz` | bestehend | Rechtliches | beibehalten |
+
+## Update Schritt 12: `/loesungen` aktiviert
+
+Die Route `/loesungen` ist jetzt als eigenstaendige Seite gebaut und im Routing registriert. Sie besitzt eigene Meta-Daten, eine eigene Canonical-URL und wird indexierbar ausgeliefert.
+
+Interne Links wurden kontrolliert umgestellt:
+
+- Header Desktop: `Loesungen` -> `/loesungen`
+- Header Mobile: `Loesungen` -> `/loesungen`
+- Footer/Primaernavigation: `Loesungen` -> `/loesungen`
+- Startseiten-Loesungssektion: `Wie STRUKTIVA diese Bereiche verbindet` und `Loesungen im Ueberblick ansehen` -> `/loesungen`
+
+Nicht geaendert:
+
+- `/leistungen` bleibt aktiv, indexierbar und ohne Redirect.
+- `/pakete`, `/demos`, `/referenzen`, `/praxisbeispiele`, `/digital-check` und `/ueber-uns` wurden nicht neu migriert.
+- Sitemap, Robots, globale Canonicals und globale SEO-Struktur wurden in Schritt 12 nicht umgebaut.
 
 ## Umsetzungshinweise fuer den naechsten Schritt
 
