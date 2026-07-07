@@ -822,3 +822,147 @@ Der naechste verbleibende Legacy-Bereich nach der neuen Loesungssektion ist `Hom
 - Die neue Loesungssektion erklaert die drei Bereiche, baut aber bewusst noch keine vollstaendige `/loesungen`-Unterseite.
 - Die konkrete Salon-Karola-Fallstudie und eine Digital-Check-Sektion wurden noch nicht gebaut.
 - Die CSS-Erweiterung bleibt additiv in `src/styles.css`; spaeter sollte eine kontrollierte Home-CSS-Struktur entstehen.
+
+## 24. Update Schritt 8: Salon-Karola-Fallstudie auf der Startseite
+
+In Schritt 8 wurde ausschliesslich eine neue modulare Fallstudiensektion fuer Salon Karola direkt nach der Loesungssektion umgesetzt. Neue Praxisbeispiel-Unterseiten, Digital-Check-Seite, Preise, Kontaktformular, Consent, Tracking, Sitemap, Robots, Canonicals und globale SEO-Texte wurden nicht umgebaut.
+
+### Neue HomeCaseStudySection
+
+`src/components/home/HomeCaseStudySection.jsx` ist eine neue modulare Home-Komponente ausserhalb des Legacy-Moduls.
+
+Die aktive Startseite rendert jetzt:
+
+- `HomeHero`
+- `HomeProblemSection`
+- `HomeSolutionsSection`
+- `HomeCaseStudySection`
+- `HomeLegacyContinuation`
+
+Damit folgt auf die abstrakte Loesungslogik direkt ein konkreter Praxisbeweis.
+
+### Inhaltliche Struktur
+
+Die Sektion enthaelt:
+
+- Eyebrow `Aus der Praxis`
+- H2 `Wie aus einzelnen digitalen Bausteinen ein zusammenhaengendes System entsteht.`
+- Einleitung zum Projekt Salon Karola
+- respektvolle Ausgangslage
+- Systemkarte mit Salon Karola im Mittelpunkt
+- sechs digitale Systembausteine
+- STRUKTIVA-Prozessfolge
+- Ergebnisbeschreibung ohne Kennzahlen
+- Realitaetshinweis zur schrittweisen Weiterentwicklung
+- CTA `Praxisbeispiel ansehen`
+- externen Textlink `Website von Salon Karola ansehen`
+
+### Verwendete echte Informationen und Assets
+
+Verwendete echte Projektinformationen:
+
+- aktuelle Domain `https://salonkarola.de/`
+- bestehende Projektbezeichnung `Salon Karola`
+- bestehende Referenzlogik im Projekt: Website-Relaunch, mobile Optimierung, Kundenfuehrung, Google-Bewertungsstruktur, WhatsApp-Kontaktweg und lokale Sichtbarkeit
+- bestehende Dokumentation, dass die historische SimDif-Seite nur als Altvergleich existiert
+
+Es wurden keine echten Bild- oder Screenshot-Assets verwendet, weil im Projektbestand keine lokalen Salon-Karola-Screenshots oder belegbaren Projektbilder vorhanden sind. Die vorhandenen Friseur-/Bewertungsbilder im Legacy-Code sind externe Demo-/Unsplash-Bilder und wurden fuer diese Fallstudie bewusst nicht genutzt.
+
+Stattdessen verwendet die Sektion eine abstrahierte, semantisch durch Text begleitete Systemkarte. Dadurch werden keine Fake-Screenshots, keine erfundenen App-Oberflaechen und keine falschen visuellen Beweise erzeugt.
+
+### Sechs Systembausteine
+
+Die Fallstudie zeigt:
+
+1. Website und digitale Praesenz
+2. Sichtbarkeit und Bewertungen
+3. Kundenkontakt
+4. Kundenverwaltung
+5. Digitale Kundenkarte und Bonusstruktur
+6. Interne digitale Ablaeufe
+
+Die Darstellung bleibt funktional und vorsichtig formuliert. Es werden keine Umsatzzahlen, Neukundenzahlen, Conversion-Werte, Rankings, Zeitersparnisse oder Kundenzitate behauptet.
+
+### Systemkartenlogik
+
+Die Systemkarte stellt `Salon Karola` in den Mittelpunkt und verbindet die sechs Bausteine mit dezenten Linien beziehungsweise auf Mobile mit einer vertikalen Reihenfolge.
+
+Die Aussage lautet: Nicht sechs einzelne Produkte, sondern ein wachsendes digitales System.
+
+Die visuelle Verbindung ist dekorativ markiert, waehrend die gleichen Informationen vollstaendig als Text und Listenelemente vorhanden sind.
+
+### STRUKTIVA-Prozessfolge
+
+Die Vorgehensweise wird als kompakte Folge dargestellt:
+
+- Verstehen
+- Strukturieren
+- Umsetzen
+- Weiterentwickeln
+
+Der Text betont, dass die digitale Struktur nicht als starres Komplettpaket entwickelt wurde, sondern Schritt fuer Schritt.
+
+### Ergebnisdarstellung
+
+Die Ergebnisbeschreibung lautet sinngemaess:
+
+Website, Sichtbarkeit, Kundenkontakt, Kundenbindung und interne digitale Ablaeufe stehen heute nicht mehr nur nebeneinander, sondern bilden eine deutlich zusammenhaengendere Struktur. Das System kann weiterentwickelt werden, wenn neue Anforderungen entstehen.
+
+Es gibt keine absoluten Erfolgsaussagen und keine erfundenen Kennzahlen.
+
+### CTA-Ziele und externe Links
+
+Der CTA `Praxisbeispiel ansehen` zeigt auf `/demos`, weil `/praxisbeispiele` und `/praxisbeispiele/salon-karola` noch nicht fertig gebaut und aktiviert sind.
+
+Der externe Link `Website von Salon Karola ansehen` zeigt auf `https://salonkarola.de/` und nutzt `target="_blank"` mit `rel="noopener noreferrer"`.
+
+Die alte SimDif-Seite wird in der neuen Startseiten-Fallstudie nicht als primaerer Link verwendet.
+
+### Mobile-Strategie
+
+Mobile wird eigenstaendig vertikal aufgebaut:
+
+- Eyebrow
+- H2
+- Einleitung
+- Ausgangslage
+- Systemkarte mit Salon Karola im Zentrum und vertikalen Bausteinen
+- sechs Bausteine
+- Prozessfolge
+- Ergebnis
+- CTA und externer Link
+
+Die Systemkarte wird nicht radial zusammengedrueckt. Es entsteht keine horizontale Scrollbar.
+
+### Motion und Reduced Motion
+
+Motion bleibt zurueckhaltend:
+
+- Abschnitts-Reveals
+- kontrolliertes Erscheinen der Bausteine
+- dezenter Aufbau der Verbindungslinien in der Systemkarte
+- ruhiges Erscheinen von Prozess und Ergebnis
+
+Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerhalb der Fallstudiensektion deaktiviert. Alle Inhalte bleiben sofort sichtbar und keine Information haengt von Bewegung ab.
+
+### Legacy-Integration
+
+`HomeLegacyContinuation()` akzeptiert nun zusaetzlich `skipReferencesDemosSection`.
+
+Auf der aktiven Startseite wird der alte Legacy-Block `HomeReferencesDemosTeaserSection()` uebersprungen, weil nach der neuen Salon-Karola-Fallstudie eine direkte Wiederholung von Referenz-/Demo-Teasern inhaltlich redundant waere.
+
+Nicht veraendert wurden:
+
+- `/demos`
+- `/referenzen`
+- die bestehenden Demo-Routen
+- die bestehenden Legacy-Referenzkomponenten ausserhalb der aktiven Startseitenfolge
+
+Der naechste verbleibende Legacy-Bereich nach der neuen Fallstudie ist `HomeAudienceSection()`, danach folgen Preise, Vertrauen und Kontakt weiterhin unveraendert.
+
+### Verbleibende Abhaengigkeiten und Risiken
+
+- Es gibt weiterhin keine echte `/praxisbeispiele/salon-karola`-Unterseite.
+- Die Startseite nutzt fuer die Fallstudie keine echten Screenshots, weil keine geeigneten lokalen Projektbilder vorhanden sind.
+- Die restlichen Startseiten-Folgeabschnitte bleiben Legacy-Content.
+- Die CSS-Erweiterung bleibt additiv in `src/styles.css`; spaeter sollte eine kontrollierte Home-CSS-Struktur entstehen.
