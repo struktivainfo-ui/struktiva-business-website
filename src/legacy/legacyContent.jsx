@@ -4040,6 +4040,7 @@ function HomeLegacyContinuation({
   skipProblemSection = false,
   skipFlowSection = false,
   skipServicesSection = false,
+  skipAudienceSection = false,
   skipReferencesDemosSection = false,
   skipTrustSection = false,
   skipPricingSection = false,
@@ -4051,7 +4052,7 @@ function HomeLegacyContinuation({
       {!skipProblemSection ? <HomeProblemSection /> : null}
       {!skipFlowSection ? <HomeFlowSection /> : null}
       {!skipServicesSection ? <HomeServicesSection /> : null}
-      <HomeAudienceSection />
+      {!skipAudienceSection ? <HomeAudienceSection /> : null}
       {!skipPricingSection ? <HomePricingSection /> : null}
       {!skipReferencesDemosSection ? <HomeReferencesDemosTeaserSection /> : null}
       {!skipTrustSection ? <HomeTrustSection /> : null}

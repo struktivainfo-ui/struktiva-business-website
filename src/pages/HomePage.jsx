@@ -20,6 +20,7 @@ export default function HomePage() {
         skipProblemSection
         skipFlowSection
         skipServicesSection
+        skipAudienceSection
         skipReferencesDemosSection
         skipTrustSection
         skipPricingSection

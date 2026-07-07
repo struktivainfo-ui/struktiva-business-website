@@ -1256,3 +1256,79 @@ Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerha
 - Das bestehende Kontaktformular liegt weiterhin im Legacy-Modul `ProjectRequestPage`.
 - Die neue Sektion nutzt den bestehenden Formularweg, ohne das Formular als eigenes Modul zu extrahieren.
 - Eine direkte Deployment-Verifikation wurde in diesem Schritt lokal nicht ueber Vercel CLI durchgefuehrt.
+
+## 27. Homepage Final Integration Review
+
+Stand nach Schritt 11: Die neue Startseite wurde als zusammenhaengende Nutzerreise geprueft und kontrolliert fertig integriert. Es wurden keine neuen Seiten, Formulare, Preisstrukturen, Produkte, Dependencies, SEO-Migrationen oder Tracking-Aenderungen eingefuehrt.
+
+### Finale aktive Startseitenreihenfolge
+
+Die aktive Startseite rendert:
+
+1. `HomeHero`
+2. `HomeProblemSection`
+3. `HomeSolutionsSection`
+4. `HomeCaseStudySection`
+5. `HomeTrustSection`
+6. `HomeDigitalCheckSection`
+7. globaler `Footer`
+
+Nach `HomeDigitalCheckSection` folgt kein langer Legacy-Verkaufspfad mehr. Der Digital-Check ist der kontrollierte Abschluss der Startseiten-Journey.
+
+### Legacy-Bloecke
+
+Auf der aktiven Startseite bleibt nach Schritt 11 kein Legacy-Startseitenblock mehr sichtbar.
+
+Auf der Startseite kontrolliert uebersprungen werden:
+
+- `HomeServiceTickerSection()` - alte Leistungsband-Wiederholung.
+- Legacy-`HomeProblemSection()` - durch neue Problemsektion ersetzt.
+- `HomeFlowSection()` - durch neue Loesungs-, Trust- und Digital-Check-Logik ersetzt.
+- `HomeServicesSection()` - durch neue drei Loesungswelten ersetzt.
+- `HomeAudienceSection()` - nach dem Digital-Check redundant und fuer den Seitenabschluss zu verlaengernd.
+- `HomePricingSection()` - alte Paket-/Preislogik passt nicht in den finalen Conversion-Abschluss.
+- `HomeReferencesDemosTeaserSection()` - durch neue Salon-Karola-Fallstudie ersetzt.
+- Legacy-`HomeTrustSection()` - durch neue Trust- und Arbeitsweise-Sektion ersetzt.
+- `HomeContactSection()` - durch den Digital-Check-CTA auf `/kontakt#lead-form` ersetzt.
+
+Die Komponenten wurden nicht global geloescht, damit bestehende Legacy-Zusammenhaenge und spaetere Migrationsentscheidungen nicht beschaedigt werden.
+
+### CTA-Hierarchie
+
+Primaerer Conversion-Weg:
+
+- `Digital-Check anfragen` -> `/kontakt#lead-form`
+
+Sekundaere Wege:
+
+- `Praxisbeispiel ansehen` -> `/demos`
+- `Loesungen im Ueberblick ansehen` -> `/leistungen`
+- `Mehr ueber STRUKTIVA erfahren` -> `/ueber-uns`
+- `Direkt Kontakt aufnehmen` -> `/kontakt`
+- `Website von Salon Karola ansehen` -> `https://salonkarola.de/`
+
+Die geplanten Zielrouten `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola` und `/digital-check` bleiben nicht aktiv verlinkt.
+
+### Mobile Dramaturgie
+
+Mobile wurde als komplette Nutzerreise geprueft: Hero, Problem, Loesungswelten, Praxisbeweis, Trust und Digital-Check folgen ohne horizontalen Overflow. Die Analyse- und Prozessdarstellungen werden vertikal, der Digital-Check bleibt der letzte Conversion-Bereich vor dem Footer. Durch das Ueberspringen von `HomeAudienceSection()` wird die mobile Seitenlaenge nach dem CTA reduziert.
+
+### Verbleibende technische Schulden
+
+- `src/legacy/legacyContent.jsx` bleibt gross und enthaelt viele Altkomponenten.
+- Das Kontaktformular liegt weiterhin im Legacy-Modul.
+- CSS bleibt global in `src/styles.css` und sollte spaeter kontrolliert strukturiert werden.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+- Vercel CLI ist lokal nicht vorhanden; Deployment wurde nicht direkt ueber Vercel verifiziert.
+
+### Verbleibende inhaltliche Schulden
+
+- `/loesungen` ist noch nicht als echte Zielseite gebaut.
+- `/praxisbeispiele` und eine Detailseite fuer Salon Karola sind noch nicht gebaut.
+- `/digital-check` ist noch keine eigene Zielseite.
+- `/ueber-uns`, `/leistungen`, `/demos`, `/pakete` und die rechtlichen Inhalte bleiben in spaeteren Schritten zu pruefen beziehungsweise neu auszurichten.
+- Globale SEO-, Sitemap-, Canonical- und Schema.org-Migrationen stehen noch aus.
+
+### Empfohlener naechster Rebuild-Schritt
+
+Als naechstes sollte `/loesungen` als echte Zielseite aufgebaut werden. Diese Route kann die drei bereits auf der Startseite etablierten Loesungswelten vertiefen, ohne den stabilen Lead-Weg oder das bestehende Kontaktformular zu veraendern.
