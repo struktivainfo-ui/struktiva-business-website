@@ -1419,3 +1419,126 @@ Es wurden keine horizontalen Overflows und keine Console Errors festgestellt.
 - CSS liegt weiterhin global in `src/styles.css`.
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
 - Vercel CLI ist lokal nicht vorhanden; Deployment kann lokal nicht direkt verifiziert werden.
+
+## 29. Update Schritt 13: Neue Praxisbeispiele-Seite
+
+Stand nach Schritt 13: `/praxisbeispiele` ist als echte Zielseite aktiv. Die Seite buendelt ein echtes Praxisprojekt und klar gekennzeichnete Demo-Konzepte, ohne alte Routen zu loeschen oder Redirects zu aktivieren.
+
+### Neue Route und Module
+
+Neue Dateien:
+
+- `src/pages/PracticeExamplesPage.jsx`
+- `src/components/practice/PracticeHero.jsx`
+- `src/components/practice/PracticeTransparency.jsx`
+- `src/components/practice/PracticeFeaturedCase.jsx`
+- `src/components/practice/PracticeDemoConcepts.jsx`
+- `src/components/practice/PracticeFinalSections.jsx`
+
+Geaenderte Routing-Dateien:
+
+- `src/routing/pageRegistry.jsx`
+- `src/routing/routeConfig.js`
+
+`/praxisbeispiele` ist in `pageRegistry` registriert und besitzt eigene aktive Meta-Daten:
+
+- Title: `Praxisbeispiele digitaler Loesungen | STRUKTIVA`
+- Description: Entdecken Sie echte Praxisprojekte und klar gekennzeichnete Demo-Konzepte von STRUKTIVA fuer Sichtbarkeit, Kundenfuehrung und digitale Ablaeufe.
+- Canonical: `/praxisbeispiele`
+- Robots: index, follow
+
+### Inhaltliche Struktur
+
+Die Seite besteht aus:
+
+1. Hero mit dem Gedanken, dass digitale Loesungen ueber konkrete Unternehmenssituationen verstaendlich werden.
+2. Transparenzbereich mit klarer Trennung zwischen echten Projekten und Demonstrationsbeispielen.
+3. hervorgehobenem Praxisprojekt `Salon Karola`.
+4. Demo-Konzepten fuer Handwerker, Kosmetikstudio und lokalen Dienstleister.
+5. Methodenbereich fuer unterschiedliche Unternehmensarten und gleiche Denkweise.
+6. Qualitaetsbereich `Nicht das Design allein entscheidet.`
+7. Abschluss-CTA zum bestehenden Kontaktformular.
+
+### Kennzeichnung echter und fiktiver Beispiele
+
+Die Seite verwendet zwei sichtbare Labels:
+
+- `Echtes Praxisprojekt`
+- `Demo-Konzept`
+
+Salon Karola ist als echtes Praxisprojekt markiert. Die drei Demo-Beispiele werden ausschliesslich als Demo-Konzepte beschrieben. Es wurden keine fiktiven Kundenstimmen, keine Erfolgszahlen, keine garantierten Ergebnisse und keine nicht belegten Kundenbehauptungen eingefuehrt.
+
+### Salon Karola
+
+Salon Karola wird als reales Praxisprojekt hervorgehoben. Die Darstellung nutzt eine abstrakte Systemvisualisierung statt eines gefaelschten Screenshots.
+
+Gezeigte Bausteine:
+
+1. Website und digitale Praesenz
+2. Sichtbarkeit und Bewertungswege
+3. Kundenkontakt
+4. Kundenverwaltung
+5. Digitale Kundenkarte und Bonusstruktur
+6. Interne digitale Ablaeufe
+
+Der externe CTA fuehrt auf `https://salonkarola.de/`. Eine Detailseite `/praxisbeispiele/salon-karola` wurde bewusst nicht gebaut und nicht verlinkt.
+
+### Demo-Konzepte
+
+Aktiv eingebunden wurden nur bestehende Demo-Ziele:
+
+- Handwerker -> `/demos/handwerker`
+- Kosmetikstudio -> `/demos/kosmetik`
+- Lokaler Dienstleister -> `/demos/lokaler-dienstleister`
+
+Die Darstellung ist bewusst nicht als gleichfoermiges Portfolio-Grid umgesetzt. Handwerker ist groesser gefuehrt, Kosmetikstudio und lokaler Dienstleister sind als kleinere Konzeptbeispiele ergaenzt.
+
+### Navigationsumstellung
+
+Die zentrale Navigation verweist jetzt fuer `Praxisbeispiele` auf `/praxisbeispiele`.
+
+Betroffene Stellen:
+
+- Desktop-Header
+- Mobile Navigation
+- Footer/Primaernavigation
+- Leistungs-Dropdown-Ziel fuer `Praxisbeispiele`
+- `currentNavigation.secondaryCta`
+
+Dadurch fuehren auch abgeleitete Startseiten- und Loesungsseiten-CTAs wie `Praxisbeispiel ansehen` auf `/praxisbeispiele`.
+
+### Bewusst nicht geaendert
+
+- `/demos` bleibt aktiv, erreichbar und ohne Redirect.
+- `/referenzen` bleibt aktiv, erreichbar und ohne Redirect.
+- `/demos/handwerker`, `/demos/kosmetik` und `/demos/lokaler-dienstleister` bleiben erreichbar.
+- `/praxisbeispiele/salon-karola` wurde nicht gebaut.
+- `/digital-check` wurde nicht gebaut.
+- Preise, Pakete, Kontaktformular, `api/leads.js`, Resend, Consent, Tracking-IDs, Sitemap und Robots wurden nicht veraendert.
+- Strukturierte Daten wurden nicht erweitert.
+
+### Technische und visuelle Pruefung
+
+Nach der Umsetzung wurde `npm run build` erfolgreich ausgefuehrt. Die Browserpruefung deckte `/praxisbeispiele`, `/demos`, `/referenzen`, die drei Demo-Routen, `/kontakt#lead-form`, Meta-Daten, Canonical, Robots, H1-Anzahl, mobile Navigation, Reload/Back/Forward, Reduced Motion und mehrere Viewports ab.
+
+Gepruefte Viewports:
+
+- 360 x 740
+- 390 x 844
+- 768 x 1024
+- 1024 x 768
+- 1280 x 800
+- 1440 x 900
+- 1728 x 1000
+
+Es wurden keine horizontalen Overflows und keine Console Errors festgestellt.
+
+### Verbleibende Schulden nach Schritt 13
+
+- Eine Detailseite fuer Salon Karola ist weiterhin offen.
+- `/digital-check` bleibt weiterhin eine geplante Route.
+- `/demos` und `/referenzen` brauchen spaeter eine SEO-, Sitemap- und Redirect-Entscheidung.
+- Die bestehenden statischen Demo-Dateien bleiben technisch ueber die vorhandene Iframe-/Rewrite-Strategie angebunden.
+- Einzelne alte Texte in nicht migrierten statischen Demo-Dateien wurden in diesem Schritt nicht bereinigt.
+- CSS liegt weiterhin global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.

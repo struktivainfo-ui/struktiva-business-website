@@ -2,7 +2,7 @@
 
 Stand: 2026-07-07
 
-Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 12 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen` ist jetzt als echte Zielseite aktiv und in der Navigation verlinkt; `/leistungen` bleibt weiterhin erreichbar.
+Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 13 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen` und `/praxisbeispiele` sind jetzt als echte Zielseiten aktiv und in der Navigation verlinkt; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
 
 ## Grundprinzipien
 
@@ -19,8 +19,8 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/` | Startseite mit Website-, Sichtbarkeits- und Strukturangebot | `/` | REBUILD | keiner | mittel | wenn neue Startseite fertig ist |
 | `/leistungen` | Leistungsuebersicht mit vielen Einzelangeboten | `/loesungen` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 12 | hoch | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Inhaltsentscheidung geplant |
 | `/pakete` | Pakete, Einstiegspreise und Betreuung | `/loesungen` oder Support-Unterseite | MERGE | 301 oder KEEP spaeter | mittel | nach Entscheidung zur Preis-/Paketrolle |
-| `/demos` | Referenzen und Demo-Beispiele | `/praxisbeispiele` | REDIRECT LATER | 301 spaeter | mittel | erst wenn `/praxisbeispiele` fertig ist |
-| `/referenzen` | Alias-artiger Einstieg zu Referenzen/Demos | `/praxisbeispiele` | REDIRECT LATER | 301 spaeter | niedrig | zusammen mit `/demos`-Konsolidierung |
+| `/demos` | Referenzen und Demo-Beispiele | `/praxisbeispiele` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 13 | mittel | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Demo-Strategieentscheidung geplant |
+| `/referenzen` | Alias-artiger Einstieg zu Referenzen/Demos | `/praxisbeispiele` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 13 | niedrig | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Aliasentscheidung geplant |
 | `/ueber-uns` | Menschen, Herkunft und Arbeitsweise | `/ueber-uns` | REBUILD | keiner | niedrig | Inhalt spaeter behutsam an neue Positionierung anpassen |
 | `/kontakt` | Lead-Formular und direkte Kontaktwege | `/kontakt` | KEEP | keiner | niedrig | bleibt aktiv |
 | `/impressum` | Rechtliche Anbieterangaben | `/impressum` | KEEP | keiner | niedrig | bleibt aktiv |
@@ -40,7 +40,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | --- | --- | --- | --- |
 | `/` | bestehend, spaeter neu bauen | aktuelle Startseite | keine Inhalte in diesem Schritt ersetzt |
 | `/loesungen` | aktiv, live verlinkt | `/leistungen` und Startseiten-Loesungslogik | buendelt die drei Loesungswelten ohne Preislisten- oder Produktkatalog-Logik |
-| `/praxisbeispiele` | geplant, noch nicht live verlinkt | `/demos`, `/referenzen` | soll echte Beweise und ausgewaehlte Beispiele buendeln |
+| `/praxisbeispiele` | aktiv, live verlinkt | `/demos`, `/referenzen` | buendelt echtes Praxisprojekt und klar gekennzeichnete Demo-Konzepte |
 | `/praxisbeispiele/salon-karola` | geplant, noch nicht live verlinkt | Salon-Karola-Inhalte | Detailseite erst bauen, wenn Content final ist |
 | `/digital-check` | geplant, noch nicht live verlinkt | Formularlogik aus `/kontakt` | primaerer CTA der neuen Struktur |
 | `/ueber-uns` | bestehend | aktuelle Ueber-uns-Seite | spaeter textlich neu ausrichten |
@@ -62,8 +62,29 @@ Interne Links wurden kontrolliert umgestellt:
 Nicht geaendert:
 
 - `/leistungen` bleibt aktiv, indexierbar und ohne Redirect.
-- `/pakete`, `/demos`, `/referenzen`, `/praxisbeispiele`, `/digital-check` und `/ueber-uns` wurden nicht neu migriert.
+- `/pakete`, `/demos`, `/referenzen`, `/digital-check` und `/ueber-uns` wurden nicht neu migriert.
 - Sitemap, Robots, globale Canonicals und globale SEO-Struktur wurden in Schritt 12 nicht umgebaut.
+
+## Update Schritt 13: `/praxisbeispiele` aktiviert
+
+Die Route `/praxisbeispiele` ist jetzt als eigenstaendige Seite gebaut und im Routing registriert. Sie besitzt eigene Meta-Daten, eine eigene Canonical-URL und wird indexierbar ausgeliefert.
+
+Interne Links wurden kontrolliert umgestellt:
+
+- Header Desktop: `Praxisbeispiele` -> `/praxisbeispiele`
+- Header Mobile: `Praxisbeispiele` -> `/praxisbeispiele`
+- Footer/Primaernavigation: `Praxisbeispiele` -> `/praxisbeispiele`
+- Leistungs-Dropdown: `Praxisbeispiele` -> `/praxisbeispiele`
+- Sekundaerer CTA `Praxisbeispiel ansehen` -> `/praxisbeispiele`
+
+Nicht geaendert:
+
+- `/demos` bleibt aktiv, erreichbar und ohne Redirect.
+- `/referenzen` bleibt aktiv, erreichbar und ohne Redirect.
+- `/demos/handwerker`, `/demos/kosmetik` und `/demos/lokaler-dienstleister` bleiben erreichbar.
+- `/praxisbeispiele/salon-karola` wurde nicht gebaut.
+- `/digital-check` wurde nicht gebaut.
+- Sitemap, Robots, globale Canonicals und globale SEO-Struktur wurden in Schritt 13 nicht umgebaut.
 
 ## Umsetzungshinweise fuer den naechsten Schritt
 
