@@ -1077,3 +1077,182 @@ Der naechste verbleibende Legacy-Bereich nach der neuen Trust-Sektion ist `HomeA
 - Die Ueber-uns-Seite selbst bleibt Legacy-Content und wurde in diesem Schritt nicht neu aufgebaut.
 - Die restlichen Startseiten-Folgeabschnitte bleiben Legacy-Content.
 - Die CSS-Erweiterung bleibt additiv in `src/styles.css`; spaeter sollte eine kontrollierte Home-CSS-Struktur entstehen.
+
+## 26. Update Schritt 10: Digital-Check-Conversion-Sektion auf der Startseite
+
+In Schritt 10 wurde ausschliesslich eine neue modulare Digital-Check-Conversion-Sektion direkt nach der Trust- und Arbeitsweise-Sektion umgesetzt. Es wurde keine neue Route `/digital-check` aktiviert, keine neue Kontaktseite gebaut, kein neues Formular erstellt, keine Formularlogik dupliziert, keine Preis-/Paketsektion gebaut und keine SEO-Komplettmigration vorgenommen.
+
+### Neue HomeDigitalCheckSection
+
+`src/components/home/HomeDigitalCheckSection.jsx` ist eine neue modulare Home-Komponente ausserhalb des Legacy-Moduls.
+
+Die aktive Startseite rendert jetzt:
+
+- `HomeHero`
+- `HomeProblemSection`
+- `HomeSolutionsSection`
+- `HomeCaseStudySection`
+- `HomeTrustSection`
+- `HomeDigitalCheckSection`
+- `HomeLegacyContinuation`
+
+Damit folgt nach Vertrauen und Arbeitsweise ein klarer Conversion-Bereich, der zum bestehenden Kontaktformular fuehrt.
+
+### Inhaltliche Struktur
+
+Die Sektion enthaelt:
+
+- Eyebrow `Der naechste sinnvolle Schritt`
+- H2 `Wo verliert Ihr Unternehmen heute Zeit, Klarheit oder digitale Wirkung?`
+- Erklaerung, dass beim STRUKTIVA Digital-Check nicht nur eine einzelne Website oder ein einzelnes Tool betrachtet wird
+- Hinweis, dass kein technisches Vorwissen notwendig ist
+- visuellen Analysepfad mit sechs Pruefbereichen
+- Erwartungsbereich fuer den ersten Austausch
+- Fuer-wen-Bereich mit typischen Situationen
+- Gegenpol `Kein Verkaufsgespraech mit vorgefertigtem Ergebnis.`
+- CTA-Flaeche mit der Botschaft `Sie muessen nicht mit der Loesung anfangen. Beginnen Sie mit dem Problem.`
+
+### Sechs Pruefbereiche
+
+Der Digital-Check zeigt folgende Pruefbereiche:
+
+1. Sichtbarkeit
+2. Website und Aussendarstellung
+3. Kontaktwege
+4. Kundenfuehrung
+5. Interne Ablaeufe
+6. Entwicklungspotenzial
+
+Die Darstellung nutzt keine sechs identischen Karten, keine grossen Icons, kein Dashboard-Grid, keine Checklisten-Tabelle, keinen Fake-Score, keine Ampelbewertung und keine Prozentwerte.
+
+### Analysepfad
+
+Die visuelle Analyseflaeche stellt `Ihr Unternehmen` in den Mittelpunkt. Die sechs Pruefbereiche werden entlang eines ruhigen Analysepfads darum angeordnet. Auf Tablet und Mobile wird daraus eine vertikale, semantisch geordnete Liste.
+
+Die Aussage lautet: Der Digital-Check betrachtet Zusammenhaenge, nicht isolierte Einzelmassnahmen.
+
+### Erwartungsbereich
+
+Der Bereich `Was Sie vom ersten Austausch erwarten koennen` nennt bewusst zurueckhaltend:
+
+- verstaendliche Einordnung der aktuellen Situation
+- erste erkennbare Prioritaeten
+- Hinweise auf unnoetige Brueche oder Doppelarbeit
+- Einschaetzung, welche naechsten Schritte sinnvoll sein koennten
+- klare Aussage, wenn eine umfangreiche Loesung aktuell nicht notwendig ist
+
+Es werden kein vollstaendiges schriftliches Audit, kein PDF-Bericht, kein fertiges Konzept, keine kostenlose Strategie, kein detaillierter Massnahmenplan und keine garantierten Ergebnisse versprochen.
+
+### Fuer-wen-Bereich
+
+Der Bereich `Sinnvoll, wenn Sie zum Beispiel merken:` nennt typische Situationen:
+
+- vorhandene Website, aber unklarer digitaler Kundenweg
+- Google, Website und Kontaktwege als getrennte Baustellen
+- verteilte Kundenanfragen
+- mehrfaches Uebertragen oder Suchen von Informationen
+- wiederkehrende manuelle Aufgaben
+- Unsicherheit, womit begonnen werden sollte
+
+Die Sprache bleibt ruhig und vermeidet Angstkommunikation oder kuenstliche Dringlichkeit.
+
+### Vertrauensgegenpol
+
+Der Gegenpol lautet:
+
+`Kein Verkaufsgespraech mit vorgefertigtem Ergebnis.`
+
+Die Aussagen:
+
+- Der Digital-Check soll zuerst Klarheit schaffen.
+- Nicht jedes Unternehmen braucht eine neue Website, eine App oder eine Automatisierung.
+- Manchmal liegt der wichtigste naechste Schritt an einer ganz anderen Stelle.
+- STRUKTIVA beginnt mit dem Zusammenhang, nicht mit einem Produkt.
+
+### CTA-Ziel und Hash-Navigation
+
+Der primaere CTA lautet:
+
+- `Digital-Check anfragen`
+
+Ziel:
+
+- `/kontakt#lead-form`
+
+Der sekundaere Textlink lautet:
+
+- `Direkt Kontakt aufnehmen`
+
+Ziel:
+
+- `/kontakt`
+
+Die Route `/digital-check` wurde nicht aktiviert und nicht verlinkt.
+
+Fuer den bestehenden Formularanker wurde in `src/styles.css` ein minimaler `scroll-margin-top` fuer `#lead-form` ergaenzt. Hintergrund: Der Baseline-Check zeigte, dass der direkte Aufruf `/kontakt#lead-form` durch den Sticky Header zu hoch landen konnte. Die Korrektur betrifft nur das Scrollziel, nicht die Formularlogik.
+
+### Tracking-Verhalten
+
+Die neue CTA-Flaeche nutzt normale Linknavigation auf `/kontakt#lead-form`.
+
+Bestehende Tracking-Dateien, Event-Namen, Consent-Bedingungen, Google Analytics, Google Ads, Pinterest Tag, Tracking-IDs und Cookie Consent wurden nicht veraendert.
+
+Der bestehende Hook `useMarketingLeadTracking()` wurde nicht angepasst. Damit erfindet die neue Sektion keine neuen Events. Lead-Tracking bleibt wie zuvor ueber bestehende direkte Kontaktwege beziehungsweise Formular-Submit geregelt und ist weiterhin durch Consent geschuetzt.
+
+### Legacy-Integration
+
+`HomeLegacyContinuation()` akzeptiert nun zusaetzlich:
+
+- `skipPricingSection`
+- `skipContactSection`
+
+Auf der aktiven Startseite werden nach der neuen Digital-Check-Sektion folgende alte Conversion-Bereiche uebersprungen:
+
+- `HomePricingSection()` mit alten Paket-/Preis-CTAs
+- `HomeContactSection()` mit alter Abschluss-Kontaktsektion
+
+Grund: Nach dem neuen zentralen Digital-Check-Bereich waeren die alten Preis-/Paket-CTAs und die alte Kontakt-Abschlusssektion in der aktiven Startseitenfolge redundant beziehungsweise strategisch ablenkend.
+
+Nicht geloescht und nicht global veraendert wurden:
+
+- `/kontakt`
+- `/pakete`
+- `/leistungen`
+- andere Seiten
+- bestehende Legacy-Komponenten ausserhalb der aktiven Startseitenfolge
+
+Der verbleibende Legacy-Bereich nach der neuen Digital-Check-Sektion ist `HomeAudienceSection()`. Danach folgen keine alten Startseiten-Preis- oder Kontakt-Conversionbloecke mehr.
+
+### Mobile-Strategie
+
+Mobile wird eigenstaendig vertikal aufgebaut:
+
+1. Eyebrow
+2. H2
+3. Einleitung
+4. Analysepfad vertikal
+5. sechs Pruefbereiche
+6. Erwartungsbereich
+7. Fuer-wen-Bereich
+8. Gegenpol
+9. CTA-Flaeche
+10. sekundaerer Kontaktlink
+
+Die Analysevisualisierung wird unter 1024px vertikal, damit keine horizontale Grafik erzwungen wird.
+
+### Motion und Reduced Motion
+
+Motion bleibt zurueckhaltend:
+
+- ruhiger Abschnitts-Reveal
+- schrittweises Erscheinen der Pruefbereiche
+- ruhiges Erscheinen von Erwartungsbereich, Fuer-wen-Bereich, Gegenpol und CTA
+
+Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerhalb der Digital-Check-Sektion deaktiviert. Alle Inhalte bleiben sofort sichtbar und keine Information haengt von Bewegung ab.
+
+### Verbleibende Abhaengigkeiten und Risiken
+
+- `/digital-check` bleibt weiterhin eine geplante Route und wurde noch nicht gebaut.
+- Das bestehende Kontaktformular liegt weiterhin im Legacy-Modul `ProjectRequestPage`.
+- Die neue Sektion nutzt den bestehenden Formularweg, ohne das Formular als eigenes Modul zu extrahieren.
+- Eine direkte Deployment-Verifikation wurde in diesem Schritt lokal nicht ueber Vercel CLI durchgefuehrt.
