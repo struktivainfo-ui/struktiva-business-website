@@ -1,6 +1,6 @@
 # STRUKTIVA Rebuild Architecture
 
-Stand: 2026-07-04
+Stand: 2026-07-08
 
 Dieses Dokument beschreibt die technische Vorbereitung fuer den kontrollierten STRUKTIVA-Rebuild. Grundlage sind `docs/STRUKTIVA-REBUILD-AUDIT.md` und `docs/STRUKTIVA-DESIGN-SYSTEM.md`. In diesem Schritt wurden keine neuen Seiten live gebaut, keine bestehenden Inhalte umfassend umgeschrieben und keine Formular-, Consent- oder Tracking-Funktionen veraendert.
 
@@ -1666,5 +1666,142 @@ Mobile wird die Systemkarte vertikal dargestellt. Es wird keine horizontale radi
 - `/demos` und `/referenzen` brauchen spaeter eine SEO-, Sitemap- und Redirect-Entscheidung.
 - `/ueber-uns` und `/kontakt` sind noch nicht neu aufgebaut.
 - Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht migriert.
+- CSS liegt weiterhin global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+
+## 31. Update Schritt 15: Digital-Check-Zielseite
+
+Stand nach Schritt 15: `/digital-check` ist als echte Zielseite aktiv. Die Seite erklaert den STRUKTIVA Digital-Check als verstaendlichen Einstieg in eine moegliche Zusammenarbeit, ohne Online-Test, Score, Formular-Duplikat oder automatische Audit-Auswertung.
+
+### Neue Route und Module
+
+Neue Dateien:
+
+- `src/pages/DigitalCheckPage.jsx`
+- `src/components/digital-check/digitalCheckData.js`
+- `src/components/digital-check/DigitalCheckHero.jsx`
+- `src/components/digital-check/DigitalCheckIntro.jsx`
+- `src/components/digital-check/DigitalCheckAreas.jsx`
+- `src/components/digital-check/DigitalCheckProcess.jsx`
+- `src/components/digital-check/DigitalCheckExpectations.jsx`
+- `src/components/digital-check/DigitalCheckSuitability.jsx`
+- `src/components/digital-check/DigitalCheckTrustSection.jsx`
+- `src/components/digital-check/DigitalCheckCta.jsx`
+
+Geaenderte Routing-Dateien:
+
+- `src/routing/pageRegistry.jsx`
+- `src/routing/routeConfig.js`
+
+`/digital-check` ist in `pageRegistry` registriert und besitzt eigene aktive Meta-Daten:
+
+- Title: `Digital-Check fuer Unternehmen | STRUKTIVA`
+- Description: Der STRUKTIVA Digital-Check betrachtet Sichtbarkeit, Kundenwege und digitale Ablaeufe im Zusammenhang und hilft dabei, sinnvolle naechste Schritte einzuordnen.
+- Canonical: `/digital-check`
+- Robots: index, follow
+
+### Seitenstruktur
+
+Die Seite besteht aus:
+
+1. Hero mit eigenstaendiger Signalfluss-Visualisierung und CTA zum bestehenden Formular.
+2. Einordnung `Nicht bei der Loesung anfangen`.
+3. Sechs Pruefbereiche in einer zusammenhaengenden Analysearchitektur.
+4. Ablaufbereich mit `id="ablauf"`.
+5. Erwartungsbereich mit realistischer Einordnung.
+6. Abgrenzung gegen Online-Score und vorgefertigtes Verkaufsgespraech.
+7. Eignungsbereich fuer typische Ausgangssituationen.
+8. ehrlicher Nicht-Eignungsbereich fuer kleine Einzelthemen.
+9. STRUKTIVA-Haltung `Technik ist ein Werkzeug. Die Struktur entscheidet.`
+10. kleiner Praxisbezug zur Salon-Karola-Detailseite.
+11. Abschluss-CTA zum bestehenden Lead-Formular.
+
+### Sechs Pruefbereiche
+
+Die Seite zeigt:
+
+1. Sichtbarkeit
+2. Website und Aussendarstellung
+3. Kontaktwege
+4. Kundenfuehrung
+5. Interne Ablaeufe
+6. Entwicklungspotenzial
+
+Desktop nutzt ein zentrales Unternehmensmodul mit sechs Analysebereichen, Verbindungslinien und dezenten Pruefpfaden. Mobile wird daraus eine vertikale Abfolge mit Fragen und kurzen Betrachtungspunkten, damit keine radiale Desktopgrafik zusammengedrueckt wird.
+
+### Ablauf und Erwartungen
+
+Der Ablauf besteht aus:
+
+1. Situation beschreiben
+2. Zusammenhang betrachten
+3. Prioritaeten einordnen
+4. Naechsten Schritt entscheiden
+
+Der Erwartungsbereich nennt eine verstaendliche Einordnung, erkennbare Prioritaeten, Hinweise auf Brueche oder Doppelarbeit, moegliche naechste Schritte und eine ehrliche Aussage, wenn eine grosse technische Loesung aktuell nicht notwendig ist.
+
+Nicht versprochen werden ein vollstaendiges Audit, ein schriftlicher 30-Seiten-Bericht, eine fertige Strategie, eine komplette Prozessanalyse, technische Umsetzung im ersten Austausch oder ein garantierter Massnahmenplan.
+
+### CTA- und Linklogik
+
+Informationslinks:
+
+- Hauptnavigation `Digital-Check` -> `/digital-check`
+- Mobile Navigation `Digital-Check` -> `/digital-check`
+- Footer Navigation `Digital-Check` -> `/digital-check`
+
+Conversion-CTA:
+
+- `Digital-Check anfragen` bleibt auf `/kontakt#lead-form`.
+
+Dadurch fuehren Header-CTA, Footer-CTA, Home-Hero-CTA, HomeDigitalCheckSection-CTA, SolutionsPage-Abschluss-CTA, PracticeExamplesPage-Abschluss-CTA, Salon-Karola-Abschluss-CTA und DigitalCheckPage-CTA weiterhin direkt zum bestehenden Formularanker.
+
+### Formular, API, Consent und Tracking
+
+Nicht veraendert wurden:
+
+- bestehende Kontaktseite und bestehendes Formular
+- Formularfelder
+- Validierung
+- Honeypot
+- Success- und Error-State
+- `api/leads.js`
+- Resend-Anbindung und Environment-Variablen
+- `src/cookieConsent.jsx`
+- Google Analytics, Google Ads, Pinterest Tag, Tracking-IDs und bestehende Lead-Events
+
+Es wurde kein neues Formular gebaut und keine echte Lead-Nachricht versendet.
+
+### Motion, Mobile und Reduced Motion
+
+Motion bleibt ruhig:
+
+- Hero-Reveal
+- schrittweises Erscheinen der Signale und Einordnungsschritte
+- Abschnitts-Reveals
+- dezente Hover-Zustaende
+
+Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerhalb der Digital-Check-Seite deaktiviert. Alle Inhalte bleiben statisch verstaendlich.
+
+### Strukturierte Daten
+
+Es wurde keine route-spezifische Schema-Erweiterung eingefuehrt. Vorhandene globale Schema-Struktur wurde nicht veraendert. Es wurden keine unpassenden Schema-Typen wie Product, Offer, Review oder AggregateRating genutzt.
+
+### Bereinigte temporaere Testartefakte
+
+Die untracked Schritt-14-Testartefakte wurden vor der Umsetzung geprueft und entfernt:
+
+- `output/`
+- `tmp-step14-browsercheck.cjs`
+- `tmp-step14-static-server.cjs`
+
+Die Entfernung war sicher, weil die Artefakte untracked waren, nur lokale Preview-/Browsercheck-Spuren enthielten und in Package-Scripts, Dokumentation, Source, Public, Vite- und Vercel-Konfiguration nicht referenziert wurden.
+
+### Verbleibende Schulden nach Schritt 15
+
+- `/ueber-uns` und `/kontakt` sind noch nicht neu aufgebaut.
+- `/leistungen`, `/pakete`, `/demos` und `/referenzen` brauchen spaeter eine SEO-, Sitemap- und Redirect-Entscheidung.
+- Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht migriert.
+- `api/leads.js` enthaelt noch alte Bestaetigungsmail-Texte, blieb aber wegen ausdruecklichem Backend-Schutz unveraendert.
 - CSS liegt weiterhin global in `src/styles.css`.
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.

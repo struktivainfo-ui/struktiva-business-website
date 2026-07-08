@@ -10393,3 +10393,854 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
     transform: none !important;
   }
 }
+
+/* STRUKTIVA digital check page v15 */
+.struktiva-digital-check-page {
+  overflow-x: clip;
+  background: #ffffff;
+  color: var(--text-primary, #111111);
+}
+
+.struktiva-digital-check-page h1,
+.struktiva-digital-check-page h2,
+.struktiva-digital-check-page h3,
+.struktiva-digital-check-page p,
+.struktiva-digital-check-page ul,
+.struktiva-digital-check-page ol {
+  margin: 0;
+}
+
+.struktiva-digital-check-page ul,
+.struktiva-digital-check-page ol {
+  list-style: none;
+  padding: 0;
+}
+
+.struktiva-digital-check-eyebrow {
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.78rem;
+  font-weight: 880;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.struktiva-digital-check-page h2 {
+  color: #111111;
+  font-size: clamp(2rem, 4.2vw, 4rem);
+  font-weight: 930;
+  line-height: 1.04;
+}
+
+.struktiva-digital-check-page h3 {
+  color: #111111;
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  font-weight: 900;
+  line-height: 1.16;
+}
+
+.struktiva-digital-check-page p {
+  color: var(--text-secondary, #4a4a45);
+  font-size: clamp(1rem, 1.35vw, 1.08rem);
+  line-height: 1.72;
+}
+
+.struktiva-digital-check-primary,
+.struktiva-digital-check-secondary {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.88rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 880;
+  line-height: 1.15;
+  text-decoration: none;
+  transition:
+    transform var(--motion-base, 260ms) var(--motion-ease, ease),
+    border-color var(--motion-base, 260ms) var(--motion-ease, ease),
+    background var(--motion-base, 260ms) var(--motion-ease, ease);
+}
+
+.struktiva-digital-check-primary {
+  background: #111111;
+  color: #ffffff;
+}
+
+.struktiva-digital-check-secondary {
+  border-color: rgba(17, 17, 17, 0.16);
+  background: rgba(255, 255, 255, 0.72);
+  color: #111111;
+}
+
+.struktiva-digital-check-primary:hover,
+.struktiva-digital-check-secondary:hover,
+.struktiva-digital-check-text-link:hover,
+.struktiva-digital-check-cta__text-link:hover {
+  transform: translateY(-2px);
+}
+
+.struktiva-digital-check-hero {
+  min-height: min(820px, calc(100svh - 4.8rem));
+  padding: clamp(4.5rem, 7.5vw, 7rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem)) clamp(4rem, 7vw, 6.5rem);
+  background:
+    linear-gradient(135deg, rgba(247, 245, 239, 0.98) 0%, rgba(255, 255, 255, 0.96) 45%, rgba(236, 228, 205, 0.62) 100%);
+}
+
+.struktiva-digital-check-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(25rem, 0.86fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  width: min(100%, var(--container-wide, 1360px));
+  margin: 0 auto;
+}
+
+.struktiva-digital-check-hero__copy {
+  display: grid;
+  gap: clamp(1rem, 2.4vw, 1.55rem);
+}
+
+.struktiva-digital-check-hero h1 {
+  max-width: 13.8ch;
+  color: #111111;
+  font-size: clamp(2.9rem, 6.4vw, 6.35rem);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 0.98;
+}
+
+.struktiva-digital-check-hero__lead {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 760px;
+}
+
+.struktiva-digital-check-hero__lead p {
+  color: #34342f;
+  font-size: clamp(1.08rem, 1.55vw, 1.28rem);
+  font-weight: 620;
+  line-height: 1.62;
+}
+
+.struktiva-digital-check-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.45rem;
+}
+
+.struktiva-digital-check-hero__visual {
+  min-width: 0;
+}
+
+.struktiva-digital-check-hero-visual {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(9rem, 0.62fr) minmax(0, 0.94fr);
+  gap: clamp(0.8rem, 2vw, 1.1rem);
+  align-items: center;
+  min-height: clamp(32rem, 48vw, 42rem);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 34px;
+  background:
+    linear-gradient(90deg, rgba(168, 127, 42, 0.09), transparent 24%, transparent 74%, rgba(168, 127, 42, 0.08)),
+    rgba(255, 255, 255, 0.62);
+  padding: clamp(1rem, 3vw, 1.6rem);
+  box-shadow: 0 24px 70px rgba(53, 41, 16, 0.1);
+}
+
+.struktiva-digital-check-hero-visual::before,
+.struktiva-digital-check-hero-visual::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 23%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(168, 127, 42, 0.08), rgba(168, 127, 42, 0.58), rgba(168, 127, 42, 0.08));
+}
+
+.struktiva-digital-check-hero-visual::before {
+  left: 30%;
+}
+
+.struktiva-digital-check-hero-visual::after {
+  right: 30%;
+}
+
+.struktiva-digital-check-hero-visual__signals,
+.struktiva-digital-check-hero-visual__steps {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.struktiva-digital-check-hero-visual__signals li,
+.struktiva-digital-check-hero-visual__steps li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 0.78rem;
+}
+
+.struktiva-digital-check-hero-visual__signals span,
+.struktiva-digital-check-hero-visual__steps span,
+.struktiva-digital-check-area__index,
+.struktiva-digital-check-process-line span {
+  display: inline-grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(168, 127, 42, 0.32);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.78rem;
+  font-weight: 920;
+}
+
+.struktiva-digital-check-hero-visual__signals strong,
+.struktiva-digital-check-hero-visual__steps strong {
+  color: #111111;
+  font-size: clamp(0.9rem, 1.35vw, 1.05rem);
+  font-weight: 880;
+  line-height: 1.2;
+}
+
+.struktiva-digital-check-hero-visual__center {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  min-height: 10rem;
+  place-items: center;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 28px;
+  background:
+    linear-gradient(160deg, rgba(24, 24, 22, 0.98), rgba(41, 38, 29, 0.96));
+  padding: 1rem;
+  text-align: center;
+}
+
+.struktiva-digital-check-hero-visual__center small {
+  color: rgba(248, 246, 239, 0.64);
+  font-size: 0.76rem;
+  font-weight: 820;
+  line-height: 1.3;
+}
+
+.struktiva-digital-check-hero-visual__center strong {
+  color: #ffffff;
+  font-size: clamp(1.22rem, 2vw, 1.7rem);
+  font-weight: 930;
+  line-height: 1.05;
+}
+
+.struktiva-digital-check-intro,
+.struktiva-digital-check-areas,
+.struktiva-digital-check-process,
+.struktiva-digital-check-expectations,
+.struktiva-digital-check-suitability,
+.struktiva-digital-check-trust,
+.struktiva-digital-check-cta {
+  padding: clamp(4.8rem, 8vw, 7.4rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+}
+
+.struktiva-digital-check-intro {
+  background: #ffffff;
+}
+
+.struktiva-digital-check-intro__inner,
+.struktiva-digital-check-areas__inner,
+.struktiva-digital-check-process__inner,
+.struktiva-digital-check-expectations__inner,
+.struktiva-digital-check-suitability__inner,
+.struktiva-digital-check-trust__inner,
+.struktiva-digital-check-cta__inner {
+  width: min(100%, var(--container-wide, 1360px));
+  margin: 0 auto;
+}
+
+.struktiva-digital-check-intro__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  gap: clamp(1.6rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.struktiva-digital-check-intro__inner > div:first-child,
+.struktiva-digital-check-areas__intro,
+.struktiva-digital-check-process__intro,
+.struktiva-digital-check-suitability__intro {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 900px;
+}
+
+.struktiva-digital-check-intro__copy {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.struktiva-digital-check-intro__message {
+  grid-column: 1 / -1;
+  max-width: 940px;
+  border-left: 1px solid rgba(168, 127, 42, 0.42);
+  padding-left: clamp(1.1rem, 3vw, 2rem);
+  color: #111111;
+  font-size: clamp(1.35rem, 2.55vw, 2.25rem);
+  font-weight: 880;
+  line-height: 1.22;
+}
+
+.struktiva-digital-check-areas {
+  background:
+    linear-gradient(180deg, rgba(247, 245, 239, 0.92), rgba(255, 255, 255, 0.95));
+}
+
+.struktiva-digital-check-area-map {
+  position: relative;
+  min-height: clamp(42rem, 62vw, 52rem);
+  margin-top: clamp(2.2rem, 6vw, 4.6rem);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 34px;
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px),
+    rgba(255, 255, 255, 0.64);
+  background-size: 42px 42px;
+  overflow: hidden;
+}
+
+.struktiva-digital-check-area-map::before {
+  content: "";
+  position: absolute;
+  inset: 15% 13%;
+  border: 1px solid rgba(168, 127, 42, 0.2);
+  border-radius: 999px;
+}
+
+.struktiva-digital-check-area-map__center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: min(18rem, 28%);
+  min-height: 9.5rem;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(216, 194, 138, 0.28);
+  border-radius: 30px;
+  background: rgba(17, 17, 17, 0.94);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.struktiva-digital-check-area-map__center span {
+  color: #ffffff;
+  font-size: clamp(1.28rem, 2vw, 1.85rem);
+  font-weight: 930;
+  line-height: 1.1;
+}
+
+.struktiva-digital-check-area-map__center small {
+  max-width: 12rem;
+  color: rgba(248, 246, 239, 0.68);
+  font-size: 0.78rem;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.struktiva-digital-check-area {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  width: min(22.5rem, 30%);
+  border: 1px solid rgba(17, 17, 17, 0.09);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.88);
+  padding: clamp(1rem, 2vw, 1.2rem);
+  box-shadow: 0 16px 42px rgba(53, 41, 16, 0.06);
+}
+
+.struktiva-digital-check-area--1 {
+  left: 6%;
+  top: 9%;
+}
+
+.struktiva-digital-check-area--2 {
+  right: 5%;
+  top: 9%;
+}
+
+.struktiva-digital-check-area--3 {
+  left: 4%;
+  top: 41%;
+}
+
+.struktiva-digital-check-area--4 {
+  right: 4%;
+  top: 41%;
+}
+
+.struktiva-digital-check-area--5 {
+  left: 14%;
+  bottom: 7%;
+}
+
+.struktiva-digital-check-area--6 {
+  right: 14%;
+  bottom: 7%;
+}
+
+.struktiva-digital-check-area h3 {
+  margin-bottom: 0.38rem;
+}
+
+.struktiva-digital-check-area p {
+  color: #30302c;
+  font-size: 0.94rem;
+  font-weight: 720;
+  line-height: 1.45;
+}
+
+.struktiva-digital-check-area ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin-top: 0.75rem;
+}
+
+.struktiva-digital-check-area li {
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 999px;
+  background: rgba(247, 245, 239, 0.8);
+  padding: 0.42rem 0.58rem;
+  color: #4a4a45;
+  font-size: 0.78rem;
+  font-weight: 780;
+  line-height: 1.2;
+}
+
+#ablauf {
+  scroll-margin-top: 6.25rem;
+}
+
+.struktiva-digital-check-process {
+  background:
+    linear-gradient(155deg, #171714 0%, #232119 48%, #141414 100%);
+  color: var(--text-inverse, #f8f6ef);
+}
+
+.struktiva-digital-check-process h2 {
+  color: #ffffff;
+}
+
+.struktiva-digital-check-process-line {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.8rem, 2vw, 1.2rem);
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.struktiva-digital-check-process-line::before {
+  content: "";
+  position: absolute;
+  left: 1.2rem;
+  right: 1.2rem;
+  top: 1.18rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(216, 194, 138, 0.08), rgba(216, 194, 138, 0.58), rgba(216, 194, 138, 0.08));
+}
+
+.struktiva-digital-check-process-line li {
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+  border: 1px solid rgba(248, 246, 239, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: clamp(1rem, 2vw, 1.3rem);
+}
+
+.struktiva-digital-check-process-line h3 {
+  color: #ffffff;
+}
+
+.struktiva-digital-check-process-line p {
+  color: rgba(248, 246, 239, 0.72);
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
+.struktiva-digital-check-expectations {
+  background: #ffffff;
+}
+
+.struktiva-digital-check-expectations__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(1.4rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.struktiva-digital-check-expectations__promise,
+.struktiva-digital-check-expectations__boundary {
+  display: grid;
+  gap: 1rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  padding-top: clamp(1.2rem, 3vw, 2rem);
+}
+
+.struktiva-digital-check-expectations__promise ul,
+.struktiva-digital-check-expectations__not-promised ul,
+.struktiva-digital-check-situation-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.struktiva-digital-check-expectations__promise li,
+.struktiva-digital-check-expectations__not-promised li,
+.struktiva-digital-check-situation-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: #34342f;
+  font-weight: 760;
+  line-height: 1.55;
+}
+
+.struktiva-digital-check-expectations__promise li::before,
+.struktiva-digital-check-expectations__not-promised li::before,
+.struktiva-digital-check-situation-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--gold-primary, #a87f2a);
+}
+
+.struktiva-digital-check-expectations__boundary {
+  border-color: rgba(168, 127, 42, 0.28);
+  background: rgba(247, 245, 239, 0.56);
+  border-radius: 26px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.struktiva-digital-check-expectations__not-promised {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.2rem;
+}
+
+.struktiva-digital-check-expectations__not-promised h3 {
+  font-size: clamp(1.02rem, 1.6vw, 1.32rem);
+}
+
+.struktiva-digital-check-suitability {
+  background:
+    linear-gradient(180deg, rgba(247, 245, 239, 0.86), rgba(255, 255, 255, 0.96));
+}
+
+.struktiva-digital-check-situation-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem clamp(1rem, 3vw, 2rem);
+  margin-top: clamp(2rem, 5vw, 3.2rem);
+  max-width: 1120px;
+}
+
+.struktiva-digital-check-not-for-all {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.2rem, 4vw, 3rem);
+  align-items: end;
+  margin-top: clamp(2.4rem, 6vw, 4rem);
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  padding-top: clamp(1.4rem, 3vw, 2.1rem);
+}
+
+.struktiva-digital-check-not-for-all > div {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 940px;
+}
+
+.struktiva-digital-check-text-link,
+.struktiva-digital-check-cta__text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #111111;
+  font-size: 0.94rem;
+  font-weight: 860;
+  line-height: 1.25;
+  text-decoration: underline;
+  text-underline-offset: 0.28rem;
+  transition: transform var(--motion-base, 260ms) var(--motion-ease, ease);
+}
+
+.struktiva-digital-check-trust {
+  background: #ffffff;
+}
+
+.struktiva-digital-check-trust__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  gap: clamp(1.6rem, 5vw, 4rem);
+}
+
+.struktiva-digital-check-trust__stance,
+.struktiva-digital-check-trust__case {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+
+.struktiva-digital-check-trust__stance {
+  border-left: 1px solid rgba(168, 127, 42, 0.42);
+  padding-left: clamp(1.1rem, 3vw, 2rem);
+}
+
+.struktiva-digital-check-trust__case {
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 28px;
+  background: rgba(247, 245, 239, 0.58);
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.struktiva-digital-check-cta {
+  background:
+    linear-gradient(155deg, #171714 0%, #242118 52%, #111111 100%);
+  color: var(--text-inverse, #f8f6ef);
+}
+
+.struktiva-digital-check-cta__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: end;
+}
+
+.struktiva-digital-check-cta__inner > div:first-child {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 990px;
+}
+
+.struktiva-digital-check-cta h2 {
+  color: #ffffff;
+}
+
+.struktiva-digital-check-cta p {
+  color: rgba(248, 246, 239, 0.76);
+}
+
+.struktiva-digital-check-cta .struktiva-digital-check-eyebrow {
+  color: var(--gold-muted, #d8c28a);
+}
+
+.struktiva-digital-check-cta .struktiva-digital-check-primary {
+  background: #ffffff;
+  color: #111111;
+}
+
+.struktiva-digital-check-cta__actions {
+  display: grid;
+  gap: 0.85rem;
+  justify-items: end;
+}
+
+.struktiva-digital-check-cta__text-link {
+  color: rgba(248, 246, 239, 0.78);
+}
+
+.struktiva-digital-check-page a:focus-visible {
+  outline: 2px solid rgba(168, 127, 42, 0.92);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1180px) {
+  .struktiva-digital-check-hero__inner,
+  .struktiva-digital-check-intro__inner,
+  .struktiva-digital-check-expectations__inner,
+  .struktiva-digital-check-trust__inner,
+  .struktiva-digital-check-cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-digital-check-hero h1 {
+    max-width: 15ch;
+  }
+
+  .struktiva-digital-check-hero-visual {
+    width: 100%;
+    max-width: 980px;
+  }
+
+  .struktiva-digital-check-cta__actions {
+    justify-items: start;
+  }
+}
+
+@media (max-width: 1020px) {
+  .struktiva-digital-check-area-map {
+    min-height: auto;
+    background-size: 32px 32px;
+    padding: 1rem;
+  }
+
+  .struktiva-digital-check-area-map::before {
+    inset: 1rem;
+    border-radius: 26px;
+  }
+
+  .struktiva-digital-check-area-map__center,
+  .struktiva-digital-check-area {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    transform: none;
+  }
+
+  .struktiva-digital-check-area-map__center {
+    margin-bottom: 1rem;
+  }
+
+  .struktiva-digital-check-area-map ol {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .struktiva-digital-check-process-line {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-digital-check-process-line::before {
+    left: 1.18rem;
+    right: auto;
+    top: 1.3rem;
+    bottom: 1.3rem;
+    width: 1px;
+    height: auto;
+  }
+
+  .struktiva-digital-check-process-line li {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .struktiva-digital-check-situation-list {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-digital-check-not-for-all {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .struktiva-digital-check-hero,
+  .struktiva-digital-check-intro,
+  .struktiva-digital-check-areas,
+  .struktiva-digital-check-process,
+  .struktiva-digital-check-expectations,
+  .struktiva-digital-check-suitability,
+  .struktiva-digital-check-trust,
+  .struktiva-digital-check-cta {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .struktiva-digital-check-hero {
+    min-height: auto;
+    padding-top: 3.8rem;
+  }
+
+  .struktiva-digital-check-hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 10vw, 3.3rem);
+    line-height: 1.05;
+  }
+
+  .struktiva-digital-check-page h2 {
+    font-size: clamp(1.8rem, 8vw, 2.75rem);
+    line-height: 1.1;
+  }
+
+  .struktiva-digital-check-hero__actions,
+  .struktiva-digital-check-cta__actions {
+    display: grid;
+    width: 100%;
+  }
+
+  .struktiva-digital-check-primary,
+  .struktiva-digital-check-secondary,
+  .struktiva-digital-check-cta__text-link {
+    width: 100%;
+  }
+
+  .struktiva-digital-check-cta__text-link {
+    justify-content: center;
+  }
+
+  .struktiva-digital-check-hero-visual {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    border-radius: 26px;
+  }
+
+  .struktiva-digital-check-hero-visual::before,
+  .struktiva-digital-check-hero-visual::after {
+    display: none;
+  }
+
+  .struktiva-digital-check-hero-visual__center {
+    min-height: 7.5rem;
+    order: -1;
+  }
+
+  .struktiva-digital-check-intro__message,
+  .struktiva-digital-check-trust__stance {
+    padding-left: 1rem;
+  }
+
+  .struktiva-digital-check-area-map,
+  .struktiva-digital-check-expectations__boundary,
+  .struktiva-digital-check-trust__case {
+    border-radius: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .struktiva-digital-check-page *,
+  .struktiva-digital-check-page *::before,
+  .struktiva-digital-check-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .struktiva-digital-check-primary:hover,
+  .struktiva-digital-check-secondary:hover,
+  .struktiva-digital-check-text-link:hover,
+  .struktiva-digital-check-cta__text-link:hover {
+    transform: none !important;
+  }
+}

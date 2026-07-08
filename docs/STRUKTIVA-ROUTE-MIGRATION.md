@@ -1,8 +1,8 @@
 # STRUKTIVA Route Migration
 
-Stand: 2026-07-07
+Stand: 2026-07-08
 
-Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 14 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele` und `/praxisbeispiele/salon-karola` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
+Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 15 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola` und `/digital-check` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
 
 ## Grundprinzipien
 
@@ -42,7 +42,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/loesungen` | aktiv, live verlinkt | `/leistungen` und Startseiten-Loesungslogik | buendelt die drei Loesungswelten ohne Preislisten- oder Produktkatalog-Logik |
 | `/praxisbeispiele` | aktiv, live verlinkt | `/demos`, `/referenzen` | buendelt echtes Praxisprojekt und klar gekennzeichnete Demo-Konzepte |
 | `/praxisbeispiele/salon-karola` | aktiv, gezielt verlinkt | Salon-Karola-Inhalte | echte Detail-Fallstudie ohne Redirect-Migration |
-| `/digital-check` | geplant, noch nicht live verlinkt | Formularlogik aus `/kontakt` | primaerer CTA der neuen Struktur |
+| `/digital-check` | aktiv, live verlinkt | Formularlogik aus `/kontakt` | erklaerende Digital-Check-Zielseite mit Anfrage-CTA zum bestehenden Formular |
 | `/ueber-uns` | bestehend | aktuelle Ueber-uns-Seite | spaeter textlich neu ausrichten |
 | `/kontakt` | bestehend | aktuelle Kontaktseite | funktional stabil halten |
 | `/impressum` | bestehend | Rechtliches | beibehalten |
@@ -110,9 +110,28 @@ Nicht geaendert:
 - `/digital-check` wurde nicht gebaut.
 - Sitemap, Robots, globale Canonicals und globale SEO-Struktur wurden in Schritt 14 nicht umgebaut.
 
+## Update Schritt 15: `/digital-check` aktiviert
+
+Die Route `/digital-check` ist jetzt als eigenstaendige Zielseite gebaut und im Routing registriert. Sie besitzt eigene Meta-Daten, eine eigene Canonical-URL und wird indexierbar ausgeliefert.
+
+Gezielte Navigationslinks wurden kontrolliert umgestellt:
+
+- Header Desktop: `Digital-Check` -> `/digital-check`
+- Header Mobile: `Digital-Check` -> `/digital-check`
+- Footer/Primaernavigation: `Digital-Check` -> `/digital-check`
+- `currentNavigation.primary`, `currentNavigation.desktop` und `currentNavigation.mobile` nutzen fuer den Informationslink jetzt `/digital-check`.
+
+Bewusst nicht geaendert:
+
+- `Digital-Check anfragen` bleibt als Conversion-CTA auf `/kontakt#lead-form`.
+- Header-CTA, Footer-CTA, Home-Hero-CTA, HomeDigitalCheckSection-CTA, SolutionsPage-Abschluss-CTA, PracticeExamplesPage-Abschluss-CTA, Salon-Karola-Abschluss-CTA und DigitalCheckPage-CTA fuehren weiterhin direkt zum bestehenden Formularanker.
+- `/kontakt`, das bestehende Formular, `api/leads.js`, Resend, Consent, Tracking, Sitemap, Robots und Redirects wurden nicht umgebaut.
+- `/leistungen`, `/demos`, `/referenzen`, `/ueber-uns` und alte Demo-Routen bleiben unveraendert erreichbar.
+- Es wurden keine Preis-, Paket- oder globale SEO-Migrationen vorgenommen.
+
 ## Umsetzungshinweise fuer den naechsten Schritt
 
 - Neue Zielseiten erst bauen, dann Navigation und Sitemap umstellen.
-- `/digital-check` darf erst in die Header-Navigation, wenn Formular, Datenschutztext, CTA-Logik und Tracking-Verhalten geprueft sind.
+- `/digital-check` ist jetzt gebaut und darf als Informationsroute verlinkt bleiben; Anfrage-CTAs muessen weiterhin bewusst auf `/kontakt#lead-form` fuehren.
 - `/leistungen`, `/pakete`, `/demos` und `/referenzen` nicht ohne Redirect-Plan loeschen.
 - Vercel-Rewrites fuer `/demos/*` erst entfernen, wenn externe Demo-Links nicht mehr gebraucht werden oder Redirects aktiv sind.
