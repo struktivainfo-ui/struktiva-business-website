@@ -2300,7 +2300,129 @@ Nicht veraendert wurden:
 
 ### Verbleibende Schulden nach Schritt 19
 
-- `/leistungen` enthaelt weiterhin viele alte Einzelpreise und Angebotsseiten.
+- `/leistungen` wurde in Schritt 20 als aktive, preisfreie Leistungsuebersicht neu aufgebaut.
+- Soforthilfe-Namen und -Umfaenge sollten spaeter fachlich bereinigt werden.
+- Der alte `Digitale Kurzcheck` muss spaeter gegen die neue `/digital-check`-Positionierung eingeordnet werden.
+- Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht final migriert.
+- `/demos`, `/referenzen` und Demo-Unterseiten brauchen weiterhin eine eigene Migrationsentscheidung.
+- CSS liegt weiterhin global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+
+## 35. Update Schritt 20: Leistungen ohne Legacy-Preise
+
+Stand nach Schritt 20: `/leistungen` ist als bestehende Route vollstaendig modular neu aufgebaut. Die Seite ist keine Preis-, Paket- oder Einzelangebotstabelle mehr, sondern erklaert konkrete digitale Leistungen, die STRUKTIVA planen, entwickeln, verbinden oder verbessern kann.
+
+### Ziel der Seite
+
+`/leistungen` hat jetzt eine eigene Rolle:
+
+- konkrete digitale Leistungen zeigen
+- von `/loesungen` abgrenzen, das Problem- und Loesungslogik erklaert
+- von `/pakete` abgrenzen, das Zusammenarbeit, Umfang und Preise erklaert
+- keine sichtbaren Preise oder Paketlogiken darstellen
+- keine neue Hauptnavigation einfuehren
+
+### Neue modulare Struktur
+
+Neue Dateien:
+
+- `src/components/services/servicesData.js`
+- `src/components/services/ServicesHero.jsx`
+- `src/components/services/ServicesIntro.jsx`
+- `src/components/services/ServicesAreas.jsx`
+- `src/components/services/ServicesConnection.jsx`
+- `src/components/services/ServicesBoundaries.jsx`
+- `src/components/services/ServicesCta.jsx`
+
+Geaenderte Dateien:
+
+- `src/pages/ServicesPage.jsx`
+- `src/routing/routeConfig.js`
+- `src/styles.css`
+- `docs/STRUKTIVA-REBUILD-ARCHITECTURE.md`
+- `docs/STRUKTIVA-ROUTE-MIGRATION.md`
+- `docs/STRUKTIVA-INTEGRATION-AND-LEGACY-ROUTE-REVIEW.md`
+
+### Inhaltliche Bereiche
+
+Die neue Seite enthaelt:
+
+1. Hero mit Leistungsversprechen
+2. Abgrenzung zu `/loesungen` und `/pakete`
+3. Webauftritt und Sichtbarkeit
+4. Kundenkontakt und Anfragefuehrung
+5. Kundenbindung und digitale Kundenstrukturen
+6. interne digitale Ablaeufe
+7. Automatisierung und KI-Unterstuetzung
+8. gezielte Einzelaufgaben
+9. Verbindungslogik von Sichtbarkeit bis Wiederkehr oder Bewertung
+10. bewusste Grenzen digitaler Funktionen
+11. Sonderhinweis fuer persoenliche Praesentation
+12. Abschluss-CTA zu Digital-Check und Kontakt
+
+### Preisfreiheit
+
+Auf der aktiven Route `/leistungen` werden nicht dargestellt:
+
+- Paketpreise
+- Einzelpreise
+- Stunden- oder Monatspreise
+- `ab`-Preislogik
+- S/M/L-Soforthilfe-Preise
+- alter `Digitaler Kurzcheck`
+- alte Festpreis- oder Tabellenlogik
+
+Preise bleiben in der fachlich zustaendigen Route `/pakete` beziehungsweise im Legacy-Audit dokumentiert.
+
+### Meta-Daten und Canonical
+
+`/leistungen` besitzt aktualisierte Meta-Daten:
+
+- Title: `Digitale Leistungen fuer Unternehmen | STRUKTIVA`
+- Description: Konkrete digitale Leistungen von STRUKTIVA: Websites, Sichtbarkeit, Kundenfuehrung, Kundenbindung, interne Ablaeufe, Systeme und Automatisierungen.
+- Canonical: `/leistungen`
+- Robots: index, follow
+
+### Navigation und Links
+
+Die Hauptnavigation bleibt unveraendert:
+
+- Start
+- Loesungen
+- Praxisbeispiele
+- Digital-Check
+- Ueber STRUKTIVA
+- Kontakt
+
+Auf `/leistungen` fuehren interne Links zu:
+
+- `/loesungen`
+- `/pakete`
+- `/digital-check`
+- `/kontakt`
+
+### Geschuetzte Kernfunktionen
+
+Nicht veraendert wurden:
+
+- `api/leads.js`
+- Resend-Anbindung
+- Environment-Variablen
+- Kontaktformular
+- `src/cookieConsent.jsx`
+- Google Analytics
+- Google Ads
+- Pinterest Tag
+- Tracking-IDs
+- `src/hooks/useMarketingLeadTracking.js`
+- Preise und Pakete
+- Redirects
+- Sitemap
+- Robots
+
+### Verbleibende Schulden nach Schritt 20
+
+- Alte Legacy-Preisquellen existieren weiterhin im Legacy-Code, werden aber auf `/leistungen` nicht mehr gerendert.
 - Soforthilfe-Namen und -Umfaenge sollten spaeter fachlich bereinigt werden.
 - Der alte `Digitale Kurzcheck` muss spaeter gegen die neue `/digital-check`-Positionierung eingeordnet werden.
 - Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht final migriert.

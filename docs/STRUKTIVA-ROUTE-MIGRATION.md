@@ -2,7 +2,7 @@
 
 Stand: 2026-07-08
 
-Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 19 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/kontakt` und `/pakete` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
+Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 20 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/leistungen`, `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/kontakt` und `/pakete` sind jetzt als echte Zielseiten aktiv; `/demos` und `/referenzen` bleiben weiterhin erreichbar.
 
 ## Grundprinzipien
 
@@ -21,7 +21,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/praxisbeispiele` | neue Praxisbeispiel-Uebersicht | `/praxisbeispiele` | KEEP | keiner | niedrig | aktiv seit Schritt 13 |
 | `/praxisbeispiele/salon-karola` | Detail-Fallstudie Salon Karola | `/praxisbeispiele/salon-karola` | KEEP | keiner | niedrig | aktiv seit Schritt 14 |
 | `/digital-check` | Informationsseite fuer den Digital-Check | `/digital-check` | KEEP | keiner | niedrig | aktiv seit Schritt 15 |
-| `/leistungen` | Leistungsuebersicht mit vielen Einzelangeboten | `/loesungen` | KEEP TEMPORARILY / MERGE LATER / REDIRECT LATER | keiner in Schritt 18 | hoch | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Inhaltsentscheidung geplant |
+| `/leistungen` | preisfreie modulare Leistungsuebersicht | `/leistungen` | REBUILD ACTIVE | keiner | mittel | in Schritt 20 modular neu aufgebaut |
 | `/pakete` | Pakete, Zusammenarbeit, Einstiegspreise und Betreuung | `/pakete` | REBUILD ACTIVE | keiner | niedrig | in Schritt 19 modular neu aufgebaut |
 | `/demos` | Referenzen und Demo-Beispiele | `/praxisbeispiele` | KEEP TEMPORARILY / REDIRECT LATER | keiner in Schritt 18 | mittel | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Demo-Strategieentscheidung geplant |
 | `/referenzen` | Alias-artiger Einstieg zu Referenzen/Demos | `/praxisbeispiele` | KEEP TEMPORARILY / REDIRECT LATER | keiner in Schritt 18 | niedrig | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Aliasentscheidung geplant |
@@ -43,6 +43,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | Zielroute | Status | Quelle | Hinweis |
 | --- | --- | --- | --- |
 | `/` | aktiv | aktuelle Startseite | beibehalten |
+| `/leistungen` | aktiv, modular neu aufgebaut | alte Leistungs- und Preisroute | erklaert konkrete digitale Leistungen ohne Preis- und Paketlogik |
 | `/loesungen` | aktiv, live verlinkt | `/leistungen` und Startseiten-Loesungslogik | buendelt die drei Loesungswelten ohne Preislisten- oder Produktkatalog-Logik |
 | `/praxisbeispiele` | aktiv, live verlinkt | `/demos`, `/referenzen` | buendelt echtes Praxisprojekt und klar gekennzeichnete Demo-Konzepte |
 | `/praxisbeispiele/salon-karola` | aktiv, gezielt verlinkt | Salon-Karola-Inhalte | echte Detail-Fallstudie ohne Redirect-Migration |
@@ -270,6 +271,36 @@ Nicht geaendert:
 
 - Neue Zielseiten sind gebaut; der naechste sinnvolle Schritt ist weiterhin eine kontrollierte Sitemap-/SEO-/Legacy-Migration.
 - `/digital-check` ist gebaut und darf als Informationsroute verlinkt bleiben; Anfrage-CTAs muessen weiterhin bewusst auf `/kontakt#lead-form` fuehren.
-- `/ueber-uns`, `/kontakt` und `/pakete` sind modular neu aufgebaut; weitere Route-Entscheidungen betreffen vor allem `/leistungen`, `/demos`, `/referenzen` und die Demo-Unterseiten.
+- `/leistungen`, `/ueber-uns`, `/kontakt` und `/pakete` sind modular neu aufgebaut; weitere Route-Entscheidungen betreffen vor allem `/demos`, `/referenzen` und die Demo-Unterseiten.
 - `/leistungen`, `/pakete`, `/demos` und `/referenzen` nicht ohne Redirect-Plan loeschen.
 - Vercel-Rewrites fuer `/demos/*` erst entfernen, wenn externe Demo-Links nicht mehr gebraucht werden oder Redirects aktiv sind.
+
+## Update Schritt 20: `/leistungen` neu aufgebaut
+
+Die bestehende Route `/leistungen` wurde nicht umbenannt und nicht auf `/loesungen` umgeleitet, sondern als aktive Route modular neu aufgebaut. Alte sichtbare Legacy-Leistungsbereiche mit Preis- und Festpreislogik werden auf dieser Route nicht mehr gerendert.
+
+Neue inhaltliche Ausrichtung:
+
+- konkrete digitale Leistungen statt Problem-/Loesungslogik
+- Abgrenzung zu `/loesungen` und `/pakete`
+- Website, Sichtbarkeit, Kundenkontakt und Anfragefuehrung
+- Kundenbindung und digitale Kundenstrukturen
+- interne digitale Ablaeufe, Dashboards und Ordnungssysteme
+- Automatisierung und KI-Unterstuetzung ohne Autonomieversprechen
+- gezielte Einzelaufgaben ohne Preisdarstellung
+- CTA zu `/digital-check`, `/pakete`, `/loesungen` und `/kontakt`
+
+Meta-Daten wurden fuer `/leistungen` aktualisiert:
+
+- Title: `Digitale Leistungen fuer Unternehmen | STRUKTIVA`
+- Description: Konkrete digitale Leistungen von STRUKTIVA: Websites, Sichtbarkeit, Kundenfuehrung, Kundenbindung, interne Ablaeufe, Systeme und Automatisierungen.
+- Canonical: `/leistungen`
+- Robots: index, follow
+
+Nicht geaendert:
+
+- keine Redirects
+- kein neuer Hauptnavigationseintrag
+- keine Preise oder Pakete
+- keine Sitemap- oder Robots-Migration
+- kein Kontaktformular, keine Lead-API, kein Consent und kein Tracking

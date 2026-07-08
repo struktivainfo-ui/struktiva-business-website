@@ -10,9 +10,9 @@ export const ACTIVE_ROUTE_META = {
     isPricingRoute: true,
   },
   '/leistungen': {
-    title: 'Leistungen - STRUKTIVA Digitale Unternehmensberatung',
+    title: 'Digitale Leistungen für Unternehmen | STRUKTIVA',
     description:
-      'Alle STRUKTIVA Leistungen im Überblick: Website, Landingpages, Google-Sichtbarkeit, Kundenführung, Systeme, Dashboards und strukturierte Umsetzung.',
+      'Konkrete digitale Leistungen von STRUKTIVA: Websites, Sichtbarkeit, Kundenführung, Kundenbindung, interne Abläufe, Systeme und Automatisierungen.',
     canonicalPath: '/leistungen',
   },
   '/loesungen': {
@@ -174,6 +174,7 @@ export const futureNavigation = {
 
 export const FUTURE_ROUTE_PLAN = [
   { path: '/', role: 'Startseite für STRUKTIVA Digitale Unternehmensberatung', status: 'replace-existing-route-later' },
+  { path: '/leistungen', role: 'Konkrete digitale Leistungen ohne Preis- und Paketlogik erklaeren', status: 'active-step-20' },
   { path: '/loesungen', role: 'Drei Lösungswelten bündeln', status: 'active-step-12' },
   { path: '/praxisbeispiele', role: 'Referenzen und echte Praxisbeweise bündeln', status: 'active-step-13' },
   { path: '/praxisbeispiele/salon-karola', role: 'Detail-Praxisbeispiel Salon Karola', status: 'active-step-14' },
@@ -187,7 +188,7 @@ export const FUTURE_ROUTE_PLAN = [
 
 export const ROUTE_MIGRATION_PLAN = [
   { from: '/', to: '/', action: 'REBUILD', redirectType: 'none', seoRisk: 'medium', activateWhen: 'new home is ready' },
-  { from: '/leistungen', to: '/loesungen', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 12', seoRisk: 'high', activateWhen: 'only after SEO, sitemap and content decision' },
+  { from: '/leistungen', to: '/leistungen', action: 'REBUILD ACTIVE', redirectType: 'none', seoRisk: 'medium', activateWhen: 'active-step-20' },
   { from: '/pakete', to: '/pakete', action: 'REBUILD ACTIVE', redirectType: 'none', seoRisk: 'medium', activateWhen: 'active-step-19' },
   { from: '/demos', to: '/praxisbeispiele', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 13', seoRisk: 'medium', activateWhen: 'only after SEO, sitemap and demo strategy decision' },
   { from: '/referenzen', to: '/praxisbeispiele', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 13', seoRisk: 'low', activateWhen: 'only after SEO, sitemap and alias decision' },

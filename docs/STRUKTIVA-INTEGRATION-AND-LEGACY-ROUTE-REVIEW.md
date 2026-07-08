@@ -6,7 +6,7 @@ Dieser Bericht dokumentiert die Gesamtintegration nach den modularen Rebuild-Sch
 
 ## 1. Ergebnis in Kurzform
 
-Die neue Hauptstruktur ist technisch integriert und ueber Header, Mobile-Navigation, Footer und zentrale CTAs erreichbar. Die neuen Seiten `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/kontakt` und `/pakete` besitzen eigene Meta-Daten, eigene Canonicals und werden indexierbar ausgeliefert. Die Legacy-Routen `/leistungen`, `/demos` und `/referenzen` bleiben erreichbar und sollten erst nach einer inhaltlichen und SEO-fachlichen Entscheidung umgeleitet oder ersetzt werden.
+Die neue Hauptstruktur ist technisch integriert und ueber Header, Mobile-Navigation, Footer und zentrale CTAs erreichbar. Die neuen Seiten `/leistungen`, `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/kontakt` und `/pakete` besitzen eigene Meta-Daten, eigene Canonicals und werden indexierbar ausgeliefert. Die Legacy-Routen `/demos` und `/referenzen` bleiben erreichbar und sollten erst nach einer inhaltlichen und SEO-fachlichen Entscheidung umgeleitet oder ersetzt werden.
 
 Korrigierte echte Inkonsistenzen in Schritt 18:
 
@@ -157,29 +157,30 @@ Es gibt keine robots.txt-Sperre fuer neue Hauptseiten und keine gesonderten Lega
 
 Danach folgt der SPA-Fallback auf `/index.html`. Diese Strategie sollte beibehalten werden, solange die Demo-Unterseiten noch verlinkt oder extern bekannt sein koennen.
 
-## 12. Legacy-Route `/leistungen`
+## 12. Route `/leistungen`
 
 Aktuelle Rolle:
 
-- alte Leistungsuebersicht
-- viele Einzelangebote
-- umfangreiche Service-/Preislogik
+- modular neu aufgebaute Leistungsuebersicht
+- konkrete digitale Leistungen ohne sichtbare Preise
+- Abgrenzung zu `/loesungen` und `/pakete`
 - moegliche organische Suchrelevanz
 
 Ueberschneidung:
 
-- Inhaltlich stark verwandt mit `/loesungen`
-- `/loesungen` ist strategischer, ruhiger und weniger katalogartig
-- `/leistungen` enthaelt noch Detail- und Preisinformationen, die nicht 1:1 migriert wurden
+- verwandt mit `/loesungen`, aber mit anderem Zweck
+- `/loesungen` erklaert Problem- und Loesungslogik
+- `/leistungen` erklaert konkrete umsetzbare Bausteine
+- `/pakete` bleibt fuer Zusammenarbeit, Umfang und Preise zustaendig
 
 Empfehlung:
 
-- vorerst behalten
-- Inhalte fachlich auswerten
-- relevante Such- und Angebotsinhalte in neue Struktur ueberfuehren oder bewusst entfernen
-- spaeter 301 auf `/loesungen` erst nach SEO-, Sitemap- und Inhaltsentscheidung
+- Route beibehalten
+- nicht auf `/loesungen` redirecten
+- Sitemap-/SEO-Migration spaeter kontrolliert entscheiden
+- alte Legacy-Preisquellen bleiben dokumentiert, aber nicht auf der aktiven Route sichtbar
 
-Klassifikation: `KEEP TEMPORARILY`, `MERGE LATER`, `REDIRECT LATER`.
+Klassifikation: `REBUILD ACTIVE`, `KEEP`.
 
 ## 13. Route `/pakete`
 
@@ -278,7 +279,7 @@ Klassifikation: `KEEP TEMPORARILY`, `REMOVE AFTER MIGRATION`.
 | `/digital-check` | KEEP | Sitemap-/SEO-Migration spaeter |
 | `/ueber-uns` | KEEP | beibehalten |
 | `/kontakt` | KEEP | Lead-System weiter schuetzen |
-| `/leistungen` | KEEP TEMPORARILY / MERGE LATER / REDIRECT LATER | Inhalts- und SEO-Entscheidung |
+| `/leistungen` | KEEP / REBUILD ACTIVE | Sitemap-/SEO-Migration spaeter |
 | `/pakete` | KEEP / REBUILD ACTIVE | Sitemap-/SEO-Migration spaeter |
 | `/demos` | KEEP TEMPORARILY / REDIRECT LATER | Demo-Strategie klaeren |
 | `/referenzen` | KEEP TEMPORARILY / REDIRECT LATER | Alias-Entscheidung nach `/demos` |
@@ -292,12 +293,12 @@ Klassifikation: `KEEP TEMPORARILY`, `REMOVE AFTER MIGRATION`.
 
 Noch nicht aktivieren:
 
-- `/leistungen` -> `/loesungen`
 - `/referenzen` -> `/praxisbeispiele`
 - `/demos` -> `/praxisbeispiele`
 
 Nur nach fachlicher Entscheidung:
 
+- `/leistungen` nicht redirecten; Route ist seit Schritt 20 aktiv neu aufgebaut
 - `/pakete` nicht redirecten; Route ist seit Schritt 19 aktiv neu aufgebaut
 - `/demos/handwerker` -> `/praxisbeispiele` oder entfernen
 - `/demos/kosmetik` -> `/praxisbeispiele` oder entfernen
@@ -324,12 +325,12 @@ Technische Risiken:
 SEO-Risiken:
 
 - Neue Seiten sind indexierbar, aber noch nicht in der Sitemap.
-- Legacy-Seiten bleiben indexierbar und koennen mit neuen Seiten inhaltlich konkurrieren.
+- Legacy-Seiten bleiben indexierbar und koennen mit neuen Seiten inhaltlich konkurrieren, vor allem `/demos` und `/referenzen`.
 - Redirects sollten erst nach Inhalts- und Canonical-Entscheidung aktiviert werden.
 
 Inhaltliche Risiken:
 
-- `/leistungen` enthaelt weiterhin viele Angebots- und Preisinformationen, die nicht automatisch in die neue Struktur uebertragen wurden.
+- Alte Legacy-Preisquellen sind weiterhin im Legacy-Code vorhanden, werden aber nicht mehr auf der aktiven Route `/leistungen` gerendert.
 - Die Demo-Unterseiten sind bewusst beispielhaft und sollten langfristig entweder aktualisiert, deutlicher eingeordnet oder entfernt werden.
 
 ## 20. Geschuetzte Bereiche
@@ -350,10 +351,9 @@ Nicht veraendert wurden:
 ## 21. Empfohlene Reihenfolge fuer den naechsten Auftrag
 
 1. Sitemap-/SEO-Migration planen, aber noch keine inhaltlichen Legacy-Seiten loeschen.
-2. `/leistungen` fachlich auswerten und entscheiden, welche Inhalte in `/loesungen` gehoeren.
-3. Alte Preis- und Einzelangebotsquellen in `/leistungen` fachlich auswerten.
-4. `/demos`, `/referenzen` und Demo-Unterseiten als Paket entscheiden.
-5. Erst danach Redirects, Sitemap, Canonicals und interne Legacy-Links gemeinsam aktualisieren.
+2. `/demos`, `/referenzen` und Demo-Unterseiten als Paket entscheiden.
+3. Alte Preis- und Einzelangebotsquellen im Legacy-Code fachlich auswerten.
+4. Erst danach Redirects, Sitemap, Canonicals und interne Legacy-Links gemeinsam aktualisieren.
 
 ## 22. Update Schritt 19: `/pakete` neu aufgebaut
 
@@ -387,3 +387,31 @@ Nicht geaendert:
 - keine Redirects
 - keine neue Hauptnavigation
 - kein Product-, Offer- oder PriceSpecification-Schema
+
+## 23. Update Schritt 20: `/leistungen` neu aufgebaut
+
+`/leistungen` ist jetzt keine Legacy-Leistungs- und Preisuebersicht mehr. Die Route rendert eine modulare, preisfreie Leistungsseite mit:
+
+- Hero fuer konkrete digitale Leistungen
+- Abgrenzung zu `/loesungen` und `/pakete`
+- sechs Leistungsbereichen fuer Website, Sichtbarkeit, Kundenkontakt, Kundenbindung, interne Ablaeufe, Automatisierung und gezielte Einzelaufgaben
+- Verbindungslogik von Sichtbarkeit bis Wiederkehr oder Bewertung
+- bewusster Einordnung, dass mehr Funktionen nicht automatisch mehr Fortschritt bedeuten
+- Sonderhinweis fuer digitale Bewerbungswebseiten und persoenliche Praesentation
+- CTA zum Digital-Check und Kontakt
+
+Geprueft:
+
+- keine sichtbaren Preise auf `/leistungen`
+- keine Paketpreise, Einzelpreise, Monatsbetreuungspreise oder S/M/L-Soforthilfe-Preise
+- keine alte Legacy-H1 und keine alte Tabellen-/Preisuebersicht
+- Hauptnavigation bleibt ohne neuen `/leistungen`-Eintrag
+- `/leistungen` bleibt indexierbar mit Canonical `/leistungen`
+
+Nicht geaendert:
+
+- keine Preise
+- keine Redirects
+- keine neue Hauptnavigation
+- keine Sitemap- oder Robots-Migration
+- kein Kontaktformular, keine Lead-API, kein Consent und kein Tracking
