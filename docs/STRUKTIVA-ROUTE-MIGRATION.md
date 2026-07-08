@@ -2,7 +2,7 @@
 
 Stand: 2026-07-08
 
-Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 16 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check` und `/ueber-uns` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
+Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 17 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns` und `/kontakt` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
 
 ## Grundprinzipien
 
@@ -22,7 +22,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/demos` | Referenzen und Demo-Beispiele | `/praxisbeispiele` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 13 | mittel | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Demo-Strategieentscheidung geplant |
 | `/referenzen` | Alias-artiger Einstieg zu Referenzen/Demos | `/praxisbeispiele` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 13 | niedrig | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Aliasentscheidung geplant |
 | `/ueber-uns` | Menschen, Haltung und Arbeitsweise | `/ueber-uns` | REBUILD ACTIVE | keiner | niedrig | in Schritt 16 modular neu aufgebaut |
-| `/kontakt` | Lead-Formular und direkte Kontaktwege | `/kontakt` | KEEP | keiner | niedrig | bleibt aktiv |
+| `/kontakt` | Kontaktweg-Orientierung, direkte Kontaktwege und Lead-Formular | `/kontakt` | REBUILD ACTIVE | keiner | niedrig | in Schritt 17 modular neu aufgebaut |
 | `/impressum` | Rechtliche Anbieterangaben | `/impressum` | KEEP | keiner | niedrig | bleibt aktiv |
 | `/datenschutz` | Datenschutzinformationen | `/datenschutz` | KEEP | keiner | niedrig | bleibt aktiv, spaeter rechtlich gegen Tracking/Consent pruefen |
 
@@ -44,7 +44,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/praxisbeispiele/salon-karola` | aktiv, gezielt verlinkt | Salon-Karola-Inhalte | echte Detail-Fallstudie ohne Redirect-Migration |
 | `/digital-check` | aktiv, live verlinkt | Formularlogik aus `/kontakt` | erklaerende Digital-Check-Zielseite mit Anfrage-CTA zum bestehenden Formular |
 | `/ueber-uns` | aktiv, modular neu aufgebaut | alte About-Seite | Haltung, Menschen und Arbeitsweise ohne neue Route |
-| `/kontakt` | bestehend | aktuelle Kontaktseite | funktional stabil halten |
+| `/kontakt` | aktiv, modular neu aufgebaut | alte Kontaktseite | funktional stabiles Lead-System bleibt erhalten |
 | `/impressum` | bestehend | Rechtliches | beibehalten |
 | `/datenschutz` | bestehend | Rechtliches | beibehalten |
 
@@ -159,6 +159,37 @@ Nicht geaendert:
 - Es wurden keine Redirects aktiviert.
 - `/kontakt`, Kontaktformular, `api/leads.js`, Resend, Consent, Tracking, Sitemap, Robots und globale SEO-Struktur wurden nicht umgebaut.
 - `/leistungen`, `/demos`, `/referenzen`, Preise und Pakete bleiben unveraendert.
+
+## Update Schritt 17: `/kontakt` neu aufgebaut
+
+Die bestehende Route `/kontakt` wurde nicht umbenannt und nicht migriert, sondern als aktive Route modular neu aufgebaut. Alte sichtbare Legacy-Kontaktseitenbereiche werden auf dieser Route nicht mehr gerendert.
+
+Neue inhaltliche Ausrichtung:
+
+- Hero mit Kontakt-Einstieg
+- ruhige Kontaktvisualisierung
+- Orientierung zu direktem Kontakt, Anfrageformular und Digital-Check
+- direkte Kontaktmoeglichkeiten mit bestaetigten Projektdaten
+- Vorbereitung darauf, was Nutzer schreiben koennen
+- bestehendes Lead-Formular als einzige aktive Formularinstanz
+- sachlicher Ablauf nach einer Anfrage
+- kurzer Datenschutz-Hinweis
+- ruhiger Abschluss mit Link zu `/ueber-uns`
+
+Meta-Daten wurden fuer `/kontakt` aktualisiert:
+
+- Title: `Kontakt | STRUKTIVA Digitale Unternehmensberatung`
+- Description: Nehmen Sie Kontakt mit STRUKTIVA auf. Beschreiben Sie, wo digitale Ablaeufe, Kundenwege oder bestehende Systeme heute nicht gut zusammenspielen.
+- Canonical: `/kontakt`
+- Robots: index, follow
+
+Nicht geaendert:
+
+- Die Route bleibt `/kontakt`.
+- Es wurden keine Redirects aktiviert.
+- Das Lead-System bleibt funktional unveraendert.
+- `api/leads.js`, Resend, Environment-Variablen, Empfaengerlogik, Consent, Tracking, Sitemap, Robots und globale SEO-Struktur wurden nicht umgebaut.
+- Startseite, `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/leistungen`, `/demos`, `/referenzen`, Preise und Pakete bleiben unveraendert.
 
 ## Umsetzungshinweise fuer den naechsten Schritt
 

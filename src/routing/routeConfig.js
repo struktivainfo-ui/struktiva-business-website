@@ -65,8 +65,9 @@ export const ACTIVE_ROUTE_META = {
     canonicalPath: '/ueber-uns',
   },
   '/kontakt': {
-    title: 'Kontakt - STRUKTIVA Digitale Unternehmensberatung',
-    description: 'Kontakt und Projektanfrage bei STRUKTIVA Digitale Unternehmensberatung.',
+    title: 'Kontakt | STRUKTIVA Digitale Unternehmensberatung',
+    description:
+      'Nehmen Sie Kontakt mit STRUKTIVA auf. Beschreiben Sie, wo digitale Abläufe, Kundenwege oder bestehende Systeme heute nicht gut zusammenspielen.',
     canonicalPath: '/kontakt',
   },
   '/datenschutz': {
@@ -178,7 +179,7 @@ export const FUTURE_ROUTE_PLAN = [
   { path: '/praxisbeispiele/salon-karola', role: 'Detail-Praxisbeispiel Salon Karola', status: 'active-step-14' },
   { path: '/digital-check', role: 'Verständlicher Digital-Check-Einstieg mit Lead-Verweis', status: 'active-step-15' },
   { path: '/ueber-uns', role: 'Haltung, Menschen und Arbeitsweise', status: 'active-step-16' },
-  { path: '/kontakt', role: 'Direkte Kontaktwege und alternative Anfrage', status: 'keep' },
+  { path: '/kontakt', role: 'Direkte Kontaktwege und alternative Anfrage', status: 'active-step-17' },
   { path: '/impressum', role: 'Rechtliche Anbieterangaben', status: 'keep' },
   { path: '/datenschutz', role: 'Datenschutzangaben', status: 'keep' },
 ]
@@ -190,7 +191,7 @@ export const ROUTE_MIGRATION_PLAN = [
   { from: '/demos', to: '/praxisbeispiele', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 13', seoRisk: 'medium', activateWhen: 'only after SEO, sitemap and demo strategy decision' },
   { from: '/referenzen', to: '/praxisbeispiele', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 13', seoRisk: 'low', activateWhen: 'only after SEO, sitemap and alias decision' },
   { from: '/ueber-uns', to: '/ueber-uns', action: 'REBUILD', redirectType: 'none', seoRisk: 'low', activateWhen: 'content rewrite phase' },
-  { from: '/kontakt', to: '/kontakt', action: 'KEEP', redirectType: 'none', seoRisk: 'low', activateWhen: 'already active' },
+  { from: '/kontakt', to: '/kontakt', action: 'REBUILD ACTIVE', redirectType: 'none', seoRisk: 'low', activateWhen: 'active-step-17' },
   { from: '/impressum', to: '/impressum', action: 'KEEP', redirectType: 'none', seoRisk: 'low', activateWhen: 'already active' },
   { from: '/datenschutz', to: '/datenschutz', action: 'KEEP', redirectType: 'none', seoRisk: 'low', activateWhen: 'already active' },
   { from: '/demos/handwerker', to: '/praxisbeispiele', action: 'REMOVE AFTER MIGRATION', redirectType: 'optional 301 later', seoRisk: 'low because noindex demo', activateWhen: 'demo strategy is decided' },

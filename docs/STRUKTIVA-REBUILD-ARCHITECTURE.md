@@ -1957,3 +1957,176 @@ Nicht veraendert wurden:
 - `api/leads.js` enthaelt noch alte Bestaetigungsmail-Texte, blieb aber wegen Backend-Schutz unveraendert.
 - CSS liegt weiterhin global in `src/styles.css`.
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+
+## 33. Update Schritt 17: Kontaktseite
+
+Stand nach Schritt 17: `/kontakt` ist als bestehende Route vollstaendig modular neu aufgebaut. Die Seite fuehrt Besucher ruhiger zur Kontaktaufnahme, ohne das vorhandene Lead-System funktional zu veraendern.
+
+### Neue ContactPage und Komponentenstruktur
+
+Geaenderte Dateien:
+
+- `src/pages/ContactPage.jsx`
+- `src/routing/routeConfig.js`
+- `src/styles.css`
+
+Neue Dateien:
+
+- `src/components/contact/contactData.js`
+- `src/components/contact/ContactHero.jsx`
+- `src/components/contact/ContactStartOptions.jsx`
+- `src/components/contact/ContactDirectWays.jsx`
+- `src/components/contact/ContactPreparation.jsx`
+- `src/components/contact/ContactLeadForm.jsx`
+- `src/components/contact/ContactFormSection.jsx`
+- `src/components/contact/ContactAfterRequest.jsx`
+- `src/components/contact/ContactPrivacyNote.jsx`
+- `src/components/contact/ContactClosing.jsx`
+
+Die aktive Route `/kontakt` nutzt weiterhin den bestehenden Eintrag in `src/routing/pageRegistry.jsx`. `src/pages/ContactPage.jsx` ist aber kein Legacy-Reexport mehr, sondern rendert die neue modulare Kontaktseite.
+
+### Seitenstruktur
+
+Die Seite besteht aus:
+
+1. Hero `Kontakt zu STRUKTIVA`
+2. Orientierung zu drei Kontaktwegen
+3. direkte Kontaktmoeglichkeiten
+4. Vorbereitung auf die Anfrage
+5. bestehendes Lead-Formular im Abschnitt `id="lead-form"`
+6. Ablauf nach einer Anfrage
+7. Datenschutz-Hinweis
+8. persoenlicher Abschluss mit Link zu `/ueber-uns`
+
+### Hero und Hero-Visual
+
+Der Hero nutzt die H1:
+
+`Erzaehlen Sie uns, was heute nicht gut funktioniert. Die technische Loesung muss noch nicht feststehen.`
+
+Das Visual zeigt keinen Chatbot, keine Fake-Nachrichten und keine Headset-Optik. Es stellt unterschiedliche Ausgangspunkte wie unklare Website, verteilte Anfragen, manuelle Ablaeufe, Kundenbindung und bestehende Systeme dar, die zu `Situation beschreiben`, `gemeinsam einordnen` und `naechsten Schritt entscheiden` zusammenlaufen.
+
+### Kontaktweg-Orientierung
+
+Die Seite erklaert drei Einstiege:
+
+1. Direkter Kontakt
+2. Anfrage beschreiben
+3. Digital-Check
+
+Die Darstellung ist als verbundener Entscheidungsweg aufgebaut und nicht als drei identische Standardkarten.
+
+### Direkte Kontaktmoeglichkeiten
+
+Verwendet wurden ausschliesslich bestaetigte Kontaktdaten aus dem Projekt:
+
+- E-Mail: `struktiva.info@gmail.com`
+- Telefon: `07051 8162292`
+- WhatsApp: `https://wa.me/4970518162292`
+
+Der vorhandene WhatsApp-Link wurde geprueft und unveraendert weiterverwendet.
+
+### Formularintegration und Schutz
+
+Das bestehende Lead-Formular wurde kontrolliert aus dem Legacy-Modul in `src/components/contact/ContactLeadForm.jsx` extrahiert. Das war ein strukturelles Refactoring ohne Aenderung der Datenlogik.
+
+Unveraendert geblieben sind:
+
+- Feldnamen
+- Pflichtfelder
+- Select-Optionen
+- clientseitige Validierung
+- Honeypot `website`
+- `fetch('/api/leads')`
+- POST-Methode
+- JSON-Payload
+- `source: 'Website'`
+- Success State
+- Error State
+- Loading State
+- Submit-Blockierung waehrend Versand
+
+Verbessert wurden nur visuelle und zugaengliche Aspekte:
+
+- explizite `label`/`htmlFor`-Verknuepfung
+- `aria-invalid`
+- `aria-describedby` fuer Fehlermeldungen
+- Fokus auf das erste fehlerhafte Feld nach clientseitiger Validierung
+- konsistentere Fokus-, Error- und Success-Darstellung
+
+Es gibt weiterhin genau eine aktive Formularinstanz.
+
+### Hash-Navigation
+
+`/kontakt#lead-form` bleibt der zentrale Formularanker. Der neue Formularabschnitt enthaelt `id="lead-form"` und besitzt einen eigenen `scroll-margin-top`, damit der Sticky Header das Formular nach Direktaufruf, Reload oder CTA-Klick nicht verdeckt.
+
+### Ablauf nach Anfrage und Datenschutz
+
+Die Seite erklaert sachlich:
+
+1. Anliegen lesen
+2. Rueckfragen klaeren
+3. Naechsten Schritt besprechen
+
+Es wurden keine festen Reaktionszeiten, keine automatische Projektannahme und keine kostenlose Komplettanalyse versprochen.
+
+Der Datenschutzbereich verlinkt auf `/datenschutz` und formuliert nur allgemein, dass Angaben zur Bearbeitung und Beantwortung der Anfrage verwendet werden.
+
+### Meta-Daten und Canonical
+
+`/kontakt` besitzt aktualisierte aktive Meta-Daten:
+
+- Title: `Kontakt | STRUKTIVA Digitale Unternehmensberatung`
+- Description: Nehmen Sie Kontakt mit STRUKTIVA auf. Beschreiben Sie, wo digitale Ablaeufe, Kundenwege oder bestehende Systeme heute nicht gut zusammenspielen.
+- Canonical: `/kontakt`
+- Robots: index, follow
+
+Route-spezifische Open-Graph-Daten werden weiterhin ueber die bestehende Meta-Logik aus Title, Description, Canonical und neutralem STRUKTIVA-Asset gespeist. Es wurde keine neue OG-Infrastruktur eingefuehrt.
+
+### Strukturierte Daten
+
+Es wurde keine route-spezifische Schema-Erweiterung eingefuehrt. Die vorhandene globale Schema-Struktur blieb unveraendert, weil fuer ContactPoint-/Organization-Erweiterungen keine zusaetzliche rechtliche oder fachliche Validierung in diesem Schritt erfolgen sollte.
+
+### Geschuetzte Kernfunktionen
+
+Nicht veraendert wurden:
+
+- `api/leads.js`
+- Resend-Anbindung
+- Environment-Variablen
+- Empfaengerlogik
+- `src/cookieConsent.jsx`
+- Google Analytics
+- Google Ads
+- Pinterest Tag
+- Tracking-IDs
+- `src/hooks/useMarketingLeadTracking.js`
+- Startseite
+- `/loesungen`
+- `/praxisbeispiele`
+- `/praxisbeispiele/salon-karola`
+- `/digital-check`
+- `/ueber-uns`
+
+Es wurde keine echte Lead-Nachricht versendet.
+
+### Mobile, Motion und Reduced Motion
+
+Mobile folgt der beauftragten Reihenfolge: Hero, Kontaktweg-Orientierung, direkte Kontaktdaten, Formularvorbereitung, Formular, Ablauf nach Anfrage, Datenschutz-Hinweis und persoenlicher Abschluss.
+
+Motion bleibt ruhig:
+
+- Hero-Reveal
+- schrittweiser Aufbau des Kontaktvisuals
+- Abschnitts-Reveals fuer die Orientierung
+- dezente Hover-Zustaende
+
+Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerhalb der Kontaktseite deaktiviert. Alle Inhalte bleiben statisch verstaendlich.
+
+### Verbleibende Schulden nach Schritt 17
+
+- `/leistungen`, `/pakete`, `/demos` und `/referenzen` brauchen spaeter eine SEO-, Sitemap- und Redirect-Entscheidung.
+- Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht migriert.
+- `api/leads.js` blieb wegen Backend-Schutz unveraendert und enthaelt weiterhin historisch gewachsene Bestaetigungsmail-Texte.
+- CSS liegt weiterhin global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
