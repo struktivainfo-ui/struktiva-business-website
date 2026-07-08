@@ -12676,3 +12676,587 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
     transform: none !important;
   }
 }
+/* Step 19: Packages and collaboration page */
+.struktiva-packages-page {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(168, 127, 42, 0.13), transparent 28rem),
+    linear-gradient(180deg, #fbfaf6 0%, #ffffff 44%, #f6f3ec 100%);
+  color: var(--text-primary, #111111);
+}
+
+.struktiva-packages-page__body {
+  display: grid;
+  gap: clamp(3.5rem, 7vw, 6.5rem);
+  padding: clamp(3.25rem, 7vw, 6.5rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+}
+
+.struktiva-packages-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(21rem, 0.78fr);
+  align-items: stretch;
+  gap: clamp(2rem, 4vw, 4rem);
+  min-height: min(780px, calc(100svh - 82px));
+  padding: clamp(3.5rem, 7vw, 6.5rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem)) clamp(2.5rem, 5vw, 4rem);
+}
+
+.struktiva-packages-hero__content {
+  align-self: center;
+  max-width: 56rem;
+}
+
+.struktiva-packages-eyebrow {
+  margin: 0 0 1rem;
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.struktiva-packages-hero h1 {
+  max-width: 62rem;
+  margin: 0;
+  font-size: clamp(2.75rem, 6vw, 5.95rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.struktiva-packages-hero__content > p:not(.struktiva-packages-eyebrow) {
+  max-width: 48rem;
+  margin: 1.35rem 0 0;
+  color: var(--text-secondary, #4a4a45);
+  font-size: clamp(1.05rem, 1.4vw, 1.28rem);
+  line-height: 1.8;
+}
+
+.struktiva-packages-hero__actions,
+.struktiva-packages-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.struktiva-packages-primary-link,
+.struktiva-packages-secondary-link,
+.struktiva-packages-text-link {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.struktiva-packages-primary-link {
+  background: #111111;
+  color: #ffffff;
+  padding: 0.88rem 1.25rem;
+  box-shadow: 0 16px 34px rgba(17, 17, 17, 0.17);
+}
+
+.struktiva-packages-primary-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.struktiva-packages-secondary-link {
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  color: #111111;
+  padding: 0.84rem 1.15rem;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.struktiva-packages-text-link {
+  color: #111111;
+  padding: 0.84rem 0;
+  text-decoration: underline;
+  text-decoration-color: rgba(168, 127, 42, 0.42);
+  text-underline-offset: 0.32em;
+}
+
+.struktiva-packages-primary-link:hover,
+.struktiva-packages-secondary-link:hover,
+.struktiva-packages-text-link:hover {
+  transform: translateY(-1px);
+}
+
+.struktiva-packages-visual {
+  position: relative;
+  align-self: center;
+  min-height: 32rem;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(239, 233, 218, 0.72)),
+    repeating-linear-gradient(90deg, rgba(17, 17, 17, 0.035) 0 1px, transparent 1px 5rem);
+  box-shadow: 0 28px 80px rgba(53, 44, 23, 0.1);
+}
+
+.struktiva-packages-visual__paths {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.struktiva-packages-visual__node {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  border-left: 3px solid rgba(168, 127, 42, 0.72);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.struktiva-packages-visual__node span {
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.struktiva-packages-visual__node strong {
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+}
+
+.struktiva-packages-visual__line {
+  width: 2px;
+  height: 5.5rem;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(168, 127, 42, 0), rgba(168, 127, 42, 0.85), rgba(168, 127, 42, 0));
+  animation: struktivaPackagesLine 2.8s ease-in-out infinite;
+}
+
+.struktiva-packages-visual__result {
+  margin: 0 2rem 2rem;
+  padding: 1.2rem;
+  background: #111111;
+  color: #ffffff;
+}
+
+.struktiva-packages-visual__result span,
+.struktiva-packages-visual__result strong {
+  display: block;
+}
+
+.struktiva-packages-visual__result span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.84rem;
+}
+
+.struktiva-packages-visual__result strong {
+  margin-top: 0.25rem;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+}
+
+.struktiva-packages-section {
+  width: min(100%, var(--container-page, 1180px));
+  margin: 0 auto;
+}
+
+.struktiva-packages-section__intro {
+  max-width: 52rem;
+}
+
+.struktiva-packages-section h2,
+.struktiva-packages-cta h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.struktiva-packages-section__intro > p:not(.struktiva-packages-eyebrow),
+.struktiva-packages-transparency > p:not(.struktiva-packages-eyebrow),
+.struktiva-packages-cta > p:not(.struktiva-packages-eyebrow) {
+  max-width: 48rem;
+  margin: 1rem 0 0;
+  color: var(--text-secondary, #4a4a45);
+  font-size: 1.03rem;
+  line-height: 1.8;
+}
+
+.struktiva-packages-orientation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.52fr);
+  align-items: end;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.struktiva-packages-orientation__terms {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.struktiva-packages-orientation__terms span,
+.struktiva-packages-factor-grid span,
+.struktiva-packages-small li {
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  background: rgba(255, 255, 255, 0.76);
+  padding: 0.85rem 1rem;
+  color: #111111;
+  font-weight: 760;
+}
+
+.struktiva-packages-models,
+.struktiva-packages-care__grid,
+.struktiva-packages-faq__list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.struktiva-packages-models {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.struktiva-packages-model {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  padding-top: 1.35rem;
+}
+
+.struktiva-packages-model__label {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  place-items: center;
+  background: #111111;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.struktiva-packages-model h3,
+.struktiva-packages-offer h3,
+.struktiva-packages-application h3,
+.struktiva-packages-care h3,
+.struktiva-packages-faq h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.18;
+}
+
+.struktiva-packages-model__fit {
+  margin: 1rem 0 0.55rem;
+  color: var(--gold-primary, #a87f2a);
+  font-weight: 850;
+}
+
+.struktiva-packages-model ul,
+.struktiva-packages-offer ul {
+  display: grid;
+  gap: 0.62rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.struktiva-packages-model li,
+.struktiva-packages-offer li {
+  display: flex;
+  gap: 0.55rem;
+  color: var(--text-secondary, #4a4a45);
+  line-height: 1.55;
+}
+
+.struktiva-packages-model li svg,
+.struktiva-packages-offer li svg {
+  width: 1rem;
+  min-width: 1rem;
+  margin-top: 0.2rem;
+  color: var(--gold-primary, #a87f2a);
+}
+
+.struktiva-packages-model__statement {
+  margin: 1rem 0 0;
+  color: #111111;
+  font-weight: 780;
+  line-height: 1.6;
+}
+
+.struktiva-packages-offers {
+  width: min(100%, var(--container-wide, 1360px));
+}
+
+.struktiva-packages-offer-list {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.struktiva-packages-offer {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.25fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: start;
+  border: 1px solid rgba(17, 17, 17, 0.11);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: clamp(1rem, 2.4vw, 1.65rem);
+}
+
+.struktiva-packages-offer__price,
+.struktiva-packages-application__price {
+  display: grid;
+  gap: 0.25rem;
+  border-left: 3px solid rgba(168, 127, 42, 0.72);
+  padding-left: 1rem;
+}
+
+.struktiva-packages-offer__price span,
+.struktiva-packages-application__price span {
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.struktiva-packages-offer__price strong,
+.struktiva-packages-application__price strong {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1;
+}
+
+.struktiva-packages-offer__price small,
+.struktiva-packages-application__price small {
+  color: var(--text-secondary, #4a4a45);
+  line-height: 1.4;
+}
+
+.struktiva-packages-offer__body > p {
+  max-width: 54rem;
+  margin: 0.55rem 0 0;
+  color: var(--text-secondary, #4a4a45);
+  line-height: 1.75;
+}
+
+.struktiva-packages-offer__details {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(14rem, 0.62fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.struktiva-packages-offer__details strong {
+  display: block;
+  margin-bottom: 0.45rem;
+}
+
+.struktiva-packages-offer__details p {
+  margin: 0;
+  color: var(--text-secondary, #4a4a45);
+  line-height: 1.65;
+}
+
+.struktiva-packages-application {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1.2rem;
+  border-radius: 8px;
+  background: #111111;
+  color: #ffffff;
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.struktiva-packages-application .struktiva-packages-eyebrow,
+.struktiva-packages-application__price span {
+  color: #d8c28a;
+}
+
+.struktiva-packages-application p:not(.struktiva-packages-eyebrow),
+.struktiva-packages-application__price small {
+  color: rgba(255, 255, 255, 0.73);
+}
+
+.struktiva-packages-care {
+  width: min(100%, var(--container-wide, 1360px));
+}
+
+.struktiva-packages-care__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.struktiva-packages-care__grid article,
+.struktiva-packages-faq article {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  padding-top: 1.25rem;
+}
+
+.struktiva-packages-care__grid p,
+.struktiva-packages-faq p,
+.struktiva-packages-small p {
+  color: var(--text-secondary, #4a4a45);
+  line-height: 1.7;
+}
+
+.struktiva-packages-care__price {
+  margin: 0.75rem 0 0;
+  color: #111111;
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+  font-weight: 900;
+}
+
+.struktiva-packages-care__tax {
+  margin: 0.2rem 0 0.8rem;
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.struktiva-packages-care__note {
+  margin-top: 1.5rem;
+  border: 1px solid rgba(168, 127, 42, 0.24);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.struktiva-packages-care__note p {
+  max-width: 68rem;
+  margin: 0.5rem 0 0;
+  color: var(--text-secondary, #4a4a45);
+  line-height: 1.75;
+}
+
+.struktiva-packages-small {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(18rem, 0.7fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.struktiva-packages-small ul,
+.struktiva-packages-factor-grid {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.struktiva-packages-factor-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 2rem;
+}
+
+.struktiva-packages-transparency,
+.struktiva-packages-cta {
+  border-radius: 8px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.struktiva-packages-transparency {
+  background: #111111;
+  color: #ffffff;
+}
+
+.struktiva-packages-transparency .struktiva-packages-eyebrow {
+  color: #d8c28a;
+}
+
+.struktiva-packages-transparency > p:not(.struktiva-packages-eyebrow) {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.struktiva-packages-faq__list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.struktiva-packages-cta {
+  width: min(100%, var(--container-page, 1180px));
+  margin: 0 auto;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(242, 237, 224, 0.8)),
+    repeating-linear-gradient(90deg, rgba(17, 17, 17, 0.035) 0 1px, transparent 1px 4rem);
+  border: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+@keyframes struktivaPackagesLine {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scaleY(0.88);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@media (max-width: 1080px) {
+  .struktiva-packages-hero,
+  .struktiva-packages-orientation,
+  .struktiva-packages-small {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-packages-hero {
+    min-height: auto;
+  }
+
+  .struktiva-packages-models,
+  .struktiva-packages-care__grid,
+  .struktiva-packages-factor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .struktiva-packages-page__body {
+    gap: 3.8rem;
+  }
+
+  .struktiva-packages-hero h1 {
+    font-size: clamp(2.35rem, 11vw, 3.35rem);
+  }
+
+  .struktiva-packages-hero__actions,
+  .struktiva-packages-cta__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .struktiva-packages-primary-link,
+  .struktiva-packages-secondary-link {
+    width: 100%;
+  }
+
+  .struktiva-packages-visual {
+    min-height: auto;
+  }
+
+  .struktiva-packages-visual__paths {
+    padding: 1rem;
+  }
+
+  .struktiva-packages-visual__result {
+    margin: 0 1rem 1rem;
+  }
+
+  .struktiva-packages-model,
+  .struktiva-packages-offer,
+  .struktiva-packages-application {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-packages-offer__details,
+  .struktiva-packages-faq__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .struktiva-packages-page *,
+  .struktiva-packages-page *::before,
+  .struktiva-packages-page *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

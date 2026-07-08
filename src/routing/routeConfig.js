@@ -40,9 +40,9 @@ export const ACTIVE_ROUTE_META = {
     canonicalPath: '/digital-check',
   },
   '/pakete': {
-    title: 'Pakete & Betreuung - STRUKTIVA Digitale Unternehmensberatung',
+    title: 'Pakete und Zusammenarbeit | STRUKTIVA',
     description:
-      'Pakete und Betreuung von STRUKTIVA: klare Einstiege für Website, Sichtbarkeit, Kundenführung und digitale Systeme.',
+      'Erfahren Sie, welche Formen der Zusammenarbeit STRUKTIVA anbietet - vom klar abgegrenzten Einzelprojekt bis zur schrittweisen Weiterentwicklung und laufenden Betreuung.',
     canonicalPath: '/pakete',
     isPricingRoute: true,
   },
@@ -178,6 +178,7 @@ export const FUTURE_ROUTE_PLAN = [
   { path: '/praxisbeispiele', role: 'Referenzen und echte Praxisbeweise bündeln', status: 'active-step-13' },
   { path: '/praxisbeispiele/salon-karola', role: 'Detail-Praxisbeispiel Salon Karola', status: 'active-step-14' },
   { path: '/digital-check', role: 'Verständlicher Digital-Check-Einstieg mit Lead-Verweis', status: 'active-step-15' },
+  { path: '/pakete', role: 'Zusammenarbeitsmodelle, bestaetigte Pakete und Betreuung transparent erklaeren', status: 'active-step-19' },
   { path: '/ueber-uns', role: 'Haltung, Menschen und Arbeitsweise', status: 'active-step-16' },
   { path: '/kontakt', role: 'Direkte Kontaktwege und alternative Anfrage', status: 'active-step-17' },
   { path: '/impressum', role: 'Rechtliche Anbieterangaben', status: 'keep' },
@@ -187,7 +188,7 @@ export const FUTURE_ROUTE_PLAN = [
 export const ROUTE_MIGRATION_PLAN = [
   { from: '/', to: '/', action: 'REBUILD', redirectType: 'none', seoRisk: 'medium', activateWhen: 'new home is ready' },
   { from: '/leistungen', to: '/loesungen', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 12', seoRisk: 'high', activateWhen: 'only after SEO, sitemap and content decision' },
-  { from: '/pakete', to: '/loesungen', action: 'MERGE', redirectType: '301 or keep as support route later', seoRisk: 'medium', activateWhen: 'pricing role is decided' },
+  { from: '/pakete', to: '/pakete', action: 'REBUILD ACTIVE', redirectType: 'none', seoRisk: 'medium', activateWhen: 'active-step-19' },
   { from: '/demos', to: '/praxisbeispiele', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 13', seoRisk: 'medium', activateWhen: 'only after SEO, sitemap and demo strategy decision' },
   { from: '/referenzen', to: '/praxisbeispiele', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 13', seoRisk: 'low', activateWhen: 'only after SEO, sitemap and alias decision' },
   { from: '/ueber-uns', to: '/ueber-uns', action: 'REBUILD', redirectType: 'none', seoRisk: 'low', activateWhen: 'content rewrite phase' },

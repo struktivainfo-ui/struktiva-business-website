@@ -2,7 +2,7 @@
 
 Stand: 2026-07-08
 
-Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 18 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns` und `/kontakt` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/pakete`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
+Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 19 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/kontakt` und `/pakete` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
 
 ## Grundprinzipien
 
@@ -22,7 +22,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/praxisbeispiele/salon-karola` | Detail-Fallstudie Salon Karola | `/praxisbeispiele/salon-karola` | KEEP | keiner | niedrig | aktiv seit Schritt 14 |
 | `/digital-check` | Informationsseite fuer den Digital-Check | `/digital-check` | KEEP | keiner | niedrig | aktiv seit Schritt 15 |
 | `/leistungen` | Leistungsuebersicht mit vielen Einzelangeboten | `/loesungen` | KEEP TEMPORARILY / MERGE LATER / REDIRECT LATER | keiner in Schritt 18 | hoch | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Inhaltsentscheidung geplant |
-| `/pakete` | Pakete, Einstiegspreise und Betreuung | `/loesungen` oder neue Angebots-/Betreuungsroute | KEEP TEMPORARILY / REBUILD LATER / MERGE LATER | keiner in Schritt 18 | mittel | bleibt aktiv; Entscheidung zur Preis-/Paketrolle erforderlich |
+| `/pakete` | Pakete, Zusammenarbeit, Einstiegspreise und Betreuung | `/pakete` | REBUILD ACTIVE | keiner | niedrig | in Schritt 19 modular neu aufgebaut |
 | `/demos` | Referenzen und Demo-Beispiele | `/praxisbeispiele` | KEEP TEMPORARILY / REDIRECT LATER | keiner in Schritt 18 | mittel | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Demo-Strategieentscheidung geplant |
 | `/referenzen` | Alias-artiger Einstieg zu Referenzen/Demos | `/praxisbeispiele` | KEEP TEMPORARILY / REDIRECT LATER | keiner in Schritt 18 | niedrig | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Aliasentscheidung geplant |
 | `/ueber-uns` | Menschen, Haltung und Arbeitsweise | `/ueber-uns` | REBUILD ACTIVE | keiner | niedrig | in Schritt 16 modular neu aufgebaut |
@@ -51,6 +51,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/kontakt` | aktiv, modular neu aufgebaut | alte Kontaktseite | funktional stabiles Lead-System bleibt erhalten |
 | `/impressum` | bestehend | Rechtliches | beibehalten |
 | `/datenschutz` | bestehend | Rechtliches | beibehalten |
+| `/pakete` | aktiv, modular neu aufgebaut | alte Paket- und Preisroute | erklaert Zusammenarbeitsmodelle, bestaetigte Pakete und Betreuung ohne Redirect |
 
 ## Update Schritt 12: `/loesungen` aktiviert
 
@@ -234,10 +235,41 @@ Aktualisierte Legacy-Empfehlung:
 | `/demos/kosmetik` | vorerst behalten, spaeter entfernen oder redirecten | Demo-Unterseiten-Strategie klaeren |
 | `/demos/lokaler-dienstleister` | vorerst behalten, spaeter entfernen oder redirecten | Demo-Unterseiten-Strategie klaeren |
 
+## Update Schritt 19: `/pakete` neu aufgebaut
+
+Die bestehende Route `/pakete` wurde nicht umbenannt und nicht migriert, sondern als aktive Route modular neu aufgebaut. Alte sichtbare Legacy-Paketbereiche werden auf dieser Route nicht mehr gerendert.
+
+Neue inhaltliche Ausrichtung:
+
+- Zusammenarbeit statt klassischer Preisvergleich
+- Einzelprojekt, schrittweise Weiterentwicklung und laufende Betreuung
+- bestaetigte Paketpreise als Orientierung
+- klare Trennung zwischen einmaligen Projekten und monatlicher Betreuung
+- Erklaerung, dass Betreuung nicht automatisch Pflicht ist
+- kleine Aenderungen und Einzelaufgaben als separater Bedarf
+- Preisfaktoren ohne Preisrechner
+- sozial fairer Hinweis zur persoenlichen Profil- und Bewerbungsseite
+- FAQ und Abschluss-CTA zum Digital-Check
+
+Meta-Daten wurden fuer `/pakete` aktualisiert:
+
+- Title: `Pakete und Zusammenarbeit | STRUKTIVA`
+- Description: Erfahren Sie, welche Formen der Zusammenarbeit STRUKTIVA anbietet - vom klar abgegrenzten Einzelprojekt bis zur schrittweisen Weiterentwicklung und laufenden Betreuung.
+- Canonical: `/pakete`
+- Robots: index, follow
+
+Nicht geaendert:
+
+- Es wurden keine Redirects aktiviert.
+- `/pakete` wurde nicht in die Hauptnavigation aufgenommen.
+- Sitemap, Robots und globale SEO-Struktur wurden nicht final migriert.
+- Preise wurden nicht veraendert.
+- `api/leads.js`, Resend, Kontaktformular, Consent und Tracking wurden nicht veraendert.
+
 ## Umsetzungshinweise fuer den naechsten Schritt
 
-- Neue Zielseiten sind gebaut; der naechste sinnvolle Schritt ist eine kontrollierte Sitemap-/SEO-/Legacy-Migration.
+- Neue Zielseiten sind gebaut; der naechste sinnvolle Schritt ist weiterhin eine kontrollierte Sitemap-/SEO-/Legacy-Migration.
 - `/digital-check` ist gebaut und darf als Informationsroute verlinkt bleiben; Anfrage-CTAs muessen weiterhin bewusst auf `/kontakt#lead-form` fuehren.
-- `/ueber-uns` und `/kontakt` sind modular neu aufgebaut; weitere Route-Entscheidungen betreffen vor allem `/leistungen`, `/pakete`, `/demos`, `/referenzen` und die Demo-Unterseiten.
+- `/ueber-uns`, `/kontakt` und `/pakete` sind modular neu aufgebaut; weitere Route-Entscheidungen betreffen vor allem `/leistungen`, `/demos`, `/referenzen` und die Demo-Unterseiten.
 - `/leistungen`, `/pakete`, `/demos` und `/referenzen` nicht ohne Redirect-Plan loeschen.
 - Vercel-Rewrites fuer `/demos/*` erst entfernen, wenn externe Demo-Links nicht mehr gebraucht werden oder Redirects aktiv sind.

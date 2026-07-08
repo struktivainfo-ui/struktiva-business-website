@@ -6,7 +6,7 @@ Dieser Bericht dokumentiert die Gesamtintegration nach den modularen Rebuild-Sch
 
 ## 1. Ergebnis in Kurzform
 
-Die neue Hauptstruktur ist technisch integriert und ueber Header, Mobile-Navigation, Footer und zentrale CTAs erreichbar. Die neuen Seiten `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns` und `/kontakt` besitzen eigene Meta-Daten, eigene Canonicals und werden indexierbar ausgeliefert. Die Legacy-Routen `/leistungen`, `/pakete`, `/demos` und `/referenzen` bleiben erreichbar und sollten erst nach einer inhaltlichen und SEO-fachlichen Entscheidung umgeleitet oder ersetzt werden.
+Die neue Hauptstruktur ist technisch integriert und ueber Header, Mobile-Navigation, Footer und zentrale CTAs erreichbar. Die neuen Seiten `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/kontakt` und `/pakete` besitzen eigene Meta-Daten, eigene Canonicals und werden indexierbar ausgeliefert. Die Legacy-Routen `/leistungen`, `/demos` und `/referenzen` bleiben erreichbar und sollten erst nach einer inhaltlichen und SEO-fachlichen Entscheidung umgeleitet oder ersetzt werden.
 
 Korrigierte echte Inkonsistenzen in Schritt 18:
 
@@ -22,6 +22,7 @@ Korrigierte echte Inkonsistenzen in Schritt 18:
 | `/praxisbeispiele` | neue Praxisbeispiel-Uebersicht | aktiv |
 | `/praxisbeispiele/salon-karola` | echte Detail-Fallstudie | aktiv |
 | `/digital-check` | neue Informationsseite fuer den Digital-Check | aktiv |
+| `/pakete` | neue Seite fuer Zusammenarbeit, Pakete und Betreuung | aktiv |
 | `/ueber-uns` | neu aufgebaute Unternehmensseite | aktiv |
 | `/kontakt` | neu aufgebaute Kontaktseite mit bestehendem Lead-Formular | aktiv |
 | `/impressum` | Rechtliches | aktiv |
@@ -180,28 +181,28 @@ Empfehlung:
 
 Klassifikation: `KEEP TEMPORARILY`, `MERGE LATER`, `REDIRECT LATER`.
 
-## 13. Legacy-Route `/pakete`
+## 13. Route `/pakete`
 
 Aktuelle Rolle:
 
-- alte Paket- und Preisuebersicht
-- Einstiegspakete
-- monatliche Betreuung
+- modular neu aufgebaute Seite fuer Zusammenarbeit, Pakete und Betreuung
+- bestaetigte Einstiegspakete
+- monatliche Betreuung nur bei laufendem Bedarf
+- klare Trennung zwischen einmaligen Projekten, schrittweiser Weiterentwicklung und Betreuung
 
 Ueberschneidung:
 
 - teilweise mit `/loesungen`
 - teilweise mit Kontakt-/Anfragefuehrung
-- moeglicherweise eigene kuenftige Angebots- oder Supportrolle
+- bewusst keine Hauptnavigation, aber weiterhin per Sitemap und Legacy-Kontext erreichbar
 
 Empfehlung:
 
-- vorerst behalten
-- Preis- und Paketstrategie gesondert entscheiden
-- keine Preisangaben veraendern, bis das Angebot fachlich festgelegt ist
-- spaeter entweder neu bauen, in eine Angebotsseite ueberfuehren oder gezielt redirecten
+- Route beibehalten
+- nicht ohne neuen SEO-/Sitemap-Plan redirecten
+- spaeter alte Preis-/Einzelangebotsquellen in `/leistungen` fachlich bereinigen
 
-Klassifikation: `REBUILD LATER`, `MERGE LATER`, `KEEP TEMPORARILY`.
+Klassifikation: `REBUILD ACTIVE`, `KEEP`.
 
 ## 14. Legacy-Route `/demos`
 
@@ -278,7 +279,7 @@ Klassifikation: `KEEP TEMPORARILY`, `REMOVE AFTER MIGRATION`.
 | `/ueber-uns` | KEEP | beibehalten |
 | `/kontakt` | KEEP | Lead-System weiter schuetzen |
 | `/leistungen` | KEEP TEMPORARILY / MERGE LATER / REDIRECT LATER | Inhalts- und SEO-Entscheidung |
-| `/pakete` | KEEP TEMPORARILY / REBUILD LATER / MERGE LATER | Preis-/Paketstrategie klaeren |
+| `/pakete` | KEEP / REBUILD ACTIVE | Sitemap-/SEO-Migration spaeter |
 | `/demos` | KEEP TEMPORARILY / REDIRECT LATER | Demo-Strategie klaeren |
 | `/referenzen` | KEEP TEMPORARILY / REDIRECT LATER | Alias-Entscheidung nach `/demos` |
 | `/demos/handwerker` | KEEP TEMPORARILY / REMOVE AFTER MIGRATION | Demo-Strategie klaeren |
@@ -297,7 +298,7 @@ Noch nicht aktivieren:
 
 Nur nach fachlicher Entscheidung:
 
-- `/pakete` -> neue Angebots-/Betreuungsseite oder passende Zielroute
+- `/pakete` nicht redirecten; Route ist seit Schritt 19 aktiv neu aufgebaut
 - `/demos/handwerker` -> `/praxisbeispiele` oder entfernen
 - `/demos/kosmetik` -> `/praxisbeispiele` oder entfernen
 - `/demos/lokaler-dienstleister` -> `/praxisbeispiele` oder entfernen
@@ -328,7 +329,7 @@ SEO-Risiken:
 
 Inhaltliche Risiken:
 
-- `/leistungen` und `/pakete` enthalten noch Angebots- und Preisinformationen, die nicht automatisch in die neue Struktur uebertragen wurden.
+- `/leistungen` enthaelt weiterhin viele Angebots- und Preisinformationen, die nicht automatisch in die neue Struktur uebertragen wurden.
 - Die Demo-Unterseiten sind bewusst beispielhaft und sollten langfristig entweder aktualisiert, deutlicher eingeordnet oder entfernt werden.
 
 ## 20. Geschuetzte Bereiche
@@ -350,6 +351,39 @@ Nicht veraendert wurden:
 
 1. Sitemap-/SEO-Migration planen, aber noch keine inhaltlichen Legacy-Seiten loeschen.
 2. `/leistungen` fachlich auswerten und entscheiden, welche Inhalte in `/loesungen` gehoeren.
-3. `/pakete` separat bewerten, weil dort Preise und Betreuung enthalten sind.
+3. Alte Preis- und Einzelangebotsquellen in `/leistungen` fachlich auswerten.
 4. `/demos`, `/referenzen` und Demo-Unterseiten als Paket entscheiden.
 5. Erst danach Redirects, Sitemap, Canonicals und interne Legacy-Links gemeinsam aktualisieren.
+
+## 22. Update Schritt 19: `/pakete` neu aufgebaut
+
+`/pakete` ist jetzt keine Legacy-Paketseite mehr. Die Route rendert eine modulare Zusammenarbeitsseite mit:
+
+- Hero zur Bedarfspassung
+- Einzelprojekt, schrittweiser Weiterentwicklung und laufender Betreuung
+- bestaetigten Paketpreisen
+- Monatsbetreuung als optionale laufende Zusammenarbeit
+- Klarstellung, dass kleine Aenderungen klein bleiben duerfen
+- Preisfaktoren und Transparenzabschnitt
+- sozial fairem Hinweis zur persoenlichen Profil- und Bewerbungsseite
+- FAQ und CTA zum Digital-Check
+
+Gepruefte und dargestellte Preise:
+
+- STRUKTIVA Soforthilfe: 99 € inklusive Mehrwertsteuer
+- Website Start: 499 € inklusive Mehrwertsteuer
+- Sichtbarkeits-Paket: 799 € inklusive Mehrwertsteuer
+- Struktur-Paket: 1.199 € inklusive Mehrwertsteuer
+- Premium-Struktur: 1.499 € inklusive Mehrwertsteuer
+- Basis-Betreuung: ab 199 € / Monat inklusive Mehrwertsteuer
+- Struktur-Betreuung: ab 299 € / Monat inklusive Mehrwertsteuer
+- Premium-Betreuung: ab 499 € / Monat inklusive Mehrwertsteuer
+- Persoenliche Profil- & Bewerbungsseite: 299 € inklusive Mehrwertsteuer
+
+Nicht geaendert:
+
+- keine neuen Preise
+- keine Preisveraenderungen
+- keine Redirects
+- keine neue Hauptnavigation
+- kein Product-, Offer- oder PriceSpecification-Schema

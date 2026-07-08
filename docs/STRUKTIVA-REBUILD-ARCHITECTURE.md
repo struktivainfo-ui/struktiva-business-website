@@ -2130,3 +2130,180 @@ Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerha
 - `api/leads.js` blieb wegen Backend-Schutz unveraendert und enthaelt weiterhin historisch gewachsene Bestaetigungsmail-Texte.
 - CSS liegt weiterhin global in `src/styles.css`.
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+
+## 34. Update Schritt 19: Pakete und Zusammenarbeit
+
+Stand nach Schritt 19: `/pakete` ist als bestehende Route vollstaendig modular neu aufgebaut. Die Seite ist keine klassische Tarif- oder SaaS-Preistabelle mehr, sondern erklaert Formen der Zusammenarbeit: klar abgegrenztes Einzelprojekt, schrittweise Weiterentwicklung und laufende Betreuung.
+
+### Neue PackagesPage und Komponentenstruktur
+
+Geaenderte Dateien:
+
+- `src/pages/PackagesPage.jsx`
+- `src/routing/routeConfig.js`
+- `src/styles.css`
+
+Neue Dateien:
+
+- `src/components/packages/packagesData.js`
+- `src/components/packages/PackagesHero.jsx`
+- `src/components/packages/PackagesModels.jsx`
+- `src/components/packages/PackagesOffers.jsx`
+- `src/components/packages/PackagesCareAndSmallTasks.jsx`
+- `src/components/packages/PackagesPriceFactors.jsx`
+- `src/components/packages/PackagesFaq.jsx`
+- `src/components/packages/PackagesCta.jsx`
+
+Die aktive Route `/pakete` nutzt weiterhin den bestehenden Eintrag in `src/routing/pageRegistry.jsx`, rendert aber nicht mehr den Legacy-Reexport `PaketePage` aus `src/legacy/legacyContent.jsx`.
+
+### Seitenstruktur
+
+Die neue Seite besteht aus:
+
+1. Hero mit der H1 `Nicht jedes Unternehmen braucht dasselbe Paket. Und nicht jedes Projekt braucht laufende Kosten.`
+2. Orientierung `Der Bedarf entscheidet`
+3. drei Zusammenarbeitsmodelle
+4. bestaetigte Paketangebote mit Einmalpreisen
+5. sozial fairer Hinweis zur persoenlichen Profil- und Bewerbungsseite
+6. laufende Betreuung mit Monatsangeboten
+7. kleine Aenderungen und Einzelaufgaben
+8. Preisfaktoren
+9. Transparenzabschnitt
+10. FAQ
+11. Abschluss-CTA zum Digital-Check
+
+### Preisaudit
+
+Gepruefte Quellen:
+
+- zentrale `pricingPackages` in `src/legacy/legacyContent.jsx`
+- alte aktive `PaketePage`
+- alte `PricingArchitectureSection`
+- alte `BetreuungSection`
+- alte `LeistungenPage`
+- alte Detail-/Offer-Preisbereiche
+- `DigitaleSoforthilfePage`
+- Kontaktformular-Budgetoptionen
+
+Bestaetigte Paketpreise, die auf `/pakete` dargestellt werden:
+
+| Angebot | Preis | Art | Quelle | Status |
+| --- | --- | --- | --- | --- |
+| STRUKTIVA Soforthilfe | 99 € inklusive Mehrwertsteuer | einmalig | `pricingPackages`, alte `/pakete` | bestaetigt |
+| Website Start | 499 € inklusive Mehrwertsteuer | einmalig | `pricingPackages`, alte `/pakete` | bestaetigt |
+| Sichtbarkeits-Paket | 799 € inklusive Mehrwertsteuer | einmalig | `pricingPackages`, alte `/pakete` | bestaetigt |
+| Struktur-Paket | 1.199 € inklusive Mehrwertsteuer | einmalig | `pricingPackages`, alte `/pakete` | bestaetigt |
+| Premium-Struktur | 1.499 € inklusive Mehrwertsteuer | einmalig | `pricingPackages`, alte `/pakete` | bestaetigt |
+| Basis-Betreuung | ab 199 € / Monat inklusive Mehrwertsteuer | monatlich | `BetreuungSection`, alte `/pakete` | bestaetigt |
+| Struktur-Betreuung | ab 299 € / Monat inklusive Mehrwertsteuer | monatlich | `BetreuungSection`, alte `/pakete` | bestaetigt |
+| Premium-Betreuung | ab 499 € / Monat inklusive Mehrwertsteuer | monatlich | `BetreuungSection`, alte `/pakete` | bestaetigt |
+| Persoenliche Profil- & Bewerbungsseite | 299 € inklusive Mehrwertsteuer | einmalig | alte `LeistungenPage` | bestaetigtes Einzelangebot |
+
+Nicht auf der neuen `/pakete` als Hauptpakete dargestellt, aber im Audit gefunden:
+
+- Digitaler Kurzcheck 49 €
+- professionelle Webseiten 699 €
+- Landingpages 399 €
+- Google-Profil Kurzoptimierung 199 €
+- WhatsApp- & Kontaktstruktur 149 €
+- Bewertungs- & QR-Struktur 149 €
+- Lead-/Anfrage-System einfach 299 €
+- KI- & Automatisierung 299 €
+- Social-Media-Struktur 199 €
+- Betriebs-Dashboard 799 €
+- digitales Ordnungssystem 899 €
+- Unternehmens-App einfach 999 €
+- Soforthilfe M 299 €
+- Soforthilfe L 499 €
+
+Preiswidersprueche:
+
+- Keine direkte Preisabweichung bei den fuenf zentralen Paketen.
+- Keine direkte Preisabweichung bei den drei Betreuungsangeboten.
+- Soforthilfe erscheint einmal als zentrales Einzelangebot `STRUKTIVA Soforthilfe` fuer 99 € und zusaetzlich in einer alten Spezialseite als Soforthilfe S/M/L mit 99 €/299 €/499 €. Das wurde nicht eigenstaendig zusammengefuehrt, sondern als verbleibende Inhalts-/Namensschuld dokumentiert.
+- Der alte `Digitale Kurzcheck` fuer 49 € bleibt eine Legacy-Preisquelle und wurde nicht mit dem neuen `/digital-check` gleichgesetzt.
+
+Es wurden keine neuen Preise erfunden und keine bestehenden Preise geaendert.
+
+### Zusammenarbeitslogik
+
+Die Seite unterscheidet:
+
+- Einzelprojekt: einmalig beauftragbar und abschliessbar.
+- Schrittweise Weiterentwicklung: Bausteine werden priorisiert und nacheinander entwickelt.
+- Laufende Betreuung: nur sinnvoll, wenn regelmaessig Aufwand entsteht.
+
+Die Seite stellt ausdruecklich klar, dass eine fertiggestellte Website oder ein einzelnes Projekt nicht automatisch monatliche Betreuung braucht. Gelegentliche kleine Aenderungen koennen separat betrachtet werden, ohne eine neue Abrechnungsmethode oder Pflicht-Pauschale zu erfinden.
+
+### CTA-Ziele
+
+- Hero primaer: `Digital-Check ansehen` -> `/digital-check`
+- Hero sekundaer: `Loesungen ansehen` -> `/loesungen`
+- Abschluss primaer: `Digital-Check ansehen` -> `/digital-check`
+- Abschluss sekundaer: `Direkt Kontakt aufnehmen` -> `/kontakt`
+
+Es wurde kein neues Formular gebaut und kein Formular dupliziert.
+
+### Meta-Daten und Canonical
+
+`/pakete` besitzt aktualisierte Meta-Daten:
+
+- Title: `Pakete und Zusammenarbeit | STRUKTIVA`
+- Description: Erfahren Sie, welche Formen der Zusammenarbeit STRUKTIVA anbietet - vom klar abgegrenzten Einzelprojekt bis zur schrittweisen Weiterentwicklung und laufenden Betreuung.
+- Canonical: `/pakete`
+- Robots: index, follow
+
+Es wurden keine Product-, Offer- oder PriceSpecification-Schemas ergaenzt.
+
+### Mobile, Motion und Reduced Motion
+
+Mobile Reihenfolge:
+
+1. Hero
+2. Orientierung
+3. Einzelprojekt
+4. schrittweise Entwicklung
+5. laufende Betreuung
+6. bestaetigte Paketangebote
+7. Betreuungserklaerung
+8. kleine Aenderungen
+9. Preisfaktoren
+10. Transparenz
+11. Bewerbungsbereich
+12. FAQ
+13. CTA
+
+Motion bleibt ruhig:
+
+- Hero-Reveal
+- schrittweiser Aufbau der Hero-Visualisierung
+- Abschnitts-Reveals fuer Modelle und Angebote
+- dezente Hover-Zustaende
+
+Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerhalb der Pakete-Seite deaktiviert.
+
+### Geschuetzte Kernfunktionen
+
+Nicht veraendert wurden:
+
+- `api/leads.js`
+- Resend-Anbindung
+- Environment-Variablen
+- Kontaktformular
+- `src/cookieConsent.jsx`
+- Google Analytics
+- Google Ads
+- Pinterest Tag
+- Tracking-IDs
+- `src/hooks/useMarketingLeadTracking.js`
+- andere neue Hauptseiteninhalte
+
+### Verbleibende Schulden nach Schritt 19
+
+- `/leistungen` enthaelt weiterhin viele alte Einzelpreise und Angebotsseiten.
+- Soforthilfe-Namen und -Umfaenge sollten spaeter fachlich bereinigt werden.
+- Der alte `Digitale Kurzcheck` muss spaeter gegen die neue `/digital-check`-Positionierung eingeordnet werden.
+- Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht final migriert.
+- `/demos`, `/referenzen` und Demo-Unterseiten brauchen weiterhin eine eigene Migrationsentscheidung.
+- CSS liegt weiterhin global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
