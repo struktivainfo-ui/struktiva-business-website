@@ -2,7 +2,7 @@
 
 Stand: 2026-07-08
 
-Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 17 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns` und `/kontakt` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
+Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 18 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns` und `/kontakt` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/pakete`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
 
 ## Grundprinzipien
 
@@ -16,11 +16,15 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 
 | Aktuelle Route | Aktueller Zweck | Zukuenftige Zielroute | Aktion | Redirect-Typ | SEO-Risiko | Aktivierung |
 | --- | --- | --- | --- | --- | --- | --- |
-| `/` | Startseite mit Website-, Sichtbarkeits- und Strukturangebot | `/` | REBUILD | keiner | mittel | wenn neue Startseite fertig ist |
-| `/leistungen` | Leistungsuebersicht mit vielen Einzelangeboten | `/loesungen` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 12 | hoch | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Inhaltsentscheidung geplant |
-| `/pakete` | Pakete, Einstiegspreise und Betreuung | `/loesungen` oder Support-Unterseite | MERGE | 301 oder KEEP spaeter | mittel | nach Entscheidung zur Preis-/Paketrolle |
-| `/demos` | Referenzen und Demo-Beispiele | `/praxisbeispiele` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 13 | mittel | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Demo-Strategieentscheidung geplant |
-| `/referenzen` | Alias-artiger Einstieg zu Referenzen/Demos | `/praxisbeispiele` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 13 | niedrig | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Aliasentscheidung geplant |
+| `/` | Startseite mit Website-, Sichtbarkeits- und Strukturangebot | `/` | KEEP | keiner | niedrig | aktiv |
+| `/loesungen` | neue Loesungsuebersicht | `/loesungen` | KEEP | keiner | niedrig | aktiv seit Schritt 12 |
+| `/praxisbeispiele` | neue Praxisbeispiel-Uebersicht | `/praxisbeispiele` | KEEP | keiner | niedrig | aktiv seit Schritt 13 |
+| `/praxisbeispiele/salon-karola` | Detail-Fallstudie Salon Karola | `/praxisbeispiele/salon-karola` | KEEP | keiner | niedrig | aktiv seit Schritt 14 |
+| `/digital-check` | Informationsseite fuer den Digital-Check | `/digital-check` | KEEP | keiner | niedrig | aktiv seit Schritt 15 |
+| `/leistungen` | Leistungsuebersicht mit vielen Einzelangeboten | `/loesungen` | KEEP TEMPORARILY / MERGE LATER / REDIRECT LATER | keiner in Schritt 18 | hoch | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Inhaltsentscheidung geplant |
+| `/pakete` | Pakete, Einstiegspreise und Betreuung | `/loesungen` oder neue Angebots-/Betreuungsroute | KEEP TEMPORARILY / REBUILD LATER / MERGE LATER | keiner in Schritt 18 | mittel | bleibt aktiv; Entscheidung zur Preis-/Paketrolle erforderlich |
+| `/demos` | Referenzen und Demo-Beispiele | `/praxisbeispiele` | KEEP TEMPORARILY / REDIRECT LATER | keiner in Schritt 18 | mittel | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Demo-Strategieentscheidung geplant |
+| `/referenzen` | Alias-artiger Einstieg zu Referenzen/Demos | `/praxisbeispiele` | KEEP TEMPORARILY / REDIRECT LATER | keiner in Schritt 18 | niedrig | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Aliasentscheidung geplant |
 | `/ueber-uns` | Menschen, Haltung und Arbeitsweise | `/ueber-uns` | REBUILD ACTIVE | keiner | niedrig | in Schritt 16 modular neu aufgebaut |
 | `/kontakt` | Kontaktweg-Orientierung, direkte Kontaktwege und Lead-Formular | `/kontakt` | REBUILD ACTIVE | keiner | niedrig | in Schritt 17 modular neu aufgebaut |
 | `/impressum` | Rechtliche Anbieterangaben | `/impressum` | KEEP | keiner | niedrig | bleibt aktiv |
@@ -30,15 +34,15 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 
 | Aktuelle Route | Aktueller Zweck | Zukuenftige Zielroute | Aktion | Redirect-Typ | SEO-Risiko | Aktivierung |
 | --- | --- | --- | --- | --- | --- | --- |
-| `/demos/handwerker` | Fiktive Handwerker-Demo, noindex | `/praxisbeispiele` oder entfernen | REMOVE AFTER MIGRATION | optional 301 spaeter | niedrig | nach Demo-/Praxisbeispiel-Entscheidung |
-| `/demos/kosmetik` | Fiktive Kosmetik-Demo, noindex | `/praxisbeispiele` oder entfernen | REMOVE AFTER MIGRATION | optional 301 spaeter | niedrig | nach Demo-/Praxisbeispiel-Entscheidung |
-| `/demos/lokaler-dienstleister` | Fiktive Dienstleister-Demo, noindex | `/praxisbeispiele` oder entfernen | REMOVE AFTER MIGRATION | optional 301 spaeter | niedrig | nach Demo-/Praxisbeispiel-Entscheidung |
+| `/demos/handwerker` | Fiktive Handwerker-Demo, noindex | `/praxisbeispiele` oder entfernen | KEEP TEMPORARILY / REMOVE AFTER MIGRATION | optional 301 spaeter | niedrig | nach Demo-/Praxisbeispiel-Entscheidung |
+| `/demos/kosmetik` | Fiktive Kosmetik-Demo, noindex | `/praxisbeispiele` oder entfernen | KEEP TEMPORARILY / REMOVE AFTER MIGRATION | optional 301 spaeter | niedrig | nach Demo-/Praxisbeispiel-Entscheidung |
+| `/demos/lokaler-dienstleister` | Fiktive Dienstleister-Demo, noindex | `/praxisbeispiele` oder entfernen | KEEP TEMPORARILY / REMOVE AFTER MIGRATION | optional 301 spaeter | niedrig | nach Demo-/Praxisbeispiel-Entscheidung |
 
 ## Geplante Zielrouten
 
 | Zielroute | Status | Quelle | Hinweis |
 | --- | --- | --- | --- |
-| `/` | bestehend, spaeter neu bauen | aktuelle Startseite | keine Inhalte in diesem Schritt ersetzt |
+| `/` | aktiv | aktuelle Startseite | beibehalten |
 | `/loesungen` | aktiv, live verlinkt | `/leistungen` und Startseiten-Loesungslogik | buendelt die drei Loesungswelten ohne Preislisten- oder Produktkatalog-Logik |
 | `/praxisbeispiele` | aktiv, live verlinkt | `/demos`, `/referenzen` | buendelt echtes Praxisprojekt und klar gekennzeichnete Demo-Konzepte |
 | `/praxisbeispiele/salon-karola` | aktiv, gezielt verlinkt | Salon-Karola-Inhalte | echte Detail-Fallstudie ohne Redirect-Migration |
@@ -191,10 +195,49 @@ Nicht geaendert:
 - `api/leads.js`, Resend, Environment-Variablen, Empfaengerlogik, Consent, Tracking, Sitemap, Robots und globale SEO-Struktur wurden nicht umgebaut.
 - Startseite, `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/leistungen`, `/demos`, `/referenzen`, Preise und Pakete bleiben unveraendert.
 
+## Update Schritt 18: Gesamtintegration und Legacy-Routenpruefung
+
+Die Gesamtintegration der neuen Hauptstruktur wurde geprueft und in `docs/STRUKTIVA-INTEGRATION-AND-LEGACY-ROUTE-REVIEW.md` dokumentiert.
+
+Geprueft wurden:
+
+- Header- und Mobile-Navigation
+- Footer und Kontaktwege
+- interne CTAs
+- Breadcrumbs
+- `routeConfig.js` und `pageRegistry.jsx`
+- Meta-Daten und Canonicals
+- Sitemap und Robots
+- Vercel-Rewrites fuer Demo-Unterseiten
+- Legacy-Routen `/leistungen`, `/pakete`, `/demos` und `/referenzen`
+- Demo-Unterseiten `/demos/handwerker`, `/demos/kosmetik` und `/demos/lokaler-dienstleister`
+
+Ergebnis:
+
+- Die neuen Hauptseiten sind aktiv, intern erreichbar und indexierbar.
+- Der Footer enthaelt jetzt auch den vorhandenen WhatsApp-Kontakt.
+- Die statischen Demo-Unterseiten verwenden die verbindliche Firmenbezeichnung `STRUKTIVA Digitale Unternehmensberatung`.
+- `/leistungen`, `/pakete`, `/demos` und `/referenzen` bleiben ohne Redirect aktiv.
+- Die Sitemap wurde bewusst nicht geaendert und enthaelt die neuen Hauptseiten noch nicht.
+- Robots wurden bewusst nicht geaendert.
+- Vercel-Rewrites fuer statische Demo-Unterseiten bleiben bestehen.
+
+Aktualisierte Legacy-Empfehlung:
+
+| Route | Empfehlung | Bedingung vor Aenderung |
+| --- | --- | --- |
+| `/leistungen` | vorerst behalten, spaeter Inhalte in `/loesungen` ueberfuehren und 301 pruefen | Inhalt, SEO, Sitemap, Canonical und interne Links klaeren |
+| `/pakete` | vorerst behalten, spaeter neu bauen oder in passende Angebotsstruktur ueberfuehren | Preis- und Paketstrategie klaeren |
+| `/demos` | vorerst behalten, spaeter moeglichst auf `/praxisbeispiele` fuehren | Demo-Strategie und direkte Demo-Links klaeren |
+| `/referenzen` | vorerst behalten, spaeter auf `/praxisbeispiele` fuehren | Alias-/Canonical-Entscheidung nach `/demos` |
+| `/demos/handwerker` | vorerst behalten, spaeter entfernen oder redirecten | Demo-Unterseiten-Strategie klaeren |
+| `/demos/kosmetik` | vorerst behalten, spaeter entfernen oder redirecten | Demo-Unterseiten-Strategie klaeren |
+| `/demos/lokaler-dienstleister` | vorerst behalten, spaeter entfernen oder redirecten | Demo-Unterseiten-Strategie klaeren |
+
 ## Umsetzungshinweise fuer den naechsten Schritt
 
-- Neue Zielseiten erst bauen, dann Navigation und Sitemap umstellen.
-- `/digital-check` ist jetzt gebaut und darf als Informationsroute verlinkt bleiben; Anfrage-CTAs muessen weiterhin bewusst auf `/kontakt#lead-form` fuehren.
-- `/ueber-uns` ist jetzt modular neu aufgebaut; weitere Route-Entscheidungen betreffen vor allem `/kontakt`, `/leistungen`, `/demos`, `/referenzen` und `/pakete`.
+- Neue Zielseiten sind gebaut; der naechste sinnvolle Schritt ist eine kontrollierte Sitemap-/SEO-/Legacy-Migration.
+- `/digital-check` ist gebaut und darf als Informationsroute verlinkt bleiben; Anfrage-CTAs muessen weiterhin bewusst auf `/kontakt#lead-form` fuehren.
+- `/ueber-uns` und `/kontakt` sind modular neu aufgebaut; weitere Route-Entscheidungen betreffen vor allem `/leistungen`, `/pakete`, `/demos`, `/referenzen` und die Demo-Unterseiten.
 - `/leistungen`, `/pakete`, `/demos` und `/referenzen` nicht ohne Redirect-Plan loeschen.
 - Vercel-Rewrites fuer `/demos/*` erst entfernen, wenn externe Demo-Links nicht mehr gebraucht werden oder Redirects aktiv sind.

@@ -38,6 +38,9 @@ export default function Footer() {
           <address>
             <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
             <a href={contactDetails.phoneHref}>{contactDetails.phoneLabel}</a>
+            <a href={contactDetails.whatsappHref} target="_blank" rel="noreferrer">
+              WhatsApp {contactDetails.whatsappLabel}
+            </a>
             <span>{contactDetails.addressLine1}</span>
             <span>{contactDetails.addressLine2}</span>
           </address>
