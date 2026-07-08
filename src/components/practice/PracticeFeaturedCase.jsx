@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 import { practiceLabels } from './PracticeTransparency.jsx'
+import { salonKarolaCasePath } from '../case-study/salonKarolaCaseData.js'
 
 const salonKarolaUrl = 'https://salonkarola.de/'
 
@@ -81,11 +82,14 @@ export default function PracticeFeaturedCase() {
             </p>
           </div>
           <div className="struktiva-practice-featured__actions">
+            <a href={salonKarolaCasePath}>
+              <span>Projekt im Detail ansehen</span>
+              <ArrowRight aria-hidden="true" />
+            </a>
             <a href={salonKarolaUrl} target="_blank" rel="noopener noreferrer">
-              <span>Website ansehen</span>
+              <span>Website von Salon Karola ansehen</span>
               <ExternalLink aria-hidden="true" />
             </a>
-            <span>Mehr zum Projekt folgt</span>
           </div>
         </motion.div>
         <motion.div

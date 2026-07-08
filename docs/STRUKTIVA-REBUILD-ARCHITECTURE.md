@@ -1542,3 +1542,129 @@ Es wurden keine horizontalen Overflows und keine Console Errors festgestellt.
 - Einzelne alte Texte in nicht migrierten statischen Demo-Dateien wurden in diesem Schritt nicht bereinigt.
 - CSS liegt weiterhin global in `src/styles.css`.
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+
+## 30. Update Schritt 14: Salon-Karola-Detailcase
+
+Stand nach Schritt 14: `/praxisbeispiele/salon-karola` ist als echte Detail-Fallstudie aktiv. Die Seite erweitert die bisherige Salon-Karola-Kurzfassung zu einer ausfuehrlichen Projektdokumentation mit strategischer Einordnung.
+
+### Neue Route und Module
+
+Neue Dateien:
+
+- `src/pages/SalonKarolaCaseStudyPage.jsx`
+- `src/components/case-study/salonKarolaCaseData.js`
+- `src/components/case-study/CaseStudyHero.jsx`
+- `src/components/case-study/CaseStudyContext.jsx`
+- `src/components/case-study/CaseStudySystemMap.jsx`
+- `src/components/case-study/CaseStudyModules.jsx`
+- `src/components/case-study/CaseStudyDevelopmentJourney.jsx`
+- `src/components/case-study/CaseStudyMethodOutcome.jsx`
+- `src/components/case-study/CaseStudyCta.jsx`
+
+Geaenderte Dateien:
+
+- `src/routing/pageRegistry.jsx`
+- `src/routing/routeConfig.js`
+- `src/components/home/HomeCaseStudySection.jsx`
+- `src/components/practice/PracticeFeaturedCase.jsx`
+- `src/styles.css`
+
+`/praxisbeispiele/salon-karola` ist in `pageRegistry` registriert und besitzt eigene aktive Meta-Daten:
+
+- Title: `Salon Karola Praxisbeispiel | STRUKTIVA`
+- Description: Praxisbeispiel von STRUKTIVA: Wie bei Salon Karola Website, Sichtbarkeit, Kundenkontakt, Kundenbindung und digitale Ablaeufe schrittweise verbunden wurden.
+- Canonical: `/praxisbeispiele/salon-karola`
+- Robots: index, follow
+
+### Seitenstruktur
+
+Die Detailseite besteht aus:
+
+1. Breadcrumb `Start -> Praxisbeispiele -> Salon Karola`
+2. Hero mit Label `Echtes Praxisprojekt`, Eyebrow `Salon Karola · Calw-Wimberg`, H1 und zwei CTAs
+3. Projektkontext `Die Aufgabe war groesser als eine neue Website.`
+4. respektvoller Ausgangslage `Nicht alles neu. Sondern das Richtige sinnvoll weiterentwickeln.`
+5. Systemkarte mit `id="system"`
+6. ausfuehrlicher Baustein-Dramaturgie in vier Ebenen
+7. Entwicklungsreise ohne erfundene Zeitangaben
+8. STRUKTIVA-Methode direkt am Projekt erklaert
+9. Ergebnisabschnitt ohne Erfolgszahlen
+10. Realitaetsabschnitt zu weiterentwickelbaren digitalen Systemen
+11. uebertragbarer Gedanke fuer andere Unternehmen
+12. Abschluss-CTA zum bestehenden Kontaktweg
+
+### Sechs Systembereiche
+
+Die Seite zeigt die belegbaren Bereiche:
+
+1. Website und digitale Praesenz
+2. Sichtbarkeit und Bewertungswege
+3. Kundenkontakt
+4. Kundenverwaltung
+5. Digitale Kundenkarte und Bonusstruktur
+6. Interne digitale Ablaeufe
+
+Die Bereiche werden nicht als sechs gleichfoermige Karten dargestellt, sondern in Ebenen:
+
+- oeffentliche digitale Ebene
+- Kontakt- und Datenebene
+- Kundenbindungsebene
+- interne Ebene
+
+### Breadcrumb und externe Links
+
+Der Breadcrumb ist semantisch als `nav aria-label="Breadcrumb"` mit geordneter Liste umgesetzt. `Start` fuehrt auf `/`, `Praxisbeispiele` auf `/praxisbeispiele`, die aktuelle Seite ist nicht verlinkt.
+
+Die externe Salon-Karola-Website ist mit dem Linktext `Website von Salon Karola ansehen` eingebunden:
+
+- `https://salonkarola.de/`
+
+Externe Links nutzen `target="_blank"` und `rel="noopener noreferrer"`.
+
+### Linkmigrationen
+
+Nach erfolgreichem Aufbau wurden nur konkrete Salon-Karola-Links umgestellt:
+
+- `src/components/practice/PracticeFeaturedCase.jsx`: neuer Link `Projekt im Detail ansehen` -> `/praxisbeispiele/salon-karola`
+- `src/components/home/HomeCaseStudySection.jsx`: CTA `Praxisbeispiel ansehen` -> `/praxisbeispiele/salon-karola`
+
+Allgemeine Praxisbeispiel-Links bleiben unveraendert auf `/praxisbeispiele`:
+
+- Header/Navigation `Praxisbeispiele`
+- Home-Hero-CTA `Praxisbeispiel ansehen`
+- SolutionsPage allgemeiner Praxisbeispiel-CTA
+- `currentNavigation.secondaryCta`
+- Footer/Primaernavigation
+
+### Bewusst nicht geaendert
+
+- `/digital-check` wurde nicht gebaut.
+- `/demos` und `/referenzen` bleiben aktiv und ohne Redirect.
+- `/leistungen` bleibt aktiv und ohne Redirect.
+- Preise und Pakete wurden nicht veraendert.
+- Kontaktformular, `api/leads.js`, Resend, Consent, Tracking-IDs, Sitemap und Robots wurden nicht veraendert.
+- Es wurden keine Fake-Screenshots, keine erfundenen Erfolgszahlen, keine Testimonials, keine Ranking- oder Bewertungssteigerungen und keine Bonusregeln ergaenzt.
+- Strukturierte Daten wurden nicht erweitert, weil keine route-spezifische Schema-Architektur vorhanden ist.
+
+### Motion und Mobile
+
+Die Seite nutzt die bestehende ruhige Motion-Sprache:
+
+- Hero-Reveal
+- zeichnende Verbindungslinien in Hero und Systemkarte
+- Abschnitts-Reveals
+- schrittweise Entwicklungsreise
+- dezente Button-Hover-Zustaende
+
+Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerhalb der Case-Study-Seite deaktiviert. Die Systemvisualisierung bleibt inhaltlich auch ohne Linien verstaendlich.
+
+Mobile wird die Systemkarte vertikal dargestellt. Es wird keine horizontale radiale Grafik erzwungen.
+
+### Verbleibende Schulden nach Schritt 14
+
+- `/digital-check` bleibt weiterhin eine geplante Route.
+- `/demos` und `/referenzen` brauchen spaeter eine SEO-, Sitemap- und Redirect-Entscheidung.
+- `/ueber-uns` und `/kontakt` sind noch nicht neu aufgebaut.
+- Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht migriert.
+- CSS liegt weiterhin global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.

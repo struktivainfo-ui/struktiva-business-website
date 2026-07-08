@@ -1,6 +1,7 @@
 import HomePage from '../pages/HomePage.jsx'
 import SolutionsPage from '../pages/SolutionsPage.jsx'
 import PracticeExamplesPage from '../pages/PracticeExamplesPage.jsx'
+import SalonKarolaCaseStudyPage from '../pages/SalonKarolaCaseStudyPage.jsx'
 import ServicesPage from '../pages/ServicesPage.jsx'
 import PackagesPage from '../pages/PackagesPage.jsx'
 import DemosPage from '../pages/DemosPage.jsx'
@@ -19,6 +20,7 @@ export const activePageComponents = {
   '/ueber-uns': AboutPage,
   '/loesungen': SolutionsPage,
   '/praxisbeispiele': PracticeExamplesPage,
+  '/praxisbeispiele/salon-karola': SalonKarolaCaseStudyPage,
   '/leistungen': ServicesPage,
   '/pakete': PackagesPage,
   '/referenzen': ReferencesPage,

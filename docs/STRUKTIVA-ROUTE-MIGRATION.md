@@ -2,7 +2,7 @@
 
 Stand: 2026-07-07
 
-Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 13 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen` und `/praxisbeispiele` sind jetzt als echte Zielseiten aktiv und in der Navigation verlinkt; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
+Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 14 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele` und `/praxisbeispiele/salon-karola` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
 
 ## Grundprinzipien
 
@@ -41,7 +41,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/` | bestehend, spaeter neu bauen | aktuelle Startseite | keine Inhalte in diesem Schritt ersetzt |
 | `/loesungen` | aktiv, live verlinkt | `/leistungen` und Startseiten-Loesungslogik | buendelt die drei Loesungswelten ohne Preislisten- oder Produktkatalog-Logik |
 | `/praxisbeispiele` | aktiv, live verlinkt | `/demos`, `/referenzen` | buendelt echtes Praxisprojekt und klar gekennzeichnete Demo-Konzepte |
-| `/praxisbeispiele/salon-karola` | geplant, noch nicht live verlinkt | Salon-Karola-Inhalte | Detailseite erst bauen, wenn Content final ist |
+| `/praxisbeispiele/salon-karola` | aktiv, gezielt verlinkt | Salon-Karola-Inhalte | echte Detail-Fallstudie ohne Redirect-Migration |
 | `/digital-check` | geplant, noch nicht live verlinkt | Formularlogik aus `/kontakt` | primaerer CTA der neuen Struktur |
 | `/ueber-uns` | bestehend | aktuelle Ueber-uns-Seite | spaeter textlich neu ausrichten |
 | `/kontakt` | bestehend | aktuelle Kontaktseite | funktional stabil halten |
@@ -85,6 +85,30 @@ Nicht geaendert:
 - `/praxisbeispiele/salon-karola` wurde nicht gebaut.
 - `/digital-check` wurde nicht gebaut.
 - Sitemap, Robots, globale Canonicals und globale SEO-Struktur wurden in Schritt 13 nicht umgebaut.
+
+## Update Schritt 14: `/praxisbeispiele/salon-karola` aktiviert
+
+Die Route `/praxisbeispiele/salon-karola` ist jetzt als eigenstaendige Detail-Fallstudie gebaut und im Routing registriert. Sie besitzt eigene Meta-Daten, eine eigene Canonical-URL und wird indexierbar ausgeliefert.
+
+Gezielte Links wurden kontrolliert umgestellt:
+
+- Praxisbeispiele-Seite, Salon-Karola-Featured-Case: `Projekt im Detail ansehen` -> `/praxisbeispiele/salon-karola`
+- Startseite, konkrete Salon-Karola-Fallstudie: `Praxisbeispiel ansehen` -> `/praxisbeispiele/salon-karola`
+
+Allgemeine Links bleiben auf `/praxisbeispiele`:
+
+- Header Desktop/Mobile und Footer `Praxisbeispiele`
+- Home-Hero-CTA `Praxisbeispiel ansehen`
+- allgemeiner SolutionsPage-Praxisbeispiel-CTA
+- `currentNavigation.secondaryCta`
+
+Nicht geaendert:
+
+- `/demos` bleibt aktiv, erreichbar und ohne Redirect.
+- `/referenzen` bleibt aktiv, erreichbar und ohne Redirect.
+- `/leistungen` bleibt aktiv, erreichbar und ohne Redirect.
+- `/digital-check` wurde nicht gebaut.
+- Sitemap, Robots, globale Canonicals und globale SEO-Struktur wurden in Schritt 14 nicht umgebaut.
 
 ## Umsetzungshinweise fuer den naechsten Schritt
 

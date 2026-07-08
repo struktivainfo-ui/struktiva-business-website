@@ -9508,3 +9508,888 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
     transform: none !important;
   }
 }
+
+/* STRUKTIVA Salon Karola case study v14 */
+.struktiva-salon-case-page {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 4%, rgba(168, 127, 42, 0.12), transparent 26%),
+    radial-gradient(circle at 86% 24%, rgba(82, 111, 102, 0.1), transparent 24%),
+    linear-gradient(180deg, #ffffff 0%, #f7f5ef 38%, #ffffff 74%, #f4f6f3 100%);
+  color: var(--text-primary, #111111);
+}
+
+.struktiva-salon-case-page > section {
+  position: relative;
+  z-index: 1;
+}
+
+.struktiva-salon-eyebrow,
+.struktiva-salon-label,
+.struktiva-salon-module-group__head span,
+.struktiva-salon-module > p,
+.struktiva-salon-system-visual__node span,
+.struktiva-salon-method__flow span {
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.75rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.struktiva-salon-label {
+  display: inline-flex;
+  width: max-content;
+  border: 1px solid rgba(168, 127, 42, 0.32);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  padding: 0.55rem 0.75rem;
+}
+
+.struktiva-salon-hero {
+  padding: clamp(2.4rem, 4vw, 3.8rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem)) clamp(4.2rem, 7vw, 6.5rem);
+}
+
+.struktiva-salon-hero__inner,
+.struktiva-salon-context,
+.struktiva-salon-starting-point,
+.struktiva-salon-system__inner,
+.struktiva-salon-modules,
+.struktiva-salon-journey,
+.struktiva-salon-method__inner,
+.struktiva-salon-outcome,
+.struktiva-salon-reality,
+.struktiva-salon-transfer,
+.struktiva-salon-cta__inner {
+  width: min(100%, var(--container-wide, 1360px));
+  margin-inline: auto;
+}
+
+.struktiva-salon-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0 0 clamp(2rem, 4vw, 3.4rem);
+  padding: 0;
+  color: rgba(17, 17, 17, 0.58);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.struktiva-salon-breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.struktiva-salon-breadcrumb li:not(:last-child)::after {
+  content: "/";
+  color: rgba(168, 127, 42, 0.55);
+}
+
+.struktiva-salon-breadcrumb a {
+  color: rgba(17, 17, 17, 0.7);
+  text-decoration: none;
+}
+
+.struktiva-salon-breadcrumb [aria-current="page"] {
+  color: #111111;
+}
+
+.struktiva-salon-hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(430px, 0.86fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.struktiva-salon-hero__copy {
+  display: grid;
+  gap: 1rem;
+  max-width: 800px;
+}
+
+.struktiva-salon-hero h1 {
+  margin: 0;
+  color: #111111;
+  font-family: var(--site-font, "Manrope", "Segoe UI", sans-serif);
+  font-size: clamp(2.85rem, 5vw, 5.65rem);
+  font-weight: 920;
+  letter-spacing: 0;
+  line-height: 1.03;
+  text-wrap: balance;
+}
+
+.struktiva-salon-hero__lead,
+.struktiva-salon-section-grid p,
+.struktiva-salon-modules__intro p,
+.struktiva-salon-module p,
+.struktiva-salon-module li,
+.struktiva-salon-system__intro p,
+.struktiva-salon-cta p {
+  color: var(--text-secondary, #4a4a45);
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height: 1.72;
+}
+
+.struktiva-salon-hero__lead {
+  display: grid;
+  gap: 0.78rem;
+  max-width: 760px;
+}
+
+.struktiva-salon-hero__lead p,
+.struktiva-salon-section-grid p,
+.struktiva-salon-modules__intro p,
+.struktiva-salon-system__intro p,
+.struktiva-salon-module p,
+.struktiva-salon-module ul,
+.struktiva-salon-cta p {
+  margin: 0;
+}
+
+.struktiva-salon-hero__actions,
+.struktiva-salon-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 0.55rem;
+}
+
+.struktiva-salon-primary,
+.struktiva-salon-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.58rem;
+  min-height: 3.1rem;
+  border-radius: 999px;
+  padding: 0.9rem 1.16rem;
+  font-size: 0.94rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    transform var(--motion-base, 260ms) var(--motion-ease, ease),
+    border-color var(--motion-base, 260ms) var(--motion-ease, ease),
+    background var(--motion-base, 260ms) var(--motion-ease, ease);
+}
+
+.struktiva-salon-primary {
+  border: 1px solid #111111;
+  background: #111111;
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.16);
+}
+
+.struktiva-salon-secondary {
+  border: 1px solid rgba(17, 17, 17, 0.11);
+  background: rgba(255, 255, 255, 0.75);
+  color: #111111;
+}
+
+.struktiva-salon-primary:hover,
+.struktiva-salon-secondary:hover,
+.struktiva-salon-cta__text-link:hover {
+  transform: translateY(-2px);
+}
+
+.struktiva-salon-primary svg,
+.struktiva-salon-secondary svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.struktiva-salon-hero-visual {
+  position: relative;
+  min-height: clamp(31rem, 42vw, 39rem);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 60px 36px 52px 42px;
+  background:
+    radial-gradient(circle at 50% 43%, rgba(168, 127, 42, 0.22), transparent 24%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(241, 239, 231, 0.84));
+  box-shadow: 0 28px 80px rgba(53, 41, 16, 0.08);
+  overflow: hidden;
+}
+
+.struktiva-salon-hero-visual svg,
+.struktiva-salon-system-visual svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  stroke: rgba(168, 127, 42, 0.38);
+  stroke-linecap: round;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.struktiva-salon-hero-visual__core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: min(14rem, 42%);
+  min-height: 8.6rem;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  box-shadow: 0 18px 44px rgba(63, 48, 18, 0.1);
+}
+
+.struktiva-salon-hero-visual__core span,
+.struktiva-salon-hero-visual__core small {
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.struktiva-salon-hero-visual__core strong {
+  color: #111111;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.struktiva-salon-hero-visual ol,
+.struktiva-salon-system-visual ol,
+.struktiva-salon-question-list,
+.struktiva-salon-journey__steps,
+.struktiva-salon-module ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.struktiva-salon-hero-visual__step {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  gap: 0.36rem;
+  width: min(13rem, 34%);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 0.9rem;
+  box-shadow: 0 16px 34px rgba(63, 48, 18, 0.06);
+}
+
+.struktiva-salon-hero-visual__step span {
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.struktiva-salon-hero-visual__step strong {
+  font-size: 0.94rem;
+  font-weight: 900;
+  line-height: 1.16;
+}
+
+.struktiva-salon-hero-visual__step--1 {
+  left: 6%;
+  top: 14%;
+}
+
+.struktiva-salon-hero-visual__step--2 {
+  right: 6%;
+  top: 16%;
+}
+
+.struktiva-salon-hero-visual__step--3 {
+  left: 5%;
+  top: 61%;
+}
+
+.struktiva-salon-hero-visual__step--4 {
+  right: 6%;
+  top: 62%;
+}
+
+.struktiva-salon-hero-visual__step--5 {
+  left: 30%;
+  bottom: 6%;
+}
+
+.struktiva-salon-context,
+.struktiva-salon-starting-point,
+.struktiva-salon-journey,
+.struktiva-salon-outcome,
+.struktiva-salon-reality,
+.struktiva-salon-transfer {
+  padding: clamp(4.5rem, 8vw, 7rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+}
+
+.struktiva-salon-section-grid,
+.struktiva-salon-method__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(420px, 0.95fr);
+  gap: clamp(2rem, 5vw, 4.8rem);
+  align-items: start;
+}
+
+.struktiva-salon-section-grid > div,
+.struktiva-salon-section-grid > ol {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.struktiva-salon-case-page h2 {
+  margin: 0.8rem 0 0;
+  color: #111111;
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 920;
+  letter-spacing: 0;
+  line-height: 1.07;
+  text-wrap: balance;
+}
+
+.struktiva-salon-question-list {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.struktiva-salon-question-list li,
+.struktiva-salon-journey__steps li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  border-top: 1px solid rgba(168, 127, 42, 0.26);
+  padding-top: 0.9rem;
+}
+
+.struktiva-salon-question-list span,
+.struktiva-salon-journey__steps span {
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.75rem;
+  font-weight: 950;
+}
+
+.struktiva-salon-starting-point {
+  background:
+    radial-gradient(circle at 80% 18%, rgba(82, 111, 102, 0.09), transparent 26%),
+    linear-gradient(180deg, rgba(247, 245, 239, 0.7), rgba(255, 255, 255, 0.94));
+}
+
+.struktiva-salon-starting-point__statement {
+  align-self: stretch;
+  border-left: 1px solid rgba(168, 127, 42, 0.42);
+  padding-left: clamp(1.2rem, 3vw, 2rem);
+}
+
+.struktiva-salon-starting-point__statement p {
+  color: #111111;
+  font-size: clamp(1.35rem, 2.3vw, 2.15rem);
+  font-weight: 840;
+  line-height: 1.22;
+}
+
+.struktiva-salon-system {
+  padding: clamp(4.8rem, 8vw, 7rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+  background:
+    radial-gradient(circle at 50% 18%, rgba(216, 194, 138, 0.18), transparent 26%),
+    linear-gradient(155deg, #181816 0%, #222019 48%, #141414 100%);
+  color: var(--text-inverse, #f8f6ef);
+}
+
+.struktiva-salon-system__inner {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.struktiva-salon-system__intro {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 930px;
+}
+
+.struktiva-salon-system h2,
+.struktiva-salon-cta h2 {
+  color: #ffffff;
+}
+
+.struktiva-salon-system__intro p,
+.struktiva-salon-cta p {
+  color: rgba(248, 246, 239, 0.76);
+}
+
+.struktiva-salon-system-visual {
+  position: relative;
+  min-height: clamp(34rem, 52vw, 43rem);
+  border: 1px solid rgba(248, 246, 239, 0.12);
+  border-radius: 46px;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(168, 127, 42, 0.18), transparent 25%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+  overflow: hidden;
+}
+
+.struktiva-salon-system-visual__center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: min(15rem, 34%);
+  min-height: 9rem;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(216, 194, 138, 0.26);
+  border-radius: 34px;
+  background: rgba(20, 20, 19, 0.9);
+  text-align: center;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+}
+
+.struktiva-salon-system-visual__center span {
+  color: #ffffff;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  font-weight: 950;
+}
+
+.struktiva-salon-system-visual__center strong {
+  max-width: 11rem;
+  color: rgba(248, 246, 239, 0.68);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.struktiva-salon-system-visual__node {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  gap: 0.35rem;
+  width: min(15rem, 28%);
+  border: 1px solid rgba(248, 246, 239, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 1rem;
+}
+
+.struktiva-salon-system-visual__node strong {
+  color: rgba(248, 246, 239, 0.94);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.16;
+}
+
+.struktiva-salon-system-visual__node small {
+  color: rgba(248, 246, 239, 0.58);
+  font-size: 0.78rem;
+  font-weight: 760;
+}
+
+.struktiva-salon-system-visual__node--website {
+  left: 6%;
+  top: 12%;
+}
+
+.struktiva-salon-system-visual__node--visibility {
+  right: 6%;
+  top: 13%;
+}
+
+.struktiva-salon-system-visual__node--contact {
+  left: 5%;
+  top: 54%;
+}
+
+.struktiva-salon-system-visual__node--customers {
+  right: 5%;
+  top: 54%;
+}
+
+.struktiva-salon-system-visual__node--loyalty {
+  left: 18%;
+  bottom: 5%;
+}
+
+.struktiva-salon-system-visual__node--operations {
+  right: 18%;
+  bottom: 5%;
+}
+
+.struktiva-salon-modules {
+  padding: clamp(4.8rem, 8vw, 7.4rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+}
+
+.struktiva-salon-modules__intro {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 900px;
+}
+
+.struktiva-salon-module-groups {
+  display: grid;
+  gap: clamp(1.8rem, 4vw, 3.4rem);
+  margin-top: clamp(2.4rem, 6vw, 4.6rem);
+}
+
+.struktiva-salon-module-group {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.38fr) minmax(0, 1fr);
+  gap: clamp(1.2rem, 4vw, 3rem);
+  align-items: start;
+  border-top: 1px solid rgba(17, 17, 17, 0.09);
+  padding-top: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.struktiva-salon-module-group__head {
+  position: sticky;
+  top: 6.5rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.struktiva-salon-module-group__head h3 {
+  margin: 0;
+  color: #111111;
+  font-size: clamp(1.4rem, 2.4vw, 2.25rem);
+  font-weight: 920;
+  line-height: 1.1;
+}
+
+.struktiva-salon-module-group__items {
+  display: grid;
+  gap: 1rem;
+}
+
+.struktiva-salon-module {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.32fr) minmax(220px, 0.48fr) minmax(0, 0.56fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: clamp(1.15rem, 3vw, 1.8rem);
+  box-shadow: 0 16px 40px rgba(53, 41, 16, 0.05);
+}
+
+.struktiva-salon-module h4 {
+  margin: 0;
+  color: #111111;
+  font-size: clamp(1.18rem, 2vw, 1.65rem);
+  font-weight: 920;
+  line-height: 1.16;
+}
+
+.struktiva-salon-module ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.struktiva-salon-module li {
+  border: 1px solid rgba(17, 17, 17, 0.09);
+  border-radius: 999px;
+  background: rgba(247, 245, 239, 0.8);
+  padding: 0.5rem 0.72rem;
+  font-size: 0.84rem;
+  font-weight: 820;
+  line-height: 1.2;
+}
+
+.struktiva-salon-journey {
+  background:
+    radial-gradient(circle at 78% 24%, rgba(168, 127, 42, 0.12), transparent 27%),
+    linear-gradient(180deg, rgba(247, 245, 239, 0.8), rgba(255, 255, 255, 0.95));
+}
+
+.struktiva-salon-journey__steps {
+  counter-reset: journey;
+  position: relative;
+  display: grid;
+  gap: 0.86rem;
+}
+
+.struktiva-salon-journey__steps::before,
+.struktiva-salon-method__flow::before {
+  content: "";
+  position: absolute;
+  left: 1.35rem;
+  top: 1rem;
+  bottom: 1rem;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(168, 127, 42, 0.08), rgba(168, 127, 42, 0.48), rgba(168, 127, 42, 0.08));
+}
+
+.struktiva-salon-journey__steps li {
+  position: relative;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.struktiva-salon-journey__steps span,
+.struktiva-salon-method__flow span {
+  display: inline-grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid rgba(168, 127, 42, 0.3);
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.struktiva-salon-journey__steps p {
+  align-self: center;
+  color: #111111;
+  font-weight: 860;
+}
+
+.struktiva-salon-method {
+  padding: clamp(4.8rem, 8vw, 7.2rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+}
+
+.struktiva-salon-method__flow {
+  position: relative;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.struktiva-salon-method__flow article {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.struktiva-salon-method__flow h3 {
+  margin: 0;
+  color: #111111;
+  font-size: clamp(1.16rem, 2vw, 1.58rem);
+  font-weight: 920;
+}
+
+.struktiva-salon-method__flow p {
+  margin: 0.35rem 0 0;
+  color: var(--text-secondary, #4a4a45);
+  line-height: 1.65;
+}
+
+.struktiva-salon-outcome__note {
+  border-left: 1px solid rgba(168, 127, 42, 0.42);
+  padding-left: clamp(1.2rem, 3vw, 2rem);
+}
+
+.struktiva-salon-outcome__note p {
+  color: #111111;
+  font-size: clamp(1.18rem, 2vw, 1.6rem);
+  font-weight: 840;
+  line-height: 1.28;
+}
+
+.struktiva-salon-reality {
+  background:
+    radial-gradient(circle at 12% 22%, rgba(82, 111, 102, 0.11), transparent 26%),
+    linear-gradient(180deg, rgba(247, 245, 239, 0.78), rgba(255, 255, 255, 0.94));
+}
+
+.struktiva-salon-transfer {
+  background: #ffffff;
+}
+
+.struktiva-salon-cta {
+  padding: clamp(4.8rem, 8vw, 7.5rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+  background:
+    radial-gradient(circle at 18% 14%, rgba(216, 194, 138, 0.18), transparent 30%),
+    linear-gradient(155deg, #171714 0%, #232119 48%, #141414 100%);
+  color: var(--text-inverse, #f8f6ef);
+}
+
+.struktiva-salon-cta__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: end;
+}
+
+.struktiva-salon-cta__inner > div:first-child {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 960px;
+}
+
+.struktiva-salon-cta__actions {
+  display: grid;
+  justify-items: end;
+  margin-top: 0;
+}
+
+.struktiva-salon-cta .struktiva-salon-primary {
+  border-color: rgba(248, 246, 239, 0.86);
+  background: #ffffff;
+  color: #111111;
+}
+
+.struktiva-salon-cta__text-link {
+  color: rgba(248, 246, 239, 0.78);
+  font-size: 0.92rem;
+  font-weight: 850;
+  text-decoration: underline;
+  text-underline-offset: 0.28rem;
+  transition: transform var(--motion-base, 260ms) var(--motion-ease, ease);
+}
+
+.struktiva-salon-case-page a:focus-visible {
+  outline: 2px solid rgba(168, 127, 42, 0.9);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1180px) {
+  .struktiva-salon-hero__layout,
+  .struktiva-salon-section-grid,
+  .struktiva-salon-method__inner,
+  .struktiva-salon-cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-salon-hero__copy,
+  .struktiva-salon-modules__intro {
+    max-width: 920px;
+  }
+
+  .struktiva-salon-hero-visual,
+  .struktiva-salon-system-visual {
+    width: 100%;
+    max-width: 920px;
+  }
+
+  .struktiva-salon-cta__actions {
+    justify-items: start;
+  }
+}
+
+@media (max-width: 980px) {
+  .struktiva-salon-module-group {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-salon-module-group__head {
+    position: static;
+  }
+
+  .struktiva-salon-module {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .struktiva-salon-hero,
+  .struktiva-salon-context,
+  .struktiva-salon-starting-point,
+  .struktiva-salon-system,
+  .struktiva-salon-modules,
+  .struktiva-salon-journey,
+  .struktiva-salon-method,
+  .struktiva-salon-outcome,
+  .struktiva-salon-reality,
+  .struktiva-salon-transfer,
+  .struktiva-salon-cta {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .struktiva-salon-hero h1 {
+    font-size: clamp(2.08rem, 8.9vw, 2.72rem);
+    line-height: 1.08;
+  }
+
+  .struktiva-salon-case-page h2 {
+    font-size: clamp(1.82rem, 8vw, 2.55rem);
+    line-height: 1.1;
+  }
+
+  .struktiva-salon-hero__actions,
+  .struktiva-salon-cta__actions {
+    display: grid;
+    width: 100%;
+  }
+
+  .struktiva-salon-primary,
+  .struktiva-salon-secondary,
+  .struktiva-salon-cta__text-link {
+    width: 100%;
+  }
+
+  .struktiva-salon-cta__text-link {
+    text-align: center;
+  }
+
+  .struktiva-salon-hero-visual,
+  .struktiva-salon-system-visual {
+    min-height: auto;
+    border-radius: 30px;
+    padding: 1rem;
+  }
+
+  .struktiva-salon-hero-visual svg,
+  .struktiva-salon-system-visual svg {
+    display: none;
+  }
+
+  .struktiva-salon-hero-visual__core,
+  .struktiva-salon-hero-visual__step,
+  .struktiva-salon-system-visual__center,
+  .struktiva-salon-system-visual__node {
+    position: static;
+    width: 100%;
+    transform: none;
+  }
+
+  .struktiva-salon-hero-visual ol,
+  .struktiva-salon-system-visual ol {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.85rem;
+  }
+
+  .struktiva-salon-hero-visual__step,
+  .struktiva-salon-system-visual__node {
+    border-radius: 20px;
+  }
+
+  .struktiva-salon-system-visual__center {
+    min-height: 7rem;
+    margin-bottom: 1rem;
+  }
+
+  .struktiva-salon-breadcrumb ol {
+    margin-bottom: 1.6rem;
+    font-size: 0.82rem;
+  }
+
+  .struktiva-salon-starting-point__statement,
+  .struktiva-salon-outcome__note {
+    padding-left: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .struktiva-salon-case-page *,
+  .struktiva-salon-case-page *::before,
+  .struktiva-salon-case-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .struktiva-salon-primary:hover,
+  .struktiva-salon-secondary:hover,
+  .struktiva-salon-cta__text-link:hover {
+    transform: none !important;
+  }
+}

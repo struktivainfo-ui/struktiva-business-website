@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, ExternalLink } from 'lucide-react'
-import { currentNavigation } from '../../routing/routeConfig.js'
+import { salonKarolaCasePath } from '../case-study/salonKarolaCaseData.js'
 
 const salonKarolaUrl = 'https://salonkarola.de/'
 
@@ -113,10 +113,6 @@ function CaseStudySystemMap({ reducedMotion }) {
 
 export default function HomeCaseStudySection() {
   const reducedMotion = useReducedMotion()
-  const demoLink =
-    currentNavigation.primary.find((item) => item.transitionFor === '/praxisbeispiele') ||
-    currentNavigation.primary.find((item) => item.href === '/demos') ||
-    currentNavigation.secondaryCta
 
   return (
     <section className="struktiva-home-case-study" aria-labelledby="struktiva-home-case-title">
@@ -247,7 +243,7 @@ export default function HomeCaseStudySection() {
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <a className="struktiva-case-actions__primary" href={demoLink.href}>
+          <a className="struktiva-case-actions__primary" href={salonKarolaCasePath}>
             <span>Praxisbeispiel ansehen</span>
             <ArrowRight aria-hidden="true" />
           </a>

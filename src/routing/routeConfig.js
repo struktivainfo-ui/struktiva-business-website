@@ -27,6 +27,12 @@ export const ACTIVE_ROUTE_META = {
       'Entdecken Sie echte Praxisprojekte und klar gekennzeichnete Demo-Konzepte von STRUKTIVA für Sichtbarkeit, Kundenführung und digitale Abläufe.',
     canonicalPath: '/praxisbeispiele',
   },
+  '/praxisbeispiele/salon-karola': {
+    title: 'Salon Karola Praxisbeispiel | STRUKTIVA',
+    description:
+      'Praxisbeispiel von STRUKTIVA: Wie bei Salon Karola Website, Sichtbarkeit, Kundenkontakt, Kundenbindung und digitale Abläufe schrittweise verbunden wurden.',
+    canonicalPath: '/praxisbeispiele/salon-karola',
+  },
   '/pakete': {
     title: 'Pakete & Betreuung - STRUKTIVA Digitale Unternehmensberatung',
     description:
@@ -162,7 +168,7 @@ export const FUTURE_ROUTE_PLAN = [
   { path: '/', role: 'Startseite für STRUKTIVA Digitale Unternehmensberatung', status: 'replace-existing-route-later' },
   { path: '/loesungen', role: 'Drei Lösungswelten bündeln', status: 'active-step-12' },
   { path: '/praxisbeispiele', role: 'Referenzen und echte Praxisbeweise bündeln', status: 'active-step-13' },
-  { path: '/praxisbeispiele/salon-karola', role: 'Detail-Praxisbeispiel Salon Karola', status: 'planned' },
+  { path: '/praxisbeispiele/salon-karola', role: 'Detail-Praxisbeispiel Salon Karola', status: 'active-step-14' },
   { path: '/digital-check', role: 'Primärer Lead-Einstieg', status: 'planned' },
   { path: '/ueber-uns', role: 'Haltung, Menschen und Arbeitsweise', status: 'keep-and-rebuild-content-later' },
   { path: '/kontakt', role: 'Direkte Kontaktwege und alternative Anfrage', status: 'keep' },
