@@ -2425,7 +2425,117 @@ Nicht veraendert wurden:
 - Alte Legacy-Preisquellen existieren weiterhin im Legacy-Code, werden aber auf `/leistungen` nicht mehr gerendert.
 - Soforthilfe-Namen und -Umfaenge sollten spaeter fachlich bereinigt werden.
 - Der alte `Digitale Kurzcheck` muss spaeter gegen die neue `/digital-check`-Positionierung eingeordnet werden.
-- Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht final migriert.
-- `/demos`, `/referenzen` und Demo-Unterseiten brauchen weiterhin eine eigene Migrationsentscheidung.
+- Sitemap und die ersten Legacy-Indexredirects wurden in Schritt 21 kontrolliert migriert.
+- Demo-Unterseiten brauchen weiterhin eine spaetere fachliche Strategie, bleiben aber aktuell geschuetzt.
+- CSS liegt weiterhin global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+
+## 36. Update Schritt 21: Legacy- und SEO-Migration fuer Demo-Indexrouten
+
+Stand nach Schritt 21: Die alten Indexrouten `/demos` und `/referenzen` wurden kontrolliert auf die neue Praxisbeispiele-Uebersicht `/praxisbeispiele` migriert. Die Demo-Unterseiten bleiben erhalten.
+
+### Ausgangsbefund
+
+Vor der Migration wurde geprueft:
+
+- `/demos` renderte die alte Legacy-Seite `Referenzen & Demos`.
+- `/referenzen` renderte dieselbe Legacy-Seite und canonicalisierte auf `/demos`.
+- `/praxisbeispiele` ist die neue aktive Uebersicht fuer echte Praxisbeispiele und klar gekennzeichnete Demo-Konzepte.
+- `/praxisbeispiele` verlinkt weiterhin direkt auf die vorhandenen Demo-Unterseiten.
+- Vorhandene statische Demo-Unterseiten:
+  - `/demos/handwerker`
+  - `/demos/kosmetik`
+  - `/demos/lokaler-dienstleister`
+
+### Geaenderte Dateien
+
+- `vercel.json`
+- `public/sitemap.xml`
+- `src/App.jsx`
+- `src/routing/routeConfig.js`
+- `src/routing/pageRegistry.jsx`
+- `docs/STRUKTIVA-REBUILD-ARCHITECTURE.md`
+- `docs/STRUKTIVA-ROUTE-MIGRATION.md`
+- `docs/STRUKTIVA-INTEGRATION-AND-LEGACY-ROUTE-REVIEW.md`
+
+Es wurden keine neuen produktiven Dateien erstellt.
+
+### Serverseitige Redirects
+
+`vercel.json` enthaelt jetzt zwei exakte permanente Redirects:
+
+- `/demos` -> `/praxisbeispiele`
+- `/referenzen` -> `/praxisbeispiele`
+
+Es wurde keine Wildcard-Regel fuer `/demos/*` angelegt. Dadurch bleiben die vorhandenen Rewrites fuer die Demo-Unterseiten erhalten:
+
+- `/demos/handwerker` -> `/demos/handwerker/index.html`
+- `/demos/kosmetik` -> `/demos/kosmetik/index.html`
+- `/demos/lokaler-dienstleister` -> `/demos/lokaler-dienstleister/index.html`
+
+### Clientseitige Absicherung
+
+Da die App eine manuelle SPA-Routing-Architektur ohne neue Router-Library nutzt, wurde eine kleine zentrale Redirect-Map ergaenzt:
+
+- `LEGACY_ROUTE_REDIRECTS` in `src/routing/routeConfig.js`
+- `getLegacyRedirectTarget(pathname)` fuer `/demos` und `/referenzen`
+- Nutzung in `src/App.jsx`, damit alte Indexrouten clientseitig sofort `/praxisbeispiele` rendern und per `history.replaceState` die URL ersetzen
+
+`src/routing/pageRegistry.jsx` registriert `/demos` und `/referenzen` nicht mehr als aktive Inhaltsseiten. Die Demo-Unterseiten bleiben registriert.
+
+### Sitemap
+
+`public/sitemap.xml` enthaelt jetzt:
+
+- `https://struktiva.de/`
+- `https://struktiva.de/loesungen`
+- `https://struktiva.de/leistungen`
+- `https://struktiva.de/pakete`
+- `https://struktiva.de/praxisbeispiele`
+- `https://struktiva.de/praxisbeispiele/salon-karola`
+- `https://struktiva.de/digital-check`
+- `https://struktiva.de/ueber-uns`
+- `https://struktiva.de/kontakt`
+- `https://struktiva.de/datenschutz`
+- `https://struktiva.de/impressum`
+
+Entfernt:
+
+- `https://struktiva.de/demos`
+- `https://struktiva.de/referenzen` bleibt weiterhin nicht enthalten
+
+Demo-Unterseiten wurden nicht in die Sitemap aufgenommen, weil die statischen HTML-Dateien `noindex, nofollow` verwenden.
+
+### Robots und Canonicals
+
+`public/robots.txt` wurde geprueft und nicht veraendert. Der Sitemap-Verweis lautet weiterhin:
+
+- `https://struktiva.de/sitemap.xml`
+
+Canonicals der aktiven Seiten wurden im Browsercheck geprueft. `/loesungen` und `/leistungen` behalten unterschiedliche Self-Canonicals.
+
+### Geschuetzte Kernfunktionen
+
+Nicht veraendert wurden:
+
+- Kontaktformular
+- `api/leads.js`
+- Resend
+- `src/cookieConsent.jsx`
+- Google Analytics
+- Google Ads
+- Pinterest Tag
+- Tracking-IDs
+- Preise
+- Pakete
+- `/leistungen`
+- `/pakete`
+- Demo-Unterseiten
+
+### Verbleibende Schulden nach Schritt 21
+
+- Die Demo-Unterseiten bleiben noindex und dienen weiter als Beispielseiten; ihre langfristige Strategie ist offen.
+- Lokale Tests koennen Vercel-Redirects nur simulieren; echte serverseitige Redirect-Statuscodes sind erst nach Deployment live verifizierbar.
+- `src/legacy/legacyContent.jsx` enthaelt weiterhin alte Legacy-Links und alte Demo-/Referenz-Komponenten, die aber nicht mehr oeffentlich fuer `/demos` und `/referenzen` gerendert werden.
 - CSS liegt weiterhin global in `src/styles.css`.
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.

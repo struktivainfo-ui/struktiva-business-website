@@ -2,6 +2,18 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/demos",
+      "destination": "/praxisbeispiele",
+      "permanent": true
+    },
+    {
+      "source": "/referenzen",
+      "destination": "/praxisbeispiele",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/demos/handwerker",

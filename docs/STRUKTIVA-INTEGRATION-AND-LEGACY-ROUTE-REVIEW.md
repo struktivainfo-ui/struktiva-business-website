@@ -2,11 +2,11 @@
 
 Stand: 2026-07-08
 
-Dieser Bericht dokumentiert die Gesamtintegration nach den modularen Rebuild-Schritten fuer STRUKTIVA Digitale Unternehmensberatung. Er prueft die neue Hauptstruktur, zentrale Navigation, Footer, CTAs, Breadcrumbs, Meta-Daten, Canonicals, Sitemap, Robots, Vercel-Rewrites und die verbliebenen Legacy-Routen. Es wurden keine Redirects aktiviert, keine Routen geloescht, keine Preise geaendert und keine globale SEO-Migration vorgenommen.
+Dieser Bericht dokumentiert die Gesamtintegration nach den modularen Rebuild-Schritten fuer STRUKTIVA Digitale Unternehmensberatung. Er prueft die neue Hauptstruktur, zentrale Navigation, Footer, CTAs, Breadcrumbs, Meta-Daten, Canonicals, Sitemap, Robots, Vercel-Rewrites und die verbliebenen Legacy-Routen. Seit Schritt 21 sind die Legacy-Indexrouten `/demos` und `/referenzen` per exaktem permanentem Redirect auf `/praxisbeispiele` migriert.
 
 ## 1. Ergebnis in Kurzform
 
-Die neue Hauptstruktur ist technisch integriert und ueber Header, Mobile-Navigation, Footer und zentrale CTAs erreichbar. Die neuen Seiten `/leistungen`, `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/kontakt` und `/pakete` besitzen eigene Meta-Daten, eigene Canonicals und werden indexierbar ausgeliefert. Die Legacy-Routen `/demos` und `/referenzen` bleiben erreichbar und sollten erst nach einer inhaltlichen und SEO-fachlichen Entscheidung umgeleitet oder ersetzt werden.
+Die neue Hauptstruktur ist technisch integriert und ueber Header, Mobile-Navigation, Footer und zentrale CTAs erreichbar. Die neuen Seiten `/leistungen`, `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check`, `/ueber-uns`, `/kontakt` und `/pakete` besitzen eigene Meta-Daten, eigene Canonicals und werden indexierbar ausgeliefert. Die Legacy-Indexrouten `/demos` und `/referenzen` sind seit Schritt 21 Redirect-Quellen auf `/praxisbeispiele`; die Demo-Unterseiten bleiben erhalten.
 
 Korrigierte echte Inkonsistenzen in Schritt 18:
 
@@ -107,8 +107,8 @@ Die aktuelle Detailseite ist nicht als Link auf sich selbst umgesetzt. Andere ne
 | `/kontakt` | index, follow | `/kontakt` |
 | `/leistungen` | index, follow | `/leistungen` |
 | `/pakete` | index, follow | `/pakete` |
-| `/demos` | index, follow | `/demos` |
-| `/referenzen` | index, follow | `/demos` |
+| `/demos` | Redirect-Quelle | `/praxisbeispiele` |
+| `/referenzen` | Redirect-Quelle | `/praxisbeispiele` |
 | `/impressum` | index, follow | `/impressum` |
 | `/datenschutz` | index, follow | `/datenschutz` |
 | nicht vorhandene SPA-Route | noindex, nofollow | keine eigene Zielseite |
@@ -117,12 +117,15 @@ Die statischen Demo-Unterseiten besitzen eigene HTML-Meta-Daten mit `noindex, no
 
 ## 9. Sitemap
 
-Die aktuelle `public/sitemap.xml` enthaelt weiterhin die alte Struktur:
+Die aktuelle `public/sitemap.xml` enthaelt seit Schritt 21 die aktive indexierbare Struktur:
 
 - `/`
+- `/loesungen`
 - `/leistungen`
 - `/pakete`
-- `/demos`
+- `/praxisbeispiele`
+- `/praxisbeispiele/salon-karola`
+- `/digital-check`
 - `/ueber-uns`
 - `/kontakt`
 - `/datenschutz`
@@ -130,12 +133,9 @@ Die aktuelle `public/sitemap.xml` enthaelt weiterhin die alte Struktur:
 
 Nicht enthalten sind aktuell:
 
-- `/loesungen`
-- `/praxisbeispiele`
-- `/praxisbeispiele/salon-karola`
-- `/digital-check`
-
-Das ist fuer die jetzige Integrationsphase ein dokumentierter SEO-Migrationspunkt. Die Sitemap wurde in Schritt 18 bewusst nicht geaendert, weil der Auftrag keine globale Sitemap-/SEO-Migration erlaubte.
+- `/demos`, weil es Redirect-Quelle ist
+- `/referenzen`, weil es Redirect-Quelle ist
+- Demo-Unterseiten, weil sie statisch `noindex, nofollow` verwenden
 
 ## 10. Robots
 
@@ -151,11 +151,13 @@ Es gibt keine robots.txt-Sperre fuer neue Hauptseiten und keine gesonderten Lega
 
 `vercel.json` enthaelt spezielle Rewrites fuer statische Demo-Unterseiten:
 
+- exakter permanenter Redirect `/demos` -> `/praxisbeispiele`
+- exakter permanenter Redirect `/referenzen` -> `/praxisbeispiele`
 - `/demos/handwerker` -> `/demos/handwerker/index.html`
 - `/demos/kosmetik` -> `/demos/kosmetik/index.html`
 - `/demos/lokaler-dienstleister` -> `/demos/lokaler-dienstleister/index.html`
 
-Danach folgt der SPA-Fallback auf `/index.html`. Diese Strategie sollte beibehalten werden, solange die Demo-Unterseiten noch verlinkt oder extern bekannt sein koennen.
+Danach folgt der SPA-Fallback auf `/index.html`. Es wurde keine `/demos/*`-Wildcard eingefuehrt.
 
 ## 12. Route `/leistungen`
 
@@ -281,17 +283,17 @@ Klassifikation: `KEEP TEMPORARILY`, `REMOVE AFTER MIGRATION`.
 | `/kontakt` | KEEP | Lead-System weiter schuetzen |
 | `/leistungen` | KEEP / REBUILD ACTIVE | Sitemap-/SEO-Migration spaeter |
 | `/pakete` | KEEP / REBUILD ACTIVE | Sitemap-/SEO-Migration spaeter |
-| `/demos` | KEEP TEMPORARILY / REDIRECT LATER | Demo-Strategie klaeren |
-| `/referenzen` | KEEP TEMPORARILY / REDIRECT LATER | Alias-Entscheidung nach `/demos` |
-| `/demos/handwerker` | KEEP TEMPORARILY / REMOVE AFTER MIGRATION | Demo-Strategie klaeren |
-| `/demos/kosmetik` | KEEP TEMPORARILY / REMOVE AFTER MIGRATION | Demo-Strategie klaeren |
-| `/demos/lokaler-dienstleister` | KEEP TEMPORARILY / REMOVE AFTER MIGRATION | Demo-Strategie klaeren |
+| `/demos` | REDIRECT ACTIVE | Ziel `/praxisbeispiele` |
+| `/referenzen` | REDIRECT ACTIVE | Ziel `/praxisbeispiele` |
+| `/demos/handwerker` | KEEP PROTECTED | statische Demo-Unterseite behalten |
+| `/demos/kosmetik` | KEEP PROTECTED | statische Demo-Unterseite behalten |
+| `/demos/lokaler-dienstleister` | KEEP PROTECTED | statische Demo-Unterseite behalten |
 | `/impressum` | KEEP | beibehalten |
 | `/datenschutz` | KEEP | rechtliche Pruefung bei Tracking-/Consent-Aenderungen |
 
 ## 18. Empfohlene spaetere Redirect-Strategie
 
-Noch nicht aktivieren:
+Seit Schritt 21 aktiv:
 
 - `/referenzen` -> `/praxisbeispiele`
 - `/demos` -> `/praxisbeispiele`
@@ -415,3 +417,36 @@ Nicht geaendert:
 - keine neue Hauptnavigation
 - keine Sitemap- oder Robots-Migration
 - kein Kontaktformular, keine Lead-API, kein Consent und kein Tracking
+
+## 24. Update Schritt 21: Legacy-Indexrouten migriert
+
+`/demos` und `/referenzen` sind seit Schritt 21 keine aktiven Inhaltsseiten mehr.
+
+Umsetzung:
+
+- `vercel.json` setzt exakte permanente Redirects von `/demos` und `/referenzen` auf `/praxisbeispiele`.
+- Die bestehenden Demo-Rewrites fuer `/demos/handwerker`, `/demos/kosmetik` und `/demos/lokaler-dienstleister` bleiben erhalten.
+- `src/routing/routeConfig.js` enthaelt `LEGACY_ROUTE_REDIRECTS` fuer die clientseitige Absicherung.
+- `src/App.jsx` nutzt diese Map, rendert `/praxisbeispiele` und ersetzt alte Indexrouten in der Browser-URL.
+- `src/routing/pageRegistry.jsx` enthaelt keine aktiven Komponenten mehr fuer `/demos` und `/referenzen`.
+- `public/sitemap.xml` wurde auf die aktiven indexierbaren Seiten aktualisiert.
+- `public/robots.txt` wurde geprueft und nicht geaendert.
+
+Geschuetzte Demo-Unterseiten:
+
+- `/demos/handwerker`
+- `/demos/kosmetik`
+- `/demos/lokaler-dienstleister`
+
+Diese Unterseiten bleiben noindex, nofollow, werden weiterhin von `/praxisbeispiele` verlinkt und wurden nicht in die Sitemap aufgenommen.
+
+Nicht geaendert:
+
+- keine Demo-Unterseite entfernt
+- keine Wildcard-Redirect-Regel
+- keine Migration von `/leistungen` oder `/pakete`
+- keine Preise
+- kein Kontaktformular
+- keine Lead-API
+- kein Consent
+- kein Tracking

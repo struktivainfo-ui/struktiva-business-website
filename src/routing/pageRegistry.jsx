@@ -5,8 +5,6 @@ import SalonKarolaCaseStudyPage from '../pages/SalonKarolaCaseStudyPage.jsx'
 import DigitalCheckPage from '../pages/DigitalCheckPage.jsx'
 import ServicesPage from '../pages/ServicesPage.jsx'
 import PackagesPage from '../pages/PackagesPage.jsx'
-import DemosPage from '../pages/DemosPage.jsx'
-import ReferencesPage from '../pages/ReferencesPage.jsx'
 import AboutPage from '../pages/AboutPage.jsx'
 import ContactPage from '../pages/ContactPage.jsx'
 import ImpressumPage from '../pages/ImpressumPage.jsx'
@@ -25,8 +23,6 @@ export const activePageComponents = {
   '/digital-check': DigitalCheckPage,
   '/leistungen': ServicesPage,
   '/pakete': PackagesPage,
-  '/referenzen': ReferencesPage,
-  '/demos': DemosPage,
   '/kontakt': ContactPage,
   '/impressum': ImpressumPage,
   '/datenschutz': DatenschutzPage,

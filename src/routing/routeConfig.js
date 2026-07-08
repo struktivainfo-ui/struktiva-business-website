@@ -46,18 +46,6 @@ export const ACTIVE_ROUTE_META = {
     canonicalPath: '/pakete',
     isPricingRoute: true,
   },
-  '/referenzen': {
-    title: 'Referenzen & Demos - STRUKTIVA Digitale Unternehmensberatung',
-    description: 'Referenzen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
-    canonicalPath: '/demos',
-  },
-  '/demos': {
-    title: 'Referenzen & Demos - STRUKTIVA Digitale Unternehmensberatung',
-    description:
-      'Echte Referenzen und Demo-Beispiele von STRUKTIVA für Handwerk, Beauty, Beratung und lokale Dienstleister.',
-    canonicalPath: '/demos',
-    isHomeRoute: true,
-  },
   '/ueber-uns': {
     title: 'Über STRUKTIVA | Digitale Unternehmensberatung',
     description:
@@ -110,6 +98,15 @@ export const DEFAULT_ROUTE_META = {
 }
 
 export const ACTIVE_ROUTE_PATHS = Object.keys(ACTIVE_ROUTE_META)
+
+export const LEGACY_ROUTE_REDIRECTS = {
+  '/demos': '/praxisbeispiele',
+  '/referenzen': '/praxisbeispiele',
+}
+
+export function getLegacyRedirectTarget(pathname) {
+  return LEGACY_ROUTE_REDIRECTS[pathname] || null
+}
 
 export function getRouteMeta(pathname) {
   const activeMeta = ACTIVE_ROUTE_META[pathname]
@@ -190,8 +187,8 @@ export const ROUTE_MIGRATION_PLAN = [
   { from: '/', to: '/', action: 'REBUILD', redirectType: 'none', seoRisk: 'medium', activateWhen: 'new home is ready' },
   { from: '/leistungen', to: '/leistungen', action: 'REBUILD ACTIVE', redirectType: 'none', seoRisk: 'medium', activateWhen: 'active-step-20' },
   { from: '/pakete', to: '/pakete', action: 'REBUILD ACTIVE', redirectType: 'none', seoRisk: 'medium', activateWhen: 'active-step-19' },
-  { from: '/demos', to: '/praxisbeispiele', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 13', seoRisk: 'medium', activateWhen: 'only after SEO, sitemap and demo strategy decision' },
-  { from: '/referenzen', to: '/praxisbeispiele', action: 'KEEP UNTIL REDIRECT DECISION', redirectType: 'none in step 13', seoRisk: 'low', activateWhen: 'only after SEO, sitemap and alias decision' },
+  { from: '/demos', to: '/praxisbeispiele', action: 'REDIRECT ACTIVE', redirectType: 'permanent exact', seoRisk: 'medium', activateWhen: 'active-step-21' },
+  { from: '/referenzen', to: '/praxisbeispiele', action: 'REDIRECT ACTIVE', redirectType: 'permanent exact', seoRisk: 'low', activateWhen: 'active-step-21' },
   { from: '/ueber-uns', to: '/ueber-uns', action: 'REBUILD', redirectType: 'none', seoRisk: 'low', activateWhen: 'content rewrite phase' },
   { from: '/kontakt', to: '/kontakt', action: 'REBUILD ACTIVE', redirectType: 'none', seoRisk: 'low', activateWhen: 'active-step-17' },
   { from: '/impressum', to: '/impressum', action: 'KEEP', redirectType: 'none', seoRisk: 'low', activateWhen: 'already active' },
