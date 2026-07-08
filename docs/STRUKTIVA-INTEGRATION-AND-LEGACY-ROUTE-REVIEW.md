@@ -450,3 +450,16 @@ Nicht geaendert:
 - keine Lead-API
 - kein Consent
 - kein Tracking
+
+## 25. Update Schritt 22: Finale Abnahme
+
+Der finale technische, visuelle und SEO-bezogene Abnahmelauf ist in `docs/STRUKTIVA-FINAL-REBUILD-ACCEPTANCE.md` dokumentiert.
+
+Ergebnis:
+
+- Der aktuelle Rebuild ist live auf `https://struktiva.de` verifiziert.
+- `/demos` und `/referenzen` liefern live jeweils `308` auf `/praxisbeispiele`.
+- Die Hauptseiten sind live erreichbar, besitzen je eine H1, eigene Meta-Daten und Self-Canonicals.
+- Demo-Unterseiten bleiben `KEEP PROTECTED`, `200` und `noindex, nofollow`.
+- Ein Live-Demo-CSS-404 wurde lokal sicher korrigiert, indem die Demo-HTML-Dateien `/demos/struktiva-demo-system.css` absolut verlinken.
+- Formular, Consent, Tracking, Resend und Lead-API-Logik wurden nicht veraendert.

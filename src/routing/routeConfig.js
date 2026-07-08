@@ -193,7 +193,7 @@ export const ROUTE_MIGRATION_PLAN = [
   { from: '/kontakt', to: '/kontakt', action: 'REBUILD ACTIVE', redirectType: 'none', seoRisk: 'low', activateWhen: 'active-step-17' },
   { from: '/impressum', to: '/impressum', action: 'KEEP', redirectType: 'none', seoRisk: 'low', activateWhen: 'already active' },
   { from: '/datenschutz', to: '/datenschutz', action: 'KEEP', redirectType: 'none', seoRisk: 'low', activateWhen: 'already active' },
-  { from: '/demos/handwerker', to: '/praxisbeispiele', action: 'REMOVE AFTER MIGRATION', redirectType: 'optional 301 later', seoRisk: 'low because noindex demo', activateWhen: 'demo strategy is decided' },
-  { from: '/demos/kosmetik', to: '/praxisbeispiele', action: 'REMOVE AFTER MIGRATION', redirectType: 'optional 301 later', seoRisk: 'low because noindex demo', activateWhen: 'demo strategy is decided' },
-  { from: '/demos/lokaler-dienstleister', to: '/praxisbeispiele', action: 'REMOVE AFTER MIGRATION', redirectType: 'optional 301 later', seoRisk: 'low because noindex demo', activateWhen: 'demo strategy is decided' },
+  { from: '/demos/handwerker', to: '/demos/handwerker', action: 'KEEP PROTECTED', redirectType: 'none; static rewrite remains', seoRisk: 'low because noindex demo', activateWhen: 'active-step-21 protected' },
+  { from: '/demos/kosmetik', to: '/demos/kosmetik', action: 'KEEP PROTECTED', redirectType: 'none; static rewrite remains', seoRisk: 'low because noindex demo', activateWhen: 'active-step-21 protected' },
+  { from: '/demos/lokaler-dienstleister', to: '/demos/lokaler-dienstleister', action: 'KEEP PROTECTED', redirectType: 'none; static rewrite remains', seoRisk: 'low because noindex demo', activateWhen: 'active-step-21 protected' },
 ]

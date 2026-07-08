@@ -365,3 +365,20 @@ Nicht geaendert:
 - keine Lead-API
 - kein Consent
 - kein Tracking
+
+## Update Schritt 22: Finaler Live- und SEO-Audit
+
+Der finale Abnahmelauf ist in `docs/STRUKTIVA-FINAL-REBUILD-ACCEPTANCE.md` dokumentiert.
+
+Live verifiziert:
+
+- `/demos` -> `/praxisbeispiele` mit `308`
+- `/referenzen` -> `/praxisbeispiele` mit `308`
+- alle Hauptseiten auf `https://struktiva.de`
+- Sitemap und robots.txt
+- Demo-Unterseiten mit `200` und `noindex, nofollow`
+
+Sicher korrigiert:
+
+- Die drei Demo-HTML-Dateien verlinken ihr Stylesheet jetzt absolut ueber `/demos/struktiva-demo-system.css`.
+- Die technische Migrationsmatrix in `src/routing/routeConfig.js` klassifiziert die Demo-Unterseiten als `KEEP PROTECTED`.
