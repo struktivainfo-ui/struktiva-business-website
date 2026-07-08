@@ -11244,3 +11244,708 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
     transform: none !important;
   }
 }
+
+/* STRUKTIVA about page v16 */
+.struktiva-about-page {
+  overflow-x: clip;
+  background: #ffffff;
+  color: var(--text-primary, #111111);
+}
+
+.struktiva-about-page h1,
+.struktiva-about-page h2,
+.struktiva-about-page h3,
+.struktiva-about-page p,
+.struktiva-about-page ul,
+.struktiva-about-page ol,
+.struktiva-about-page figure {
+  margin: 0;
+}
+
+.struktiva-about-page ul,
+.struktiva-about-page ol {
+  list-style: none;
+  padding: 0;
+}
+
+.struktiva-about-eyebrow {
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.78rem;
+  font-weight: 880;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.struktiva-about-page h2 {
+  color: #111111;
+  font-size: clamp(2rem, 4.2vw, 4rem);
+  font-weight: 930;
+  line-height: 1.04;
+}
+
+.struktiva-about-page h3 {
+  color: #111111;
+  font-size: clamp(1.15rem, 2vw, 1.58rem);
+  font-weight: 900;
+  line-height: 1.16;
+}
+
+.struktiva-about-page p {
+  color: var(--text-secondary, #4a4a45);
+  font-size: clamp(1rem, 1.35vw, 1.08rem);
+  line-height: 1.72;
+}
+
+.struktiva-about-primary,
+.struktiva-about-secondary {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.88rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 880;
+  line-height: 1.15;
+  text-decoration: none;
+  transition:
+    transform var(--motion-base, 260ms) var(--motion-ease, ease),
+    border-color var(--motion-base, 260ms) var(--motion-ease, ease),
+    background var(--motion-base, 260ms) var(--motion-ease, ease);
+}
+
+.struktiva-about-primary {
+  background: #111111;
+  color: #ffffff;
+}
+
+.struktiva-about-secondary {
+  border-color: rgba(17, 17, 17, 0.16);
+  background: rgba(255, 255, 255, 0.72);
+  color: #111111;
+}
+
+.struktiva-about-primary:hover,
+.struktiva-about-secondary:hover,
+.struktiva-about-text-link:hover,
+.struktiva-about-cta__text-link:hover {
+  transform: translateY(-2px);
+}
+
+.struktiva-about-hero {
+  min-height: min(820px, calc(100svh - 4.8rem));
+  padding: clamp(4.5rem, 7.5vw, 7rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem)) clamp(4rem, 7vw, 6.5rem);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 245, 239, 0.92) 52%, rgba(230, 223, 204, 0.58) 100%);
+}
+
+.struktiva-about-hero__inner,
+.struktiva-about-philosophy__inner,
+.struktiva-about-people__inner,
+.struktiva-about-principles__inner,
+.struktiva-about-method__inner,
+.struktiva-about-boundaries__inner,
+.struktiva-about-development__inner,
+.struktiva-about-cta__inner {
+  width: min(100%, var(--container-wide, 1360px));
+  margin: 0 auto;
+}
+
+.struktiva-about-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(25rem, 0.84fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.struktiva-about-hero__copy {
+  display: grid;
+  gap: clamp(1rem, 2.4vw, 1.55rem);
+}
+
+.struktiva-about-hero h1 {
+  max-width: 14.4ch;
+  color: #111111;
+  font-size: clamp(2.7rem, 5.9vw, 5.85rem);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.struktiva-about-hero__lead {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 760px;
+}
+
+.struktiva-about-hero__lead p {
+  color: #34342f;
+  font-size: clamp(1.08rem, 1.55vw, 1.28rem);
+  font-weight: 620;
+  line-height: 1.62;
+}
+
+.struktiva-about-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.45rem;
+}
+
+.struktiva-about-hero-visual {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(9rem, 0.66fr) minmax(0, 0.82fr);
+  gap: clamp(0.8rem, 2vw, 1.1rem);
+  align-items: center;
+  min-height: clamp(32rem, 48vw, 41rem);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 34px;
+  background:
+    linear-gradient(90deg, rgba(168, 127, 42, 0.08), transparent 23%, transparent 75%, rgba(82, 111, 102, 0.08)),
+    rgba(255, 255, 255, 0.68);
+  padding: clamp(1rem, 3vw, 1.6rem);
+  box-shadow: 0 24px 70px rgba(53, 41, 16, 0.1);
+}
+
+.struktiva-about-hero-visual::before,
+.struktiva-about-hero-visual::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 23%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(168, 127, 42, 0.08), rgba(168, 127, 42, 0.55), rgba(168, 127, 42, 0.08));
+}
+
+.struktiva-about-hero-visual::before {
+  left: 30%;
+}
+
+.struktiva-about-hero-visual::after {
+  right: 30%;
+}
+
+.struktiva-about-hero-visual__factors,
+.struktiva-about-hero-visual__steps {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.struktiva-about-hero-visual__factors li,
+.struktiva-about-hero-visual__steps li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 0.78rem;
+}
+
+.struktiva-about-hero-visual__factors span,
+.struktiva-about-hero-visual__steps span,
+.struktiva-about-principle-flow > li > span,
+.struktiva-about-method-line > li > span,
+.struktiva-about-boundary-list li > span {
+  display: inline-grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(168, 127, 42, 0.32);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.78rem;
+  font-weight: 920;
+}
+
+.struktiva-about-hero-visual__factors strong,
+.struktiva-about-hero-visual__steps strong {
+  color: #111111;
+  font-size: clamp(0.9rem, 1.35vw, 1.05rem);
+  font-weight: 880;
+  line-height: 1.2;
+}
+
+.struktiva-about-hero-visual__center {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  min-height: 10rem;
+  place-items: center;
+  border: 1px solid rgba(216, 194, 138, 0.28);
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(24, 24, 22, 0.98), rgba(41, 38, 29, 0.96));
+  padding: 1rem;
+  text-align: center;
+}
+
+.struktiva-about-hero-visual__center small {
+  color: rgba(248, 246, 239, 0.64);
+  font-size: 0.76rem;
+  font-weight: 820;
+  line-height: 1.3;
+}
+
+.struktiva-about-hero-visual__center strong {
+  color: #ffffff;
+  font-size: clamp(1.22rem, 2vw, 1.7rem);
+  font-weight: 930;
+  line-height: 1.05;
+}
+
+.struktiva-about-philosophy,
+.struktiva-about-people,
+.struktiva-about-principles,
+.struktiva-about-method,
+.struktiva-about-boundaries,
+.struktiva-about-development,
+.struktiva-about-cta {
+  padding: clamp(4.8rem, 8vw, 7.4rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+}
+
+.struktiva-about-philosophy__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: clamp(1.6rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.struktiva-about-philosophy__inner > div:first-child,
+.struktiva-about-principles__intro,
+.struktiva-about-method__intro {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 920px;
+}
+
+.struktiva-about-philosophy__copy {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.struktiva-about-philosophy__copy ul {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.2rem;
+}
+
+.struktiva-about-philosophy__copy li,
+.struktiva-about-development__copy li {
+  position: relative;
+  padding-left: 1.15rem;
+  color: #34342f;
+  font-weight: 760;
+  line-height: 1.55;
+}
+
+.struktiva-about-philosophy__copy li::before,
+.struktiva-about-development__copy li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--gold-primary, #a87f2a);
+}
+
+.struktiva-about-philosophy__statement,
+.struktiva-about-development__statement {
+  grid-column: 1 / -1;
+  max-width: 980px;
+  border-left: 1px solid rgba(168, 127, 42, 0.42);
+  padding-left: clamp(1.1rem, 3vw, 2rem);
+  color: #111111;
+  font-size: clamp(1.35rem, 2.55vw, 2.25rem);
+  font-weight: 880;
+  line-height: 1.22;
+}
+
+.struktiva-about-people,
+.struktiva-about-principles,
+.struktiva-about-development {
+  background: linear-gradient(180deg, rgba(247, 245, 239, 0.88), rgba(255, 255, 255, 0.96));
+}
+
+.struktiva-about-people__inner {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.72fr) minmax(0, 1.05fr);
+  gap: clamp(1.6rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.struktiva-about-people__portrait {
+  overflow: hidden;
+  border-radius: 32px;
+  background: #f7f5ef;
+  box-shadow: 0 22px 64px rgba(53, 41, 16, 0.12);
+}
+
+.struktiva-about-people__portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.04 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.struktiva-about-people__copy {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 820px;
+}
+
+.struktiva-about-people__names {
+  color: #111111;
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  font-weight: 880;
+  line-height: 1.25;
+}
+
+.struktiva-about-people__text {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.struktiva-about-principle-flow {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(2.2rem, 5vw, 3.8rem);
+  max-width: 1040px;
+}
+
+.struktiva-about-principle-flow::before,
+.struktiva-about-method-line::before {
+  content: "";
+  position: absolute;
+  left: 1.16rem;
+  top: 1.2rem;
+  bottom: 1.2rem;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(168, 127, 42, 0.08), rgba(168, 127, 42, 0.5), rgba(168, 127, 42, 0.08));
+}
+
+.struktiva-about-principle-flow li {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  border-top: 1px solid rgba(17, 17, 17, 0.09);
+  padding-top: 1rem;
+}
+
+.struktiva-about-principle-flow p {
+  margin-top: 0.4rem;
+}
+
+.struktiva-about-method {
+  background: linear-gradient(155deg, #171714 0%, #232119 48%, #141414 100%);
+  color: var(--text-inverse, #f8f6ef);
+}
+
+.struktiva-about-method h2,
+.struktiva-about-method h3 {
+  color: #ffffff;
+}
+
+.struktiva-about-method p {
+  color: rgba(248, 246, 239, 0.72);
+}
+
+.struktiva-about-method-line {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.8rem, 2vw, 1.2rem);
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.struktiva-about-method-line::before {
+  left: 1.2rem;
+  right: 1.2rem;
+  top: 1.18rem;
+  bottom: auto;
+  width: auto;
+  height: 1px;
+}
+
+.struktiva-about-method-line li {
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+  border: 1px solid rgba(248, 246, 239, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: clamp(1rem, 2vw, 1.3rem);
+}
+
+.struktiva-about-method-line p {
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
+.struktiva-about-boundaries__inner,
+.struktiva-about-development__inner,
+.struktiva-about-cta__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(1.6rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.struktiva-about-implementation,
+.struktiva-about-boundary-list,
+.struktiva-about-development__copy,
+.struktiva-about-practice,
+.struktiva-about-cta__inner > div {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.struktiva-about-boundary-list {
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 28px;
+  background: rgba(247, 245, 239, 0.58);
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.struktiva-about-boundary-list ol {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+.struktiva-about-boundary-list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.struktiva-about-boundary-list h3,
+.struktiva-about-boundary-list p {
+  margin: 0;
+}
+
+.struktiva-about-development__copy ul {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.struktiva-about-development__statement {
+  grid-column: auto;
+  margin-top: 0.25rem;
+}
+
+.struktiva-about-practice {
+  align-self: stretch;
+  border-left: 1px solid rgba(168, 127, 42, 0.42);
+  padding-left: clamp(1.1rem, 3vw, 2rem);
+}
+
+.struktiva-about-text-link,
+.struktiva-about-cta__text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #111111;
+  font-size: 0.94rem;
+  font-weight: 860;
+  line-height: 1.25;
+  text-decoration: underline;
+  text-underline-offset: 0.28rem;
+  transition: transform var(--motion-base, 260ms) var(--motion-ease, ease);
+}
+
+.struktiva-about-cta {
+  background: linear-gradient(155deg, #171714 0%, #242118 52%, #111111 100%);
+  color: var(--text-inverse, #f8f6ef);
+}
+
+.struktiva-about-cta h2 {
+  color: #ffffff;
+}
+
+.struktiva-about-cta p {
+  color: rgba(248, 246, 239, 0.76);
+}
+
+.struktiva-about-cta .struktiva-about-eyebrow {
+  color: var(--gold-muted, #d8c28a);
+}
+
+.struktiva-about-cta .struktiva-about-primary {
+  background: #ffffff;
+  color: #111111;
+}
+
+.struktiva-about-cta__close {
+  border-left: 1px solid rgba(216, 194, 138, 0.34);
+  padding-left: clamp(1.1rem, 3vw, 2rem);
+}
+
+.struktiva-about-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.struktiva-about-cta__text-link {
+  color: rgba(248, 246, 239, 0.78);
+}
+
+.struktiva-about-page a:focus-visible {
+  outline: 2px solid rgba(168, 127, 42, 0.92);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1180px) {
+  .struktiva-about-hero__inner,
+  .struktiva-about-philosophy__inner,
+  .struktiva-about-people__inner,
+  .struktiva-about-boundaries__inner,
+  .struktiva-about-development__inner,
+  .struktiva-about-cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-about-hero h1 {
+    max-width: 15ch;
+  }
+
+  .struktiva-about-hero-visual {
+    width: 100%;
+    max-width: 980px;
+  }
+
+  .struktiva-about-people__portrait {
+    max-width: 680px;
+  }
+
+  .struktiva-about-cta__close {
+    border-left: 0;
+    border-top: 1px solid rgba(216, 194, 138, 0.34);
+    padding-left: 0;
+    padding-top: clamp(1.1rem, 3vw, 2rem);
+  }
+}
+
+@media (max-width: 1020px) {
+  .struktiva-about-method-line {
+    grid-template-columns: 1fr;
+  }
+
+  .struktiva-about-method-line::before {
+    left: 1.18rem;
+    right: auto;
+    top: 1.3rem;
+    bottom: 1.3rem;
+    width: 1px;
+    height: auto;
+  }
+
+  .struktiva-about-method-line li {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .struktiva-about-hero,
+  .struktiva-about-philosophy,
+  .struktiva-about-people,
+  .struktiva-about-principles,
+  .struktiva-about-method,
+  .struktiva-about-boundaries,
+  .struktiva-about-development,
+  .struktiva-about-cta {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .struktiva-about-hero {
+    min-height: auto;
+    padding-top: 3.8rem;
+  }
+
+  .struktiva-about-hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.15rem, 9.8vw, 3.18rem);
+    line-height: 1.06;
+  }
+
+  .struktiva-about-page h2 {
+    font-size: clamp(1.8rem, 8vw, 2.75rem);
+    line-height: 1.1;
+  }
+
+  .struktiva-about-hero__actions,
+  .struktiva-about-cta__actions {
+    display: grid;
+    width: 100%;
+  }
+
+  .struktiva-about-primary,
+  .struktiva-about-secondary,
+  .struktiva-about-cta__text-link {
+    width: 100%;
+  }
+
+  .struktiva-about-cta__text-link {
+    justify-content: center;
+  }
+
+  .struktiva-about-hero-visual {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    border-radius: 26px;
+  }
+
+  .struktiva-about-hero-visual::before,
+  .struktiva-about-hero-visual::after {
+    display: none;
+  }
+
+  .struktiva-about-hero-visual__center {
+    min-height: 7.5rem;
+    order: -1;
+  }
+
+  .struktiva-about-people__portrait {
+    border-radius: 24px;
+  }
+
+  .struktiva-about-practice,
+  .struktiva-about-philosophy__statement,
+  .struktiva-about-development__statement {
+    padding-left: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .struktiva-about-page *,
+  .struktiva-about-page *::before,
+  .struktiva-about-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .struktiva-about-primary:hover,
+  .struktiva-about-secondary:hover,
+  .struktiva-about-text-link:hover,
+  .struktiva-about-cta__text-link:hover {
+    transform: none !important;
+  }
+}

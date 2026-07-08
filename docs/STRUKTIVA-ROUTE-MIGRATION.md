@@ -2,7 +2,7 @@
 
 Stand: 2026-07-08
 
-Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 15 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola` und `/digital-check` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
+Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrollierten STRUKTIVA-Rebuild. Bis einschliesslich Schritt 16 wurden keine Redirects aktiviert und keine alten Routen geloescht. `/loesungen`, `/praxisbeispiele`, `/praxisbeispiele/salon-karola`, `/digital-check` und `/ueber-uns` sind jetzt als echte Zielseiten aktiv; `/leistungen`, `/demos` und `/referenzen` bleiben weiterhin erreichbar.
 
 ## Grundprinzipien
 
@@ -21,7 +21,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/pakete` | Pakete, Einstiegspreise und Betreuung | `/loesungen` oder Support-Unterseite | MERGE | 301 oder KEEP spaeter | mittel | nach Entscheidung zur Preis-/Paketrolle |
 | `/demos` | Referenzen und Demo-Beispiele | `/praxisbeispiele` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 13 | mittel | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Demo-Strategieentscheidung geplant |
 | `/referenzen` | Alias-artiger Einstieg zu Referenzen/Demos | `/praxisbeispiele` | KEEP UNTIL REDIRECT DECISION | keiner in Schritt 13 | niedrig | bleibt aktiv; ein Redirect wird erst nach SEO-, Sitemap- und Aliasentscheidung geplant |
-| `/ueber-uns` | Menschen, Herkunft und Arbeitsweise | `/ueber-uns` | REBUILD | keiner | niedrig | Inhalt spaeter behutsam an neue Positionierung anpassen |
+| `/ueber-uns` | Menschen, Haltung und Arbeitsweise | `/ueber-uns` | REBUILD ACTIVE | keiner | niedrig | in Schritt 16 modular neu aufgebaut |
 | `/kontakt` | Lead-Formular und direkte Kontaktwege | `/kontakt` | KEEP | keiner | niedrig | bleibt aktiv |
 | `/impressum` | Rechtliche Anbieterangaben | `/impressum` | KEEP | keiner | niedrig | bleibt aktiv |
 | `/datenschutz` | Datenschutzinformationen | `/datenschutz` | KEEP | keiner | niedrig | bleibt aktiv, spaeter rechtlich gegen Tracking/Consent pruefen |
@@ -43,7 +43,7 @@ Diese Matrix beschreibt die geplante technische Routenmigration fuer den kontrol
 | `/praxisbeispiele` | aktiv, live verlinkt | `/demos`, `/referenzen` | buendelt echtes Praxisprojekt und klar gekennzeichnete Demo-Konzepte |
 | `/praxisbeispiele/salon-karola` | aktiv, gezielt verlinkt | Salon-Karola-Inhalte | echte Detail-Fallstudie ohne Redirect-Migration |
 | `/digital-check` | aktiv, live verlinkt | Formularlogik aus `/kontakt` | erklaerende Digital-Check-Zielseite mit Anfrage-CTA zum bestehenden Formular |
-| `/ueber-uns` | bestehend | aktuelle Ueber-uns-Seite | spaeter textlich neu ausrichten |
+| `/ueber-uns` | aktiv, modular neu aufgebaut | alte About-Seite | Haltung, Menschen und Arbeitsweise ohne neue Route |
 | `/kontakt` | bestehend | aktuelle Kontaktseite | funktional stabil halten |
 | `/impressum` | bestehend | Rechtliches | beibehalten |
 | `/datenschutz` | bestehend | Rechtliches | beibehalten |
@@ -129,9 +129,41 @@ Bewusst nicht geaendert:
 - `/leistungen`, `/demos`, `/referenzen`, `/ueber-uns` und alte Demo-Routen bleiben unveraendert erreichbar.
 - Es wurden keine Preis-, Paket- oder globale SEO-Migrationen vorgenommen.
 
+## Update Schritt 16: `/ueber-uns` neu aufgebaut
+
+Die bestehende Route `/ueber-uns` wurde nicht umbenannt und nicht migriert, sondern als aktive Route modular neu aufgebaut. Alte sichtbare Legacy-About-Inhalte werden auf dieser Route nicht mehr gerendert.
+
+Neue inhaltliche Ausrichtung:
+
+- Hero zu persoenlicher, klarer und umsetzungsnaher Arbeitsweise
+- Erklaerung, warum STRUKTIVA zuerst die Situation versteht
+- persoenlicher Bereich mit Sven Matzke und Jessica Wacker
+- drei Arbeitsprinzipien
+- Methode `Verstehen -> Strukturieren -> Umsetzen -> Weiterentwickeln`
+- Beratung und Umsetzung als zusammenhaengender Ansatz
+- ruhiger Abgrenzungsbereich
+- schrittweise digitale Entwicklung
+- Praxisbezug zu Salon Karola
+- Abschluss mit Digital-Check als naechstem Schritt
+
+Meta-Daten wurden fuer `/ueber-uns` aktualisiert:
+
+- Title: `Ueber STRUKTIVA | Digitale Unternehmensberatung`
+- Description: Lernen Sie STRUKTIVA Digitale Unternehmensberatung, die persoenliche Arbeitsweise und den Ansatz aus Verstehen, Strukturieren, Umsetzen und Weiterentwickeln kennen.
+- Canonical: `/ueber-uns`
+- Robots: index, follow
+
+Nicht geaendert:
+
+- Navigation bleibt auf der bestehenden Route `/ueber-uns`.
+- Es wurden keine Redirects aktiviert.
+- `/kontakt`, Kontaktformular, `api/leads.js`, Resend, Consent, Tracking, Sitemap, Robots und globale SEO-Struktur wurden nicht umgebaut.
+- `/leistungen`, `/demos`, `/referenzen`, Preise und Pakete bleiben unveraendert.
+
 ## Umsetzungshinweise fuer den naechsten Schritt
 
 - Neue Zielseiten erst bauen, dann Navigation und Sitemap umstellen.
 - `/digital-check` ist jetzt gebaut und darf als Informationsroute verlinkt bleiben; Anfrage-CTAs muessen weiterhin bewusst auf `/kontakt#lead-form` fuehren.
+- `/ueber-uns` ist jetzt modular neu aufgebaut; weitere Route-Entscheidungen betreffen vor allem `/kontakt`, `/leistungen`, `/demos`, `/referenzen` und `/pakete`.
 - `/leistungen`, `/pakete`, `/demos` und `/referenzen` nicht ohne Redirect-Plan loeschen.
 - Vercel-Rewrites fuer `/demos/*` erst entfernen, wenn externe Demo-Links nicht mehr gebraucht werden oder Redirects aktiv sind.

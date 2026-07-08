@@ -59,8 +59,9 @@ export const ACTIVE_ROUTE_META = {
     isHomeRoute: true,
   },
   '/ueber-uns': {
-    title: 'Über uns - STRUKTIVA Digitale Unternehmensberatung',
-    description: 'Mehr über STRUKTIVA Digitale Unternehmensberatung: digitale Struktur für Unternehmen, lokale Dienstleister und Selbstständige.',
+    title: 'Über STRUKTIVA | Digitale Unternehmensberatung',
+    description:
+      'Lernen Sie STRUKTIVA Digitale Unternehmensberatung, die persönliche Arbeitsweise und den Ansatz aus Verstehen, Strukturieren, Umsetzen und Weiterentwickeln kennen.',
     canonicalPath: '/ueber-uns',
   },
   '/kontakt': {
@@ -176,7 +177,7 @@ export const FUTURE_ROUTE_PLAN = [
   { path: '/praxisbeispiele', role: 'Referenzen und echte Praxisbeweise bündeln', status: 'active-step-13' },
   { path: '/praxisbeispiele/salon-karola', role: 'Detail-Praxisbeispiel Salon Karola', status: 'active-step-14' },
   { path: '/digital-check', role: 'Verständlicher Digital-Check-Einstieg mit Lead-Verweis', status: 'active-step-15' },
-  { path: '/ueber-uns', role: 'Haltung, Menschen und Arbeitsweise', status: 'keep-and-rebuild-content-later' },
+  { path: '/ueber-uns', role: 'Haltung, Menschen und Arbeitsweise', status: 'active-step-16' },
   { path: '/kontakt', role: 'Direkte Kontaktwege und alternative Anfrage', status: 'keep' },
   { path: '/impressum', role: 'Rechtliche Anbieterangaben', status: 'keep' },
   { path: '/datenschutz', role: 'Datenschutzangaben', status: 'keep' },

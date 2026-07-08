@@ -1799,9 +1799,161 @@ Die Entfernung war sicher, weil die Artefakte untracked waren, nur lokale Previe
 
 ### Verbleibende Schulden nach Schritt 15
 
-- `/ueber-uns` und `/kontakt` sind noch nicht neu aufgebaut.
+- `/kontakt` ist noch nicht neu aufgebaut.
 - `/leistungen`, `/pakete`, `/demos` und `/referenzen` brauchen spaeter eine SEO-, Sitemap- und Redirect-Entscheidung.
 - Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht migriert.
 - `api/leads.js` enthaelt noch alte Bestaetigungsmail-Texte, blieb aber wegen ausdruecklichem Backend-Schutz unveraendert.
+- CSS liegt weiterhin global in `src/styles.css`.
+- Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+
+## 32. Update Schritt 16: Ueber-STRUKTIVA-Seite
+
+Stand nach Schritt 16: `/ueber-uns` ist als bestehende Route vollstaendig modular neu aufgebaut. Die Seite erklaert Menschen, Haltung, Arbeitsweise, Beratung und Umsetzung ohne klassische Teamkarten, Lebenslaufdaten, erfundene Rollen oder kuenstliche Teamgroesse.
+
+### Neue AboutPage und Komponentenstruktur
+
+Geaenderte Datei:
+
+- `src/pages/AboutPage.jsx`
+
+Neue Dateien:
+
+- `src/components/about/aboutData.js`
+- `src/components/about/AboutHero.jsx`
+- `src/components/about/AboutPhilosophy.jsx`
+- `src/components/about/AboutPeople.jsx`
+- `src/components/about/AboutPrinciples.jsx`
+- `src/components/about/AboutMethod.jsx`
+- `src/components/about/AboutBoundaries.jsx`
+- `src/components/about/AboutDevelopment.jsx`
+- `src/components/about/AboutCta.jsx`
+
+Die aktive Route `/ueber-uns` nutzt weiterhin den bestehenden Eintrag in `src/routing/pageRegistry.jsx`, rendert aber nicht mehr den Legacy-About-Reexport. Alte sichtbare About-Inhalte bleiben technisch im Legacy-Modul erhalten, werden auf der aktiven Route jedoch nicht mehr ausgegeben.
+
+### Seitenstruktur
+
+Die Seite besteht aus:
+
+1. Hero `Persoenlich. Klar. Umsetzungsnah.`
+2. Abschnitt `Erst die Situation verstehen`
+3. persoenlicher Bereich mit Sven Matzke und Jessica Wacker
+4. drei Arbeitsprinzipien
+5. Methode `Verstehen -> Strukturieren -> Umsetzen -> Weiterentwickeln`
+6. Beratung und Umsetzung
+7. Abgrenzung gegen Produktkatalog, Technik-Selbstzweck und kuenstliche Komplettloesung
+8. schrittweise digitale Entwicklung
+9. Praxisbezug Salon Karola
+10. persoenliche Zusammenarbeit und Abschluss-CTA zum Digital-Check
+
+### Hero und Hero-Visual
+
+Der Hero nutzt die H1:
+
+`Digitale Veraenderung braucht keinen groesseren Werkzeugkasten. Sie braucht einen klaren Blick auf das Unternehmen.`
+
+Das Visual zeigt nicht Technik als Zentrum, sondern das Unternehmen. Faktoren wie Menschen, Kunden, Ablaeufe, digitale Kontaktpunkte, bestehende Systeme und Entwicklungsideen fuehren zu Verstehen, Strukturieren und passender Umsetzung.
+
+### Persoenliche Darstellung und Portrait
+
+Genannt werden nur:
+
+- Sven Matzke
+- Jessica Wacker
+
+Verwendetes Portrait:
+
+- `/images/inhaber-sven-jessica.webp`
+
+Das Portrait ist als echtes gemeinsames Bild mit neutralem Alt-Text eingebunden. Es wurden keine Rollen, Qualifikationen, Titel, Zertifikate, privaten Informationen, Lebenslaeufe oder kuenstliche Teamgroessen ergaenzt.
+
+### Arbeitsprinzipien und Methode
+
+Die drei Arbeitsprinzipien:
+
+1. Verstaendlichkeit vor Fachsprache
+2. Alltagstauglichkeit vor Funktionsmenge
+3. Entwicklung statt starrem Endzustand
+
+Die Methode:
+
+1. Verstehen
+2. Strukturieren
+3. Umsetzen
+4. Weiterentwickeln
+
+Beides wird als verbundene redaktionelle Folge beziehungsweise Prozesslinie dargestellt, nicht als generisches Kartenraster.
+
+### Beratung, Umsetzung und Abgrenzung
+
+Die Seite erklaert, dass Beratung nicht zwangslaeufig bei einer Praesentation endet. STRUKTIVA verbindet Analyse, Struktur und praktische Umsetzung, ohne unbegrenzte technische Leistungsfaehigkeit zu behaupten.
+
+Abgegrenzt wird gegen:
+
+- Produktkatalog
+- Technik-Selbstzweck
+- kuenstliche Komplettloesung
+
+### Schrittweise Entwicklung und Praxisbezug
+
+Digitale Entwicklung wird als sinnvoller schrittweiser Prozess beschrieben. Der Salon-Karola-Bezug fuehrt per Textlink zu `/praxisbeispiele/salon-karola` und bleibt bewusst ein kompakter Praxisbezug, kein zweiter Case-Study-Bereich.
+
+### CTA-Ziele
+
+- Hero primaer: `Digital-Check ansehen` -> `/digital-check`
+- Hero sekundaer: `Praxisbeispiele ansehen` -> `/praxisbeispiele`
+- Praxisbezug: `Salon-Karola-Projekt ansehen` -> `/praxisbeispiele/salon-karola`
+- Abschluss primaer: `Digital-Check ansehen` -> `/digital-check`
+- Abschluss sekundaer: `Direkt Kontakt aufnehmen` -> `/kontakt`
+
+### Meta-Daten und Canonical
+
+`/ueber-uns` besitzt aktualisierte aktive Meta-Daten:
+
+- Title: `Ueber STRUKTIVA | Digitale Unternehmensberatung`
+- Description: Lernen Sie STRUKTIVA Digitale Unternehmensberatung, die persoenliche Arbeitsweise und den Ansatz aus Verstehen, Strukturieren, Umsetzen und Weiterentwickeln kennen.
+- Canonical: `/ueber-uns`
+- Robots: index, follow
+
+Route-spezifische Open-Graph-Daten werden ueber die bestehende Meta-Logik aus Title, Description, Canonical und neutralem STRUKTIVA-Asset gespeist. Es wurde keine neue OG-Infrastruktur eingefuehrt.
+
+### Strukturierte Daten
+
+Es wurde keine route-spezifische Schema-Erweiterung eingefuehrt. Vorhandene globale Schema-Struktur blieb unveraendert. Es wurden keine Person-Schemas, Job Titles, Credentials, Alumni-Daten, Awards oder SameAs-Profile erzeugt.
+
+### Mobile, Motion und Reduced Motion
+
+Mobile folgt der beauftragten Reihenfolge: Hero, Anders-beginnen, persoenlicher Bereich, Arbeitsprinzipien, Methode, Beratung/Umsetzung, Abgrenzung, schrittweise Entwicklung, Praxisbezug, persoenliche Zusammenarbeit und Abschluss-CTA. Das Portrait wird nicht ueberdimensioniert, Prozesslinien werden mobil vertikal.
+
+Motion bleibt ruhig:
+
+- Hero-Reveal
+- schrittweiser Aufbau der Unternehmensfaktoren
+- sanfte Portrait-Einblendung
+- Abschnitts-Reveals
+- dezente Hover-Zustaende
+
+Bei `prefers-reduced-motion: reduce` werden Animationen und Transitionen innerhalb der About-Seite deaktiviert. Alle Inhalte bleiben statisch verstaendlich.
+
+### Geschuetzte Kernfunktionen
+
+Nicht veraendert wurden:
+
+- Startseite
+- `/loesungen`
+- `/praxisbeispiele`
+- `/praxisbeispiele/salon-karola`
+- `/digital-check`
+- Kontaktformular
+- `api/leads.js`
+- Resend
+- `src/cookieConsent.jsx`
+- Google Analytics, Google Ads, Pinterest Tag, Tracking-IDs und bestehende Lead-Events
+
+### Verbleibende Schulden nach Schritt 16
+
+- `/kontakt` ist noch nicht neu aufgebaut.
+- `/leistungen`, `/pakete`, `/demos` und `/referenzen` brauchen spaeter eine SEO-, Sitemap- und Redirect-Entscheidung.
+- Sitemap, Robots und globale SEO-Struktur wurden weiterhin nicht migriert.
+- `api/leads.js` enthaelt noch alte Bestaetigungsmail-Texte, blieb aber wegen Backend-Schutz unveraendert.
 - CSS liegt weiterhin global in `src/styles.css`.
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
