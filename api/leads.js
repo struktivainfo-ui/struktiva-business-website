@@ -168,9 +168,9 @@ function buildConfirmationMailHtml(lead) {
   return `
     <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
       <p>Hallo ${escapeHtml(lead.name)},</p>
-      <p>vielen Dank für deine Anfrage bei STRUKTIVA Unternehmensarchitektur.</p>
+      <p>vielen Dank für deine Anfrage bei STRUKTIVA Digitale Unternehmensberatung.</p>
       <p>Deine Nachricht ist eingegangen. Ich prüfe dein Anliegen und melde mich mit einer passenden Rückmeldung.</p>
-      <p>Viele Grüße<br />Sven Matzke<br />STRUKTIVA Unternehmensarchitektur</p>
+      <p>Viele Grüße<br />Sven Matzke<br />STRUKTIVA Digitale Unternehmensberatung</p>
     </div>
   `
 }

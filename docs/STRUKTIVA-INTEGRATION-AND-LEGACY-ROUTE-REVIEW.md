@@ -463,3 +463,28 @@ Ergebnis:
 - Demo-Unterseiten bleiben `KEEP PROTECTED`, `200` und `noindex, nofollow`.
 - Ein Live-Demo-CSS-404 wurde lokal sicher korrigiert, indem die Demo-HTML-Dateien `/demos/struktiva-demo-system.css` absolut verlinken.
 - Formular, Consent, Tracking, Resend und Lead-API-Logik wurden nicht veraendert.
+
+## 26. Update Schritt 23: Mailbranding und sicherer Legacy-Cleanup
+
+In `api/leads.js` wurde ausschliesslich der sichtbare alte Markenname im Bestaetigungsmailtext ersetzt:
+
+- `STRUKTIVA Unternehmensarchitektur` -> `STRUKTIVA Digitale Unternehmensberatung`
+
+Nicht veraendert wurden API-Route, Request Handling, Response Handling, Payload, Feldnamen, Validierung, Spam-Schutz, Honeypot-Logik, Resend-Konfiguration, Resend-Aufruf, Empfaenger, Absenderlogik, Environment-Variablen, Fehlerbehandlung und Statuscodes. Es wurde kein echter Test-Submit gesendet.
+
+Sicher entfernter Legacy-Bestand:
+
+- `src/pages/DemosPage.jsx`
+- `src/pages/ReferencesPage.jsx`
+- Legacy-Exports `DemosPage` und `ReferenzenPage`
+- isolierte alte Demo-/Referenz-Uebersichtssections `DemoUseCasesSection`, `ReferenceShowcaseSection` und `DemosShowcaseSection`
+
+Weiterhin geschuetzt:
+
+- Demo-Unterseiten und Vercel-Rewrites
+- Demo-Wrapper
+- `HomeLegacyContinuation`
+- `contactDetails`
+- `siteLinks`
+- Impressum, Datenschutz und NotFound
+- Soforthilfe S/M/L, aktuelle Soforthilfe 99 EUR und alter Digitaler Kurzcheck 49 EUR

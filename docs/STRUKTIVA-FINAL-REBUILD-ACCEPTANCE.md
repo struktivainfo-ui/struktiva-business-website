@@ -232,10 +232,14 @@ ACCEPTABLE FOR NOW:
 
 ## 15. Legacy-Code
 
+REMOVED IN STEP 23:
+
+- `src/pages/DemosPage.jsx`
+- `src/pages/ReferencesPage.jsx`
+- alte isolierte Demo-/Referenz-Uebersichtslogik in `src/legacy/legacyContent.jsx`
+
 SAFE TO REMOVE LATER:
 
-- `src/pages/DemosPage.jsx` und `src/pages/ReferencesPage.jsx`, sofern keine spaetere Route sie wieder registriert.
-- Alte Demo-/Referenz-Uebersichtslogik in `src/legacy/legacyContent.jsx`, sobald `/demos` und `/referenzen` dauerhaft Redirect-Quellen bleiben.
 - Alte produktnahe Spezialseiten und alte Preislisten, die nicht mehr in `pageRegistry.jsx` registriert sind.
 
 STILL USED:
@@ -273,8 +277,8 @@ Empfehlung:
 
 Technisch:
 
-- Der API-Mailtext enthaelt noch einen alten Markennamen; nicht geaendert, weil `api/leads.js` in diesem Schritt geschuetzt war.
-- Der aktuell live deployte Stand zeigte vor diesem Commit Demo-CSS-404s. Lokal ist der Fix fertig; nach Push muss das Deployment verifiziert werden.
+- Der API-Mailtext wurde in Schritt 23 rein textlich auf `STRUKTIVA Digitale Unternehmensberatung` korrigiert. API-Logik, Payload, Resend-Aufruf, Empfaenger, Statuscodes und Environment-Variablen blieben unveraendert.
+- Der Demo-CSS-404 wurde in Schritt 22 korrigiert und live verifiziert.
 - Legacy-Code bleibt gross und sollte spaeter gezielt reduziert werden.
 
 SEO:
@@ -289,9 +293,35 @@ Inhaltlich:
 
 ## 18. Empfohlene naechste Schritte
 
-1. Nach Git-Push das Deployment live erneut pruefen, insbesondere die Demo-CSS-404-Korrektur.
-2. Separaten API-/Mailtext-Schritt planen und nur dann `api/leads.js` anpassen.
-3. Legacy-Cleanup planen: DemosPage/ReferencesPage, alte Preislisten, alte Spezialseiten und ungenutzte Links entfernen oder neu zuordnen.
-4. Entscheidung fuer Soforthilfe S/M/L und alten Digitaler Kurzcheck treffen: entfernen, mergen oder neu bauen.
-5. Optional echten HTTP-404-Status fuer unbekannte Routen pruefen.
-6. Optional Performance-Schritt fuer Bilddimensionen und CSS-Bundle-Reduktion planen.
+1. Entscheidung fuer Soforthilfe S/M/L und alten Digitaler Kurzcheck treffen: entfernen, mergen oder neu bauen.
+2. Weiteren Legacy-Cleanup nur nach erneuter Import-/Export-Pruefung planen.
+3. Optional echten HTTP-404-Status fuer unbekannte Routen pruefen.
+4. Optional Performance-Schritt fuer Bilddimensionen und CSS-Bundle-Reduktion planen.
+5. Optional API-Mailtexte inhaltlich verbessern, aber nur in einem separaten Mailtext-Auftrag.
+
+## Update Schritt 23: Mailbranding und sicherer Legacy-Cleanup
+
+In Schritt 23 wurde der sichtbare Markenname im API-Bestaetigungsmailtext korrigiert:
+
+- alt: `STRUKTIVA Unternehmensarchitektur`
+- neu: `STRUKTIVA Digitale Unternehmensberatung`
+
+Der Diff in `api/leads.js` betrifft ausschliesslich zwei sichtbare Textstellen in `buildConfirmationMailHtml`. API-Verhalten, Payload, Validierung, Honeypot, Resend-Konfiguration, Resend-Aufruf, Empfaenger, Statuscodes und Environment-Variablen wurden nicht veraendert. Es wurde kein echter Test-Submit gesendet.
+
+Sicher entfernt:
+
+- `src/pages/DemosPage.jsx`
+- `src/pages/ReferencesPage.jsx`
+- `DemosPage` und `ReferenzenPage` als Legacy-Exporte
+- die isolierten alten Demo-/Referenz-Uebersichtssections `DemoUseCasesSection`, `ReferenceShowcaseSection` und `DemosShowcaseSection`
+
+Bewusst erhalten:
+
+- Demo-Unterseiten und Demo-Wrapper
+- `HomeLegacyContinuation`
+- `contactDetails`
+- `siteLinks`
+- Impressum, Datenschutz, NotFound
+- Soforthilfe S/M/L
+- aktuelle Soforthilfe 99 EUR
+- alter Digitaler Kurzcheck 49 EUR

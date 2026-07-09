@@ -1431,6 +1431,26 @@ Technischer Abschlussstand:
 - Die Demo-Unterseiten bleiben geschuetzt erreichbar und noindex.
 - Die Demo-Stylesheet-Referenzen wurden auf `/demos/struktiva-demo-system.css` stabilisiert.
 - `src/routing/routeConfig.js` klassifiziert die Demo-Unterseiten nun als `KEEP PROTECTED`.
+
+## Update Schritt 23: Kontrollierter Marken- und Legacy-Cleanup
+
+Der sichtbare alte Markenname im API-Bestaetigungsmailtext wurde in `api/leads.js` korrigiert. Die Aenderung ist auf zwei Textstellen in `buildConfirmationMailHtml` begrenzt und veraendert keine API-Logik.
+
+Entfernt wurden nur eindeutig nicht mehr registrierte und nicht mehr importierte Demo-/Referenz-Indexseiten:
+
+- `src/pages/DemosPage.jsx`
+- `src/pages/ReferencesPage.jsx`
+- `DemosPage` und `ReferenzenPage` aus den Legacy-Exports
+- die isolierten alten Uebersichtssections fuer `/demos` und `/referenzen`
+
+Nicht entfernt wurden:
+
+- aktive Demo-Unterseiten und Demo-Wrapper
+- `HomeLegacyContinuation`
+- `contactDetails`
+- `siteLinks`
+- Impressum, Datenschutz und NotFound
+- Soforthilfe- und Digitaler-Kurzcheck-Bereiche, weil dafuer eine fachliche Entscheidung aussteht
 - Vercel CLI ist lokal nicht vorhanden; Deployment kann lokal nicht direkt verifiziert werden.
 
 ## 29. Update Schritt 13: Neue Praxisbeispiele-Seite
