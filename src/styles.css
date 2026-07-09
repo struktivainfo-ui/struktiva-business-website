@@ -13762,3 +13762,449 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Step 24 visual regression fix: restore explicit foregrounds on dark surfaces. */
+:root {
+  --text-on-dark: var(--text-inverse, #f8f6ef);
+  --text-muted-on-dark: rgba(248, 246, 239, 0.76);
+  --text-soft-on-dark: rgba(248, 246, 239, 0.62);
+}
+
+.struktiva-dark-surface,
+.struktiva-solutions-cta-section,
+.struktiva-practice-cta,
+.struktiva-salon-system,
+.struktiva-salon-cta,
+.struktiva-digital-check-process,
+.struktiva-digital-check-cta,
+.struktiva-about-method,
+.struktiva-about-cta,
+.struktiva-contact-form-section {
+  color: var(--text-on-dark) !important;
+}
+
+.struktiva-solutions-cta-section :is(h1, h2, h3, h4, strong),
+.struktiva-practice-cta :is(h1, h2, h3, h4, strong),
+.struktiva-salon-system :is(h1, h2, h3, h4, strong),
+.struktiva-salon-cta :is(h1, h2, h3, h4, strong),
+.struktiva-digital-check-process :is(h1, h2, h3, h4, strong),
+.struktiva-digital-check-cta :is(h1, h2, h3, h4, strong),
+.struktiva-about-method :is(h1, h2, h3, h4, strong),
+.struktiva-about-cta :is(h1, h2, h3, h4, strong),
+.struktiva-contact-form-section :is(h1, h2, h3, h4, label, strong) {
+  color: #ffffff !important;
+}
+
+.struktiva-solutions-cta-section :is(p, li, small, span):not(.struktiva-solutions-eyebrow),
+.struktiva-practice-cta :is(p, li, small, span):not(.struktiva-practice-eyebrow),
+.struktiva-salon-system :is(p, li, small):not(.struktiva-salon-eyebrow),
+.struktiva-salon-cta :is(p, li, small, span):not(.struktiva-salon-eyebrow),
+.struktiva-digital-check-process :is(p, li, small):not(.struktiva-digital-check-eyebrow),
+.struktiva-digital-check-cta :is(p, li, small, span):not(.struktiva-digital-check-eyebrow),
+.struktiva-about-method :is(p, li, small):not(.struktiva-about-eyebrow),
+.struktiva-about-cta :is(p, li, small, span):not(.struktiva-about-eyebrow),
+.struktiva-contact-form-section :is(p, li, small, span):not(.struktiva-contact-eyebrow):not(.struktiva-contact-form__error) {
+  color: var(--text-muted-on-dark) !important;
+}
+
+.struktiva-solutions-cta-section :is(.struktiva-solutions-eyebrow),
+.struktiva-practice-cta :is(.struktiva-practice-eyebrow),
+.struktiva-salon-system :is(.struktiva-salon-eyebrow, .struktiva-salon-label),
+.struktiva-salon-cta :is(.struktiva-salon-eyebrow),
+.struktiva-digital-check-process :is(.struktiva-digital-check-eyebrow),
+.struktiva-digital-check-cta :is(.struktiva-digital-check-eyebrow),
+.struktiva-about-method :is(.struktiva-about-eyebrow),
+.struktiva-about-cta :is(.struktiva-about-eyebrow),
+.struktiva-contact-form-section :is(.struktiva-contact-eyebrow) {
+  color: var(--gold-muted, #d8c28a) !important;
+}
+
+.struktiva-solutions-cta-section :is(a, button),
+.struktiva-practice-cta :is(a, button),
+.struktiva-salon-cta :is(a, button),
+.struktiva-digital-check-cta :is(a, button),
+.struktiva-about-cta :is(a, button),
+.struktiva-contact-form-section :is(a, button) {
+  color: var(--text-on-dark) !important;
+}
+
+.struktiva-solutions-cta-section :is(.struktiva-solutions-primary),
+.struktiva-practice-cta :is(.struktiva-practice-primary),
+.struktiva-salon-cta :is(.struktiva-salon-primary),
+.struktiva-digital-check-cta :is(.struktiva-digital-check-primary),
+.struktiva-about-cta :is(.struktiva-about-primary),
+.struktiva-contact-form__submit {
+  border-color: rgba(248, 246, 239, 0.88) !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.struktiva-solutions-cta-section__text-link,
+.struktiva-practice-cta__text-link,
+.struktiva-salon-cta__text-link,
+.struktiva-digital-check-cta__text-link,
+.struktiva-about-cta__text-link,
+.struktiva-contact-form__consent a {
+  color: var(--gold-muted, #d8c28a) !important;
+}
+
+.struktiva-digital-check-process-line,
+.struktiva-about-method-line,
+.struktiva-automation-flow,
+.struktiva-salon-system-visual {
+  isolation: isolate;
+}
+
+.struktiva-digital-check-process-line::before,
+.struktiva-about-method-line::before,
+.struktiva-automation-flow::before,
+.struktiva-salon-system-visual svg,
+.struktiva-case-map__lines,
+.struktiva-system-visual__lines {
+  z-index: 0;
+}
+
+.struktiva-digital-check-process-line li,
+.struktiva-about-method-line li,
+.struktiva-automation-flow li,
+.struktiva-salon-system-visual__node,
+.struktiva-salon-system-visual__center,
+.struktiva-case-map__node,
+.struktiva-case-map__center,
+.struktiva-system-visual__node,
+.struktiva-system-visual__center {
+  position: relative;
+  z-index: 2;
+}
+
+.struktiva-automation-flow li,
+.struktiva-solutions-world-visual--automation li,
+.struktiva-digital-check-process-line li,
+.struktiva-about-method-line li,
+.struktiva-salon-system-visual__node {
+  border-color: rgba(248, 246, 239, 0.18) !important;
+  background: rgba(255, 255, 255, 0.075) !important;
+  color: var(--text-on-dark) !important;
+}
+
+.struktiva-automation-flow li :is(strong, span),
+.struktiva-solutions-world-visual--automation li :is(strong, span),
+.struktiva-digital-check-process-line li :is(h3, strong),
+.struktiva-about-method-line li :is(h3, strong),
+.struktiva-salon-system-visual__node strong {
+  color: #ffffff !important;
+}
+
+.struktiva-automation-flow li :is(p, small),
+.struktiva-solutions-world-visual--automation li :is(p, small),
+.struktiva-digital-check-process-line li p,
+.struktiva-about-method-line li p,
+.struktiva-salon-system-visual__node small {
+  color: var(--text-muted-on-dark) !important;
+}
+
+.struktiva-system-visual__center,
+.struktiva-digital-check-path__center,
+.struktiva-digital-check-hero-visual__center,
+.struktiva-digital-check-area-map__center,
+.struktiva-about-hero-visual__center,
+.struktiva-case-map__center,
+.struktiva-salon-system-visual__center {
+  overflow: hidden;
+  color: var(--text-on-dark) !important;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.struktiva-digital-check-hero-visual__center :is(span, strong),
+.struktiva-digital-check-area-map__center :is(span, strong),
+.struktiva-about-hero-visual__center :is(span, strong),
+.struktiva-case-map__center :is(span, strong),
+.struktiva-salon-system-visual__center :is(span, strong),
+.struktiva-digital-check-path__center :is(span, strong) {
+  max-width: 100%;
+  color: #ffffff !important;
+  line-height: 1.12;
+}
+
+.struktiva-system-visual__center :is(small),
+.struktiva-digital-check-hero-visual__center :is(small),
+.struktiva-digital-check-area-map__center :is(small),
+.struktiva-about-hero-visual__center :is(small),
+.struktiva-case-map__center :is(small),
+.struktiva-salon-system-visual__center :is(small, strong),
+.struktiva-digital-check-path__center :is(small) {
+  max-width: 100%;
+  color: var(--text-muted-on-dark) !important;
+}
+
+.struktiva-system-visual__center {
+  background:
+    linear-gradient(160deg, rgba(24, 24, 22, 0.98), rgba(41, 38, 29, 0.96)) !important;
+  border-color: rgba(216, 194, 138, 0.28) !important;
+}
+
+.struktiva-system-visual__center span {
+  color: #ffffff !important;
+}
+
+.struktiva-system-visual__center small {
+  color: var(--text-muted-on-dark) !important;
+}
+
+.struktiva-contact-form__field input,
+.struktiva-contact-form__field select,
+.struktiva-contact-form__field textarea {
+  color: #ffffff !important;
+  caret-color: #ffffff;
+}
+
+.struktiva-contact-form__field input::placeholder,
+.struktiva-contact-form__field textarea::placeholder {
+  color: var(--text-soft-on-dark) !important;
+}
+
+.struktiva-contact-form__helper {
+  color: var(--text-muted-on-dark) !important;
+}
+
+.struktiva-contact-form__error {
+  color: #ffc2ad !important;
+}
+
+.struktiva-contact-form__status--success {
+  color: #c8f7dc !important;
+}
+
+.struktiva-contact-form__status--error {
+  color: #ffc2ad !important;
+}
+
+.struktiva-metallic main .struktiva-contact-form__submit:disabled,
+.struktiva-contact-form__submit:disabled {
+  border-color: rgba(248, 246, 239, 0.66) !important;
+  background: #f7f3ea !important;
+  color: rgba(17, 17, 17, 0.58) !important;
+  opacity: 1 !important;
+}
+
+.struktiva-footer-cta,
+.struktiva-footer-cta *,
+.struktiva-mobile-nav__cta,
+.struktiva-mobile-nav__cta * {
+  color: #ffffff !important;
+}
+
+.struktiva-floating-whatsapp,
+.floating-whatsapp-button {
+  right: max(1rem, env(safe-area-inset-right)) !important;
+  bottom: max(1.15rem, env(safe-area-inset-bottom)) !important;
+}
+
+body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-button) {
+  bottom: calc(max(1.15rem, env(safe-area-inset-bottom)) + 5.25rem) !important;
+}
+
+@media (max-width: 1100px) {
+  .struktiva-digital-check-area-map {
+    min-height: auto;
+    padding: clamp(1rem, 2.8vw, 1.35rem);
+  }
+
+  .struktiva-digital-check-area-map::before {
+    inset: 1rem;
+    border-radius: 26px;
+  }
+
+  .struktiva-digital-check-area-map__center,
+  .struktiva-digital-check-area {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    transform: none !important;
+  }
+
+  .struktiva-digital-check-area-map__center {
+    margin-bottom: 1rem;
+  }
+
+  .struktiva-digital-check-area-map ol {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .struktiva-digital-check-hero-visual,
+  .struktiva-about-hero-visual,
+  .struktiva-solutions-hero-visual,
+  .struktiva-practice-hero-visual {
+    overflow: visible;
+  }
+}
+
+@media (max-width: 900px) {
+  .struktiva-digital-check-hero-visual,
+  .struktiva-about-hero-visual,
+  .struktiva-solutions-hero-visual,
+  .struktiva-practice-hero-visual,
+  .struktiva-system-visual {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem;
+    min-height: auto;
+  }
+
+  .struktiva-digital-check-hero-visual::before,
+  .struktiva-digital-check-hero-visual::after,
+  .struktiva-about-hero-visual::before,
+  .struktiva-about-hero-visual::after,
+  .struktiva-solutions-hero-visual::before,
+  .struktiva-solutions-hero-visual::after,
+  .struktiva-practice-hero-visual::before,
+  .struktiva-practice-hero-visual::after {
+    display: none !important;
+  }
+
+  .struktiva-digital-check-hero-visual__center,
+  .struktiva-about-hero-visual__center,
+  .struktiva-solutions-hero-visual__analysis,
+  .struktiva-practice-hero-visual__middle {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    min-height: 6rem;
+    transform: none !important;
+  }
+
+  .struktiva-digital-check-hero-visual__center,
+  .struktiva-about-hero-visual__center {
+    order: -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .struktiva-digital-check-process-line li,
+  .struktiva-about-method-line li {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .struktiva-solutions-cta-section__actions,
+  .struktiva-practice-cta__actions,
+  .struktiva-salon-cta__actions,
+  .struktiva-digital-check-cta__actions {
+    justify-items: stretch !important;
+    width: 100%;
+  }
+
+  .struktiva-solutions-cta-section__text-link,
+  .struktiva-practice-cta__text-link,
+  .struktiva-salon-cta__text-link,
+  .struktiva-digital-check-cta__text-link,
+  .struktiva-about-cta__text-link {
+    justify-content: center;
+    width: 100%;
+    min-height: 2.75rem;
+    text-align: center;
+  }
+
+  .struktiva-floating-whatsapp,
+  .floating-whatsapp-button {
+    width: 3rem !important;
+    height: 3rem !important;
+    right: max(0.85rem, env(safe-area-inset-right)) !important;
+    bottom: max(0.85rem, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* Specificity guard against older sitewide bright-system !important rules. */
+.struktiva-metallic main .struktiva-solutions-cta-section :is(h2, h3, strong),
+.struktiva-metallic main .struktiva-practice-cta :is(h2, h3, strong),
+.struktiva-metallic main .struktiva-salon-system :is(h2, h3, strong),
+.struktiva-metallic main .struktiva-salon-cta :is(h2, h3, strong),
+.struktiva-metallic main .struktiva-digital-check-process :is(h2, h3, strong),
+.struktiva-metallic main .struktiva-digital-check-cta :is(h2, h3, strong),
+.struktiva-metallic main .struktiva-about-method :is(h2, h3, strong),
+.struktiva-metallic main .struktiva-about-cta :is(h2, h3, strong),
+.struktiva-metallic main .struktiva-contact-form-section :is(h2, h3, label, strong) {
+  color: #ffffff !important;
+}
+
+.struktiva-metallic main .struktiva-solutions-cta-section :is(p, li, small):not(.struktiva-solutions-eyebrow),
+.struktiva-metallic main .struktiva-practice-cta :is(p, li, small):not(.struktiva-practice-eyebrow),
+.struktiva-metallic main .struktiva-salon-system :is(p, li, small):not(.struktiva-salon-eyebrow),
+.struktiva-metallic main .struktiva-salon-cta :is(p, li, small):not(.struktiva-salon-eyebrow),
+.struktiva-metallic main .struktiva-digital-check-process :is(p, li, small):not(.struktiva-digital-check-eyebrow),
+.struktiva-metallic main .struktiva-digital-check-cta :is(p, li, small):not(.struktiva-digital-check-eyebrow),
+.struktiva-metallic main .struktiva-about-method :is(p, li, small):not(.struktiva-about-eyebrow),
+.struktiva-metallic main .struktiva-about-cta :is(p, li, small):not(.struktiva-about-eyebrow),
+.struktiva-metallic main .struktiva-contact-form-section :is(p, li, small):not(.struktiva-contact-eyebrow):not(.struktiva-contact-form__error) {
+  color: var(--text-muted-on-dark) !important;
+}
+
+.struktiva-metallic main .struktiva-solutions-cta-section .struktiva-solutions-eyebrow,
+.struktiva-metallic main .struktiva-practice-cta .struktiva-practice-eyebrow,
+.struktiva-metallic main .struktiva-salon-system :is(.struktiva-salon-eyebrow, .struktiva-salon-label),
+.struktiva-metallic main .struktiva-salon-cta .struktiva-salon-eyebrow,
+.struktiva-metallic main .struktiva-digital-check-process .struktiva-digital-check-eyebrow,
+.struktiva-metallic main .struktiva-digital-check-cta .struktiva-digital-check-eyebrow,
+.struktiva-metallic main .struktiva-about-method .struktiva-about-eyebrow,
+.struktiva-metallic main .struktiva-about-cta .struktiva-about-eyebrow,
+.struktiva-metallic main .struktiva-contact-form-section .struktiva-contact-eyebrow {
+  color: var(--gold-muted, #d8c28a) !important;
+}
+
+.struktiva-metallic main .struktiva-digital-check-hero-visual__center strong,
+.struktiva-metallic main .struktiva-digital-check-area-map__center span,
+.struktiva-metallic main .struktiva-about-hero-visual__center strong,
+.struktiva-metallic main .struktiva-case-map__center strong,
+.struktiva-metallic main .struktiva-system-visual__center span,
+.struktiva-metallic main .struktiva-salon-system-visual__center span {
+  color: #ffffff !important;
+}
+
+.struktiva-metallic main .struktiva-digital-check-hero-visual__center small,
+.struktiva-metallic main .struktiva-digital-check-area-map__center small,
+.struktiva-metallic main .struktiva-about-hero-visual__center small,
+.struktiva-metallic main .struktiva-case-map__center small,
+.struktiva-metallic main .struktiva-system-visual__center small,
+.struktiva-metallic main .struktiva-salon-system-visual__center :is(small, strong) {
+  color: var(--text-muted-on-dark) !important;
+}
+
+.struktiva-metallic main .struktiva-contact-form__field :is(input, select, textarea) {
+  color: #ffffff !important;
+}
+
+.struktiva-metallic main .struktiva-contact-form__field :is(input, textarea)::placeholder {
+  color: var(--text-soft-on-dark) !important;
+}
+
+.struktiva-metallic main .struktiva-contact-form__helper {
+  color: var(--text-muted-on-dark) !important;
+}
+
+.struktiva-metallic main .struktiva-contact-form__error {
+  color: #ffc2ad !important;
+}
+
+.struktiva-metallic main .struktiva-solutions-cta-section .struktiva-solutions-primary,
+.struktiva-metallic main .struktiva-practice-cta .struktiva-practice-primary,
+.struktiva-metallic main .struktiva-salon-cta .struktiva-salon-primary,
+.struktiva-metallic main .struktiva-digital-check-cta :is(.struktiva-digital-check-primary, .struktiva-digital-check-cta__primary),
+.struktiva-metallic main .struktiva-about-cta .struktiva-about-primary,
+.struktiva-metallic main .struktiva-contact-form__submit:not(:disabled),
+.struktiva-metallic main .struktiva-solutions-cta-section .struktiva-solutions-primary *,
+.struktiva-metallic main .struktiva-practice-cta .struktiva-practice-primary *,
+.struktiva-metallic main .struktiva-salon-cta .struktiva-salon-primary *,
+.struktiva-metallic main .struktiva-digital-check-cta :is(.struktiva-digital-check-primary, .struktiva-digital-check-cta__primary) *,
+.struktiva-metallic main .struktiva-about-cta .struktiva-about-primary *,
+.struktiva-metallic main .struktiva-contact-form__submit:not(:disabled) * {
+  color: #111111 !important;
+}

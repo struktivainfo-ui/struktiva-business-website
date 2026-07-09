@@ -325,3 +325,61 @@ Bewusst erhalten:
 - Soforthilfe S/M/L
 - aktuelle Soforthilfe 99 EUR
 - alter Digitaler Kurzcheck 49 EUR
+
+## Update Schritt 24: Visual Regression Fix
+
+In Schritt 24 wurden ausschliesslich visuelle CSS-Korrekturen umgesetzt. Inhalte, Routen,
+Formularlogik, API, Tracking, Consent-Verhalten, Preise, Demo-Rewrites und Redirects blieben
+unveraendert.
+
+Ursache:
+
+- Ein aelterer globaler Bright-System-CSS-Block mit `!important`-Textfarben ueberschrieb
+  spaetere Dark-Surface-Regeln.
+- Mehrere Systemvisualisierungen nutzten absolute oder radial angeordnete Elemente, die auf
+  schmalen Viewports zu Textdruck, Ueberlagerungen oder schlechter Lesbarkeit fuehren konnten.
+- Dekorative Linien lagen in einzelnen Prozessvisualisierungen visuell zu nah an Karteninhalten.
+
+Korrigiert:
+
+- Dunkle Flaechen erhalten explizite Vordergrundfarben fuer Headlines, Fliesstext,
+  Eyebrows, Links, Labels und Buttons.
+- Dark-CTA-Bereiche wurden fuer `loesungen`, `praxisbeispiele`, `digital-check`,
+  `ueber-uns`, Kontaktformular und Home-Digital-Check lesbar stabilisiert.
+- Prozesskarten und dunkle Nodes wurden fuer Digital-Check, About, Salon-System,
+  Automation-/Solutions-Visuals, Case-Map und Home-Systemvisualisierung abgesichert.
+- Kontaktformularfelder, Selects, Placeholder, Hilfetexte, Consent-Link, Statusmeldungen
+  und deaktivierter Submit-Button sind auf dunklem Hintergrund lesbar.
+- Mobile und Tablet-Layouts schalten kritische Visualisierungen frueher in vertikale,
+  relative Layouts um.
+- Dekorative Verbindungslinien liegen per Z-Index hinter den Inhalten.
+- Floating-WhatsApp nutzt Safe-Area- und Cookie-Banner-Abstaende.
+
+Getestete lokale Viewports:
+
+- `360x740`, `390x844`, `430x932`, `600x900`
+- `768x1024`, `820x1180`, `900x900`, `1024x768`
+- `1100x900`, `1280x800`, `1440x900`, `1728x1000`
+
+Gepruefte Screenshot-Bereiche:
+
+- Home Final CTA, Home Prozess, Home Hero/Systemvisualisierung
+- Digital-Check Hero, Bereiche, Prozess, Final CTA
+- About Hero, Methode, Final CTA
+- Kontakt Hero, Kontaktformular
+
+Ergebnis:
+
+- `npm run build` erfolgreich.
+- Lokale Playwright-Matrix: 168 Route-/Viewport-Kombinationen ohne Fehler.
+- Lokaler Visual-Check: 20 Kontrastpruefungen ohne Fehler, 36 Screenshots erzeugt.
+- Lokaler Regression-Check: Formular-Erfolg/Fehler gemockt, Consent-Reopen und
+  `/demos` sowie `/referenzen` mit exaktem `308`-Redirect erfolgreich.
+
+Restrisiken:
+
+- Das CSS-Bundle bleibt gross und historisch gewachsen; ein spaeterer CSS-Split wuerde
+  die Wartbarkeit verbessern.
+- Externe Demo-Bilder koennen lokal weiterhin netzwerkbedingt anders reagieren als live.
+- Die Digital-Check-Area-Visualisierung enthaelt auf Mobile bewusst vertikale Luft, damit
+  Nodes nicht erneut ueberlappen.
