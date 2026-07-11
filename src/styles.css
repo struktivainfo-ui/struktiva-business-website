@@ -14208,3 +14208,625 @@ body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-
 .struktiva-metallic main .struktiva-contact-form__submit:not(:disabled) * {
   color: #111111 !important;
 }
+
+/* Step 24.1 hard visual stabilization: favour calm, non-overlapping flows. */
+:root {
+  --color-text-on-dark: var(--text-on-dark, #f8f6ef);
+  --color-muted-on-dark: var(--text-muted-on-dark, rgba(248, 246, 239, 0.76));
+  --color-link-on-dark: var(--gold-muted, #d8c28a);
+  --color-card-dark-text: #ffffff;
+  --color-form-label-on-dark: #ffffff;
+}
+
+.struktiva-metallic main :is(
+  .struktiva-solutions-cta-section,
+  .struktiva-practice-cta,
+  .struktiva-salon-system,
+  .struktiva-salon-cta,
+  .struktiva-digital-check-process,
+  .struktiva-digital-check-cta,
+  .struktiva-about-method,
+  .struktiva-about-cta,
+  .struktiva-contact-form-section,
+  .struktiva-packages-application,
+  .struktiva-packages-transparency
+) {
+  color: var(--color-text-on-dark) !important;
+}
+
+.struktiva-metallic main :is(
+  .struktiva-solutions-cta-section,
+  .struktiva-practice-cta,
+  .struktiva-salon-system,
+  .struktiva-salon-cta,
+  .struktiva-digital-check-process,
+  .struktiva-digital-check-cta,
+  .struktiva-about-method,
+  .struktiva-about-cta,
+  .struktiva-contact-form-section,
+  .struktiva-packages-application,
+  .struktiva-packages-transparency
+) :is(h1, h2, h3, h4, strong, label) {
+  color: #ffffff !important;
+}
+
+.struktiva-metallic main :is(
+  .struktiva-solutions-cta-section,
+  .struktiva-practice-cta,
+  .struktiva-salon-system,
+  .struktiva-salon-cta,
+  .struktiva-digital-check-process,
+  .struktiva-digital-check-cta,
+  .struktiva-about-method,
+  .struktiva-about-cta,
+  .struktiva-contact-form-section,
+  .struktiva-packages-application,
+  .struktiva-packages-transparency
+) :is(p, li, small, span):not([class*="eyebrow"]):not([class*="error"]) {
+  color: var(--color-muted-on-dark) !important;
+}
+
+.struktiva-metallic main :is(
+  .struktiva-solutions-cta-section,
+  .struktiva-practice-cta,
+  .struktiva-salon-cta,
+  .struktiva-digital-check-cta,
+  .struktiva-about-cta,
+  .struktiva-contact-form-section
+) :is(a, button):not(.struktiva-contact-form__submit:disabled) {
+  color: var(--color-text-on-dark) !important;
+}
+
+.struktiva-metallic main :is(
+  .struktiva-solutions-primary,
+  .struktiva-practice-primary,
+  .struktiva-salon-primary,
+  .struktiva-digital-check-primary,
+  .struktiva-digital-check-cta__primary,
+  .struktiva-about-primary,
+  .struktiva-contact-primary,
+  .struktiva-contact-form__submit:not(:disabled),
+  .struktiva-services-primary-link,
+  .struktiva-packages-primary-link,
+  .struktiva-footer-cta,
+  .struktiva-primary-action
+),
+.struktiva-metallic main :is(
+  .struktiva-solutions-primary,
+  .struktiva-practice-primary,
+  .struktiva-salon-primary,
+  .struktiva-digital-check-primary,
+  .struktiva-digital-check-cta__primary,
+  .struktiva-about-primary,
+  .struktiva-contact-primary,
+  .struktiva-contact-form__submit:not(:disabled),
+  .struktiva-services-primary-link,
+  .struktiva-packages-primary-link,
+  .struktiva-footer-cta,
+  .struktiva-primary-action
+) * {
+  border-color: rgba(216, 194, 138, 0.42) !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.struktiva-metallic main :is(
+  .struktiva-solutions-primary,
+  .struktiva-practice-primary,
+  .struktiva-salon-primary,
+  .struktiva-digital-check-primary,
+  .struktiva-digital-check-cta__primary,
+  .struktiva-about-primary,
+  .struktiva-contact-primary,
+  .struktiva-contact-form__submit:not(:disabled),
+  .struktiva-services-primary-link,
+  .struktiva-packages-primary-link,
+  .struktiva-footer-cta,
+  .struktiva-primary-action
+):hover,
+.struktiva-metallic main :is(
+  .struktiva-solutions-primary,
+  .struktiva-practice-primary,
+  .struktiva-salon-primary,
+  .struktiva-digital-check-primary,
+  .struktiva-digital-check-cta__primary,
+  .struktiva-about-primary,
+  .struktiva-contact-primary,
+  .struktiva-contact-form__submit:not(:disabled),
+  .struktiva-services-primary-link,
+  .struktiva-packages-primary-link,
+  .struktiva-footer-cta,
+  .struktiva-primary-action
+):focus-visible {
+  background: #242118 !important;
+  color: #ffffff !important;
+}
+
+.struktiva-contact-form__submit:disabled {
+  background: rgba(248, 246, 239, 0.16) !important;
+  color: rgba(248, 246, 239, 0.72) !important;
+  border: 1px solid rgba(248, 246, 239, 0.28) !important;
+}
+
+.struktiva-contact-form__submit:disabled * {
+  color: rgba(248, 246, 239, 0.72) !important;
+}
+
+.struktiva-footer-cta,
+.struktiva-metallic footer .struktiva-footer-cta,
+.struktiva-footer-cta:hover,
+.struktiva-metallic footer .struktiva-footer-cta:hover,
+.struktiva-footer-cta:focus-visible,
+.struktiva-metallic footer .struktiva-footer-cta:focus-visible {
+  background: #111111 !important;
+  color: #ffffff !important;
+  border-color: rgba(216, 194, 138, 0.42) !important;
+}
+
+.struktiva-footer-cta *,
+.struktiva-metallic footer .struktiva-footer-cta *,
+.struktiva-mobile-nav__cta *,
+.struktiva-primary-action--mobile * {
+  color: #ffffff !important;
+}
+
+.struktiva-global-footer .struktiva-footer-legal button:not(.struktiva-footer-cta) {
+  color: #111111 !important;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.struktiva-digital-check-hero-visual__center,
+.struktiva-digital-check-area-map__center,
+.struktiva-about-hero-visual__center,
+.struktiva-case-map__center,
+.struktiva-salon-system-visual__center,
+.struktiva-system-visual__center,
+.struktiva-services-visual__result,
+.struktiva-packages-visual__result {
+  background:
+    linear-gradient(160deg, rgba(17, 17, 17, 0.98), rgba(36, 33, 24, 0.98)) !important;
+  background-color: #111111 !important;
+  border-color: rgba(216, 194, 138, 0.34) !important;
+}
+
+.struktiva-metallic main :is(
+  .struktiva-system-visual__center,
+  .struktiva-digital-check-path__center,
+  .struktiva-digital-check-hero-visual__center,
+  .struktiva-digital-check-area-map__center,
+  .struktiva-about-hero-visual__center,
+  .struktiva-case-map__center,
+  .struktiva-salon-system-visual__center,
+  .struktiva-services-visual__result,
+  .struktiva-packages-visual__result
+),
+.struktiva-metallic main :is(
+  .struktiva-system-visual__center,
+  .struktiva-digital-check-path__center,
+  .struktiva-digital-check-hero-visual__center,
+  .struktiva-digital-check-area-map__center,
+  .struktiva-about-hero-visual__center,
+  .struktiva-case-map__center,
+  .struktiva-salon-system-visual__center,
+  .struktiva-services-visual__result,
+  .struktiva-packages-visual__result
+) * {
+  color: var(--color-text-on-dark) !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
+
+.struktiva-metallic main :is(
+  .struktiva-system-visual__center small,
+  .struktiva-digital-check-path__center small,
+  .struktiva-digital-check-hero-visual__center small,
+  .struktiva-digital-check-area-map__center small,
+  .struktiva-about-hero-visual__center small,
+  .struktiva-case-map__center small,
+  .struktiva-salon-system-visual__center strong,
+  .struktiva-services-visual__result span,
+  .struktiva-packages-visual__result span
+) {
+  color: var(--color-muted-on-dark) !important;
+}
+
+.struktiva-system-visual,
+.struktiva-digital-check-area-map,
+.struktiva-case-map,
+.struktiva-salon-system-visual {
+  display: grid !important;
+  gap: clamp(0.9rem, 1.8vw, 1.25rem) !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  padding: clamp(1rem, 2.2vw, 1.5rem) !important;
+}
+
+.struktiva-system-visual__lines,
+.struktiva-system-visual__pulse,
+.struktiva-digital-check-area-map::before,
+.struktiva-case-map__lines,
+.struktiva-salon-system-visual svg {
+  display: none !important;
+}
+
+.struktiva-system-visual::before {
+  inset: 1rem !important;
+  border-radius: 28px !important;
+  transform: none !important;
+  pointer-events: none;
+}
+
+.struktiva-system-visual__nodes,
+.struktiva-case-map__nodes,
+.struktiva-salon-system-visual ol,
+.struktiva-digital-check-area-map ol {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(0.75rem, 1.6vw, 1rem) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.struktiva-system-visual__nodes {
+  display: contents !important;
+}
+
+.struktiva-system-visual__center,
+.struktiva-digital-check-area-map__center,
+.struktiva-case-map__center,
+.struktiva-salon-system-visual__center {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  z-index: 2 !important;
+  width: min(100%, 34rem) !important;
+  max-width: 100% !important;
+  min-height: 7rem !important;
+  aspect-ratio: auto !important;
+  margin: 0 auto !important;
+  transform: none !important;
+  border-radius: 24px !important;
+  padding: clamp(1rem, 2vw, 1.35rem) !important;
+}
+
+.struktiva-system-visual__center,
+.struktiva-digital-check-area-map__center,
+.struktiva-case-map__center,
+.struktiva-salon-system-visual__center {
+  grid-column: 1 / -1 !important;
+}
+
+.struktiva-system-visual__node,
+.struktiva-digital-check-area,
+.struktiva-case-map__node,
+.struktiva-salon-system-visual__node {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: auto !important;
+  transform: none !important;
+}
+
+.struktiva-system-visual__node:hover {
+  transform: none !important;
+}
+
+.struktiva-digital-check-area {
+  grid-template-columns: auto minmax(0, 1fr) !important;
+  align-items: start !important;
+}
+
+.struktiva-digital-check-area h3,
+.struktiva-digital-check-area p,
+.struktiva-digital-check-area li,
+.struktiva-case-map__node strong,
+.struktiva-salon-system-visual__node strong,
+.struktiva-salon-system-visual__node small,
+.struktiva-system-visual__node strong,
+.struktiva-system-visual__node small {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.struktiva-case-map__node,
+.struktiva-salon-system-visual__node {
+  background: rgba(35, 32, 24, 0.98) !important;
+}
+
+.struktiva-case-map__node span,
+.struktiva-salon-system-visual__node span {
+  color: var(--color-link-on-dark) !important;
+}
+
+.struktiva-case-map__node strong,
+.struktiva-salon-system-visual__node strong {
+  color: #ffffff !important;
+}
+
+.struktiva-salon-system-visual__node small {
+  color: var(--color-muted-on-dark) !important;
+}
+
+.struktiva-digital-check-hero-visual,
+.struktiva-about-hero-visual,
+.struktiva-solutions-hero-visual,
+.struktiva-practice-hero-visual,
+.struktiva-contact-hero__visual,
+.struktiva-services-visual,
+.struktiva-packages-visual {
+  overflow: visible !important;
+}
+
+.struktiva-digital-check-hero-visual__signals li,
+.struktiva-digital-check-hero-visual__steps li,
+.struktiva-about-hero-visual__factors li,
+.struktiva-about-hero-visual__steps li,
+.struktiva-solutions-hero-visual__inputs li,
+.struktiva-practice-hero-visual__situations li,
+.struktiva-practice-hero-visual__outputs li,
+.struktiva-contact-visual__sources span,
+.struktiva-contact-visual__steps li,
+.struktiva-services-visual__step,
+.struktiva-packages-visual__node {
+  min-width: 0 !important;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.struktiva-digital-check-process-line,
+.struktiva-about-method-line {
+  isolation: isolate;
+}
+
+.struktiva-digital-check-process-line::before,
+.struktiva-about-method-line::before {
+  z-index: 0 !important;
+  pointer-events: none;
+}
+
+.struktiva-digital-check-process-line li,
+.struktiva-about-method-line li {
+  z-index: 2 !important;
+  background: rgba(35, 32, 24, 0.98) !important;
+  border-color: rgba(248, 246, 239, 0.18) !important;
+  color: var(--color-card-dark-text) !important;
+}
+
+.struktiva-digital-check-process-line li :is(h3, p, strong),
+.struktiva-about-method-line li :is(h3, p, strong) {
+  color: inherit !important;
+}
+
+.struktiva-digital-check-process-line li p,
+.struktiva-about-method-line li p {
+  color: var(--color-muted-on-dark) !important;
+}
+
+.struktiva-contact-form-section :is(h2, label, strong),
+.struktiva-contact-form__field label,
+.struktiva-contact-form__consent label {
+  color: var(--color-form-label-on-dark) !important;
+}
+
+.struktiva-contact-form-section__intro p:not(.struktiva-contact-eyebrow),
+.struktiva-contact-form__consent span,
+.struktiva-contact-form__helper {
+  color: var(--color-muted-on-dark) !important;
+}
+
+.struktiva-contact-form__field :is(input, select, textarea) {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(248, 246, 239, 0.22) !important;
+}
+
+.struktiva-contact-form__field :is(input, textarea)::placeholder {
+  color: rgba(248, 246, 239, 0.58) !important;
+}
+
+.struktiva-services-connection__rail {
+  align-items: stretch !important;
+  overflow: visible !important;
+}
+
+.struktiva-services-connection__item {
+  min-width: min(100%, 10rem) !important;
+  overflow-wrap: anywhere;
+}
+
+.struktiva-floating-whatsapp,
+.floating-whatsapp-button {
+  right: max(1.25rem, env(safe-area-inset-right)) !important;
+  bottom: max(1.4rem, env(safe-area-inset-bottom)) !important;
+}
+
+body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-button) {
+  bottom: calc(max(1.4rem, env(safe-area-inset-bottom)) + 6rem) !important;
+}
+
+@media (max-width: 1180px) {
+  .struktiva-digital-check-hero-visual,
+  .struktiva-about-hero-visual,
+  .struktiva-solutions-hero-visual,
+  .struktiva-practice-hero-visual {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .struktiva-digital-check-hero-visual::before,
+  .struktiva-digital-check-hero-visual::after,
+  .struktiva-about-hero-visual::before,
+  .struktiva-about-hero-visual::after,
+  .struktiva-solutions-hero-visual::before,
+  .struktiva-solutions-hero-visual::after,
+  .struktiva-practice-hero-visual::before,
+  .struktiva-practice-hero-visual::after {
+    display: none !important;
+  }
+
+  .struktiva-digital-check-hero-visual__center,
+  .struktiva-about-hero-visual__center,
+  .struktiva-solutions-hero-visual__analysis,
+  .struktiva-practice-hero-visual__middle {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    min-height: 6.5rem !important;
+    transform: none !important;
+    order: -1;
+  }
+
+  .struktiva-system-visual__nodes,
+  .struktiva-case-map__nodes,
+  .struktiva-salon-system-visual ol,
+  .struktiva-digital-check-area-map ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .struktiva-system-visual__nodes {
+    display: contents !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .struktiva-system-visual,
+  .struktiva-digital-check-area-map,
+  .struktiva-case-map,
+  .struktiva-salon-system-visual,
+  .struktiva-services-visual,
+  .struktiva-packages-visual {
+    border-radius: 24px !important;
+    padding: 1rem !important;
+  }
+
+  .struktiva-system-visual__nodes,
+  .struktiva-case-map__nodes,
+  .struktiva-salon-system-visual ol,
+  .struktiva-digital-check-area-map ol,
+  .struktiva-services-visual__flow,
+  .struktiva-packages-visual__paths {
+    grid-template-columns: 1fr !important;
+  }
+
+  .struktiva-system-visual__nodes {
+    display: contents !important;
+  }
+
+  .struktiva-digital-check-area {
+    grid-template-columns: 1fr !important;
+  }
+
+  .struktiva-digital-check-area__index,
+  .struktiva-digital-check-process-line span,
+  .struktiva-about-method-line > li > span {
+    width: 2.15rem !important;
+    height: 2.15rem !important;
+  }
+
+  .struktiva-contact-visual__sources,
+  .struktiva-contact-visual__steps,
+  .struktiva-services-connection__rail {
+    grid-template-columns: 1fr !important;
+  }
+
+  .struktiva-contact-visual__thread {
+    height: 2.6rem !important;
+  }
+
+  .struktiva-floating-whatsapp,
+  .floating-whatsapp-button {
+    width: 3rem !important;
+    height: 3rem !important;
+    min-height: 3rem !important;
+    padding: 0 !important;
+    right: max(0.95rem, env(safe-area-inset-right)) !important;
+    bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+  }
+
+  body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-button) {
+    bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 6.25rem) !important;
+  }
+}
+
+.struktiva-practice-page,
+.struktiva-contact-page,
+.struktiva-about-page,
+.struktiva-home-page {
+  overflow-x: clip !important;
+}
+
+.struktiva-practice-transparency,
+.struktiva-contact-options,
+.struktiva-contact-direct,
+.struktiva-about-hero__copy,
+.struktiva-about-hero h1,
+.struktiva-home-digital-check,
+.struktiva-digital-check-process-line li {
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.struktiva-practice-transparency *,
+.struktiva-contact-options *,
+.struktiva-contact-direct *,
+.struktiva-about-hero__copy *,
+.struktiva-home-digital-check *,
+.struktiva-digital-check-process-line li *,
+.struktiva-problem-journey__step * {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.struktiva-problem-journey__step {
+  min-width: 6.25rem !important;
+}
+
+@media (max-width: 760px) {
+  .struktiva-contact-page__body {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    overflow-x: clip !important;
+  }
+
+  .struktiva-contact-page__body > *,
+  .struktiva-contact-section-heading,
+  .struktiva-contact-section-heading h2,
+  .struktiva-contact-section-heading p {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .struktiva-contact-section-heading h2 {
+    font-size: clamp(1.78rem, 8vw, 2.55rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .struktiva-practice-transparency,
+  .struktiva-contact-options,
+  .struktiva-contact-direct {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .struktiva-contact-options__path,
+  .struktiva-contact-direct__list {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

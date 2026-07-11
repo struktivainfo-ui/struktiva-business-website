@@ -383,3 +383,74 @@ Restrisiken:
 - Externe Demo-Bilder koennen lokal weiterhin netzwerkbedingt anders reagieren als live.
 - Die Digital-Check-Area-Visualisierung enthaelt auf Mobile bewusst vertikale Luft, damit
   Nodes nicht erneut ueberlappen.
+
+## Update Schritt 24.1: Harter Visual-Fix
+
+Der erste visuelle Fix aus Schritt 24 war nicht ausreichend. In den Nutzer-Screenshots und im
+erneuten lokalen Audit bestanden weiter folgende Problemklassen:
+
+- abgeschnittene oder ueberlappende Systemgrafiken
+- zu komplexe absolute/radiale Node-Layouts in kritischen Zwischenbreiten
+- dunkle Buttons oder Footer-Buttons mit falscher Textfarbe
+- einzelne dunkle Prozesskarten mit nicht eindeutigem eigenem Dark-Surface-Hintergrund
+- mobile Textboxen, die zwar weggeclippt wurden, aber rechnerisch breiter als die verfuegbare
+  Spalte waren
+
+In Schritt 24.1 wurde deshalb Stabilitaet vor Komplexitaet gesetzt. Es wurden keine Inhalte,
+Routen, Preise, Formularlogik, API, Resend-Anbindung, Consent-Logik, Tracking-Logik, Sitemap
+oder Redirect-Regeln veraendert.
+
+Neu stabilisierte Komponenten:
+
+- Home-Hero-Systemvisualisierung
+- Home-Digital-Check-Analysepfad
+- Footer-/Brand-Bereich inklusive CTA und Cookie-Einstellungen-Button
+- Solutions-Hero-Visual
+- Salon-Karola-Systemkarte
+- Case-Map-Systemkarte
+- DigitalCheck Hero, Areas, Process und CTA
+- About Hero, Method und CTA
+- Contact Hero und ContactLeadForm
+- ServicesConnection, ServicesHero-Visual und PackagesHero-Visual
+
+Vereinfachte Visuals:
+
+- Home-Systemvisualisierung: von ueberlagerter Verbindungsgrafik zu klarem Karten-Flow.
+- DigitalCheckAreas: von absoluter Area-Map zu stabiler Center-Node-plus-Card-Grid-Struktur.
+- Salon-Karola-Systemkarte: von radialer Karte zu ruhigem Center-plus-sechs-Karten-Layout.
+- Case-Map: von absoluter Map zu stabiler Grid-Systemkarte.
+- Tablet/Mobile-Hero-Visuals: frueherer Wechsel auf vertikalen Flow bei kritischen Breiten.
+
+Korrigierte Kontrastregeln:
+
+- finales On-Dark-Foreground-System mit `--color-text-on-dark`,
+  `--color-muted-on-dark`, `--color-link-on-dark`, `--color-card-dark-text` und
+  `--color-form-label-on-dark`
+- dunkle Nodes mit eigener solider Dark-Surface-Flaeche plus hellem Text
+- dunkle Prozesskarten mit eigener solider Dark-Surface-Flaeche plus hellem Text
+- dunkle Buttons mit heller Schrift in Normal-, Hover- und Focus-Zustand
+- Footer-/Brand-Button und Footer-Cookie-Button lesbar korrigiert
+- Kontaktformular auf dunklem Hintergrund fuer H2, Intro, Labels, Helper, Placeholder,
+  Select/Input/Textarea, Consent, Error, Success und Submit lesbar abgesichert
+
+Getestete Viewports:
+
+- `360x740`, `390x844`, `430x932`, `600x900`
+- `768x1024`, `820x1180`, `900x900`, `1024x768`
+- `1100x850`, `1280x800`, `1440x900`, `1728x1000`
+
+Ergebnis:
+
+- `npm run build` erfolgreich.
+- Lokale Playwright-Matrix: 168 Route-/Viewport-Kombinationen ohne Overlap,
+  Textueberstand, horizontale Scrollbar oder Console-Fehler.
+- Lokaler Visual-Check: 45 Screenshots erzeugt, 19 Kontrastpruefungen ohne Fehler.
+- Lokaler Regression-Check: Formular-Erfolg/Fehler gemockt, Consent-Speicherung,
+  Cookie-Reopen und `/demos` sowie `/referenzen` mit exaktem `308`-Redirect erfolgreich.
+
+Verbleibende visuelle Risiken:
+
+- Das globale CSS ist weiterhin historisch gewachsen und gross.
+- Die neuen Stabilitaetsregeln sind bewusst konservativ und weniger radial/fancy als die
+  urspruenglichen Visualisierungen.
+- Ein spaeterer CSS-Split waere sinnvoll, sollte aber separat geplant werden.
