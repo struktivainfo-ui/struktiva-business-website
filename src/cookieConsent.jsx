@@ -201,6 +201,23 @@ export function trackMarketingLead() {
   window.pintrk('track', 'lead')
 }
 
+export function trackContactFormLeadConversion() {
+  if (typeof window === 'undefined') return
+
+  const consent = window.__struktivaConsentState
+  if (!consent?.statistics && !consent?.marketing) return
+
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'generate_lead', {
+      event_category: 'lead',
+      event_label: 'contact_form',
+      method: 'contact_form',
+    })
+  }
+
+  trackMarketingLead()
+}
+
 export function openCookieSettings() {
   if (typeof window === 'undefined') return
   window.dispatchEvent(new CustomEvent(COOKIE_SETTINGS_EVENT))

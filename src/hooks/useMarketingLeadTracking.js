@@ -29,25 +29,13 @@ export function useMarketingLeadTracking() {
       const link = target.closest('a[href]')
       if (link && isContactHref(link.getAttribute('href'))) {
         safeTrackLead()
-        return
       }
-
-      const button = target.closest('button')
-      if (button?.type === 'submit') {
-        safeTrackLead()
-      }
-    }
-
-    const handleSubmit = () => {
-      safeTrackLead()
     }
 
     document.addEventListener('click', handleClick)
-    document.addEventListener('submit', handleSubmit)
 
     return () => {
       document.removeEventListener('click', handleClick)
-      document.removeEventListener('submit', handleSubmit)
     }
   }, [])
 }

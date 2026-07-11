@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
+import { trackContactFormLeadConversion } from '../../cookieConsent.jsx'
 
 const siteLinks = {
   datenschutz: '/datenschutz',
@@ -212,6 +213,7 @@ export default function ContactLeadForm() {
         throw new Error(payload?.error || 'Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es erneut.')
       }
 
+      trackContactFormLeadConversion()
       setSubmitState('success')
       setResponseMessage('Vielen Dank für deine Anfrage. Deine Nachricht wurde erfolgreich übermittelt. STRUKTIVA meldet sich zeitnah bei dir.')
       setForm(initialFormState)
