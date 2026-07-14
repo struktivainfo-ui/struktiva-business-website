@@ -2576,3 +2576,7 @@ Nicht veraendert wurden:
 ## 46. Getrenntes Teilprojekt: automatischer Website-Check
 
 Der automatische Website-Check fuer `/digital-check` ist seit Schritt 25 als separates, noch nicht implementiertes Teilprojekt geplant. Sicherheits-, API-, Datenschutz-, Ergebnis- und Phasenarchitektur stehen in `docs/STRUKTIVA-WEBSITE-CHECK-ARCHITECTURE.md`. Dieser Hinweis veraendert keinen bestehenden Rebuild- oder Abnahmestand; es wurde keine produktive oder sichtbare Funktion aktiviert.
+
+## 47. Website-Check Phase A
+
+Schritt 26 hat ausschliesslich das standardmaessig deaktivierte API- und Sicherheitsgrundgeruest fuer `POST /api/website-check` umgesetzt. Request-, URL-, IP-, injizierte DNS- und Redirect-Policies sind ohne Netzwerkzugriff getestet. `/digital-check`, Kontaktformular, Lead-API, Consent und Tracking blieben unveraendert. Der vollstaendige Stand und die Voraussetzungen fuer Phase B sind in `docs/STRUKTIVA-WEBSITE-CHECK-ARCHITECTURE.md` dokumentiert.

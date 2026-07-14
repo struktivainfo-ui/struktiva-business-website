@@ -365,3 +365,68 @@ Jede Phase ist einzeln testbar und commitbar. Kein produktiver Fremdabruf vor Si
 Nur Phase A: `POST /api/website-check` als noch nicht extern abrufendes API-Grundgeruest plus kleine serverseitige Module fuer Request-Parsing, Origin-Normalisierung, Protokoll-/Portregeln, IP-Klassifikation, DNS-Entscheidung und versionierte Fehler. Netzwerkoperationen werden ueber injizierte Adapter gemockt. Kein PageSpeed, kein produktiver Fremdabruf, keine UI.
 
 Abnahme Schritt 26: URL-Matrix deterministisch getestet; private/lokale/spezielle/alternative IPs blockiert; Redirect-Revalidierung isoliert getestet; keine Secrets/Roh-URLs/IPs in Clientfehlern oder Logs; `api/leads.js`, Consent, Tracking und `/digital-check` unveraendert; Build/Browsercheck erfolgreich. Keine Dependency, solange Node-Bordmittel belastbar reichen; andernfalls vor Code explizite Dependency-Entscheidung.
+
+## 31. Umgesetzter Stand nach Schritt 26: Phase A
+
+Phase A ist als standardmaessig deaktiviertes, rein serverseitiges Sicherheitsgrundgeruest umgesetzt. Es gibt weiterhin keinen DNS-Aufruf, keinen Fremdrequest, keinen Redirect-Abruf, keinen PageSpeed-Aufruf und keine sichtbare Website-Aenderung.
+
+### Umgesetzte Dateien
+
+- `api/website-check.js`: einziger oeffentlicher Vercel-Handler
+- `api/_website-check/config.js`: API-Version, Limits, Redirectlimit und Feature-Flag
+- `api/_website-check/errors.js`: stabile interne Fehlerdefinitionen
+- `api/_website-check/request.js`: Content-Type, begrenzter Rohstream, JSON und Request-Schema
+- `api/_website-check/normalize-url.js`: WHATWG-Normalisierung auf Origin `/`
+- `api/_website-check/ip-policy.js`: numerische IPv4-/IPv6-Klassifikation mit Node-Bordmitteln
+- `api/_website-check/destination-policy.js`: Host-, Literal-IP-, DNS- und Redirect-Entscheidungen
+- `api/_website-check/response.js`: versionierte, nicht cachebare JSON-Fehler
+- `tests/website-check-phase-a.test.mjs`: isolierte Node-Sicherheitstests ohne Netzwerk
+
+Vercel ignoriert Utility-Dateien beziehungsweise Utility-Pfade mit fuehrendem Unterstrich im `api`-Verzeichnis. Dadurch wird nur `api/website-check.js` zur Route. Referenz: <https://vercel.com/docs/functions/configuring-functions/advanced-configuration#adding-utility-files-to-the-api-directory>
+
+### Feature-Flag und Handlerstatus
+
+`WEBSITE_CHECK_ENABLED` ist ausschliesslich serverseitig. Nur der exakte String `true` aktiviert die Phase-A-Validierung. Fehlt die Variable oder hat sie einen anderen Wert, antwortet `POST /api/website-check` mit HTTP 503 und `SERVICE_NOT_READY`, ohne Body, URL, DNS oder Netzwerk zu verarbeiten. Die Variable wurde nicht in Vercel aktiviert.
+
+Bei aktivierter Testkonfiguration prueft der Handler Methode, JSON-Medientyp, Body, Schema und Destination-Policy. Eine gueltige Eingabe endet bewusst mit HTTP 501 und `CHECK_NOT_IMPLEMENTED`. Die Response nennt `validated_only`, die normalisierte URL und `networkRequestPerformed: false`; sie gibt kein scheinbares Pruefergebnis aus.
+
+### Request- und Normalisierungsregeln
+
+Nur POST ist erlaubt; andere Methoden erhalten 405 und `Allow: POST`. Akzeptiert wird ausschliesslich `application/json`, einschliesslich Parametern wie `charset=utf-8`. Der Node-Requeststream wird ohne Zugriff auf den lazy Vercel-`req.body`-Parser gelesen. Vorhandenes `Content-Length` wird vor dem Lesen geprueft; waehrend des Lesens wird nach spaetestens 4096 Bytes abgebrochen. Referenz zum lazy Vercel-Body-Helper: <https://vercel.com/docs/functions/runtimes/node-js#request-body>
+
+Das JSON muss ein Objekt mit genau dem Stringfeld `url` sein. Arrays, leere Werte, Werte ueber 2048 Zeichen, Typkonvertierung und zusaetzliche Felder werden abgelehnt.
+
+Die reine Normalisierung trimmt, ergaenzt kontrolliert HTTPS, nutzt WHATWG `URL`, erlaubt nur HTTP/HTTPS, verbietet Zugangsdaten und nicht standardmaessige Ports, entfernt Query/Fragment und normalisiert auf Origin `/`. Domains werden kleingeschrieben und internationale Domains durch den Standardparser nach Punycode ueberfuehrt.
+
+### IP-, DNS- und Redirect-Policy
+
+Hostnamen ohne oeffentliche Domainstruktur sowie `localhost`, `localhost.localdomain`, `.local`, `.internal`, `.localhost`, `.home` und `.lan` werden blockiert. WHATWG normalisiert alternative IPv4-Formen vor der numerischen Literal-IP-Pruefung; dadurch werden Integer-, Hex-, Oktal- und Kurzformen derselben privaten Policy unterworfen.
+
+Die IPv4-Policy blockiert alle in Abschnitt 11 geplanten privaten, lokalen, reservierten, Dokumentations-, Benchmark-, Multicast- und Future-Use-Bereiche. Die numerische IPv6-Policy blockiert Unspecified, Loopback, IPv4-mapped private Ziele, NAT64 mit blockierter eingebetteter IPv4, Discard-Only, Dokumentation, Unique Local, Link Local, Multicast und weitere definierte Spezialbereiche. Zone IDs werden abgelehnt.
+
+`evaluateDnsResults()` erhaelt ausschliesslich injizierte Resolver-Daten. Mindestens eine syntaktisch passende oeffentliche Adresse ist erforderlich. Eine einzige private, reservierte, ungueltige oder zur Family unpassende Adresse blockiert das gesamte Ziel; gemischte Antworten sind nicht erlaubt. Doppelte freigegebene Antworten werden dedupliziert und als eingefrorene Liste geliefert.
+
+`createBoundDestination()` erzeugt die unveraenderliche Grundlage fuer DNS-Rebinding-Schutz: normalisierte URL, Host, Protokoll, Port, freigegebene Adressen, ausgewaehlte Adresse und Pruefzeitpunkt. Phase B muss den Socket an diese ausgewaehlte Adresse binden und darf keinen unkontrollierten zweiten DNS-Lookup verwenden.
+
+`evaluateRedirectTarget()` loest relative Ziele gegen die aktuelle URL auf und fuehrt das Ergebnis erneut durch dieselbe URL-, Host- und Literal-IP-Policy. Injizierte DNS-Ergebnisse werden ebenfalls vollstaendig neu bewertet. `MAX_REDIRECTS` ist 3; ein vierter Redirect wird mit `TOO_MANY_REDIRECTS` abgelehnt.
+
+### Fehlerformat und Tests
+
+Fehler antworten einheitlich mit `ok: false`, `error.code`, sicherer `error.message` sowie `meta.apiVersion` und einer zufaelligen Request-ID. Responses sind `no-store`. Stacktraces, Dateipfade, Environment-Variablen, Roh-Request-Bodies und IP-Ergebnisse werden nicht ausgegeben oder geloggt.
+
+Testbefehl:
+
+```text
+npm run test:website-check
+```
+
+Der Test nutzt `node:test` und `node:assert/strict`, keine Test-Dependency. Abgedeckt sind Handlermethoden, Feature-Flag, Content-Type, Bodylimit, JSON/Schema, gueltige und gefaehrliche URLs, alternative IPv4-Formen, alle geforderten IPv4-/IPv6-Bereiche, IPv4-mapped/NAT64, DNS-Familien und Mischantworten, Immutability, gebundene Zielentscheidung sowie relative, externe und blockierte Redirects. Alle Tests arbeiten nur mit lokalen Datenobjekten und gemockten Requeststreams.
+
+### Bekannte Grenzen und Voraussetzungen fuer Phase B
+
+- Die Phase-A-Policy fuehrt absichtlich keine echte DNS-Aufloesung und keine Verbindung aus.
+- Die Runtime-Bindung von freigegebener IP, HTTP-Host und TLS-SNI ist noch nicht implementiert oder gegen Vercel integriert getestet.
+- Es gibt noch keine Zeit-, Response-, Content-Type- oder HTML-Limits fuer Fremdantworten, weil kein Fremdabruf existiert.
+- Parser, HTML-Regeln, PageSpeed, Rate Limiting, Cache, UI und Tracking bleiben aus.
+- Vor Phase B muss ein injizierbarer Node-HTTP(S)-Adapter mit deaktivierten automatischen Redirects, kontrollierter `lookup`-Bindung und rein lokalen Mock-Server-Tests entworfen werden.
+- Das Feature-Flag bleibt bis nach spaeterer Sicherheits- und Betriebsabnahme deaktiviert.
