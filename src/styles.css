@@ -12661,6 +12661,246 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   }
 }
 
+/* Digital-Check hero balance */
+.struktiva-digital-check-page .struktiva-digital-check-hero {
+  min-height: auto;
+  scroll-margin-top: 6rem;
+  padding: clamp(3.5rem, 5vw, 5rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem)) clamp(4rem, 6vw, 5.5rem);
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero__inner {
+  width: min(100%, var(--container-wide, 1360px));
+  grid-template-columns: minmax(0, 56fr) minmax(0, 44fr);
+  gap: clamp(2.25rem, 4vw, 4.5rem);
+  align-items: center;
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero__copy,
+.struktiva-digital-check-page .struktiva-digital-check-hero__visual {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero__copy {
+  gap: clamp(0.9rem, 1.5vw, 1.25rem);
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero h1 {
+  max-width: 19ch;
+  font-size: clamp(3.4rem, 5vw, 4.75rem);
+  line-height: 0.98;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero__lead {
+  max-width: 62ch;
+  gap: 0.4rem;
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero__lead p {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.58;
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero__actions {
+  margin-top: 0.25rem;
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero__visual {
+  justify-self: stretch;
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual {
+  width: 100%;
+  max-width: 100%;
+  min-height: clamp(28rem, 36vw, 36rem) !important;
+  grid-template-columns: minmax(0, 0.92fr) minmax(8rem, 0.66fr) minmax(0, 0.96fr) !important;
+  gap: clamp(0.65rem, 1.3vw, 0.95rem);
+  overflow: hidden !important;
+  padding: clamp(0.9rem, 1.5vw, 1.35rem);
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__signals,
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__steps,
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__signals li,
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__steps li {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__signals li,
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__steps li {
+  gap: 0.5rem;
+  padding: clamp(0.62rem, 0.85vw, 0.75rem);
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__signals span,
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__steps span {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__signals strong,
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__steps strong {
+  font-size: clamp(0.84rem, 0.92vw, 0.95rem);
+}
+
+.struktiva-digital-check-page .struktiva-digital-check-hero-visual__center {
+  min-width: 0;
+  min-height: 8.5rem !important;
+  padding: 0.85rem;
+}
+
+@media (min-width: 981px) and (max-width: 1100px) {
+  .struktiva-digital-check-page .struktiva-digital-check-hero {
+    padding-top: clamp(3rem, 5vw, 3.75rem);
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__inner {
+    grid-template-columns: minmax(0, 55fr) minmax(20rem, 45fr);
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__copy {
+    gap: 0.85rem;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero h1 {
+    max-width: 18ch;
+    font-size: clamp(3rem, 4.9vw, 3.35rem);
+    line-height: 1;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__actions {
+    gap: 0.5rem;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__actions :is(.struktiva-digital-check-primary, .struktiva-digital-check-secondary) {
+    padding-inline: 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.65rem;
+    min-height: auto !important;
+    padding: 0.75rem;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual::before,
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual::after {
+    display: none !important;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual__center {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100% !important;
+    min-height: 6.5rem !important;
+    order: 0;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual__signals {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual__steps {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 980px) {
+  .struktiva-digital-check-page .struktiva-digital-check-hero {
+    padding-top: clamp(3rem, 6vw, 3.75rem);
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__inner {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 3rem);
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__copy {
+    gap: 0.85rem;
+    max-width: 52rem;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero h1 {
+    max-width: 18ch;
+    font-size: clamp(3rem, 6.1vw, 4rem);
+    line-height: 1;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__visual {
+    max-width: 52rem;
+    justify-self: center;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual {
+    grid-template-columns: minmax(0, 0.92fr) minmax(8rem, 0.66fr) minmax(0, 0.96fr) !important;
+    min-height: clamp(24rem, 54vw, 31rem) !important;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual__center {
+    width: auto !important;
+    min-height: 7.5rem !important;
+    order: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .struktiva-digital-check-page .struktiva-digital-check-hero {
+    padding: clamp(2.5rem, 10vw, 3.25rem) 1rem clamp(3.5rem, 12vw, 4.5rem);
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__inner {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 9vw, 2.75rem);
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__copy {
+    gap: 0.9rem;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.5rem, 10.8vw, 2.8rem);
+    line-height: 1.03;
+    text-wrap: pretty;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__lead p {
+    font-size: 1rem;
+    line-height: 1.58;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero__actions {
+    gap: 0.65rem;
+    box-sizing: border-box;
+    padding-right: 3.75rem;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem;
+    min-height: auto !important;
+    border-radius: 26px;
+    padding: 1rem;
+  }
+
+  .struktiva-digital-check-page .struktiva-digital-check-hero-visual__center {
+    width: 100% !important;
+    min-height: 6.5rem !important;
+    order: -1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .struktiva-contact-page *,
   .struktiva-contact-page *::before,
