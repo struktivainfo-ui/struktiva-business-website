@@ -15073,7 +15073,7 @@ body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-
 
 /* About hero balance and responsive containment */
 .struktiva-about-hero {
-  padding-top: clamp(4.5rem, 5.5vw, 5.5rem);
+  padding-top: clamp(3.5rem, 4vw, 4.25rem);
 }
 
 .struktiva-about-hero__inner {
@@ -15087,6 +15087,10 @@ body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-
 .struktiva-about-hero-visual,
 .struktiva-about-hero-visual > * {
   min-width: 0;
+}
+
+.struktiva-about-hero__copy {
+  gap: clamp(1rem, 1.6vw, 1.25rem);
 }
 
 .struktiva-about-hero h1 {
