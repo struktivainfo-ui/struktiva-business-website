@@ -6,6 +6,11 @@ export const CONNECT_TIMEOUT_MS = 3000
 export const REQUEST_TIMEOUT_MS = 5000
 export const TOTAL_FETCH_TIMEOUT_MS = 10000
 export const MAX_HTML_RESPONSE_BYTES = 1572864
+export const ANALYSIS_VERSION = '1'
+export const MAX_ANALYSIS_TEXT_LENGTH = 4096
+export const MAX_ANALYZED_ELEMENTS = 20000
+export const MAX_JSON_LD_BLOCKS = 50
+export const MAX_JSON_LD_BLOCK_BYTES = 65536
 
 export const WEBSITE_CHECK_REQUEST_HEADERS = Object.freeze({
   'User-Agent': 'STRUKTIVA-Website-Check/1.0',

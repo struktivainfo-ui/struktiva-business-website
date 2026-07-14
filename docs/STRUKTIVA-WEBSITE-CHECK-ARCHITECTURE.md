@@ -1,7 +1,7 @@
 # STRUKTIVA Website-Check: sichere Architektur
 
 Stand: 14. Juli 2026
-Status: Schritt 27, Phase B als deaktivierte und separat getestete Netzwerkschicht
+Status: Schritt 28, Phase C als deaktivierte und separat getestete HTML-Analyse
 Marke: STRUKTIVA Digitale Unternehmensberatung
 
 ## 1. Projektziel
@@ -482,4 +482,69 @@ Ergaenzte stabile Codes sind `WEBSITE_UNREACHABLE`, `REQUEST_TIMEOUT`, `REDIRECT
 
 `npm run test:website-check` startet Phase A und Phase B gemeinsam mit `node:test`. Alle DNS-Ergebnisse, Literal-IPs, Lookup-Pinning, IPv4/IPv6-Familien, Request- und TLS-Optionen, Header, Zeitlimits, Streamabbrueche, Content-Typen, Encodings, Statuscodes, Redirect-Ziele, Redirect-Schleifen, erneute Bindungen und HTTPS-Downgrades werden ohne echte DNS-Abfrage und ohne externen Netzwerkzugriff getestet.
 
-Weiterhin fehlen HTML-Parser und Analyse, die 20 Fachregeln, PageSpeed, robots.txt, Sitemap, API-Ergebnisabbildung, UI, Tracking, Rate Limiting, Cache, Datenbank und produktive Runtime-Abnahme. Das Feature-Flag wird nicht aktiviert. Empfohlener Schritt 28 ist eine separat freizugebende Phase C fuer begrenzte HTML-Analyse und deterministische Regeln, weiterhin ohne Live-Aktivierung oder PageSpeed.
+Zum Abschluss von Phase B fehlten noch HTML-Parser und Analyse, Fachregeln, PageSpeed, robots.txt, Sitemap, API-Ergebnisabbildung, UI, Tracking, Rate Limiting, Cache, Datenbank und produktive Runtime-Abnahme. Das Feature-Flag blieb deaktiviert; der damals empfohlene Schritt 28 war die nachfolgend dokumentierte Phase C.
+
+## 33. Umgesetzter Stand nach Schritt 28: Phase C
+
+Phase C ergaenzt eine interne, rein passive Analyse des bereits durch Phase B auf 1572864 Bytes begrenzten HTML-Buffers. Die Analyse ist nicht an `api/website-check.js` angeschlossen. `WEBSITE_CHECK_ENABLED` bleibt deaktiviert; auch bei lokaler Aktivierung liefert der Handler weiterhin HTTP 501 mit `CHECK_NOT_IMPLEMENTED`. Es wird kein fertiger oeffentlicher Website-Check vorgetaeuscht.
+
+### Parser, Eingabe und Grenzen
+
+`parse5` 8.0.1 ist die einzige neue direkte Produktionsdependency. `api/_website-check/html-parser.js` verarbeitet ausschliesslich einen Node-`Buffer`, prueft das 1,5-MiB-Limit defensiv erneut und erzeugt mit `parse5` einen fehlertoleranten DOM-Baum. Der Parser fuehrt kein JavaScript und keine Event-Handler aus, wertet kein CSS aus und erzeugt keine Browserumgebung. Bilder, Frames, Fonts, Stylesheets, Links und JSON-LD-Contexts werden nicht geladen. Phase C fuehrt keine DNS-Aufloesung und keinen weiteren Netzwerkzugriff aus.
+
+Die zentrale Funktion `analyzeWebsiteHtml()` akzeptiert nur explizit validierte Werte fuer `htmlBuffer`, angeforderte und finale HTTP(S)-URL, finalen Origin, HTTP-Status, HTTPS-Zustand, Content-Type, Byteanzahl, Redirect-Anzahl und Downgrade-Zustand. Die Final-URL wird mit WHATWG `URL` geprueft. Zugangsdaten, unpassender Origin, unpassender HTTPS-Zustand, falsche Typen und unzulaessige Content-Types werden abgelehnt. Das Eingabeobjekt und der Buffer werden nicht veraendert.
+
+UTF-8 wird mit optionaler UTF-8-BOM unterstuetzt. Ein Meta-Charset in den ersten 4096 Bytes wird als begrenzter Hinweis erkannt. `utf-8` und `utf8` gelten als unterstuetzt; andere Angaben werden dokumentiert, aber ohne zusaetzliche Encoding-Dependency nicht konvertiert. Ungueltige Bytes werden durch die UTF-8-Decodierung kontrolliert ersetzt. Die MVP-Analyse ist keine vollstaendige universelle Zeichensatzkonvertierung.
+
+Unerwartete Parser- oder Analysefehler werden ohne Roh-HTML, Stacktrace oder internen Fehlertext in `HTML_ANALYSIS_FAILED` ueberfuehrt. Einzelne fehlerhafte JSON-LD-Bloecke bleiben auf ihre Regel begrenzt. Elementbesuche, sichtbarer Text, Attribute, JSON-LD-Anzahl und JSON-LD-Blockgroesse besitzen feste Obergrenzen.
+
+### DOM-Hilfen und Textnormalisierung
+
+Kleine Hilfsfunktionen ermitteln Elementnamen, begrenzte Attribute, rekursive Textinhalte, Elemente, Meta-Tags und passive HTTP(S)-Links. Text wird per NFKC normalisiert, von Steuerzeichen bereinigt, auf einfaches Whitespace reduziert und vor weiterer Verarbeitung begrenzt. Kommentare zaehlen nicht als Text. Fuer sichtbaren Text werden `script`, `style`, `noscript`, `template`, `svg` und `canvas` samt Inhalt ausgeschlossen.
+
+Links werden nur intern gegen die Final-URL aufgeloest. Erlaubt sind passive HTTP(S)-Ziele ohne Zugangsdaten; Fragmente werden entfernt. `javascript:`, `data:`, `file:` und vergleichbare Protokolle erzeugen weder Kontakt-, CTA- noch Rechtshinweise. Kein Link wird geoeffnet.
+
+### Ergebnis und Statuslogik
+
+Das stabile Ergebnis enthaelt `analysisVersion`, eine kleine Dokumentzusammenfassung, genau 16 Checks, hoechstens drei bevorzugte beziehungsweise technisch maximal fuenf Empfehlungen, sieben methodische Grenzen und reine Statuszaehler. Jeder Check enthaelt `id`, Kategorie, Titel, Status, deutsches Statuslabel, vorsichtige Zusammenfassung, minimierte Evidence, optionale Empfehlung, Quelle und Konfidenz.
+
+Verwendete Kategorien sind `technical-foundation`, `visibility`, `customer-journey`, `trust-and-legal` und `mobile-foundation`. Verwendete Statuswerte sind `good`, `review`, `priority`, `not_detected` und `not_checkable` mit den Labels `GUT`, `PRUEFEN`, `PRIORITAET`, `NICHT ERKANNT` und `NICHT PRUEFBAR`. `GUT` setzt einen eindeutigen technischen Befund voraus. `PRIORITAET` ist auf belastbare Probleme begrenzt. `NICHT ERKANNT` bedeutet nicht, dass das Merkmal auf der gesamten Website fehlt. Es existiert kein eigener Gesamtscore, keine Prozentwertung und kein Urteil ueber die gesamte Website.
+
+### Deterministische Regeln
+
+Die 16 Regeln sind:
+
+1. HTTP-Erreichbarkeit anhand des tatsaechlichen finalen Status
+2. HTTPS und Downgrade anhand des Fetch-Ergebnisses
+3. einzelner nichtleerer Seitentitel mit begrenzter Laengenheuristik
+4. Meta Description mit Leer-, Mehrfach- und Laengenpruefung
+5. Anzahl nichtleerer H1-Elemente
+6. vorhandene und syntaktisch plausible Dokumentsprache
+7. Viewport-Grundlage mit `width=device-width` und `initial-scale`
+8. einzelne gueltige Canonical-Angabe, intern nach gleicher oder anderer Origin getrennt
+9. direkte Kontaktwege ueber `tel:`, `mailto:`, bekannte WhatsApp-Ziele oder eindeutige Kontaktlinks
+10. Formularstruktur aus Form, Eingabefeld und Submit-Moeglichkeit
+11. Kontakt-CTA anhand einer begrenzten deutschen und englischen Begriffsliste
+12. Impressumslink anhand begrenzter Linktext- und Pfadmerkmale
+13. Datenschutzlink anhand begrenzter Linktext- und Pfadmerkmale
+14. JSON-LD-Anzahl, Parsebarkeit und erlaubte Typen ohne Script-Ausfuehrung
+15. vorsichtige Vertrauenssignale aus Strukturmarkern, begrenzten Textbegriffen oder `AggregateRating`
+16. mobile Nutzungsqualitaet als `NICHT PRUEFBAR`, weil statisches HTML keine reale Bedienbarkeit belegt
+
+HTTP 200 bis 299 mit HTML gilt als `GUT`. 403 und 404 bleiben erreichbare, aber zu pruefende Antworten; 429 sowie 5xx erhalten wegen Begrenzung oder Serverfehler `PRIORITAET`. Die Viewport-Regel behauptet nur eine technische Grundlage. Die zusaetzliche mobile Nutzungsqualitaet bleibt bis zu einer spaeteren kontrollierten Lighthouse-Pruefung `NICHT PRUEFBAR`.
+
+### Evidence, Datenschutz und Empfehlungen
+
+Evidence besteht ausschliesslich aus Zaehlern, Laengen, Booleans, erlaubten Kontaktwegtypen, erlaubten JSON-LD-Typen, Status- und Origin-Vergleichen. Nicht enthalten sind konkrete E-Mail-Adressen, Telefonnummern, WhatsApp-Nummern, Formularwerte, komplette Texte, komplette Linklisten, URLs mit Query, JSON-LD-Inhalte oder HTML. Der HTML-Buffer wird weder im Ergebnis ausgegeben noch durch Phase C geloggt oder gespeichert.
+
+Empfehlungen werden in einer festen Themenreihenfolge ausgewaehlt: Transport, Titel, H1, mobile Grundlage, Kontakt, Kontakt-CTA, Beschreibung, Canonical, Rechtshinweise, Vertrauen und HTTP. Pro Thema wird hoechstens eine Empfehlung ausgegeben. Nur Checks mit `priority`, `review` oder `not_detected` und vorhandener Empfehlung sind handlungsrelevant. Standardmaessig werden hoechstens drei, technisch niemals mehr als fuenf Empfehlungen ausgegeben. Das Fehlen eines Formulars allein erzeugt keine Empfehlung. Texte enthalten keine Suchmaschinen-, Rechts-, Qualitaets- oder Erfolgsversprechen.
+
+### Ausgegebene Grenzen
+
+Das Ergebnis erklaert, dass nur das empfangene finale HTML geprueft wurde, JavaScript-Inhalte fehlen koennen, Unterseiten und interne Unternehmensablaeufe nicht analysiert wurden, nicht erkannte Elemente an anderer Stelle vorhanden sein koennen, mobile Nutzbarkeit erst spaeter ueber Lighthouse folgt und robots.txt sowie Sitemap in Phase C nicht abgerufen werden.
+
+### Tests und Voraussetzungen fuer Schritt 29
+
+`npm run test:website-check` startet Phase A, Phase B und Phase C gemeinsam mit `node:test`. Die Phase-C-Fixtures testen gueltiges, fragmentiertes, fehlerhaftes, leeres, sehr langes und BOM-kodiertes HTML; Charset-Hinweise; Textnormalisierung; ausgeschlossene Inhalte; alle Statusmatrizen; sichere Linkaufloesung; HTTP/HTTPS; Kontaktwege; Formulare; CTAs; Rechtshinweise; Trust-Heuristiken; parsebares, fehlerhaftes und uebergrosses JSON-LD; Ergebnisdatenschutz; Empfehlungslimit und -reihenfolge; Determinismus; Eingabe-Unveraenderlichkeit; kontrollierte Fehler sowie den ausbleibenden Netzwerkzugriff. Alle Tests verwenden synthetisches HTML und injizierte Mocks. Es wird keine echte Website analysiert und keine reale DNS-Abfrage ausgefuehrt.
+
+Weiterhin fehlen die kontrollierte interne Verbindung von Phase B und C, die oeffentliche API-Ergebnisabbildung, PageSpeed/Lighthouse, robots.txt, Sitemap, UI, Tracking, Rate Limiting, Cache, Datenbank und produktive Runtime-Abnahme. Schritt 29 muss separat freigegeben werden, das Feature-Flag deaktiviert lassen, die bestehenden Sicherheitsgrenzen erhalten und fuer jede neue externe Integration eigene Zeit-, Datenschutz-, Fehler- und Testgrenzen definieren.

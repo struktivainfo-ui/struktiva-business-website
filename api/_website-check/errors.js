@@ -18,6 +18,7 @@ const ERROR_DEFINITIONS = Object.freeze({
   INVALID_RESPONSE: [502, 'Die Website hat keine gueltige Antwort geliefert.'],
   UNSUPPORTED_CONTENT_ENCODING: [422, 'Die Website-Antwort verwendet eine noch nicht unterstuetzte Komprimierung.'],
   TLS_VALIDATION_FAILED: [502, 'Die sichere Verbindung zur Website konnte nicht validiert werden.'],
+  HTML_ANALYSIS_FAILED: [422, 'Das HTML-Dokument konnte nicht ausgewertet werden.'],
   CHECK_NOT_IMPLEMENTED: [501, 'Die Website-Adresse wurde validiert. Der eigentliche Check ist noch nicht aktiv.'],
   INTERNAL_ERROR: [500, 'Die Anfrage konnte gerade nicht verarbeitet werden.'],
 })
