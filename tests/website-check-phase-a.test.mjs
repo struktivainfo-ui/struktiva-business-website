@@ -46,7 +46,17 @@ function createResponse() {
 
 async function callHandler(request, env = { WEBSITE_CHECK_ENABLED: 'true' }) {
   const response = createResponse()
-  const handler = createWebsiteCheckHandler({ env, createRequestId: () => 'test-request-id' })
+  const handler = createWebsiteCheckHandler({
+    env,
+    createRequestId: () => 'test-request-id',
+    runWebsiteCheck: async ({ normalizedUrl }) => Object.freeze({ normalizedUrl }),
+    createPublicResult: (result, { requestId }) => ({
+      ok: true,
+      status: 'complete',
+      data: { normalizedUrl: result.normalizedUrl },
+      meta: { apiVersion: '1', requestId },
+    }),
+  })
   await handler(request, response)
   return { response, payload: JSON.parse(response.body) }
 }
@@ -89,10 +99,9 @@ test('application/json with charset is accepted', async () => {
     contentType: 'application/json; charset=utf-8',
     rawBody: JSON.stringify({ url: 'example.com' }),
   }))
-  assert.equal(response.statusCode, 501)
-  assert.equal(payload.error.code, 'CHECK_NOT_IMPLEMENTED')
+  assert.equal(response.statusCode, 200)
+  assert.equal(payload.status, 'complete')
   assert.equal(payload.data.normalizedUrl, 'https://example.com/')
-  assert.equal(payload.data.networkRequestPerformed, false)
 })
 
 test('invalid JSON is rejected', async () => {

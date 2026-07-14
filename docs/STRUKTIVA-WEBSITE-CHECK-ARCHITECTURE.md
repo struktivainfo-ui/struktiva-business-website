@@ -1,7 +1,7 @@
 # STRUKTIVA Website-Check: sichere Architektur
 
 Stand: 14. Juli 2026
-Status: Schritt 28, Phase C als deaktivierte und separat getestete HTML-Analyse
+Status: Schritt 29, Phase D als deaktivierte und vollstaendig gemockt getestete API-Pipeline
 Marke: STRUKTIVA Digitale Unternehmensberatung
 
 ## 1. Projektziel
@@ -486,7 +486,7 @@ Zum Abschluss von Phase B fehlten noch HTML-Parser und Analyse, Fachregeln, Page
 
 ## 33. Umgesetzter Stand nach Schritt 28: Phase C
 
-Phase C ergaenzt eine interne, rein passive Analyse des bereits durch Phase B auf 1572864 Bytes begrenzten HTML-Buffers. Die Analyse ist nicht an `api/website-check.js` angeschlossen. `WEBSITE_CHECK_ENABLED` bleibt deaktiviert; auch bei lokaler Aktivierung liefert der Handler weiterhin HTTP 501 mit `CHECK_NOT_IMPLEMENTED`. Es wird kein fertiger oeffentlicher Website-Check vorgetaeuscht.
+Phase C ergaenzte eine interne, rein passive Analyse des bereits durch Phase B auf 1572864 Bytes begrenzten HTML-Buffers. Zum damaligen Stand war die Analyse noch nicht an `api/website-check.js` angeschlossen und der lokal aktivierte Handler endete weiterhin mit HTTP 501. Die in Schritt 29 hinzugekommene, weiterhin live deaktivierte Verbindung ist in Abschnitt 34 dokumentiert.
 
 ### Parser, Eingabe und Grenzen
 
@@ -547,4 +547,93 @@ Das Ergebnis erklaert, dass nur das empfangene finale HTML geprueft wurde, JavaS
 
 `npm run test:website-check` startet Phase A, Phase B und Phase C gemeinsam mit `node:test`. Die Phase-C-Fixtures testen gueltiges, fragmentiertes, fehlerhaftes, leeres, sehr langes und BOM-kodiertes HTML; Charset-Hinweise; Textnormalisierung; ausgeschlossene Inhalte; alle Statusmatrizen; sichere Linkaufloesung; HTTP/HTTPS; Kontaktwege; Formulare; CTAs; Rechtshinweise; Trust-Heuristiken; parsebares, fehlerhaftes und uebergrosses JSON-LD; Ergebnisdatenschutz; Empfehlungslimit und -reihenfolge; Determinismus; Eingabe-Unveraenderlichkeit; kontrollierte Fehler sowie den ausbleibenden Netzwerkzugriff. Alle Tests verwenden synthetisches HTML und injizierte Mocks. Es wird keine echte Website analysiert und keine reale DNS-Abfrage ausgefuehrt.
 
-Weiterhin fehlen die kontrollierte interne Verbindung von Phase B und C, die oeffentliche API-Ergebnisabbildung, PageSpeed/Lighthouse, robots.txt, Sitemap, UI, Tracking, Rate Limiting, Cache, Datenbank und produktive Runtime-Abnahme. Schritt 29 muss separat freigegeben werden, das Feature-Flag deaktiviert lassen, die bestehenden Sicherheitsgrenzen erhalten und fuer jede neue externe Integration eigene Zeit-, Datenschutz-, Fehler- und Testgrenzen definieren.
+Zum Abschluss von Phase C fehlten die kontrollierte interne Verbindung von Phase B und C, die oeffentliche API-Ergebnisabbildung, PageSpeed/Lighthouse, robots.txt, Sitemap, UI, Tracking, Rate Limiting, Cache, Datenbank und produktive Runtime-Abnahme. Der damals empfohlene Schritt 29 ist im folgenden Abschnitt dokumentiert.
+
+## 34. Umgesetzter Stand nach Schritt 29: Phase D
+
+Phase D verbindet Request-Validierung, sichere URL-Policy, Phase-B-Abruf, Phase-C-Analyse und eine neue oeffentliche Allowlist zu einer kontrollierten Pipeline. Das Feature bleibt in Vercel deaktiviert. Ohne den exakten Environment-Wert `WEBSITE_CHECK_ENABLED=true` antwortet `POST /api/website-check` weiterhin vor Body-Parsing, URL-Normalisierung, DNS, Fetch und Analyse mit HTTP 503 und `SERVICE_NOT_READY`.
+
+### Dateien und Orchestrierungsablauf
+
+- `api/_website-check/run-website-check.js` validiert die normalisierte Start-Origin und das komplette interne Fetch-Ergebnis, ruft genau einmal `fetchWebsite()` und anschliessend genau einmal `analyzeWebsiteHtml()` auf und erzeugt ein HTML-freies internes Gesamtresultat.
+- `api/_website-check/public-result.js` erzeugt aus dem internen Resultat ein vollstaendig neues, versioniertes und allowlist-basiertes API-Objekt.
+- `api/website-check.js` verbindet bei aktiviertem Flag die bestehenden Request-, Schema- und Destination-Pruefungen mit Orchestrierung und Public-Result-Abbildung.
+- `api/_website-check/response.js` setzt fuer Erfolg und Fehler einheitlich JSON, `Cache-Control: no-store` und `X-Content-Type-Options: nosniff`.
+- `tests/website-check-phase-d.test.mjs` prueft die Pipeline ausschliesslich mit Mocks und synthetischen Buffern.
+
+Die Reihenfolge ist fest: Methode und Feature-Flag, JSON-Medientyp, begrenzter Body, JSON, Schema, URL-/Destination-Policy, sicherer Fetch, strukturelle Fetch-Pruefung, passive Analyse, Public-Allowlist und JSON-Response. Der Handler schreibt keine Zwischenergebnisse. Es gibt keine globale Testvariable und keine permissive CORS-Freigabe.
+
+`createWebsiteCheckHandler()` erlaubt die Injektion von Environment, Request-ID-Erzeugung, Uhr, Orchestrierung und Public-Result-Builder. `runWebsiteCheck()` erlaubt die Injektion von Fetch, Analyse und Uhr. Produktiv werden `crypto.randomUUID()`, `fetchWebsite()`, `analyzeWebsiteHtml()` und die serverseitige UTC-Uhr verwendet. Eingabe-, Dependency-, Fetch-, Buffer- und Analyseobjekte werden nicht mutiert.
+
+### Defensive Fetch-Pruefung und interne Daten
+
+Die Orchestrierung akzeptiert nur eine bereits kanonische HTTP(S)-Origin mit abschliessendem Slash. Das Fetch-Ergebnis muss ein normales Objekt sein und exakt zur Start-Origin passen. HTML muss ein Buffer innerhalb von 1572864 Bytes sein; `byteLength` muss exakt stimmen. Finale URL und Origin werden mit WHATWG `URL` geprueft, Zugangsdaten abgelehnt und HTTPS-Zustand gegen das finale Protokoll validiert. HTTP-Status muss zwischen 100 und 599 liegen, Redirect-Anzahl zwischen 0 und 3, Content-Type muss HTML/XHTML sein, HTTPS- und Downgrade-Werte muessen boolean sein und die Gesamtdauer muss endlich und nicht negativ sein. Ungueltige interne Ergebnisse werden als `INVALID_RESPONSE` behandelt.
+
+Der HTML-Buffer existiert ausschliesslich zwischen erfolgreicher Fetch-Pruefung und Analyseaufruf im Function-Speicher. Er ist weder Teil des Orchestrierungsresultats noch der Public-Response, Warnung, Fehlerantwort, Redirect-Darstellung, Dokumentation oder eines Logs. HTML wird nicht gespeichert und nicht protokolliert. Ebenfalls intern bleiben Header, Cookies, DNS-Adressen, ausgewaehlte IP, IP-Familie, Socket-/TLS-Daten und Redirect-Historie.
+
+### Oeffentliche Response
+
+Erfolgreiche Responses verwenden API-Version `1` und folgende stabile Form:
+
+```json
+{
+  "ok": true,
+  "status": "complete",
+  "data": {
+    "request": {
+      "normalizedUrl": "https://example.com/",
+      "checkedAt": "2026-07-14T10:00:00.000Z"
+    },
+    "website": {
+      "reachable": true,
+      "httpStatus": 200,
+      "finalOrigin": "https://example.com",
+      "originChanged": false,
+      "https": true,
+      "httpsDowngrade": false,
+      "redirectCount": 0,
+      "responseTimeMs": 850
+    },
+    "analysis": {},
+    "warnings": []
+  },
+  "meta": {
+    "apiVersion": "1",
+    "requestId": "..."
+  }
+}
+```
+
+`checkedAt` wird serverseitig als ISO-8601-UTC-Wert erzeugt. Die Request-ID wird pro Request serverseitig mit `crypto.randomUUID()` erzeugt und fuer Erfolg und Fehler unveraendert verwendet. Die oeffentliche Gesamtdauer stammt aus der bereits von Phase B gemessenen Dauer, wird auf ganze Millisekunden gerundet und auf 60000 ms begrenzt. Einzelne DNS-, Connect-, TLS- oder Socketzeiten werden nicht ausgegeben.
+
+Oeffentlich erscheinen nur normalisierte Start-Origin, finale Origin, Originwechsel, HTTP-Status, HTTPS-/Downgrade-Zustand, Redirect-Anzahl und begrenzte Gesamtdauer. Die vollstaendige finale URL, Pfad, Query, Fragment, Redirect-Pfade und Redirect-Queries erscheinen nicht.
+
+### Complete und Partial
+
+Nach erfolgreichem Fetch und erfolgreicher Analyse antwortet die STRUKTIVA-API mit HTTP 200 und `status: complete`. Der HTTP-Status der geprueften Website wird niemals als API-HTTP-Status uebernommen. Auch empfangenes HTML mit Website-Status 403, 404, 429 oder 500 kann ein vollstaendiges API-Ergebnis mit HTTP 200 liefern; der fremde Status steht nur in `data.website.httpStatus` und im entsprechenden Analysecheck.
+
+Nur ein kontrollierter `HTML_ANALYSIS_FAILED` nach erfolgreichem Fetch erzeugt HTTP 200 mit `status: partial`, vorhandenen Website-Metadaten, `analysis: null` und der festen Warnung `HTML_ANALYSIS_UNAVAILABLE`. Es werden keine leeren Checks oder Empfehlungen erfunden. Rohe oder unerwartete Fehler werden nicht als Partial verschleiert, sondern ueber `INTERNAL_ERROR` mit HTTP 500 beantwortet.
+
+### Analyse- und Evidence-Allowlist
+
+Die Public-Abbildung akzeptiert nur Analyseversion `1`, nichtnegative Summary-Zaehler, maximal 20 bekannte Checks, maximal 5 Empfehlungen und maximal 10 Limitations. Erlaubte Statuswerte sind `good`, `review`, `priority`, `not_detected` und `not_checkable`. Erlaubte Kategorien sind `technical-foundation`, `visibility`, `customer-journey`, `trust-and-legal` und `mobile-foundation`. Erlaubte Quellen sind `html` und `http`; Konfidenzen sind auf `high`, `medium` und `low` begrenzt.
+
+Jeder der 16 bekannten Check-IDs besitzt ein eigenes Evidence-Schema. Nur die dafuer festgelegten kleinen Integer, Booleans sowie begrenzten Listen aus `phone`, `email`, `whatsapp` oder erlaubten JSON-LD-Typen werden kopiert. Unbekannte Checks, Felder, Objekte, URLs, Kontaktwerte, Buffer, Errors und verschachtelte Daten werden verworfen. Empfehlungen werden neu aus ID, Kategorie, Prioritaet, Text und bekannten Check-IDs erzeugt.
+
+Stringlimits: Check-ID 64, Kategorie 64, Titel 120, Statuslabel 64, Summary 500, Empfehlung 500, Warning-Code 64, Warning-Meldung 300 und Limitation 500 Zeichen. Request-ID ist auf 128 ASCII-Zeichen begrenzt. Zaehler sind nichtnegativ und auf 100000 begrenzt. Listen und Strings werden vor Serialisierung begrenzt.
+
+Nicht oeffentlich sind HTML, Base64-HTML, Header, Set-Cookie, Authorization, DNS-/IP-Daten, Destination-, Socket- oder TLS-Objekte, Redirect-Historie, Pfade, Queries, Fragmente, Canonical-URL, Telefonnummern, E-Mail-Adressen, WhatsApp-Nummern, Seitentexte, JSON-LD-Payloads, Stacktraces, Node-Codes, Dateipfade, Environment-Werte, API-Schluessel, Dependency-Versionen und Debugtimer.
+
+### Fehlerabbildung und Header
+
+Request-/URL-/Policy-Fehler verwenden 400, falscher Content-Type 415 und zu grosser Request 413. DNS-, Erreichbarkeits-, TLS-, Verbindungs-, Redirect- und ungueltige interne Responsefehler verwenden 502. Timeouts verwenden 504. Uebergrosse oder nicht auswertbare HTML-Antworten und nicht unterstuetztes Content-Encoding verwenden 422. Deaktivierung verwendet 503, unerwartete Fehler 500. Alle Meldungen sind fest definiert und enthalten keine Node-Ursache.
+
+Alle JSON-Antworten setzen `Content-Type: application/json; charset=utf-8`, `Cache-Control: no-store` und `X-Content-Type-Options: nosniff`. 405 setzt zusaetzlich `Allow: POST`. Es wurde kein `Access-Control-Allow-Origin` ergaenzt.
+
+### Tests, Audit und verbleibende Grenzen
+
+`npm run test:website-check` startet Phase A, B, C und D gemeinsam. Phase D testet Complete, Partial, Fetch-/Analyse-Reihenfolge, einmalige Aufrufe, Buffer-Uebergabe und -Entfernung, Fetch-Fehler, unerwartete Fehler, Fetch-Struktur, Immutability, Determinismus, Versionen, Zeit, Request-ID, Website-Status 200/403/404/429/500, Check-/Evidence-Allowlist, String-/Listenlimits, Redaktionen, alle stabilen Fehlercodes, Feature-Flag-Werte, Handler-Schutz, Response-Header und fehlendes CORS. Alle Tests verwenden Mocks und In-Memory-Daten; es erfolgen keine DNS- oder Fremdrequests.
+
+Die lesende Audit-Baseline vor Schritt 29 meldete zwei bereits vorhandene Hinweise: einen moderaten transitiven Hinweis fuer `esbuild` und einen hohen direkten Hinweis fuer `vite`. Die angebotene Behebung erfordert ein Major-Upgrade auf Vite 8 und liegt ausserhalb dieses Schritts. `npm audit fix`, Dependency-Upgrades und Lockfile-Aenderungen wurden nicht ausgefuehrt.
+
+Weiterhin fehlen PageSpeed/Lighthouse, robots.txt, Sitemap, sichtbares Website-Check-Formular, Ergebnis-UI, Tracking, Rate Limiting, Cache, Datenbank, PDF und produktive Runtime-/Missbrauchsabnahme. Das Feature-Flag bleibt bis zu einer gesonderten Betriebs- und Sicherheitsfreigabe deaktiviert.

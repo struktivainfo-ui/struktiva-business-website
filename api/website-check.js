@@ -2,10 +2,18 @@ import { randomUUID } from 'node:crypto'
 import { isWebsiteCheckEnabled } from './_website-check/config.js'
 import { evaluateDestination } from './_website-check/destination-policy.js'
 import { createWebsiteCheckError, toPublicError } from './_website-check/errors.js'
+import { createPublicWebsiteCheckResult } from './_website-check/public-result.js'
 import { assertJsonContentType, parseJsonBody, validateWebsiteCheckRequest } from './_website-check/request.js'
-import { sendError } from './_website-check/response.js'
+import { sendError, sendJson } from './_website-check/response.js'
+import { runWebsiteCheck } from './_website-check/run-website-check.js'
 
-export function createWebsiteCheckHandler({ env = process.env, createRequestId = randomUUID } = {}) {
+export function createWebsiteCheckHandler({
+  env = process.env,
+  createRequestId = randomUUID,
+  runWebsiteCheck: executeWebsiteCheck = runWebsiteCheck,
+  createPublicResult = createPublicWebsiteCheckResult,
+  now = () => new Date(),
+} = {}) {
   return async function websiteCheckHandler(req, res) {
     const requestId = createRequestId()
 
@@ -23,12 +31,14 @@ export function createWebsiteCheckHandler({ env = process.env, createRequestId =
       const body = await parseJsonBody(req)
       const input = validateWebsiteCheckRequest(body)
       const destination = evaluateDestination(input.url)
-
-      return sendError(res, createWebsiteCheckError('CHECK_NOT_IMPLEMENTED'), requestId, {
-        status: 'validated_only',
+      const result = await executeWebsiteCheck({
         normalizedUrl: destination.normalizedUrl,
-        networkRequestPerformed: false,
+        requestId,
+        dependencies: Object.freeze({ now }),
       })
+      const payload = createPublicResult(result, { requestId })
+
+      return sendJson(res, 200, payload)
     } catch (error) {
       return sendError(res, toPublicError(error), requestId)
     }

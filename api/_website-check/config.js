@@ -11,6 +11,10 @@ export const MAX_ANALYSIS_TEXT_LENGTH = 4096
 export const MAX_ANALYZED_ELEMENTS = 20000
 export const MAX_JSON_LD_BLOCKS = 50
 export const MAX_JSON_LD_BLOCK_BYTES = 65536
+export const MAX_PUBLIC_CHECKS = 20
+export const MAX_PUBLIC_RECOMMENDATIONS = 5
+export const MAX_PUBLIC_LIMITATIONS = 10
+export const MAX_PUBLIC_RESPONSE_TIME_MS = 60000
 
 export const WEBSITE_CHECK_REQUEST_HEADERS = Object.freeze({
   'User-Agent': 'STRUKTIVA-Website-Check/1.0',
