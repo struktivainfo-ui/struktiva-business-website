@@ -327,25 +327,25 @@ test('bound destination carries the approved immutable decision', () => {
   assert.equal(Object.isFrozen(result), true)
 })
 
-test('relative redirect is resolved and normalized to the same origin root', () => {
+test('relative redirect is resolved with path and query preserved', () => {
   const result = evaluateRedirectTarget({
     currentUrl: 'https://example.com/',
     location: '/de/?source=test#top',
     redirectCount: 0,
     resolvedAddresses: [{ address: '93.184.216.34', family: 4 }],
   })
-  assert.equal(result.destination.normalizedUrl, 'https://example.com/')
+  assert.equal(result.destination.normalizedUrl, 'https://example.com/de/?source=test')
   assert.equal(result.redirectCount, 1)
 })
 
-test('absolute redirect to another public domain is revalidated', () => {
+test('absolute redirect to another public domain preserves its fetch path', () => {
   const result = evaluateRedirectTarget({
     currentUrl: 'https://example.com/',
     location: 'https://www.example.org/path',
     redirectCount: 1,
     resolvedAddresses: [{ address: '93.184.216.34', family: 4 }],
   })
-  assert.equal(result.destination.normalizedUrl, 'https://www.example.org/')
+  assert.equal(result.destination.normalizedUrl, 'https://www.example.org/path')
   assert.equal(result.redirectCount, 2)
 })
 

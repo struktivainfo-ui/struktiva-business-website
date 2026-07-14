@@ -2,7 +2,7 @@ import { isIP } from 'node:net'
 import { MAX_REDIRECTS } from './config.js'
 import { createWebsiteCheckError } from './errors.js'
 import { classifyIpAddress } from './ip-policy.js'
-import { normalizeWebsiteUrl } from './normalize-url.js'
+import { normalizeFetchUrl, normalizeWebsiteUrl } from './normalize-url.js'
 
 const BLOCKED_HOSTNAMES = new Set(['localhost', 'localhost.localdomain'])
 const BLOCKED_SUFFIXES = ['.local', '.internal', '.localhost', '.home', '.lan']
@@ -22,8 +22,7 @@ function assertDomainHostname(hostname) {
   }
 }
 
-export function evaluateDestination(input, options) {
-  const normalized = normalizeWebsiteUrl(input, options)
+function evaluateNormalizedDestination(normalized) {
   const literalFamily = isIP(normalized.hostname)
 
   if (literalFamily) {
@@ -35,6 +34,14 @@ export function evaluateDestination(input, options) {
   }
 
   return Object.freeze({ ...normalized, literalIpFamily: literalFamily || null })
+}
+
+export function evaluateDestination(input, options) {
+  return evaluateNormalizedDestination(normalizeWebsiteUrl(input, options))
+}
+
+export function evaluateFetchDestination(input, options) {
+  return evaluateNormalizedDestination(normalizeFetchUrl(input, options))
 }
 
 export function evaluateDnsResults(records) {
@@ -87,7 +94,7 @@ export function evaluateRedirectTarget({ currentUrl, location, redirectCount, re
   if (redirectCount >= MAX_REDIRECTS) throw createWebsiteCheckError('TOO_MANY_REDIRECTS')
   if (typeof location !== 'string' || !location.trim()) throw createWebsiteCheckError('INVALID_URL')
 
-  const destination = evaluateDestination(location, { baseUrl: currentUrl })
+  const destination = evaluateFetchDestination(location, { baseUrl: currentUrl })
   const approvedAddresses = resolvedAddresses === undefined
     ? null
     : evaluateDnsResults(resolvedAddresses)

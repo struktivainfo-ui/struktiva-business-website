@@ -4,7 +4,7 @@ import { MAX_URL_LENGTH } from './config.js'
 const SCHEME_PATTERN = /^[a-z][a-z0-9+.-]*:/i
 const CONTROL_OR_SPACE_PATTERN = /[\u0000-\u0020\u007f]/
 
-export function normalizeWebsiteUrl(input, { baseUrl } = {}) {
+function normalizeUrl(input, { baseUrl, preservePathAndQuery = false } = {}) {
   if (typeof input !== 'string') throw createWebsiteCheckError('INVALID_URL')
 
   const value = input.trim()
@@ -37,7 +37,9 @@ export function normalizeWebsiteUrl(input, { baseUrl } = {}) {
   if (!hostname) throw createWebsiteCheckError('INVALID_URL')
 
   const displayHost = hostname.includes(':') ? `[${hostname}]` : hostname
-  const normalizedUrl = `${parsed.protocol}//${displayHost}/`
+  parsed.hash = ''
+  const pathAndQuery = preservePathAndQuery ? `${parsed.pathname || '/'}${parsed.search}` : '/'
+  const normalizedUrl = `${parsed.protocol}//${displayHost}${pathAndQuery}`
   if (normalizedUrl.length > MAX_URL_LENGTH) throw createWebsiteCheckError('INVALID_URL')
 
   return Object.freeze({
@@ -46,4 +48,12 @@ export function normalizeWebsiteUrl(input, { baseUrl } = {}) {
     protocol: parsed.protocol,
     port: parsed.protocol === 'http:' ? 80 : 443,
   })
+}
+
+export function normalizeWebsiteUrl(input, { baseUrl } = {}) {
+  return normalizeUrl(input, { baseUrl, preservePathAndQuery: false })
+}
+
+export function normalizeFetchUrl(input, { baseUrl } = {}) {
+  return normalizeUrl(input, { baseUrl, preservePathAndQuery: true })
 }

@@ -1,7 +1,7 @@
 # STRUKTIVA Website-Check: sichere Architektur
 
 Stand: 14. Juli 2026
-Status: Schritt 25, nur Audit und Planung
+Status: Schritt 27, Phase B als deaktivierte und separat getestete Netzwerkschicht
 Marke: STRUKTIVA Digitale Unternehmensberatung
 
 ## 1. Projektziel
@@ -212,7 +212,7 @@ Kann diese Bindung in der echten Vercel-Node-Runtime nicht durch Integrationstes
 - PageSpeed mobil/desktop parallel, je 25 Sekunden
 - internes Gesamtbudget 35 Sekunden; Function `maxDuration` zunaechst 40 Sekunden nach Tarifpruefung
 
-`Content-Length` und gestreamte Bytes werden begrenzt. `Accept-Encoding: identity` mindert Dekompressionsrisiken. Nur `text/html`/`application/xhtml+xml`; fehlender Typ nur bei kleiner eindeutiger HTML-Signatur. Keine PDFs, Medien, Archive oder externen Ressourcen.
+`Content-Length` und gestreamte Bytes werden begrenzt. `Accept-Encoding: identity` mindert Dekompressionsrisiken. Nur `text/html`/`application/xhtml+xml`; ein fehlender Content-Type wird fail closed abgelehnt. Keine PDFs, Medien, Archive oder externen Ressourcen.
 
 Vercel erlaubt `maxDuration`, aber Tarif und Fluid Compute sind vor Phase C zu bestaetigen: <https://vercel.com/docs/functions/configuring-functions/duration>
 
@@ -228,7 +228,7 @@ Provider-Timeout, 429, 5xx, invalides JSON, `runtimeError`, fehlende Kategorie u
 
 ## 16. HTML-Analyse
 
-Es existiert kein serverseitiger HTML-Parser. Option A entfaellt. Option B, ein kleiner Scanner, ist nur fuer engste Metadaten geeignet und darf HTML nicht mit grossen Regex-Ausdruecken nachbauen. Empfehlung fuer Phase B ist Option C: nach separater Freigabe eine kleine standardsorientierte Parser-Dependency wie `parse5`. Schritt 25 installiert nichts; Phase A braucht keinen Parser.
+Es existiert kein serverseitiger HTML-Parser. Option A entfaellt. Option B, ein kleiner Scanner, ist nur fuer engste Metadaten geeignet und darf HTML nicht mit grossen Regex-Ausdruecken nachbauen. Empfehlung fuer eine spaetere, separat freizugebende Analysephase ist Option C: eine kleine standardsorientierte Parser-Dependency wie `parse5`. Schritt 27 installiert nichts; Phase A und Phase B brauchen keinen Parser.
 
 Zuverlaessig strukturell erkennbar sind Titel, Description, H1-Anzahl, `lang`, Viewport, Canonical, Links, Formulare und JSON-LD. Telefon, E-Mail, WhatsApp, CTA, Pflichtlinks und Trust bleiben heuristisch. CSS-Sichtbarkeit, clientseitig geladene Inhalte, Rechtswirksamkeit und echte Nutzerfuehrung sind nicht sicher pruefbar.
 
@@ -339,12 +339,13 @@ Keine unbelegten Kostenbetraege. Vor Phase C: Google-Quota, Vercel-Tarif, Runtim
 ## 28. Entwicklungsphasen
 
 - Phase A: API-Grundgeruest, Schema, Normalisierung, IP-Klassifikation, DNS-/Redirect-Sicherheitsbausteine; nur Mocks.
-- Phase B: gebundener HTTP(S)-Abruf, Limits, Parserentscheidung, 20 Regeln; Mock-Server.
-- Phase C: PageSpeed mobil/desktop, Timeout, Partial Result, sanitierte Abbildung.
-- Phase D: Formular, Phasenanzeige, Fehler- und Fokuszustaende.
-- Phase E: Ergebnis, Empfehlungen, Grenzen, persoenlicher CTA.
-- Phase F: Consent-Tracking, WAF, freigegebener Cache, Observability, Kill-Switch.
-- Phase G: Sicherheitsabnahme, kontrollierte oeffentliche Ziele, Last/Quota, Accessibility, Responsive und Live.
+- Phase B: gebundener HTTP(S)-Abruf, DNS-/IP-Pinning, Redirects sowie Zeit-, Typ- und Groessenlimits; ausschliesslich gemockte Netzwerktests.
+- Phase C: Parserentscheidung, begrenzte HTML-Analyse und deterministische Regeln; weiterhin ohne sichtbare Aktivierung.
+- Phase D: PageSpeed mobil/desktop, Timeout, Partial Result, sanitierte Abbildung.
+- Phase E: Formular, Phasenanzeige, Fehler- und Fokuszustaende.
+- Phase F: Ergebnis, Empfehlungen, Grenzen, persoenlicher CTA.
+- Phase G: Consent-Tracking, WAF, freigegebener Cache, Observability, Kill-Switch.
+- Phase H: Sicherheitsabnahme, kontrollierte oeffentliche Ziele, Last/Quota, Accessibility, Responsive und Live.
 
 Jede Phase ist einzeln testbar und commitbar. Kein produktiver Fremdabruf vor Sicherheits-Gate.
 
@@ -430,3 +431,55 @@ Der Test nutzt `node:test` und `node:assert/strict`, keine Test-Dependency. Abge
 - Parser, HTML-Regeln, PageSpeed, Rate Limiting, Cache, UI und Tracking bleiben aus.
 - Vor Phase B muss ein injizierbarer Node-HTTP(S)-Adapter mit deaktivierten automatischen Redirects, kontrollierter `lookup`-Bindung und rein lokalen Mock-Server-Tests entworfen werden.
 - Das Feature-Flag bleibt bis nach spaeterer Sicherheits- und Betriebsabnahme deaktiviert.
+
+## 32. Umgesetzter Stand nach Schritt 27: Phase B
+
+Phase B ergaenzt eine echte, aber nicht an den oeffentlichen Handler angeschlossene Node-Netzwerkschicht. `WEBSITE_CHECK_ENABLED` bleibt live deaktiviert. Selbst bei lokaler Aktivierung antwortet `api/website-check.js` weiterhin mit HTTP 501 und `CHECK_NOT_IMPLEMENTED`; es wird kein fertiges Pruefergebnis vorgetaeuscht.
+
+### Dateien und Verantwortungen
+
+- `api/_website-check/dns-resolver.js`: injizierbare produktive DNS-Aufloesung, vollstaendige Ergebnispruefung, kontrollierte Adressauswahl und gepinnte Node-`lookup`-Funktion
+- `api/_website-check/http-client.js`: IP-gebundene GET-Anfrage mit Node `http`/`https`, festen Headern, TLS-Pruefung, Timern sowie Content- und Groessenlimits
+- `api/_website-check/fetch-website.js`: Gesamtdeadline, manuelle Redirect-Kette, Schleifenerkennung, erneute Zielpruefung und minimierte Redirect-Historie
+- `tests/website-check-phase-b.test.mjs`: vollstaendig gemockte DNS-, Request-, Stream-, Timeout-, Redirect- und TLS-Optionstests
+- `api/_website-check/config.js`: 3 Sekunden Connect-, 5 Sekunden Request- und 10 Sekunden Gesamtlimit sowie 1,5 MiB HTML-Limit
+- `api/_website-check/errors.js`: stabile Phase-B-Fehlercodes
+- `api/_website-check/normalize-url.js` und `destination-policy.js`: getrennte Normalisierung fuer Nutzereingabe und echte Redirect-Abrufziele
+
+### DNS-Aufloesung und Rebinding-Schutz
+
+Produktiv verwendet `defaultDnsLookup()` `dns.promises.lookup(hostname, { all: true, verbatim: true })`. Der Resolver ist injizierbar. Domains benoetigen mindestens eine Adresse; jede A-/AAAA-Antwort muss syntaktisch zur angegebenen Familie passen und oeffentlich zulaessig sein. Doppelte Antworten werden entfernt. Eine einzelne private, reservierte oder ungueltige Adresse blockiert das gesamte Ziel. Node-DNS-Fehler werden ausschliesslich als `DNS_LOOKUP_FAILED` weitergegeben.
+
+Oeffentliche Literal-IPs ueberspringen DNS, durchlaufen aber dieselbe IP-Policy. Nach der Pruefung wird genau ein freigegebener Datensatz aus Adresse und Familie ausgewaehlt. `createPinnedLookup()` liefert nur diesen Datensatz an Node zurueck und fuehrt keine zweite Systemaufloesung aus. Hostname, Protokoll, Port und Ziel-URL muessen weiterhin zur gebundenen Entscheidung passen.
+
+### HTTP, Host und TLS
+
+Der produktive Adapter verwendet ausschliesslich `node:http` oder `node:https`, Methode GET, `agent: false` und `Connection: close`. Gesetzte Header sind `User-Agent: STRUKTIVA-Website-Check/1.0`, HTML/XHTML-`Accept`, feste `Accept-Language`, `Accept-Encoding: identity`, `Connection: close` und der gepruefte Host. Cookies, Authorization, Referer, Proxy- oder Nutzerheader werden nicht uebertragen.
+
+HTTP ist nur auf Port 80, HTTPS nur auf Port 443 erlaubt. HTTPS setzt `servername` auf den geprueften Originalhost und `rejectUnauthorized: true`. Es gibt keine eigene unsichere CA, keine deaktivierte Zertifikatspruefung und keine wiederverwendeten Cross-Origin-Sockets.
+
+### Zeit-, Antwort- und Inhaltsschutz
+
+Ein eigener Connect-Timer endet nach hoechstens 3000 ms, ein Einzelrequest nach 5000 ms und die gesamte DNS-/Redirect-Kette nach 10000 ms. Die Gesamtdeadline kann auch einen wartenden Resolver oder aktiven Request beenden. Bei Timeout werden Request und Response zerstoert, Listener und Timer entfernt und nur `REQUEST_TIMEOUT` geliefert.
+
+HTML ist auf exakt 1572864 Bytes begrenzt. Ein zu grosser valider `Content-Length`-Header beendet die Antwort vor dem Body-Lesen. Bei unbekannter oder chunked Laenge werden Bytes fortlaufend gezaehlt und Request sowie Response beim ersten Ueberschreiten sofort zerstoert. Es wird keine unbegrenzte Chunk-Verkettung aufgebaut.
+
+Akzeptiert werden ausschliesslich `text/html` und `application/xhtml+xml`, jeweils mit optionalen Parametern. Fehlende oder andere Content-Types ergeben `HTML_NOT_AVAILABLE`. Nur fehlendes `Content-Encoding` und `identity` sind erlaubt; `gzip`, `br`, `deflate` und andere Kodierungen ergeben `UNSUPPORTED_CONTENT_ENCODING`. Fremdinhalte werden weder ausgefuehrt noch dekomprimiert.
+
+### Redirect-Korrektur
+
+Die Nutzereingabe wird weiterhin datensparsam auf Origin `/` reduziert. Ein echter Redirect wird dagegen relativ zur vollstaendigen aktuellen Abruf-URL aufgeloest. Pfad und erforderliche Query bleiben intern fuer den Folgerequest erhalten; nur das Fragment wird entfernt. Pfad und Query erscheinen nicht in der minimierten Redirect-Historie.
+
+Nur 301, 302, 303, 307 und 308 werden verfolgt. Redirect-Antwortkoerper werden sofort beendet. Redirects ohne `Location` ergeben `INVALID_RESPONSE`. Jedes Ziel durchlaeuft Protokoll-, Zugangsdaten-, Port-, Host-, Literal-IP-, DNS- und IP-Pruefung erneut und erhaelt eine neue IP-Bindung. Maximal drei Redirects sind erlaubt; der vierte ergibt `TOO_MANY_REDIRECTS`. Wiederholte vollstaendige Abruf-URLs einschliesslich Pfad und Query ergeben `REDIRECT_LOOP`. HTTPS-zu-HTTP wird nur fuer ein vollstaendig freigegebenes Port-80-Ziel verfolgt und intern mit `httpsDowngrade: true` markiert.
+
+### Interne Rueckgabe und Fehler
+
+Bei Erfolg bleiben angeforderte URL, finale URL, finaler Origin, Status, gefilterte Header, Content-Type, Byteanzahl, Redirect-Anzahl, minimierte Historie, HTTPS-/Downgrade-Status, Gesamtdauer und der begrenzte HTML-Buffer intern. Der HTML-Buffer wird nicht geloggt, gespeichert oder durch `api/website-check.js` serialisiert. 403, 404, 429 und 500 bleiben gueltige Serverantworten, sofern ein erlaubter HTML-Typ vorliegt. 204 oder Antworten ohne erlaubtes HTML ergeben `HTML_NOT_AVAILABLE`.
+
+Ergaenzte stabile Codes sind `WEBSITE_UNREACHABLE`, `REQUEST_TIMEOUT`, `REDIRECT_LOOP`, `RESPONSE_TOO_LARGE`, `HTML_NOT_AVAILABLE`, `INVALID_RESPONSE`, `UNSUPPORTED_CONTENT_ENCODING` und `TLS_VALIDATION_FAILED`. Node-Fehlertexte und Codes werden nicht an den Client durchgereicht.
+
+### Tests und verbleibende Grenzen
+
+`npm run test:website-check` startet Phase A und Phase B gemeinsam mit `node:test`. Alle DNS-Ergebnisse, Literal-IPs, Lookup-Pinning, IPv4/IPv6-Familien, Request- und TLS-Optionen, Header, Zeitlimits, Streamabbrueche, Content-Typen, Encodings, Statuscodes, Redirect-Ziele, Redirect-Schleifen, erneute Bindungen und HTTPS-Downgrades werden ohne echte DNS-Abfrage und ohne externen Netzwerkzugriff getestet.
+
+Weiterhin fehlen HTML-Parser und Analyse, die 20 Fachregeln, PageSpeed, robots.txt, Sitemap, API-Ergebnisabbildung, UI, Tracking, Rate Limiting, Cache, Datenbank und produktive Runtime-Abnahme. Das Feature-Flag wird nicht aktiviert. Empfohlener Schritt 28 ist eine separat freizugebende Phase C fuer begrenzte HTML-Analyse und deterministische Regeln, weiterhin ohne Live-Aktivierung oder PageSpeed.
