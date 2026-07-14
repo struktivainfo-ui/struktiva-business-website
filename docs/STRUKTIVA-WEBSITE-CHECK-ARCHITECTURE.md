@@ -665,3 +665,9 @@ Alle JSON-Antworten setzen `Content-Type: application/json; charset=utf-8`, `Cac
 Die lesende Audit-Baseline vor Schritt 29 meldete zwei bereits vorhandene Hinweise: einen moderaten transitiven Hinweis fuer `esbuild` und einen hohen direkten Hinweis fuer `vite`. Die angebotene Behebung erfordert ein Major-Upgrade auf Vite 8 und liegt ausserhalb dieses Schritts. `npm audit fix`, Dependency-Upgrades und Lockfile-Aenderungen wurden nicht ausgefuehrt.
 
 Weiterhin fehlen PageSpeed/Lighthouse, robots.txt, Sitemap, sichtbares Website-Check-Formular, Ergebnis-UI, Tracking, Rate Limiting, Cache, Datenbank, PDF und produktive Runtime-/Missbrauchsabnahme. Das Feature-Flag bleibt bis zu einer gesonderten Betriebs- und Sicherheitsfreigabe deaktiviert.
+
+## 35. Betriebsstatus nach Schritt 30: Phase E
+
+Das Betriebs-, Tarif-, Missbrauchs-, Cache- und Freigabeaudit ist in `docs/STRUKTIVA-WEBSITE-CHECK-OPERATIONS-READINESS.md` dokumentiert. Es enthaelt den projektspezifischen Tarif- und Function-Befund, die bewerteten Rate-Limit- und Cache-Optionen, Datenschutzgrenzen, Monitoring- und Kill-Switch-Planung sowie die verbindliche Live-Freigabecheckliste.
+
+Der Website-Check bleibt oeffentlich deaktiviert. Es wurde weder Rate Limiting noch Cache, Single-Flight, Parallelitaetssteuerung, Bot-Schutz, PageSpeed oder ein weiterer Kill-Switch implementiert. Eine Freigabe ist erst nach kommerziell geeigneter Tarifentscheidung, Betriebsabsicherung, separater UI-/Datenschutzphase und kontrollierter Sicherheitsabnahme zulaessig.
