@@ -152,7 +152,7 @@ Query und Fragment werden nie zurueckgegeben. `finalUrl` ist ein sicherer Origin
 }
 ```
 
-Codes: `INVALID_URL` (400), `UNSUPPORTED_PROTOCOL` (400), `BLOCKED_DESTINATION` (400), `DNS_LOOKUP_FAILED` (422), `WEBSITE_UNREACHABLE` (502), `REQUEST_TIMEOUT` (504), `TOO_MANY_REDIRECTS` (422), `RESPONSE_TOO_LARGE` (422), `HTML_NOT_AVAILABLE` (422), `PAGESPEED_UNAVAILABLE` (Warnung im Teilergebnis), `RATE_LIMITED` (429 plus `Retry-After`), `INVALID_RESPONSE` (502), `INTERNAL_ERROR` (500).
+Dieser Abschnitt beschreibt die urspruengliche Zielarchitektur vor Phase D. Die tatsaechlich implementierte und getestete Fehlerabbildung ist verbindlich unter "Umgesetzter Stand nach Schritt 29: Phase D" dokumentiert. Insbesondere verwenden `DNS_LOOKUP_FAILED` und `TOO_MANY_REDIRECTS` dort HTTP 502. `RATE_LIMITED` und `PAGESPEED_UNAVAILABLE` sind weiterhin nicht implementierte Zielarchitektur.
 
 Nie ausgegeben werden Stacktraces, IPs, interne Hosts, API-Keys, Rohantworten oder Providerdetails.
 
@@ -626,7 +626,35 @@ Nicht oeffentlich sind HTML, Base64-HTML, Header, Set-Cookie, Authorization, DNS
 
 ### Fehlerabbildung und Header
 
-Request-/URL-/Policy-Fehler verwenden 400, falscher Content-Type 415 und zu grosser Request 413. DNS-, Erreichbarkeits-, TLS-, Verbindungs-, Redirect- und ungueltige interne Responsefehler verwenden 502. Timeouts verwenden 504. Uebergrosse oder nicht auswertbare HTML-Antworten und nicht unterstuetztes Content-Encoding verwenden 422. Deaktivierung verwendet 503, unerwartete Fehler 500. Alle Meldungen sind fest definiert und enthalten keine Node-Ursache.
+Die tatsaechlich implementierte und getestete Fehlerabbildung lautet:
+
+| Fehlercode | HTTP | Oeffentliche Meldung |
+| --- | ---: | --- |
+| `METHOD_NOT_ALLOWED` | 405 | `Methode nicht erlaubt.` |
+| `SERVICE_NOT_READY` | 503 | `Der automatische Website-Check wird derzeit vorbereitet.` |
+| `INVALID_CONTENT_TYPE` | 415 | `Bitte senden Sie die Anfrage als JSON.` |
+| `REQUEST_TOO_LARGE` | 413 | `Die Anfrage ist zu gross.` |
+| `INVALID_JSON` | 400 | `Die Anfrage enthaelt kein gueltiges JSON.` |
+| `INVALID_REQUEST` | 400 | `Die Anfrage konnte nicht verarbeitet werden.` |
+| `INVALID_URL` | 400 | `Die Website-Adresse konnte nicht verarbeitet werden.` |
+| `UNSUPPORTED_PROTOCOL` | 400 | `Fuer den Website-Check sind nur HTTP- und HTTPS-Adressen erlaubt.` |
+| `BLOCKED_DESTINATION` | 400 | `Diese Website-Adresse kann aus Sicherheitsgruenden nicht geprueft werden.` |
+| `DNS_LOOKUP_FAILED` | 502 | `Die Website-Adresse konnte derzeit nicht aufgeloest werden.` |
+| `WEBSITE_UNREACHABLE` | 502 | `Die Website konnte derzeit nicht erreicht werden.` |
+| `CONNECTION_FAILED` | 502 | `Die Verbindung zur Website konnte derzeit nicht hergestellt werden.` |
+| `REQUEST_TIMEOUT` | 504 | `Die Pruefung hat zu lange gedauert und wurde beendet.` |
+| `TOO_MANY_REDIRECTS` | 502 | `Die Website-Adresse leitet zu oft weiter.` |
+| `REDIRECT_LOOP` | 502 | `Die Website-Adresse fuehrt in eine Weiterleitungsschleife.` |
+| `RESPONSE_TOO_LARGE` | 422 | `Die empfangene Website ist fuer den automatischen Check zu umfangreich.` |
+| `HTML_NOT_AVAILABLE` | 422 | `Unter der angegebenen Adresse wurde keine auswertbare HTML-Seite gefunden.` |
+| `INVALID_RESPONSE` | 502 | `Die Website hat keine gueltige Antwort geliefert.` |
+| `UNSUPPORTED_CONTENT_ENCODING` | 422 | `Die Website-Antwort verwendet eine noch nicht unterstuetzte Komprimierung.` |
+| `TLS_VALIDATION_FAILED` | 502 | `Die sichere Verbindung zur Website konnte nicht bestaetigt werden.` |
+| `HTML_ANALYSIS_FAILED` | 422 | `Das HTML-Dokument konnte nicht ausgewertet werden.` |
+| `CHECK_NOT_IMPLEMENTED` | 501 | `Die Website-Adresse wurde validiert. Der eigentliche Check ist noch nicht aktiv.` |
+| `INTERNAL_ERROR` | 500 | `Der automatische Check konnte derzeit nicht abgeschlossen werden.` |
+
+`RATE_LIMITED` ist in Phase D noch nicht implementiert und besitzt daher aktuell weder eine Fehlerdefinition noch einen HTTP-Status oder eine oeffentliche Meldung. Ein spaeteres Rate Limit ist als Zielarchitektur mit HTTP 429 und `Retry-After` vorgesehen, darf aber erst in einem eigenen Schritt umgesetzt werden. Unbekannte Fehlercodes werden auf `INTERNAL_ERROR` abgebildet. Alle implementierten Meldungen sind fest definiert und enthalten keine Node-Ursache.
 
 Alle JSON-Antworten setzen `Content-Type: application/json; charset=utf-8`, `Cache-Control: no-store` und `X-Content-Type-Options: nosniff`. 405 setzt zusaetzlich `Allow: POST`. Es wurde kein `Access-Control-Allow-Origin` ergaenzt.
 
