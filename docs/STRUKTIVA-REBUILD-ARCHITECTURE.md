@@ -2572,3 +2572,7 @@ Nicht veraendert wurden:
 - `src/legacy/legacyContent.jsx` enthaelt weiterhin alte Legacy-Links und alte Demo-/Referenz-Komponenten, die aber nicht mehr oeffentlich fuer `/demos` und `/referenzen` gerendert werden.
 - CSS liegt weiterhin global in `src/styles.css`.
 - Es gibt weiterhin keine Lint-, Typecheck- oder Unit-Test-Scripts.
+
+## 46. Getrenntes Teilprojekt: automatischer Website-Check
+
+Der automatische Website-Check fuer `/digital-check` ist seit Schritt 25 als separates, noch nicht implementiertes Teilprojekt geplant. Sicherheits-, API-, Datenschutz-, Ergebnis- und Phasenarchitektur stehen in `docs/STRUKTIVA-WEBSITE-CHECK-ARCHITECTURE.md`. Dieser Hinweis veraendert keinen bestehenden Rebuild- oder Abnahmestand; es wurde keine produktive oder sichtbare Funktion aktiviert.

@@ -454,3 +454,7 @@ Verbleibende visuelle Risiken:
 - Die neuen Stabilitaetsregeln sind bewusst konservativ und weniger radial/fancy als die
   urspruenglichen Visualisierungen.
 - Ein spaeterer CSS-Split waere sinnvoll, sollte aber separat geplant werden.
+
+## Getrennt geplantes Folgeprojekt
+
+Der automatische Website-Check fuer `/digital-check` ist in Schritt 25 ausschliesslich als separates Folgeprojekt auditiert und in `docs/STRUKTIVA-WEBSITE-CHECK-ARCHITECTURE.md` geplant. Er gehoert nicht zum hier dokumentierten finalen Rebuild-Abnahmestand; es wurde keine produktive oder sichtbare Website-Check-Funktion aktiviert.
