@@ -15070,3 +15070,134 @@ body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-
     max-width: 100% !important;
   }
 }
+
+/* About hero balance and responsive containment */
+.struktiva-about-hero {
+  padding-top: clamp(4.5rem, 5.5vw, 5.5rem);
+}
+
+.struktiva-about-hero__inner {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(2rem, 3.5vw, 3.75rem);
+  max-width: 1360px;
+}
+
+.struktiva-about-hero__copy,
+.struktiva-about-hero__visual,
+.struktiva-about-hero-visual,
+.struktiva-about-hero-visual > * {
+  min-width: 0;
+}
+
+.struktiva-about-hero h1 {
+  width: 100%;
+  max-width: 100% !important;
+  font-size: clamp(3.75rem, 4.2vw, 4.25rem);
+  line-height: 1;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.struktiva-about-hero__copy :is(p, a, span, strong),
+.struktiva-about-hero-visual :is(strong, small) {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.struktiva-about-hero-visual {
+  width: 100%;
+  max-width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(10.75rem, 0.85fr) minmax(0, 1fr);
+}
+
+.struktiva-about-hero-visual__factors strong,
+.struktiva-about-hero-visual__steps strong {
+  font-size: clamp(0.86rem, 1vw, 0.94rem);
+}
+
+.struktiva-about-hero-visual__center strong {
+  font-size: clamp(1.18rem, 1.6vw, 1.45rem);
+}
+
+.route-ueber-uns {
+  position: relative;
+}
+
+.route-ueber-uns .struktiva-floating-whatsapp,
+body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
+  position: absolute;
+  top: calc(5.9rem + env(safe-area-inset-top));
+  bottom: auto !important;
+}
+
+@media (max-width: 1180px) {
+  .struktiva-about-hero {
+    padding-top: clamp(4.5rem, 7vw, 5.25rem);
+  }
+
+  .struktiva-about-hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .struktiva-about-hero h1 {
+    max-width: 18ch !important;
+    font-size: clamp(3rem, 5.8vw, 4rem);
+    line-height: 1.02;
+  }
+
+  .route-ueber-uns .struktiva-floating-whatsapp {
+    width: 3rem !important;
+    height: 3rem !important;
+    min-height: 3rem !important;
+    justify-content: center;
+    padding: 0 !important;
+    font-size: 0;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .struktiva-about-hero-visual {
+    grid-template-columns: minmax(0, 1fr) minmax(10.75rem, 0.85fr) minmax(0, 1fr) !important;
+    min-height: clamp(30rem, 56vw, 36rem) !important;
+  }
+
+  .struktiva-about-hero-visual::before,
+  .struktiva-about-hero-visual::after {
+    display: block !important;
+  }
+
+  .struktiva-about-hero-visual__center {
+    order: initial !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .struktiva-about-hero-visual {
+    grid-template-columns: minmax(0, 1fr) !important;
+    min-height: auto !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .struktiva-about-hero {
+    padding-top: 3.8rem;
+  }
+
+  .struktiva-about-hero__inner {
+    gap: 2rem;
+  }
+
+  .struktiva-about-hero h1 {
+    max-width: 100% !important;
+    font-size: clamp(2.5rem, 10.5vw, 3rem);
+    line-height: 1.03;
+  }
+
+  .struktiva-about-hero-visual {
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+}
