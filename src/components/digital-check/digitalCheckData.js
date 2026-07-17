@@ -75,7 +75,7 @@ export const digitalCheckDoesNotFit = [
 export const digitalCheckFaqs = [
   {
     question: 'Was kostet der Digital-Check?',
-    answer: `Der Digital-Check kostet ${digitalCheckPriceLabel}. Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.`,
+    answer: `Der Digital-Check kostet ${digitalCheckPriceLabel} Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.`,
   },
   {
     question: 'Ist das Absenden des Formulars bereits eine Bestellung?',

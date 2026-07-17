@@ -6,6 +6,7 @@ import {
   digitalCheckPriceLabel,
   personalDigitalCheckOffer,
 } from '../src/config/digitalCheckOffer.js'
+import { digitalCheckFaqs } from '../src/components/digital-check/digitalCheckData.js'
 import { getRouteMeta } from '../src/routing/routeConfig.js'
 
 const read = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8')
@@ -34,6 +35,7 @@ test('the current offer uses the confirmed 129 EUR gross-price configuration', (
   assert.equal(personalDigitalCheckOffer.taxNote, 'inkl. 19 % MwSt.')
   assert.equal(personalDigitalCheckOffer.taxStatus, 'confirmed_gross')
   assert.equal(digitalCheckPriceLabel, '129 € einmalig inkl. 19 % MwSt.')
+  assert.doesNotMatch(digitalCheckFaqs[0].answer, /MwSt\.\./)
 })
 
 test('the confirmed tax note survives an empty or contradictory optional environment value', async () => {
