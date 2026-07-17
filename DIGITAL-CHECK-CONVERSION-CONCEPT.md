@@ -3,7 +3,7 @@
 Status: Umsetzungsreifes Fach-, Text- und Technik-Konzept<br>
 Geltungsbereich: `/digital-check` und die zugehörige Danke-Seite<br>
 Stand: 17. Juli 2026
-Wichtig: Die technische Umsetzung dieses Konzepts ist erfolgt. Die steuerliche Behandlung von STRUKTIVA ist weiterhin nicht verlässlich bestätigt; öffentlich darf deshalb nur „129 € einmalig“ ohne Netto-, Brutto- oder Mehrwertsteuerhinweis erscheinen.
+Wichtig: Die technische Umsetzung dieses Konzepts ist erfolgt. Die steuerliche Behandlung ist bestätigt: STRUKTIVA weist 19 % Umsatzsteuer aus, und 129 € ist der vom Kunden zu zahlende Gesamtpreis. Öffentlich gilt „129 € einmalig inkl. 19 % MwSt.“; auf diesen Betrag wird keine weitere Umsatzsteuer aufgeschlagen.
 
 ## 1. Ausgangslage
 
@@ -19,7 +19,7 @@ Im Bestand bestehen außerdem Widersprüche:
 - Die bestehende technische Route `/api/website-check` ist ein automatisierter Website-Test und darf nicht mit der persönlichen, kostenpflichtigen Leistung verwechselt werden.
 - Auf schmalen Viewports treten derzeit horizontale Überläufe auf. Kampagnenkopf, Hero, Formular und Cookie-Banner brauchen deshalb eine explizite mobile Abnahme.
 
-Die steuerliche Behandlung lässt sich aus den Projektinformationen nicht verlässlich ableiten. Für die Landingpage gilt deshalb `129 € einmalig` ohne Netto-, Brutto- oder Mehrwertsteuerhinweis. Ein Steuerhinweis bleibt zentral konfigurierbar, darf aber erst nach verlässlicher steuerlicher Bestätigung veröffentlicht werden. Steuerdarstellung, Vertragsentstehung, Anrechnungsbedingungen, Checkbox-Text und Datenschutz müssen vor Veröffentlichung rechtlich beziehungsweise steuerlich freigegeben werden.
+Die steuerliche Behandlung ist verbindlich freigegeben: STRUKTIVA stellt Rechnungen mit 19 % Umsatzsteuer aus. Für die Landingpage gilt `129 € einmalig inkl. 19 % MwSt.` als Gesamtpreis. Der Steuerhinweis wird zentral gepflegt und bleibt auch ohne Produktionsvariable sichtbar. Vertragsentstehung, Anrechnungsbedingungen, Checkbox-Text und Datenschutz müssen vor Veröffentlichung weiterhin rechtlich konsistent geprüft werden.
 
 ## 2. Ziel der Landingpage
 
@@ -109,7 +109,8 @@ Der Bericht wird im persönlichen Ergebnisgespräch erläutert und anschließend
 
 Öffentlich sichtbarer Preis:
 
-> 129 € einmalig
+> 129 € einmalig<br>
+> inkl. 19 % MwSt.
 
 Verbindlicher Erläuterungstext:
 
@@ -123,7 +124,7 @@ Zusätzliche Geschäftsregeln für Angebot und Abrechnung:
 - Maßgeblich ist der verbindlich vereinbarte Auftragswert vor Anrechnung.
 - Die Anfrage über das Formular löst noch keinen kostenpflichtigen Auftrag aus.
 
-Freigabepunkt vor Veröffentlichung: Preisangabe, Mehrwertsteuer-Ausweis, Vertragsentstehung, Fristbeginn, Mindestauftragswert, Ausschluss von Fremdkosten und Anrechnungsmechanik müssen steuerlich und rechtlich bestätigt werden.
+Steuerlicher Freigabestand: 129 € ist der Gesamtpreis inklusive 19 % Mehrwertsteuer. Vertragsentstehung, Fristbeginn, Mindestauftragswert, Ausschluss von Fremdkosten und Anrechnungsmechanik müssen rechtlich und in der Auftragsbestätigung konsistent bleiben.
 
 ## 8. Primäres Conversion-Ziel
 
@@ -179,7 +180,8 @@ Unterzeile:
 
 Preiszeile:
 
-> 129 € einmalig
+> 129 € einmalig<br>
+> inkl. 19 % MwSt.
 
 Leistungszeile:
 
@@ -229,7 +231,8 @@ Hervorgehobener Angebotsblock:
 > **STRUKTIVA Digital-Check für lokale Betriebe**<br>
 > Für einen Betrieb, einen Standort, eine Website und ein Google-Unternehmensprofil.<br>
 > Ergebnis innerhalb von fünf Werktagen nach Eingang aller benötigten Informationen.<br>
-> **129 € einmalig**
+> **129 € einmalig**<br>
+> **inkl. 19 % MwSt.**
 
 Hinweis:
 
@@ -367,7 +370,7 @@ Abschluss:
 
 **Was kostet der Digital-Check?**
 
-> Der Digital-Check kostet 129 € einmalig. Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.
+> Der Digital-Check kostet 129 € einmalig inkl. 19 % MwSt. Die 129 € sind der Gesamtpreis. Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.
 
 **Ist das Absenden des Formulars bereits eine Bestellung?**
 
@@ -765,7 +768,7 @@ Bekannte Fundstellen, die mindestens geprüft werden müssen:
 
 ## 20. Genaue Umsetzungsreihenfolge
 
-1. Steuerliche/rechtliche Freigabe für Preis, Anrechnung, Anfrage-/Vertragstext, Checkbox, Speicherdauer und Attribution einholen.
+1. Die erteilte steuerliche Freigabe (`129 € einmalig inkl. 19 % MwSt.` als Gesamtpreis) dokumentieren; Anfrage-/Vertragstext, Checkbox, Speicherdauer und Attribution rechtlich konsistent halten.
 2. Vor Beginn Git-Status sichern und vorhandene fremde/ungetrackte Dateien unangetastet lassen.
 3. Zentrale Produktkonstanten für Name, Preis, Umfang, Lieferzeit und Anrechnung definieren, damit Texte und JSON-LD nicht auseinanderlaufen.
 4. Route `/digital-check/danke`, route-spezifische Metadaten und Pre-Rendering-Strategie vorbereiten.

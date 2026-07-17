@@ -4,17 +4,23 @@ const configuredTaxNote = String(
   viteEnvironment.VITE_DIGITAL_CHECK_TAX_NOTE || processEnvironment.VITE_DIGITAL_CHECK_TAX_NOTE || '',
 ).trim()
 
-const approvedTaxNote = configuredTaxNote === 'inklusive Mehrwertsteuer' ? configuredTaxNote : ''
+export const DIGITAL_CHECK_CONFIRMED_TAX_NOTE = 'inkl. 19 % MwSt.'
+const approvedTaxNote = configuredTaxNote === DIGITAL_CHECK_CONFIRMED_TAX_NOTE
+  ? configuredTaxNote
+  : DIGITAL_CHECK_CONFIRMED_TAX_NOTE
 
 export const personalDigitalCheckOffer = Object.freeze({
   id: 'personalDigitalCheck',
   leadType: 'digital_check',
   name: 'STRUKTIVA Digital-Check für lokale Betriebe',
   price: 129,
+  grossPrice: 129,
   currency: 'EUR',
+  priceForm: 'einmalig',
+  vatRatePercent: 19,
   priceBaseLabel: '129 € einmalig',
   taxNote: approvedTaxNote,
-  taxStatus: approvedTaxNote ? 'configured' : 'unconfirmed',
+  taxStatus: 'confirmed_gross',
   creditPeriodDays: 30,
   minimumImplementationOrder: 500,
   deliveryBusinessDays: 5,
@@ -32,7 +38,7 @@ export const digitalCheckPriceLabel = [
   personalDigitalCheckOffer.taxNote,
 ]
   .filter(Boolean)
-  .join(' – ')
+  .join(' ')
 
 export const digitalCheckCreditText = `Die ${personalDigitalCheckOffer.price} € werden vollständig angerechnet, wenn innerhalb von ${personalDigitalCheckOffer.creditPeriodDays} Tagen nach der Ergebnisbesprechung ein STRUKTIVA-Umsetzungsauftrag mit einem Mindestauftragswert von ${personalDigitalCheckOffer.minimumImplementationOrder} € vereinbart wird.`
 

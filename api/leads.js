@@ -1,4 +1,5 @@
 import { Resend } from 'resend'
+import { digitalCheckPriceLabel, personalDigitalCheckOffer } from '../src/config/digitalCheckOffer.js'
 
 const ALLOWED_INTERESTS = new Set([
   'Website / Landingpage',
@@ -188,7 +189,7 @@ export function validateLeadInput(input = {}) {
     ok: true,
     lead: {
       ...baseLead,
-      offerName: 'STRUKTIVA Digital-Check für lokale Betriebe',
+      offerName: personalDigitalCheckOffer.name,
       companyWebsite,
       industry,
       primaryChallenge,
@@ -226,6 +227,7 @@ export function buildInternalMailHtml(lead) {
   const detailRows = lead.leadType === 'digital_check'
     ? [
         ['Angebot', lead.offerName],
+        ['Gesamtpreis', digitalCheckPriceLabel],
         ['Branche', lead.industry],
         ['Website', lead.companyWebsite],
         ['Quelle / Medium', `${lead.source} / ${lead.medium}`],
@@ -258,6 +260,7 @@ export function buildConfirmationMailHtml(lead) {
     return `<div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
       <p>Hallo ${escapeHtml(lead.name)},</p>
       <p>vielen Dank für Ihre Anfrage zum STRUKTIVA Digital-Check für lokale Betriebe.</p>
+      <p>Der Gesamtpreis für den Digital-Check beträgt ${escapeHtml(digitalCheckPriceLabel)}. Es wird keine weitere Umsatzsteuer auf diesen Betrag aufgeschlagen.</p>
       <p>Ihre Anfrage ist eingegangen und wird persönlich geprüft. Wir melden uns in der Regel innerhalb eines Werktags, um den passenden Rahmen und gegebenenfalls noch benötigte Informationen zu klären.</p>
       <p>Das Absenden der Anfrage ist noch keine kostenpflichtige Bestellung. Ein Auftrag entsteht erst nach unserer gesonderten Bestätigung.</p>
       <p>Viele Grüße<br />Sven Matzke<br />STRUKTIVA Digitale Unternehmensberatung</p>

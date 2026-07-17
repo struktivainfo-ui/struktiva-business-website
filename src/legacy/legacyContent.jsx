@@ -5725,7 +5725,9 @@ function OfferDetailPage({ title, intro, points, pathname }) {
               {priceInfo.extras && (
                 <div className="mt-3 grid gap-2 md:grid-cols-2">
                   {priceInfo.extras.map((item) => (
-                    <p key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[#D7DCE5]">{item} inklusive Mehrwertsteuer</p>
+                    <p key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[#D7DCE5]">
+                      {item}{item.startsWith(personalDigitalCheckOffer.name) ? '' : ' inklusive Mehrwertsteuer'}
+                    </p>
                   ))}
                 </div>
               )}

@@ -83,7 +83,10 @@ test('accepts a valid Digital-Check lead and sends internal plus confirmation ma
   assert.equal(deliveries.length, 2)
   assert.match(deliveries[0].subject, /Digital-Check-Anfrage/)
   assert.match(deliveries[0].html, /Musterbetrieb/)
+  assert.match(deliveries[0].html, /129 € einmalig inkl\. 19 % MwSt\./)
   assert.match(deliveries[1].html, /noch keine kostenpflichtige Bestellung/)
+  assert.match(deliveries[1].html, /129 € einmalig inkl\. 19 % MwSt\./)
+  assert.doesNotMatch(`${deliveries[0].html}${deliveries[1].html}`, /zzgl\.|zuzüglich|Kleinunternehmer|§\s*19/i)
 })
 
 test('rejects missing required Digital-Check fields', async () => {

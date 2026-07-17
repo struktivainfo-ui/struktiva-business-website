@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { personalDigitalCheckOffer } from '../../config/digitalCheckOffer.js'
 
 export default function HomeDigitalCheckSection() {
   const reducedMotion = useReducedMotion()
@@ -17,6 +18,10 @@ export default function HomeDigitalCheckSection() {
           <h2 id="struktiva-home-digital-check-title">Wo gehen auf Ihrem digitalen Kundenweg Anfragen verloren?</h2>
           <div className="struktiva-home-digital-check__lead">
             <p>Der persönliche Digital-Check prüft Website, Google-Unternehmensprofil, Kontaktwege und Bewertungen und ordnet die wichtigsten nächsten Schritte.</p>
+          </div>
+          <div className="struktiva-home-digital-check__price">
+            <strong>{personalDigitalCheckOffer.priceBaseLabel}</strong>
+            <span>{personalDigitalCheckOffer.taxNote}</span>
           </div>
           <a className="struktiva-digital-check-cta__primary" href="/digital-check">
             <span>Digital-Check für lokale Betriebe ansehen</span>

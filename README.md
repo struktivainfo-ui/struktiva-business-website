@@ -30,7 +30,7 @@ Der Build erzeugt zusätzlich statische HTML-Einstiege für `/digital-check` und
 
 Die zentrale Angebotsquelle ist `src/config/digitalCheckOffer.js`. Name, Grundpreis, CTA, Bearbeitungszeit, Anrechnungszeitraum, Mindestauftragswert und Leistungsabgrenzung dürfen nicht als unabhängige Preisstrings an mehreren Stellen gepflegt werden.
 
-Der veröffentlichte Grundpreis ist `129 € einmalig`. Der Steuerhinweis bleibt gesperrt, solange die steuerliche Behandlung nicht zuverlässig bestätigt ist. Nach dokumentierter Freigabe kann ausschließlich der erwartete Wert über `VITE_DIGITAL_CHECK_TAX_NOTE` aktiviert werden.
+STRUKTIVA weist 19 % Umsatzsteuer aus. Der veröffentlichte und vom Kunden zu zahlende Gesamtpreis ist `129 € einmalig inkl. 19 % MwSt.`; auf die 129 € wird kein weiterer Umsatzsteuerbetrag aufgeschlagen. `VITE_DIGITAL_CHECK_TAX_NOTE` ist optional und akzeptiert ausschließlich die bestätigte Formulierung `inkl. 19 % MwSt.`. Eine leere oder widersprüchliche Variable entfernt den bestätigten Standardwert nicht.
 
 ## Lead-System
 
@@ -73,7 +73,7 @@ Ohne einen gültigen Wert wird kein `send_to` erfunden. Das consent-konforme GA4
 ## Vor Veröffentlichung
 
 - Preis-/Anrechnungsformulierung, Formularhinweis und Datenschutz rechtlich prüfen.
-- Steuerdarstellung klären; bis dahin `VITE_DIGITAL_CHECK_TAX_NOTE` leer lassen.
+- Gesamtpreis und Anrechnungsbedingungen in der Auftragsbestätigung konsistent als `129 € einmalig inkl. 19 % MwSt.` ausweisen.
 - Resend-Absender und interne Empfängeradresse verifizieren.
 - optionales Webhook-Ziel datenschutzrechtlich dokumentieren.
 - echtes Google-Ads-Conversion-Ziel eintragen und Consent-Kombinationen testen.

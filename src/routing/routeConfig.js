@@ -38,11 +38,11 @@ export const ACTIVE_ROUTE_META = {
   '/digital-check': {
     title: 'Digital-Check für lokale Betriebe | STRUKTIVA Calw',
     description:
-      'Website, Google-Unternehmensprofil, Kontaktwege und Bewertungen prüfen lassen: persönlicher STRUKTIVA Digital-Check für lokale Betriebe, 129 €.',
+      'Website, Google-Unternehmensprofil, Kontaktwege und Bewertungen prüfen lassen: persönlicher STRUKTIVA Digital-Check für lokale Betriebe, 129 € inkl. 19 % MwSt.',
     canonicalPath: '/digital-check',
     layout: 'campaign',
     ogTitle: 'STRUKTIVA Digital-Check für lokale Betriebe – 129 €',
-    ogDescription: 'Persönliche Prüfung, klar priorisierter Maßnahmenplan und Ergebnisgespräch für lokale Betriebe.',
+    ogDescription: 'Persönliche Prüfung, klar priorisierter Maßnahmenplan und Ergebnisgespräch für lokale Betriebe – 129 € inkl. 19 % MwSt.',
     socialImage: '/images/inhaber-sven-jessica.webp',
     structuredData: {
       '@context': 'https://schema.org',

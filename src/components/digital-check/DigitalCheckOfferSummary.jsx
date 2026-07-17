@@ -2,7 +2,6 @@ import { ArrowRight } from 'lucide-react'
 import {
   digitalCheckCreditText,
   digitalCheckIndependenceText,
-  digitalCheckPriceLabel,
   personalDigitalCheckOffer,
 } from '../../config/digitalCheckOffer.js'
 import { trackDigitalCheckEvent } from '../../lib/digitalCheckTracking.js'
@@ -43,7 +42,10 @@ export default function DigitalCheckOfferSummary() {
         </div>
         <aside className="dc-offer__summary" aria-label="Angebotszusammenfassung">
           <span>Persönlicher Digital-Check</span>
-          <strong>{digitalCheckPriceLabel}</strong>
+          <div className="dc-price-block dc-price-block--large">
+            <strong>{personalDigitalCheckOffer.priceBaseLabel}</strong>
+            <span className="dc-tax-note">{personalDigitalCheckOffer.taxNote}</span>
+          </div>
           <p>{personalDigitalCheckOffer.scope}</p>
           <p>Ergebnis innerhalb von {personalDigitalCheckOffer.deliveryBusinessDays} Werktagen nach Eingang aller benötigten Informationen.</p>
           <DigitalCheckPrimaryLink location="offer_summary" />

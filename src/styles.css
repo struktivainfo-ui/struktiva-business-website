@@ -7176,6 +7176,18 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   margin: 0;
 }
 
+.struktiva-home-digital-check__price {
+  display: grid;
+  justify-items: start;
+  gap: 0.2rem;
+  margin-top: 0.25rem;
+}
+
+.struktiva-home-digital-check__price strong {
+  color: #fff;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+}
+
 .struktiva-home-digital-check__analysis {
   margin-top: clamp(3rem, 6vw, 5rem);
 }
@@ -15480,12 +15492,26 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
   border-left: 3px solid var(--dc-gold);
 }
 
-.dc-hero__offer-line strong {
+.dc-price-block {
+  display: grid;
+  justify-items: start;
+  gap: 0.3rem;
+}
+
+.dc-price-block strong {
   color: #fff;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
 }
 
-.dc-hero__offer-line span,
+.dc-tax-note,
+.struktiva-home-digital-check__price span {
+  color: #f2deaa;
+  font-size: 0.95rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.dc-hero__offer-detail,
 .dc-hero__trust {
   color: #c9c5bd;
   line-height: 1.55;
@@ -15652,13 +15678,19 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
   text-transform: uppercase;
 }
 
-.dc-offer__summary > strong {
-  display: block;
+.dc-offer__summary .dc-price-block--large {
   margin: 1.2rem 0;
+}
+
+.dc-offer__summary .dc-price-block--large strong {
   color: #fff;
   font-size: clamp(2.2rem, 5vw, 4.5rem);
   letter-spacing: -0.05em;
   line-height: 0.98;
+}
+
+.dc-offer__summary .dc-tax-note {
+  font-size: 1rem;
 }
 
 .dc-offer__summary p {
@@ -15931,6 +15963,12 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
 
 .dc-form-section__intro > p {
   color: #c9c5bd;
+}
+
+.dc-form-section__price {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--dc-gold);
 }
 
 .dc-form-section__trust {
@@ -16456,7 +16494,7 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
     padding-bottom: 0.55rem;
   }
 
-  .dc-hero__offer-line span,
+  .dc-hero__offer-detail,
   .dc-hero__trust {
     display: none;
   }
