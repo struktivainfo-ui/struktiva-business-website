@@ -44,7 +44,7 @@ const initialFormState = {
   budgetRange: '',
   message: '',
   privacyConsent: false,
-  website: '',
+  contactTrap: '',
 }
 
 function LeadField({ label, name, type = 'text', value, onChange, error, placeholder, autoComplete, required = false }) {
@@ -65,6 +65,8 @@ function LeadField({ label, name, type = 'text', value, onChange, error, placeho
         onChange={onChange}
         placeholder={placeholder}
         autoComplete={autoComplete}
+        required={required}
+        aria-required={required || undefined}
         aria-invalid={error ? 'true' : undefined}
         aria-describedby={error ? errorId : undefined}
       />
@@ -202,7 +204,7 @@ export default function ContactLeadForm() {
           budgetRange: form.budgetRange,
           message: form.message.trim(),
           privacyConsent: form.privacyConsent,
-          website: form.website,
+          contactTrap: form.contactTrap,
           source: 'Website',
         }),
       })
@@ -329,6 +331,7 @@ export default function ContactLeadForm() {
           placeholder="Beschreiben Sie kurz Ihr Unternehmen und was Sie gerade bewegt."
           aria-invalid={errors.message ? 'true' : undefined}
           aria-describedby={errors.message ? 'lead-message-error' : undefined}
+          required
         />
         {errors.message ? (
           <span id="lead-message-error" className="struktiva-contact-form__error">
@@ -338,9 +341,9 @@ export default function ContactLeadForm() {
       </div>
 
       <div className="struktiva-contact-form__honeypot" aria-hidden="true">
-        <label htmlFor="lead-website">
-          Website
-          <input id="lead-website" type="text" name="website" tabIndex="-1" autoComplete="off" value={form.website} onChange={handleChange} />
+        <label htmlFor="lead-contactTrap">
+          Dieses Feld leer lassen
+          <input id="lead-contactTrap" type="text" name="contactTrap" tabIndex="-1" autoComplete="off" value={form.contactTrap} onChange={handleChange} />
         </label>
       </div>
 
@@ -352,6 +355,8 @@ export default function ContactLeadForm() {
             name="privacyConsent"
             checked={form.privacyConsent}
             onChange={handleChange}
+            required
+            aria-required="true"
             aria-invalid={errors.privacyConsent ? 'true' : undefined}
             aria-describedby={errors.privacyConsent ? 'lead-privacyConsent-error' : undefined}
           />

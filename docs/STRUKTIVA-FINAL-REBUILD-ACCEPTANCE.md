@@ -261,7 +261,9 @@ KEEP:
 - Exakte Redirects fuer `/demos` und `/referenzen`.
 - `public/sitemap.xml` und `public/robots.txt` in der aktuellen Struktur.
 
-## 16. Soforthilfe und Digitaler Kurzcheck
+## 16. Soforthilfe und historischer Digitaler Kurzcheck
+
+> Historischer Hinweis: Der frühere Kurzcheck und sein damaliger 49-EUR-Preis sind überholt. Das aktuelle, eigenständige Angebot ist der „STRUKTIVA Digital-Check für lokale Betriebe“ für 129 EUR einmalig.
 
 Der alte Digitaler-Kurzcheck-Preis und Soforthilfe-S/M/L-Inhalte existieren weiterhin in `src/legacy/legacyContent.jsx` und in historischen Doku-Abschnitten. Auf den neuen aktiven Hauptseiten wurden sie nicht als zusaetzliche alte Preisbereiche gerendert. `/leistungen` und `/loesungen` sind preisfrei. `/pakete` zeigt die bestaetigte aktuelle Preisstruktur.
 

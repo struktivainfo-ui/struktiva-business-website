@@ -1,98 +1,128 @@
-export const digitalCheckSignals = [
-  'Sichtbarkeit',
-  'Kundenkontakt',
-  'Abläufe',
-  'bestehende Systeme',
-  'manuelle Arbeit',
-  'Entwicklungsideen',
-]
+import {
+  digitalCheckCreditText,
+  digitalCheckIndependenceText,
+  digitalCheckPriceLabel,
+  personalDigitalCheckOffer,
+} from '../../config/digitalCheckOffer.js'
 
-export const digitalCheckHeroSteps = [
-  'Zusammenhang verstehen',
-  'Prioritäten erkennen',
-  'sinnvollen nächsten Schritt bestimmen',
+export const digitalCheckProblems = [
+  'Besucher erkennen nicht sofort, warum sie gerade Ihren Betrieb wählen sollten.',
+  'Telefon, WhatsApp, Formular oder Terminweg sind zu schwer zu finden.',
+  'Google-Profil, Website und Bewertungen vermitteln kein einheitliches Bild.',
+  'Es gibt viele mögliche Baustellen, aber keine klare Reihenfolge.',
 ]
 
 export const digitalCheckAreas = [
   {
-    title: 'Sichtbarkeit',
-    question: 'Wie und wo wird Ihr Unternehmen digital gefunden?',
-    points: [
-      'Auffindbarkeit',
-      'erste digitale Kontaktpunkte',
-      'Verbindung von Sichtbarkeit und nächstem Schritt',
-    ],
+    title: 'Website und Botschaft',
+    text: 'Versteht ein Interessent schnell, was Sie anbieten, für wen es gedacht ist und warum Ihr Betrieb die richtige Wahl sein kann?',
   },
   {
-    title: 'Website und Außendarstellung',
-    question: 'Versteht ein Interessent schnell, was Sie anbieten und wie es weitergeht?',
-    points: ['Klarheit', 'Nutzerführung', 'mobile Nutzung', 'Kontaktmöglichkeiten'],
+    title: 'Auffindbarkeit vor Ort',
+    text: 'Führt Ihr öffentlich sichtbares Google-Unternehmensprofil mit stimmigen Informationen zur Website und zum nächsten sinnvollen Schritt?',
   },
   {
     title: 'Kontaktwege',
-    question: 'Wie gelangt ein Interessent von der Aufmerksamkeit zur konkreten Anfrage?',
-    points: ['Telefon', 'WhatsApp', 'Formulare', 'E-Mail', 'Übergänge zwischen Kanälen'],
+    text: 'Sind Telefon, E-Mail, Formular, WhatsApp oder Terminweg klar, mobil nutzbar und ohne unnötige Hürden erreichbar?',
   },
   {
-    title: 'Kundenführung',
-    question: 'Was passiert nach dem ersten Kontakt?',
-    points: ['Informationsfluss', 'Kundendaten', 'Kommunikation', 'Bewertungen', 'Wiederkehr'],
+    title: 'Bewertungen und Vertrauen',
+    text: 'Werden vorhandene Bewertungen und andere Vertrauenssignale dort sichtbar, wo Interessenten ihre Entscheidung treffen?',
   },
-  {
-    title: 'Interne Abläufe',
-    question: 'Wo entstehen doppelte Arbeit oder unnötige manuelle Schritte?',
-    points: ['Informationsübertragung', 'Aufgaben', 'Nachfassen', 'Übersichten', 'wiederkehrende Abläufe'],
-  },
-  {
-    title: 'Entwicklungspotenzial',
-    question: 'Was wäre ein sinnvoller nächster Schritt - und was ist aktuell unnötig?',
-    points: ['Prioritäten', 'vorhandene Systeme', 'realistische nächste Schritte', 'mögliche spätere Entwicklung'],
-  },
+]
+
+export const digitalCheckDeliverables = [
+  'Eine verständliche Gesamteinschätzung ohne unnötige Fachsprache.',
+  'Einen kompakten PDF-Bericht mit den wichtigsten Beobachtungen.',
+  'Einen priorisierten Maßnahmenplan: zuerst, danach und später.',
+  `Ein persönliches Ergebnisgespräch von ungefähr ${personalDigitalCheckOffer.resultCallMinutes} Minuten.`,
+  'Den vollständigen Bericht – unabhängig davon, ob Sie später etwas umsetzen lassen.',
 ]
 
 export const digitalCheckProcess = [
   {
-    title: 'Situation beschreiben',
-    text: 'Sie schildern kurz, was aktuell nicht gut funktioniert, unklar ist oder unnötig Arbeit verursacht.',
+    title: 'Anfrage senden',
+    text: 'Sie nennen uns Ihren Betrieb, Ihre Website und die wichtigste digitale Frage.',
   },
   {
-    title: 'Zusammenhang betrachten',
-    text: 'Wir schauen darauf, welche Kontaktpunkte, Systeme oder Abläufe betroffen sind.',
+    title: 'Rahmen bestätigen',
+    text: 'Wir klären kurz, ob der Digital-Check passt, und bestätigen Leistung, Preis und benötigte Informationen. Erst mit unserer gesonderten Bestätigung entsteht ein kostenpflichtiger Auftrag.',
   },
   {
-    title: 'Prioritäten einordnen',
-    text: 'Wir besprechen, welche Themen zuerst betrachtet werden sollten und was aktuell möglicherweise nicht notwendig ist.',
+    title: 'Persönlich prüfen',
+    text: 'Wir betrachten Website, Google-Unternehmensprofil, Kontaktwege und sichtbare Vertrauenssignale im vereinbarten Umfang.',
   },
   {
-    title: 'Nächsten Schritt entscheiden',
-    text: 'Wenn eine Zusammenarbeit sinnvoll ist, kann daraus ein klar abgegrenzter nächster Schritt entstehen.',
+    title: 'Ergebnis besprechen',
+    text: `Innerhalb von ${personalDigitalCheckOffer.deliveryBusinessDays} Werktagen nach Eingang aller Informationen erhalten Sie Ihren priorisierten Maßnahmenplan und besprechen ihn persönlich mit uns.`,
   },
 ]
 
-export const digitalCheckExpectations = [
-  'verständliche Einordnung der aktuellen Situation',
-  'erste erkennbare Prioritäten',
-  'Hinweise auf Brüche oder Doppelarbeit',
-  'Einschätzung möglicher nächster Schritte',
-  'ehrliche Aussage, wenn eine große technische Lösung aktuell nicht notwendig ist',
+export const digitalCheckFits = [
+  'Sie führen einen lokalen Betrieb oder ein kleines Unternehmen.',
+  'Eine Website oder ein Google-Unternehmensprofil ist bereits vorhanden.',
+  'Sie brauchen mehr Klarheit über den Weg zur Anfrage.',
+  'Sie möchten eine überschaubare, unabhängige Entscheidungsgrundlage.',
 ]
 
-export const digitalCheckNotPromised = [
-  'vollständiges Audit',
-  'schriftlicher 30-Seiten-Bericht',
-  'fertige Strategie',
-  'komplette Prozessanalyse',
-  'technische Umsetzung im ersten Austausch',
-  'garantierter Maßnahmenplan',
+export const digitalCheckDoesNotFit = [
+  'Sie erwarten ein vollständiges SEO-, Security-, Datenschutz- oder Rechtsaudit.',
+  'Ein großer Shop, ein Portal oder sehr viele Standorte sollen vollständig geprüft werden.',
+  'Sie erwarten garantierte Rankings, Leads oder Umsätze.',
+  'Sie erwarten im Preis bereits Gestaltung, Programmierung oder laufende Betreuung.',
 ]
 
-export const digitalCheckFitSituations = [
-  'Die Website ist vorhanden, aber der Kundenweg bleibt unklar.',
-  'Google, Website und Kontaktwege wirken voneinander getrennt.',
-  'Anfragen verteilen sich auf mehrere Kanäle.',
-  'Informationen müssen mehrfach übertragen oder gesucht werden.',
-  'Kundenpflege und Nachfassen hängen vollständig an manueller Erinnerung.',
-  'Wiederkehrende Aufgaben werden täglich neu organisiert.',
-  'Mehrere digitale Werkzeuge sind vorhanden, aber arbeiten nicht zusammen.',
-  'Sie haben Ideen für Digitalisierung, wissen aber nicht, was zuerst sinnvoll ist.',
+export const digitalCheckFaqs = [
+  {
+    question: 'Was kostet der Digital-Check?',
+    answer: `Der Digital-Check kostet ${digitalCheckPriceLabel}. Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.`,
+  },
+  {
+    question: 'Ist das Absenden des Formulars bereits eine Bestellung?',
+    answer: 'Nein. Mit dem Absenden stellen Sie eine Anfrage. Ein kostenpflichtiger Auftrag entsteht erst nach gesonderter Bestätigung durch STRUKTIVA.',
+  },
+  {
+    question: 'Was genau wird geprüft?',
+    answer: `Wir prüfen repräsentative, anfragerelevante Bereiche Ihrer Website, Ihr öffentlich sichtbares Google-Unternehmensprofil, Kontaktwege sowie sichtbare Bewertungen und Vertrauenssignale. ${personalDigitalCheckOffer.scope}`,
+  },
+  {
+    question: 'Was erhalte ich als Ergebnis?',
+    answer: 'Sie erhalten einen kompakten PDF-Bericht mit verständlicher Einordnung und einem priorisierten Maßnahmenplan. In einem persönlichen Gespräch von ungefähr 30 Minuten gehen wir die wichtigsten Punkte gemeinsam durch.',
+  },
+  {
+    question: 'Wie schnell erhalte ich das Ergebnis?',
+    answer: `Innerhalb von ${personalDigitalCheckOffer.deliveryBusinessDays} Werktagen, nachdem alle für die Prüfung benötigten Informationen vollständig vorliegen.`,
+  },
+  {
+    question: 'Muss ich die empfohlenen Maßnahmen bei STRUKTIVA umsetzen lassen?',
+    answer: `Nein. ${digitalCheckIndependenceText}`,
+  },
+  {
+    question: `Wie funktioniert die Anrechnung der ${personalDigitalCheckOffer.price} €?`,
+    answer: `${digitalCheckCreditText} Der Mindestauftragswert gilt vor Anrechnung und nur für STRUKTIVA-Leistungen; Fremd- und Drittkosten zählen nicht mit.`,
+  },
+  {
+    question: 'Ist die Umsetzung im Preis enthalten?',
+    answer: 'Nein. Gestaltung, Texte, Programmierung, Kampagnen oder laufende Betreuung sind nicht Bestandteil des Digital-Checks. Falls Sie Unterstützung wünschen, erhalten Sie dafür ein separates Angebot.',
+  },
+  {
+    question: 'Ist der Digital-Check eine Rechts-, Datenschutz- oder Sicherheitsprüfung?',
+    answer: 'Nein. Der Digital-Check ersetzt keine Rechtsberatung und kein spezialisiertes Datenschutz-, Barrierefreiheits- oder Security-Audit.',
+  },
+  {
+    question: 'Brauche ich bereits eine Website?',
+    answer: 'Eine vorhandene Website ist der Regelfall. Wenn noch keine Website existiert, schildern Sie kurz Ihre Ausgangslage. Wir sagen Ihnen vor einer Beauftragung, ob der Digital-Check sinnvoll ist.',
+  },
 ]
+
+export const digitalCheckIndustries = [
+  'Handwerk',
+  'Gesundheit & Beauty',
+  'Gastronomie',
+  'Einzelhandel',
+  'Lokale Dienstleistung',
+  'B2B-Dienstleistung',
+  'Andere Branche',
+]
+
+export const digitalCheckContactOptions = ['E-Mail', 'Telefon', 'WhatsApp']

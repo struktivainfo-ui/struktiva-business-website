@@ -31,6 +31,7 @@ import {
 } from 'lucide-react'
 import { openCookieSettings } from '../cookieConsent.jsx'
 import { currentNavigation, getRouteMeta } from '../routing/routeConfig.js'
+import { digitalCheckPriceLabel, personalDigitalCheckOffer } from '../config/digitalCheckOffer.js'
 
 const SITE_URL = 'https://struktiva.de/'
 const SITE_HOST = new URL(SITE_URL).host
@@ -1737,7 +1738,7 @@ function PricingSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">Digitaler Kurzcheck 49 € inklusive Mehrwertsteuer</p>
+            <p className="mt-5 text-lg font-semibold text-[#D8B45A]">{personalDigitalCheckOffer.name} – {digitalCheckPriceLabel}</p>
           </div>
         </Reveal>
 
@@ -5662,7 +5663,7 @@ const offerPriceInfo = {
   },
   '/landingpage-erstellen-lassen': {
     main: '399 €',
-    extras: ['Digitaler Kurzcheck 49 €', 'STRUKTIVA Soforthilfe klein 99 €', 'Onepager 499 €'],
+    extras: [`${personalDigitalCheckOffer.name} ${digitalCheckPriceLabel}`, 'STRUKTIVA Soforthilfe klein 99 €', 'Onepager 499 €'],
   },
   '/google-sichtbarkeit-kleine-unternehmen': {
     main: '199 €',
@@ -5694,7 +5695,7 @@ const offerPriceInfo = {
   },
   '/angebotsarchitektur': {
     main: '299 €',
-    extras: ['Digitaler Kurzcheck 49 €', 'Lead-/Anfrage-System einfach 299 €'],
+    extras: [`${personalDigitalCheckOffer.name} ${digitalCheckPriceLabel}`, 'Lead-/Anfrage-System einfach 299 €'],
   },
   '/digitale-unternehmensstruktur': {
     main: '1.199 €',
@@ -5749,8 +5750,8 @@ function OfferDetailPage({ title, intro, points, pathname }) {
 function LeistungenPage() {
   const allLeistungen = [
     {
-      title: 'Digitaler Kurzcheck',
-      price: 'Festpreis: 49 € inklusive Mehrwertsteuer',
+      title: personalDigitalCheckOffer.name,
+      price: digitalCheckPriceLabel,
       text: 'Wir prüfen kurz Ihren bestehenden digitalen Auftritt: Website, Google-Sichtbarkeit, Kontaktwege und erste Außenwirkung. Sie erhalten eine verständliche Einschätzung mit konkreten Punkten, wo Ihre digitale Struktur verbessert werden kann.',
     },
     {
@@ -6648,15 +6649,21 @@ function DatenschutzPage() {
       </LegalSection>
 
       <LegalSection title="2. Erhebung und Verarbeitung personenbezogener Daten">
-        <p>Wir erheben personenbezogene Daten nur, soweit Sie uns diese im Rahmen<br />des Kontakt- bzw. Anfrageformulars freiwillig mitteilen. Dies umfasst:<br />Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Nachricht sowie<br />projektbezogene Angaben (Interesse, Projektstart, Budget).</p>
+        <p>Wir erheben personenbezogene Daten nur, soweit Sie uns diese im Rahmen des Kontakt- bzw. Anfrageformulars mitteilen. Dies umfasst je nach Formular Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Branche, Unternehmenswebsite, bevorzugten Kontaktweg, Nachricht oder Problembeschreibung sowie projektbezogene Angaben.</p>
+        <p>Bei einer Digital-Check-Anfrage können außerdem Kampagnenquelle, UTM-Parameter, Werbeklickkennung (GCLID), Referrer, Landingpage, Zeitpunkt und eine technische Submission-ID mit der Anfrage übermittelt werden. Diese Angaben dienen der Zuordnung der Anfrage, der Erfolgsmessung und dem Schutz vor Doppelabsendungen.</p>
       </LegalSection>
 
       <LegalSection title="3. Zweck der Datenverarbeitung">
-        <p>Die übermittelten Daten werden ausschließlich zur Bearbeitung Ihrer<br />Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht, außer an<br />den E-Mail-Versanddienstleister Resend (siehe unten).</p>
+        <p>Die übermittelten Daten werden zur Bearbeitung und Beantwortung Ihrer Anfrage, zur Vertragsanbahnung, zur internen Zuordnung der Kampagnenherkunft und zur technischen Absicherung der Übermittlung verwendet. Eine Nutzung zu darüber hinausgehender Werbung erfolgt nicht ohne eine gesonderte Rechtsgrundlage.</p>
       </LegalSection>
 
       <LegalSection title="4. E-Mail-Versand über Resend">
         <p>Für den Versand von Bestätigungs- und Benachrichtigungs-E-Mails nutzen<br />wir den Dienst Resend der Resend Inc., 2261 Market Street #4008,<br />San Francisco, CA 94114, USA. Resend ist als Auftragsverarbeiter gemäß<br />Art. 28 DSGVO vertraglich gebunden. Weitere Informationen:<br /><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#D8B45A]">https://resend.com/legal/privacy-policy</a></p>
+      </LegalSection>
+
+      <LegalSection title="4a. Optionaler interner Webhook und Kampagnenattribution">
+        <p>Sofern ein interner Webhook aktiviert ist, können die Formulardaten zur strukturierten Bearbeitung an das dafür konfigurierte System übermittelt werden. Betreiber, Verarbeitungsort und Auftragsverarbeitung sind vor Aktivierung gesondert zu prüfen und zu dokumentieren.</p>
+        <p>First-Touch-Kampagnendaten bleiben zunächst nur im Arbeitsspeicher der geöffneten Seite. Eine Speicherung im Session Storage für höchstens 30 Minuten erfolgt nur bei erteilter Marketing-Einwilligung. Dabei werden keine Namen, E-Mail-Adressen oder Nachrichten gespeichert.</p>
       </LegalSection>
 
       <LegalSection title="5. Rechtsgrundlage">

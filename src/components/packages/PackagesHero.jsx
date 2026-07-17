@@ -18,8 +18,8 @@ export default function PackagesHero() {
           STRUKTIVA verbindet Beratung und praktische Umsetzung. Je nach Ausgangssituation kann ein klar abgegrenztes Einzelprojekt sinnvoll sein, eine schrittweise Weiterentwicklung oder eine laufende Betreuung bei regelmäßigem Bedarf.
         </p>
         <div className="struktiva-packages-hero__actions" aria-label="Nächste Schritte">
-          <a className="struktiva-packages-primary-link" href="/digital-check">
-            <span>Digital-Check ansehen</span>
+          <a className="struktiva-packages-primary-link" href="/digital-check#digital-check-anfrage">
+            <span>Digital-Check anfragen</span>
             <ArrowRight aria-hidden="true" />
           </a>
           <a className="struktiva-packages-secondary-link" href="/loesungen">

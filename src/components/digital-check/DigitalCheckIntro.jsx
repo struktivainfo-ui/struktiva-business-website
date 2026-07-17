@@ -1,31 +1,32 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import { digitalCheckProblems } from './digitalCheckData.js'
 
 export default function DigitalCheckIntro() {
   const reducedMotion = useReducedMotion()
-
   return (
-    <section className="struktiva-digital-check-intro" aria-labelledby="struktiva-digital-check-intro-title">
-      <motion.div
-        className="struktiva-digital-check-intro__inner"
-        initial={reducedMotion ? false : { opacity: 0, y: 18 }}
-        whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.38 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <div>
-          <p className="struktiva-digital-check-eyebrow">Nicht bei der Lösung anfangen</p>
-          <h2 id="struktiva-digital-check-intro-title">Viele digitale Probleme sind keine Technikprobleme.</h2>
+    <section className="dc-section dc-problems" aria-labelledby="dc-problems-title">
+      <div className="dc-shell">
+        <div className="dc-section-heading">
+          <p className="dc-eyebrow">Typische Bruchstellen</p>
+          <h2 id="dc-problems-title">Kommt Ihnen das bekannt vor?</h2>
+          <p>Viele lokale Betriebe sind digital sichtbar – aber Website, Google, Bewertungen und Kontaktwege arbeiten nicht als gemeinsamer Weg zur Anfrage.</p>
         </div>
-        <div className="struktiva-digital-check-intro__copy">
-          <p>Eine Website kann modern aussehen und trotzdem keinen klaren Weg zur Anfrage bieten.</p>
-          <p>Ein CRM kann vorhanden sein und trotzdem zusätzliche Arbeit erzeugen.</p>
-          <p>Eine Automatisierung kann technisch funktionieren und trotzdem einen schlechten Ablauf schneller machen.</p>
-          <p>Deshalb betrachtet der Digital-Check zuerst den Zusammenhang.</p>
-        </div>
-        <p className="struktiva-digital-check-intro__message">
-          Erst verstehen, wo Reibung entsteht. Dann entscheiden, was wirklich verändert werden sollte.
-        </p>
-      </motion.div>
+        <ol className="dc-problems__list">
+          {digitalCheckProblems.map((problem, index) => (
+            <motion.li
+              key={problem}
+              initial={reducedMotion ? false : { opacity: 0, y: 14 }}
+              whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+            >
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <p>{problem}</p>
+            </motion.li>
+          ))}
+        </ol>
+        <p className="dc-problems__close">Genau hier setzt der Digital-Check an: nicht mit mehr Technik, sondern mit einer verständlichen Priorisierung.</p>
+      </div>
     </section>
   )
 }

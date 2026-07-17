@@ -31,8 +31,8 @@ export default function ContactHero() {
               <span>Anfrage beschreiben</span>
               <ArrowRight aria-hidden="true" />
             </a>
-            <a className="struktiva-contact-secondary" href="/digital-check">
-              Digital-Check ansehen
+            <a className="struktiva-contact-secondary" href="/digital-check#digital-check-anfrage">
+              Digital-Check anfragen
             </a>
           </div>
         </motion.div>

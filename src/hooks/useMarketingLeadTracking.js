@@ -1,41 +1,30 @@
 import { useEffect } from 'react'
-import { trackMarketingLead } from '../cookieConsent.jsx'
+
+function classifyContactHref(href = '') {
+  const value = href.trim().toLowerCase()
+  if (value.startsWith('tel:')) return 'phone'
+  if (value.startsWith('mailto:')) return 'email'
+  if (value.includes('wa.me/') || value.includes('api.whatsapp.com')) return 'whatsapp'
+  if (value === '/kontakt' || value.startsWith('/kontakt?') || value.startsWith('/kontakt#')) return 'contact_page'
+  return ''
+}
 
 export function useMarketingLeadTracking() {
   useEffect(() => {
-    const safeTrackLead = () => {
-      trackMarketingLead()
-    }
-
-    const isContactHref = (href) => {
-      if (!href) return false
-      const value = href.trim().toLowerCase()
-      return (
-        value.startsWith('tel:') ||
-        value.startsWith('mailto:') ||
-        value.includes('wa.me/') ||
-        value.includes('api.whatsapp.com') ||
-        value === '/kontakt' ||
-        value.startsWith('/kontakt?') ||
-        value === '#kontakt' ||
-        value.startsWith('/#kontakt')
-      )
-    }
-
     const handleClick = (event) => {
       const target = event.target instanceof Element ? event.target : null
-      if (!target) return
+      const link = target?.closest('a[href]')
+      if (!link) return
+      const channel = classifyContactHref(link.getAttribute('href'))
+      if (!channel || !window.__struktivaConsentState?.statistics || typeof window.gtag !== 'function') return
 
-      const link = target.closest('a[href]')
-      if (link && isContactHref(link.getAttribute('href'))) {
-        safeTrackLead()
-      }
+      window.gtag('event', 'contact_click', {
+        channel,
+        page_path: window.location.pathname,
+      })
     }
 
     document.addEventListener('click', handleClick)
-
-    return () => {
-      document.removeEventListener('click', handleClick)
-    }
+    return () => document.removeEventListener('click', handleClick)
   }, [])
 }

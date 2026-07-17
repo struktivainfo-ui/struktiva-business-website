@@ -3,11 +3,14 @@ import { createRouteClass } from '../../routing/routeConfig.js'
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import FloatingWhatsAppButton from './FloatingWhatsAppButton.jsx'
+import CampaignHeader from './CampaignHeader.jsx'
+import CampaignFooter from './CampaignFooter.jsx'
 
 export default function AppShell({ pathname, routeMeta, children }) {
   const isDemoRoute = Boolean(routeMeta.hideChrome)
   const isHomeRoute = Boolean(routeMeta.isHomeRoute)
   const isPricingRoute = Boolean(routeMeta.isPricingRoute)
+  const isCampaignRoute = routeMeta.layout === 'campaign'
   const routeClass = createRouteClass(pathname)
 
   return (
@@ -17,13 +20,13 @@ export default function AppShell({ pathname, routeMeta, children }) {
           Zum Inhalt springen
         </a>
       ) : null}
-      {!isDemoRoute ? <Header pathname={pathname} isHomeRoute={isHomeRoute} /> : null}
+      {!isDemoRoute ? (isCampaignRoute ? <CampaignHeader pathname={pathname} /> : <Header pathname={pathname} isHomeRoute={isHomeRoute} />) : null}
       <div id="main-content" tabIndex={-1} className="struktiva-main-content">
         {children}
       </div>
-      {!isDemoRoute ? <Footer /> : null}
+      {!isDemoRoute ? (isCampaignRoute ? <CampaignFooter /> : <Footer />) : null}
       <CookieConsentLayer pathname={pathname} />
-      <FloatingWhatsAppButton />
+      {!isCampaignRoute ? <FloatingWhatsAppButton /> : null}
     </div>
   )
 }

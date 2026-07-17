@@ -1,98 +1,80 @@
-﻿# STRUKTIVA Digitale Unternehmensberatung Website
+# STRUKTIVA Digitale Unternehmensberatung Website
 
-Professionelle mehrseitige Webseite fuer STRUKTIVA Digitale Unternehmensberatung.
+Mehrseitige React-/Vite-Website für STRUKTIVA Digitale Unternehmensberatung mit Vercel Functions, Resend, Consent-gesteuertem Tracking und einem persönlichen Digital-Check-Funnel.
 
-## Technik
+## Aktive Routen
 
-- React
-- Vite
-- Tailwind CSS
-- lucide-react Icons
-- Vercel Serverless Function unter `/api/leads`
-- Resend-Versand mit dem Paket `resend`
+- `/`, `/leistungen`, `/loesungen`, `/pakete`
+- `/praxisbeispiele`, `/praxisbeispiele/salon-karola`
+- `/digital-check` – persönlicher STRUKTIVA Digital-Check für lokale Betriebe
+- `/digital-check/danke` – noindex-Bestätigung nach erfolgreicher Anfrage
+- `/ueber-uns`, `/kontakt`, `/datenschutz`, `/impressum`
+- geschützte Demo-Routen unter `/demos/*`
 
-## Seitenstruktur
+`/api/website-check` ist der getrennte automatisierte Website-Check. Er ist weder das persönliche 129-Euro-Angebot noch dessen Formular-Backend.
 
-- `/`
-- `/leistungen`
-- `/pakete`
-- `/referenzen`
-- `/demos`
-- `/ueber-uns`
-- `/kontakt`
-- `/datenschutz`
-- `/impressum`
-
-## Lokal starten
+## Lokal entwickeln und prüfen
 
 ```bash
 npm install
 npm run dev
-```
-
-Danach die lokale URL oeffnen, die Vite im Terminal anzeigt.
-
-## Build testen
-
-```bash
+npm run test:website-check
+npm run test:leads
 npm run build
 npm run preview
 ```
 
-## Deployment mit GitHub + Vercel
+Der Build erzeugt zusätzlich statische HTML-Einstiege für `/digital-check` und `/digital-check/danke`. Dadurch sind Title, Description, Canonical, Social Tags, Robots und das Service-JSON-LD bereits ohne Client-JavaScript vorhanden. Die passenden Vercel-Rewrites stehen in `vercel.json`.
 
-1. GitHub-Repository verbinden.
-2. Projekt in Vercel importieren.
-3. Framework als `Vite` verwenden.
-4. Build Command: `npm run build`.
-5. Output Directory: `dist`.
-6. Deployment starten.
+## Digital-Check-Angebot
+
+Die zentrale Angebotsquelle ist `src/config/digitalCheckOffer.js`. Name, Grundpreis, CTA, Bearbeitungszeit, Anrechnungszeitraum, Mindestauftragswert und Leistungsabgrenzung dürfen nicht als unabhängige Preisstrings an mehreren Stellen gepflegt werden.
+
+Der veröffentlichte Grundpreis ist `129 € einmalig`. Der Steuerhinweis bleibt gesperrt, solange die steuerliche Behandlung nicht zuverlässig bestätigt ist. Nach dokumentierter Freigabe kann ausschließlich der erwartete Wert über `VITE_DIGITAL_CHECK_TAX_NOTE` aktiviert werden.
 
 ## Lead-System
 
-Das zentrale Anfrage-System ist unter `/kontakt` eingebaut.
+`POST /api/leads` unterstützt zwei getrennte Modelle:
 
-Der Ablauf:
+- allgemeine Kontaktanfrage (`leadType: contact` oder ohne `leadType`)
+- Digital-Check-Anfrage (`leadType: digital_check`)
 
-1. Besucher fuellt das Anfrageformular aus.
-2. Das Frontend sendet die Daten an `/api/leads`.
-3. Die Serverless Function prueft Pflichtfelder, Datenschutz-Zustimmung, Honeypot-Spamschutz und Rate-Limiting.
-4. Danach wird ueber Resend eine interne E-Mail an `<LEAD_RECEIVER_EMAIL>` gesendet.
-5. Zusaetzlich wird ueber Resend eine Bestaetigungs-E-Mail an den Interessenten versendet.
-6. Wenn `LEAD_WEBHOOK_URL` gesetzt ist, werden die Lead-Daten zusaetzlich per `POST` an diese URL uebertragen.
+Nach erfolgreicher Validierung wird zuerst die interne Benachrichtigung zugestellt. Diese Zustellung gilt als primärer Erfolg und wird über die `submissionId` zehn Minuten lang pro Function-Instanz dedupliziert. Fehler einer nachgelagerten Bestätigungsmail oder eines optionalen Webhooks werden ohne personenbezogene Logdaten protokolliert und führen nicht zu einer irreführenden 500-Antwort.
 
-### Benoetigte Umgebungsvariablen
+Rate-Limit und Deduplizierung arbeiten bewusst im Speicher der einzelnen Serverless-Instanz. Sie reduzieren versehentliche Wiederholungen, garantieren aber ohne persistenten gemeinsamen Speicher keinen globalen Schutz über parallele oder neu gestartete Instanzen hinweg.
 
-Diese Variablen in Vercel hinterlegen:
+### Servervariablen
 
 ```env
 RESEND_API_KEY=
 SMTP_FROM=
-LEAD_RECEIVER_EMAIL=<LEAD_RECEIVER_EMAIL>
+LEAD_RECEIVER_EMAIL=
 LEAD_WEBHOOK_URL=
 ```
 
-Hinweise:
+`LEAD_WEBHOOK_URL` ist optional. Vor Aktivierung müssen Zielsystem, Auftragsverarbeitung, Verarbeitungsort und Datenschutzerklärung geprüft sein.
 
-- `RESEND_API_KEY` wird fuer den E-Mail-Versand mit Resend genutzt.
-- `SMTP_FROM` ist die verifizierte sichtbare Absenderadresse bei Resend.
-- `LEAD_RECEIVER_EMAIL` ist die interne Empfaengeradresse fuer neue Leads.
-- `LEAD_WEBHOOK_URL` ist optional.
+## Attribution und Conversion-Tracking
 
-### Lead-System testen
+Der Digital-Check erfasst First-Touch-Werte aus UTM-Parametern, GCLID, Referrer und Landingpage. Sie bleiben zunächst im Arbeitsspeicher. Nur bei Marketing-Einwilligung werden sie für höchstens 30 Minuten unter `struktiva-attribution-v1` im Session Storage gehalten. Personenbezogene Formularfelder werden nicht in Analytics-, Ads- oder Pinterest-Events aufgenommen.
 
-1. In Vercel oder lokal die ENV-Werte setzen.
-2. Die Seite `/kontakt` oeffnen.
-3. Pflichtfelder ausfuellen und Datenschutz bestaetigen.
-4. Formular absenden.
-5. Erfolgsmeldung im Frontend pruefen.
-6. Eingang der internen E-Mail an `LEAD_RECEIVER_EMAIL` pruefen.
-7. Eingang der Bestaetigungs-E-Mail beim Interessenten pruefen.
-8. Optional pruefen, ob der Webhook die Daten empfaengt.
+Für eine spezifische Google-Ads-Conversion muss der im Ads-Konto erzeugte vollständige Zielwert gesetzt werden:
 
-## Vor Veroeffentlichung pruefen
+```env
+VITE_GOOGLE_ADS_DIGITAL_CHECK_SEND_TO=AW-123456789/verified_label
+```
 
-- Rechtliche Inhalte in `src/main.jsx` final juristisch pruefen.
-- WhatsApp-Link bei Bedarf durch die echte Nummer ersetzen.
-- Impressum und Datenschutz final juristisch pruefen.
-- Optional eigene Domain in Vercel verbinden.
+Ohne einen gültigen Wert wird kein `send_to` erfunden. Das consent-konforme GA4-Ereignis bleibt davon unabhängig. Pinterest `lead` wird nur nach einem tatsächlich erfolgreichen Lead und nur mit Marketing-Einwilligung gesendet.
+
+## Beispielkonfiguration
+
+`.env.example` enthält ausschließlich Variablennamen und nicht produktive Beispielwerte. Keine Schlüssel oder Conversion-Labels committen.
+
+## Vor Veröffentlichung
+
+- Preis-/Anrechnungsformulierung, Formularhinweis und Datenschutz rechtlich prüfen.
+- Steuerdarstellung klären; bis dahin `VITE_DIGITAL_CHECK_TAX_NOTE` leer lassen.
+- Resend-Absender und interne Empfängeradresse verifizieren.
+- optionales Webhook-Ziel datenschutzrechtlich dokumentieren.
+- echtes Google-Ads-Conversion-Ziel eintragen und Consent-Kombinationen testen.
+- keine echten Kundenanfragen aus lokalen oder Preview-Tests versenden.

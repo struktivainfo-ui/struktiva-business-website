@@ -3,6 +3,7 @@ import SolutionsPage from '../pages/SolutionsPage.jsx'
 import PracticeExamplesPage from '../pages/PracticeExamplesPage.jsx'
 import SalonKarolaCaseStudyPage from '../pages/SalonKarolaCaseStudyPage.jsx'
 import DigitalCheckPage from '../pages/DigitalCheckPage.jsx'
+import DigitalCheckSuccessPage from '../pages/DigitalCheckSuccessPage.jsx'
 import ServicesPage from '../pages/ServicesPage.jsx'
 import PackagesPage from '../pages/PackagesPage.jsx'
 import AboutPage from '../pages/AboutPage.jsx'
@@ -21,6 +22,7 @@ export const activePageComponents = {
   '/praxisbeispiele': PracticeExamplesPage,
   '/praxisbeispiele/salon-karola': SalonKarolaCaseStudyPage,
   '/digital-check': DigitalCheckPage,
+  '/digital-check/danke': DigitalCheckSuccessPage,
   '/leistungen': ServicesPage,
   '/pakete': PackagesPage,
   '/kontakt': ContactPage,

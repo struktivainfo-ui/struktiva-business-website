@@ -2234,7 +2234,7 @@ Bestaetigte Paketpreise, die auf `/pakete` dargestellt werden:
 
 Nicht auf der neuen `/pakete` als Hauptpakete dargestellt, aber im Audit gefunden:
 
-- Digitaler Kurzcheck 49 €
+- Historischer, nicht mehr aktiver Digitaler Kurzcheck 49 €; ersetzt durch den STRUKTIVA Digital-Check für lokale Betriebe für 129 € einmalig.
 - professionelle Webseiten 699 €
 - Landingpages 399 €
 - Google-Profil Kurzoptimierung 199 €
@@ -2254,7 +2254,7 @@ Preiswidersprueche:
 - Keine direkte Preisabweichung bei den fuenf zentralen Paketen.
 - Keine direkte Preisabweichung bei den drei Betreuungsangeboten.
 - Soforthilfe erscheint einmal als zentrales Einzelangebot `STRUKTIVA Soforthilfe` fuer 99 € und zusaetzlich in einer alten Spezialseite als Soforthilfe S/M/L mit 99 €/299 €/499 €. Das wurde nicht eigenstaendig zusammengefuehrt, sondern als verbleibende Inhalts-/Namensschuld dokumentiert.
-- Der alte `Digitale Kurzcheck` fuer 49 € bleibt eine Legacy-Preisquelle und wurde nicht mit dem neuen `/digital-check` gleichgesetzt.
+- Der alte `Digitale Kurzcheck` fuer 49 € ist ausschließlich als überholter historischer Stand dokumentiert. Aktuell gilt auf `/digital-check` der persönliche STRUKTIVA Digital-Check für lokale Betriebe für 129 € einmalig.
 
 Es wurden keine neuen Preise erfunden und keine bestehenden Preise geaendert.
 

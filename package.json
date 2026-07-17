@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender-campaign-routes.mjs",
     "preview": "vite preview --host 0.0.0.0",
-    "test:website-check": "node --test tests/website-check-phase-a.test.mjs tests/website-check-phase-b.test.mjs tests/website-check-phase-c.test.mjs tests/website-check-phase-d.test.mjs"
+    "test:website-check": "node --test tests/website-check-phase-a.test.mjs tests/website-check-phase-b.test.mjs tests/website-check-phase-c.test.mjs tests/website-check-phase-d.test.mjs tests/digital-check-website.test.mjs",
+    "test:leads": "node --test tests/leads.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",

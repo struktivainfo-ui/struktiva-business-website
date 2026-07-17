@@ -16,6 +16,14 @@
   ],
   "rewrites": [
     {
+      "source": "/digital-check/danke",
+      "destination": "/digital-check/danke/index.html"
+    },
+    {
+      "source": "/digital-check",
+      "destination": "/digital-check/index.html"
+    },
+    {
       "source": "/demos/handwerker",
       "destination": "/demos/handwerker/index.html"
     },

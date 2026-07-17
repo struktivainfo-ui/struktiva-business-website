@@ -28,8 +28,8 @@ export default function AboutCta() {
           <p>Beginnen Sie mit Ihrer tatsächlichen Situation.</p>
           <p>Der Digital-Check hilft dabei, Zusammenhänge einzuordnen und sinnvolle nächste Schritte zu erkennen.</p>
           <div className="struktiva-about-cta__actions">
-            <a className="struktiva-about-primary" href="/digital-check">
-              <span>Digital-Check ansehen</span>
+            <a className="struktiva-about-primary" href="/digital-check#digital-check-anfrage">
+              <span>Digital-Check anfragen</span>
               <ArrowRight aria-hidden="true" />
             </a>
             <a className="struktiva-about-cta__text-link" href="/kontakt">

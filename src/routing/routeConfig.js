@@ -1,6 +1,8 @@
 ﻿const defaultDescription =
   'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege und digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister.'
 
+import { personalDigitalCheckOffer } from '../config/digitalCheckOffer.js'
+
 export const ACTIVE_ROUTE_META = {
   '/': {
     title: 'STRUKTIVA Digitale Unternehmensberatung | Digitale Struktur für Unternehmen',
@@ -34,10 +36,54 @@ export const ACTIVE_ROUTE_META = {
     canonicalPath: '/praxisbeispiele/salon-karola',
   },
   '/digital-check': {
-    title: 'Digital-Check für Unternehmen | STRUKTIVA',
+    title: 'Digital-Check für lokale Betriebe | STRUKTIVA Calw',
     description:
-      'Der STRUKTIVA Digital-Check betrachtet Sichtbarkeit, Kundenwege und digitale Abläufe im Zusammenhang und hilft dabei, sinnvolle nächste Schritte einzuordnen.',
+      'Website, Google-Unternehmensprofil, Kontaktwege und Bewertungen prüfen lassen: persönlicher STRUKTIVA Digital-Check für lokale Betriebe, 129 €.',
     canonicalPath: '/digital-check',
+    layout: 'campaign',
+    ogTitle: 'STRUKTIVA Digital-Check für lokale Betriebe – 129 €',
+    ogDescription: 'Persönliche Prüfung, klar priorisierter Maßnahmenplan und Ergebnisgespräch für lokale Betriebe.',
+    socialImage: '/images/inhaber-sven-jessica.webp',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: personalDigitalCheckOffer.name,
+      serviceType: 'Digitaler Unternehmens- und Kontaktwege-Check',
+      url: 'https://struktiva.de/digital-check',
+      provider: {
+        '@type': 'ProfessionalService',
+        name: 'STRUKTIVA Digitale Unternehmensberatung',
+        url: 'https://struktiva.de/',
+        telephone: '+49 7051 8162292',
+        email: 'struktiva.info@gmail.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Ostlandstraße 3',
+          postalCode: '75365',
+          addressLocality: 'Calw',
+          addressCountry: 'DE',
+        },
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Calw' },
+        { '@type': 'Country', name: 'Deutschland' },
+      ],
+      offers: {
+        '@type': 'Offer',
+        price: personalDigitalCheckOffer.price,
+        priceCurrency: personalDigitalCheckOffer.currency,
+        url: 'https://struktiva.de/digital-check',
+      },
+    },
+  },
+  '/digital-check/danke': {
+    title: 'Anfrage eingegangen | STRUKTIVA Digital-Check',
+    description: 'Bestätigung Ihrer Anfrage zum STRUKTIVA Digital-Check.',
+    canonicalPath: '/digital-check/danke',
+    layout: 'campaign',
+    noindex: true,
+    ogTitle: 'Anfrage zum STRUKTIVA Digital-Check',
+    ogDescription: 'Bestätigung Ihrer Anfrage zum STRUKTIVA Digital-Check.',
   },
   '/pakete': {
     title: 'Pakete und Zusammenarbeit | STRUKTIVA',
@@ -153,7 +199,7 @@ export const currentNavigation = {
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
     { label: 'Kontakt', href: '/kontakt' },
   ],
-  primaryCta: { label: 'Digital-Check anfragen', href: '/kontakt#lead-form', transitionFor: '/digital-check' },
+  primaryCta: { label: personalDigitalCheckOffer.primaryCtaText, href: personalDigitalCheckOffer.primaryFormTarget, transitionFor: '/digital-check' },
   secondaryCta: { label: 'Praxisbeispiel ansehen', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
 }
 

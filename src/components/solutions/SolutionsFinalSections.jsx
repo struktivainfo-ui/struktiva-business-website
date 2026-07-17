@@ -157,7 +157,7 @@ export function SolutionsCtaSection() {
           </p>
         </div>
         <div className="struktiva-solutions-cta-section__actions">
-          <a className="struktiva-solutions-primary" href="/kontakt#lead-form">
+          <a className="struktiva-solutions-primary" href="/digital-check#digital-check-anfrage">
             <span>Digital-Check anfragen</span>
             <ArrowRight aria-hidden="true" />
           </a>

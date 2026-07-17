@@ -10,8 +10,8 @@ export default function ServicesCta() {
         können Sie auch direkt Kontakt aufnehmen.
       </p>
       <div className="struktiva-services-cta__actions">
-        <a className="struktiva-services-primary-link" href="/digital-check">
-          <span>Digital-Check starten</span>
+        <a className="struktiva-services-primary-link" href="/digital-check#digital-check-anfrage">
+          <span>Digital-Check anfragen</span>
           <ArrowRight aria-hidden="true" />
         </a>
         <a className="struktiva-services-text-link" href="/kontakt">

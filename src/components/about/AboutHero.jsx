@@ -67,8 +67,8 @@ export default function AboutHero() {
             </p>
           </div>
           <div className="struktiva-about-hero__actions">
-            <a className="struktiva-about-primary" href="/digital-check">
-              <span>Digital-Check ansehen</span>
+            <a className="struktiva-about-primary" href="/digital-check#digital-check-anfrage">
+              <span>Digital-Check anfragen</span>
               <ArrowRight aria-hidden="true" />
             </a>
             <a className="struktiva-about-secondary" href="/praxisbeispiele">

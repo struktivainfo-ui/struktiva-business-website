@@ -19,8 +19,8 @@ export const contactEntryPoints = [
     eyebrow: 'Digital-Check',
     title: 'Wenn mehrere digitale Themen zusammenhaengen.',
     text: 'Passend, wenn der richtige Startpunkt noch unklar ist und Zusammenhaenge zuerst eingeordnet werden sollen.',
-    href: '/digital-check',
-    linkLabel: 'Digital-Check ansehen',
+    href: '/digital-check#digital-check-anfrage',
+    linkLabel: 'Digital-Check anfragen',
   },
 ]
 

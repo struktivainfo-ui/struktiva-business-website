@@ -487,4 +487,4 @@ Weiterhin geschuetzt:
 - `contactDetails`
 - `siteLinks`
 - Impressum, Datenschutz und NotFound
-- Soforthilfe S/M/L, aktuelle Soforthilfe 99 EUR und alter Digitaler Kurzcheck 49 EUR
+- Soforthilfe S/M/L, aktuelle Soforthilfe 99 EUR und der historisch dokumentierte, nicht mehr aktive Digitale Kurzcheck 49 EUR. Aktuell gilt ausschließlich der STRUKTIVA Digital-Check für lokale Betriebe für 129 EUR einmalig.

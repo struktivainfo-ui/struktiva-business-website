@@ -205,9 +205,7 @@ export function trackContactFormLeadConversion() {
   if (typeof window === 'undefined') return
 
   const consent = window.__struktivaConsentState
-  if (!consent?.statistics && !consent?.marketing) return
-
-  if (typeof window.gtag === 'function') {
+  if (consent?.statistics && typeof window.gtag === 'function') {
     window.gtag('event', 'generate_lead', {
       event_category: 'lead',
       event_label: 'contact_form',
@@ -215,7 +213,7 @@ export function trackContactFormLeadConversion() {
     })
   }
 
-  trackMarketingLead()
+  if (consent?.marketing) trackMarketingLead()
 }
 
 export function openCookieSettings() {
@@ -379,6 +377,7 @@ export function CookieConsentLayer({ pathname }) {
     if (!isReady) return
 
     window.__struktivaConsentState = consent
+    window.dispatchEvent(new CustomEvent('struktiva:consent-changed', { detail: consent }))
     document.body.classList.toggle('cookie-banner-visible', !hasStoredChoice)
   }, [consent, hasStoredChoice, isReady])
 

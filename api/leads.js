@@ -1,7 +1,5 @@
 import { Resend } from 'resend'
 
-const rateLimit = new Map()
-
 const ALLOWED_INTERESTS = new Set([
   'Website / Landingpage',
   'Google-Sichtbarkeit',
@@ -11,40 +9,74 @@ const ALLOWED_INTERESTS = new Set([
   'Unternehmens-App / Dashboard',
   'Ich bin mir noch unsicher',
 ])
-
-const ALLOWED_PROJECT_STARTS = new Set([
-  'Sofort',
-  'In den nächsten Wochen',
-  'In den nächsten Monaten',
-  'Noch offen',
-])
-
-const ALLOWED_BUDGETS = new Set([
-  'Unter 500 €',
-  '500 € – 1.000 €',
-  '1.000 € – 2.500 €',
-  'Über 2.500 €',
-  'Noch offen',
-])
-
+const ALLOWED_PROJECT_STARTS = new Set(['Sofort', 'In den nächsten Wochen', 'In den nächsten Monaten', 'Noch offen'])
+const ALLOWED_BUDGETS = new Set(['Unter 500 €', '500 € – 1.000 €', '1.000 € – 2.500 €', 'Über 2.500 €', 'Noch offen'])
 const ALLOWED_CONTACTS = new Set(['E-Mail', 'Telefon', 'WhatsApp'])
+const ALLOWED_INDUSTRIES = new Set([
+  'Handwerk',
+  'Gesundheit & Beauty',
+  'Gastronomie',
+  'Einzelhandel',
+  'Lokale Dienstleistung',
+  'B2B-Dienstleistung',
+  'Andere Branche',
+])
+const ALLOWED_LEAD_TYPES = new Set(['contact', 'digital_check'])
+const MAX_BODY_BYTES = 24_000
+const DEDUPE_TTL_MS = 10 * 60 * 1000
 
 function json(res, statusCode, payload) {
   res.statusCode = statusCode
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
+  res.setHeader('Cache-Control', 'no-store')
+  res.setHeader('X-Content-Type-Options', 'nosniff')
   res.end(JSON.stringify(payload))
 }
 
-function sanitizeText(value, maxLength = 5000) {
-  if (typeof value !== 'string') return ''
-  return value.replace(/\r/g, '').trim().slice(0, maxLength)
+function rawString(value) {
+  return typeof value === 'string' ? value.replace(/\r/g, '').trim() : ''
+}
+
+function sanitizeText(value, maxLength) {
+  return rawString(value).slice(0, maxLength)
+}
+
+function isTooLong(value, maxLength) {
+  return rawString(value).length > maxLength
 }
 
 function normalizeOptionalValue(value, allowedValues) {
   const nextValue = sanitizeText(value, 200)
   if (!nextValue) return ''
-  if (allowedValues && !allowedValues.has(nextValue)) return ''
-  return nextValue
+  return allowedValues.has(nextValue) ? nextValue : null
+}
+
+function normalizeWebsite(value) {
+  const input = sanitizeText(value, 300)
+  if (!input) return ''
+  try {
+    const url = new URL(/^https?:\/\//i.test(input) ? input : `https://${input}`)
+    if (!['http:', 'https:'].includes(url.protocol)) return null
+    return url.toString().slice(0, 300)
+  } catch {
+    return null
+  }
+}
+
+function normalizeLandingPage(value) {
+  const path = sanitizeText(value, 300)
+  return path.startsWith('/') && !path.includes('?') && !path.includes('#') ? path : '/digital-check'
+}
+
+function normalizeReferrer(value) {
+  const input = sanitizeText(value, 500)
+  if (!input) return ''
+  try {
+    const url = new URL(input)
+    return `${url.origin}${url.pathname}`.slice(0, 500)
+  } catch {
+    return ''
+  }
 }
 
 function escapeHtml(value) {
@@ -57,209 +89,290 @@ function escapeHtml(value) {
 }
 
 async function parseRequestBody(req) {
+  const contentLength = Number(req.headers?.['content-length'] || 0)
+  if (contentLength > MAX_BODY_BYTES) throw Object.assign(new Error('body_too_large'), { publicCode: 'validation' })
   if (req.body && typeof req.body === 'object') return req.body
-  if (typeof req.body === 'string' && req.body.trim()) return JSON.parse(req.body)
+  if (typeof req.body === 'string' && req.body.trim()) {
+    if (Buffer.byteLength(req.body, 'utf8') > MAX_BODY_BYTES) throw Object.assign(new Error('body_too_large'), { publicCode: 'validation' })
+    return JSON.parse(req.body)
+  }
 
   const chunks = []
+  let totalBytes = 0
   for await (const chunk of req) {
-    chunks.push(Buffer.from(chunk))
+    const buffer = Buffer.from(chunk)
+    totalBytes += buffer.length
+    if (totalBytes > MAX_BODY_BYTES) throw Object.assign(new Error('body_too_large'), { publicCode: 'validation' })
+    chunks.push(buffer)
   }
-
-  if (chunks.length === 0) return {}
-
-  const rawBody = Buffer.concat(chunks).toString('utf8')
-  return rawBody ? JSON.parse(rawBody) : {}
+  if (!chunks.length) return {}
+  return JSON.parse(Buffer.concat(chunks).toString('utf8'))
 }
 
-function validateLeadInput(input) {
-  const name = sanitizeText(input.name, 160)
+function validationError(error, field) {
+  return { ok: false, statusCode: 400, errorCode: 'validation', error, field }
+}
+
+function validateSharedFields(input, leadType) {
+  if (isTooLong(input.name, 120)) return validationError('Der Name ist zu lang.', 'name')
+  if (isTooLong(input.company, 160)) return validationError('Der Unternehmensname ist zu lang.', 'company')
+  if (isTooLong(input.email, 160)) return validationError('Die E-Mail-Adresse ist zu lang.', 'email')
+  if (isTooLong(input.phone, 50)) return validationError('Die Telefonnummer ist zu lang.', 'phone')
+
+  const name = sanitizeText(input.name, 120)
   const company = sanitizeText(input.company, 160)
   const email = sanitizeText(input.email, 160).toLowerCase()
-  const phone = sanitizeText(input.phone, 80)
+  const phone = sanitizeText(input.phone, 50)
   const preferredContact = normalizeOptionalValue(input.preferredContact, ALLOWED_CONTACTS)
-  const interest = normalizeOptionalValue(input.interest, ALLOWED_INTERESTS)
-  const projectStart = normalizeOptionalValue(input.projectStart, ALLOWED_PROJECT_STARTS)
-  const budgetRange = normalizeOptionalValue(input.budgetRange, ALLOWED_BUDGETS)
-  const message = sanitizeText(input.message, 5000)
-  const website = sanitizeText(input.website, 200)
-  const source = sanitizeText(input.source || 'Website', 80) || 'Website'
-  const privacyConsent = input.privacyConsent === true
+  const privacyAccepted = leadType === 'digital_check' ? input.privacyAccepted === true : input.privacyConsent === true
 
-  if (website) {
-    return { ok: false, statusCode: 400, error: 'Die Anfrage konnte nicht verarbeitet werden.' }
+  if (sanitizeText(input.contactTrap || input.website, 200)) return validationError('Die Anfrage konnte nicht verarbeitet werden.', 'contactTrap')
+  if (!name) return validationError('Bitte Namen angeben.', 'name')
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return validationError('Bitte eine gültige E-Mail-Adresse angeben.', 'email')
+  if (preferredContact === null) return validationError('Bitte einen gültigen Kontaktweg auswählen.', 'preferredContact')
+  if (!privacyAccepted) return validationError('Bitte der Verarbeitung der Anfrage zustimmen.', leadType === 'digital_check' ? 'privacyAccepted' : 'privacyConsent')
+
+  return { ok: true, value: { name, company, email, phone, preferredContact } }
+}
+
+export function validateLeadInput(input = {}) {
+  const requestedLeadType = sanitizeText(input.leadType || 'contact', 40)
+  if (!ALLOWED_LEAD_TYPES.has(requestedLeadType)) return validationError('Unbekannter Anfragetyp.', 'leadType')
+
+  const shared = validateSharedFields(input, requestedLeadType)
+  if (!shared.ok) return shared
+
+  const baseLead = {
+    createdAt: new Date().toISOString(),
+    status: 'Neu',
+    leadType: requestedLeadType,
+    ...shared.value,
   }
 
-  if (!name) {
-    return { ok: false, statusCode: 400, error: 'Bitte Namen angeben.' }
+  if (requestedLeadType === 'contact') {
+    if (isTooLong(input.message, 5000)) return validationError('Die Nachricht ist zu lang.', 'message')
+    const message = sanitizeText(input.message, 5000)
+    if (!message || message.length < 12) return validationError('Bitte das Anliegen etwas genauer beschreiben.', 'message')
+
+    const interest = normalizeOptionalValue(input.interest, ALLOWED_INTERESTS)
+    const projectStart = normalizeOptionalValue(input.projectStart, ALLOWED_PROJECT_STARTS)
+    const budgetRange = normalizeOptionalValue(input.budgetRange, ALLOWED_BUDGETS)
+    if ([interest, projectStart, budgetRange].includes(null)) return validationError('Eine Auswahl ist ungültig.', 'selection')
+
+    return {
+      ok: true,
+      lead: {
+        ...baseLead,
+        source: sanitizeText(input.source || 'Website', 80) || 'Website',
+        interest,
+        projectStart,
+        budgetRange,
+        message,
+      },
+    }
   }
 
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return { ok: false, statusCode: 400, error: 'Bitte eine gültige E-Mail-Adresse angeben.' }
-  }
-
-  if (!message || message.length < 12) {
-    return { ok: false, statusCode: 400, error: 'Bitte das Anliegen etwas genauer beschreiben.' }
-  }
-
-  if (!privacyConsent) {
-    return { ok: false, statusCode: 400, error: 'Bitte der Verarbeitung der Anfrage zustimmen.' }
-  }
+  if (!baseLead.company) return validationError('Bitte Betrieb oder Unternehmen angeben.', 'company')
+  if (isTooLong(input.companyWebsite, 300)) return validationError('Die Website-Adresse ist zu lang.', 'companyWebsite')
+  if (isTooLong(input.primaryChallenge, 2000)) return validationError('Die Problembeschreibung ist zu lang.', 'primaryChallenge')
+  const companyWebsite = normalizeWebsite(input.companyWebsite)
+  const industry = normalizeOptionalValue(input.industry, ALLOWED_INDUSTRIES)
+  const primaryChallenge = sanitizeText(input.primaryChallenge, 2000)
+  const submissionId = sanitizeText(input.submissionId, 100)
+  if (companyWebsite === null) return validationError('Bitte eine gültige Website-Adresse angeben.', 'companyWebsite')
+  if (!industry) return validationError('Bitte eine gültige Branche auswählen.', 'industry')
+  if (!primaryChallenge || primaryChallenge.length < 12) return validationError('Bitte die wichtigste digitale Frage etwas genauer beschreiben.', 'primaryChallenge')
+  if (!/^[a-zA-Z0-9-]{12,100}$/.test(submissionId)) return validationError('Die Anfrage-ID ist ungültig.', 'submissionId')
 
   return {
     ok: true,
     lead: {
-      createdAt: new Date().toISOString(),
-      source,
-      status: 'Neu',
-      name,
-      company,
-      email,
-      phone,
-      preferredContact,
-      interest,
-      projectStart,
-      budgetRange,
-      message,
+      ...baseLead,
+      offerName: 'STRUKTIVA Digital-Check für lokale Betriebe',
+      companyWebsite,
+      industry,
+      primaryChallenge,
+      submissionId,
+      landingPage: normalizeLandingPage(input.landingPage),
+      source: sanitizeText(input.source || 'direct', 200) || 'direct',
+      medium: sanitizeText(input.medium || 'none', 200) || 'none',
+      campaign: sanitizeText(input.campaign, 200),
+      content: sanitizeText(input.content, 200),
+      term: sanitizeText(input.term, 200),
+      referrer: normalizeReferrer(input.referrer),
+      gclid: sanitizeText(input.gclid, 200),
     },
   }
 }
 
-function buildInternalMailHtml(lead) {
-  const rows = [
+function tableRows(rows) {
+  return rows.map(([label, value]) => `
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #e5e7eb;font-weight:700;background:#f9fafb;width:220px">${escapeHtml(label)}</td>
+      <td style="padding:8px 10px;border:1px solid #e5e7eb">${escapeHtml(value || '—')}</td>
+    </tr>`).join('')
+}
+
+export function buildInternalMailHtml(lead) {
+  const commonRows = [
     ['Datum/Uhrzeit', lead.createdAt],
+    ['Anfragetyp', lead.leadType === 'digital_check' ? 'Digital-Check' : 'Allgemeine Kontaktanfrage'],
     ['Name', lead.name],
-    ['Firma', lead.company || '—'],
+    ['Unternehmen', lead.company],
     ['E-Mail', lead.email],
-    ['Telefon', lead.phone || '—'],
-    ['Gewünschter Kontaktweg', lead.preferredContact || '—'],
-    ['Interesse / Bedarf', lead.interest || '—'],
-    ['Projektstart', lead.projectStart || '—'],
-    ['Budgetrahmen', lead.budgetRange || '—'],
-    ['Quelle', lead.source],
-    ['Status', lead.status],
+    ['Telefon', lead.phone],
+    ['Bevorzugter Kontaktweg', lead.preferredContact],
   ]
+  const detailRows = lead.leadType === 'digital_check'
+    ? [
+        ['Angebot', lead.offerName],
+        ['Branche', lead.industry],
+        ['Website', lead.companyWebsite],
+        ['Quelle / Medium', `${lead.source} / ${lead.medium}`],
+        ['Kampagne', lead.campaign],
+        ['Inhalt / Begriff', [lead.content, lead.term].filter(Boolean).join(' / ')],
+        ['Landingpage', lead.landingPage],
+        ['Referrer', lead.referrer],
+        ['GCLID', lead.gclid],
+        ['Submission-ID', lead.submissionId],
+      ]
+    : [
+        ['Interesse / Bedarf', lead.interest],
+        ['Projektstart', lead.projectStart],
+        ['Budgetrahmen', lead.budgetRange],
+        ['Quelle', lead.source],
+      ]
+  const message = lead.leadType === 'digital_check' ? lead.primaryChallenge : lead.message
 
-  return `
-    <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
-      <h2>Neue STRUKTIVA-Anfrage über die Website</h2>
-      <table style="border-collapse:collapse;width:100%;max-width:720px">
-        <tbody>
-          ${rows
-            .map(
-              ([label, value]) => `
-                <tr>
-                  <td style="padding:8px 10px;border:1px solid #e5e7eb;font-weight:700;background:#f9fafb;width:220px">${escapeHtml(label)}</td>
-                  <td style="padding:8px 10px;border:1px solid #e5e7eb">${escapeHtml(value)}</td>
-                </tr>
-              `,
-            )
-            .join('')}
-          <tr>
-            <td style="padding:8px 10px;border:1px solid #e5e7eb;font-weight:700;background:#f9fafb">Nachricht</td>
-            <td style="padding:8px 10px;border:1px solid #e5e7eb;white-space:pre-wrap">${escapeHtml(lead.message)}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  `
+  return `<div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
+    <h2>${lead.leadType === 'digital_check' ? 'Neue Digital-Check-Anfrage' : 'Neue STRUKTIVA-Anfrage über die Website'}</h2>
+    <table style="border-collapse:collapse;width:100%;max-width:760px"><tbody>
+      ${tableRows([...commonRows, ...detailRows])}
+      <tr><td style="padding:8px 10px;border:1px solid #e5e7eb;font-weight:700;background:#f9fafb">${lead.leadType === 'digital_check' ? 'Größtes digitales Problem' : 'Nachricht'}</td><td style="padding:8px 10px;border:1px solid #e5e7eb;white-space:pre-wrap">${escapeHtml(message)}</td></tr>
+    </tbody></table>
+  </div>`
 }
 
-function buildConfirmationMailHtml(lead) {
-  return `
-    <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
+export function buildConfirmationMailHtml(lead) {
+  if (lead.leadType === 'digital_check') {
+    return `<div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
       <p>Hallo ${escapeHtml(lead.name)},</p>
-      <p>vielen Dank für deine Anfrage bei STRUKTIVA Digitale Unternehmensberatung.</p>
-      <p>Deine Nachricht ist eingegangen. Ich prüfe dein Anliegen und melde mich mit einer passenden Rückmeldung.</p>
+      <p>vielen Dank für Ihre Anfrage zum STRUKTIVA Digital-Check für lokale Betriebe.</p>
+      <p>Ihre Anfrage ist eingegangen und wird persönlich geprüft. Wir melden uns in der Regel innerhalb eines Werktags, um den passenden Rahmen und gegebenenfalls noch benötigte Informationen zu klären.</p>
+      <p>Das Absenden der Anfrage ist noch keine kostenpflichtige Bestellung. Ein Auftrag entsteht erst nach unserer gesonderten Bestätigung.</p>
       <p>Viele Grüße<br />Sven Matzke<br />STRUKTIVA Digitale Unternehmensberatung</p>
-    </div>
-  `
+    </div>`
+  }
+  return `<div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
+    <p>Hallo ${escapeHtml(lead.name)},</p>
+    <p>vielen Dank für Ihre Anfrage bei STRUKTIVA Digitale Unternehmensberatung.</p>
+    <p>Ihre Nachricht ist eingegangen. Wir prüfen Ihr Anliegen und melden uns mit einer passenden Rückmeldung.</p>
+    <p>Viele Grüße<br />Sven Matzke<br />STRUKTIVA Digitale Unternehmensberatung</p>
+  </div>`
 }
 
-async function sendLeadEmails(lead) {
-  if (!process.env.RESEND_API_KEY || !process.env.SMTP_FROM || !process.env.LEAD_RECEIVER_EMAIL) {
-    throw new Error('Lead email environment variables are incomplete.')
-  }
-
-  const resend = new Resend(process.env.RESEND_API_KEY)
-
-  await resend.emails.send({
-    from: process.env.SMTP_FROM,
-    to: process.env.LEAD_RECEIVER_EMAIL,
-    subject: `Neue Anfrage von ${lead.name}`,
-    html: buildInternalMailHtml(lead),
-  })
-
-  await resend.emails.send({
-    from: process.env.SMTP_FROM,
-    to: lead.email,
-    subject: 'Deine Anfrage bei STRUKTIVA',
-    html: buildConfirmationMailHtml(lead),
-  })
+function createDefaultMailer() {
+  if (!process.env.RESEND_API_KEY || !process.env.SMTP_FROM || !process.env.LEAD_RECEIVER_EMAIL) return null
+  return new Resend(process.env.RESEND_API_KEY)
 }
 
-async function sendLeadWebhook(lead) {
-  const webhookUrl = process.env.LEAD_WEBHOOK_URL
-  if (!webhookUrl) return
-
-  const response = await fetch(webhookUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(lead),
-  })
-
-  if (!response.ok) {
-    const errorText = await response.text()
-    throw new Error(`Webhook request failed: ${errorText}`)
-  }
+function getClientIp(req) {
+  return req.headers?.['x-forwarded-for']?.split(',')[0].trim() || req.socket?.remoteAddress || 'unknown'
 }
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST')
-    return json(res, 405, { error: 'Methode nicht erlaubt.' })
-  }
+export function createLeadHandler({
+  createMailer = createDefaultMailer,
+  fetchImpl = globalThis.fetch,
+  logger = console,
+  now = () => Date.now(),
+} = {}) {
+  const rateLimit = new Map()
+  const deliveredSubmissions = new Map()
 
-  const ip =
-    req.headers['x-forwarded-for']?.split(',')[0].trim() ||
-    req.socket?.remoteAddress ||
-    'unknown'
-
-  const now = Date.now()
-  const entry = rateLimit.get(ip) || { count: 0, start: now }
-
-  if (now - entry.start > 60_000) {
-    rateLimit.set(ip, { count: 1, start: now })
-  } else if (entry.count >= 5) {
-    return json(res, 429, { error: 'Zu viele Anfragen. Bitte warte kurz.' })
-  } else {
-    entry.count++
-    rateLimit.set(ip, entry)
-  }
-
-  try {
-    const body = await parseRequestBody(req)
-    const validation = validateLeadInput(body)
-
-    if (!validation.ok) {
-      return json(res, validation.statusCode, { error: validation.error })
+  return async function leadHandler(req, res) {
+    if (req.method !== 'POST') {
+      res.setHeader('Allow', 'POST')
+      return json(res, 405, { errorCode: 'method_not_allowed', error: 'Methode nicht erlaubt.' })
     }
 
-    const lead = validation.lead
+    const timestamp = now()
+    const ip = getClientIp(req)
+    const entry = rateLimit.get(ip) || { count: 0, start: timestamp }
+    if (timestamp - entry.start > 60_000) rateLimit.set(ip, { count: 1, start: timestamp })
+    else if (entry.count >= 5) return json(res, 429, { errorCode: 'rate_limited', error: 'Zu viele Anfragen. Bitte warten Sie kurz.' })
+    else {
+      entry.count += 1
+      rateLimit.set(ip, entry)
+    }
 
-    await sendLeadEmails(lead)
-    await sendLeadWebhook(lead)
+    try {
+      const body = await parseRequestBody(req)
+      const validation = validateLeadInput(body)
+      if (!validation.ok) return json(res, validation.statusCode, { errorCode: validation.errorCode, field: validation.field, error: validation.error })
+      const lead = validation.lead
 
-    return json(res, 200, {
-      ok: true,
-      message:
-        'Vielen Dank für deine Anfrage. Deine Nachricht wurde erfolgreich übermittelt. STRUKTIVA meldet sich zeitnah bei dir.',
-    })
-  } catch (error) {
-    console.error('Lead submission failed', error)
-    return json(res, 500, {
-      error: 'Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es erneut oder kontaktiere STRUKTIVA per E-Mail.',
-    })
+      if (lead.submissionId) {
+        const deliveredAt = deliveredSubmissions.get(lead.submissionId)
+        if (deliveredAt && timestamp - deliveredAt < DEDUPE_TTL_MS) {
+          return json(res, 200, { ok: true, deduplicated: true, submissionId: lead.submissionId })
+        }
+      }
+
+      const mailer = createMailer()
+      if (!mailer || !process.env.SMTP_FROM || !process.env.LEAD_RECEIVER_EMAIL) {
+        return json(res, 503, { errorCode: 'server', error: 'Die Anfrage kann gerade nicht zugestellt werden. Bitte kontaktieren Sie STRUKTIVA per E-Mail.' })
+      }
+
+      await mailer.emails.send({
+        from: process.env.SMTP_FROM,
+        to: process.env.LEAD_RECEIVER_EMAIL,
+        subject: lead.leadType === 'digital_check' ? `Digital-Check-Anfrage: ${lead.company}` : `Neue Anfrage von ${lead.name}`,
+        html: buildInternalMailHtml(lead),
+      })
+
+      if (lead.submissionId) deliveredSubmissions.set(lead.submissionId, timestamp)
+
+      try {
+        await mailer.emails.send({
+          from: process.env.SMTP_FROM,
+          to: lead.email,
+          subject: lead.leadType === 'digital_check' ? 'Ihre Anfrage zum STRUKTIVA Digital-Check' : 'Ihre Anfrage bei STRUKTIVA',
+          html: buildConfirmationMailHtml(lead),
+        })
+      } catch {
+        logger.warn('Lead confirmation delivery failed', { code: 'confirmation_failed' })
+      }
+
+      if (process.env.LEAD_WEBHOOK_URL && fetchImpl) {
+        try {
+          const response = await fetchImpl(process.env.LEAD_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(lead),
+          })
+          if (!response.ok) throw new Error('webhook_failed')
+        } catch {
+          logger.warn('Lead webhook delivery failed', { code: 'webhook_failed' })
+        }
+      }
+
+      return json(res, 200, {
+        ok: true,
+        submissionId: lead.submissionId || undefined,
+        message: 'Vielen Dank. Ihre Anfrage wurde erfolgreich übermittelt.',
+      })
+    } catch (error) {
+      const errorCode = error?.publicCode === 'validation' || error instanceof SyntaxError ? 'validation' : 'server'
+      logger.error('Lead submission failed', { code: errorCode })
+      return json(res, errorCode === 'validation' ? 400 : 500, {
+        errorCode,
+        error: errorCode === 'validation'
+          ? 'Die Anfrage enthält ungültige Daten.'
+          : 'Die Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie STRUKTIVA per E-Mail.',
+      })
+    }
   }
 }
+
+const handler = createLeadHandler()
+export default handler
