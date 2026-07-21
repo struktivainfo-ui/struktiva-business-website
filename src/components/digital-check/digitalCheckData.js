@@ -1,6 +1,8 @@
 import {
   digitalCheckCreditText,
   digitalCheckIndependenceText,
+  digitalCheckIntroductoryOfferText,
+  digitalCheckOrderDefinitionText,
   digitalCheckPriceLabel,
   personalDigitalCheckOffer,
 } from '../../config/digitalCheckOffer.js'
@@ -32,11 +34,11 @@ export const digitalCheckAreas = [
 ]
 
 export const digitalCheckDeliverables = [
-  'Eine verständliche Gesamteinschätzung ohne unnötige Fachsprache.',
-  'Einen kompakten PDF-Bericht mit den wichtigsten Beobachtungen.',
-  'Einen priorisierten Maßnahmenplan: zuerst, danach und später.',
-  `Ein persönliches Ergebnisgespräch von ungefähr ${personalDigitalCheckOffer.resultCallMinutes} Minuten.`,
-  'Den vollständigen Bericht – unabhängig davon, ob Sie später etwas umsetzen lassen.',
+  'Prüfung eines primären Webauftritts und seiner mobilen Darstellung.',
+  'Prüfung eines Google-Unternehmensprofils, sofern vorhanden.',
+  'Prüfung der wichtigsten Kontaktwege sowie der Bewertungs- und Vertrauensdarstellung.',
+  'Eine kompakte schriftliche Zusammenfassung mit priorisierten nächsten Schritten.',
+  `Eine persönliche Ergebnisbesprechung bis maximal ${personalDigitalCheckOffer.resultCallMinutes} Minuten.`,
 ]
 
 export const digitalCheckProcess = [
@@ -66,20 +68,20 @@ export const digitalCheckFits = [
 ]
 
 export const digitalCheckDoesNotFit = [
-  'Sie erwarten ein vollständiges SEO-, Security-, Datenschutz- oder Rechtsaudit.',
-  'Ein großer Shop, ein Portal oder sehr viele Standorte sollen vollständig geprüft werden.',
+  'Sie erwarten ein vollständiges SEO-Audit, eine Sicherheitsprüfung oder Rechts- beziehungsweise Steuerberatung.',
+  'Mehrere Websites oder Standorte oder eine umfangreiche Wettbewerbsanalyse sollen geprüft werden.',
   'Sie erwarten garantierte Rankings, Leads oder Umsätze.',
-  'Sie erwarten im Preis bereits Gestaltung, Programmierung oder laufende Betreuung.',
+  'Sie erwarten im Preis bereits technische Umsetzung oder unbegrenzte Beratung.',
 ]
 
 export const digitalCheckFaqs = [
   {
     question: 'Was kostet der Digital-Check?',
-    answer: `Der Digital-Check kostet ${digitalCheckPriceLabel} Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.`,
+    answer: `Der Digital-Check kostet aktuell ${digitalCheckPriceLabel} ${digitalCheckIntroductoryOfferText} Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.`,
   },
   {
     question: 'Ist das Absenden des Formulars bereits eine Bestellung?',
-    answer: 'Nein. Mit dem Absenden stellen Sie eine Anfrage. Ein kostenpflichtiger Auftrag entsteht erst nach gesonderter Bestätigung durch STRUKTIVA.',
+    answer: `Nein. ${digitalCheckOrderDefinitionText}`,
   },
   {
     question: 'Was genau wird geprüft?',
@@ -98,7 +100,7 @@ export const digitalCheckFaqs = [
     answer: `Nein. ${digitalCheckIndependenceText}`,
   },
   {
-    question: `Wie funktioniert die Anrechnung der ${personalDigitalCheckOffer.price} €?`,
+    question: 'Wie funktioniert die Anrechnung?',
     answer: `${digitalCheckCreditText} Der Mindestauftragswert gilt vor Anrechnung und nur für STRUKTIVA-Leistungen; Fremd- und Drittkosten zählen nicht mit.`,
   },
   {

@@ -3,11 +3,11 @@
 Status: Umsetzungsreifes Fach-, Text- und Technik-Konzept<br>
 Geltungsbereich: `/digital-check` und die zugehörige Danke-Seite<br>
 Stand: 17. Juli 2026
-Wichtig: Die technische Umsetzung dieses Konzepts ist erfolgt. Die steuerliche Behandlung ist bestätigt: STRUKTIVA weist 19 % Umsatzsteuer aus, und 129 € ist der vom Kunden zu zahlende Gesamtpreis. Öffentlich gilt „129 € einmalig inkl. 19 % MwSt.“; auf diesen Betrag wird keine weitere Umsatzsteuer aufgeschlagen.
+Wichtig: Die technische Umsetzung dieses Konzepts ist erfolgt. STRUKTIVA weist 19 % Umsatzsteuer aus. Während der Einführungsaktion gilt „79 € einmalig inkl. 19 % MwSt.“ für die ersten zehn von STRUKTIVA verbindlich bestätigten Digital-Check-Aufträge; danach gilt der reguläre Gesamtpreis „129 € einmalig inkl. 19 % MwSt.“. Eine Formularanfrage ist noch kein Auftrag und reserviert oder reduziert keinen Einführungsplatz.
 
 ## 1. Ausgangslage
 
-Die vorhandene Route `/digital-check` beschreibt bislang einen allgemeinen Check, aber noch kein klar abgegrenztes, direkt verständliches Angebot für 129 €. Leistungsumfang, Ergebnisformat, Preis, Anrechnungsregel, Anfrageprozess und Conversion-Messung sind nicht als durchgängiger Funnel formuliert.
+Die Route `/digital-check` beschreibt ein klar abgegrenztes, direkt verständliches Angebot mit zentral gesteuertem Einführungs- und regulärem Preis. Leistungsumfang, Ergebnisformat, Preis, Anrechnungsregel, Anfrageprozess und Conversion-Messung bilden einen durchgängigen Funnel.
 
 Im Bestand bestehen außerdem Widersprüche:
 
@@ -19,7 +19,7 @@ Im Bestand bestehen außerdem Widersprüche:
 - Die bestehende technische Route `/api/website-check` ist ein automatisierter Website-Test und darf nicht mit der persönlichen, kostenpflichtigen Leistung verwechselt werden.
 - Auf schmalen Viewports treten derzeit horizontale Überläufe auf. Kampagnenkopf, Hero, Formular und Cookie-Banner brauchen deshalb eine explizite mobile Abnahme.
 
-Die steuerliche Behandlung ist verbindlich freigegeben: STRUKTIVA stellt Rechnungen mit 19 % Umsatzsteuer aus. Für die Landingpage gilt `129 € einmalig inkl. 19 % MwSt.` als Gesamtpreis. Der Steuerhinweis wird zentral gepflegt und bleibt auch ohne Produktionsvariable sichtbar. Vertragsentstehung, Anrechnungsbedingungen, Checkbox-Text und Datenschutz müssen vor Veröffentlichung weiterhin rechtlich konsistent geprüft werden.
+Die steuerliche Behandlung ist verbindlich freigegeben: STRUKTIVA stellt Rechnungen mit 19 % Umsatzsteuer aus. Für die Landingpage gilt während der Einführungsaktion `79 € einmalig inkl. 19 % MwSt.` als Gesamtpreis; danach `129 € einmalig inkl. 19 % MwSt.`. Preis und Steuerhinweis werden zentral gepflegt. Vertragsentstehung, Anrechnungsbedingungen, Checkbox-Text und Datenschutz müssen rechtlich konsistent bleiben.
 
 ## 2. Ziel der Landingpage
 
@@ -62,7 +62,7 @@ Nicht versprochen werden Rankings, eine bestimmte Anzahl neuer Anfragen, Umsatzs
 
 ## 5. Leistungsumfang
 
-Der Preis von 129 € gilt für einen Betrieb, einen Standort, eine Website und ein Google-Unternehmensprofil. Geprüft werden repräsentative, für die Anfrageentscheidung relevante Seiten und öffentlich sichtbare Kontaktpunkte – nicht automatisch jede Unterseite.
+Der aktuelle Preis gilt für einen primären Webauftritt einschließlich mobiler Darstellung, ein Google-Unternehmensprofil (sofern vorhanden), die wichtigsten Kontaktwege sowie die Bewertungs- und Vertrauensdarstellung. Geprüft werden repräsentative, für die Anfrageentscheidung relevante Seiten und öffentlich sichtbare Kontaktpunkte – nicht automatisch jede Unterseite.
 
 Die Prüfung umfasst vier Bereiche:
 
@@ -73,23 +73,21 @@ Die Prüfung umfasst vier Bereiche:
 
 Enthalten sind:
 
-- Sichtprüfung der relevanten öffentlichen Kontaktpunkte.
-- nachvollziehbare Einordnung der wichtigsten Probleme.
-- Priorisierung in `zuerst`, `danach` und `später`.
-- konkrete, betriebsbezogene Handlungsempfehlungen.
-- ein persönliches Ergebnisgespräch von ungefähr 30 Minuten.
-- ein kompakter Ergebnisbericht mit Maßnahmenplan.
+- Prüfung eines primären Webauftritts und seiner mobilen Darstellung.
+- Prüfung eines Google-Unternehmensprofils, sofern vorhanden.
+- Prüfung der wichtigsten Kontaktwege sowie der Bewertungs- und Vertrauensdarstellung.
+- kompakte schriftliche Zusammenfassung mit priorisierten nächsten Schritten.
+- persönliche Ergebnisbesprechung bis maximal 30 Minuten.
 
 Nicht enthalten sind:
 
-- Umsetzung, Gestaltung, Programmierung oder laufende Betreuung.
-- vollständiger Crawl großer Websites oder Shops.
-- tiefes technisches SEO-, Performance-, Accessibility-, Datenschutz- oder Security-Audit.
-- Rechtsberatung oder rechtliche Prüfung von Impressum, Datenschutz, Cookies oder Werbeaussagen.
-- Erstellung neuer Texte, Fotos, Profile oder Kampagnen.
-- Wettbewerbs-, Markt-, Marken- oder vollständige Unternehmensanalyse.
-- unbegrenzte Rückfragen oder weitere Beratungstermine.
-- Prüfung nicht öffentlich zugänglicher Systeme ohne gesonderte Vereinbarung.
+- technische Umsetzung.
+- vollständiges SEO-Audit.
+- Rechts- oder Steuerberatung.
+- Sicherheitsprüfung.
+- umfangreiche Wettbewerbsanalyse.
+- Prüfung mehrerer Websites oder Standorte.
+- unbegrenzte Beratung.
 
 Voraussetzung sind vollständige Angaben und, falls erforderlich, zeitnah bereitgestellte Informationen. Der Ergebnisbericht wird innerhalb von fünf Werktagen nach Eingang aller benötigten Informationen bereitgestellt.
 
@@ -109,12 +107,14 @@ Der Bericht wird im persönlichen Ergebnisgespräch erläutert und anschließend
 
 Öffentlich sichtbarer Preis:
 
-> 129 € einmalig<br>
+> 79 € einmalig<br>
 > inkl. 19 % MwSt.
+
+> Einführungspreis für die ersten 10 verbindlich beauftragten Digital-Checks. Danach 129 € einmalig inkl. 19 % MwSt.
 
 Verbindlicher Erläuterungstext:
 
-> Die 129 € werden vollständig angerechnet, wenn innerhalb von 30 Tagen nach der Ergebnisbesprechung ein STRUKTIVA-Umsetzungsauftrag mit einem Mindestauftragswert von 500 € vereinbart wird. Der Mindestauftragswert gilt vor Anrechnung und bezieht sich auf STRUKTIVA-Leistungen; Fremd- und Drittkosten zählen nicht mit. Der Digital-Check bleibt eine eigenständige Leistung. Sie entscheiden frei, ob Sie anschließend etwas umsetzen lassen, und erhalten den Maßnahmenplan unabhängig davon vollständig.
+> Der für den Digital-Check tatsächlich gezahlte Betrag wird vollständig angerechnet, wenn innerhalb von 30 Tagen nach der Ergebnisbesprechung ein STRUKTIVA-Umsetzungsauftrag mit einem Mindestauftragswert von 500 € vereinbart wird. Der Mindestauftragswert gilt vor Anrechnung und bezieht sich auf STRUKTIVA-Leistungen; Fremd- und Drittkosten zählen nicht mit. Der Digital-Check bleibt eine eigenständige Leistung. Es besteht keine Verpflichtung zu einem Folgeauftrag, und die technische Umsetzung ist nicht im Checkpreis enthalten.
 
 Zusätzliche Geschäftsregeln für Angebot und Abrechnung:
 
@@ -122,9 +122,9 @@ Zusätzliche Geschäftsregeln für Angebot und Abrechnung:
 - Eine Barauszahlung, Übertragung oder Kombination mit anderen Gutschriften ist nicht vorgesehen.
 - Die 30-Tage-Frist beginnt nach der Ergebnisbesprechung, nicht nach dem Absenden des Formulars.
 - Maßgeblich ist der verbindlich vereinbarte Auftragswert vor Anrechnung.
-- Die Anfrage über das Formular löst noch keinen kostenpflichtigen Auftrag aus.
+- Die Anfrage über das Formular löst noch keinen kostenpflichtigen Auftrag aus und reserviert oder reduziert keinen Einführungsplatz.
 
-Steuerlicher Freigabestand: 129 € ist der Gesamtpreis inklusive 19 % Mehrwertsteuer. Vertragsentstehung, Fristbeginn, Mindestauftragswert, Ausschluss von Fremdkosten und Anrechnungsmechanik müssen rechtlich und in der Auftragsbestätigung konsistent bleiben.
+Steuerlicher Freigabestand: 79 € ist während der Einführungsaktion der Gesamtpreis inklusive 19 % Mehrwertsteuer; danach gelten 129 €. Ein verbindlicher Auftrag entsteht erst durch ausdrückliche Bestätigung von STRUKTIVA.
 
 ## 8. Primäres Conversion-Ziel
 
@@ -180,8 +180,9 @@ Unterzeile:
 
 Preiszeile:
 
-> 129 € einmalig<br>
-> inkl. 19 % MwSt.
+> 79 € einmalig<br>
+> inkl. 19 % MwSt.<br>
+> Einführungspreis für die ersten 10 verbindlich beauftragten Digital-Checks. Danach 129 € einmalig inkl. 19 % MwSt.
 
 Leistungszeile:
 
@@ -231,8 +232,9 @@ Hervorgehobener Angebotsblock:
 > **STRUKTIVA Digital-Check für lokale Betriebe**<br>
 > Für einen Betrieb, einen Standort, eine Website und ein Google-Unternehmensprofil.<br>
 > Ergebnis innerhalb von fünf Werktagen nach Eingang aller benötigten Informationen.<br>
-> **129 € einmalig**<br>
-> **inkl. 19 % MwSt.**
+> **79 € einmalig**<br>
+> **inkl. 19 % MwSt.**<br>
+> Einführungspreis für die ersten 10 verbindlich beauftragten Digital-Checks. Danach 129 € einmalig inkl. 19 % MwSt.
 
 Hinweis:
 
@@ -370,11 +372,11 @@ Abschluss:
 
 **Was kostet der Digital-Check?**
 
-> Der Digital-Check kostet 129 € einmalig inkl. 19 % MwSt. Die 129 € sind der Gesamtpreis. Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.
+> Der Digital-Check kostet während der Einführungsaktion 79 € einmalig inkl. 19 % MwSt. Der Einführungspreis gilt für die ersten 10 verbindlich beauftragten Digital-Checks. Danach gilt der reguläre Preis von 129 € einmalig inkl. 19 % MwSt. Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.
 
 **Ist das Absenden des Formulars bereits eine Bestellung?**
 
-> Nein. Mit dem Absenden stellen Sie eine Anfrage. Ein kostenpflichtiger Auftrag entsteht erst nach gesonderter Bestätigung durch STRUKTIVA.
+> Nein. Mit dem Absenden stellen Sie zunächst eine unverbindliche Anfrage. Ein kostenpflichtiger Auftrag und die Berücksichtigung für den Einführungspreis entstehen erst nach einer ausdrücklichen Bestätigung durch STRUKTIVA. Die Anfrage reserviert oder reduziert keinen Einführungsplatz.
 
 **Was genau wird geprüft?**
 
@@ -392,9 +394,9 @@ Abschluss:
 
 > Nein. Der Digital-Check ist eine eigenständige Leistung. Sie erhalten den vollständigen Maßnahmenplan und entscheiden frei, ob, wann und mit wem Sie etwas umsetzen.
 
-**Wie funktioniert die Anrechnung der 129 €?**
+**Wie funktioniert die Anrechnung?**
 
-> Die 129 € werden vollständig angerechnet, wenn innerhalb von 30 Tagen nach der Ergebnisbesprechung ein STRUKTIVA-Umsetzungsauftrag mit einem Mindestauftragswert von 500 € vereinbart wird. Die 500 € gelten vor Anrechnung und nur für STRUKTIVA-Leistungen; Fremd- und Drittkosten zählen nicht mit.
+> Der für den Digital-Check tatsächlich gezahlte Betrag wird vollständig angerechnet, wenn innerhalb von 30 Tagen nach der Ergebnisbesprechung ein STRUKTIVA-Umsetzungsauftrag mit einem Mindestauftragswert von 500 € vereinbart wird. Die 500 € gelten vor Anrechnung und nur für STRUKTIVA-Leistungen; Fremd- und Drittkosten zählen nicht mit.
 
 **Ist die Umsetzung im Preis enthalten?**
 
@@ -442,7 +444,7 @@ Absende-Schaltfläche:
 
 Mikrotext unter der Schaltfläche:
 
-> Das Absenden ist noch keine kostenpflichtige Bestellung. Vor dem Start bestätigen wir Leistung, Preis und Rahmen gesondert.
+> Mit dem Absenden dieses Formulars stellen Sie zunächst eine unverbindliche Anfrage. Ein kostenpflichtiger Auftrag und die Berücksichtigung für den Einführungspreis entstehen erst nach einer ausdrücklichen Bestätigung durch STRUKTIVA.
 
 ### 10.12 Vertrauenshinweis am Formular
 
@@ -639,7 +641,7 @@ Gemeinsame erlaubte Parameter, sofern vorhanden und bereinigt:
 | `digital_check_page_view` | Route wird sichtbar, einmal je Navigation | Event mit gemeinsamen Parametern | kein Conversion-Event | `pagevisit`, falls im bestehenden Schema vorgesehen |
 | `digital_check_cta_click` | Klick auf einen CTA zum Formular | Position des CTA zusätzlich als `cta_location` | optional nur Audience-/Diagnosesignal | optional Custom Event |
 | `digital_check_form_start` | erste echte Interaktion mit einem sichtbaren Formularfeld | einmal je Session/Formular | keine primäre Conversion | kein Lead |
-| `digital_check_form_submit_success` | Lead-API antwortet erfolgreich; genau einmal pro Event-ID | empfohlenes Lead-Event plus spezifischer Eventname | **primäre Conversion**, `send_to` mit finaler Conversion-ID und Label, Wert `129`, Währung `EUR`, Event-ID zur Deduplizierung | `lead`, genau einmal |
+| `digital_check_form_submit_success` | Lead-API antwortet erfolgreich; genau einmal pro Event-ID | empfohlenes Lead-Event plus spezifischer Eventname | **primäre Conversion**, `send_to` mit finaler Conversion-ID und Label, Wert aus der zentralen Angebotskonfiguration, Währung `EUR`, Event-ID zur Deduplizierung | `lead`, genau einmal |
 | `digital_check_form_submit_error` | API-, Netzwerk- oder Validierungsfehler beim Senden | nur erlaubter `error_code`, keine Rohmeldung | keine Conversion | kein Lead |
 | `digital_check_whatsapp_click` | Klick auf betriebliche WhatsApp-Kontaktmöglichkeit | Kanal und Position | nur sekundäre Conversion, nicht primäres Bidding-Ziel | optional `lead` nur wenn bewusst als getrennte sekundäre Aktion konfiguriert |
 | `digital_check_phone_click` | Klick auf `tel:` | Kanal und Position | sekundär | optional Custom Event |
@@ -649,7 +651,7 @@ Technische Regeln:
 
 - Die bestehende GA4-Mess-ID und Google-Ads-ID zentral weiterverwenden, nicht nochmals inline duplizieren.
 - Vor Livegang in Google Ads eine eigene Conversion-Aktion `Digital-Check Anfrage erfolgreich` erstellen und den vollständigen `send_to`-Wert aus Conversion-ID plus Label konfigurieren. Ohne Label darf der Erfolg nicht als fertig implementiert gelten.
-- `value: 129` und `currency: EUR` nur für die erfolgreiche primäre Anfrage verwenden. Dies ist ein definierter Lead-Wert, kein gemessener Umsatz; die interne Auswertung muss das so benennen.
+- `value` aus der zentralen Angebotskonfiguration und `currency: EUR` nur für die erfolgreiche primäre Anfrage verwenden. Dies ist ein definierter Lead-Wert, kein gemessener Umsatz; die interne Auswertung muss das so benennen.
 - Pinterest `Lead` nur nach echtem API-Erfolg und Marketing-Einwilligung senden.
 - Doppelklick, API-Retry, Reload und Danke-Seitenaufruf dürfen keinen zweiten Erfolg erzeugen.
 - Zulässige Fehlercodes sind eine kleine Allowlist, etwa `validation`, `rate_limited`, `network`, `server`, `unknown`.
@@ -690,9 +692,9 @@ Datensparsamkeit und Sicherheit:
 Finale Metadaten:
 
 - Title: `Digital-Check für lokale Betriebe | STRUKTIVA Calw`
-- Meta Description: `Website, Google-Unternehmensprofil, Kontaktwege und Bewertungen prüfen lassen: persönlicher STRUKTIVA Digital-Check für lokale Betriebe, 129 €.`
+- Meta Description: Preis aus der zentralen Angebotskonfiguration; während der Einführungsaktion `79 € einmalig inkl. 19 % MwSt.`.
 - Canonical: `https://struktiva.de/digital-check`
-- Open Graph Title: `STRUKTIVA Digital-Check für lokale Betriebe – 129 €`
+- Open Graph Title: `STRUKTIVA Digital-Check für lokale Betriebe – 79 €` während der Einführungsaktion.
 - Open Graph Description: `Persönliche Prüfung, klar priorisierter Maßnahmenplan und Ergebnisgespräch für lokale Betriebe.`
 - Open Graph URL: `https://struktiva.de/digital-check`
 - Open Graph Type: `website`
@@ -706,7 +708,7 @@ Structured Data: ein `Service`-Objekt mit:
 - `serviceType`: `Digitaler Unternehmens- und Kontaktwege-Check`
 - `provider`: bestehendes korrektes `ProfessionalService`-/`Organization`-Objekt von STRUKTIVA.
 - `areaServed`: Calw sowie Deutschland; keine unzutreffende lokale Exklusivität behaupten.
-- `offers`: `Offer` mit `price: 129`, `priceCurrency: EUR`, korrekter URL und Verfügbarkeitsangabe nur wenn sachlich zutreffend.
+- `offers`: `Offer` mit `price: 79` während der Einführungsaktion beziehungsweise `129` danach, `priceCurrency: EUR`, korrekter URL und ohne erfundenes `priceValidUntil`.
 - keine erfundenen Bewertungen, `aggregateRating`, garantierten Ergebnisse oder Preisgültigkeitsdaten.
 
 Technische SEO-Anforderungen:
@@ -746,7 +748,7 @@ Vor Veröffentlichung zu klären:
 
 Die nächste Implementierung muss folgende Punkte projektweit bereinigen:
 
-1. **49-Euro-Altstand:** Vorkommen in `src/legacy/legacyContent.jsx` und historischen Architekturdokumenten suchen. Produktive Inhalte auf 129 € umstellen. Historische Dokumentation nicht stillschweigend umschreiben, sondern die alten 49-€-Passagen sichtbar als historisch/überholt markieren und auf das neue Angebot verweisen.
+1. **49-Euro-Altstand:** Vorkommen in `src/legacy/legacyContent.jsx` und historischen Architekturdokumenten suchen. Produktive Inhalte auf die zentrale Angebotskonfiguration umstellen. Historische Dokumentation nicht stillschweigend umschreiben, sondern alte 49-€-Passagen sichtbar als historisch/überholt markieren.
 2. **Maßnahmenplan:** In `src/components/digital-check/digitalCheckData.js` darf der Maßnahmenplan nicht mehr als ausgeschlossen erscheinen. Formulierung und Umfang an Abschnitt 5 und 6 angleichen. Das Wort `garantiert` vermeiden; geliefert wird ein priorisierter Plan, nicht ein garantierter Geschäftserfolg.
 3. **Kostenlose Erstberatung:** Allgemeine kostenlose oder unverbindliche Erstgespräche in `src/legacy/legacyContent.jsx` klar vom kostenpflichtigen Digital-Check trennen. Sie dürfen weder denselben Namen noch denselben Leistungsumfang suggerieren.
 4. **CTA-Namen und Ziele:** Alte Varianten wie `Digital-Check ansehen`, `starten` oder allgemeine Kontaktziele auf den kontextgerechten CTA vereinheitlichen. Primäre Digital-Check-CTAs führen zu `/digital-check#digital-check-anfrage`.
@@ -768,7 +770,7 @@ Bekannte Fundstellen, die mindestens geprüft werden müssen:
 
 ## 20. Genaue Umsetzungsreihenfolge
 
-1. Die erteilte steuerliche Freigabe (`129 € einmalig inkl. 19 % MwSt.` als Gesamtpreis) dokumentieren; Anfrage-/Vertragstext, Checkbox, Speicherdauer und Attribution rechtlich konsistent halten.
+1. Die erteilte steuerliche Freigabe (`79 € einmalig inkl. 19 % MwSt.` während der Einführungsaktion, danach `129 € einmalig inkl. 19 % MwSt.`) dokumentieren; Anfrage-/Vertragstext, Checkbox, Speicherdauer und Attribution rechtlich konsistent halten.
 2. Vor Beginn Git-Status sichern und vorhandene fremde/ungetrackte Dateien unangetastet lassen.
 3. Zentrale Produktkonstanten für Name, Preis, Umfang, Lieferzeit und Anrechnung definieren, damit Texte und JSON-LD nicht auseinanderlaufen.
 4. Route `/digital-check/danke`, route-spezifische Metadaten und Pre-Rendering-Strategie vorbereiten.
@@ -876,7 +878,7 @@ Falls einzelne genannte Komponenten im aktuellen Stand anders heißen oder berei
 - Ohne Consent werden keine GA4-, Google-Ads- oder Pinterest-Requests ausgelöst; die serverseitige Anfrage funktioniert trotzdem.
 - Mit Statistik-, aber ohne Marketing-Consent gehen nur zulässige GA4-Events ab.
 - Mit Marketing-Consent feuern Ads/Pinterest erst nach echtem API-Erfolg.
-- Google Ads erhält die finale Conversion-ID inklusive Label, `value: 129`, `currency: EUR` und eine Deduplizierungs-ID.
+- Google Ads erhält die finale Conversion-ID inklusive Label, den `value` aus der zentralen Angebotskonfiguration, `currency: EUR` und eine Deduplizierungs-ID.
 - Namen, E-Mail, Telefon, Freitext, rohe GCLID und vollständige Referrer-/Landing-URLs erscheinen in keinem Analytics-/Ads-/Pinterest-Event.
 - Telefon-, E-Mail- und WhatsApp-Klicks bleiben sekundäre Aktionen.
 

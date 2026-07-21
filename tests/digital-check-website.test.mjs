@@ -3,6 +3,11 @@ import { readFile } from 'node:fs/promises'
 import test from 'node:test'
 import {
   DIGITAL_CHECK_CONFIRMED_TAX_NOTE,
+  createDigitalCheckOffer,
+  digitalCheckCreditText,
+  digitalCheckFormNoticeText,
+  digitalCheckIntroductoryOfferText,
+  digitalCheckOrderDefinitionText,
   digitalCheckPriceLabel,
   personalDigitalCheckOffer,
 } from '../src/config/digitalCheckOffer.js'
@@ -26,16 +31,34 @@ test('sitemap contains the offer but never the success page', async () => {
   assert.doesNotMatch(sitemap, /digital-check\/danke/)
 })
 
-test('the current offer uses the confirmed 129 EUR gross-price configuration', () => {
-  assert.equal(personalDigitalCheckOffer.price, 129)
-  assert.equal(personalDigitalCheckOffer.grossPrice, 129)
+test('the current offer uses the confirmed 79 EUR introductory gross-price configuration', () => {
+  assert.equal(personalDigitalCheckOffer.regularPrice, 129)
+  assert.equal(personalDigitalCheckOffer.introductoryPrice, 79)
+  assert.equal(personalDigitalCheckOffer.introductoryOfferEnabled, true)
+  assert.equal(personalDigitalCheckOffer.introductoryCustomerLimit, 10)
+  assert.equal(personalDigitalCheckOffer.price, 79)
+  assert.equal(personalDigitalCheckOffer.grossPrice, 79)
   assert.equal(personalDigitalCheckOffer.currency, 'EUR')
   assert.equal(personalDigitalCheckOffer.priceForm, 'einmalig')
+  assert.equal(personalDigitalCheckOffer.taxRate, 19)
   assert.equal(personalDigitalCheckOffer.vatRatePercent, 19)
   assert.equal(personalDigitalCheckOffer.taxNote, 'inkl. 19 % MwSt.')
   assert.equal(personalDigitalCheckOffer.taxStatus, 'confirmed_gross')
-  assert.equal(digitalCheckPriceLabel, '129 € einmalig inkl. 19 % MwSt.')
+  assert.equal(digitalCheckPriceLabel, '79 € einmalig inkl. 19 % MwSt.')
+  assert.match(digitalCheckIntroductoryOfferText, /ersten 10 verbindlich beauftragten Digital-Checks/)
+  assert.match(digitalCheckIntroductoryOfferText, /Danach 129 € einmalig inkl\. 19 % MwSt\./)
+  assert.match(digitalCheckOrderDefinitionText, /reserviert oder reduziert keinen Einführungsplatz/)
+  assert.match(digitalCheckFormNoticeText, /zunächst eine unverbindliche Anfrage/)
+  assert.match(digitalCheckCreditText, /tatsächlich gezahlte Betrag wird vollständig angerechnet/)
   assert.doesNotMatch(digitalCheckFaqs[0].answer, /MwSt\.\./)
+})
+
+test('disabling the introductory offer centrally restores the regular 129 EUR price', () => {
+  const regularOffer = createDigitalCheckOffer({ introductoryOfferEnabled: false })
+  assert.equal(regularOffer.price, 129)
+  assert.equal(regularOffer.grossPrice, 129)
+  assert.equal(regularOffer.priceBaseLabel, '129 € einmalig')
+  assert.equal(regularOffer.currency, 'EUR')
 })
 
 test('the confirmed tax note survives an empty or contradictory optional environment value', async () => {
@@ -71,14 +94,18 @@ test('visible Digital-Check price locations use the confirmed tax note without n
   assert.doesNotMatch(activeDigitalCheckSource, /zzgl\.\s*MwSt|zuzüglich Mehrwertsteuer|Kleinunternehmer|§\s*19\s*UStG/i)
 })
 
-test('Service structured data and visible offer use the same 129 EUR gross price', () => {
-  const structuredData = getRouteMeta('/digital-check').structuredData
+test('Service structured data and visible offer use the same 79 EUR introductory gross price', () => {
+  const routeMeta = getRouteMeta('/digital-check')
+  const structuredData = routeMeta.structuredData
+  assert.match(routeMeta.description, /79 € einmalig inkl\. 19 % MwSt\.$/)
+  assert.doesNotMatch(`${routeMeta.description}${routeMeta.ogDescription}`, /MwSt\.\./)
   assert.equal(structuredData.url, 'https://struktiva.de/digital-check')
   assert.equal(structuredData.provider.name, 'STRUKTIVA Digitale Unternehmensberatung')
   assert.equal(structuredData.offers.price, personalDigitalCheckOffer.grossPrice)
-  assert.equal(structuredData.offers.price, 129)
+  assert.equal(structuredData.offers.price, 79)
   assert.equal(structuredData.offers.priceCurrency, 'EUR')
   assert.equal(structuredData.offers.url, 'https://struktiva.de/digital-check')
+  assert.equal(structuredData.offers.priceValidUntil, undefined)
   assert.equal(structuredData.aggregateRating, undefined)
 })
 
@@ -87,7 +114,7 @@ test('success page stays noindex and contains no price promotion', async () => {
   const successMeta = getRouteMeta('/digital-check/danke')
   assert.equal(successMeta.noindex, true)
   assert.equal(successMeta.structuredData, undefined)
-  assert.doesNotMatch(successPage, /129\s*€|MwSt|Mehrwertsteuer|price/i)
+  assert.doesNotMatch(successPage, /(?:79|129)\s*€|MwSt|Mehrwertsteuer|price/i)
 })
 
 test('active source contains no old 49 EUR offer or measures-plan exclusion', async () => {
@@ -99,6 +126,24 @@ test('active source contains no old 49 EUR offer or measures-plan exclusion', as
   const activeSource = `${legacy}\n${data}\n${page}`
   assert.doesNotMatch(activeSource, /Digitaler Kurzcheck\s+49|garantierter Maßnahmenplan|kein Maßnahmenplan/i)
   assert.match(data, /priorisierten Maßnahmenplan/)
+})
+
+test('active offer copy distinguishes requests from confirmed orders without fake scarcity', async () => {
+  const files = await Promise.all([
+    read('src/config/digitalCheckOffer.js'),
+    read('src/components/digital-check/DigitalCheckHero.jsx'),
+    read('src/components/digital-check/DigitalCheckOfferSummary.jsx'),
+    read('src/components/digital-check/DigitalCheckLeadForm.jsx'),
+    read('src/components/digital-check/digitalCheckData.js'),
+    read('api/leads.js'),
+  ])
+  const source = files.join('\n')
+  assert.match(source, /ersten \$\{personalDigitalCheckOffer\.introductoryCustomerLimit\} verbindlich beauftragten Digital-Checks/)
+  assert.match(source, /ausdrücklichen? Bestätigung (?:durch|von) STRUKTIVA/)
+  assert.match(source, /reserviert oder reduziert keinen Einführungsplatz/)
+  assert.doesNotMatch(source, /(?:noch|nur)\s+\d+\s+(?:Plätze|verfügbar)|Countdown/i)
+  assert.doesNotMatch(source, /Digitaler Kurzcheck\s+49|49\s*€/i)
+  assert.doesNotMatch(source, /netto|Kleinunternehmer/i)
 })
 
 test('dedicated form uses companyWebsite and contactTrap with required campaign fields', async () => {

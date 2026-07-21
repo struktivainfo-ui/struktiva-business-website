@@ -1,5 +1,8 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { personalDigitalCheckOffer } from '../../config/digitalCheckOffer.js'
+import {
+  digitalCheckIntroductoryOfferText,
+  personalDigitalCheckOffer,
+} from '../../config/digitalCheckOffer.js'
 import { DigitalCheckPrimaryLink } from './DigitalCheckOfferSummary.jsx'
 
 export default function DigitalCheckHero() {
@@ -28,6 +31,7 @@ export default function DigitalCheckHero() {
             </div>
             <span className="dc-hero__offer-detail">Persönliche Prüfung, priorisierter Maßnahmenplan und etwa 30 Minuten Ergebnisgespräch.</span>
           </div>
+          {digitalCheckIntroductoryOfferText ? <p className="dc-offer-note">{digitalCheckIntroductoryOfferText}</p> : null}
           <DigitalCheckPrimaryLink location="hero" />
           <p className="dc-hero__trust">Persönlich geprüft. Klar priorisiert. Ohne Verpflichtung zu einem Folgeauftrag.</p>
         </motion.div>

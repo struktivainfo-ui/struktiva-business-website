@@ -15511,6 +15511,14 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
   line-height: 1.35;
 }
 
+.dc-offer-note {
+  max-width: 62ch;
+  margin: 0.9rem 0 1.25rem;
+  color: #d6d1c7;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 .dc-hero__offer-detail,
 .dc-hero__trust {
   color: #c9c5bd;

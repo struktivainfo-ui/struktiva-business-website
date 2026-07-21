@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
-import { personalDigitalCheckOffer } from '../../config/digitalCheckOffer.js'
+import { digitalCheckFormNoticeText, personalDigitalCheckOffer } from '../../config/digitalCheckOffer.js'
 import { useCampaignAttribution } from '../../hooks/useCampaignAttribution.js'
 import {
   buildDigitalCheckTrackingParameters,
@@ -226,7 +226,7 @@ export default function DigitalCheckLeadForm() {
         <span>{submitState === 'submitting' ? 'Wird gesendet …' : 'Anfrage zum Digital-Check senden'}</span>
         <ArrowRight aria-hidden="true" />
       </button>
-      <p className="dc-form__order-note">Das Absenden ist noch keine kostenpflichtige Bestellung. Vor dem Start bestätigen wir Leistung, Preis und Rahmen gesondert.</p>
+      <p className="dc-form__order-note">{digitalCheckFormNoticeText}</p>
     </form>
   )
 }

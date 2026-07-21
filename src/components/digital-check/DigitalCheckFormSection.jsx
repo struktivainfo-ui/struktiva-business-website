@@ -1,5 +1,8 @@
 import DigitalCheckLeadForm from './DigitalCheckLeadForm.jsx'
-import { personalDigitalCheckOffer } from '../../config/digitalCheckOffer.js'
+import {
+  digitalCheckIntroductoryOfferText,
+  personalDigitalCheckOffer,
+} from '../../config/digitalCheckOffer.js'
 
 export default function DigitalCheckFormSection() {
   return (
@@ -13,6 +16,7 @@ export default function DigitalCheckFormSection() {
             <strong>{personalDigitalCheckOffer.priceBaseLabel}</strong>
             <span className="dc-tax-note">{personalDigitalCheckOffer.taxNote}</span>
           </div>
+          {digitalCheckIntroductoryOfferText ? <p className="dc-offer-note">{digitalCheckIntroductoryOfferText}</p> : null}
           <div className="dc-form-section__trust">
             <strong>Persönlich bearbeitet, nicht automatisch als Massenanalyse.</strong>
             <p>Ihre Kontaktdaten werden nicht zu Werbezwecken weitergegeben. Es besteht keine Verpflichtung zu einem Folgeauftrag.</p>
