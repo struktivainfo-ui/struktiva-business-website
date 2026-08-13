@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { getRouteMeta } from '../src/routing/routeConfig.js'
+import { getRouteMeta, SEO_PRERENDER_PATHS } from '../src/routing/routeConfig.js'
 
 const projectRoot = resolve(fileURLToPath(new URL('..', import.meta.url)))
 const distRoot = resolve(projectRoot, 'dist')
@@ -42,7 +42,7 @@ function createRouteHtml(pathname) {
   return html
 }
 
-for (const pathname of ['/digital-check', '/digital-check/danke']) {
+for (const pathname of SEO_PRERENDER_PATHS) {
   const directory = resolve(distRoot, pathname.slice(1))
   await mkdir(directory, { recursive: true })
   await writeFile(resolve(directory, 'index.html'), createRouteHtml(pathname), 'utf8')

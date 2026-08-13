@@ -11,6 +11,7 @@ const solutionWorlds = [
     description:
       'Eine Website allein reicht nicht, wenn Google, Bewertungen, Inhalte und Kontaktwege nicht sinnvoll zusammenspielen. STRUKTIVA verbindet die sichtbaren digitalen Kontaktpunkte so, dass aus Aufmerksamkeit ein klarer Weg zur Anfrage entstehen kann.',
     points: ['Website', 'Google-Sichtbarkeit', 'Bewertungen', 'Landingpages', 'klare Kontaktwege'],
+    localLink: { href: '/google-sichtbarkeit-calw', label: 'Google-Sichtbarkeit in Calw' },
     visual: 'visibility',
   },
   {
@@ -22,6 +23,7 @@ const solutionWorlds = [
     description:
       'Vom ersten Kontakt bis zur späteren Wiederkehr entstehen viele kleine Berührungspunkte. STRUKTIVA entwickelt klare Wege für Kommunikation, Kundeninformationen, Bewertungen, Kundenkarten und sinnvolle Bindungsprozesse.',
     points: ['Kontakt', 'Kommunikation', 'digitale Formulare', 'Kundenkarten', 'Bonusstrukturen', 'Bewertungen', 'Wiederkehr'],
+    localLink: { href: '/digitale-kundenprozesse-calw', label: 'Digitale Kundenprozesse in Calw' },
     visual: 'customer',
   },
   {
@@ -32,6 +34,7 @@ const solutionWorlds = [
     description:
       'Viele Aufgaben folgen immer wieder ähnlichen Mustern. STRUKTIVA analysiert diese Abläufe und entwickelt digitale Strukturen, die Informationen, Aufgaben und sinnvolle Automatisierungen miteinander verbinden.',
     points: ['CRM', 'interne Apps', 'Dashboards', 'Aufgaben', 'Nachfassen', 'Automatisierung', 'KI-Unterstützung'],
+    localLink: { href: '/ki-automatisierung-calw', label: 'KI und Automatisierung in Calw' },
     visual: 'automation',
   },
 ]
@@ -178,6 +181,9 @@ export default function HomeSolutionsSection() {
                     <li key={point}>{point}</li>
                   ))}
                 </ul>
+                <a className="struktiva-solution-world__local-link" href={world.localLink.href}>
+                  {world.localLink.label} <ArrowRight aria-hidden="true" />
+                </a>
               </div>
               <SolutionVisual type={world.visual} />
             </motion.article>

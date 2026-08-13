@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { getLegacyRedirectTarget, getRouteMeta } from './routing/routeConfig.js'
 import { getPageComponent } from './routing/pageRegistry.jsx'
 import { useCurrentPath } from './hooks/useCurrentPath.js'
@@ -23,7 +23,9 @@ export default function App() {
 
   return (
     <AppShell pathname={pathname} routeMeta={routeMeta}>
-      <ActivePage />
+      <Suspense fallback={<div className="struktiva-route-loading" role="status"><span>Seite wird geladen …</span></div>}>
+        <ActivePage />
+      </Suspense>
     </AppShell>
   )
 }

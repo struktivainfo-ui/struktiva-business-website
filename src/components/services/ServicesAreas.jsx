@@ -44,6 +44,11 @@ export default function ServicesAreas() {
                 <strong>Ergebnislogik</strong>
                 <p>{area.outcome}</p>
               </div>
+              {area.relatedLinks?.length ? (
+                <div className="struktiva-services-area__related" aria-label={`Passende regionale Themen zu ${area.title}`}>
+                  {area.relatedLinks.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}
+                </div>
+              ) : null}
             </div>
           </motion.article>
         ))}

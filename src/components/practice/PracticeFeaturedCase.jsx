@@ -91,6 +91,10 @@ export default function PracticeFeaturedCase() {
               <ExternalLink aria-hidden="true" />
             </a>
           </div>
+          <p className="struktiva-practice-featured__related">
+            Passend dazu: <a href="/digitale-kundenprozesse-calw">digitale Kundenprozesse</a> und{' '}
+            <a href="/google-sichtbarkeit-calw">Google-Sichtbarkeit in Calw</a>.
+          </p>
         </motion.div>
         <motion.div
           className="struktiva-practice-featured__visual"

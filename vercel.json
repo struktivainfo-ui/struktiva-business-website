@@ -24,6 +24,30 @@
       "destination": "/digital-check/index.html"
     },
     {
+      "source": "/digitale-unternehmensberatung-calw",
+      "destination": "/digitale-unternehmensberatung-calw/index.html"
+    },
+    {
+      "source": "/digitalisierung-calw",
+      "destination": "/digitalisierung-calw/index.html"
+    },
+    {
+      "source": "/website-handwerker-calw",
+      "destination": "/website-handwerker-calw/index.html"
+    },
+    {
+      "source": "/digitale-kundenprozesse-calw",
+      "destination": "/digitale-kundenprozesse-calw/index.html"
+    },
+    {
+      "source": "/google-sichtbarkeit-calw",
+      "destination": "/google-sichtbarkeit-calw/index.html"
+    },
+    {
+      "source": "/ki-automatisierung-calw",
+      "destination": "/ki-automatisierung-calw/index.html"
+    },
+    {
       "source": "/demos/handwerker",
       "destination": "/demos/handwerker/index.html"
     },

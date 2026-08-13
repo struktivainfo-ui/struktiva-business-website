@@ -2,15 +2,69 @@
   'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege und digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister.'
 
 import { personalDigitalCheckOffer } from '../config/digitalCheckOffer.js'
+import { localSeoPages } from '../content/localSeoContent.js'
+
+const SITE_URL = 'https://struktiva.de'
+const BUSINESS_ID = `${SITE_URL}/#business`
+
+function createLocalSeoStructuredData(page) {
+  const pageUrl = `${SITE_URL}${page.path}`
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: page.metaTitle,
+        description: page.metaDescription,
+        inLanguage: 'de-DE',
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        about: { '@id': BUSINESS_ID },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: page.eyebrow, item: pageUrl },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${pageUrl}#faq`,
+        mainEntity: page.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      },
+    ],
+  }
+}
+
+const localSeoRouteMeta = Object.fromEntries(
+  Object.values(localSeoPages).map((page) => [page.path, {
+    title: page.metaTitle,
+    description: page.metaDescription,
+    canonicalPath: page.path,
+    ogTitle: page.metaTitle,
+    ogDescription: page.metaDescription,
+    structuredData: createLocalSeoStructuredData(page),
+  }]),
+)
 
 export const ACTIVE_ROUTE_META = {
   '/': {
-    title: 'STRUKTIVA Digitale Unternehmensberatung | Digitale Struktur für Unternehmen',
-    description: defaultDescription,
+    title: 'STRUKTIVA Calw | Digitale Systeme für Unternehmen',
+    description:
+      'STRUKTIVA Digitale Unternehmensberatung aus Calw verbindet Website, Google-Sichtbarkeit, Kundenwege, Prozesse und Automatisierung zu klaren Systemen.',
     canonicalPath: '/',
     isHomeRoute: true,
     isPricingRoute: true,
   },
+  ...localSeoRouteMeta,
   '/leistungen': {
     title: 'Digitale Leistungen für Unternehmen | STRUKTIVA',
     description:
@@ -143,6 +197,12 @@ export const DEFAULT_ROUTE_META = {
 }
 
 export const ACTIVE_ROUTE_PATHS = Object.keys(ACTIVE_ROUTE_META)
+
+export const SEO_PRERENDER_PATHS = [
+  ...Object.values(localSeoPages).map((page) => page.path),
+  '/digital-check',
+  '/digital-check/danke',
+]
 
 export const LEGACY_ROUTE_REDIRECTS = {
   '/demos': '/praxisbeispiele',

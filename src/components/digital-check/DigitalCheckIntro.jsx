@@ -26,6 +26,11 @@ export default function DigitalCheckIntro() {
           ))}
         </ol>
         <p className="dc-problems__close">Genau hier setzt der Digital-Check an: nicht mit mehr Technik, sondern mit einer verständlichen Priorisierung.</p>
+        <p className="dc-problems__local-links">
+          Vertiefend: <a href="/google-sichtbarkeit-calw">Google-Sichtbarkeit in Calw</a>,{' '}
+          <a href="/digitale-kundenprozesse-calw">digitale Kundenprozesse</a> und{' '}
+          <a href="/digitalisierung-calw">Digitalisierung für Unternehmen in Calw</a>.
+        </p>
       </div>
     </section>
   )

@@ -33,6 +33,15 @@ export default function Footer() {
           </ul>
         </nav>
 
+        <nav className="struktiva-footer-nav" aria-label="Regionale Themen">
+          <h2>Regionale Themen</h2>
+          <ul>
+            <li><a href="/digitale-unternehmensberatung-calw">Digitale Beratung Calw</a></li>
+            <li><a href="/website-handwerker-calw">Websites für Handwerker</a></li>
+            <li><a href="/google-sichtbarkeit-calw">Google-Sichtbarkeit Calw</a></li>
+          </ul>
+        </nav>
+
         <section className="struktiva-footer-contact" aria-label="Kontakt">
           <h2>Kontakt</h2>
           <address>

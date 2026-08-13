@@ -1,3 +1,4 @@
+import { lazy } from 'react'
 import HomePage from '../pages/HomePage.jsx'
 import SolutionsPage from '../pages/SolutionsPage.jsx'
 import PracticeExamplesPage from '../pages/PracticeExamplesPage.jsx'
@@ -15,6 +16,13 @@ import DemoHandwerkerPage from '../pages/DemoHandwerkerPage.jsx'
 import DemoKosmetikPage from '../pages/DemoKosmetikPage.jsx'
 import DemoDienstleisterPage from '../pages/DemoDienstleisterPage.jsx'
 
+const DigitalConsultingCalwPage = lazy(() => import('../pages/DigitalConsultingCalwPage.jsx'))
+const DigitalizationCalwPage = lazy(() => import('../pages/DigitalizationCalwPage.jsx'))
+const WebsiteTradesCalwPage = lazy(() => import('../pages/WebsiteTradesCalwPage.jsx'))
+const DigitalCustomerProcessesCalwPage = lazy(() => import('../pages/DigitalCustomerProcessesCalwPage.jsx'))
+const GoogleVisibilityCalwPage = lazy(() => import('../pages/GoogleVisibilityCalwPage.jsx'))
+const AiAutomationCalwPage = lazy(() => import('../pages/AiAutomationCalwPage.jsx'))
+
 export const activePageComponents = {
   '/': HomePage,
   '/ueber-uns': AboutPage,
@@ -28,6 +36,12 @@ export const activePageComponents = {
   '/kontakt': ContactPage,
   '/impressum': ImpressumPage,
   '/datenschutz': DatenschutzPage,
+  '/digitale-unternehmensberatung-calw': DigitalConsultingCalwPage,
+  '/digitalisierung-calw': DigitalizationCalwPage,
+  '/website-handwerker-calw': WebsiteTradesCalwPage,
+  '/digitale-kundenprozesse-calw': DigitalCustomerProcessesCalwPage,
+  '/google-sichtbarkeit-calw': GoogleVisibilityCalwPage,
+  '/ki-automatisierung-calw': AiAutomationCalwPage,
   '/demos/handwerker': DemoHandwerkerPage,
   '/demos/kosmetik': DemoKosmetikPage,
   '/demos/lokaler-dienstleister': DemoDienstleisterPage,

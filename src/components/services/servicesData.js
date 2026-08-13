@@ -27,6 +27,10 @@ export const serviceAreas = [
       'Verbindung von Website, Google-Profil, QR-Strukturen und Kontakt',
     ],
     outcome: 'Gefunden werden, verstanden werden, Vertrauen aufbauen und den Kontakt erleichtern.',
+    relatedLinks: [
+      { href: '/google-sichtbarkeit-calw', label: 'Google-Sichtbarkeit in Calw' },
+      { href: '/website-handwerker-calw', label: 'Website für Handwerker in Calw' },
+    ],
   },
   {
     id: 'kundenkontakt',
@@ -44,6 +48,7 @@ export const serviceAreas = [
       'Kundeninformationen strukturiert erfassen und weitergeben',
     ],
     outcome: 'Aus Interesse wird schneller eine bearbeitbare Anfrage.',
+    relatedLinks: [{ href: '/digitale-kundenprozesse-calw', label: 'Digitale Kundenprozesse in Calw' }],
   },
   {
     id: 'kundenbindung',
@@ -95,6 +100,7 @@ export const serviceAreas = [
       'Interne KI-Hilfen für klar abgegrenzte Aufgaben',
     ],
     outcome: 'Wiederkehrende Schritte werden verlässlicher, ohne Verantwortung blind an Technik abzugeben.',
+    relatedLinks: [{ href: '/ki-automatisierung-calw', label: 'KI und Automatisierung in Calw' }],
   },
   {
     id: 'einzelaufgaben',
