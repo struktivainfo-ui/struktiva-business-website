@@ -105,3 +105,14 @@ test('new and modified SEO content contains no unresolved internal route links',
     }
   }
 })
+
+test('Vercel packaging excludes local work products and private project material', async () => {
+  const ignore = await read('.vercelignore')
+  for (const entry of [
+    '.playwright-cli', '.playwright-mcp', '.social-browser-profile', '.tmp-brave-maps',
+    'docs', 'output', 'tools', 'public/marketing', '.env', '.env.*',
+    'AVATAR-SVEN.md', 'AVATAR-USER.md', 'heygen-video-log.jsonl',
+  ]) {
+    assert.match(ignore, new RegExp(`^${entry.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'm'), `missing ${entry}`)
+  }
+})
