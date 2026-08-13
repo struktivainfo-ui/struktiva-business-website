@@ -20,7 +20,7 @@ function createRouteHtml(pathname) {
   const canonical = `https://struktiva.de${meta.canonicalPath}`
   const ogTitle = meta.ogTitle || meta.title
   const ogDescription = meta.ogDescription || meta.description
-  const socialImage = `https://struktiva.de${meta.socialImage || '/struktiva-logo.jpeg'}`
+  const socialImage = `https://struktiva.de${meta.socialImage || '/struktiva-social-preview.jpg'}`
   let html = sourceHtml
 
   html = replaceTag(html, /<title>[\s\S]*?<\/title>/i, `<title>${escapeAttribute(meta.title)}</title>`)

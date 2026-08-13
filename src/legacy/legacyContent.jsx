@@ -669,11 +669,11 @@ function useDocumentTitleSafe(pathname) {
     setMeta('property', 'og:title', activeTitle)
     setMeta('property', 'og:description', activeDescription)
     setMeta('property', 'og:url', canonicalHref)
-    setMeta('property', 'og:image', absoluteSiteUrl('/struktiva-logo.jpeg'))
+    setMeta('property', 'og:image', absoluteSiteUrl('/struktiva-social-preview.jpg'))
     setMeta('name', 'twitter:card', 'summary_large_image')
     setMeta('name', 'twitter:title', activeTitle)
     setMeta('name', 'twitter:description', activeDescription)
-    setMeta('name', 'twitter:image', absoluteSiteUrl('/struktiva-logo.jpeg'))
+    setMeta('name', 'twitter:image', absoluteSiteUrl('/struktiva-social-preview.jpg'))
     setMeta('name', 'robots', routeMeta.noindex ? 'noindex, nofollow' : 'index, follow')
   }, [pathname])
 }

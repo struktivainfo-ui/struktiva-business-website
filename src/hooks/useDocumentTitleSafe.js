@@ -27,7 +27,7 @@ export function useDocumentTitleSafe(pathname) {
     const canonicalHref = absoluteSiteUrl(routeMeta.canonicalPath || pathname)
     const ogTitle = routeMeta.ogTitle || routeMeta.title
     const ogDescription = routeMeta.ogDescription || routeMeta.description
-    const socialImage = absoluteSiteUrl(routeMeta.socialImage || '/struktiva-logo.jpeg')
+    const socialImage = absoluteSiteUrl(routeMeta.socialImage || '/struktiva-social-preview.jpg')
 
     document.title = routeMeta.title
     setMeta('name', 'description', routeMeta.description)
