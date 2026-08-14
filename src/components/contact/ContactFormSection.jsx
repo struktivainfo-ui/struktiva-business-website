@@ -7,7 +7,7 @@ export default function ContactFormSection() {
         <p className="struktiva-contact-eyebrow">Ihre Anfrage</p>
         <h2 id="struktiva-contact-form-title">Worum geht es in Ihrem Unternehmen?</h2>
         <p>
-          Ein kurzer Ueberblick reicht fuer den Einstieg. Fehlende technische Details koennen spaeter gemeinsam geklaert
+          Ein kurzer Überblick reicht für den Einstieg. Fehlende technische Details können später gemeinsam geklärt
           werden.
         </p>
       </div>

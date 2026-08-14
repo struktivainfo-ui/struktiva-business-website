@@ -4,8 +4,8 @@ export default function ContactPrivacyNote() {
       <div>
         <h2 id="struktiva-contact-privacy-title">Ihre Angaben dienen der Bearbeitung Ihrer Anfrage.</h2>
         <p>
-          Die uebermittelten Informationen werden zur Bearbeitung und Beantwortung der Anfrage verwendet. Weitere
-          Informationen finden Sie in der <a href="/datenschutz">Datenschutzerklaerung</a>.
+          Die übermittelten Informationen werden zur Bearbeitung und Beantwortung der Anfrage verwendet. Weitere
+          Informationen finden Sie in der <a href="/datenschutz">Datenschutzerklärung</a>.
         </p>
       </div>
     </section>
