@@ -2,11 +2,8 @@ import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import test from 'node:test'
 import {
-  DIGITAL_CHECK_CONFIRMED_TAX_NOTE,
-  createDigitalCheckOffer,
   digitalCheckCreditText,
   digitalCheckFormNoticeText,
-  digitalCheckIntroductoryOfferText,
   digitalCheckOrderDefinitionText,
   digitalCheckPriceLabel,
   personalDigitalCheckOffer,
@@ -31,55 +28,24 @@ test('sitemap contains the offer but never the success page', async () => {
   assert.doesNotMatch(sitemap, /digital-check\/danke/)
 })
 
-test('the current offer uses the confirmed regular 129 EUR gross-price configuration', () => {
-  assert.equal(personalDigitalCheckOffer.regularPrice, 129)
-  assert.equal(personalDigitalCheckOffer.introductoryPrice, 79)
-  assert.equal(personalDigitalCheckOffer.introductoryOfferEnabled, false)
-  assert.equal(personalDigitalCheckOffer.introductoryCustomerLimit, 10)
-  assert.equal(personalDigitalCheckOffer.price, 129)
-  assert.equal(personalDigitalCheckOffer.grossPrice, 129)
+test('the current offer is free and does not create a charge', () => {
+  assert.equal(personalDigitalCheckOffer.isFree, true)
+  assert.equal(personalDigitalCheckOffer.price, 0)
+  assert.equal(personalDigitalCheckOffer.grossPrice, 0)
   assert.equal(personalDigitalCheckOffer.currency, 'EUR')
-  assert.equal(personalDigitalCheckOffer.priceForm, 'einmalig')
-  assert.equal(personalDigitalCheckOffer.taxRate, 19)
-  assert.equal(personalDigitalCheckOffer.vatRatePercent, 19)
-  assert.equal(personalDigitalCheckOffer.taxNote, 'inkl. 19 % MwSt.')
-  assert.equal(personalDigitalCheckOffer.taxStatus, 'confirmed_gross')
-  assert.equal(digitalCheckPriceLabel, '129 € einmalig inkl. 19 % MwSt.')
-  assert.equal(digitalCheckIntroductoryOfferText, '')
-  assert.doesNotMatch(digitalCheckOrderDefinitionText, /Einführungsplatz/)
-  assert.match(digitalCheckFormNoticeText, /zunächst eine unverbindliche Anfrage/)
-  assert.match(digitalCheckCreditText, /tatsächlich gezahlte Betrag wird vollständig angerechnet/)
-  assert.doesNotMatch(digitalCheckFaqs[0].answer, /MwSt\.\./)
+  assert.equal(personalDigitalCheckOffer.priceForm, 'kostenlos')
+  assert.equal(personalDigitalCheckOffer.priceBaseLabel, 'Kostenlos')
+  assert.equal(personalDigitalCheckOffer.taxNote, '')
+  assert.equal(personalDigitalCheckOffer.taxStatus, 'not_applicable')
+  assert.equal(digitalCheckPriceLabel, 'Kostenlos')
+  assert.match(digitalCheckOrderDefinitionText, /kostenlose Digital-Check/)
+  assert.match(digitalCheckFormNoticeText, /unverbindliche Anfrage/)
+  assert.match(digitalCheckFormNoticeText, /kein kostenpflichtiger Auftrag/)
+  assert.match(digitalCheckCreditText, /kostenlos und wird nicht/)
+  assert.match(digitalCheckFaqs[0].answer, /kostenlos/)
 })
 
-test('the retired introductory offer can only be restored explicitly', () => {
-  const regularOffer = createDigitalCheckOffer()
-  assert.equal(regularOffer.price, 129)
-  assert.equal(regularOffer.grossPrice, 129)
-  assert.equal(regularOffer.priceBaseLabel, '129 € einmalig')
-  assert.equal(regularOffer.currency, 'EUR')
-
-  const introductoryOffer = createDigitalCheckOffer({ introductoryOfferEnabled: true })
-  assert.equal(introductoryOffer.price, 79)
-})
-
-test('the confirmed tax note survives an empty or contradictory optional environment value', async () => {
-  const previousValue = process.env.VITE_DIGITAL_CHECK_TAX_NOTE
-  try {
-    process.env.VITE_DIGITAL_CHECK_TAX_NOTE = ''
-    const emptyEnvironmentModule = await import(`../src/config/digitalCheckOffer.js?empty=${Date.now()}`)
-    assert.equal(emptyEnvironmentModule.personalDigitalCheckOffer.taxNote, DIGITAL_CHECK_CONFIRMED_TAX_NOTE)
-
-    process.env.VITE_DIGITAL_CHECK_TAX_NOTE = '129 € netto'
-    const contradictoryEnvironmentModule = await import(`../src/config/digitalCheckOffer.js?invalid=${Date.now()}`)
-    assert.equal(contradictoryEnvironmentModule.personalDigitalCheckOffer.taxNote, DIGITAL_CHECK_CONFIRMED_TAX_NOTE)
-  } finally {
-    if (previousValue === undefined) delete process.env.VITE_DIGITAL_CHECK_TAX_NOTE
-    else process.env.VITE_DIGITAL_CHECK_TAX_NOTE = previousValue
-  }
-})
-
-test('visible Digital-Check price locations use the confirmed tax note without net-price contradictions', async () => {
+test('visible Digital-Check locations consistently communicate that it is free', async () => {
   const files = await Promise.all([
     read('src/components/digital-check/DigitalCheckHero.jsx'),
     read('src/components/digital-check/DigitalCheckOfferSummary.jsx'),
@@ -90,21 +56,19 @@ test('visible Digital-Check price locations use the confirmed tax note without n
     read('README.md'),
   ])
   const activeDigitalCheckSource = files.join('\n')
-  assert.match(activeDigitalCheckSource, /priceBaseLabel/)
-  assert.match(activeDigitalCheckSource, /taxNote/)
-  assert.match(activeDigitalCheckSource, /inkl\. 19 % MwSt\./)
-  assert.doesNotMatch(activeDigitalCheckSource, /zzgl\.\s*MwSt|zuzüglich Mehrwertsteuer|Kleinunternehmer|§\s*19\s*UStG/i)
+  assert.match(activeDigitalCheckSource, /Kostenlos/)
+  assert.doesNotMatch(activeDigitalCheckSource, /79\s*€|129\s*€|MwSt|Mehrwertsteuer|zzgl\.|Kleinunternehmer|§\s*19\s*UStG/i)
 })
 
-test('Service structured data and visible offer use the same 129 EUR regular gross price', () => {
+test('Service structured data and visible offer use the same free price', () => {
   const routeMeta = getRouteMeta('/digital-check')
   const structuredData = routeMeta.structuredData
-  assert.match(routeMeta.description, /129 € einmalig inkl\. 19 % MwSt\.$/)
-  assert.doesNotMatch(`${routeMeta.description}${routeMeta.ogDescription}`, /MwSt\.\./)
+  assert.match(routeMeta.description, /kostenlos prüfen lassen/)
+  assert.match(routeMeta.ogDescription, /kostenlos\.$/)
   assert.equal(structuredData.url, 'https://struktiva.de/digital-check')
   assert.equal(structuredData.provider.name, 'STRUKTIVA Digitale Unternehmensberatung')
   assert.equal(structuredData.offers.price, personalDigitalCheckOffer.grossPrice)
-  assert.equal(structuredData.offers.price, 129)
+  assert.equal(structuredData.offers.price, 0)
   assert.equal(structuredData.offers.priceCurrency, 'EUR')
   assert.equal(structuredData.offers.url, 'https://struktiva.de/digital-check')
   assert.equal(structuredData.offers.priceValidUntil, undefined)
@@ -116,21 +80,22 @@ test('success page stays noindex and contains no price promotion', async () => {
   const successMeta = getRouteMeta('/digital-check/danke')
   assert.equal(successMeta.noindex, true)
   assert.equal(successMeta.structuredData, undefined)
+  assert.match(successPage, /Digital-Check ist kostenlos/)
   assert.doesNotMatch(successPage, /(?:79|129)\s*€|MwSt|Mehrwertsteuer|price/i)
 })
 
-test('active source contains no old 49 EUR offer or measures-plan exclusion', async () => {
+test('active source contains no old paid offer or measures-plan exclusion', async () => {
   const [legacy, data, page] = await Promise.all([
     read('src/legacy/legacyContent.jsx'),
     read('src/components/digital-check/digitalCheckData.js'),
     read('src/pages/DigitalCheckPage.jsx'),
   ])
   const activeSource = `${legacy}\n${data}\n${page}`
-  assert.doesNotMatch(activeSource, /Digitaler Kurzcheck\s+49|garantierter Maßnahmenplan|kein Maßnahmenplan/i)
+  assert.doesNotMatch(activeSource, /Digitaler Kurzcheck\s+49|79\s*€|129\s*€|garantierter Maßnahmenplan|kein Maßnahmenplan/i)
   assert.match(data, /priorisierten Maßnahmenplan/)
 })
 
-test('active offer copy distinguishes requests from confirmed orders without active introductory scarcity', async () => {
+test('active offer copy makes the free and non-binding nature explicit', async () => {
   const files = await Promise.all([
     read('src/config/digitalCheckOffer.js'),
     read('src/components/digital-check/DigitalCheckHero.jsx'),
@@ -140,13 +105,11 @@ test('active offer copy distinguishes requests from confirmed orders without act
     read('api/leads.js'),
   ])
   const source = files.join('\n')
-  assert.match(source, /ersten \$\{personalDigitalCheckOffer\.introductoryCustomerLimit\} verbindlich beauftragten Digital-Checks/)
-  assert.match(source, /ausdrücklichen? Bestätigung (?:durch|von) STRUKTIVA/)
-  assert.match(source, /Ein verbindlicher Auftrag entsteht erst durch die ausdrückliche Bestätigung von STRUKTIVA/)
-  assert.equal(digitalCheckIntroductoryOfferText, '')
+  assert.match(source, /Der Digital-Check ist kostenlos/)
+  assert.match(source, /kein kostenpflichtiger Auftrag/)
   assert.doesNotMatch(source, /(?:noch|nur)\s+\d+\s+(?:Plätze|verfügbar)|Countdown/i)
-  assert.doesNotMatch(source, /Digitaler Kurzcheck\s+49|49\s*€/i)
-  assert.doesNotMatch(source, /netto|Kleinunternehmer/i)
+  assert.doesNotMatch(source, /Einführungs(?:preis|platz)|Digitaler Kurzcheck\s+49|49\s*€|79\s*€|129\s*€/i)
+  assert.doesNotMatch(source, /netto|Kleinunternehmer|MwSt/i)
 })
 
 test('dedicated form uses companyWebsite and contactTrap with required campaign fields', async () => {

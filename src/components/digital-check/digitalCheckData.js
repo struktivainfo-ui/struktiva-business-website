@@ -1,7 +1,6 @@
 import {
   digitalCheckCreditText,
   digitalCheckIndependenceText,
-  digitalCheckIntroductoryOfferText,
   digitalCheckOrderDefinitionText,
   digitalCheckPriceLabel,
   personalDigitalCheckOffer,
@@ -47,8 +46,8 @@ export const digitalCheckProcess = [
     text: 'Sie nennen uns Ihren Betrieb, Ihre Website und die wichtigste digitale Frage.',
   },
   {
-    title: 'Rahmen bestätigen',
-    text: 'Wir klären kurz, ob der Digital-Check passt, und bestätigen Leistung, Preis und benötigte Informationen. Erst mit unserer gesonderten Bestätigung entsteht ein kostenpflichtiger Auftrag.',
+    title: 'Rahmen klären',
+    text: 'Wir klären kurz, ob der kostenlose Digital-Check passt und welche Informationen wir für die persönliche Prüfung benötigen.',
   },
   {
     title: 'Persönlich prüfen',
@@ -77,7 +76,7 @@ export const digitalCheckDoesNotFit = [
 export const digitalCheckFaqs = [
   {
     question: 'Was kostet der Digital-Check?',
-    answer: `Der Digital-Check kostet aktuell ${digitalCheckPriceLabel} ${digitalCheckIntroductoryOfferText} Vor dem kostenpflichtigen Start bestätigen wir den vereinbarten Rahmen gesondert.`,
+    answer: `Der Digital-Check ist ${digitalCheckPriceLabel.toLowerCase()}. Es entsteht kein kostenpflichtiger Auftrag.`,
   },
   {
     question: 'Ist das Absenden des Formulars bereits eine Bestellung?',
@@ -100,11 +99,11 @@ export const digitalCheckFaqs = [
     answer: `Nein. ${digitalCheckIndependenceText}`,
   },
   {
-    question: 'Wie funktioniert die Anrechnung?',
-    answer: `${digitalCheckCreditText} Der Mindestauftragswert gilt vor Anrechnung und nur für STRUKTIVA-Leistungen; Fremd- und Drittkosten zählen nicht mit.`,
+    question: 'Ist der Digital-Check wirklich kostenlos?',
+    answer: digitalCheckCreditText,
   },
   {
-    question: 'Ist die Umsetzung im Preis enthalten?',
+    question: 'Ist die Umsetzung im kostenlosen Digital-Check enthalten?',
     answer: 'Nein. Gestaltung, Texte, Programmierung, Kampagnen oder laufende Betreuung sind nicht Bestandteil des Digital-Checks. Falls Sie Unterstützung wünschen, erhalten Sie dafür ein separates Angebot.',
   },
   {
@@ -113,7 +112,7 @@ export const digitalCheckFaqs = [
   },
   {
     question: 'Brauche ich bereits eine Website?',
-    answer: 'Eine vorhandene Website ist der Regelfall. Wenn noch keine Website existiert, schildern Sie kurz Ihre Ausgangslage. Wir sagen Ihnen vor einer Beauftragung, ob der Digital-Check sinnvoll ist.',
+    answer: 'Eine vorhandene Website ist der Regelfall. Wenn noch keine Website existiert, schildern Sie kurz Ihre Ausgangslage. Wir sagen Ihnen vorab, ob der Digital-Check sinnvoll ist.',
   },
 ]
 

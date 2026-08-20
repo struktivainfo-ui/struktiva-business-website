@@ -28,11 +28,11 @@ Der Build erzeugt zusätzlich statische HTML-Einstiege für `/digital-check` und
 
 ## Digital-Check-Angebot
 
-Die zentrale Angebotsquelle ist `src/config/digitalCheckOffer.js`. Preis, Steuerhinweis, CTA, Bearbeitungszeit, Anrechnungszeitraum, Mindestauftragswert und Leistungsabgrenzung dürfen nicht als unabhängige Preisstrings an mehreren Stellen gepflegt werden.
+Die zentrale Angebotsquelle ist `src/config/digitalCheckOffer.js`. Kostenlos-Hinweis, CTA, Bearbeitungszeit und Leistungsabgrenzung dürfen nicht als unabhängige Angebotsstrings an mehreren Stellen gepflegt werden.
 
-Der veröffentlichte Gesamtpreis beträgt `129 € einmalig inkl. 19 % MwSt.`. Die frühere Einführungsaktion ist deaktiviert. Eine Formularanfrage ist noch kein Auftrag; ein kostenpflichtiger Auftrag entsteht erst durch die ausdrückliche Bestätigung von STRUKTIVA. `VITE_DIGITAL_CHECK_TAX_NOTE` ist optional und akzeptiert ausschließlich die bestätigte Formulierung `inkl. 19 % MwSt.`.
+Der Digital-Check ist kostenlos. Eine Formularanfrage ist unverbindlich und löst keinen kostenpflichtigen Auftrag aus.
 
-Der für den Digital-Check tatsächlich gezahlte Betrag wird vollständig angerechnet, wenn innerhalb von 30 Tagen nach der Ergebnisbesprechung ein STRUKTIVA-Umsetzungsauftrag mit einem Mindestauftragswert von 500 € vereinbart wird. Fremd- und Drittkosten zählen nicht zum Mindestauftragswert; technische Umsetzung ist nicht im Checkpreis enthalten. Es besteht keine Verpflichtung zu einem Folgeauftrag.
+Technische Umsetzung ist nicht Bestandteil des kostenlosen Digital-Checks. Es besteht keine Verpflichtung zu einem Folgeauftrag.
 
 ## Lead-System
 
@@ -74,8 +74,8 @@ Ohne einen gültigen Wert wird kein `send_to` erfunden. Das consent-konforme GA4
 
 ## Vor Veröffentlichung
 
-- Preis-/Anrechnungsformulierung, Formularhinweis und Datenschutz rechtlich prüfen.
-- Aktuellen Gesamtpreis und Anrechnungsbedingungen in der Auftragsbestätigung konsistent aus der zentralen Angebotskonfiguration übernehmen.
+- Kostenlos-Hinweis, Formularhinweis und Datenschutz rechtlich prüfen.
+- Kostenlosen Digital-Check und unverbindlichen Anfragehinweis in der Bestätigungs-E-Mail konsistent aus der zentralen Angebotskonfiguration übernehmen.
 - Resend-Absender und interne Empfängeradresse verifizieren.
 - optionales Webhook-Ziel datenschutzrechtlich dokumentieren.
 - echtes Google-Ads-Conversion-Ziel eintragen und Consent-Kombinationen testen.

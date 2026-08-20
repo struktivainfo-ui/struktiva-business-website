@@ -1,7 +1,6 @@
 import { Resend } from 'resend'
 import {
   digitalCheckFormNoticeText,
-  digitalCheckIntroductoryOfferText,
   digitalCheckPriceLabel,
   digitalCheckOrderDefinitionText,
   personalDigitalCheckOffer,
@@ -233,9 +232,9 @@ export function buildInternalMailHtml(lead) {
   const detailRows = lead.leadType === 'digital_check'
     ? [
         ['Angebot', lead.offerName],
-        ['Gesamtpreis', digitalCheckPriceLabel],
-        ['Preisregel', digitalCheckIntroductoryOfferText || 'Regulärer Preis'],
-        ['Auftragsstatus', digitalCheckOrderDefinitionText],
+        ['Digital-Check', digitalCheckPriceLabel],
+        ['Hinweis', 'Kostenlos, kein kostenpflichtiger Auftrag'],
+        ['Anfragestatus', digitalCheckOrderDefinitionText],
         ['Branche', lead.industry],
         ['Website', lead.companyWebsite],
         ['Quelle / Medium', `${lead.source} / ${lead.medium}`],
@@ -268,8 +267,7 @@ export function buildConfirmationMailHtml(lead) {
     return `<div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
       <p>Hallo ${escapeHtml(lead.name)},</p>
       <p>vielen Dank für Ihre Anfrage zum STRUKTIVA Digital-Check für lokale Betriebe.</p>
-      <p>Der Gesamtpreis für den Digital-Check beträgt ${escapeHtml(digitalCheckPriceLabel)} Es wird keine weitere Umsatzsteuer auf diesen Betrag aufgeschlagen.</p>
-      ${digitalCheckIntroductoryOfferText ? `<p>${escapeHtml(digitalCheckIntroductoryOfferText)}</p>` : ''}
+      <p>Der Digital-Check ist ${escapeHtml(digitalCheckPriceLabel.toLowerCase())}. Es entsteht kein kostenpflichtiger Auftrag.</p>
       <p>Ihre Anfrage ist eingegangen und wird persönlich geprüft. Wir melden uns in der Regel innerhalb eines Werktags, um den passenden Rahmen und gegebenenfalls noch benötigte Informationen zu klären.</p>
       <p>${escapeHtml(digitalCheckFormNoticeText)}</p>
       <p>Viele Grüße<br />Sven Matzke<br />STRUKTIVA Digitale Unternehmensberatung</p>

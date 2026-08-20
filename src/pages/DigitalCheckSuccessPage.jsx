@@ -28,7 +28,7 @@ export default function DigitalCheckSuccessPage() {
             <p className="dc-eyebrow">Anfrage eingegangen</p>
             <h1>Vielen Dank – Ihre Anfrage zum Digital-Check ist angekommen.</h1>
             <p>Wir sehen uns Ihre Angaben persönlich an und melden uns in der Regel innerhalb eines Werktags. Dabei klären wir, ob der Digital-Check zu Ihrer Ausgangslage passt und welche Informationen wir noch benötigen.</p>
-            <p className="dc-success__note">Ihre Anfrage ist noch keine kostenpflichtige Bestellung. Ein Auftrag entsteht erst nach unserer gesonderten Bestätigung.</p>
+            <p className="dc-success__note">Ihre Anfrage ist unverbindlich. Der Digital-Check ist kostenlos und wird persönlich geprüft.</p>
             <a className="campaign-button" href="/">Zur STRUKTIVA-Startseite</a>
           </>
         ) : (

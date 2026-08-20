@@ -1,9 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import {
-  digitalCheckIntroductoryOfferText,
-  personalDigitalCheckOffer,
-} from '../../config/digitalCheckOffer.js'
+import { personalDigitalCheckOffer } from '../../config/digitalCheckOffer.js'
 
 export default function HomeDigitalCheckSection() {
   const reducedMotion = useReducedMotion()
@@ -24,9 +21,8 @@ export default function HomeDigitalCheckSection() {
           </div>
           <div className="struktiva-home-digital-check__price">
             <strong>{personalDigitalCheckOffer.priceBaseLabel}</strong>
-            <span>{personalDigitalCheckOffer.taxNote}</span>
+            {personalDigitalCheckOffer.taxNote ? <span>{personalDigitalCheckOffer.taxNote}</span> : null}
           </div>
-          {digitalCheckIntroductoryOfferText ? <p>{digitalCheckIntroductoryOfferText}</p> : null}
           <a className="struktiva-digital-check-cta__primary" href="/digital-check">
             <span>Digital-Check für lokale Betriebe ansehen</span>
             <ArrowRight aria-hidden="true" />

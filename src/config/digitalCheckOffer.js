@@ -1,44 +1,19 @@
-const viteEnvironment = import.meta.env || {}
-const processEnvironment = globalThis.process?.env || {}
-const configuredTaxNote = String(
-  viteEnvironment.VITE_DIGITAL_CHECK_TAX_NOTE || processEnvironment.VITE_DIGITAL_CHECK_TAX_NOTE || '',
-).trim()
-
-export const DIGITAL_CHECK_CONFIRMED_TAX_NOTE = 'inkl. 19 % MwSt.'
-const approvedTaxNote = configuredTaxNote === DIGITAL_CHECK_CONFIRMED_TAX_NOTE
-  ? configuredTaxNote
-  : DIGITAL_CHECK_CONFIRMED_TAX_NOTE
-
-export function createDigitalCheckOffer({ introductoryOfferEnabled = false } = {}) {
-  const regularPrice = 129
-  const introductoryPrice = 79
-  const introductoryCustomerLimit = 10
-  const taxRate = 19
-  const price = introductoryOfferEnabled ? introductoryPrice : regularPrice
-
+export function createDigitalCheckOffer() {
   return Object.freeze({
     id: 'personalDigitalCheck',
     leadType: 'digital_check',
     name: 'STRUKTIVA Digital-Check für lokale Betriebe',
-    regularPrice,
-    introductoryPrice,
-    introductoryOfferEnabled,
-    introductoryCustomerLimit,
-    taxRate,
-    price,
-    grossPrice: price,
+    isFree: true,
+    price: 0,
+    grossPrice: 0,
     currency: 'EUR',
-    priceForm: 'einmalig',
-    vatRatePercent: taxRate,
-    priceBaseLabel: `${price} € einmalig`,
-    regularPriceBaseLabel: `${regularPrice} € einmalig`,
-    taxNote: approvedTaxNote,
-    taxStatus: 'confirmed_gross',
-    creditPeriodDays: 30,
-    minimumImplementationOrder: 500,
+    priceForm: 'kostenlos',
+    priceBaseLabel: 'Kostenlos',
+    taxNote: '',
+    taxStatus: 'not_applicable',
     deliveryBusinessDays: 5,
     resultCallMinutes: 30,
-    primaryCtaText: 'Digital-Check anfragen',
+    primaryCtaText: 'Kostenlosen Digital-Check anfragen',
     primaryFormTarget: '/digital-check#digital-check-anfrage',
     scope:
       'Ein primärer Webauftritt mit mobiler Darstellung, ein Google-Unternehmensprofil (sofern vorhanden), die wichtigsten Kontaktwege sowie die Bewertungs- und Vertrauensdarstellung.',
@@ -47,30 +22,18 @@ export function createDigitalCheckOffer({ introductoryOfferEnabled = false } = {
   })
 }
 
-export const personalDigitalCheckOffer = createDigitalCheckOffer({
-  introductoryOfferEnabled: false,
-})
+export const personalDigitalCheckOffer = createDigitalCheckOffer()
 
-export const digitalCheckPriceLabel = [
-  personalDigitalCheckOffer.priceBaseLabel,
-  personalDigitalCheckOffer.taxNote,
-]
-  .filter(Boolean)
-  .join(' ')
+export const digitalCheckPriceLabel = personalDigitalCheckOffer.priceBaseLabel
 
-export const digitalCheckIntroductoryOfferText = personalDigitalCheckOffer.introductoryOfferEnabled
-  ? `Einführungspreis für die ersten ${personalDigitalCheckOffer.introductoryCustomerLimit} verbindlich beauftragten Digital-Checks. Danach ${personalDigitalCheckOffer.regularPriceBaseLabel} ${personalDigitalCheckOffer.taxNote}`
-  : ''
+export const digitalCheckOrderDefinitionText =
+  'Eine Formularanfrage ist keine verbindliche Terminvereinbarung. Wir prüfen sie persönlich und melden uns, ob der kostenlose Digital-Check zu Ihrer Situation passt.'
 
-export const digitalCheckOrderDefinitionText = personalDigitalCheckOffer.introductoryOfferEnabled
-  ? 'Eine Formularanfrage ist noch kein Auftrag und reserviert oder reduziert keinen Einführungsplatz. Ein verbindlicher Auftrag entsteht erst durch die ausdrückliche Bestätigung von STRUKTIVA.'
-  : 'Eine Formularanfrage ist noch kein Auftrag. Ein verbindlicher Auftrag entsteht erst durch die ausdrückliche Bestätigung von STRUKTIVA.'
+export const digitalCheckFormNoticeText =
+  'Mit dem Absenden dieses Formulars stellen Sie eine unverbindliche Anfrage. Der Digital-Check ist kostenlos; es entsteht dadurch kein kostenpflichtiger Auftrag.'
 
-export const digitalCheckFormNoticeText = personalDigitalCheckOffer.introductoryOfferEnabled
-  ? 'Mit dem Absenden dieses Formulars stellen Sie zunächst eine unverbindliche Anfrage. Ein kostenpflichtiger Auftrag und die Berücksichtigung für den Einführungspreis entstehen erst nach einer ausdrücklichen Bestätigung durch STRUKTIVA.'
-  : 'Mit dem Absenden dieses Formulars stellen Sie zunächst eine unverbindliche Anfrage. Ein kostenpflichtiger Auftrag entsteht erst nach einer ausdrücklichen Bestätigung durch STRUKTIVA.'
-
-export const digitalCheckCreditText = `Der für den Digital-Check tatsächlich gezahlte Betrag wird vollständig angerechnet, wenn innerhalb von ${personalDigitalCheckOffer.creditPeriodDays} Tagen nach der Ergebnisbesprechung ein STRUKTIVA-Umsetzungsauftrag mit einem Mindestauftragswert von ${personalDigitalCheckOffer.minimumImplementationOrder} € vereinbart wird.`
+export const digitalCheckCreditText =
+  'Der Digital-Check ist kostenlos und wird nicht mit einem späteren Auftrag verrechnet.'
 
 export const digitalCheckIndependenceText =
   'Der Digital-Check ist eine eigenständige Leistung. Es besteht keine Verpflichtung zu einem Folgeauftrag. Sie erhalten den priorisierten Maßnahmenplan unabhängig davon vollständig.'
