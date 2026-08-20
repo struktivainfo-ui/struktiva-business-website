@@ -4,6 +4,7 @@ import HomeSolutionsSection from '../components/home/HomeSolutionsSection.jsx'
 import HomeCaseStudySection from '../components/home/HomeCaseStudySection.jsx'
 import HomeTrustSection from '../components/home/HomeTrustSection.jsx'
 import HomeDigitalCheckSection from '../components/home/HomeDigitalCheckSection.jsx'
+import HomeNewsletterSection from '../components/home/HomeNewsletterSection.jsx'
 import { HomeLegacyContinuation } from '../legacy/legacyContent.jsx'
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <HomeCaseStudySection />
       <HomeTrustSection />
       <HomeDigitalCheckSection />
+      <HomeNewsletterSection />
       <HomeLegacyContinuation
         skipServiceTicker
         skipProblemSection

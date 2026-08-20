@@ -6663,7 +6663,13 @@ function DatenschutzPage() {
         <p>Für den Versand von Bestätigungs- und Benachrichtigungs-E-Mails nutzen<br />wir den Dienst Resend der Resend Inc., 2261 Market Street #4008,<br />San Francisco, CA 94114, USA. Resend ist als Auftragsverarbeiter gemäß<br />Art. 28 DSGVO vertraglich gebunden. Weitere Informationen:<br /><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#D8B45A]">https://resend.com/legal/privacy-policy</a></p>
       </LegalSection>
 
-      <LegalSection title="4a. Optionaler interner Webhook und Kampagnenattribution">
+      <LegalSection title="4a. Newsletter über MailerLite">
+        <p>Wenn Sie sich für unseren Newsletter anmelden, verarbeiten wir Ihre E-Mail-Adresse, den Anmelde- und Bestätigungszeitpunkt sowie den Status Ihrer Einwilligung. Die Anmeldung erfolgt im Double-Opt-in-Verfahren: Erst nach Bestätigung Ihrer E-Mail-Adresse wird die Anmeldung abgeschlossen.</p>
+        <p>Der Newsletter wird nur aufgrund Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO versendet. Sie können Ihre Einwilligung jederzeit über den Abmeldelink in jeder Newsletter-E-Mail widerrufen.</p>
+        <p>Für die Verwaltung von Anmeldungen und den Newsletter-Versand nutzen wir MailerLite Limited, 88 Harcourt Street, Dublin 2, D02 DK18, Irland, als Auftragsverarbeiter. Weitere Informationen: <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#D8B45A]">Datenschutzhinweise von MailerLite</a>.</p>
+      </LegalSection>
+
+      <LegalSection title="4b. Optionaler interner Webhook und Kampagnenattribution">
         <p>Sofern ein interner Webhook aktiviert ist, können die Formulardaten zur strukturierten Bearbeitung an das dafür konfigurierte System übermittelt werden. Betreiber, Verarbeitungsort und Auftragsverarbeitung sind vor Aktivierung gesondert zu prüfen und zu dokumentieren.</p>
         <p>First-Touch-Kampagnendaten bleiben zunächst nur im Arbeitsspeicher der geöffneten Seite. Eine Speicherung im Session Storage für höchstens 30 Minuten erfolgt nur bei erteilter Marketing-Einwilligung. Dabei werden keine Namen, E-Mail-Adressen oder Nachrichten gespeichert.</p>
       </LegalSection>
