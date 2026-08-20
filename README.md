@@ -28,9 +28,9 @@ Der Build erzeugt zusätzlich statische HTML-Einstiege für `/digital-check` und
 
 ## Digital-Check-Angebot
 
-Die zentrale Angebotsquelle ist `src/config/digitalCheckOffer.js`. Einführungs- und regulärer Preis, Aktionsschalter, Kundenlimit, Steuerhinweis, CTA, Bearbeitungszeit, Anrechnungszeitraum, Mindestauftragswert und Leistungsabgrenzung dürfen nicht als unabhängige Preisstrings an mehreren Stellen gepflegt werden.
+Die zentrale Angebotsquelle ist `src/config/digitalCheckOffer.js`. Preis, Steuerhinweis, CTA, Bearbeitungszeit, Anrechnungszeitraum, Mindestauftragswert und Leistungsabgrenzung dürfen nicht als unabhängige Preisstrings an mehreren Stellen gepflegt werden.
 
-Während `introductoryOfferEnabled: true` gilt `79 € einmalig inkl. 19 % MwSt.` für die ersten zehn von STRUKTIVA verbindlich bestätigten Digital-Check-Aufträge. Danach beziehungsweise bei `introductoryOfferEnabled: false` gilt der reguläre Gesamtpreis `129 € einmalig inkl. 19 % MwSt.`. Eine Formularanfrage ist noch kein Auftrag und reserviert oder reduziert keinen Einführungsplatz. `VITE_DIGITAL_CHECK_TAX_NOTE` ist optional und akzeptiert ausschließlich die bestätigte Formulierung `inkl. 19 % MwSt.`.
+Der veröffentlichte Gesamtpreis beträgt `129 € einmalig inkl. 19 % MwSt.`. Die frühere Einführungsaktion ist deaktiviert. Eine Formularanfrage ist noch kein Auftrag; ein kostenpflichtiger Auftrag entsteht erst durch die ausdrückliche Bestätigung von STRUKTIVA. `VITE_DIGITAL_CHECK_TAX_NOTE` ist optional und akzeptiert ausschließlich die bestätigte Formulierung `inkl. 19 % MwSt.`.
 
 Der für den Digital-Check tatsächlich gezahlte Betrag wird vollständig angerechnet, wenn innerhalb von 30 Tagen nach der Ergebnisbesprechung ein STRUKTIVA-Umsetzungsauftrag mit einem Mindestauftragswert von 500 € vereinbart wird. Fremd- und Drittkosten zählen nicht zum Mindestauftragswert; technische Umsetzung ist nicht im Checkpreis enthalten. Es besteht keine Verpflichtung zu einem Folgeauftrag.
 

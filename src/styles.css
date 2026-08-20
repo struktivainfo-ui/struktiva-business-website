@@ -12531,9 +12531,9 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
 .struktiva-contact-hero__content h1 {
   margin: 1rem 0 0;
-  max-width: 840px;
-  font-size: clamp(2.7rem, 6vw, 5.7rem);
-  line-height: 0.98;
+  max-width: 760px;
+  font-size: clamp(2.7rem, 5.2vw, 4.9rem);
+  line-height: 1.02;
   font-weight: 850;
   letter-spacing: 0;
 }
@@ -12664,6 +12664,7 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
 .struktiva-contact-visual__steps p {
   margin: 0;
+  color: #f8f6ef;
   font-weight: 800;
 }
 
@@ -13126,7 +13127,9 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   }
 
   .struktiva-contact-hero__content h1 {
-    font-size: clamp(2.28rem, 12vw, 3.4rem);
+    max-width: 17ch;
+    font-size: clamp(2.1rem, 8.8vw, 2.8rem);
+    line-height: 1.04;
   }
 
   .struktiva-contact-hero__actions,
@@ -15321,6 +15324,10 @@ body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-
   min-width: 0 !important;
   overflow-wrap: anywhere;
   hyphens: auto;
+}
+
+.struktiva-metallic main .struktiva-contact-visual__steps p {
+  color: #f8f6ef !important;
 }
 
 .struktiva-digital-check-process-line,

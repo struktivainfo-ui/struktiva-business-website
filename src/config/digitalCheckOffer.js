@@ -9,7 +9,7 @@ const approvedTaxNote = configuredTaxNote === DIGITAL_CHECK_CONFIRMED_TAX_NOTE
   ? configuredTaxNote
   : DIGITAL_CHECK_CONFIRMED_TAX_NOTE
 
-export function createDigitalCheckOffer({ introductoryOfferEnabled = true } = {}) {
+export function createDigitalCheckOffer({ introductoryOfferEnabled = false } = {}) {
   const regularPrice = 129
   const introductoryPrice = 79
   const introductoryCustomerLimit = 10
@@ -48,7 +48,7 @@ export function createDigitalCheckOffer({ introductoryOfferEnabled = true } = {}
 }
 
 export const personalDigitalCheckOffer = createDigitalCheckOffer({
-  introductoryOfferEnabled: true,
+  introductoryOfferEnabled: false,
 })
 
 export const digitalCheckPriceLabel = [
@@ -62,11 +62,13 @@ export const digitalCheckIntroductoryOfferText = personalDigitalCheckOffer.intro
   ? `Einführungspreis für die ersten ${personalDigitalCheckOffer.introductoryCustomerLimit} verbindlich beauftragten Digital-Checks. Danach ${personalDigitalCheckOffer.regularPriceBaseLabel} ${personalDigitalCheckOffer.taxNote}`
   : ''
 
-export const digitalCheckOrderDefinitionText =
-  'Eine Formularanfrage ist noch kein Auftrag und reserviert oder reduziert keinen Einführungsplatz. Ein verbindlicher Auftrag entsteht erst durch die ausdrückliche Bestätigung von STRUKTIVA.'
+export const digitalCheckOrderDefinitionText = personalDigitalCheckOffer.introductoryOfferEnabled
+  ? 'Eine Formularanfrage ist noch kein Auftrag und reserviert oder reduziert keinen Einführungsplatz. Ein verbindlicher Auftrag entsteht erst durch die ausdrückliche Bestätigung von STRUKTIVA.'
+  : 'Eine Formularanfrage ist noch kein Auftrag. Ein verbindlicher Auftrag entsteht erst durch die ausdrückliche Bestätigung von STRUKTIVA.'
 
-export const digitalCheckFormNoticeText =
-  'Mit dem Absenden dieses Formulars stellen Sie zunächst eine unverbindliche Anfrage. Ein kostenpflichtiger Auftrag und die Berücksichtigung für den Einführungspreis entstehen erst nach einer ausdrücklichen Bestätigung durch STRUKTIVA.'
+export const digitalCheckFormNoticeText = personalDigitalCheckOffer.introductoryOfferEnabled
+  ? 'Mit dem Absenden dieses Formulars stellen Sie zunächst eine unverbindliche Anfrage. Ein kostenpflichtiger Auftrag und die Berücksichtigung für den Einführungspreis entstehen erst nach einer ausdrücklichen Bestätigung durch STRUKTIVA.'
+  : 'Mit dem Absenden dieses Formulars stellen Sie zunächst eine unverbindliche Anfrage. Ein kostenpflichtiger Auftrag entsteht erst nach einer ausdrücklichen Bestätigung durch STRUKTIVA.'
 
 export const digitalCheckCreditText = `Der für den Digital-Check tatsächlich gezahlte Betrag wird vollständig angerechnet, wenn innerhalb von ${personalDigitalCheckOffer.creditPeriodDays} Tagen nach der Ergebnisbesprechung ein STRUKTIVA-Umsetzungsauftrag mit einem Mindestauftragswert von ${personalDigitalCheckOffer.minimumImplementationOrder} € vereinbart wird.`
 

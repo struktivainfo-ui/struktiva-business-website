@@ -1,8 +1,8 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
-const startingPoints = ['Unklare Website', 'verteilte Anfragen', 'manuelle Ablaeufe', 'Kundenbindung', 'bestehende Systeme']
-const pathSteps = ['Situation beschreiben', 'gemeinsam einordnen', 'naechsten Schritt entscheiden']
+const startingPoints = ['Unklare Website', 'verteilte Anfragen', 'manuelle Abläufe', 'Kundenbindung', 'bestehende Systeme']
+const pathSteps = ['Situation beschreiben', 'gemeinsam einordnen', 'nächsten Schritt entscheiden']
 
 export default function ContactHero() {
   const reducedMotion = useReducedMotion()
@@ -18,12 +18,12 @@ export default function ContactHero() {
         >
           <p className="struktiva-contact-eyebrow">Kontakt zu STRUKTIVA</p>
           <h1 id="struktiva-contact-hero-title">
-            Erzaehlen Sie uns, was heute nicht gut funktioniert. Die technische Loesung muss noch nicht feststehen.
+            Erzählen Sie uns, was heute nicht gut funktioniert.
           </h1>
           <div className="struktiva-contact-hero__lead">
-            <p>Sie koennen uns schreiben, anrufen oder den Digital-Check als strukturierten Einstieg nutzen.</p>
+            <p>Die technische Lösung muss noch nicht feststehen. Sie können uns schreiben, anrufen oder den Digital-Check als strukturierten Einstieg nutzen.</p>
             <p>
-              Beschreiben Sie einfach, wo heute unnoetige Arbeit, unklare Kontaktwege oder digitale Brueche entstehen.
+              Beschreiben Sie einfach, wo heute unnötige Arbeit, unklare Kontaktwege oder digitale Brüche entstehen.
             </p>
           </div>
           <div className="struktiva-contact-hero__actions" aria-label="Kontakt Einstiege">
@@ -42,7 +42,7 @@ export default function ContactHero() {
           initial={reducedMotion ? false : { opacity: 0, y: 20 }}
           animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.62, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          aria-label="Aus unterschiedlichen Ausgangspunkten entsteht ein gemeinsamer Gespraechseinstieg"
+          aria-label="Aus unterschiedlichen Ausgangspunkten entsteht ein gemeinsamer Gesprächseinstieg"
         >
           <div className="struktiva-contact-visual__sources">
             {startingPoints.map((item, index) => (
