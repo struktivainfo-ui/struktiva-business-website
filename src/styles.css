@@ -17063,14 +17063,103 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
   box-shadow: 0 24px 58px rgba(17, 17, 17, 0.12);
 }
 
-.struktiva-newsletter__form .ml-form-embedContainer,
-.struktiva-newsletter__form .ml-form-embedWrapper {
-  width: 100% !important;
-  max-width: none !important;
+.struktiva-newsletter__form {
+  display: grid;
+  gap: 0.9rem;
 }
 
-.struktiva-newsletter__form .ml-form-embedWrapper {
-  background: transparent !important;
+.struktiva-newsletter__label {
+  color: var(--text-primary, #111111);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.struktiva-newsletter__form input[type='email'] {
+  width: 100%;
+  min-height: 3.35rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(17, 17, 17, 0.28);
+  border-radius: 0.7rem;
+  background: #ffffff;
+  color: #111111;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.struktiva-newsletter__form input[type='email']::placeholder {
+  color: #6a6a63;
+  opacity: 1;
+}
+
+.struktiva-newsletter__consent {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.7rem;
+  color: var(--text-secondary, #4a4a45);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.struktiva-newsletter__consent input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.1rem;
+  accent-color: #111111;
+}
+
+.struktiva-newsletter__form button {
+  min-height: 3.35rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid #111111;
+  border-radius: 0.7rem;
+  background: #111111;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  transition: background-color var(--motion-fast, 160ms) ease, color var(--motion-fast, 160ms) ease;
+}
+
+.struktiva-newsletter__form button:hover:not(:disabled) {
+  border-color: var(--gold-primary, #a87f2a);
+  background: var(--gold-primary, #a87f2a);
+  color: #111111;
+}
+
+.struktiva-newsletter__form button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.struktiva-newsletter__status {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.struktiva-newsletter__status--success {
+  color: #1f6b42;
+}
+
+.struktiva-newsletter__status--error {
+  color: #a32d20;
+}
+
+.struktiva-newsletter__fallback-note {
+  margin: 0;
+  color: var(--text-secondary, #4a4a45);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.struktiva-newsletter__fallback-note a {
+  color: #5f4310;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 @media (max-width: 900px) {
@@ -17087,5 +17176,9 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
   .struktiva-newsletter h2 {
     font-size: clamp(1.82rem, 8vw, 2.55rem);
     line-height: 1.1;
+  }
+
+  .struktiva-newsletter__form {
+    padding: 1rem;
   }
 }
