@@ -17073,6 +17073,69 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
   background: transparent !important;
 }
 
+.struktiva-newsletter__form .ml-form-embedBody,
+.struktiva-newsletter__form .ml-form-formContent,
+.struktiva-newsletter__form .ml-form-successBody {
+  width: 100% !important;
+}
+
+.struktiva-newsletter__form .ml-form-embedSubmit button {
+  min-height: 3.25rem !important;
+  padding: 0.8rem 1.1rem !important;
+  border-radius: 0.7rem !important;
+  font: inherit !important;
+  font-weight: 800 !important;
+}
+
+.struktiva-newsletter__form .ml-input-horizontal input,
+.struktiva-newsletter__form input[type='email'] {
+  min-height: 3.25rem !important;
+  padding: 0.8rem 0.95rem !important;
+  border-radius: 0.7rem !important;
+  font: inherit !important;
+  font-size: 1rem !important;
+}
+
+.struktiva-newsletter__fallback {
+  display: grid;
+  gap: 0.85rem;
+  color: var(--text-primary, #111111);
+}
+
+.struktiva-newsletter__fallback p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.struktiva-newsletter__fallback-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid #111111;
+  border-radius: 0.7rem;
+  background: #111111;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  transition: background-color var(--motion-fast, 160ms) ease, color var(--motion-fast, 160ms) ease;
+}
+
+.struktiva-newsletter__fallback-action:hover {
+  background: var(--gold-primary, #a87f2a);
+  border-color: var(--gold-primary, #a87f2a);
+  color: #111111;
+}
+
+.struktiva-newsletter__fallback-note {
+  color: var(--text-secondary, #4a4a45);
+  font-size: 0.88rem !important;
+}
+
 @media (max-width: 900px) {
   .struktiva-newsletter__inner {
     grid-template-columns: 1fr;
@@ -17088,4 +17151,49 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
     font-size: clamp(1.82rem, 8vw, 2.55rem);
     line-height: 1.1;
   }
+
+  .struktiva-newsletter__form {
+    padding: 1rem;
+  }
+
+  .struktiva-newsletter__form .ml-form-embedSubmit button,
+  .struktiva-newsletter__form .ml-input-horizontal input,
+  .struktiva-newsletter__form input[type='email'],
+  .struktiva-newsletter__fallback-action {
+    width: 100% !important;
+  }
+}
+
+/* Mobile readability and interaction guardrails. They intentionally only apply
+   below the phone breakpoint, so the established desktop composition remains intact. */
+@media (max-width: 760px) {
+  html,
+  body,
+  #root,
+  .struktiva-metallic,
+  .struktiva-main-content {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .struktiva-main-content :is(p, li) {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .struktiva-main-content :is(h1, h2, h3, h4) {
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .struktiva-main-content :is(button, input, select, textarea) {
+    max-width: 100%;
+    min-height: 44px;
+  }
+
+  .struktiva-main-content :is(input, select, textarea) {
+    font-size: 16px;
+  }
+
 }
