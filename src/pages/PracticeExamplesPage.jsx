@@ -1,6 +1,7 @@
 import PracticeHero from '../components/practice/PracticeHero.jsx'
 import PracticeTransparency from '../components/practice/PracticeTransparency.jsx'
 import PracticeFeaturedCase from '../components/practice/PracticeFeaturedCase.jsx'
+import PracticeZerionCase from '../components/practice/PracticeZerionCase.jsx'
 import PracticeDemoConcepts from '../components/practice/PracticeDemoConcepts.jsx'
 import {
   PracticeCtaSection,
@@ -14,6 +15,7 @@ export default function PracticeExamplesPage() {
       <PracticeHero />
       <PracticeTransparency />
       <PracticeFeaturedCase />
+      <PracticeZerionCase />
       <PracticeDemoConcepts />
       <PracticeMethodSection />
       <PracticeQualitySection />
