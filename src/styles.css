@@ -9538,6 +9538,172 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   line-height: 1.55;
 }
 
+.struktiva-practice-zerion {
+  padding: clamp(4.8rem, 8vw, 7.2rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
+  background: linear-gradient(132deg, #08141d 0%, #0d2634 54%, #112b3b 100%);
+  color: rgba(245, 242, 232, 0.86);
+}
+
+.struktiva-practice-zerion__inner {
+  width: min(100%, var(--container-wide, 1360px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.93fr) minmax(360px, 0.7fr);
+  gap: clamp(2rem, 6vw, 7rem);
+  align-items: center;
+}
+
+.struktiva-practice-zerion__copy {
+  display: grid;
+  gap: 1rem;
+  max-width: 760px;
+}
+
+.struktiva-practice-zerion .struktiva-practice-badge {
+  width: max-content;
+  color: #f4deb0;
+  border-color: rgba(244, 222, 176, 0.36);
+  background: rgba(244, 222, 176, 0.08);
+}
+
+.struktiva-practice-zerion .struktiva-practice-eyebrow {
+  color: #e3bd6d;
+}
+
+.struktiva-practice-zerion h2 {
+  margin: 0;
+  color: #fffdf7;
+  font-size: clamp(2rem, 4.2vw, 4.15rem);
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+}
+
+.struktiva-practice-zerion__copy > p:not(.struktiva-practice-eyebrow) {
+  margin: 0;
+  max-width: 680px;
+  font-size: clamp(1rem, 1.35vw, 1.13rem);
+  line-height: 1.72;
+  color: rgba(245, 242, 232, 0.76);
+}
+
+.struktiva-practice-zerion__actions {
+  margin-top: 0.5rem;
+}
+
+.struktiva-practice-zerion__actions a,
+.struktiva-practice-zerion__panel > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.58rem;
+  color: #fff9ec;
+  font-weight: 780;
+  transition: transform 160ms ease, color 160ms ease;
+}
+
+.struktiva-practice-zerion__actions a:hover,
+.struktiva-practice-zerion__panel > a:hover {
+  color: #e9c273;
+  transform: translateY(-2px);
+}
+
+.struktiva-practice-zerion__actions svg,
+.struktiva-practice-zerion__panel > a svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.struktiva-practice-zerion__panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.45rem, 3vw, 2.5rem);
+  border: 1px solid rgba(244, 222, 176, 0.23);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 78% 8%, rgba(230, 186, 94, 0.2), transparent 32%),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025));
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.24);
+}
+
+.struktiva-practice-zerion__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(244, 222, 176, 0.075) 1px, transparent 1px), linear-gradient(90deg, rgba(244, 222, 176, 0.075) 1px, transparent 1px);
+  background-size: 1.75rem 1.75rem;
+  mask-image: linear-gradient(145deg, #000, transparent 78%);
+}
+
+.struktiva-practice-zerion__panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.struktiva-practice-zerion__panel-head {
+  display: grid;
+  gap: 0.16rem;
+  padding-bottom: 1.45rem;
+  border-bottom: 1px solid rgba(244, 222, 176, 0.22);
+}
+
+.struktiva-practice-zerion__panel-head span {
+  color: #fffaf0;
+  font-size: clamp(2.1rem, 4.2vw, 3.45rem);
+  font-weight: 860;
+  letter-spacing: 0.21em;
+  line-height: 0.92;
+}
+
+.struktiva-practice-zerion__panel-head small {
+  color: #e8bf6c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.44em;
+  text-transform: uppercase;
+}
+
+.struktiva-practice-zerion__panel > p {
+  margin: 1.55rem 0 1.4rem;
+  max-width: 32rem;
+  line-height: 1.65;
+  color: rgba(245, 242, 232, 0.76);
+}
+
+.struktiva-practice-zerion__panel ul {
+  display: grid;
+  gap: 0;
+  margin: 0 0 1.55rem;
+  padding: 0;
+  list-style: none;
+}
+
+.struktiva-practice-zerion__panel li {
+  display: grid;
+  grid-template-columns: 2.3rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.82rem 0;
+  border-top: 1px solid rgba(244, 222, 176, 0.16);
+}
+
+.struktiva-practice-zerion__panel li span {
+  color: #d7a94d;
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+}
+
+.struktiva-practice-zerion__panel li strong {
+  color: rgba(255, 253, 247, 0.9);
+  font-size: 0.95rem;
+}
+
+.struktiva-practice-zerion__panel > a {
+  color: #e9c273;
+  font-size: 0.9rem;
+}
+
 .struktiva-practice-demos {
   padding: clamp(4.5rem, 8vw, 7.2rem) var(--container-gutter, clamp(1.25rem, 4vw, 3rem));
 }
@@ -9833,6 +9999,7 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   .struktiva-practice-hero__inner,
   .struktiva-practice-transparency__inner,
   .struktiva-practice-featured__inner,
+  .struktiva-practice-zerion__inner,
   .struktiva-practice-method__inner,
   .struktiva-practice-quality__inner,
   .struktiva-practice-cta__inner {
@@ -9884,6 +10051,7 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   .struktiva-practice-hero,
   .struktiva-practice-transparency,
   .struktiva-practice-featured,
+  .struktiva-practice-zerion,
   .struktiva-practice-demos,
   .struktiva-practice-method,
   .struktiva-practice-quality,
@@ -9903,6 +10071,7 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
   .struktiva-practice-transparency h2,
   .struktiva-practice-featured h2,
+  .struktiva-practice-zerion h2,
   .struktiva-practice-demos h2,
   .struktiva-practice-method h2,
   .struktiva-practice-quality h2,
@@ -9913,7 +10082,8 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
   .struktiva-practice-hero__actions,
   .struktiva-practice-cta__actions,
-  .struktiva-practice-featured__actions {
+  .struktiva-practice-featured__actions,
+  .struktiva-practice-zerion__actions {
     display: grid;
     width: 100%;
   }
@@ -9921,6 +10091,7 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   .struktiva-practice-primary,
   .struktiva-practice-secondary,
   .struktiva-practice-featured__actions a,
+  .struktiva-practice-zerion__actions a,
   .struktiva-practice-featured__actions > span,
   .struktiva-practice-demo a,
   .struktiva-practice-cta__text-link {
