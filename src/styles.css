@@ -17353,3 +17353,39 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
     padding: 1rem;
   }
 }
+
+/* ZERION reference: retain the editorial dark palette despite legacy bright-system rules. */
+.struktiva-metallic main .struktiva-practice-zerion {
+  color: rgba(245, 242, 232, 0.86) !important;
+}
+
+.struktiva-metallic main .struktiva-practice-zerion :is(h1, h2, h3, h4, strong) {
+  color: #fffdf7 !important;
+}
+
+.struktiva-metallic main .struktiva-practice-zerion :is(p, li) {
+  color: rgba(245, 242, 232, 0.78) !important;
+}
+
+.struktiva-metallic main .struktiva-practice-zerion :is(
+  .struktiva-practice-badge,
+  .struktiva-practice-eyebrow,
+  .struktiva-practice-zerion__panel-head small,
+  .struktiva-practice-zerion__panel li span,
+  .struktiva-practice-zerion__panel > a
+) {
+  color: #e9c273 !important;
+}
+
+.struktiva-metallic main .struktiva-practice-zerion .struktiva-practice-zerion__panel-head span,
+.struktiva-metallic main .struktiva-practice-zerion .struktiva-practice-zerion__panel li strong,
+.struktiva-metallic main .struktiva-practice-zerion .struktiva-practice-zerion__actions a {
+  color: #fffdf7 !important;
+}
+
+.struktiva-metallic main .struktiva-practice-zerion .struktiva-practice-zerion__actions a:hover,
+.struktiva-metallic main .struktiva-practice-zerion .struktiva-practice-zerion__actions a:focus-visible,
+.struktiva-metallic main .struktiva-practice-zerion .struktiva-practice-zerion__panel > a:hover,
+.struktiva-metallic main .struktiva-practice-zerion .struktiva-practice-zerion__panel > a:focus-visible {
+  color: #e9c273 !important;
+}
