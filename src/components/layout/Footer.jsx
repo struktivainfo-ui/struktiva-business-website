@@ -20,6 +20,14 @@ export default function Footer() {
           <a className="struktiva-footer-cta" href={currentNavigation.primaryCta.href}>
             {currentNavigation.primaryCta.label}
           </a>
+          <a
+            className="struktiva-footer-cta"
+            href="https://g.page/r/CZvwYJbOSShgECE/review"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Jetzt bei Google bewerten
+          </a>
         </section>
 
         <nav className="struktiva-footer-nav" aria-label="Footer Navigation">
