@@ -7319,6 +7319,96 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   line-height: 1.25;
 }
 
+.struktiva-trust-review {
+  position: relative;
+  margin: clamp(2.2rem, 5vw, 4rem) 0 0;
+  border: 1px solid rgba(168, 127, 42, 0.28);
+  border-radius: 30px;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.94), rgba(252, 247, 234, 0.9));
+  box-shadow: 0 24px 58px rgba(63, 48, 18, 0.07);
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 3.25rem);
+}
+
+.struktiva-trust-review::before {
+  content: "\201C";
+  position: absolute;
+  top: clamp(0.35rem, 1.6vw, 1rem);
+  right: clamp(1rem, 4vw, 3rem);
+  color: rgba(168, 127, 42, 0.18);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(5rem, 11vw, 10rem);
+  font-weight: 700;
+  line-height: 0.8;
+  pointer-events: none;
+}
+
+.struktiva-trust-review__label {
+  position: relative;
+  margin: 0;
+  color: var(--gold-primary, #a87f2a);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.struktiva-trust-review__quote {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
+  max-width: 980px;
+  margin-top: 1.15rem;
+  color: var(--text-primary, #111111);
+  font-size: clamp(1.03rem, 1.7vw, 1.28rem);
+  line-height: 1.66;
+}
+
+.struktiva-trust-review__quote p {
+  margin: 0;
+}
+
+.struktiva-trust-review__footer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.struktiva-trust-review__footer cite {
+  color: var(--text-primary, #111111);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.struktiva-trust-review__footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary, #111111);
+  font-size: 0.92rem;
+  font-weight: 900;
+  text-decoration: none;
+  text-underline-offset: 0.22em;
+}
+
+.struktiva-trust-review__footer a:hover {
+  text-decoration: underline;
+}
+
+.struktiva-trust-review__footer svg {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
 .struktiva-trust-process {
   margin-top: clamp(2.2rem, 5vw, 4.2rem);
 }
@@ -7521,6 +7611,15 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
   .struktiva-trust-people__image {
     min-height: 18rem;
+  }
+
+  .struktiva-trust-review {
+    border-radius: 24px;
+  }
+
+  .struktiva-trust-review__footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .struktiva-trust-close__link {

@@ -92,6 +92,41 @@ export default function HomeTrustSection() {
           </motion.aside>
         </div>
 
+        <motion.blockquote
+          className="struktiva-trust-review"
+          initial={reducedMotion ? false : { opacity: 0, y: 18 }}
+          whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p className="struktiva-trust-review__label">Erfahrung aus der Zusammenarbeit</p>
+          <div className="struktiva-trust-review__quote">
+            <p>
+              Ich kann Struktiva wirklich nur weiterempfehlen. Meine Webseite ist richtig toll geworden und genauso, wie ich sie mir vorgestellt habe.
+            </p>
+            <p>
+              Was mir besonders gefallen hat, ist die Zusammenarbeit. Es wird immer wieder nachgefragt, wie man sich etwas vorstellt, welche Wünsche man hat und was einem wichtig ist. Eigene Ideen werden aufgenommen und richtig gut umgesetzt. Auch wenn man zwischendurch noch etwas ändern möchte, wird darauf sofort eingegangen.
+            </p>
+            <p>
+              Man fühlt sich einfach gut aufgehoben und merkt, dass wirklich Wert darauf gelegt wird, dass man am Ende zufrieden ist.
+            </p>
+            <p>
+              Ich bin mit meiner Webseite mehr als zufrieden und hätte mir das Ergebnis nicht besser vorstellen können. Vielen Dank an Struktiva für die tolle Arbeit und die wirklich angenehme Zusammenarbeit.
+            </p>
+          </div>
+          <footer className="struktiva-trust-review__footer">
+            <cite>Dennis Forschner</cite>
+            <a
+              href="https://www.google.com/maps/contrib/103331501915897155785/reviews?hl=de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Originalrezension auf Google ansehen
+              <ArrowRight aria-hidden="true" />
+            </a>
+          </footer>
+        </motion.blockquote>
+
         <motion.div
           className="struktiva-trust-process"
           initial={reducedMotion ? false : { opacity: 0, y: 18 }}
