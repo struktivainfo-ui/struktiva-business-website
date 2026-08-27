@@ -7681,9 +7681,9 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
 .struktiva-home-digital-check__intro {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.72fr);
-  gap: clamp(2rem, 5vw, 4.6rem);
-  align-items: start;
+  justify-items: start;
+  gap: clamp(1rem, 2.2vw, 1.45rem);
+  max-width: 980px;
 }
 
 .struktiva-home-digital-check__eyebrow {
@@ -7712,7 +7712,7 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   display: grid;
   gap: 0.78rem;
   max-width: 660px;
-  color: rgba(248, 246, 239, 0.76) !important;
+  color: rgba(248, 246, 239, 0.88) !important;
   font-size: clamp(0.98rem, 1.25vw, 1.08rem);
   line-height: 1.72;
 }
@@ -7720,7 +7720,7 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 .struktiva-home-digital-check__lead p,
 .struktiva-home-digital-check .struktiva-digital-check-path p,
 .struktiva-home-digital-check .struktiva-digital-check-counterpoint p {
-  color: rgba(248, 246, 239, 0.76) !important;
+  color: rgba(248, 246, 239, 0.88) !important;
 }
 
 .struktiva-home-digital-check__lead p,
@@ -7734,7 +7734,7 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   display: grid;
   justify-items: start;
   gap: 0.2rem;
-  margin-top: 0.25rem;
+  margin-top: 0.1rem;
 }
 
 .struktiva-home-digital-check__price strong {
