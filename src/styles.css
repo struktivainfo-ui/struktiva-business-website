@@ -7686,6 +7686,254 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
   max-width: 980px;
 }
 
+/* Sven Matzke freelance onepage */
+.route-sven-matzke {
+  background: #0b0b0a;
+}
+
+.sven-freelance-page {
+  --sven-ink: #0b0b0a;
+  --sven-paper: #f7f5ef;
+  --sven-gold: #c49a45;
+  --sven-gold-light: #ecd59e;
+  --sven-muted: #696761;
+  overflow: clip;
+  background: var(--sven-paper);
+  color: var(--sven-ink);
+  font-family: var(--site-font, "Manrope", "Segoe UI", sans-serif);
+}
+
+.sven-freelance-page * {
+  box-sizing: border-box;
+}
+
+.sven-freelance-hero {
+  position: relative;
+  min-height: min(920px, 100svh);
+  overflow: hidden;
+  background: var(--sven-ink);
+  color: #fff;
+  padding: 1.1rem clamp(1.25rem, 4vw, 4.5rem) 0;
+}
+
+.sven-freelance-hero::before {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 78% 26%, rgba(196, 154, 69, 0.2), transparent 21%), radial-gradient(circle at 15% 88%, rgba(196, 154, 69, 0.12), transparent 28%);
+  content: "";
+  pointer-events: none;
+}
+
+.sven-freelance-hero__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 4.6rem 4.6rem;
+  mask-image: linear-gradient(180deg, #000, transparent 86%);
+  pointer-events: none;
+}
+
+.sven-freelance-nav,
+.sven-freelance-hero__inner,
+.sven-freelance-hero__bottom,
+.sven-freelance-intro,
+.sven-freelance-services,
+.sven-freelance-projects,
+.sven-freelance-method,
+.sven-freelance-contact > div,
+.sven-freelance-contact footer {
+  width: min(100%, 1380px);
+  margin-inline: auto;
+}
+
+.sven-freelance-nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.sven-freelance-nav__brand,
+.sven-freelance-nav__links,
+.sven-freelance-hero__actions,
+.sven-freelance-contact__actions {
+  display: flex;
+  align-items: center;
+}
+
+.sven-freelance-nav__brand {
+  gap: 0.72rem;
+  color: #fff;
+  font-size: 0.96rem;
+  text-decoration: none;
+}
+
+.sven-freelance-nav__brand span {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid rgba(236, 213, 158, 0.52);
+  border-radius: 50%;
+  color: var(--sven-gold-light);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.sven-freelance-nav__brand strong { font-weight: 850; }
+
+.sven-freelance-nav__links { gap: clamp(0.8rem, 2vw, 2rem); }
+.sven-freelance-nav__links a { color: rgba(255, 255, 255, 0.76); font-size: 0.82rem; font-weight: 780; text-decoration: none; transition: color 160ms ease; }
+.sven-freelance-nav__links a:hover { color: var(--sven-gold-light); }
+
+.sven-freelance-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(330px, 0.7fr);
+  align-items: center;
+  gap: clamp(2rem, 7vw, 8rem);
+  min-height: calc(min(920px, 100svh) - 8rem);
+  padding: clamp(4rem, 9vw, 8.8rem) 0 clamp(5rem, 9vw, 8rem);
+}
+
+.sven-freelance-kicker {
+  margin: 0;
+  color: var(--sven-gold-light);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.sven-freelance-kicker--dark { color: #96712e; }
+
+.sven-freelance-hero h1 {
+  max-width: 800px;
+  margin: 1.1rem 0 0;
+  font-size: clamp(3.25rem, 6.8vw, 7.5rem);
+  font-weight: 880;
+  letter-spacing: -0.07em;
+  line-height: 0.91;
+}
+
+.sven-freelance-hero h1 em {
+  color: var(--sven-gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.sven-freelance-hero__lead {
+  max-width: 630px;
+  margin: 1.7rem 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.72;
+}
+
+.sven-freelance-hero__actions { flex-wrap: wrap; gap: 1rem 1.4rem; margin-top: 2.15rem; }
+.sven-freelance-button { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 3.25rem; border-radius: 999px; padding: 0.82rem 1.2rem; font-size: 0.92rem; font-weight: 900; text-decoration: none; transition: transform 180ms ease, background 180ms ease, color 180ms ease; }
+.sven-freelance-button:hover { transform: translateY(-2px); }
+.sven-freelance-button svg, .sven-freelance-text-link svg { width: 1.08rem; height: 1.08rem; }
+.sven-freelance-button--gold { background: var(--sven-gold); color: #100d08; }
+.sven-freelance-button--gold:hover { background: var(--sven-gold-light); }
+.sven-freelance-text-link { display: inline-flex; align-items: center; gap: 0.42rem; color: #fff; font-size: 0.88rem; font-weight: 800; text-decoration: underline; text-decoration-color: rgba(236, 213, 158, 0.65); text-underline-offset: 0.3rem; }
+
+.sven-freelance-hero__portrait { position: relative; justify-self: end; width: min(100%, 430px); }
+.sven-freelance-hero__portrait-frame { position: relative; aspect-ratio: 0.79; overflow: hidden; border: 1px solid rgba(236, 213, 158, 0.3); border-radius: 46% 46% 7% 7%; background: #1a1814; }
+.sven-freelance-hero__portrait-frame::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.42)); }
+.sven-freelance-hero__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(1) contrast(1.08); }
+.sven-freelance-hero__stamp { position: absolute; right: -2.2rem; bottom: 1.75rem; display: grid; gap: 0.22rem; width: 10rem; padding: 1rem 1.1rem; border: 1px solid rgba(236, 213, 158, 0.48); background: rgba(11, 11, 10, 0.93); color: var(--sven-gold-light); font-size: 0.7rem; font-weight: 850; letter-spacing: 0.1em; line-height: 1.4; text-transform: uppercase; }
+.sven-freelance-hero__bottom { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.56); padding: 1rem 0 1.2rem; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+
+.sven-freelance-intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.55fr); gap: clamp(2rem, 8vw, 10rem); padding: clamp(5rem, 11vw, 10rem) clamp(1.25rem, 4vw, 4.5rem); }
+.sven-freelance-intro h2, .sven-freelance-section-head h2, .sven-freelance-contact h2 { margin: 1rem 0 0; font-size: clamp(2.15rem, 4.7vw, 5rem); font-weight: 880; letter-spacing: -0.055em; line-height: 0.99; text-wrap: balance; }
+.sven-freelance-intro__aside { align-self: end; border-left: 2px solid var(--sven-gold); padding-left: clamp(1.2rem, 2.5vw, 2.2rem); }
+.sven-freelance-intro__aside p { margin: 0; color: #494741; font-size: clamp(1rem, 1.3vw, 1.13rem); line-height: 1.72; }
+.sven-freelance-intro__aside a { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 1.25rem; color: #111; font-size: 0.9rem; font-weight: 900; text-decoration: none; }
+.sven-freelance-intro__aside svg { width: 1rem; height: 1rem; }
+
+.sven-freelance-services { background: #e9e5db; padding: clamp(4.6rem, 9vw, 8rem) clamp(1.25rem, 4vw, 4.5rem); }
+.sven-freelance-section-head { max-width: 860px; }
+.sven-freelance-services__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: clamp(2.6rem, 6vw, 5rem); border-top: 1px solid rgba(11, 11, 10, 0.18); }
+.sven-freelance-service { display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 1rem; min-height: 15rem; border-bottom: 1px solid rgba(11, 11, 10, 0.18); padding: clamp(1.3rem, 2.8vw, 2.25rem) clamp(0.2rem, 2.2vw, 2rem); }
+.sven-freelance-service:nth-child(odd) { border-right: 1px solid rgba(11, 11, 10, 0.18); padding-left: 0; }
+.sven-freelance-service__number { color: #9b7735; font-size: 0.7rem; font-weight: 950; letter-spacing: 0.08em; }
+.sven-freelance-service > svg { width: 1.3rem; height: 1.3rem; color: #9b7735; }
+.sven-freelance-service h3 { margin: -0.16rem 0 0; font-size: clamp(1.22rem, 2vw, 1.65rem); font-weight: 900; letter-spacing: -0.035em; line-height: 1.1; }
+.sven-freelance-service p { margin: 0.8rem 0 0; color: #5f5c56; font-size: 0.96rem; line-height: 1.65; }
+
+.sven-freelance-projects { position: relative; overflow: hidden; padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 4.5rem); background: #11100e; color: #fff; }
+.sven-freelance-projects::before { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, transparent 49.94%, rgba(255, 255, 255, 0.055) 50%, transparent 50.06%); pointer-events: none; }
+.sven-freelance-section-head--light .sven-freelance-kicker { color: var(--sven-gold-light); }
+.sven-freelance-section-head--light h2 { color: #fff; }
+.sven-freelance-projects__grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: clamp(3rem, 6vw, 5rem); background: rgba(255, 255, 255, 0.18); }
+.sven-freelance-project { min-height: 27rem; padding: clamp(1.4rem, 3.2vw, 2.5rem); background: #11100e; }
+.sven-freelance-project--gold { background: linear-gradient(150deg, #c49a45, #a57625); color: #141008; }
+.sven-freelance-project--paper { background: #f3f0e7; color: #111; }
+.sven-freelance-project > p:first-child { margin: 0; color: inherit; font-size: 0.69rem; font-weight: 900; letter-spacing: 0.13em; opacity: 0.78; text-transform: uppercase; }
+.sven-freelance-project h3 { margin: 0.82rem 0 0; font-size: clamp(1.55rem, 2.8vw, 2.55rem); font-weight: 920; letter-spacing: -0.055em; line-height: 1; }
+.sven-freelance-project__line { display: block; width: 2.5rem; height: 2px; margin-top: 2rem; background: currentColor; opacity: 0.55; }
+.sven-freelance-project__text { margin: 1.15rem 0 0; font-size: 0.97rem; line-height: 1.65; opacity: 0.78; }
+.sven-freelance-project ul { display: grid; gap: 0.55rem; margin: 1.7rem 0 0; padding: 0; list-style: none; font-size: 0.84rem; font-weight: 800; }
+.sven-freelance-project li { display: flex; gap: 0.5rem; align-items: flex-start; }
+.sven-freelance-project li svg { width: 0.9rem; height: 0.9rem; margin-top: 0.1rem; flex: 0 0 auto; }
+
+.sven-freelance-method { padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 4.5rem); }
+.sven-freelance-method ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; margin: clamp(3rem, 6vw, 5rem) 0 0; padding: 0; list-style: none; }
+.sven-freelance-method li { position: relative; border-top: 1px solid rgba(11, 11, 10, 0.25); padding-top: 1.25rem; }
+.sven-freelance-method li::before { position: absolute; top: -0.3rem; left: 0; width: 0.58rem; height: 0.58rem; border: 1px solid #a87d2e; border-radius: 999px; background: var(--sven-paper); content: ""; }
+.sven-freelance-method li > span { color: #9b7735; font-size: 0.7rem; font-weight: 950; letter-spacing: 0.09em; }
+.sven-freelance-method h3 { margin: 1.25rem 0 0; font-size: 1.15rem; font-weight: 900; letter-spacing: -0.025em; }
+.sven-freelance-method p { margin: 0.65rem 0 0; color: #5f5c56; font-size: 0.94rem; line-height: 1.64; }
+
+.sven-freelance-contact { position: relative; overflow: hidden; background: #c49a45; color: #100d08; padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 4.5rem) 1.25rem; }
+.sven-freelance-contact__halo { position: absolute; width: min(68vw, 1000px); aspect-ratio: 1; right: -19%; top: -48%; border: 1px solid rgba(17, 15, 9, 0.2); border-radius: 50%; box-shadow: 0 0 0 6rem rgba(17, 15, 9, 0.035), 0 0 0 12rem rgba(17, 15, 9, 0.035); }
+.sven-freelance-contact > div { position: relative; max-width: 930px; }
+.sven-freelance-contact .sven-freelance-kicker { color: rgba(16, 13, 8, 0.7); }
+.sven-freelance-contact h2 { max-width: 900px; }
+.sven-freelance-contact > div > p:not(.sven-freelance-kicker) { max-width: 680px; margin: 1.5rem 0 0; color: rgba(16, 13, 8, 0.75); font-size: clamp(1rem, 1.45vw, 1.16rem); line-height: 1.7; }
+.sven-freelance-contact__actions { flex-wrap: wrap; gap: 0.9rem 1.25rem; margin-top: 2rem; }
+.sven-freelance-button--light { background: #100d08; color: #fff; }
+.sven-freelance-button--light:hover { background: #2a2113; }
+.sven-freelance-contact__actions > a:not(.sven-freelance-button) { display: inline-flex; align-items: center; gap: 0.45rem; color: #100d08; font-size: 0.88rem; font-weight: 900; text-decoration: none; }
+.sven-freelance-contact__actions > a:not(.sven-freelance-button) svg { width: 1rem; height: 1rem; }
+.sven-freelance-contact footer { position: relative; display: flex; justify-content: space-between; gap: 1rem; margin-top: clamp(4rem, 9vw, 7rem); border-top: 1px solid rgba(16, 13, 8, 0.25); padding-top: 1rem; color: rgba(16, 13, 8, 0.72); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+
+@media (max-width: 1040px) {
+  .sven-freelance-hero { min-height: auto; }
+  .sven-freelance-hero__inner { grid-template-columns: minmax(0, 1fr) minmax(260px, 0.56fr); gap: 2rem; min-height: auto; }
+  .sven-freelance-hero__portrait { width: min(100%, 340px); }
+  .sven-freelance-hero__stamp { right: -1rem; }
+  .sven-freelance-projects__grid { grid-template-columns: 1fr; }
+  .sven-freelance-project { min-height: auto; }
+  .sven-freelance-method ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .sven-freelance-hero { padding-inline: 1rem; }
+  .sven-freelance-nav__links { display: none; }
+  .sven-freelance-hero__inner, .sven-freelance-intro { grid-template-columns: 1fr; }
+  .sven-freelance-hero__inner { padding: 4.5rem 0 4rem; }
+  .sven-freelance-hero__portrait { justify-self: start; width: min(88vw, 360px); margin-top: 0.7rem; }
+  .sven-freelance-hero__stamp { right: -0.65rem; }
+  .sven-freelance-intro, .sven-freelance-services, .sven-freelance-projects, .sven-freelance-method, .sven-freelance-contact { padding-left: 1rem; padding-right: 1rem; }
+  .sven-freelance-services__list { grid-template-columns: 1fr; }
+  .sven-freelance-service, .sven-freelance-service:nth-child(odd) { min-height: auto; border-right: 0; padding: 1.45rem 0; }
+  .sven-freelance-service { grid-template-columns: auto auto minmax(0, 1fr); }
+  .sven-freelance-method ol { grid-template-columns: 1fr; gap: 1.8rem; }
+  .sven-freelance-contact footer { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sven-freelance-page *, .sven-freelance-page *::before, .sven-freelance-page *::after { animation: none !important; transition: none !important; }
+}
+
 .struktiva-home-digital-check__eyebrow {
   margin: 0;
   color: var(--gold-muted, #d8c28a);

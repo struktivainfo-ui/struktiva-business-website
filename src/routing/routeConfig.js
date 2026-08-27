@@ -167,6 +167,17 @@ export const ACTIVE_ROUTE_META = {
     description: 'Impressum und rechtliche Angaben von STRUKTIVA Digitale Unternehmensberatung.',
     canonicalPath: '/impressum',
   },
+  '/sven-matzke': {
+    title: 'Sven Matzke | Webdesigner & Digitalberater',
+    description: 'Sven Matzke entwickelt Unternehmenswebsites, digitale Kundenwege und technische Lösungen für kleine Unternehmen, Selbstständige und lokale Dienstleister.',
+    canonicalPath: '/sven-matzke',
+    hideChrome: true,
+    layout: 'campaign',
+    noindex: true,
+    ogTitle: 'Sven Matzke | Webdesigner & Digitalberater',
+    ogDescription: 'Websites, digitale Kundenwege und technische Umsetzung für kleine Unternehmen und lokale Dienstleister.',
+    socialImage: '/images/founder-sven.jpg',
+  },
   '/demos/handwerker': {
     title: 'Seite nicht gefunden - STRUKTIVA Digitale Unternehmensberatung',
     description: 'Diese Seite gehört nicht mehr zur aktuellen STRUKTIVA Website-Struktur.',

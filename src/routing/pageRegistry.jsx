@@ -15,6 +15,7 @@ import NotFoundPage from '../pages/NotFoundPage.jsx'
 import DemoHandwerkerPage from '../pages/DemoHandwerkerPage.jsx'
 import DemoKosmetikPage from '../pages/DemoKosmetikPage.jsx'
 import DemoDienstleisterPage from '../pages/DemoDienstleisterPage.jsx'
+import FreelancerPage from '../pages/FreelancerPage.jsx'
 
 const DigitalConsultingCalwPage = lazy(() => import('../pages/DigitalConsultingCalwPage.jsx'))
 const DigitalizationCalwPage = lazy(() => import('../pages/DigitalizationCalwPage.jsx'))
@@ -45,6 +46,7 @@ export const activePageComponents = {
   '/demos/handwerker': DemoHandwerkerPage,
   '/demos/kosmetik': DemoKosmetikPage,
   '/demos/lokaler-dienstleister': DemoDienstleisterPage,
+  '/sven-matzke': FreelancerPage,
 }
 
 export function getPageComponent(pathname) {
