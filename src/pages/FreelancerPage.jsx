@@ -1,188 +1,88 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowDownRight, ArrowUpRight, Check, Code2, Github, Linkedin, Mail, Search, Workflow, Wrench } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
 
 const services = [
-  {
-    number: '01',
-    title: 'Websites & Relaunches',
-    text: 'Unternehmenswebsites und Landingpages mit verständlicher Struktur, guter mobiler Nutzung und klaren nächsten Schritten.',
-    icon: Code2,
-  },
-  {
-    number: '02',
-    title: 'Kontakt & Kundenwege',
-    text: 'Formulare, WhatsApp, E-Mail und Lead-Prozesse so verbinden, dass Anfragen vollständig und nutzbar ankommen.',
-    icon: Workflow,
-  },
-  {
-    number: '03',
-    title: 'Sichtbarkeit & Messbarkeit',
-    text: 'SEO-Grundlagen, Google Search Console, Tracking und Consent technisch sauber und nachvollziehbar aufsetzen.',
-    icon: Search,
-  },
-  {
-    number: '04',
-    title: 'Technik & Qualität',
-    text: 'Fehler analysieren, Funktionen prüfen und digitale Projekte sicher veröffentlichen und weiterentwickeln.',
-    icon: Wrench,
-  },
+  ['01', 'Websites, die führen.', 'Vom ersten Eindruck bis zur Anfrage: klare Seiten, die auf jedem Gerät leicht verständlich sind.'],
+  ['02', 'Kundenwege, die passen.', 'Kontakt, E-Mail, WhatsApp und Bewertungen so verbinden, dass aus Interesse der nächste sinnvolle Schritt wird.'],
+  ['03', 'Technik, die mitdenkt.', 'SEO-Basis, Tracking, Qualitätssicherung und saubere Veröffentlichung – damit der Auftritt auch hinter den Kulissen funktioniert.'],
 ]
 
 const projects = [
-  {
-    label: 'Praxisprojekt',
-    title: 'Salon Karola',
-    text: 'Website, Kontaktwege, Google-Bewertungen und eine digitale Kundenkarte wurden zu einem nachvollziehbaren Kundenweg verbunden.',
-    points: ['Webauftritt & mobile Nutzung', 'QR- und Bewertungsstruktur', 'Kunden- und Terminprozesse'],
-    tone: 'gold',
-  },
-  {
-    label: 'Eigenes System',
-    title: 'STRUKTIVA Lead-System',
-    text: 'Ein klar geführter Anfrageprozess, der Website-Besucher vom ersten Bedarf bis zur strukturierten Kontaktaufnahme begleitet.',
-    points: ['Anforderungs- und Lead-Logik', 'E-Mail-Benachrichtigungen', 'Qualitätssicherung & Deployment'],
-    tone: 'ink',
-  },
-  {
-    label: 'Markenauftritt',
-    title: 'ZERION Beyond',
-    text: 'Eine eigenständige Markenwebsite für einen wissensbasierten Bereich – mit klarer Informationsführung und ruhigem Auftritt.',
-    points: ['Konzeption & Inhaltsstruktur', 'Frontend-Umsetzung', 'Klarer digitaler Erstkontakt'],
-    tone: 'paper',
-  },
-]
-
-const workingSteps = [
-  ['Verstehen', 'Ziel, Zielgruppe, vorhandene Systeme und echte Engpässe klären.'],
-  ['Strukturieren', 'Inhalte, Anforderungen und den sinnvollsten nächsten Schritt festlegen.'],
-  ['Umsetzen', 'Konsequent entwickeln, testen und für Desktop wie Smartphone ausarbeiten.'],
-  ['Weiterdenken', 'Ergebnisse prüfen und den digitalen Auftritt bei Bedarf weiterentwickeln.'],
+  ['Salon Karola', 'Website, digitale Kundenkarte, Google-Bewertungen und Kontaktwege zu einem stimmigen Besuchererlebnis verbunden.', 'Web · Kundenbindung · Bewertungen'],
+  ['STRUKTIVA', 'Ein Lead-System entwickelt, das Interessenten durch einen klaren digitalen Check bis zur strukturierten Anfrage führt.', 'Konzept · Prozess · Umsetzung'],
+  ['ZERION Beyond', 'Markenauftritt und Informationsstruktur für ein wissensbasiertes Angebot mit ruhiger, präziser Nutzerführung umgesetzt.', 'Marke · Struktur · Frontend'],
 ]
 
 export default function FreelancerPage() {
   const reducedMotion = useReducedMotion()
   const reveal = (delay = 0) => ({
-    initial: reducedMotion ? false : { opacity: 0, y: 18 },
+    initial: reducedMotion ? false : { opacity: 0, y: 20 },
     whileInView: reducedMotion ? undefined : { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.22 },
-    transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
+    viewport: { once: true, amount: 0.2 },
+    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
   })
 
   return (
     <main className="sven-freelance-page">
-      <section className="sven-freelance-hero" aria-labelledby="sven-freelance-title">
-        <div className="sven-freelance-hero__grain" aria-hidden="true" />
+      <section className="sven-freelance-hero" id="start" aria-labelledby="sven-freelance-title">
         <nav className="sven-freelance-nav" aria-label="Freelancer-Navigation">
-          <a className="sven-freelance-nav__brand" href="#start" aria-label="Sven Matzke – Start">
-            <span>SM</span>
-            <strong>Sven Matzke</strong>
-          </a>
-          <div className="sven-freelance-nav__links">
-            <a href="#leistungen">Leistungen</a>
-            <a href="#projekte">Projekte</a>
-            <a href="#kontakt">Kontakt</a>
-          </div>
+          <a className="sven-freelance-nav__brand" href="#start" aria-label="Sven Matzke – Start"><span>SM</span><strong>Sven Matzke</strong></a>
+          <div className="sven-freelance-nav__links"><a href="#arbeit">Arbeit</a><a href="#leistungen">Leistungen</a><a href="#kontakt">Kontakt</a></div>
+          <a className="sven-freelance-nav__contact" href="#kontakt">Projekt starten <ArrowDownRight aria-hidden="true" /></a>
         </nav>
 
-        <div className="sven-freelance-hero__inner" id="start">
-          <motion.div className="sven-freelance-hero__copy" initial={reducedMotion ? false : { opacity: 0, y: 22 }} animate={reducedMotion ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}>
-            <p className="sven-freelance-kicker">Freelance Digital Projects · Calw / Remote</p>
-            <h1 id="sven-freelance-title">Digitale Projekte, die <em>funktionieren.</em></h1>
-            <p className="sven-freelance-hero__lead">
-              Ich entwickle Unternehmenswebsites, klare Kundenwege und technische Lösungen für kleine Unternehmen, Selbstständige und lokale Dienstleister.
-            </p>
-            <div className="sven-freelance-hero__actions">
-              <a className="sven-freelance-button sven-freelance-button--gold" href="#kontakt">
-                Projekt besprechen <ArrowDownRight aria-hidden="true" />
-              </a>
-              <a className="sven-freelance-text-link" href="https://www.freelancermap.de/profil/digitaler-projektmanager-web-tracking-seo-und-prozesse" target="_blank" rel="noreferrer">
-                Freelancermap-Profil <ArrowUpRight aria-hidden="true" />
-              </a>
-            </div>
+        <div className="sven-freelance-hero__content">
+          <motion.div className="sven-freelance-hero__title" initial={reducedMotion ? false : { opacity: 0, y: 24 }} animate={reducedMotion ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
+            <p className="sven-freelance-kicker">Digitaler Projektkoordinator · Calw / Remote</p>
+            <h1 id="sven-freelance-title">Digitale Arbeit.<br /><em>Endlich klar.</em></h1>
           </motion.div>
-
-          <motion.div className="sven-freelance-hero__portrait" initial={reducedMotion ? false : { opacity: 0, scale: 0.96 }} animate={reducedMotion ? undefined : { opacity: 1, scale: 1 }} transition={{ duration: 0.68, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}>
-            <div className="sven-freelance-hero__portrait-frame">
-              <img src="/images/founder-sven.jpg" alt="Sven Matzke" width="640" height="820" />
-            </div>
-            <div className="sven-freelance-hero__stamp" aria-label="Websites, Prozesse und Technik">
-              <span>Websites</span><span>Prozesse</span><span>Technik</span>
-            </div>
+          <motion.div className="sven-freelance-hero__note" {...reveal(0.13)}>
+            <span className="sven-freelance-hero__dot" aria-hidden="true" />
+            <p>Websites, Kundenwege und digitale Prozesse für Unternehmen, die weniger Reibung und mehr Wirkung brauchen.</p>
+            <a href="#leistungen">Was ich konkret mache <ArrowDownRight aria-hidden="true" /></a>
           </motion.div>
         </div>
-        <div className="sven-freelance-hero__bottom" aria-hidden="true"><span>Web · UX · SEO · Prozesse</span><span>↓</span></div>
+
+        <div className="sven-freelance-hero__field" aria-hidden="true">
+          <span className="sven-freelance-hero__field-label">WEB / PROZESS / SICHTBARKEIT</span>
+          <span className="sven-freelance-hero__field-orbit" />
+          <span className="sven-freelance-hero__field-mark">SM</span>
+        </div>
+        <div className="sven-freelance-hero__footer"><span>Freelance Digital Projects</span><span>2026</span></div>
       </section>
 
-      <section className="sven-freelance-intro" aria-labelledby="sven-freelance-intro-title">
-        <motion.div {...reveal()}>
-          <p className="sven-freelance-kicker sven-freelance-kicker--dark">Nicht nur Gestaltung</p>
-          <h2 id="sven-freelance-intro-title">Ein guter Auftritt beginnt nicht im Design-Tool. Sondern beim echten Problem.</h2>
-        </motion.div>
-        <motion.div className="sven-freelance-intro__aside" {...reveal(0.08)}>
-          <p>Ich verbinde Gestaltung, technische Umsetzung und Kundenführung. Dadurch entsteht keine schöne Fassade, sondern ein digitaler Auftritt, der Orientierung gibt und Arbeit erleichtert.</p>
-          <a href="#leistungen">Was ich umsetze <ArrowDownRight aria-hidden="true" /></a>
-        </motion.div>
+      <section className="sven-freelance-statement" aria-labelledby="sven-freelance-statement-title">
+        <motion.p className="sven-freelance-kicker" {...reveal()}>Worum es geht</motion.p>
+        <motion.h2 id="sven-freelance-statement-title" {...reveal(0.06)}>Nicht noch ein Projekt, das gut aussieht.<br /><em>Sondern eins, das gut läuft.</em></motion.h2>
+        <motion.div className="sven-freelance-statement__copy" {...reveal(0.12)}><p>Ich bringe Design, technische Umsetzung und den Weg Ihrer Kunden zusammen. So wird aus einer Idee ein Auftritt, der verständlich ist, Vertrauen schafft und die Arbeit im Alltag erleichtert.</p><a href="#arbeit">Arbeit ansehen <ArrowDownRight aria-hidden="true" /></a></motion.div>
+      </section>
+
+      <section className="sven-freelance-work" id="arbeit" aria-labelledby="sven-freelance-work-title">
+        <div className="sven-freelance-work__head"><p className="sven-freelance-kicker">Aus der Praxis</p><h2 id="sven-freelance-work-title">Weniger versprechen.<br />Mehr <em>umsetzen.</em></h2></div>
+        <div className="sven-freelance-work__list">
+          {projects.map(([title, text, detail], index) => (
+            <motion.article className="sven-freelance-work__item" key={title} {...reveal(index * 0.08)}>
+              <span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{text}</p><small>{detail}</small><ArrowUpRight aria-hidden="true" />
+            </motion.article>
+          ))}
+        </div>
       </section>
 
       <section className="sven-freelance-services" id="leistungen" aria-labelledby="sven-freelance-services-title">
-        <div className="sven-freelance-section-head">
-          <p className="sven-freelance-kicker">Leistungen</p>
-          <h2 id="sven-freelance-services-title">Vom ersten Klick bis zum funktionierenden Prozess.</h2>
-        </div>
+        <div className="sven-freelance-services__intro"><p className="sven-freelance-kicker">Leistungen</p><h2 id="sven-freelance-services-title">Was braucht Ihr Projekt <em>wirklich?</em></h2><p>Ich steige dort ein, wo es sinnvoll ist: bei einer einzelnen Landingpage, einem hängenden Prozess oder beim kompletten digitalen Auftritt.</p></div>
         <div className="sven-freelance-services__list">
-          {services.map(({ number, title, text, icon: Icon }, index) => (
-            <motion.article className="sven-freelance-service" key={title} {...reveal(index * 0.05)}>
-              <span className="sven-freelance-service__number">{number}</span>
-              <Icon aria-hidden="true" />
-              <div><h3>{title}</h3><p>{text}</p></div>
-            </motion.article>
-          ))}
+          {services.map(([number, title, text], index) => <motion.article key={number} {...reveal(index * 0.07)}><span>{number}</span><h3>{title}</h3><p>{text}</p></motion.article>)}
         </div>
       </section>
 
-      <section className="sven-freelance-projects" id="projekte" aria-labelledby="sven-freelance-projects-title">
-        <div className="sven-freelance-section-head sven-freelance-section-head--light">
-          <p className="sven-freelance-kicker">Aus der Praxis</p>
-          <h2 id="sven-freelance-projects-title">Struktur wird sichtbar, wenn sie im Alltag hilft.</h2>
-        </div>
-        <div className="sven-freelance-projects__grid">
-          {projects.map((project, index) => (
-            <motion.article key={project.title} className={`sven-freelance-project sven-freelance-project--${project.tone}`} {...reveal(index * 0.07)}>
-              <p>{project.label}</p>
-              <h3>{project.title}</h3>
-              <span className="sven-freelance-project__line" aria-hidden="true" />
-              <p className="sven-freelance-project__text">{project.text}</p>
-              <ul>{project.points.map((point) => <li key={point}><Check aria-hidden="true" />{point}</li>)}</ul>
-            </motion.article>
-          ))}
-        </div>
-      </section>
-
-      <section className="sven-freelance-method" aria-labelledby="sven-freelance-method-title">
-        <div className="sven-freelance-section-head">
-          <p className="sven-freelance-kicker sven-freelance-kicker--dark">Zusammenarbeit</p>
-          <h2 id="sven-freelance-method-title">Klar arbeiten. Sauber umsetzen.</h2>
-        </div>
-        <ol>
-          {workingSteps.map(([title, text], index) => (
-            <motion.li key={title} {...reveal(index * 0.05)}><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{title}</h3><p>{text}</p></div></motion.li>
-          ))}
-        </ol>
+      <section className="sven-freelance-approach" aria-labelledby="sven-freelance-approach-title">
+        <div><p className="sven-freelance-kicker">Zusammenarbeit</p><h2 id="sven-freelance-approach-title">Klarer Start.<br />Saubere <em>Landung.</em></h2></div>
+        <ol><li><strong>Verstehen</strong><span>Ziel, Kunden und die wirkliche Aufgabe klären.</span></li><li><strong>Entscheiden</strong><span>Eine tragfähige Struktur statt unnötiger Extras entwickeln.</span></li><li><strong>Umsetzen</strong><span>Konsequent bauen, testen und verständlich übergeben.</span></li></ol>
       </section>
 
       <section className="sven-freelance-contact" id="kontakt" aria-labelledby="sven-freelance-contact-title">
-        <div className="sven-freelance-contact__halo" aria-hidden="true" />
-        <motion.div {...reveal()}>
-          <p className="sven-freelance-kicker">Direkter Kontakt</p>
-          <h2 id="sven-freelance-contact-title">Sie haben ein digitales Thema, das endlich klar werden soll?</h2>
-          <p>Schreiben Sie mir kurz, worum es geht. Ich melde mich persönlich und wir schauen gemeinsam, was sinnvoll ist.</p>
-          <div className="sven-freelance-contact__actions">
-            <a className="sven-freelance-button sven-freelance-button--light" href="mailto:struktiva.info@gmail.com?subject=Freelance-Projektanfrage">E-Mail schreiben <Mail aria-hidden="true" /></a>
-            <a href="https://www.linkedin.com/in/sven-matzke-960b63411" target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> LinkedIn</a>
-            <a href="https://github.com/struktivainfo-ui" target="_blank" rel="noreferrer"><Github aria-hidden="true" /> GitHub</a>
-          </div>
-        </motion.div>
-        <footer><span>© {new Date().getFullYear()} Sven Matzke</span><span>Websites · Kundenwege · digitale Prozesse</span></footer>
+        <motion.div {...reveal()}><p className="sven-freelance-kicker">Direkter Kontakt</p><h2 id="sven-freelance-contact-title">Lassen Sie uns<br /><em>klar anfangen.</em></h2><p>Schreiben Sie mir kurz, worum es geht. Ich melde mich persönlich zurück – mit einem klaren Blick darauf, was der nächste sinnvolle Schritt ist.</p><div className="sven-freelance-contact__actions"><a className="sven-freelance-button" href="mailto:struktiva.info@gmail.com?subject=Freelance-Projektanfrage">E-Mail schreiben <Mail aria-hidden="true" /></a><a href="https://www.linkedin.com/in/sven-matzke-960b63411" target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> LinkedIn</a><a href="https://github.com/struktivainfo-ui" target="_blank" rel="noreferrer"><Github aria-hidden="true" /> GitHub</a></div></motion.div>
+        <footer><span>© {new Date().getFullYear()} Sven Matzke</span><a href="https://www.freelancermap.de/profil/digitaler-projektmanager-web-tracking-seo-und-prozesse" target="_blank" rel="noreferrer">Freelancermap <ArrowUpRight aria-hidden="true" /></a></footer>
       </section>
     </main>
   )

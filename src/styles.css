@@ -17741,3 +17741,144 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
 .struktiva-metallic main .struktiva-practice-zerion .struktiva-practice-zerion__panel > a:focus-visible {
   color: #e9c273 !important;
 }
+
+/* Sven Matzke freelancer page – calm product-led editorial redesign */
+.route-sven-matzke { background: #f5f2ea; }
+
+.sven-freelance-page {
+  --sven-ink: #151514;
+  --sven-paper: #f5f2ea;
+  --sven-gold: #c89a3f;
+  --sven-gold-soft: #e2bd70;
+  --sven-line: rgba(21, 21, 20, 0.17);
+  background: var(--sven-paper);
+  color: var(--sven-ink);
+  font-family: var(--site-font, "Manrope", "Segoe UI", sans-serif);
+  overflow: clip;
+}
+
+.sven-freelance-page *, .sven-freelance-page *::before, .sven-freelance-page *::after { box-sizing: border-box; }
+.sven-freelance-page a { color: inherit; }
+.sven-freelance-hero, .sven-freelance-statement, .sven-freelance-work, .sven-freelance-services, .sven-freelance-approach, .sven-freelance-contact { padding-inline: clamp(1.25rem, 5vw, 5.5rem); }
+.sven-freelance-kicker { margin: 0; color: inherit; font-size: 0.68rem; font-weight: 850; letter-spacing: 0.15em; line-height: 1.4; text-transform: uppercase; }
+
+.sven-freelance-hero { position: relative; min-height: 100svh; padding-top: 1.25rem; padding-bottom: 1.2rem; background: var(--sven-paper); }
+.sven-freelance-nav { position: relative; z-index: 3; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 1440px; margin: 0 auto; }
+.sven-freelance-nav__brand { display: inline-flex; align-items: center; gap: 0.65rem; justify-self: start; color: var(--sven-ink); font-size: 0.84rem; font-weight: 850; text-decoration: none; }
+.sven-freelance-nav__brand span { display: grid; width: 2.25rem; height: 2.25rem; border: 1px solid var(--sven-ink); border-radius: 50%; place-items: center; font-size: 0.62rem; letter-spacing: 0.06em; }
+.sven-freelance-nav__links { display: flex; gap: clamp(1rem, 2.6vw, 2.5rem); }
+.sven-freelance-nav__links a, .sven-freelance-nav__contact { font-size: 0.76rem; font-weight: 800; text-decoration: none; }
+.sven-freelance-nav__links a { position: relative; }
+.sven-freelance-nav__links a::after { position: absolute; right: 0; bottom: -0.33rem; left: 0; height: 1px; background: var(--sven-gold); content: ""; transform: scaleX(0); transform-origin: right; transition: transform 180ms ease; }
+.sven-freelance-nav__links a:hover::after { transform: scaleX(1); transform-origin: left; }
+.sven-freelance-nav__contact { display: inline-flex; align-items: center; justify-self: end; gap: 0.38rem; padding-bottom: 0.2rem; border-bottom: 1px solid var(--sven-ink); }
+.sven-freelance-nav__contact svg { width: 0.95rem; height: 0.95rem; }
+
+.sven-freelance-hero__content { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.43fr); align-items: end; max-width: 1440px; min-height: calc(100svh - 8rem); margin: 0 auto; padding: clamp(7rem, 13vw, 12rem) 0 clamp(4rem, 8vw, 7rem); gap: clamp(2rem, 10vw, 10rem); }
+.sven-freelance-hero__title .sven-freelance-kicker { color: #77746c; }
+.sven-freelance-hero h1, .sven-freelance-statement h2, .sven-freelance-work h2, .sven-freelance-services h2, .sven-freelance-approach h2, .sven-freelance-contact h2 { margin: 1rem 0 0; font-weight: 800; letter-spacing: -0.075em; line-height: 0.88; text-wrap: balance; }
+.sven-freelance-hero h1 { position: relative; max-width: 950px; font-size: clamp(4.2rem, 10.9vw, 11rem); }
+.sven-freelance-page h1 em, .sven-freelance-page h2 em { color: var(--sven-gold); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+.sven-freelance-hero__note { align-self: end; max-width: 360px; padding-bottom: 0.4rem; color: #4d4b46; }
+.sven-freelance-hero__dot { display: block; width: 0.7rem; height: 0.7rem; margin-bottom: 1.25rem; border-radius: 50%; background: var(--sven-gold); }
+.sven-freelance-hero__note p { margin: 0; font-size: clamp(1rem, 1.35vw, 1.16rem); line-height: 1.58; }
+.sven-freelance-hero__note a, .sven-freelance-statement__copy a { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.5rem; color: var(--sven-ink); font-size: 0.82rem; font-weight: 850; text-decoration: none; }
+.sven-freelance-hero__note a svg, .sven-freelance-statement__copy a svg { width: 1rem; height: 1rem; }
+.sven-freelance-hero__field { position: absolute; z-index: 1; width: min(36vw, 560px); aspect-ratio: 1; top: clamp(7rem, 15vh, 12rem); right: clamp(-7rem, 1vw, 2rem); border-radius: 50%; background: var(--sven-gold); }
+.sven-freelance-hero__field::before { position: absolute; inset: 12%; border: 1px solid rgba(21, 21, 20, 0.38); border-radius: inherit; content: ""; }
+.sven-freelance-hero__field-orbit { position: absolute; width: 145%; height: 30%; top: 34%; left: -23%; border: 1px solid rgba(21, 21, 20, 0.38); border-radius: 50%; transform: rotate(-28deg); }
+.sven-freelance-hero__field-mark { position: absolute; right: 16%; bottom: 12%; color: #fff9ea; font-size: clamp(2rem, 5vw, 5.7rem); font-weight: 850; letter-spacing: -0.1em; }
+.sven-freelance-hero__field-label { position: absolute; top: 50%; left: -18%; width: 130%; color: var(--sven-ink); font-size: 0.62rem; font-weight: 850; letter-spacing: 0.15em; text-align: center; }
+.sven-freelance-hero__footer { position: relative; z-index: 2; display: flex; justify-content: space-between; max-width: 1440px; margin: 0 auto; padding-top: 1rem; border-top: 1px solid var(--sven-line); color: #77746c; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+
+.sven-freelance-statement { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.46fr); column-gap: clamp(2rem, 10vw, 11rem); padding-top: clamp(6rem, 13vw, 12rem); padding-bottom: clamp(6rem, 12vw, 11rem); background: var(--sven-ink); color: #f9f7f1; }
+.sven-freelance-statement .sven-freelance-kicker { grid-column: 1 / -1; color: var(--sven-gold-soft); }
+.sven-freelance-statement h2 { grid-column: 1 / -1; max-width: 1130px; margin-top: clamp(2.5rem, 5vw, 5rem); font-size: clamp(2.9rem, 6.3vw, 7.6rem); }
+.sven-freelance-statement h2 em { color: var(--sven-gold-soft); }
+.sven-freelance-statement__copy { grid-column: 2; margin-top: clamp(3rem, 7vw, 6rem); }
+.sven-freelance-statement__copy p { margin: 0; color: rgba(249, 247, 241, 0.72); font-size: clamp(1rem, 1.4vw, 1.17rem); line-height: 1.65; }
+.sven-freelance-statement__copy a { color: #fff; }
+
+.sven-freelance-work { padding-top: clamp(6rem, 11vw, 10rem); padding-bottom: clamp(5rem, 10vw, 9rem); }
+.sven-freelance-work__head { display: grid; grid-template-columns: minmax(160px, 0.42fr) minmax(0, 1fr); max-width: 1440px; margin: 0 auto; }
+.sven-freelance-work__head h2 { max-width: 800px; margin: 0; font-size: clamp(3rem, 6.8vw, 7.7rem); }
+.sven-freelance-work__list { max-width: 1440px; margin: clamp(3.5rem, 7vw, 6rem) auto 0; border-top: 1px solid var(--sven-line); }
+.sven-freelance-work__item { position: relative; display: grid; grid-template-columns: minmax(55px, 0.12fr) minmax(180px, 0.47fr) minmax(230px, 0.85fr) minmax(160px, 0.37fr) auto; align-items: center; gap: 1.25rem; min-height: 11.5rem; border-bottom: 1px solid var(--sven-line); padding: 1.4rem 0; transition: padding 220ms ease, background 220ms ease; }
+.sven-freelance-work__item:hover { background: #eee8dc; padding-inline: 1.2rem; }
+.sven-freelance-work__item > span, .sven-freelance-work__item small { color: #8b7a59; font-size: 0.66rem; font-weight: 850; letter-spacing: 0.1em; text-transform: uppercase; }
+.sven-freelance-work__item h3 { margin: 0; font-size: clamp(1.55rem, 3vw, 3rem); font-weight: 800; letter-spacing: -0.06em; }
+.sven-freelance-work__item p { max-width: 460px; margin: 0; color: #5a5750; font-size: 0.92rem; line-height: 1.6; }
+.sven-freelance-work__item > svg { width: 1.25rem; height: 1.25rem; }
+
+.sven-freelance-services { display: grid; grid-template-columns: minmax(250px, 0.7fr) minmax(0, 1fr); gap: clamp(3rem, 11vw, 12rem); padding-top: clamp(6rem, 12vw, 11rem); padding-bottom: clamp(6rem, 12vw, 11rem); background: #e7bf66; }
+.sven-freelance-services__intro { max-width: 490px; }
+.sven-freelance-services h2 { font-size: clamp(3rem, 5.6vw, 6.3rem); }
+.sven-freelance-services h2 em { color: #171510; }
+.sven-freelance-services__intro > p:last-child { max-width: 420px; margin: 2rem 0 0; color: rgba(21, 21, 20, 0.72); font-size: 1rem; line-height: 1.65; }
+.sven-freelance-services__list { border-top: 1px solid rgba(21, 21, 20, 0.34); }
+.sven-freelance-services__list article { display: grid; grid-template-columns: 3.25rem 1fr; column-gap: 1rem; border-bottom: 1px solid rgba(21, 21, 20, 0.34); padding: 1.7rem 0 2rem; }
+.sven-freelance-services__list span { grid-row: span 2; font-size: 0.7rem; font-weight: 850; letter-spacing: 0.1em; }
+.sven-freelance-services__list h3 { margin: 0; font-size: clamp(1.45rem, 2.5vw, 2.45rem); font-weight: 800; letter-spacing: -0.055em; line-height: 1.05; }
+.sven-freelance-services__list p { max-width: 540px; margin: 0.75rem 0 0; color: rgba(21, 21, 20, 0.74); font-size: 0.95rem; line-height: 1.6; }
+
+.sven-freelance-approach { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(350px, 0.95fr); gap: clamp(3rem, 9vw, 10rem); padding-top: clamp(6rem, 11vw, 10rem); padding-bottom: clamp(6rem, 11vw, 10rem); background: var(--sven-paper); }
+.sven-freelance-approach h2 { font-size: clamp(3rem, 5.6vw, 6.2rem); }
+.sven-freelance-approach ol { display: grid; align-content: end; margin: 0; padding: 0; list-style: none; }
+.sven-freelance-approach li { display: grid; grid-template-columns: minmax(105px, 0.34fr) 1fr; gap: 1.2rem; border-top: 1px solid var(--sven-line); padding: 1.4rem 0; }
+.sven-freelance-approach li:last-child { border-bottom: 1px solid var(--sven-line); }
+.sven-freelance-approach strong { font-size: 1rem; font-weight: 850; }
+.sven-freelance-approach span { color: #5a5750; font-size: 0.91rem; line-height: 1.55; }
+
+.sven-freelance-contact { padding-top: clamp(6rem, 12vw, 11rem); padding-bottom: 1.3rem; background: var(--sven-ink); color: #fffdf7; }
+.sven-freelance-contact > div { max-width: 1440px; margin: 0 auto; }
+.sven-freelance-contact .sven-freelance-kicker { color: var(--sven-gold-soft); }
+.sven-freelance-contact h2 { max-width: 1050px; font-size: clamp(4rem, 9.2vw, 10rem); }
+.sven-freelance-contact h2 em { color: var(--sven-gold-soft); }
+.sven-freelance-contact > div > p:not(.sven-freelance-kicker) { max-width: 520px; margin: 2.2rem 0 0; color: rgba(255, 253, 247, 0.7); font-size: 1rem; line-height: 1.65; }
+.sven-freelance-contact__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; margin-top: 2.5rem; }
+.sven-freelance-button { display: inline-flex; align-items: center; gap: 0.55rem; min-height: 3.25rem; padding: 0.75rem 1.15rem; border-radius: 999px; background: var(--sven-gold-soft); color: #171510; font-size: 0.85rem; font-weight: 850; text-decoration: none; transition: transform 180ms ease, background 180ms ease; }
+.sven-freelance-button:hover { background: #fffdf7; transform: translateY(-2px); }
+.sven-freelance-button svg, .sven-freelance-contact__actions > a svg { width: 1rem; height: 1rem; }
+.sven-freelance-contact__actions > a:not(.sven-freelance-button) { display: inline-flex; align-items: center; gap: 0.4rem; color: rgba(255, 253, 247, 0.86); font-size: 0.82rem; font-weight: 800; text-decoration: none; }
+.sven-freelance-contact footer { display: flex; justify-content: space-between; align-items: center; max-width: 1440px; margin: clamp(5rem, 10vw, 9rem) auto 0; padding-top: 1rem; border-top: 1px solid rgba(255, 253, 247, 0.22); color: rgba(255, 253, 247, 0.56); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.sven-freelance-contact footer a { display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none; }
+.sven-freelance-contact footer svg { width: 0.9rem; height: 0.9rem; }
+
+@media (max-width: 900px) {
+  .sven-freelance-hero { min-height: auto; }
+  .sven-freelance-hero__content { grid-template-columns: minmax(0, 1fr) minmax(210px, 0.38fr); min-height: 760px; }
+  .sven-freelance-hero__field { width: 44vw; right: -10vw; }
+  .sven-freelance-work__item { grid-template-columns: 45px minmax(150px, 0.5fr) minmax(200px, 0.8fr) auto; }
+  .sven-freelance-work__item small { display: none; }
+  .sven-freelance-services, .sven-freelance-approach { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .sven-freelance-hero, .sven-freelance-statement, .sven-freelance-work, .sven-freelance-services, .sven-freelance-approach, .sven-freelance-contact { padding-inline: 1.15rem; }
+  .sven-freelance-nav { grid-template-columns: 1fr auto; }
+  .sven-freelance-nav__links { display: none; }
+  .sven-freelance-nav__brand strong { font-size: 0.74rem; }
+  .sven-freelance-nav__contact { font-size: 0.69rem; }
+  .sven-freelance-hero__content { display: block; min-height: 720px; padding-top: 8rem; padding-bottom: 2rem; }
+  .sven-freelance-hero h1 { font-size: clamp(3.65rem, 17vw, 5rem); }
+  .sven-freelance-hero__field { width: 80vw; top: 22rem; right: -25vw; opacity: 0.95; }
+  .sven-freelance-hero__note { position: relative; z-index: 2; max-width: 310px; margin-top: 11rem; }
+  .sven-freelance-hero__footer { font-size: 0.54rem; }
+  .sven-freelance-statement { display: block; }
+  .sven-freelance-statement h2 { font-size: clamp(2.85rem, 13vw, 4.2rem); }
+  .sven-freelance-statement__copy { margin-top: 3rem; }
+  .sven-freelance-work__head { display: block; }
+  .sven-freelance-work__head h2 { margin-top: 1.3rem; }
+  .sven-freelance-work__item { grid-template-columns: 2.6rem 1fr auto; gap: 0.8rem; min-height: 0; padding: 1.6rem 0; }
+  .sven-freelance-work__item h3 { font-size: 1.7rem; }
+  .sven-freelance-work__item p { grid-column: 2 / -1; font-size: 0.88rem; }
+  .sven-freelance-work__item:hover { padding-inline: 0; background: transparent; }
+  .sven-freelance-services h2, .sven-freelance-approach h2 { font-size: clamp(3rem, 13vw, 4.5rem); }
+  .sven-freelance-services__list { margin-top: 3.25rem; }
+  .sven-freelance-services__list article { grid-template-columns: 2.4rem 1fr; }
+  .sven-freelance-approach li { grid-template-columns: 1fr; gap: 0.45rem; }
+  .sven-freelance-contact h2 { font-size: clamp(3.75rem, 16vw, 5.2rem); }
+  .sven-freelance-contact footer { align-items: flex-start; flex-direction: column; gap: 0.7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { .sven-freelance-page *, .sven-freelance-page *::before, .sven-freelance-page *::after { animation: none !important; transition: none !important; } }
