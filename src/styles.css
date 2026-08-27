@@ -9815,10 +9815,8 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
 .struktiva-practice-demo-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-  grid-template-areas:
-    "handwerker kosmetik"
-    "handwerker dienstleister";
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas: "handwerker kosmetik dienstleister";
   gap: clamp(1rem, 2vw, 1.4rem);
   width: min(100%, var(--container-wide, 1360px));
   margin: clamp(2.5rem, 6vw, 4.5rem) auto 0;
@@ -9855,14 +9853,14 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
 .struktiva-practice-demo--handwerker {
   grid-area: handwerker;
-  min-height: 37rem;
+  min-height: 20rem;
   border-radius: 52px 34px 44px 36px;
   padding: clamp(1.4rem, 3vw, 2.4rem);
 }
 
 .struktiva-practice-demo--kosmetik {
   grid-area: kosmetik;
-  min-height: 18rem;
+  min-height: 20rem;
   border-radius: 34px 54px 34px 42px;
   padding: clamp(1.2rem, 2.5vw, 1.8rem);
   background:
@@ -9872,7 +9870,7 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
 .struktiva-practice-demo--dienstleister {
   grid-area: dienstleister;
-  min-height: 18rem;
+  min-height: 20rem;
   border-radius: 42px 34px 54px 34px;
   padding: clamp(1.2rem, 2.5vw, 1.8rem);
   background:
@@ -10119,6 +10117,13 @@ body.cookie-banner-visible .struktiva-floating-whatsapp {
 
   .struktiva-practice-featured-modules {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .struktiva-practice-demo-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "handwerker kosmetik"
+      "dienstleister dienstleister";
   }
 
   .struktiva-practice-cta__actions {
