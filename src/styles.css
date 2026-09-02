@@ -2133,6 +2133,10 @@ body.cookie-modal-open {
   align-items: start;
 }
 
+.struktiva-local-split__copy h3 { margin: 0; font-size: var(--type-h3); line-height: 1.25; }
+.struktiva-local-split__copy p { margin: 0.9rem 0 0; color: var(--text-secondary); line-height: 1.75; }
+.struktiva-local-section--dark .struktiva-local-split__copy p { color: rgba(248, 246, 239, 0.72); }
+
 .struktiva-local-checklist {
   display: grid;
   gap: 0;

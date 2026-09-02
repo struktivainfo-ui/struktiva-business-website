@@ -29,7 +29,8 @@ export default function DigitalCheckIntro() {
         <p className="dc-problems__local-links">
           Vertiefend: <a href="/google-sichtbarkeit-calw">Google-Sichtbarkeit in Calw</a>,{' '}
           <a href="/digitale-kundenprozesse-calw">digitale Kundenprozesse</a> und{' '}
-          <a href="/digitalisierung-calw">Digitalisierung für Unternehmen in Calw</a>.
+          <a href="/digitalisierung-calw">Digitalisierung für Unternehmen in Calw</a>. Wiederkehrende Aufgaben können Sie außerdem unter{' '}
+          <a href="/ki-automatisierung-calw">KI und Automatisierung in Calw</a> einordnen.
         </p>
       </div>
     </section>

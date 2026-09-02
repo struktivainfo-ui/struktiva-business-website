@@ -93,7 +93,8 @@ export default function PracticeFeaturedCase() {
           </div>
           <p className="struktiva-practice-featured__related">
             Passend dazu: <a href="/digitale-kundenprozesse-calw">digitale Kundenprozesse</a> und{' '}
-            <a href="/google-sichtbarkeit-calw">Google-Sichtbarkeit in Calw</a>.
+            <a href="/google-sichtbarkeit-calw">Google-Sichtbarkeit in Calw</a>. Für wiederkehrende interne Schritte:{' '}
+            <a href="/ki-automatisierung-calw">KI und Automatisierung in Calw</a>.
           </p>
         </motion.div>
         <motion.div

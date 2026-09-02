@@ -9,38 +9,58 @@ const BUSINESS_ID = `${SITE_URL}/#business`
 
 function createLocalSeoStructuredData(page) {
   const pageUrl = `${SITE_URL}${page.path}`
+  const graph = [
+    {
+      '@type': 'WebPage',
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: page.metaTitle,
+      description: page.metaDescription,
+      inLanguage: 'de-DE',
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': BUSINESS_ID },
+      breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: page.eyebrow, item: pageUrl },
+      ],
+    },
+  ]
+
+  if (page.path === '/ki-automatisierung-calw') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${pageUrl}#service`,
+      name: 'KI und Automatisierung für Unternehmen in Calw',
+      serviceType: 'KI-Unterstützung und Prozessautomatisierung',
+      description: page.metaDescription,
+      url: pageUrl,
+      provider: { '@id': BUSINESS_ID },
+      areaServed: [
+        { '@type': 'City', name: 'Calw' },
+        { '@type': 'AdministrativeArea', name: 'Landkreis Calw' },
+        { '@type': 'Place', name: 'Nordschwarzwald' },
+      ],
+    })
+  }
+
+  graph.push({
+    '@type': 'FAQPage',
+    '@id': `${pageUrl}#faq`,
+    mainEntity: page.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  })
+
   return {
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebPage',
-        '@id': `${pageUrl}#webpage`,
-        url: pageUrl,
-        name: page.metaTitle,
-        description: page.metaDescription,
-        inLanguage: 'de-DE',
-        isPartOf: { '@id': `${SITE_URL}/#website` },
-        about: { '@id': BUSINESS_ID },
-        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': `${pageUrl}#breadcrumb`,
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: page.eyebrow, item: pageUrl },
-        ],
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': `${pageUrl}#faq`,
-        mainEntity: page.faqs.map((faq) => ({
-          '@type': 'Question',
-          name: faq.question,
-          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-        })),
-      },
-    ],
+    '@graph': graph,
   }
 }
 

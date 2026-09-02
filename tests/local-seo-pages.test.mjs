@@ -50,6 +50,14 @@ test('visible FAQs and structured FAQ data share one source of truth', () => {
   }
 })
 
+test('the AI automation route describes the service and its local provider', () => {
+  const graph = getRouteMeta('/ki-automatisierung-calw').structuredData['@graph']
+  const service = graph.find((item) => item['@type'] === 'Service')
+  assert.ok(service)
+  assert.equal(service.provider?.['@id'], 'https://struktiva.de/#business')
+  assert.equal(service.url, 'https://struktiva.de/ki-automatisierung-calw')
+})
+
 test('sitemap contains canonical production URLs and excludes non-index pages', async () => {
   const sitemap = await read('public/sitemap.xml')
   for (const path of paths) {
