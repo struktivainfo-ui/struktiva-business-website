@@ -6631,6 +6631,7 @@ function ImpressumPage() {
       <LegalSection title="Angaben gemäß § 5 TMG">
         <p>Jessica Wacker<br />Ostlandstraße 3<br />75365 Calw</p>
         <p>Kontakt:<br />Telefon: 07051 8162292<br />E-Mail: <a href="mailto:struktiva.info@gmail.com" className="text-[#D8B45A]">struktiva.info@gmail.com</a></p>
+        <p>Wirtschafts-Identifikationsnummer gemäß § 139c AO: DE400051802-00001</p>
       </LegalSection>
 
       <LegalSection title="Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV">
