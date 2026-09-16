@@ -11,6 +11,7 @@ import AboutPage from '../pages/AboutPage.jsx'
 import ContactPage from '../pages/ContactPage.jsx'
 import ImpressumPage from '../pages/ImpressumPage.jsx'
 import DatenschutzPage from '../pages/DatenschutzPage.jsx'
+import WerbekennzeichnungPage from '../pages/WerbekennzeichnungPage.jsx'
 import NotFoundPage from '../pages/NotFoundPage.jsx'
 import DemoHandwerkerPage from '../pages/DemoHandwerkerPage.jsx'
 import DemoKosmetikPage from '../pages/DemoKosmetikPage.jsx'
@@ -36,6 +37,7 @@ export const activePageComponents = {
   '/kontakt': ContactPage,
   '/impressum': ImpressumPage,
   '/datenschutz': DatenschutzPage,
+  '/werbekennzeichnung': WerbekennzeichnungPage,
   '/digitale-unternehmensberatung-calw': DigitalConsultingCalwPage,
   '/digitalisierung-calw': DigitalizationCalwPage,
   '/website-handwerker-calw': WebsiteTradesCalwPage,

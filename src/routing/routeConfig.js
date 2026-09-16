@@ -182,6 +182,11 @@ export const ACTIVE_ROUTE_META = {
     description: 'Datenschutzerklärung von STRUKTIVA Digitale Unternehmensberatung.',
     canonicalPath: '/datenschutz',
   },
+  '/werbekennzeichnung': {
+    title: 'Werbekennzeichnung | STRUKTIVA',
+    description: 'Hinweise zu Werbung, Affiliate-Links und bezahlten Kooperationen von STRUKTIVA.',
+    canonicalPath: '/werbekennzeichnung',
+  },
   '/impressum': {
     title: 'Impressum - STRUKTIVA Digitale Unternehmensberatung',
     description: 'Impressum und rechtliche Angaben von STRUKTIVA Digitale Unternehmensberatung.',

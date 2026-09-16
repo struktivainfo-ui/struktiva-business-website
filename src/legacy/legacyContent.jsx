@@ -6641,6 +6641,31 @@ function ImpressumPage() {
   )
 }
 
+function WerbekennzeichnungPage() {
+  return (
+    <LegalLayout
+      title="Werbekennzeichnung"
+      intro="Transparenz bei Empfehlungen, Werbeinhalten und Affiliate-Links von STRUKTIVA."
+    >
+      <LegalSection title="Werbung und Affiliate-Links">
+        <p>Ein Teil unserer Inhalte kann Empfehlungen zu Produkten oder Dienstleistungen enthalten. Links zu solchen Angeboten können Affiliate-Links sein. Wenn über einen solchen Link ein Kauf erfolgt, kann STRUKTIVA eine Provision erhalten. Für Käuferinnen und Käufer entstehen dadurch keine zusätzlichen Kosten.</p>
+      </LegalSection>
+
+      <LegalSection title="Klare Kennzeichnung">
+        <p>Werbliche Inhalte und Affiliate-Links werden klar und unmittelbar beim jeweiligen Inhalt als „Werbung“ oder „Anzeige“ gekennzeichnet. Dies gilt insbesondere für entsprechende Pins und Links auf Pinterest.</p>
+      </LegalSection>
+
+      <LegalSection title="Bezahlte Kooperationen">
+        <p>Erhalten wir für einen Inhalt eine Vergütung oder eine sonstige Gegenleistung von einem Unternehmen, wird die Kooperation deutlich als Werbung beziehungsweise bezahlte Partnerschaft kenntlich gemacht.</p>
+      </LegalSection>
+
+      <LegalSection title="Redaktionelle Auswahl">
+        <p>Empfehlungen werden nach thematischer Relevanz für unsere Inhalte ausgewählt. Eine mögliche Provision wird nicht als Ersatz für eine klare Kennzeichnung verwendet.</p>
+      </LegalSection>
+    </LegalLayout>
+  )
+}
+
 function DatenschutzPage() {
   return (
     <LegalLayout
@@ -7978,6 +8003,7 @@ export {
   NotFoundPage,
   PaketePage,
   ProjectRequestPage,
+  WerbekennzeichnungPage,
   contactDetails,
   useCurrentPath,
   useDocumentTitleSafe,

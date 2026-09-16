@@ -67,6 +67,7 @@ export default function Footer() {
           <h2>Rechtliches</h2>
           <a href="/impressum">Impressum</a>
           <a href="/datenschutz">Datenschutz</a>
+          <a href="/werbekennzeichnung">Werbekennzeichnung</a>
           <button type="button" onClick={openCookieSettings}>
             Cookie-Einstellungen
           </button>
