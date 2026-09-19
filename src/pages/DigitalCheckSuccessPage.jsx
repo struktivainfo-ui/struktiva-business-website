@@ -22,7 +22,7 @@ export default function DigitalCheckSuccessPage() {
   return (
     <main className="dc-success">
       <div className="dc-success__inner">
-        <CheckCircle2 aria-hidden="true" />
+        <CheckCircle2 className="dc-success__icon" color="#086de4" aria-hidden="true" />
         {confirmed ? (
           <>
             <p className="dc-eyebrow">Anfrage eingegangen</p>

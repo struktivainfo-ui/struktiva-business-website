@@ -16,16 +16,12 @@ export default function AboutDevelopment() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <h2 id="struktiva-about-development-title">Digitale Entwicklung darf klein beginnen.</h2>
-          <p>Nicht jedes Unternehmen muss sofort ein großes Digitalprojekt starten.</p>
-          <p>Ein sinnvoller erster Schritt kann sein:</p>
+          <p>Nicht jedes Unternehmen braucht sofort ein großes Digitalprojekt. Ein sinnvoller erster Schritt kann sein:</p>
           <ul>
             {aboutDevelopmentExamples.map((example) => (
               <li key={example}>{example}</li>
             ))}
           </ul>
-          <p>
-            Wenn daraus später weitere Anforderungen entstehen, können zusätzliche Bausteine ergänzt werden.
-          </p>
           <p className="struktiva-about-development__statement">
             Struktur bedeutet nicht, alles auf einmal zu bauen. Struktur bedeutet, in der richtigen Reihenfolge zu handeln.
           </p>
@@ -37,12 +33,12 @@ export default function AboutDevelopment() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
+          <figure className="struktiva-about-practice__image">
+            <img src="/images/salon-karola-interior-project.jpg" alt="Innenraum von Salon Karola in Calw-Wimberg" loading="lazy" />
+          </figure>
           <p className="struktiva-about-eyebrow">Aus der Praxis</p>
           <h2>Ein echtes Beispiel für schrittweise digitale Entwicklung.</h2>
-          <p>Bei Salon Karola entstand die digitale Struktur ebenfalls nicht als starres Komplettpaket.</p>
-          <p>
-            Aus verschiedenen Anforderungen entwickelten sich schrittweise verbundene Bereiche - von Website und Sichtbarkeit bis zu Kundenbindung und internen digitalen Abläufen.
-          </p>
+          <p>Bei Salon Karola wurden Website, Sichtbarkeit, Kontaktwege und Kundenbindung Schritt für Schritt verbunden.</p>
           <a href="/praxisbeispiele/salon-karola" className="struktiva-about-text-link">
             <span>Salon-Karola-Projekt ansehen</span>
             <ArrowRight aria-hidden="true" />

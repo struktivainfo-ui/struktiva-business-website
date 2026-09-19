@@ -13,8 +13,18 @@ export function LocalSeoPage({ page, variant, children }) {
 
 export function LocalSeoHero({ page, variant }) {
   const reducedMotion = useReducedMotion()
+  const heroImages = {
+    visibility: '/images/struktiva-solution-visibility-3d-v1.png',
+    'customer-processes': '/images/struktiva-solution-customer-3d-v1.png',
+    ai: '/images/struktiva-solution-automation-3d-v1.png',
+    digitalization: '/images/struktiva-hero-digital-consulting-3d-v1.png',
+    consulting: '/images/struktiva-hero-digital-consulting-v2.png',
+    trades: '/images/struktiva-hero-digital-consulting-3d-v1.png',
+  }
+  const heroImage = heroImages[variant] ?? null
   return (
     <section className="struktiva-local-hero" aria-labelledby="local-seo-title">
+      {heroImage ? <div className="struktiva-local-hero__media" aria-hidden="true"><img src={heroImage} alt="" /></div> : null}
       <div className="struktiva-local-shell">
         <nav className="struktiva-local-breadcrumb" aria-label="Brotkrümelnavigation">
           <a href="/">Start</a><span aria-hidden="true">/</span><span aria-current="page">{page.eyebrow}</span>

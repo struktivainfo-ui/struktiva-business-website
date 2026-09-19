@@ -2,85 +2,6 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { currentNavigation } from '../../routing/routeConfig.js'
 
-const systemAreas = [
-  {
-    key: 'visibility',
-    title: 'Sichtbarkeit',
-    detail: 'Website & Google',
-  },
-  {
-    key: 'customers',
-    title: 'Kundenführung',
-    detail: 'Kontakt & Bindung',
-  },
-  {
-    key: 'workflows',
-    title: 'Abläufe',
-    detail: 'Systeme & Automatisierung',
-  },
-]
-
-function HeroSystemVisual({ reducedMotion }) {
-  const [firstArea, ...remainingAreas] = systemAreas
-  const lineMotion = reducedMotion
-    ? {}
-    : {
-        initial: { pathLength: 0, opacity: 0 },
-        animate: { pathLength: 1, opacity: 1 },
-        transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.35 },
-      }
-
-  return (
-    <div className="struktiva-system-visual" aria-label="Digitale Bereiche des Unternehmens arbeiten zusammen">
-      <svg className="struktiva-system-visual__lines" viewBox="0 0 640 460" aria-hidden="true" focusable="false">
-        <motion.path {...lineMotion} d="M322 226 C382 132 470 93 556 110" />
-        <motion.path {...lineMotion} d="M322 226 C227 140 128 146 78 228" />
-        <motion.path {...lineMotion} d="M322 226 C396 296 452 352 538 346" />
-        <motion.path {...lineMotion} className="struktiva-system-visual__soft-line" d="M83 230 C178 304 336 365 538 346" />
-      </svg>
-
-      <ul className="struktiva-system-visual__nodes struktiva-system-visual__nodes--primary">
-        {[firstArea].map((area, index) => (
-          <motion.li
-            key={area.key}
-            className={`struktiva-system-visual__node struktiva-system-visual__node--${area.key}`}
-            initial={reducedMotion ? false : { opacity: 0, y: 14, scale: 0.98 }}
-            animate={reducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.45, delay: 0.18 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="struktiva-system-visual__status" aria-hidden="true" />
-            <strong>{area.title}</strong>
-            <small>{area.detail}</small>
-          </motion.li>
-        ))}
-      </ul>
-
-      <div className="struktiva-system-visual__center">
-        <span>Ihr Unternehmen</span>
-        <small>klar verbunden</small>
-      </div>
-
-      <ul className="struktiva-system-visual__nodes struktiva-system-visual__nodes--secondary">
-        {remainingAreas.map((area, index) => (
-          <motion.li
-            key={area.key}
-            className={`struktiva-system-visual__node struktiva-system-visual__node--${area.key}`}
-            initial={reducedMotion ? false : { opacity: 0, y: 14, scale: 0.98 }}
-            animate={reducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.45, delay: 0.3 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="struktiva-system-visual__status" aria-hidden="true" />
-            <strong>{area.title}</strong>
-            <small>{area.detail}</small>
-          </motion.li>
-        ))}
-      </ul>
-
-      <span className="struktiva-system-visual__pulse" aria-hidden="true" />
-    </div>
-  )
-}
-
 export default function HomeHero() {
   const reducedMotion = useReducedMotion()
   const primaryCta = currentNavigation.primaryCta
@@ -88,6 +9,15 @@ export default function HomeHero() {
 
   return (
     <section className="struktiva-home-hero" id="start" aria-labelledby="struktiva-home-hero-title">
+      <motion.div
+        className="struktiva-home-hero__scene"
+        aria-hidden="true"
+        initial={reducedMotion ? false : { opacity: 0, scale: 1.045 }}
+        animate={reducedMotion ? undefined : { opacity: 1, scale: 1 }}
+        transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <img src="/images/struktiva-hero-digital-consulting-3d-v1.png" alt="" />
+      </motion.div>
       <div className="struktiva-home-hero__backdrop" aria-hidden="true" />
       <div className="struktiva-home-hero__inner">
         <motion.div
@@ -123,9 +53,13 @@ export default function HomeHero() {
           className="struktiva-home-hero__visual"
           initial={reducedMotion ? false : { opacity: 0, y: 20 }}
           animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <HeroSystemVisual reducedMotion={Boolean(reducedMotion)} />
+          <div className="struktiva-home-hero__signal" aria-label="Sichtbarkeit, Kundenführung und Abläufe werden verbunden">
+            <span className="struktiva-home-hero__signal-label">Digitale Struktur</span>
+            <strong>Ihr Unternehmen.<br />Klar verbunden.</strong>
+            <p>Sichtbarkeit <i aria-hidden="true" /> Kundenführung <i aria-hidden="true" /> Abläufe</p>
+          </div>
         </motion.div>
       </div>
       <div className="struktiva-home-hero__bridge" aria-hidden="true" />

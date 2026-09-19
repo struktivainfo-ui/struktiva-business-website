@@ -1,4 +1,4 @@
-﻿const defaultDescription =
+const defaultDescription =
   'STRUKTIVA entwickelt Webseiten, Google-Sichtbarkeit, Kontaktwege und digitale Strukturen für Unternehmen, Selbstständige und lokale Dienstleister.'
 
 import { personalDigitalCheckOffer } from '../config/digitalCheckOffer.js'

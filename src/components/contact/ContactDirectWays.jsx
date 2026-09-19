@@ -5,8 +5,8 @@ export default function ContactDirectWays() {
   return (
     <section id="direct-contact" className="struktiva-contact-direct" aria-labelledby="struktiva-contact-direct-title">
       <div>
-        <p className="struktiva-contact-eyebrow">Direkte Kontaktmoeglichkeiten</p>
-        <h2 id="struktiva-contact-direct-title">Waehlen Sie den Weg, der zu Ihrem Anliegen passt.</h2>
+        <p className="struktiva-contact-eyebrow">Direkte Kontaktmöglichkeiten</p>
+        <h2 id="struktiva-contact-direct-title">Wählen Sie den Weg, der zu Ihrem Anliegen passt.</h2>
       </div>
       <div className="struktiva-contact-direct__list">
         {directContactWays.map((way) => (

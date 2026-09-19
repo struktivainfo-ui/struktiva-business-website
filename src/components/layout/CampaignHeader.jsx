@@ -9,7 +9,7 @@ export default function CampaignHeader({ pathname }) {
     <header className="campaign-header">
       <div className="campaign-header__inner">
         <a className="campaign-brand" href="/" aria-label="STRUKTIVA Startseite">
-          <img src="/struktiva-logo.jpeg" alt="" />
+          <span className="campaign-brand__mark" aria-hidden="true">S</span>
           <span>
             <strong>STRUKTIVA</strong>
             <small>Digitale Unternehmensberatung</small>

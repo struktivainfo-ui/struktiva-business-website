@@ -8,7 +8,7 @@ export default function DigitalCheckFormSection() {
         <div className="dc-form-section__intro">
           <p className="dc-eyebrow">Ihr nächster Schritt</p>
           <h2 id="dc-form-title">Digital-Check anfragen</h2>
-          <p>Erzählen Sie uns kurz, wo es digital hakt. Wir prüfen Ihre Anfrage persönlich und melden uns mit dem passenden nächsten Schritt.</p>
+          <p>Beschreiben Sie kurz Ihre Situation. Wir schauen persönlich darauf und melden uns mit einem passenden nächsten Schritt.</p>
           <div className="dc-price-block dc-form-section__price" aria-label={personalDigitalCheckOffer.priceBaseLabel}>
             <strong>{personalDigitalCheckOffer.priceBaseLabel}</strong>
             {personalDigitalCheckOffer.taxNote ? <span className="dc-tax-note">{personalDigitalCheckOffer.taxNote}</span> : null}

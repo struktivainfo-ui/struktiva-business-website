@@ -3,6 +3,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react'
 import { salonKarolaCasePath } from '../case-study/salonKarolaCaseData.js'
 
 const salonKarolaUrl = 'https://salonkarola.de/'
+const salonKarolaInteriorImage = '/images/salon-karola-interior-project.jpg'
 
 const systemModules = [
   {
@@ -129,13 +130,7 @@ export default function HomeCaseStudySection() {
             Wie aus einzelnen digitalen Bausteinen ein zusammenhängendes System entsteht.
           </h2>
           <div className="struktiva-home-case-study__lead">
-            <p>Für Salon Karola entstand nicht nur eine neue Website.</p>
-            <p>
-              Schritt für Schritt wurden verschiedene digitale Bereiche miteinander verbunden - vom öffentlichen Webauftritt über Kontaktwege und Bewertungen bis zur Kundenverwaltung und internen digitalen Abläufen.
-            </p>
-            <p>
-              Das Praxisbeispiel zeigt, wie STRUKTIVA digitale Struktur nicht nur plant, sondern auch praktisch umsetzt.
-            </p>
+            <p>Salon Karola zeigt, wie ein sichtbarer Webauftritt, klare Kontaktwege und digitale Abläufe Schritt für Schritt zusammenwachsen können.</p>
           </div>
         </motion.div>
 
@@ -148,16 +143,11 @@ export default function HomeCaseStudySection() {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="struktiva-case-story__label">Echtes lokales Projekt</p>
-            <h3>Die Ausgangslage</h3>
-            <p>
-              Wie bei vielen lokalen Betrieben bestanden verschiedene digitale Aufgaben und Kontaktpunkte nebeneinander.
-            </p>
-            <p>
-              Website, Kundenkontakt, Bewertungen, Kundendaten und interne Organisation waren keine durchgängige digitale Struktur.
-            </p>
-            <p>
-              Die Aufgabe bestand deshalb nicht darin, einfach "noch eine Website" zu bauen, sondern die relevanten Bereiche Schritt für Schritt sinnvoll miteinander zu verbinden.
-            </p>
+            <h3>Ein Salon. Ein echter digitaler Weg.</h3>
+            <p>Aus einzelnen Kontaktpunkten entstand eine klarer verbundene digitale Struktur — vom ersten Eindruck bis in den Alltag des Betriebs.</p>
+            <a className="struktiva-case-story__website-link" href={salonKarolaUrl} target="_blank" rel="noopener noreferrer">
+              salonkarola.de <ExternalLink aria-hidden="true" />
+            </a>
           </motion.article>
 
           <motion.div
@@ -167,7 +157,13 @@ export default function HomeCaseStudySection() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           >
-            <CaseStudySystemMap reducedMotion={Boolean(reducedMotion)} />
+            <figure className="struktiva-case-story__visual">
+              <img src={salonKarolaInteriorImage} alt="Innenraum von Salon Karola in Calw-Wimberg" loading="lazy" />
+              <figcaption>
+                <span>Salon Karola</span>
+                <strong>Calw-Wimberg</strong>
+              </figcaption>
+            </figure>
           </motion.div>
         </div>
 

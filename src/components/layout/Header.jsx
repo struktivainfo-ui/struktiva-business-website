@@ -119,7 +119,7 @@ export default function Header({ pathname }) {
     <header className={`struktiva-global-header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="struktiva-global-header__inner">
         <a className="struktiva-brand" href="/" aria-label="STRUKTIVA Startseite">
-          <img src="/struktiva-logo.jpeg" alt="" className="struktiva-brand__mark" />
+          <span className="struktiva-brand__mark" aria-hidden="true">S</span>
           <span className="struktiva-brand__text">
             <span className="struktiva-brand__name">STRUKTIVA</span>
             <span className="struktiva-brand__descriptor">Digitale Unternehmensberatung</span>

@@ -15,11 +15,10 @@ export default function DigitalCheckHero() {
           animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="dc-eyebrow">{personalDigitalCheckOffer.name}</p>
-          <h1 id="dc-hero-title">Ihre Website ist online. Aber bringt sie Ihnen auch Anfragen?</h1>
+          <p className="dc-eyebrow dc-eyebrow--blue">{personalDigitalCheckOffer.name}</p>
+          <h1 id="dc-hero-title">Wo verliert Ihr Unternehmen online den nächsten Kunden?</h1>
           <p className="dc-hero__lead">
-            Der STRUKTIVA Digital-Check zeigt Ihnen verständlich, wo Interessenten verloren gehen – und welche
-            Verbesserungen für Ihren Betrieb wirklich sinnvoll sind.
+            Der STRUKTIVA Digital-Check ordnet Ihren digitalen Kundenweg persönlich ein – damit klar wird, was bereits trägt und welcher nächste Schritt wirklich sinnvoll ist.
           </p>
           <div className="dc-hero__offer-line">
             <div className="dc-price-block">
