@@ -8,7 +8,7 @@ export default function ContactStartOptions() {
   return (
     <section className="struktiva-contact-options" aria-labelledby="struktiva-contact-options-title">
       <div className="struktiva-contact-section-heading">
-        <p className="struktiva-contact-eyebrow">So koennen Sie starten</p>
+        <p className="struktiva-contact-eyebrow">So können Sie starten</p>
         <h2 id="struktiva-contact-options-title">Direkte Frage oder mehrere Themen? Beides ist in Ordnung.</h2>
       </div>
 
