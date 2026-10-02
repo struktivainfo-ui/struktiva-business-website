@@ -21571,3 +21571,78 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
   background: transparent !important;
   color: #075bbf !important;
 }
+/* Software & Tools editorial area */
+.software-area { background: #fff; color: #151515; }
+.software-container { width: min(1180px, calc(100% - 2.5rem)); margin-inline: auto; }
+.software-hero, .software-article-hero { background: #10100f; color: #f8f6ef; }
+.software-hero { min-height: min(710px, 78svh); display: flex; align-items: center; padding: 4rem 0 5rem; background-image: radial-gradient(circle at 78% 43%, rgba(168,127,42,.22), transparent 27%), linear-gradient(120deg, #10100f, #24211b); }
+.software-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; color: #d9d2c2; font-size: .78rem; margin-bottom: clamp(3rem, 8vw, 6rem); }
+.software-breadcrumb a { color: inherit; text-decoration: underline; text-underline-offset: .25em; }
+.software-breadcrumb span[aria-current="page"] { color: #f8f6ef; }
+.software-kicker { color: #b89142; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; }
+.software-hero h1, .software-article-hero h1 { max-width: 900px; font-family: var(--struktiva-heading-font); font-size: clamp(3rem, 7vw, 6.3rem); font-weight: 400; line-height: 1.04; letter-spacing: -.045em; margin: .7rem 0 1.5rem; }
+.software-hero__lead, .software-article-hero > .software-container > p:not(.software-kicker):not(.software-article-hero__date) { max-width: 650px; font-size: clamp(1.05rem, 1.7vw, 1.35rem); line-height: 1.65; color: #e4e0d6; }
+.software-hero__link, .software-principle a { display: inline-flex; gap: .6rem; align-items: center; color: #f4d481; font-weight: 800; margin-top: 2rem; text-decoration: underline; text-underline-offset: .35em; }
+.software-hero__link svg, .software-principle a svg, .software-guide-link svg, .software-article-aside svg { width: 1rem; height: 1rem; transition: transform .2s ease; }
+.software-hero__link:hover svg, .software-principle a:hover svg, .software-guide-link:hover svg, .software-article-aside a:hover svg { transform: translateX(4px); }
+.software-index { padding-block: clamp(4rem, 8vw, 8rem); }
+.software-section-heading { max-width: 700px; margin-bottom: 3rem; }
+.software-section-heading h2, .software-principle h2 { font-family: var(--struktiva-heading-font); font-weight: 400; font-size: clamp(2.4rem, 4.3vw, 4.3rem); line-height: 1.12; margin: .7rem 0 1rem; }
+.software-section-heading > p:last-child { color: #55534d; line-height: 1.75; }
+.software-guide-list { border-top: 1px solid #d6d1c6; }
+.software-guide-link { display: grid; grid-template-columns: 5rem 1fr auto; gap: 1.5rem; align-items: center; border-bottom: 1px solid #d6d1c6; padding: 2rem 0; color: #151515; text-decoration: none; }
+.software-guide-link__number { color: #a87f2a; font-size: .8rem; font-weight: 800; }
+.software-guide-link strong { display: block; font-family: var(--struktiva-heading-font); font-size: clamp(1.45rem, 2.2vw, 2.3rem); font-weight: 400; line-height: 1.22; }
+.software-guide-link small { display: block; margin-top: .55rem; color: #55534d; font-size: .95rem; line-height: 1.6; }
+.software-principle { background: #171715; color: #f8f6ef; padding-block: clamp(4.5rem, 9vw, 9rem); }
+.software-principle .software-container { max-width: 960px; }
+.software-principle p:not(.software-kicker) { max-width: 690px; color: #d4d0c7; line-height: 1.75; font-size: 1.07rem; }
+.software-disclosure { padding-block: 4rem; max-width: 880px; color: #55534d; line-height: 1.75; }
+.software-disclosure h2 { color: #151515; font-size: 1.35rem; }
+.software-article-hero { padding-block: 2rem 5rem; }
+.software-article-hero .software-breadcrumb { margin-bottom: 4rem; }
+.software-article-hero h1 { font-size: clamp(2.8rem, 5.4vw, 5.3rem); }
+.software-article-hero__date { margin-top: 2rem; color: #b9b2a4; font-size: .8rem; }
+.software-article-layout { display: grid; grid-template-columns: minmax(0, 760px) minmax(220px, 1fr); gap: clamp(2rem, 6vw, 7rem); padding-block: clamp(3rem, 6vw, 6rem); }
+.software-article-body { min-width: 0; }
+.software-editorial-note { border-left: 3px solid #a87f2a; padding-left: 1.25rem; color: #55534d; line-height: 1.7; margin: 0 0 3rem; }
+.software-article-section { border-top: 1px solid #dedbd3; padding: 2.5rem 0; }
+.software-article-section h2 { font-family: var(--struktiva-heading-font); font-size: clamp(1.85rem, 2.9vw, 2.75rem); font-weight: 400; line-height: 1.18; margin: 0 0 1.2rem; }
+.software-article-section h3 { font-size: 1.15rem; margin: 0 0 .6rem; }
+.software-article-section p, .software-article-section li { color: #45443f; line-height: 1.8; }
+.software-article-section ul, .software-article-section ol { padding-left: 1.5rem; }
+.software-article-section li { padding-left: .35rem; margin: .5rem 0; }
+.software-tools { border-top: 1px solid #dedbd3; margin-top: 1.75rem; }
+.software-tools > div { padding: 1.5rem 0; border-bottom: 1px solid #dedbd3; }
+.software-tools p { margin: .4rem 0; }
+.software-tools a, .software-source a { color: #785916; text-decoration: underline; text-underline-offset: .25em; }
+.software-tools a { display: inline-flex; align-items: center; gap: .35rem; margin-top: .4rem; font-weight: 700; }
+.software-tools svg, .software-source svg { display: inline; width: .85rem; height: .85rem; }
+.software-source { font-size: .85rem; }
+.software-faq details { border-bottom: 1px solid #dedbd3; padding: 1rem 0; }
+.software-faq summary { cursor: pointer; font-weight: 750; }
+.software-article-aside { align-self: start; position: sticky; top: 7rem; border-top: 2px solid #a87f2a; padding-top: 1.2rem; }
+.software-article-aside a { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #dedbd3; padding: 1rem 0; color: #222; font-weight: 700; line-height: 1.5; }
+@media (max-width: 800px) { .software-article-layout { grid-template-columns: 1fr; } .software-article-aside { position: static; } .software-guide-link { grid-template-columns: 2rem 1fr auto; gap: .75rem; } .software-hero { min-height: 620px; } }
+@media (prefers-reduced-motion: reduce) { .software-area svg { transition: none; } }
+
+.software-area .software-hero h1,
+.software-area .software-article-hero h1,
+.software-area .software-principle h2 { color: #f8f6ef !important; }
+.struktiva-metallic .software-area header.software-article-hero { background: #10100f !important; box-shadow: none !important; }
+.struktiva-metallic .software-area header.software-article-hero .software-breadcrumb,
+.struktiva-metallic .software-area header.software-article-hero .software-breadcrumb a,
+.struktiva-metallic .software-area header.software-article-hero .software-breadcrumb span,
+.struktiva-metallic .software-area header.software-article-hero .software-article-hero__date { color: #d9d2c2 !important; }
+.software-area .software-hero__lead,
+.software-area .software-article-hero > .software-container > p:not(.software-kicker):not(.software-article-hero__date),
+.software-area .software-principle p:not(.software-kicker) { color: #e4e0d6 !important; }
+.software-area .software-hero .software-kicker,
+.software-area .software-article-hero .software-kicker,
+.software-area .software-principle .software-kicker { color: #e0bd6b !important; }
+@media (max-width: 1380px) {
+  .struktiva-global-header__inner { grid-template-columns: auto auto; }
+  .struktiva-desktop-nav { display: none; }
+  .struktiva-menu-button,
+  .struktiva-metallic header .struktiva-menu-button { display: inline-flex; }
+}

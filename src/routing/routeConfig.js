@@ -3,6 +3,7 @@ const defaultDescription =
 
 import { personalDigitalCheckOffer } from '../config/digitalCheckOffer.js'
 import { localSeoPages } from '../content/localSeoContent.js'
+import { softwareGuideList } from '../content/softwareGuides.js'
 
 const SITE_URL = 'https://struktiva.de'
 const BUSINESS_ID = `${SITE_URL}/#business`
@@ -75,6 +76,23 @@ const localSeoRouteMeta = Object.fromEntries(
   }]),
 )
 
+const softwareRouteMeta = Object.fromEntries(softwareGuideList.map((guide) => [guide.path, {
+  title: `${guide.title} | STRUKTIVA`,
+  description: guide.description,
+  canonicalPath: guide.path,
+  structuredData: {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'Article', headline: guide.title, description: guide.description, inLanguage: 'de-DE', dateModified: '2026-10-02', author: { '@type': 'Organization', name: 'STRUKTIVA' }, publisher: { '@type': 'Organization', name: 'STRUKTIVA' }, mainEntityOfPage: `${SITE_URL}${guide.path}` },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Software & Tools', item: `${SITE_URL}/software-tools` },
+        { '@type': 'ListItem', position: 3, name: guide.title, item: `${SITE_URL}${guide.path}` },
+      ] },
+    ],
+  },
+}]))
+
 export const ACTIVE_ROUTE_META = {
   '/': {
     title: 'STRUKTIVA Calw | Digitale Systeme für Unternehmen',
@@ -85,6 +103,12 @@ export const ACTIVE_ROUTE_META = {
     isPricingRoute: true,
   },
   ...localSeoRouteMeta,
+  '/software-tools': {
+    title: 'Software & Tools für kleine Unternehmen | STRUKTIVA',
+    description: 'Praxisnahe Ratgeber zu Newsletter-Software, E-Mail-Marketing und CRM für kleine Unternehmen und lokale Dienstleister.',
+    canonicalPath: '/software-tools',
+  },
+  ...softwareRouteMeta,
   '/leistungen': {
     title: 'Digitale Leistungen für Unternehmen | STRUKTIVA',
     description:
@@ -232,6 +256,8 @@ export const ACTIVE_ROUTE_PATHS = Object.keys(ACTIVE_ROUTE_META)
 
 export const SEO_PRERENDER_PATHS = [
   ...Object.values(localSeoPages).map((page) => page.path),
+  '/software-tools',
+  ...softwareGuideList.map((guide) => guide.path),
   '/schoen-und-praktisch',
   '/digital-check',
   '/digital-check/danke',
@@ -266,6 +292,7 @@ export const currentNavigation = {
     { label: 'Start', href: '/' },
     { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
+    { label: 'Software & Tools', href: '/software-tools' },
     { label: 'Digital-Check', href: '/digital-check', transitionFor: '/digital-check', ctaRole: 'primary' },
     { label: 'Über STRUKTIVA', href: '/ueber-uns' },
     { label: 'Kontakt', href: '/kontakt' },
@@ -274,6 +301,7 @@ export const currentNavigation = {
     { label: 'Start', href: '/' },
     { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
+    { label: 'Software & Tools', href: '/software-tools' },
     { label: 'Digital-Check', href: '/digital-check', transitionFor: '/digital-check', ctaRole: 'primary' },
     { label: 'Über STRUKTIVA', href: '/ueber-uns' },
     { label: 'Kontakt', href: '/kontakt' },
@@ -282,6 +310,7 @@ export const currentNavigation = {
     { label: 'Start', href: '/' },
     { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
+    { label: 'Software & Tools', href: '/software-tools' },
     { label: 'Digital-Check', href: '/digital-check', transitionFor: '/digital-check', ctaRole: 'primary' },
     { label: 'Über STRUKTIVA', href: '/ueber-uns' },
     { label: 'Kontakt', href: '/kontakt' },

@@ -27,6 +27,7 @@ function useCurrentHash() {
 
 function isActiveNavItem(item, pathname, hash) {
   const hrefPath = normalizeHref(item.href)
+  if (hrefPath === '/software-tools' && pathname.startsWith('/software-tools/')) return true
   if (item.href.includes('#')) {
     return pathname === hrefPath && hash === item.href.slice(item.href.indexOf('#'))
   }

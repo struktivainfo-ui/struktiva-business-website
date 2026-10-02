@@ -13,6 +13,9 @@ import ImpressumPage from '../pages/ImpressumPage.jsx'
 import DatenschutzPage from '../pages/DatenschutzPage.jsx'
 import WerbekennzeichnungPage from '../pages/WerbekennzeichnungPage.jsx'
 import SchoenUndPraktischPage from '../pages/SchoenUndPraktischPage.jsx'
+import SoftwareHubPage from '../pages/SoftwareHubPage.jsx'
+import SoftwareGuidePage from '../pages/SoftwareGuidePage.jsx'
+import { softwareGuides } from '../content/softwareGuides.js'
 import NotFoundPage from '../pages/NotFoundPage.jsx'
 import DemoHandwerkerPage from '../pages/DemoHandwerkerPage.jsx'
 import DemoKosmetikPage from '../pages/DemoKosmetikPage.jsx'
@@ -27,6 +30,8 @@ const AiAutomationCalwPage = lazy(() => import('../pages/AiAutomationCalwPage.js
 
 export const activePageComponents = {
   '/': HomePage,
+  '/software-tools': SoftwareHubPage,
+  ...Object.fromEntries(Object.values(softwareGuides).map((guide) => [guide.path, () => <SoftwareGuidePage guide={guide} />])),
   '/ueber-uns': AboutPage,
   '/loesungen': SolutionsPage,
   '/praxisbeispiele': PracticeExamplesPage,
