@@ -12,6 +12,7 @@ import ContactPage from '../pages/ContactPage.jsx'
 import ImpressumPage from '../pages/ImpressumPage.jsx'
 import DatenschutzPage from '../pages/DatenschutzPage.jsx'
 import WerbekennzeichnungPage from '../pages/WerbekennzeichnungPage.jsx'
+import SchoenUndPraktischPage from '../pages/SchoenUndPraktischPage.jsx'
 import NotFoundPage from '../pages/NotFoundPage.jsx'
 import DemoHandwerkerPage from '../pages/DemoHandwerkerPage.jsx'
 import DemoKosmetikPage from '../pages/DemoKosmetikPage.jsx'
@@ -38,6 +39,7 @@ export const activePageComponents = {
   '/impressum': ImpressumPage,
   '/datenschutz': DatenschutzPage,
   '/werbekennzeichnung': WerbekennzeichnungPage,
+  '/schoen-und-praktisch': SchoenUndPraktischPage,
   '/digitale-unternehmensberatung-calw': DigitalConsultingCalwPage,
   '/digitalisierung-calw': DigitalizationCalwPage,
   '/website-handwerker-calw': WebsiteTradesCalwPage,

@@ -187,6 +187,13 @@ export const ACTIVE_ROUTE_META = {
     description: 'Hinweise zu Werbung, Affiliate-Links und bezahlten Kooperationen von STRUKTIVA.',
     canonicalPath: '/werbekennzeichnung',
   },
+  '/schoen-und-praktisch': {
+    title: 'Schön & Praktisch | Wohnideen für Haus & Garten',
+    description: 'Schön & Praktisch | Wohnideen: Inspiration für Wohnen, Möbel, Ordnung, Gartenhäuser, Saunen, Pergolen und Outdoor Living. Ein Home-&-Garden-Bereich von STRUKTIVA.',
+    canonicalPath: '/schoen-und-praktisch',
+    socialImage: '/images/schoen-und-praktisch-social.jpg',
+    socialImageAlt: 'Wohnideen für Haus und Garten: Terrasse mit Pergola und Sitzbereich',
+  },
   '/impressum': {
     title: 'Impressum - STRUKTIVA Digitale Unternehmensberatung',
     description: 'Impressum und rechtliche Angaben von STRUKTIVA Digitale Unternehmensberatung.',
@@ -225,6 +232,7 @@ export const ACTIVE_ROUTE_PATHS = Object.keys(ACTIVE_ROUTE_META)
 
 export const SEO_PRERENDER_PATHS = [
   ...Object.values(localSeoPages).map((page) => page.path),
+  '/schoen-und-praktisch',
   '/digital-check',
   '/digital-check/danke',
 ]

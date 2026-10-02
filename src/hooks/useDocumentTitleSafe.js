@@ -37,6 +37,7 @@ export function useDocumentTitleSafe(pathname) {
     setMeta('property', 'og:description', ogDescription)
     setMeta('property', 'og:url', canonicalHref)
     setMeta('property', 'og:image', socialImage)
+    setMeta('property', 'og:image:alt', routeMeta.socialImageAlt || 'STRUKTIVA Digitale Unternehmensberatung')
     setMeta('name', 'twitter:card', 'summary_large_image')
     setMeta('name', 'twitter:title', ogTitle)
     setMeta('name', 'twitter:description', ogDescription)

@@ -24,6 +24,10 @@
       "destination": "/digital-check/index.html"
     },
     {
+      "source": "/schoen-und-praktisch",
+      "destination": "/schoen-und-praktisch/index.html"
+    },
+    {
       "source": "/digitale-unternehmensberatung-calw",
       "destination": "/digitale-unternehmensberatung-calw/index.html"
     },

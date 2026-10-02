@@ -31,6 +31,9 @@ function createRouteHtml(pathname) {
   html = replaceTag(html, /<meta\s+property="og:description"[\s\S]*?>/i, `<meta property="og:description" content="${escapeAttribute(ogDescription)}" />`)
   html = replaceTag(html, /<meta\s+property="og:url"[\s\S]*?>/i, `<meta property="og:url" content="${canonical}" />`)
   html = replaceTag(html, /<meta\s+property="og:image"[\s\S]*?>/i, `<meta property="og:image" content="${socialImage}" />`)
+  if (meta.socialImageAlt) {
+    html = replaceTag(html, /<meta\s+property="og:image:alt"[\s\S]*?>/i, `<meta property="og:image:alt" content="${escapeAttribute(meta.socialImageAlt)}" />`)
+  }
   html = replaceTag(html, /<meta\s+name="twitter:title"[\s\S]*?>/i, `<meta name="twitter:title" content="${escapeAttribute(ogTitle)}" />`)
   html = replaceTag(html, /<meta\s+name="twitter:description"[\s\S]*?>/i, `<meta name="twitter:description" content="${escapeAttribute(ogDescription)}" />`)
   html = replaceTag(html, /<meta\s+name="twitter:image"[\s\S]*?>/i, `<meta name="twitter:image" content="${socialImage}" />`)

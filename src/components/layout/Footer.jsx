@@ -50,6 +50,13 @@ export default function Footer() {
           </ul>
         </nav>
 
+        <nav className="struktiva-footer-nav" aria-label="Weitere Projekte">
+          <h2>Weitere Projekte</h2>
+          <ul>
+            <li><a href="/schoen-und-praktisch">Schön &amp; Praktisch | Wohnideen</a></li>
+          </ul>
+        </nav>
+
         <section className="struktiva-footer-contact" aria-label="Kontakt">
           <h2>Kontakt</h2>
           <address>
