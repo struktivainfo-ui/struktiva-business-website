@@ -11,6 +11,7 @@ const themes = [
   { number: '04', title: 'Gartenhäuser & Saunen', detail: 'Rückzugsorte mit besonderem Charakter.' },
   { number: '05', title: 'Ordnung & Alltag', detail: 'Praktische Lösungen, die gut aussehen.' },
   { number: '06', title: 'Geschenkideen', detail: 'Schöne Fundstücke für andere und für sich.' },
+  { number: '07', title: 'Lifestyle & Wohlbefinden', detail: 'Kleine Ideen für einen angenehmen Alltag.' },
 ]
 
 const reveal = {
@@ -39,7 +40,7 @@ export default function SchoenUndPraktischPage() {
             Schön &amp; Praktisch <span>| Wohnideen</span>
           </motion.h1>
           <motion.p className="sp-hero__lead" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
-            Inspiration für ein Zuhause, das sich gut anfühlt – vom Lieblingsplatz im Wohnzimmer bis zum Leben im Grünen.
+            Schön wohnen. Praktisch leben. Wohlfühlen.<br />Inspiration für ein Zuhause, das sich gut anfühlt – vom Lieblingsplatz im Wohnzimmer bis zum Leben im Grünen.
           </motion.p>
           <motion.div className="sp-hero__actions" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
             <a className="sp-button sp-button--light" href={pinterestUrl} target="_blank" rel="noopener noreferrer">
@@ -56,7 +57,7 @@ export default function SchoenUndPraktischPage() {
           <p className="sp-kicker">Der Bereich</p>
           <div>
             <h2 id="sp-intro-title">Ideen für Räume, Rückzugsorte und das Leben dazwischen.</h2>
-            <p>Schön &amp; Praktisch | Wohnideen ist ein eigenständiger Home-&amp;-Garden-Publisherbereich unter STRUKTIVA. Hier sammeln wir Anregungen für Wohnen, Haus und Garten – mit Blick auf Gestaltung und Alltagstauglichkeit.</p>
+            <p>Schön &amp; Praktisch | Wohnideen ist ein eigenständiger Home-&amp;-Garden-Publisherbereich unter STRUKTIVA. Entdecke ausgewählte Ideen und Produkte rund um Wohnen, Garten, Familie, Lifestyle und Wohlbefinden – mit Blick auf Gestaltung und Alltagstauglichkeit.</p>
           </div>
         </motion.div>
       </section>
@@ -78,6 +79,16 @@ export default function SchoenUndPraktischPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="sp-wellbeing" aria-labelledby="sp-wellbeing-title">
+        <motion.div className="sp-container sp-wellbeing__grid" {...reveal}>
+          <p className="sp-kicker">Für den Alltag</p>
+          <div>
+            <h2 id="sp-wellbeing-title">Lifestyle &amp; Wohlbefinden</h2>
+            <p>Kleine Dinge, die den Alltag angenehmer machen – von Selfcare und Entspannung bis zu ausgewählten Produkten für mehr Wohlbefinden zu Hause.</p>
+          </div>
+        </motion.div>
       </section>
 
       <section className="sp-pinterest" aria-labelledby="sp-pinterest-title">

@@ -58,6 +58,12 @@
 .sp-theme h3 { font-family: var(--struktiva-heading-font), Georgia, serif; font-size: clamp(1.55rem, 2vw, 2.15rem); font-weight: 400; line-height: 1.2; }
 .sp-theme p { margin-top: .55rem; color: #69675d; font-size: .91rem; line-height: 1.5; }
 
+.sp-wellbeing { padding: clamp(5rem, 8vw, 8rem) 0; }
+.sp-wellbeing__grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; }
+.sp-wellbeing .sp-kicker { color: #8b6e39; padding-top: .7rem; }
+.sp-wellbeing h2 { font-family: var(--struktiva-heading-font), Georgia, serif; font-size: clamp(2.45rem, 4.5vw, 4.5rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.14; text-wrap: balance; }
+.sp-wellbeing__grid > div p { max-width: 710px; margin-top: 1.7rem; font-size: 1.05rem; line-height: 1.85; color: #55544d; }
+
 .sp-pinterest { background: #252821; color: #f8f3e9; padding: clamp(5rem, 8vw, 8rem) 0; }
 .sp-pinterest__inner { display: flex; align-items: end; justify-content: space-between; gap: 4rem; }
 .sp-pinterest__inner > div { max-width: 720px; }
@@ -95,7 +101,7 @@
   .sp-hero h1 { font-size: clamp(3.25rem, 11vw, 5.4rem); }
   .sp-hero__lead { margin-top: 1.5rem !important; }
   .sp-hero__caption { left: 1.25rem; bottom: 1.5rem; font-size: .59rem; }
-  .sp-intro__grid, .sp-disclosure__inner { grid-template-columns: 1fr; gap: 1.7rem; }
+  .sp-intro__grid, .sp-wellbeing__grid, .sp-disclosure__inner { grid-template-columns: 1fr; gap: 1.7rem; }
   .sp-themes__list { grid-template-columns: 1fr; }
   .sp-pinterest__inner { display: block; }
   .sp-pinterest .sp-button { margin-top: 2rem; }
