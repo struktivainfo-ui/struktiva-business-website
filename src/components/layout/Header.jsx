@@ -2,7 +2,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { currentNavigation } from '../../routing/routeConfig.js'
 
-const navItems = currentNavigation.primary
+const desktopNavItems = currentNavigation.desktop
+const mobileNavItems = currentNavigation.mobile
+const softwareNavItem = desktopNavItems.find((item) => item.href === '/software-tools')
 const primaryCta = currentNavigation.primaryCta
 
 function normalizeHref(href) {
@@ -128,12 +130,13 @@ export default function Header({ pathname }) {
         </a>
 
         <nav className="struktiva-desktop-nav" aria-label="Hauptnavigation">
-          {navItems.map((item) => (
+          {desktopNavItems.map((item) => (
             <NavigationLink key={`${item.label}-${item.href}`} item={item} pathname={pathname} hash={hash} />
           ))}
         </nav>
 
         <div className="struktiva-header-actions">
+          {softwareNavItem ? <NavigationLink item={softwareNavItem} pathname={pathname} hash={hash} className="struktiva-software-shortcut" /> : null}
           <a className="struktiva-primary-action" href={primaryCta.href}>
             <span>{primaryCta.label}</span>
             <ArrowRight aria-hidden="true" className="struktiva-primary-action__icon" />
@@ -168,7 +171,7 @@ export default function Header({ pathname }) {
         hidden={!mobileOpen}
       >
         <nav aria-label="Mobile Hauptnavigation">
-          {navItems.map((item) => (
+          {mobileNavItems.map((item) => (
             <NavigationLink
               key={`mobile-${item.label}-${item.href}`}
               item={item}

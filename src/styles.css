@@ -4469,6 +4469,11 @@ body.cookie-banner-visible .floating-whatsapp-button {
   justify-content: flex-end;
 }
 
+.struktiva-software-shortcut,
+.struktiva-metallic header .struktiva-software-shortcut {
+  display: none;
+}
+
 .struktiva-primary-action,
 .struktiva-metallic header .struktiva-primary-action,
 .struktiva-footer-cta,
@@ -21650,6 +21655,22 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
 @media (max-width: 1380px) {
   .struktiva-global-header__inner { grid-template-columns: auto auto; }
   .struktiva-desktop-nav { display: none; }
+  .struktiva-software-shortcut,
+  .struktiva-metallic header .struktiva-software-shortcut { display: inline-flex; }
   .struktiva-menu-button,
   .struktiva-metallic header .struktiva-menu-button { display: inline-flex; }
+}
+@media (max-width: 900px) {
+  .struktiva-header-actions > .struktiva-primary-action { display: none !important; }
+}
+@media (max-width: 420px) {
+  .struktiva-software-shortcut,
+  .struktiva-metallic header .struktiva-software-shortcut {
+    font-size: .77rem;
+    padding-inline: .45rem;
+  }
+}
+@media (max-width: 360px) {
+  .struktiva-software-shortcut,
+  .struktiva-metallic header .struktiva-software-shortcut { display: none; }
 }
