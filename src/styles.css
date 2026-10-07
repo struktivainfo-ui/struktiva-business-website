@@ -21652,6 +21652,16 @@ body.cookie-banner-visible .route-ueber-uns .struktiva-floating-whatsapp {
 .software-affiliate-cta a, .software-affiliate-inline a { color: #654b13; font-weight: 800; text-decoration: underline; text-underline-offset: .2em; }
 .software-affiliate-cta svg, .software-affiliate-inline svg { display: inline; width: .85rem; height: .85rem; }
 .software-affiliate-inline { font-size: .88rem; padding-top: .5rem; }
+.software-decision { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: clamp(1.25rem, 3vw, 2rem); background: #f4f0e6; border-left: 3px solid #a87f2a; }
+.software-decision > div + div { border-left: 1px solid #d6d1c6; padding-left: 1.5rem; }
+.software-decision h3 { color: #222; }
+.software-decision ul { margin: .5rem 0 0; }
+.software-related-links { margin: 2rem 0; border-top: 1px solid #dedbd3; padding-top: 1.25rem; }
+.software-related-links ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .25rem 1.5rem; list-style: none; padding: 0; }
+.software-related-links li { padding: 0; }
+.software-related-links a { display: inline-flex; align-items: center; gap: .4rem; color: #654b13; font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
+.software-related-links svg { width: .9rem; height: .9rem; flex: none; }
+@media (max-width: 640px) { .software-decision, .software-related-links ul { grid-template-columns: 1fr; } .software-decision > div + div { border-left: 0; border-top: 1px solid #d6d1c6; padding: 1.25rem 0 0; } }
 @media (max-width: 1380px) {
   .struktiva-global-header__inner { grid-template-columns: auto auto; }
   .struktiva-desktop-nav { display: none; }
