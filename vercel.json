@@ -20,6 +20,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/pakete", "destination": "/pakete/index.html" },
     { "source": "/software-tools", "destination": "/software-tools/index.html" },
     { "source": "/software-tools/getresponse-kleine-unternehmen", "destination": "/software-tools/getresponse-kleine-unternehmen/index.html" },
     { "source": "/software-tools/getresponse-automatisierung-newsletter", "destination": "/software-tools/getresponse-automatisierung-newsletter/index.html" },

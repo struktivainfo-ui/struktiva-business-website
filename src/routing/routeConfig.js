@@ -256,6 +256,7 @@ export const ACTIVE_ROUTE_PATHS = Object.keys(ACTIVE_ROUTE_META)
 
 export const SEO_PRERENDER_PATHS = [
   ...Object.values(localSeoPages).map((page) => page.path),
+  '/pakete',
   '/software-tools',
   ...softwareGuideList.map((guide) => guide.path),
   '/werbekennzeichnung',
