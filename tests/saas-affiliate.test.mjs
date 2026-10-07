@@ -22,7 +22,7 @@ test('GetResponse pages have canonical SEO routes and deployment rewrites', asyn
 test('referral links use one approved URL, clear disclosure and sponsored rel', async () => {
   const component = await read('src/pages/SoftwareGuidePage.jsx')
   assert.equal(GETRESPONSE_REFERRAL_URL, 'https://try.getresponsetoday.com/71f61c5tu71k')
-  assert.match(GETRESPONSE_DISCLOSURE, /Werbung:.*Provision/)
+  assert.match(GETRESPONSE_DISCLOSURE, /Werbung:.*von GetResponse eine Provision/)
   assert.match(component, /software-hero-disclosure.*GETRESPONSE_DISCLOSURE/)
   assert.match(component, /rel="sponsored nofollow noopener noreferrer"/)
   assert.doesNotMatch(component, /enthält die Seite keine Affiliate-Links/)

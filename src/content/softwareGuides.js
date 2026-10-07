@@ -1,6 +1,6 @@
 export const softwareGuides = {
   getresponse: {
-    path: '/software-tools/getresponse-erfahrungen-kleine-unternehmen',
+    path: '/software-tools/getresponse-kleine-unternehmen',
     title: 'GetResponse für kleine Unternehmen: Funktionen und Grenzen',
     description: 'GetResponse für kleine Unternehmen einordnen: Newsletter, Anmeldeformulare, Landingpages und Automatisierung. Mit Auswahlhilfe und transparenter Werbung.',
     lead: 'GetResponse verbindet E-Mail-Marketing mit Werkzeugen für Listenaufbau und Landingpages. Ob die Plattform passt, hängt vom geplanten Ablauf und Tarif ab.',

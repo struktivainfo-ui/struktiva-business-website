@@ -4,6 +4,11 @@
   "outputDirectory": "dist",
   "redirects": [
     {
+      "source": "/software-tools/getresponse-erfahrungen-kleine-unternehmen",
+      "destination": "/software-tools/getresponse-kleine-unternehmen",
+      "permanent": true
+    },
+    {
       "source": "/demos",
       "destination": "/praxisbeispiele",
       "permanent": true
@@ -16,7 +21,7 @@
   ],
   "rewrites": [
     { "source": "/software-tools", "destination": "/software-tools/index.html" },
-    { "source": "/software-tools/getresponse-erfahrungen-kleine-unternehmen", "destination": "/software-tools/getresponse-erfahrungen-kleine-unternehmen/index.html" },
+    { "source": "/software-tools/getresponse-kleine-unternehmen", "destination": "/software-tools/getresponse-kleine-unternehmen/index.html" },
     { "source": "/software-tools/getresponse-automatisierung-newsletter", "destination": "/software-tools/getresponse-automatisierung-newsletter/index.html" },
     { "source": "/software-tools/newsletter-software-kleine-unternehmen", "destination": "/software-tools/newsletter-software-kleine-unternehmen/index.html" },
     { "source": "/software-tools/email-marketing-lokale-dienstleister", "destination": "/software-tools/email-marketing-lokale-dienstleister/index.html" },
