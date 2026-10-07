@@ -83,7 +83,7 @@ const softwareRouteMeta = Object.fromEntries(softwareGuideList.map((guide) => [g
   structuredData: {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Article', headline: guide.title, description: guide.description, inLanguage: 'de-DE', dateModified: '2026-10-02', author: { '@type': 'Organization', name: 'STRUKTIVA' }, publisher: { '@type': 'Organization', name: 'STRUKTIVA' }, mainEntityOfPage: `${SITE_URL}${guide.path}` },
+      { '@type': 'Article', headline: guide.title, description: guide.description, inLanguage: 'de-DE', dateModified: '2026-10-07', author: { '@type': 'Organization', name: 'STRUKTIVA' }, publisher: { '@type': 'Organization', name: 'STRUKTIVA' }, mainEntityOfPage: `${SITE_URL}${guide.path}` },
       { '@type': 'BreadcrumbList', itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE_URL}/` },
         { '@type': 'ListItem', position: 2, name: 'Software & Tools', item: `${SITE_URL}/software-tools` },
@@ -105,7 +105,7 @@ export const ACTIVE_ROUTE_META = {
   ...localSeoRouteMeta,
   '/software-tools': {
     title: 'Software & Tools für kleine Unternehmen | STRUKTIVA',
-    description: 'Praxisnahe Ratgeber zu Newsletter-Software, E-Mail-Marketing und CRM für kleine Unternehmen und lokale Dienstleister.',
+    description: 'Praxisnahe Ratgeber zu GetResponse, Newsletter-Software, E-Mail-Marketing und CRM für kleine Unternehmen und lokale Dienstleister.',
     canonicalPath: '/software-tools',
   },
   ...softwareRouteMeta,

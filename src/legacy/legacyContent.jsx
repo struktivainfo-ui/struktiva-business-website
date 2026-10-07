@@ -6652,7 +6652,7 @@ function WerbekennzeichnungPage() {
       </LegalSection>
 
       <LegalSection title="Klare Kennzeichnung">
-        <p>Werbliche Inhalte und Affiliate-Links werden klar und unmittelbar beim jeweiligen Inhalt als „Werbung“ oder „Anzeige“ gekennzeichnet. Dies gilt insbesondere für entsprechende Pins und Links auf Pinterest.</p>
+        <p>Werbliche Inhalte und vergütete Links werden klar und unmittelbar beim jeweiligen Inhalt als „Werbung“ oder „Anzeige“ gekennzeichnet. Im Bereich „Software & Tools“ betrifft dies derzeit GetResponse-Empfehlungen. Der Wohnideen-Bereich und zugehörige Pinterest-Inhalte sind ein getrenntes Thema.</p>
       </LegalSection>
 
       <LegalSection title="Bezahlte Kooperationen">

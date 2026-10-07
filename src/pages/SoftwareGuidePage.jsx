@@ -1,5 +1,6 @@
 import { ArrowRight, ExternalLink } from 'lucide-react'
 import { softwareGuideList } from '../content/softwareGuides.js'
+import { GETRESPONSE_DISCLOSURE, GETRESPONSE_REFERRAL_URL } from '../config/affiliate.js'
 
 function GuideSection({ section }) {
   return <section className="software-article-section">
@@ -7,7 +8,7 @@ function GuideSection({ section }) {
     {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
     {section.list && <ul>{section.list.map((item) => <li key={item}>{item}</li>)}</ul>}
     {section.steps && <ol>{section.steps.map((item) => <li key={item}>{item}</li>)}</ol>}
-    {section.tools && <div className="software-tools">{section.tools.map((tool) => <div key={tool.name}><h3>{tool.name}</h3><p>{tool.fit}</p><p><strong>Schwerpunkt:</strong> {tool.focus}</p><a href={tool.source} target="_blank" rel="noopener noreferrer">Funktionen beim Anbieter prüfen <ExternalLink aria-hidden="true" /></a></div>)}</div>}
+    {section.tools && <div className="software-tools">{section.tools.map((tool) => <div key={tool.name}><h3>{tool.name}</h3><p>{tool.fit}</p><p><strong>Schwerpunkt:</strong> {tool.focus}</p><a href={tool.source} target="_blank" rel="noopener noreferrer">Funktionen beim Anbieter prüfen <ExternalLink aria-hidden="true" /></a>{tool.name === 'GetResponse' && <p className="software-affiliate-inline">{GETRESPONSE_DISCLOSURE} <a href={GETRESPONSE_REFERRAL_URL} target="_blank" rel="sponsored nofollow noopener noreferrer">GetResponse-Angebot ansehen <ExternalLink aria-hidden="true" /></a></p>}</div>)}</div>}
     {section.source && <p className="software-source">Quelle: <a href={section.source.url} target="_blank" rel="noopener noreferrer">{section.source.label} <ExternalLink aria-hidden="true" /></a></p>}
   </section>
 }
@@ -18,10 +19,11 @@ export default function SoftwareGuidePage({ guide }) {
     <article>
       <header className="software-article-hero"><div className="software-container">
         <nav className="software-breadcrumb" aria-label="Brotkrümelnavigation"><a href="/">Start</a><span>/</span><a href="/software-tools">Software & Tools</a><span>/</span><span aria-current="page">{guide.title}</span></nav>
-        <p className="software-kicker">STRUKTIVA Ratgeber · {guide.readingTime} Lesezeit</p><h1>{guide.title}</h1><p>{guide.lead}</p><p className="software-article-hero__date">Redaktionell geprüft am 2. Oktober 2026</p>
+        {guide.affiliate && <p className="software-hero-disclosure">{GETRESPONSE_DISCLOSURE}</p>}<p className="software-kicker">STRUKTIVA Ratgeber · {guide.readingTime} Lesezeit</p><h1>{guide.title}</h1><p>{guide.lead}</p><p className="software-article-hero__date">Redaktionell geprüft am 7. Oktober 2026</p>
       </div></header>
       <div className="software-container software-article-layout"><div className="software-article-body">
-        <p className="software-editorial-note">Dieser Ratgeber ist eine redaktionelle Orientierung. Genannte Produkte wurden anhand öffentlicher Anbieterinformationen eingeordnet; es gab keinen eigenen Langzeittest. Zurzeit enthält die Seite keine Affiliate-Links.</p>
+        <p className="software-editorial-note">Dieser Ratgeber ist eine redaktionelle Orientierung. Genannte Produkte wurden anhand öffentlicher Anbieterinformationen eingeordnet; es gab keinen eigenen Langzeittest.{guide.affiliate ? ' GetResponse-Links zum Angebot sind als Werbung gekennzeichnet.' : ''}</p>
+        {guide.affiliate && guide.path.includes('getresponse-') && <p className="software-affiliate-cta"><span>{GETRESPONSE_DISCLOSURE}</span><a href={GETRESPONSE_REFERRAL_URL} target="_blank" rel="sponsored nofollow noopener noreferrer">GetResponse-Angebot prüfen <ExternalLink aria-hidden="true" /></a></p>}
         {guide.sections.map((section) => <GuideSection section={section} key={section.heading} />)}
         <section className="software-article-section software-faq"><h2>Häufige Fragen</h2>{guide.faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
       </div><aside className="software-article-aside"><p className="software-kicker">Weitere Themen</p>{related.map((item) => <a href={item.path} key={item.path}>{item.title}<ArrowRight aria-hidden="true" /></a>)}<a href="/software-tools">Alle Ratgeber ansehen <ArrowRight aria-hidden="true" /></a></aside></div>

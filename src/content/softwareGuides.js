@@ -1,10 +1,49 @@
 export const softwareGuides = {
+  getresponse: {
+    path: '/software-tools/getresponse-erfahrungen-kleine-unternehmen',
+    title: 'GetResponse für kleine Unternehmen: Funktionen und Grenzen',
+    description: 'GetResponse für kleine Unternehmen einordnen: Newsletter, Anmeldeformulare, Landingpages und Automatisierung. Mit Auswahlhilfe und transparenter Werbung.',
+    lead: 'GetResponse verbindet E-Mail-Marketing mit Werkzeugen für Listenaufbau und Landingpages. Ob die Plattform passt, hängt vom geplanten Ablauf und Tarif ab.',
+    readingTime: '6 Minuten',
+    affiliate: true,
+    sections: [
+      { heading: 'Was GetResponse anbietet', paragraphs: ['GetResponse beschreibt sich als Plattform für E-Mail-Marketing und Marketing-Automation. Zu den angebotenen Werkzeugen gehören Newsletter, Anmeldeformulare, Landingpages und automatisierte Abläufe. Welche Funktion in welchem Umfang nutzbar ist, hängt vom aktuellen Tarif ab.'], source: { label: 'GetResponse: Funktionen', url: 'https://www.getresponse.com/de/funktionen' } },
+      { heading: 'Für wen die Plattform interessant sein kann', paragraphs: ['Ein kleiner Betrieb kann mit einer bestätigten Kontaktliste und einem regelmäßigen Newsletter beginnen. Wenn später mehrere Anmeldewege, Landingpages oder wiederkehrende E-Mail-Abläufe gebraucht werden, kann eine gemeinsame Plattform die Arbeit übersichtlicher machen.', 'Wer nur gelegentlich eine E-Mail versendet, sollte den zusätzlichen Einrichtungsaufwand gegen einfachere Lösungen abwägen. STRUKTIVA hat GetResponse nicht in einem eigenen Langzeittest bewertet.'] },
+      { heading: 'Vor der Anmeldung prüfen', list: ['Welche E-Mails sollen in den nächsten drei Monaten tatsächlich versendet werden?', 'Woher kommen die Kontakte und wie wird ihre Einwilligung dokumentiert?', 'Welche Funktionen sind im benötigten Tarif enthalten?', 'Wie lassen sich Kontakte exportieren und wieder löschen?', 'Passt die Verbindung zur bestehenden Website und zum Datenschutzprozess?'] },
+      { heading: 'Ein einfacher Start', steps: ['Ein Versandziel und eine verantwortliche Person festlegen.', 'Formular, Einwilligung, Bestätigung und Datenschutzhinweise vorbereiten.', 'Eine kurze Willkommensmail und den ersten Newsletter erstellen.', 'Anmeldung, Abmeldung und Darstellung auf Mobilgeräten selbst testen.'] },
+      { heading: 'Tarife und Entscheidung', paragraphs: ['Prüfen Sie Preise, Funktionsgrenzen und Vertragsbedingungen unmittelbar bei GetResponse. Wir nennen bewusst keinen festen Preis oder Rabatt, weil sich Angebote ändern können. Der STRUKTIVA-Link führt zum Angebot des Anbieters; die Entscheidung und der Vertrag erfolgen dort.'], source: { label: 'GetResponse: aktuelle Tarife', url: 'https://www.getresponse.com/de/pricing' } },
+    ],
+    faqs: [
+      { question: 'Ist GetResponse ein CRM?', answer: 'GetResponse konzentriert sich auf E-Mail-Marketing und Marketing-Automation. Prüfen Sie getrennt, ob Sie für Vertriebsvorgänge ein eigenes CRM benötigen.' },
+      { question: 'Gibt es einen garantierten Rabatt über STRUKTIVA?', answer: 'Nein. STRUKTIVA verspricht keinen Rabatt. Maßgeblich sind die aktuellen Angaben auf der GetResponse-Seite.' },
+      { question: 'Hat STRUKTIVA GetResponse selbst getestet?', answer: 'Diese Einordnung basiert auf öffentlichen Produktangaben und einer fachlichen Bewertung typischer Abläufe. Ein eigener Langzeittest liegt nicht vor.' },
+    ],
+  },
+  automation: {
+    path: '/software-tools/getresponse-automatisierung-newsletter',
+    title: 'GetResponse Automatisierung: sinnvoll mit Newsletter starten',
+    description: 'Wann lohnt sich GetResponse Marketing-Automation für kleine Unternehmen? Ein praxisnaher Einstieg mit Begrüßungsmail, Einwilligung und Tarifprüfung.',
+    lead: 'Eine gute Automatisierung beginnt mit einem klaren Anlass und einer passenden Einwilligung, nicht mit möglichst vielen Workflows.',
+    readingTime: '5 Minuten',
+    affiliate: true,
+    sections: [
+      { heading: 'Was Marketing-Automation bedeutet', paragraphs: ['GetResponse bietet Workflows, mit denen E-Mails nach definierten Ereignissen oder Bedingungen versendet werden können. Ein naheliegender Einstieg ist eine Begrüßungsmail nach einer bestätigten Anmeldung. Erweiterte Abläufe sollten erst folgen, wenn sie einen konkreten Nutzen haben.'], source: { label: 'GetResponse: Marketing-Automation', url: 'https://www.getresponse.com/de/funktionen/marketingautomatisierung' } },
+      { heading: 'Ein Ablauf für lokale Dienstleister', steps: ['Eine freiwillige Newsletter-Anmeldung anbieten und die Bestätigung dokumentieren.', 'Nach bestätigter Anmeldung eine kurze Willkommensmail versenden.', 'Einen passenden Hinweis auf Leistungen oder hilfreiche Inhalte geben.', 'Abmeldungen und Rückfragen regelmäßig prüfen.'] },
+      { heading: 'Was vor dem Start geklärt sein muss', paragraphs: ['Die Zustimmung zur Werbung muss zum Inhalt der E-Mails passen. Prüfen Sie Datenschutzinformationen, Abmeldemöglichkeit, Aufbewahrung und die Verbindung zur Website. Ein bestehender CRM-Kontakt ist noch keine pauschale Werbeeinwilligung.', 'GetResponse stellt unterschiedliche Tarife bereit. Prüfen Sie vor der Entscheidung, ob der gewünschte Workflow im gewählten Tarif enthalten ist.'], source: { label: 'GetResponse: Preise und Tarife', url: 'https://www.getresponse.com/de/pricing' } },
+      { heading: 'Unsere Einordnung', paragraphs: ['Für eine einzelne monatliche Kundenmail reicht oft ein einfacher Newsletter-Prozess. Automation lohnt sich, wenn ein wiederkehrender Ablauf zuverlässig gepflegt und gemessen werden kann. Planen Sie die Inhalte zuerst, wählen Sie dann die Software.'] },
+    ],
+    faqs: [
+      { question: 'Brauche ich sofort einen komplexen Workflow?', answer: 'Nein. Eine korrekt eingerichtete Anmeldung und eine passende Willkommensmail sind ein guter erster Schritt.' },
+      { question: 'Sind alle Automationsfunktionen in jedem Tarif enthalten?', answer: 'Das hängt vom aktuellen Tarif ab. Prüfen Sie die Funktionsübersicht bei GetResponse vor der Buchung.' },
+    ],
+  },
   newsletter: {
     path: '/software-tools/newsletter-software-kleine-unternehmen',
     title: 'Newsletter-Software für kleine Unternehmen: passend auswählen',
     description: 'Welche Newsletter-Software passt zu kleinen Unternehmen? Praxisnaher Vergleich von GetResponse, MailerLite und Brevo mit Auswahlkriterien und Startplan.',
     lead: 'Die beste Lösung ist die, mit der Ihr Team Anmeldungen sauber verwaltet und regelmäßig hilfreiche E-Mails verschickt.',
     readingTime: '8 Minuten',
+    affiliate: true,
     sections: [
       { heading: 'Zuerst den Einsatzzweck festlegen', paragraphs: ['Ein lokaler Betrieb braucht meist keine große Kampagnenmaschine. Häufig genügt eine klare Anmeldung auf der Website, eine bestätigte Kontaktliste und ein verlässlicher Versand für Neuigkeiten oder saisonale Angebote.', 'Schreiben Sie vor der Toolwahl auf, welche E-Mails Sie in den nächsten drei Monaten tatsächlich versenden wollen, wer sie erstellt und wie die Anmeldung erfolgt. Erst danach lohnt sich ein Funktionsvergleich.'] },
       { heading: 'Drei Werkzeuge im Kurzvergleich', kind: 'tools', paragraphs: ['Die folgende Einordnung basiert auf öffentlich beschriebenen Funktionen der Anbieter, nicht auf einem eigenen Langzeittest. Preise, Tarifgrenzen und Details können sich ändern.'], tools: [
@@ -19,7 +58,7 @@ export const softwareGuides = {
     faqs: [
       { question: 'Braucht ein kleiner Betrieb sofort Automatisierung?', answer: 'Nein. Eine saubere Anmeldung und ein regelmäßiger, hilfreicher Newsletter sind oft der bessere Anfang. Automationen lohnen sich erst für wiederkehrende Abläufe.' },
       { question: 'Kann ich vorhandene E-Mail-Adressen einfach importieren?', answer: 'Nur wenn die jeweilige Werbenutzung rechtlich gedeckt ist und die Einwilligung belegbar ist. Prüfen Sie bestehende Kontakte vor einem Import sorgfältig.' },
-      { question: 'Ist GetResponse bereits ein Partner von STRUKTIVA?', answer: 'Nein. STRUKTIVA hat derzeit keine Freigabe für das GetResponse-Partnerprogramm. Die redaktionelle Einordnung ist unabhängig davon.' },
+      { question: 'Warum verlinkt STRUKTIVA GetResponse?', answer: 'STRUKTIVA nimmt am GetResponse-Affiliate-Programm teil und kann bei einem Kauf über den gekennzeichneten Link eine Provision erhalten. Die Einordnung soll Ihnen dennoch bei einer eigenen Entscheidung helfen.' },
     ],
   },
   email: {
