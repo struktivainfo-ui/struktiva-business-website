@@ -26,6 +26,7 @@
     { "source": "/software-tools/newsletter-software-kleine-unternehmen", "destination": "/software-tools/newsletter-software-kleine-unternehmen/index.html" },
     { "source": "/software-tools/email-marketing-lokale-dienstleister", "destination": "/software-tools/email-marketing-lokale-dienstleister/index.html" },
     { "source": "/software-tools/crm-kleine-unternehmen", "destination": "/software-tools/crm-kleine-unternehmen/index.html" },
+    { "source": "/werbekennzeichnung", "destination": "/werbekennzeichnung/index.html" },
     {
       "source": "/digital-check/danke",
       "destination": "/digital-check/danke/index.html"

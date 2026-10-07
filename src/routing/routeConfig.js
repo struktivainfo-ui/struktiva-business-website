@@ -258,6 +258,7 @@ export const SEO_PRERENDER_PATHS = [
   ...Object.values(localSeoPages).map((page) => page.path),
   '/software-tools',
   ...softwareGuideList.map((guide) => guide.path),
+  '/werbekennzeichnung',
   '/schoen-und-praktisch',
   '/digital-check',
   '/digital-check/danke',

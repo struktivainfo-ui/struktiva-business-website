@@ -27,3 +27,10 @@ test('referral links use one approved URL, clear disclosure and sponsored rel', 
   assert.match(component, /rel="sponsored nofollow noopener noreferrer"/)
   assert.doesNotMatch(component, /enthält die Seite keine Affiliate-Links/)
 })
+
+test('advertising disclosure route has prerendered metadata', async () => {
+  const rewrites = JSON.parse(await read('vercel.json')).rewrites
+  assert.ok(SEO_PRERENDER_PATHS.includes('/werbekennzeichnung'))
+  assert.ok(rewrites.some(({ source, destination }) => source === '/werbekennzeichnung' && destination === '/werbekennzeichnung/index.html'))
+  assert.equal(getRouteMeta('/werbekennzeichnung').title, 'Werbekennzeichnung | STRUKTIVA')
+})
