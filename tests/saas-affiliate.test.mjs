@@ -34,3 +34,23 @@ test('advertising disclosure route has prerendered metadata', async () => {
   assert.ok(rewrites.some(({ source, destination }) => source === '/werbekennzeichnung' && destination === '/werbekennzeichnung/index.html'))
   assert.equal(getRouteMeta('/werbekennzeichnung').title, 'Werbekennzeichnung | STRUKTIVA')
 })
+
+test('salon newsletter guide is indexable, linked and uses the approved disclosure', async () => {
+  const guide = softwareGuides.salonNewsletter
+  const meta = getRouteMeta(guide.path)
+  const rewrites = JSON.parse(await read('vercel.json')).rewrites
+  const sitemap = await read('public/sitemap.xml')
+  const component = await read('src/pages/SoftwareGuidePage.jsx')
+
+  assert.equal(meta.title, guide.metaTitle)
+  assert.equal(meta.canonicalPath, guide.path)
+  assert.equal(meta.noindex, false)
+  assert.ok(SEO_PRERENDER_PATHS.includes(guide.path))
+  assert.ok(rewrites.some(({ source, destination }) => source === guide.path && destination === `${guide.path}/index.html`))
+  assert.ok(sitemap.includes(`<loc>https://struktiva.de${guide.path}</loc>`))
+  assert.equal(guide.affiliate, true)
+  assert.ok(guide.sections.some((section) => section.affiliateCta))
+  assert.match(component, /software-hero-disclosure.*GETRESPONSE_DISCLOSURE/)
+  assert.match(component, /section\.affiliateCta.*GETRESPONSE_DISCLOSURE/)
+  assert.match(component, /rel="sponsored nofollow noopener noreferrer"/)
+})

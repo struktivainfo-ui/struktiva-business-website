@@ -24,6 +24,7 @@
     { "source": "/software-tools/getresponse-kleine-unternehmen", "destination": "/software-tools/getresponse-kleine-unternehmen/index.html" },
     { "source": "/software-tools/getresponse-automatisierung-newsletter", "destination": "/software-tools/getresponse-automatisierung-newsletter/index.html" },
     { "source": "/software-tools/newsletter-software-kleine-unternehmen", "destination": "/software-tools/newsletter-software-kleine-unternehmen/index.html" },
+    { "source": "/software-tools/newsletter-friseursalon", "destination": "/software-tools/newsletter-friseursalon/index.html" },
     { "source": "/software-tools/email-marketing-lokale-dienstleister", "destination": "/software-tools/email-marketing-lokale-dienstleister/index.html" },
     { "source": "/software-tools/crm-kleine-unternehmen", "destination": "/software-tools/crm-kleine-unternehmen/index.html" },
     { "source": "/werbekennzeichnung", "destination": "/werbekennzeichnung/index.html" },

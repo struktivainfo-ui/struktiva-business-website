@@ -77,7 +77,7 @@ const localSeoRouteMeta = Object.fromEntries(
 )
 
 const softwareRouteMeta = Object.fromEntries(softwareGuideList.map((guide) => [guide.path, {
-  title: `${guide.title} | STRUKTIVA`,
+  title: guide.metaTitle || `${guide.title} | STRUKTIVA`,
   description: guide.description,
   canonicalPath: guide.path,
   structuredData: {
