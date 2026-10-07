@@ -23,8 +23,8 @@ export default function HomeDigitalCheckSection() {
             <strong>{personalDigitalCheckOffer.priceBaseLabel}</strong>
             {personalDigitalCheckOffer.taxNote ? <span>{personalDigitalCheckOffer.taxNote}</span> : null}
           </div>
-          <a className="struktiva-digital-check-cta__primary" href="/digital-check">
-            <span>Digital-Check für lokale Betriebe ansehen</span>
+          <a className="struktiva-digital-check-cta__primary" href="/digital-check#digital-check-anfrage">
+            <span>Kostenlosen Digital-Check anfragen</span>
             <ArrowRight aria-hidden="true" />
           </a>
         </div>

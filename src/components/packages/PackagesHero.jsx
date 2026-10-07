@@ -12,14 +12,14 @@ export default function PackagesHero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
       >
-        <p className="struktiva-packages-eyebrow">Zusammenarbeit, die zum tatsächlichen Bedarf passt</p>
-        <h1 id="struktiva-packages-title">Nicht jedes Unternehmen braucht dasselbe Paket. Und nicht jedes Projekt braucht laufende Kosten.</h1>
+        <p className="struktiva-packages-eyebrow">Websites, Sichtbarkeit und Kundenwege</p>
+        <h1 id="struktiva-packages-title">Digitale Leistungen mit klaren Einstiegspreisen.</h1>
         <p>
-          STRUKTIVA verbindet Beratung und praktische Umsetzung. Je nach Ausgangssituation kann ein klar abgegrenztes Einzelprojekt sinnvoll sein, eine schrittweise Weiterentwicklung oder eine laufende Betreuung bei regelmäßigem Bedarf.
+          Für kleine lokale Betriebe: ein verständlicher Webauftritt, bessere Auffindbarkeit und ein einfacher Weg zur Anfrage. Starten Sie mit einem kostenlosen Digital-Check.
         </p>
         <div className="struktiva-packages-hero__actions" aria-label="Nächste Schritte">
           <a className="struktiva-packages-primary-link" href="/digital-check#digital-check-anfrage">
-            <span>Digital-Check anfragen</span>
+            <span>Kostenlosen Digital-Check anfragen</span>
             <ArrowRight aria-hidden="true" />
           </a>
           <a className="struktiva-packages-secondary-link" href="/loesungen">

@@ -1,6 +1,7 @@
 import HomeHero from '../components/home/HomeHero.jsx'
 import HomeProblemSection from '../components/home/HomeProblemSection.jsx'
 import HomeSolutionsSection from '../components/home/HomeSolutionsSection.jsx'
+import HomeOffersSection from '../components/home/HomeOffersSection.jsx'
 import HomeCaseStudySection from '../components/home/HomeCaseStudySection.jsx'
 import HomeTrustSection from '../components/home/HomeTrustSection.jsx'
 import HomeDigitalCheckSection from '../components/home/HomeDigitalCheckSection.jsx'
@@ -13,6 +14,7 @@ export default function HomePage() {
       <HomeHero />
       <HomeProblemSection />
       <HomeSolutionsSection />
+      <HomeOffersSection />
       <HomeCaseStudySection />
       <HomeTrustSection />
       <HomeDigitalCheckSection />

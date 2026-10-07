@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
-import { applicationOffer, confirmedPackages } from './packagesData.js'
+import { confirmedPackages } from './packagesData.js'
 
 export default function PackagesOffers() {
   return (
     <section className="struktiva-packages-section struktiva-packages-offers" aria-labelledby="struktiva-packages-offers-title">
       <div className="struktiva-packages-section__intro">
-        <p className="struktiva-packages-eyebrow">Bestätigte Angebotsformen</p>
-        <h2 id="struktiva-packages-offers-title">Pakete geben Orientierung. Der tatsächliche Umfang wird vorher eingeordnet.</h2>
+        <p className="struktiva-packages-eyebrow">Angebote für lokale Betriebe</p>
+        <h2 id="struktiva-packages-offers-title">Klarer Einstieg. Verständliche Preise.</h2>
         <p>
-          Die folgenden Namen, Preise und Inhalte stammen aus den bestehenden STRUKTIVA-Projektinhalten. Sie sind als Einstieg zu verstehen, nicht als automatische Vollabdeckung jeder denkbaren Anforderung.
+          Wählen Sie eine Website, laufende lokale Sichtbarkeit oder einen einfacheren Kundenweg. Der genaue Umfang wird vor der Beauftragung festgelegt. Alle Preise sind netto.
         </p>
       </div>
 
@@ -31,9 +31,10 @@ export default function PackagesOffers() {
             <div className="struktiva-packages-offer__body">
               <h3>{item.title}</h3>
               <p>{item.fit}</p>
+              <a className="struktiva-packages-offer__link" href="/digital-check#digital-check-anfrage">Kostenlosen Digital-Check anfragen →</a>
               <div className="struktiva-packages-offer__details">
                 <div>
-                  <strong>Enthalten</strong>
+                  <strong>Typischer Umfang</strong>
                   <ul>
                     {item.includes.map((point) => (
                       <li key={point}>
@@ -44,7 +45,7 @@ export default function PackagesOffers() {
                   </ul>
                 </div>
                 <div>
-                  <strong>Nicht automatisch enthalten</strong>
+                  <strong>Vorab zu klären</strong>
                   <p>{item.excludes}</p>
                 </div>
               </div>
@@ -53,18 +54,6 @@ export default function PackagesOffers() {
         ))}
       </div>
 
-      <aside className="struktiva-packages-application">
-        <div>
-          <p className="struktiva-packages-eyebrow">Sozial fairer Einstieg</p>
-          <h3>{applicationOffer.title}</h3>
-          <p>{applicationOffer.text}</p>
-        </div>
-        <div className="struktiva-packages-application__price">
-          <span>{applicationOffer.cadence}</span>
-          <strong>{applicationOffer.price}</strong>
-          <small>{applicationOffer.tax}</small>
-        </div>
-      </aside>
     </section>
   )
 }

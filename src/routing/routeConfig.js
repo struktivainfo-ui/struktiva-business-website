@@ -95,9 +95,9 @@ const softwareRouteMeta = Object.fromEntries(softwareGuideList.map((guide) => [g
 
 export const ACTIVE_ROUTE_META = {
   '/': {
-    title: 'STRUKTIVA Calw | Digitale Systeme für Unternehmen',
+    title: 'STRUKTIVA Calw | Websites, Sichtbarkeit und Kundenwege',
     description:
-      'STRUKTIVA Digitale Unternehmensberatung aus Calw verbindet Website, Google-Sichtbarkeit, Kundenwege, Prozesse und Automatisierung zu klaren Systemen.',
+      'Mehr Anfragen, bessere Sichtbarkeit und weniger Verwaltungsarbeit für kleine lokale Betriebe. Websites ab 490 € netto. Kostenlosen Digital-Check anfragen.',
     canonicalPath: '/',
     isHomeRoute: true,
     isPricingRoute: true,
@@ -183,9 +183,9 @@ export const ACTIVE_ROUTE_META = {
     ogDescription: 'Bestätigung Ihrer Anfrage zum STRUKTIVA Digital-Check.',
   },
   '/pakete': {
-    title: 'Pakete und Zusammenarbeit | STRUKTIVA',
+    title: 'Website & Sichtbarkeit: Preise und Pakete | STRUKTIVA',
     description:
-      'Erfahren Sie, welche Formen der Zusammenarbeit STRUKTIVA anbietet - vom klar abgegrenzten Einzelprojekt bis zur schrittweisen Weiterentwicklung und laufenden Betreuung.',
+      'Website START ab 490 € netto, PLUS 790 € netto, individuelle Websites ab 990 €. Lokale Sichtbarkeit ab 149 € monatlich und digitale Kundenführung ab 349 €.',
     canonicalPath: '/pakete',
     isPricingRoute: true,
   },
@@ -292,6 +292,7 @@ export const currentNavigation = {
   primary: [
     { label: 'Start', href: '/' },
     { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
+    { label: 'Pakete & Preise', href: '/pakete' },
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
     { label: 'Software & Tools', href: '/software-tools' },
     { label: 'Digital-Check', href: '/digital-check', transitionFor: '/digital-check', ctaRole: 'primary' },
@@ -301,6 +302,7 @@ export const currentNavigation = {
   desktop: [
     { label: 'Start', href: '/' },
     { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
+    { label: 'Pakete & Preise', href: '/pakete' },
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
     { label: 'Software & Tools', href: '/software-tools' },
     { label: 'Digital-Check', href: '/digital-check', transitionFor: '/digital-check', ctaRole: 'primary' },
@@ -310,6 +312,7 @@ export const currentNavigation = {
   mobile: [
     { label: 'Start', href: '/' },
     { label: 'Lösungen', href: '/loesungen', transitionFor: '/loesungen' },
+    { label: 'Pakete & Preise', href: '/pakete' },
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
     { label: 'Software & Tools', href: '/software-tools' },
     { label: 'Digital-Check', href: '/digital-check', transitionFor: '/digital-check', ctaRole: 'primary' },

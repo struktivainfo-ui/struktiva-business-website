@@ -28,10 +28,10 @@ export default function HomeHero() {
         >
           <p className="struktiva-home-hero__eyebrow">Digitale Unternehmensberatung aus Calw</p>
           <h1 id="struktiva-home-hero-title">
-            Mehr Sichtbarkeit. Klare Kundenwege. Digitale Abläufe, die zusammenarbeiten.
+            Mehr Anfragen. Bessere Sichtbarkeit. Weniger Verwaltungsarbeit.
           </h1>
           <p className="struktiva-home-hero__lead">
-            STRUKTIVA Digitale Unternehmensberatung aus Calw verbindet Website, Google-Sichtbarkeit, Kundenkontakt und interne Abläufe zu einer klaren digitalen Struktur – verständlich geplant, individuell umgesetzt und auf den Alltag Ihres Unternehmens ausgerichtet.
+            STRUKTIVA hilft kleinen lokalen Betrieben mit einer klaren Website, besserer Auffindbarkeit und einfachen Wegen vom ersten Kontakt bis zur Rückmeldung.
           </p>
           <div className="struktiva-home-hero__actions" aria-label="Startseiten-Aktionen">
             <a className="struktiva-home-hero__primary" href={primaryCta.href}>
@@ -43,7 +43,7 @@ export default function HomeHero() {
               <ArrowRight aria-hidden="true" />
             </a>
           </div>
-          <p className="struktiva-home-hero__orientation">Strategie · Umsetzung · Weiterentwicklung</p>
+          <p className="struktiva-home-hero__orientation">Websites ab 490 € netto · Kostenloser Digital-Check</p>
           <a className="struktiva-home-hero__local-link" href="/digitale-unternehmensberatung-calw">
             Digitale Unternehmensberatung in Calw kennenlernen
           </a>
