@@ -250,3 +250,9 @@ body { overflow-x: clip; }
   color: #1d4ed8 !important;
   text-decoration-color: #93b4ee;
 }
+
+/* The practice demos are editorial rows; the legacy three-column grid left
+   each entire row trapped in one narrow column. */
+.struktiva-metallic .struktiva-practice-demo-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
