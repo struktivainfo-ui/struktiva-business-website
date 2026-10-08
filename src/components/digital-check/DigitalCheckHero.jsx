@@ -11,7 +11,7 @@ export default function DigitalCheckHero() {
       <div className="dc-shell dc-hero__grid">
         <motion.div
           className="dc-hero__copy"
-          initial={reducedMotion ? false : { opacity: 0, y: 20 }}
+          initial={false}
           animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         >

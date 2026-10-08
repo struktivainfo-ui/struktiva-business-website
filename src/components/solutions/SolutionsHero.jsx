@@ -21,7 +21,7 @@ export default function SolutionsHero() {
         >
           <p className="struktiva-solutions-eyebrow">Lösungen, die zusammenpassen</p>
           <h1 id="struktiva-solutions-hero-title">
-            Digitale Lösungen beginnen nicht bei der Technik. Sondern bei dem, was besser funktionieren soll.
+            Digitale Lösungen, die im Alltag funktionieren.
           </h1>
           <div className="struktiva-solutions-hero__lead">
             <p>

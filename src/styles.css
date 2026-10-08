@@ -15572,7 +15572,14 @@ body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-
   .struktiva-packages-primary-link,
   .struktiva-footer-cta,
   .struktiva-primary-action
-),
+) {
+  border-color: rgba(96, 165, 250, 0.42) !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+/* Button labels and icons inherit the button surface. Giving every child its
+   own opaque background produced dark rectangles inside the blue CTAs. */
 .struktiva-metallic main :is(
   .struktiva-solutions-primary,
   .struktiva-practice-primary,
@@ -15587,10 +15594,9 @@ body.cookie-banner-visible :is(.struktiva-floating-whatsapp, .floating-whatsapp-
   .struktiva-footer-cta,
   .struktiva-primary-action
 ) * {
-  border-color: rgba(96, 165, 250, 0.42) !important;
-  background: #111111 !important;
-  color: #ffffff !important;
-  fill: currentColor;
+  background: transparent !important;
+  color: inherit !important;
+  fill: none;
   stroke: currentColor;
 }
 

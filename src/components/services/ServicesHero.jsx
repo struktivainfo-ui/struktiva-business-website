@@ -7,12 +7,12 @@ export default function ServicesHero() {
     <section className="struktiva-services-hero" aria-labelledby="struktiva-services-title">
       <motion.div
         className="struktiva-services-hero__content"
-        initial={{ opacity: 0, y: 22 }}
+        initial={false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
       >
         <p className="struktiva-services-eyebrow">Konkrete digitale Leistungen</p>
-        <h1 id="struktiva-services-title">Digitale Leistungen, die Website, Kundenkontakt und interne Abläufe sinnvoll verbinden.</h1>
+        <h1 id="struktiva-services-title">Digitale Leistungen für Website, Kundenwege und Abläufe.</h1>
         <p>
           STRUKTIVA Digitale Unternehmensberatung plant, entwickelt, verbindet und verbessert digitale Bausteine für Unternehmen.
           Diese Übersicht zeigt, was konkret umgesetzt werden kann - unabhängig davon, ob daraus ein Einzelprojekt, eine

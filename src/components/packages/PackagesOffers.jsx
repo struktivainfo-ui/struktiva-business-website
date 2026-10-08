@@ -18,7 +18,7 @@ export default function PackagesOffers() {
           <motion.article
             className="struktiva-packages-offer"
             key={item.title}
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 1, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.42, delay: index * 0.035 }}

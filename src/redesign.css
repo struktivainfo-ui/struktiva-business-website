@@ -105,7 +105,7 @@ body { overflow-x: clip; }
 .rd-prices__row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1rem .2rem; border-bottom: 1px solid var(--rd-line); }
 .rd-prices__row > span { font-weight: 700; }.rd-prices__row strong { white-space: nowrap; font-size: 1.05rem; }.rd-prices__row small { color: var(--rd-muted); font-size: .72rem; font-weight: 600; }
 .rd-prices__table > p { margin: .9rem .2rem 0; font-size: .82rem; }
-.rd-process { background: #fff; }
+.rd-process { position: relative; background: #fff; }
 .rd-process__list { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .6rem; padding: 0; margin: 3rem 0 0; list-style: none; }
 .rd-process__list::before, .rd-process__line { content: ''; position: absolute; top: 23px; left: 7%; width: 86%; height: 2px; background: var(--rd-line); }
 .rd-process__line { z-index: 1; background: var(--rd-blue); transform-origin: left; }
@@ -255,4 +255,81 @@ body { overflow-x: clip; }
    each entire row trapped in one narrow column. */
 .struktiva-metallic .struktiva-practice-demo-layout {
   grid-template-columns: minmax(0, 1fr);
+}
+
+/* Small labels on light panels need the same clear blue as the rest of the UI. */
+.struktiva-metallic .struktiva-solutions-world__number,
+.struktiva-metallic .struktiva-practice-method-flow__steps span,
+.struktiva-metallic .struktiva-practice-quality-logic span,
+.struktiva-metallic .struktiva-practice-featured-modules > article > span,
+.struktiva-metallic .struktiva-practice-badge[data-practice-label="real"] {
+  color: #1d4ed8 !important;
+}
+
+/* Dark closing sections used a muted text color on their bright blue CTAs. */
+.struktiva-metallic main :is(.struktiva-solutions-cta-section, .struktiva-practice-cta, .struktiva-about-cta)
+  :is(.struktiva-solutions-primary, .struktiva-practice-primary, .struktiva-about-primary) span,
+.route-digital-check .dc-offer .campaign-button span {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* The editorial software guides share the same blue, clear typography and
+   light reading surfaces as the rest of STRUKTIVA. */
+.struktiva-metallic .software-area {
+  background: var(--rd-bg);
+  color: var(--rd-ink);
+  font-family: Manrope, 'Segoe UI', sans-serif;
+}
+.struktiva-metallic .software-area :is(h1, h2, h3, .software-guide-link strong) {
+  font-family: Manrope, 'Segoe UI', sans-serif;
+  letter-spacing: -.045em;
+}
+.struktiva-metallic .software-area .software-hero,
+.struktiva-metallic .software-area header.software-article-hero,
+.struktiva-metallic .software-area .software-principle {
+  background: radial-gradient(circle at 82% 28%, rgba(37, 99, 235, .27), transparent 36%), linear-gradient(135deg, #061327, #0c2349) !important;
+  color: #fff !important;
+}
+.struktiva-metallic .software-area .software-hero h1,
+.struktiva-metallic .software-area .software-article-hero h1,
+.struktiva-metallic .software-area .software-principle h2 {
+  color: #fff !important;
+  font-weight: 800;
+  -webkit-text-fill-color: #fff !important;
+}
+.struktiva-metallic .software-area .software-hero h1 { max-width: 830px; font-size: clamp(3rem, 6.2vw, 5.7rem); }
+.struktiva-metallic .software-area .software-article-hero h1 { font-size: clamp(2.8rem, 5vw, 4.8rem); }
+.struktiva-metallic .software-area :is(.software-hero__lead, .software-article-hero > .software-container > p:not(.software-kicker):not(.software-article-hero__date), .software-principle p:not(.software-kicker)) {
+  color: #dce9f9 !important;
+}
+.struktiva-metallic .software-area :is(.software-hero, .software-article-hero, .software-principle) .software-kicker,
+.struktiva-metallic .software-area :is(.software-hero__link, .software-principle a) {
+  color: #9dceff !important;
+}
+.struktiva-metallic .software-area .software-breadcrumb,
+.struktiva-metallic .software-area .software-breadcrumb a,
+.struktiva-metallic .software-area .software-breadcrumb span,
+.struktiva-metallic .software-area .software-article-hero__date { color: #c7d8ee !important; }
+.struktiva-metallic .software-area .software-kicker,
+.struktiva-metallic .software-area .software-guide-link__number { color: #1d4ed8 !important; }
+.struktiva-metallic .software-area .software-guide-list,
+.struktiva-metallic .software-area .software-guide-link,
+.struktiva-metallic .software-area .software-article-section,
+.struktiva-metallic .software-area .software-tools,
+.struktiva-metallic .software-area .software-tools > div,
+.struktiva-metallic .software-area .software-faq details,
+.struktiva-metallic .software-area .software-related-links { border-color: var(--rd-line); }
+.struktiva-metallic .software-area .software-guide-link:hover { background: #eaf2ff; }
+.struktiva-metallic .software-area .software-guide-link strong { font-weight: 750; }
+.struktiva-metallic .software-area :is(.software-section-heading > p:last-child, .software-guide-link small, .software-editorial-note, .software-article-section p, .software-article-section li, .software-disclosure) { color: var(--rd-muted); }
+.struktiva-metallic .software-area :is(.software-tools a, .software-source a, .software-related-links a, .software-affiliate-cta a, .software-affiliate-inline a) { color: #075bbf; }
+.struktiva-metallic .software-area :is(.software-editorial-note, .software-affiliate-cta, .software-decision) { border-color: #2563eb; }
+.struktiva-metallic .software-area :is(.software-affiliate-cta, .software-decision) { background: #eaf2ff; }
+.struktiva-metallic .software-area .software-article-aside { border-color: #2563eb; }
+.struktiva-metallic .software-area .software-hero-disclosure { border-color: #60a5fa; }
+@media (max-width: 800px) {
+  .struktiva-metallic .software-area .software-hero { min-height: auto; padding: 3.5rem 0 4.5rem; }
+  .struktiva-metallic .software-area .software-breadcrumb { margin-bottom: 3rem; }
+  .struktiva-metallic .software-area .software-article-hero { padding-bottom: 3.5rem; }
 }

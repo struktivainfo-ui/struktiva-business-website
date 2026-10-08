@@ -8,7 +8,7 @@ export default function PackagesHero() {
     <section className="struktiva-packages-hero" aria-labelledby="struktiva-packages-title">
       <motion.div
         className="struktiva-packages-hero__content"
-        initial={{ opacity: 0, y: 22 }}
+        initial={false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
       >
