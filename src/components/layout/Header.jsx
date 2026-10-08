@@ -4,7 +4,6 @@ import { currentNavigation } from '../../routing/routeConfig.js'
 
 const desktopNavItems = currentNavigation.desktop
 const mobileNavItems = currentNavigation.mobile
-const softwareNavItem = desktopNavItems.find((item) => item.href === '/software-tools')
 const primaryCta = currentNavigation.primaryCta
 
 function normalizeHref(href) {
@@ -136,9 +135,8 @@ export default function Header({ pathname }) {
         </nav>
 
         <div className="struktiva-header-actions">
-          {softwareNavItem ? <NavigationLink item={softwareNavItem} pathname={pathname} hash={hash} className="struktiva-software-shortcut" /> : null}
           <a className="struktiva-primary-action" href={primaryCta.href}>
-            <span>{primaryCta.label}</span>
+            <span>Digital-Check</span>
             <ArrowRight aria-hidden="true" className="struktiva-primary-action__icon" />
           </a>
           <button
@@ -184,7 +182,7 @@ export default function Header({ pathname }) {
         </nav>
         <div className="struktiva-mobile-nav__cta">
           <a className="struktiva-primary-action struktiva-primary-action--mobile" href={primaryCta.href} onClick={() => closeMobileMenu(false)}>
-            <span>{primaryCta.label}</span>
+            <span>Digital-Check</span>
             <ArrowRight aria-hidden="true" className="struktiva-primary-action__icon" />
           </a>
         </div>
