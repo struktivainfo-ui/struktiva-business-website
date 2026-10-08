@@ -218,3 +218,19 @@ body { overflow-x: clip; }
 .route-digital-check main .dc-form :is(.dc-form__legend, .dc-form__help, .dc-form__order-note) { color: #40516d !important; }
 .route-digital-check .campaign-header .campaign-button,
 .route-digital-check .campaign-header .campaign-button :is(span, svg) { color: #fff !important; }
+
+/* Keep the Salon Karola proof readable in the light Digital-Check design. */
+.route-digital-check main .dc-case { background: #eaf2ff; }
+.route-digital-check main .dc-case .dc-copy h2 {
+  color: #071b32 !important;
+  font-size: clamp(2rem, 3.4vw, 3.6rem);
+  line-height: 1.08;
+}
+.route-digital-check main .dc-case .dc-copy > p:not(.dc-eyebrow) { color: #40516d !important; }
+.route-digital-check main .dc-case .dc-copy .dc-eyebrow {
+  color: #075bbf !important;
+  -webkit-text-fill-color: #075bbf !important;
+}
+.route-digital-check main .dc-case .dc-copy .dc-fineprint { color: #52647d !important; }
+.route-digital-check main .dc-case .dc-copy .campaign-button { margin-top: 1.5rem; }
+.route-digital-check main .dc-case__visual figcaption strong { color: #fff !important; }
