@@ -234,3 +234,19 @@ body { overflow-x: clip; }
 .route-digital-check main .dc-case .dc-copy .dc-fineprint { color: #52647d !important; }
 .route-digital-check main .dc-case .dc-copy .campaign-button { margin-top: 1.5rem; }
 .route-digital-check main .dc-case__visual figcaption strong { color: #fff !important; }
+
+/* The special service card inherits dark global text, so give it a matching
+   light surface and explicit accessible ink. */
+.struktiva-metallic.route-leistungen .struktiva-services-personal {
+  border: 1px solid #d8e3f2;
+  border-radius: 14px;
+  background: #eaf2ff;
+  color: #0f172a;
+}
+.struktiva-metallic.route-leistungen .struktiva-services-personal h3 { color: #0f172a !important; }
+.struktiva-metallic.route-leistungen .struktiva-services-personal .struktiva-services-eyebrow { color: #1d4ed8 !important; }
+.struktiva-metallic.route-leistungen .struktiva-services-personal p:not(.struktiva-services-eyebrow) { color: #475569 !important; }
+.struktiva-metallic.route-leistungen .struktiva-services-personal .struktiva-services-text-link {
+  color: #1d4ed8 !important;
+  text-decoration-color: #93b4ee;
+}
