@@ -274,6 +274,19 @@ body { overflow-x: clip; }
   -webkit-text-fill-color: #fff !important;
 }
 
+/* Light secondary buttons on photographic heroes need dark ink. */
+.struktiva-metallic main :is(.struktiva-solutions-hero, .struktiva-practice-hero, .struktiva-about-hero, .struktiva-contact-hero)
+  :is(.struktiva-solutions-secondary, .struktiva-practice-secondary, .struktiva-about-secondary, .struktiva-contact-secondary) {
+  border-color: #fff !important;
+  background: rgba(255, 255, 255, .95) !important;
+  color: #071b32 !important;
+}
+.struktiva-metallic main :is(.struktiva-solutions-hero, .struktiva-practice-hero, .struktiva-about-hero, .struktiva-contact-hero)
+  :is(.struktiva-solutions-secondary, .struktiva-practice-secondary, .struktiva-about-secondary, .struktiva-contact-secondary) :is(span, svg) {
+  color: #071b32 !important;
+  -webkit-text-fill-color: #071b32 !important;
+}
+
 /* The editorial software guides share the same blue, clear typography and
    light reading surfaces as the rest of STRUKTIVA. */
 .struktiva-metallic .software-area {
