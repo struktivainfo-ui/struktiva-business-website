@@ -120,7 +120,7 @@ body { overflow-x: clip; }
 .rd-case__laptop i { width: 5px; height: 5px; border-radius: 50%; background: #94a3b8; }
 .rd-case__laptop img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; }
 .rd-case__phone { position: absolute; right: 0; bottom: 0; width: 23%; height: 58%; overflow: hidden; border: 6px solid #1e293b; border-radius: 20px; background: #fff; box-shadow: 0 15px 35px #0f172a33; }
-.rd-case__phone img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.rd-case__phone img { width: 100%; height: 100%; object-fit: cover; object-position: 82% center; }
 .rd-case__copy dl { display: grid; gap: .9rem; margin: 1.7rem 0 1.8rem; }
 .rd-case__copy dl div { padding-left: 1rem; border-left: 2px solid #a9c6f6; }
 .rd-case__copy dt { margin-bottom: .25rem; color: var(--rd-ink); font-weight: 800; }
@@ -184,6 +184,7 @@ body { overflow-x: clip; }
   .rd-process__list li span { flex: 0 0 46px; }
   .rd-process__list li strong { max-width: none; }
   .rd-case__media { min-height: 230px; }
+  .rd-case__phone { width: 30%; height: 66%; right: .25rem; bottom: -.35rem; border-width: 5px; border-radius: 17px; }
   .rd-check__steps li { min-height: 58px; }
 }
 @media (prefers-reduced-motion: reduce) {
