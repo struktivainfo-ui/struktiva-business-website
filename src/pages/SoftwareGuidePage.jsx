@@ -24,7 +24,7 @@ export default function SoftwareGuidePage({ guide }) {
     <article>
       <header className="software-article-hero"><div className="software-container">
         <nav className="software-breadcrumb" aria-label="Brotkrümelnavigation"><a href="/">Start</a><span>/</span><a href="/software-tools">Software & Tools</a><span>/</span><span aria-current="page">{guide.title}</span></nav>
-        {guide.affiliate && <p className="software-hero-disclosure">{GETRESPONSE_DISCLOSURE}</p>}<p className="software-kicker">STRUKTIVA Ratgeber · {guide.readingTime} Lesezeit</p><h1>{guide.title}</h1><p>{guide.lead}</p><p className="software-article-hero__date">Redaktionell geprüft am 7. Oktober 2026</p>
+        {guide.affiliate && <p className="software-hero-disclosure">{GETRESPONSE_DISCLOSURE}</p>}<p className="software-kicker">STRUKTIVA Ratgeber · {guide.readingTime} Lesezeit</p><h1>{guide.title}</h1><p>{guide.lead}</p><p className="software-article-hero__date">Redaktionell geprüft am 10. Oktober 2026</p>
       </div></header>
       <div className="software-container software-article-layout"><div className="software-article-body">
         <p className="software-editorial-note">Dieser Ratgeber ist eine redaktionelle Orientierung. Genannte Produkte wurden anhand öffentlicher Anbieterinformationen eingeordnet; es gab keinen eigenen Langzeittest.{guide.affiliate ? ' GetResponse-Links zum Angebot sind als Werbung gekennzeichnet.' : ''}</p>

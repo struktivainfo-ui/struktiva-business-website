@@ -76,3 +76,32 @@ test('small business email marketing guide is published through the shared SEO a
   assert.match(component, /section\.affiliateCta.*GETRESPONSE_DISCLOSURE/)
   assert.match(component, /rel="sponsored nofollow noopener noreferrer"/)
 })
+
+test('commercial-intent GetResponse guides are indexable, prerendered and internally linked', async () => {
+  const rewrites = JSON.parse(await read('vercel.json')).rewrites
+  const sitemap = await read('public/sitemap.xml')
+
+  for (const guide of [softwareGuides.getresponsePricing, softwareGuides.getresponseVsBrevo]) {
+    const meta = getRouteMeta(guide.path)
+    assert.equal(meta.title, guide.metaTitle)
+    assert.equal(meta.canonicalPath, guide.path)
+    assert.equal(meta.noindex, false)
+    assert.equal(guide.affiliate, true)
+    assert.equal(guide.topAffiliateCta, true)
+    assert.ok(SEO_PRERENDER_PATHS.includes(guide.path))
+    assert.ok(rewrites.some(({ source, destination }) => source === guide.path && destination === `${guide.path}/index.html`))
+    assert.ok(sitemap.includes(`<loc>https://struktiva.de${guide.path}</loc>`))
+    assert.ok(guide.sections.some((section) => section.links?.length && section.affiliateCta))
+  }
+
+  assert.ok(softwareGuides.newsletter.sections.some((section) => section.links?.some((link) => link.href === softwareGuides.getresponsePricing.path)))
+  assert.ok(softwareGuides.newsletter.sections.some((section) => section.links?.some((link) => link.href === softwareGuides.getresponseVsBrevo.path)))
+})
+
+test('previously thin local service and CRM guides now contain practical depth and related links', () => {
+  for (const guide of [softwareGuides.email, softwareGuides.crm]) {
+    assert.ok(guide.sections.length >= 6)
+    assert.ok(guide.sections.some((section) => section.subsections?.length >= 3))
+    assert.ok(guide.sections.some((section) => section.links?.length >= 3))
+  }
+})
