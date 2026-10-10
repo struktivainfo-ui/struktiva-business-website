@@ -15,7 +15,13 @@ Der Bereich `struktiva.de/software-tools` richtet sich an kleine Unternehmen und
 - E-Mail-Marketing für lokale Dienstleister: `/software-tools/email-marketing-lokale-dienstleister`
 - CRM für kleine Unternehmen: `/software-tools/crm-kleine-unternehmen`
 
-Die zwei GetResponse-Seiten und der Newsletter-Vergleich verwenden den freigegebenen PartnerStack-Link `https://try.getresponsetoday.com/71f61c5tu71k`. Die Adresse wird zentral in `src/config/affiliate.js` verwaltet. Jede Seite mit diesem Link zeigt eine Provisionsoffenlegung direkt oben und nahe dem Link. Die Links tragen `rel="sponsored nofollow noopener noreferrer"`.
+Die zwei GetResponse-Seiten, der Newsletter-Vergleich sowie die Ratgeber zu E-Mail-Marketing für kleine Unternehmen und zu Salon-Newslettern verwenden den freigegebenen PartnerStack-Link `https://try.getresponsetoday.com/71f61c5tu71k`. Die Adresse wird zentral in `src/config/affiliate.js` verwaltet. Jede Seite mit diesem Link zeigt eine Provisionsoffenlegung direkt oben und nahe dem Link. Die Links tragen `rel="sponsored nofollow noopener noreferrer"`.
+
+## Messung des GetResponse-Funnels
+
+Alle GetResponse-Links lösen bei vorhandener Statistik-Einwilligung das GA4-Ereignis `affiliate_click` aus. Die Parameter `affiliate_page` und `affiliate_placement` sind in GA4 als ereignisbezogene benutzerdefinierte Dimensionen „Affiliate Seite“ und „Affiliate Platzierung“ registriert. Sie zeigen die STRUKTIVA-Quellseite und die Position des Links. Ohne Statistik-Einwilligung wird kein GA4-Ereignis gesendet; der Partnerlink funktioniert weiterhin. PartnerStack bleibt die Quelle für zugerechnete Registrierungen und zahlende Kunden. Dessen bisheriger gemeinsamer Link ordnet Klicks nicht einzelnen Ratgebern zu. Beim Vergleich der Systeme müssen Zeitraum und Consent-bedingte Lücken berücksichtigt werden.
+
+Der Build schreibt den sichtbaren Inhalt des Software-Hubs und aller Software-Ratgeber zusätzlich in das ausgelieferte HTML. Die React-App ersetzt ihn nach dem Laden. Damit sind Überschriften, Text und interne Ratgeberlinks auch ohne JavaScript lesbar. Eine Aufnahme in den Google-Index ist dadurch nicht garantiert.
 
 ## Redaktionelle und Programmregeln
 

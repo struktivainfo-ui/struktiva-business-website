@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { getRouteMeta, SEO_PRERENDER_PATHS } from '../src/routing/routeConfig.js'
+import { renderSoftwareHtml } from './render-software-html.mjs'
 
 const projectRoot = resolve(fileURLToPath(new URL('..', import.meta.url)))
 const distRoot = resolve(projectRoot, 'dist')
@@ -42,6 +43,8 @@ function createRouteHtml(pathname) {
     const json = JSON.stringify(meta.structuredData).replace(/</g, '\\u003c')
     html = html.replace('</head>', `    <script id="struktiva-route-structured-data" type="application/ld+json">${json}</script>\n  </head>`)
   }
+  const softwareHtml = renderSoftwareHtml(pathname)
+  if (softwareHtml) html = html.replace('<div id="root"></div>', `<div id="root">${softwareHtml}</div>`)
   return html
 }
 
