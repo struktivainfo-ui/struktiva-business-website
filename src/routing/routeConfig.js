@@ -65,6 +65,21 @@ function createLocalSeoStructuredData(page) {
   }
 }
 
+function createEditorialArticleData({ title, description, path, image }) {
+  const pageUrl = `${SITE_URL}${path}`
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    image: `${SITE_URL}${image}`,
+    inLanguage: 'de-DE',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+    author: { '@type': 'Organization', name: 'Schön & Praktisch' },
+    publisher: { '@type': 'Organization', name: 'STRUKTIVA', url: SITE_URL },
+  }
+}
+
 const localSeoRouteMeta = Object.fromEntries(
   Object.values(localSeoPages).map((page) => [page.path, {
     title: page.metaTitle,
@@ -212,11 +227,38 @@ export const ACTIVE_ROUTE_META = {
     canonicalPath: '/werbekennzeichnung',
   },
   '/schoen-und-praktisch': {
-    title: 'Schön & Praktisch | Wohnideen für Haus & Garten',
-    description: 'Schön & Praktisch | Wohnideen: Inspiration für Wohnen, Möbel, Ordnung, Gartenhäuser, Saunen, Pergolen und Outdoor Living. Ein Home-&-Garden-Bereich von STRUKTIVA.',
+    title: 'Schön & Praktisch | Wohnideen für einen schönen Alltag',
+    description: 'Praktische Wohnideen für kleine Räume, Flure und Stauraum – verständliche Tipps für ein Zuhause, das sich gut anfühlt.',
     canonicalPath: '/schoen-und-praktisch',
-    socialImage: '/images/schoen-und-praktisch-social.jpg',
-    socialImageAlt: 'Wohnideen für Haus und Garten: Terrasse mit Pergola und Sitzbereich',
+    layout: 'editorial',
+    socialImage: '/images/schoen-und-praktisch-kleines-wohnzimmer.jpg',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Schön & Praktisch',
+      url: `${SITE_URL}/schoen-und-praktisch`,
+      description: 'Praktische Wohnideen für kleine Räume, Flure und Stauraum.',
+      inLanguage: 'de-DE',
+      publisher: { '@type': 'Organization', name: 'STRUKTIVA', url: SITE_URL },
+    },
+  },
+  '/schoen-und-praktisch/kleiner-flur': {
+    title: 'Kleinen Flur einrichten: 7 Ideen für mehr Platz | Schön & Praktisch',
+    description: 'Sieben praktische Ideen für einen kleinen Flur: schmale Möbel, Wandstauraum, gutes Licht und feste Plätze für den Alltag.',
+    canonicalPath: '/schoen-und-praktisch/kleiner-flur', layout: 'editorial', socialImage: '/images/schoen-und-praktisch-kleiner-flur.jpg',
+    structuredData: createEditorialArticleData({ title: 'Kleinen Flur einrichten: 7 Ideen für mehr Platz', description: 'Sieben praktische Ideen für einen kleinen Flur: schmale Möbel, Wandstauraum, gutes Licht und feste Plätze für den Alltag.', path: '/schoen-und-praktisch/kleiner-flur', image: '/images/schoen-und-praktisch-kleiner-flur.jpg' }),
+  },
+  '/schoen-und-praktisch/kleines-wohnzimmer': {
+    title: 'Kleines Wohnzimmer einrichten: 6 Zonen planen | Schön & Praktisch',
+    description: 'Plane sechs praktische Bereiche im kleinen Wohnzimmer und halte dabei Laufwege frei – mit klaren Tipps zur Raumaufteilung.',
+    canonicalPath: '/schoen-und-praktisch/kleines-wohnzimmer', layout: 'editorial', socialImage: '/images/schoen-und-praktisch-kleines-wohnzimmer.jpg',
+    structuredData: createEditorialArticleData({ title: 'Kleines Wohnzimmer einrichten: 6 Zonen planen', description: 'Plane sechs praktische Bereiche im kleinen Wohnzimmer und halte dabei Laufwege frei – mit klaren Tipps zur Raumaufteilung.', path: '/schoen-und-praktisch/kleines-wohnzimmer', image: '/images/schoen-und-praktisch-kleines-wohnzimmer.jpg' }),
+  },
+  '/schoen-und-praktisch/dachschraege': {
+    title: 'Dachschräge nutzen: 5 Stauraum-Ideen | Schön & Praktisch',
+    description: 'Fünf Ideen für Stauraum unter der Dachschräge: richtig messen, niedrige Bereiche nutzen und Möbel passend planen.',
+    canonicalPath: '/schoen-und-praktisch/dachschraege', layout: 'editorial', socialImage: '/images/schoen-und-praktisch-dachschraege.jpg',
+    structuredData: createEditorialArticleData({ title: 'Dachschräge nutzen: 5 Stauraum-Ideen', description: 'Fünf Ideen für Stauraum unter der Dachschräge: richtig messen, niedrige Bereiche nutzen und Möbel passend planen.', path: '/schoen-und-praktisch/dachschraege', image: '/images/schoen-und-praktisch-dachschraege.jpg' }),
   },
   '/impressum': {
     title: 'Impressum - STRUKTIVA Digitale Unternehmensberatung',
@@ -261,6 +303,9 @@ export const SEO_PRERENDER_PATHS = [
   ...softwareGuideList.map((guide) => guide.path),
   '/werbekennzeichnung',
   '/schoen-und-praktisch',
+  '/schoen-und-praktisch/kleiner-flur',
+  '/schoen-und-praktisch/kleines-wohnzimmer',
+  '/schoen-und-praktisch/dachschraege',
   '/digital-check',
   '/digital-check/danke',
 ]

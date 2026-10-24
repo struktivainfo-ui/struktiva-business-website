@@ -11,6 +11,7 @@ export default function AppShell({ pathname, routeMeta, children }) {
   const isHomeRoute = Boolean(routeMeta.isHomeRoute)
   const isPricingRoute = Boolean(routeMeta.isPricingRoute)
   const isCampaignRoute = routeMeta.layout === 'campaign'
+  const isEditorialRoute = routeMeta.layout === 'editorial'
   const routeClass = createRouteClass(pathname)
 
   return (
@@ -20,13 +21,13 @@ export default function AppShell({ pathname, routeMeta, children }) {
           Zum Inhalt springen
         </a>
       ) : null}
-      {!isDemoRoute ? (isCampaignRoute ? <CampaignHeader pathname={pathname} /> : <Header pathname={pathname} isHomeRoute={isHomeRoute} />) : null}
+      {!isDemoRoute && !isEditorialRoute ? (isCampaignRoute ? <CampaignHeader pathname={pathname} /> : <Header pathname={pathname} isHomeRoute={isHomeRoute} />) : null}
       <div id="main-content" tabIndex={-1} className="struktiva-main-content">
         {children}
       </div>
-      {!isDemoRoute ? (isCampaignRoute ? <CampaignFooter /> : <Footer />) : null}
+      {!isDemoRoute && !isEditorialRoute ? (isCampaignRoute ? <CampaignFooter /> : <Footer />) : null}
       <CookieConsentLayer pathname={pathname} />
-      {!isCampaignRoute ? <FloatingWhatsAppButton /> : null}
+      {!isCampaignRoute && !isEditorialRoute ? <FloatingWhatsAppButton /> : null}
     </div>
   )
 }

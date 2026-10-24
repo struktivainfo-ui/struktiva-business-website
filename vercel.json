@@ -45,6 +45,18 @@
       "destination": "/schoen-und-praktisch/index.html"
     },
     {
+      "source": "/schoen-und-praktisch/kleiner-flur",
+      "destination": "/schoen-und-praktisch/kleiner-flur/index.html"
+    },
+    {
+      "source": "/schoen-und-praktisch/kleines-wohnzimmer",
+      "destination": "/schoen-und-praktisch/kleines-wohnzimmer/index.html"
+    },
+    {
+      "source": "/schoen-und-praktisch/dachschraege",
+      "destination": "/schoen-und-praktisch/dachschraege/index.html"
+    },
+    {
       "source": "/digitale-unternehmensberatung-calw",
       "destination": "/digitale-unternehmensberatung-calw/index.html"
     },
