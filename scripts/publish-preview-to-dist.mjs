@@ -2,6 +2,7 @@ import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync
 import { join, resolve } from 'node:path';
 import { localSeoPages } from '../src/content/localSeoContent.js';
 import { getRouteMeta } from '../src/routing/routeConfig.js';
+import { confirmedPackages } from '../src/components/packages/packagesData.js';
 import { contactForm, digitalCheckForm } from './lead-form-markup.mjs';
 
 const root = resolve(import.meta.dirname, '..');
@@ -83,6 +84,21 @@ function replaceCardLinks(html, route, specs) {
   return updated;
 }
 
+function addPackageScopes(html) {
+  let index = 0;
+  const updated = html.replace(/<article class="sub-card reveal">[\s\S]*?<\/article>/g, (card) => {
+    const item = confirmedPackages[index++];
+    if (!item) return card;
+    const includes = item.includes.map((point) => `<li>${escapeAttribute(point)}</li>`).join('');
+    const scope = `<div class="package-scope"><p class="package-scope__label">Enthalten</p><ul class="package-scope__list">${includes}</ul><p class="package-scope__limit"><strong>Abgrenzung:</strong> ${escapeAttribute(item.excludes)}</p></div>`;
+    return card
+      .replace(/<p>(?!<p class="eyebrow)[\s\S]*?<\/p>/, `<p>${escapeAttribute(item.fit)}</p>`)
+      .replace('<a class="sub-link"', `${scope}<a class="sub-link"`);
+  });
+  if (index !== confirmedPackages.length) throw new Error(`Paketdetails unvollständig: ${index} von ${confirmedPackages.length} Karten gefunden.`);
+  return updated;
+}
+
 function improvePageMessaging(html, route) {
   if (route === '') {
     html = html.replace('Digitale Unternehmensberatung · Calw &amp; deutschlandweit', 'Für kleine Unternehmen und Betriebe · Calw &amp; deutschlandweit');
@@ -106,6 +122,7 @@ function improvePageMessaging(html, route) {
       { href: '/kontakt/index.html?paket=sichtbarkeit-plus#leadformular', label: 'Sichtbarkeit PLUS anfragen' },
       { href: '/kontakt/index.html?paket=kundenfuehrung#leadformular', label: 'Kundenführung anfragen' },
     ]);
+    html = addPackageScopes(html);
   }
   if (route === '/digital-check') {
     const cards = [

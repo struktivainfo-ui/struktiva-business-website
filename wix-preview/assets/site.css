@@ -47,6 +47,13 @@
 .sub-card>p:not(.eyebrow){min-height:62px;margin:0;color:#626c79;font-size:13px;line-height:1.7}
 .sub-link{display:inline-flex;align-items:center;gap:8px;margin-top:21px;color:#315bd0;font-size:11px;font-weight:800}
 .sub-link span{transition:transform .2s}.sub-link:hover span{transform:translateX(4px)}
+.package-scope{margin-top:19px;padding-top:16px;border-top:1px solid #e5e7e5}
+.package-scope__label{margin:0 0 9px;color:#315bd0;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.package-scope__list{display:grid;gap:7px;margin:0;padding:0;list-style:none;color:#263244;font-size:12px;line-height:1.55}
+.package-scope__list li{position:relative;padding-left:15px}
+.package-scope__list li:before{position:absolute;left:0;color:#315bd0;font-weight:800;content:'+'}
+.package-scope__limit{margin:14px 0 0!important;color:#737c88!important;font-size:10px!important;line-height:1.55!important}
+.package-scope__limit strong{color:#3d4857}
 .sub-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:45px;border-top:1px solid #ffffff28;border-bottom:1px solid #ffffff28}
 .sub-steps>div{padding:23px 18px 26px 0}.sub-steps>div+div{padding-left:18px;border-left:1px solid #ffffff28}
 .sub-steps b{color:var(--lime);font-size:10px;letter-spacing:.1em}.sub-steps h3{margin:23px 0 8px;font-family:Manrope,sans-serif;font-size:21px;letter-spacing:-.04em}.sub-steps p{margin:0;color:#aab7c8;font-size:12px;line-height:1.65}
