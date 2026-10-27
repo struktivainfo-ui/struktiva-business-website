@@ -1,6 +1,7 @@
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { localSeoPages } from '../src/content/localSeoContent.js';
+import { softwareGuideList } from '../src/content/softwareGuides.js';
 import { getRouteMeta } from '../src/routing/routeConfig.js';
 import { confirmedPackages } from '../src/components/packages/packagesData.js';
 import { contactForm, digitalCheckForm } from './lead-form-markup.mjs';
@@ -9,6 +10,7 @@ const root = resolve(import.meta.dirname, '..');
 const source = join(root, 'wix-preview');
 const output = join(root, 'dist');
 const localSeoPaths = new Set(Object.values(localSeoPages).map((page) => page.path));
+const prerenderedSoftwarePaths = new Set(['/software-tools', ...softwareGuideList.map((guide) => guide.path)]);
 
 if (!existsSync(join(source, 'index.html')) || !existsSync(output)) {
   throw new Error('Website-Vorschau oder Build-Ausgabe fehlt.');
@@ -196,6 +198,9 @@ function copyPages(directory, target, route = '') {
       if (entry.name === 'assets') continue;
       copyPages(join(directory, entry.name), join(target, entry.name), `${route}/${entry.name}`);
     } else if (entry.name === 'index.html') {
+      // SEO prerendering runs before this script. Keep its complete software
+      // hub and guide pages instead of replacing them with thin Wix snapshots.
+      if (prerenderedSoftwarePaths.has(route)) continue;
       mkdirSync(target, { recursive: true });
       let html = readFileSync(join(directory, entry.name), 'utf8');
       html = preserveLocalSeo(html, route);
