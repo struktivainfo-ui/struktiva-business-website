@@ -157,6 +157,17 @@ test('keeps the user-facing success when only the confirmation mail fails', asyn
   assert.doesNotMatch(JSON.stringify(logs), /private content|Erika Muster/)
 })
 
+test('reports a rejected internal mail instead of claiming the lead was delivered', async () => {
+  const { handler, logs } = setup({
+    send: async () => ({ data: null, error: { name: 'validation_error' } }),
+  })
+  const response = await submit(handler, validDigitalLead())
+  assert.equal(response.statusCode, 500)
+  assert.equal(response.body.ok, undefined)
+  assert.equal(response.body.errorCode, 'server')
+  assert.equal(logs[0][2].code, 'server')
+})
+
 test('keeps the user-facing success when the optional webhook fails', async () => {
   const previousWebhook = process.env.LEAD_WEBHOOK_URL
   process.env.LEAD_WEBHOOK_URL = 'https://webhook.example.invalid/lead'

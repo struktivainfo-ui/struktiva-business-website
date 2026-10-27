@@ -333,22 +333,24 @@ export function createLeadHandler({
         return json(res, 503, { errorCode: 'server', error: 'Die Anfrage kann gerade nicht zugestellt werden. Bitte kontaktieren Sie STRUKTIVA per E-Mail.' })
       }
 
-      await mailer.emails.send({
+      const internalDelivery = await mailer.emails.send({
         from: process.env.SMTP_FROM,
         to: process.env.LEAD_RECEIVER_EMAIL,
         subject: lead.leadType === 'digital_check' ? `Digital-Check-Anfrage: ${lead.company}` : `Neue Anfrage von ${lead.name}`,
         html: buildInternalMailHtml(lead),
       })
+      if (internalDelivery?.error) throw new Error('internal_delivery_rejected')
 
       if (lead.submissionId) deliveredSubmissions.set(lead.submissionId, timestamp)
 
       try {
-        await mailer.emails.send({
+        const confirmationDelivery = await mailer.emails.send({
           from: process.env.SMTP_FROM,
           to: lead.email,
           subject: lead.leadType === 'digital_check' ? 'Ihre Anfrage zum STRUKTIVA Digital-Check' : 'Ihre Anfrage bei STRUKTIVA',
           html: buildConfirmationMailHtml(lead),
         })
+        if (confirmationDelivery?.error) throw new Error('confirmation_delivery_rejected')
       } catch {
         logger.warn('Lead confirmation delivery failed', { code: 'confirmation_failed' })
       }
