@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { currentNavigation } from '../../routing/routeConfig.js'
 
-const practiceHeroImage = '/images/salon-karola-interior-project.jpg'
+const practiceHeroImage = '/images/salon-karola-interior-project.webp'
 
 export default function PracticeHero() {
   const reducedMotion = useReducedMotion()

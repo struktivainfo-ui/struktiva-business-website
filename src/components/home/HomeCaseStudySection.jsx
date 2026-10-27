@@ -3,7 +3,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react'
 import { salonKarolaCasePath } from '../case-study/salonKarolaCaseData.js'
 
 const salonKarolaUrl = 'https://salonkarola.de/'
-const salonKarolaInteriorImage = '/images/salon-karola-interior-project.jpg'
+const salonKarolaInteriorImage = '/images/salon-karola-interior-project.webp'
 
 const systemModules = [
   {

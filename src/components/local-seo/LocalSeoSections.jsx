@@ -14,12 +14,12 @@ export function LocalSeoPage({ page, variant, children }) {
 export function LocalSeoHero({ page, variant }) {
   const reducedMotion = useReducedMotion()
   const heroImages = {
-    visibility: '/images/struktiva-solution-visibility-3d-v1.png',
-    'customer-processes': '/images/struktiva-solution-customer-3d-v1.png',
-    ai: '/images/struktiva-solution-automation-3d-v1.png',
-    digitalization: '/images/struktiva-hero-digital-consulting-3d-v1.png',
-    consulting: '/images/struktiva-hero-digital-consulting-v2.png',
-    trades: '/images/struktiva-hero-digital-consulting-3d-v1.png',
+    visibility: '/images/struktiva-solution-visibility-3d-v1.webp',
+    'customer-processes': '/images/struktiva-solution-customer-3d-v1.webp',
+    ai: '/images/struktiva-solution-automation-3d-v1.webp',
+    digitalization: '/images/struktiva-hero-digital-consulting-3d-v1.webp',
+    consulting: '/images/struktiva-hero-digital-consulting-v2.webp',
+    trades: '/images/struktiva-hero-digital-consulting-3d-v1.webp',
   }
   const heroImage = heroImages[variant] ?? null
   return (

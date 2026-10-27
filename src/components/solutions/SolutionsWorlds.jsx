@@ -9,7 +9,7 @@ const worlds = [
     description: 'Damit Ihr Unternehmen in Google gefunden wird und der erste Eindruck sofort Vertrauen schafft.',
     href: '/google-sichtbarkeit-calw',
     linkLabel: 'Sichtbarkeit entdecken',
-    image: '/images/struktiva-solution-visibility-3d-v1.png',
+    image: '/images/struktiva-solution-visibility-3d-v1.webp',
     alt: 'Abstrakte 3D-Darstellung von Google-Sichtbarkeit und digitaler Reichweite',
   },
   {
@@ -19,7 +19,7 @@ const worlds = [
     description: 'Von der ersten Frage bis zur Rückmeldung: Kontaktpunkte greifen klar ineinander und bleiben persönlich.',
     href: '/digitale-kundenprozesse-calw',
     linkLabel: 'Kundenprozesse entdecken',
-    image: '/images/struktiva-solution-customer-3d-v1.png',
+    image: '/images/struktiva-solution-customer-3d-v1.webp',
     alt: 'Abstrakte 3D-Darstellung einer digitalen Kundenreise',
   },
   {
@@ -29,7 +29,7 @@ const worlds = [
     description: 'Wiederkehrende Aufgaben werden verlässlich vorbereitet, damit mehr Aufmerksamkeit für Menschen und Entscheidungen bleibt.',
     href: '/ki-automatisierung-calw',
     linkLabel: 'Automatisierung entdecken',
-    image: '/images/struktiva-solution-automation-3d-v1.png',
+    image: '/images/struktiva-solution-automation-3d-v1.webp',
     alt: 'Abstrakte 3D-Darstellung eines vernetzten digitalen Systems',
   },
 ]

@@ -3,7 +3,7 @@ export default function DigitalCheckTrustSection() {
     <section className="dc-section dc-case" aria-labelledby="dc-case-title">
       <div className="dc-shell dc-case__grid">
         <figure className="dc-case__visual">
-          <img src="/images/salon-karola-interior-project.jpg" alt="Innenraum von Salon Karola in Calw-Wimberg" loading="lazy" />
+          <img src="/images/salon-karola-interior-project.webp" alt="Innenraum von Salon Karola in Calw-Wimberg" loading="lazy" />
           <figcaption><span>Praxisbeispiel aus Calw</span><strong>Salon Karola</strong></figcaption>
         </figure>
         <div className="dc-copy">

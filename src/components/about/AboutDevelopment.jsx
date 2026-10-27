@@ -34,7 +34,7 @@ export default function AboutDevelopment() {
           transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
           <figure className="struktiva-about-practice__image">
-            <img src="/images/salon-karola-interior-project.jpg" alt="Innenraum von Salon Karola in Calw-Wimberg" loading="lazy" />
+            <img src="/images/salon-karola-interior-project.webp" alt="Innenraum von Salon Karola in Calw-Wimberg" loading="lazy" />
           </figure>
           <p className="struktiva-about-eyebrow">Aus der Praxis</p>
           <h2>Ein echtes Beispiel für schrittweise digitale Entwicklung.</h2>

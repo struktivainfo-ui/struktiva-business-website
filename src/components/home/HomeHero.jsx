@@ -16,7 +16,7 @@ export default function HomeHero() {
         animate={reducedMotion ? undefined : { opacity: 1, scale: 1 }}
         transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
       >
-        <img src="/images/struktiva-hero-digital-consulting-3d-v1.png" alt="" />
+        <img src="/images/struktiva-hero-digital-consulting-3d-v1.webp" alt="" />
       </motion.div>
       <div className="struktiva-home-hero__backdrop" aria-hidden="true" />
       <div className="struktiva-home-hero__inner">

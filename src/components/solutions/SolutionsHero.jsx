@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { currentNavigation } from '../../routing/routeConfig.js'
 
-const solutionsHeroImage = '/images/struktiva-solution-automation-3d-v1.png'
+const solutionsHeroImage = '/images/struktiva-solution-automation-3d-v1.webp'
 
 export default function SolutionsHero() {
   const reducedMotion = useReducedMotion()

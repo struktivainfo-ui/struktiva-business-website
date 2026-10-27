@@ -9,7 +9,7 @@ const solutionWorlds = [
     title: 'Sichtbarkeit und Kundengewinnung',
     message: 'Gefunden werden. Vertrauen aufbauen. Den nächsten Schritt einfach machen.',
     localLink: { href: '/google-sichtbarkeit-calw', label: 'Google-Sichtbarkeit in Calw' },
-    image: '/images/struktiva-solution-visibility-3d-v1.png',
+    image: '/images/struktiva-solution-visibility-3d-v1.webp',
     imageAlt: 'Abstrakte 3D-Szene für lokale digitale Sichtbarkeit',
   },
   {
@@ -18,7 +18,7 @@ const solutionWorlds = [
     title: 'Kundenführung und Kundenbindung',
     message: 'Kontakt, Betreuung und Wiederkehr werden zu einem klaren Kundenweg.',
     localLink: { href: '/digitale-kundenprozesse-calw', label: 'Digitale Kundenprozesse in Calw' },
-    image: '/images/struktiva-solution-customer-3d-v1.png',
+    image: '/images/struktiva-solution-customer-3d-v1.webp',
     imageAlt: 'Abstrakte 3D-Szene für digitale Kundenführung und Kundenbindung',
   },
   {
@@ -27,7 +27,7 @@ const solutionWorlds = [
     title: 'Digitale Abläufe und Automatisierung',
     message: 'Informationen, Aufgaben und Automatisierungen arbeiten als ein System zusammen.',
     localLink: { href: '/ki-automatisierung-calw', label: 'KI und Automatisierung in Calw' },
-    image: '/images/struktiva-solution-automation-3d-v1.png',
+    image: '/images/struktiva-solution-automation-3d-v1.webp',
     imageAlt: 'Abstrakte 3D-Szene für digitale Abläufe und Automatisierung',
   },
 ]
