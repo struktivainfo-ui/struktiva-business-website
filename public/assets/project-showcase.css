@@ -8,6 +8,11 @@
 .showcase--dark .showcase__copy h2 em{color:#d8f36a}
 .showcase__copy>p:not(.eyebrow){max-width:500px;margin:29px 0 24px;color:#626c79;font-size:15px;line-height:1.75}
 .showcase--dark .showcase__copy>p:not(.eyebrow){color:#afbdcf}
+.showcase__scope{display:grid;gap:10px;margin:22px 0 28px;padding:0;list-style:none;color:#626c79;font-size:13px;line-height:1.55}
+.showcase--dark .showcase__scope{color:#c1cada}
+.showcase__scope li{display:flex;gap:10px;align-items:flex-start}
+.showcase__scope li:before{content:'•';color:#315bd0;font-weight:900}
+.showcase--dark .showcase__scope li:before{color:#d8f36a}
 .showcase__link{display:inline-flex;align-items:center;gap:15px;padding:12px 0;border-bottom:1px solid currentColor;color:#315bd0;font-size:12px;font-weight:800;transition:gap .25s ease,color .25s ease}
 .showcase__link:hover{gap:22px}
 .showcase--dark .showcase__link{color:#d8f36a}
