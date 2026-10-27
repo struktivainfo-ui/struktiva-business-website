@@ -2,6 +2,7 @@ import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync
 import { join, resolve } from 'node:path';
 import { localSeoPages } from '../src/content/localSeoContent.js';
 import { getRouteMeta } from '../src/routing/routeConfig.js';
+import { contactForm, digitalCheckForm } from './lead-form-markup.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const source = join(root, 'wix-preview');
@@ -36,6 +37,32 @@ function preserveLocalSeo(html, route) {
   return html;
 }
 
+function addLeadAssets(html) {
+  return html
+    .replace('</head>', '<link rel="stylesheet" href="/assets/lead-forms.css"></head>')
+    .replace('</body>', '<script src="/assets/lead-forms.js" defer></script></body>');
+}
+
+function installLeadForm(html, route) {
+  const legacyHost = 'https://struktiva-business-website-q6bkodgw2-struktivainfo-uis-projects.vercel.app';
+  if (route === '/kontakt') {
+    html = html.replace(/<div class="lead-embed">[\s\S]*?<\/div><p class="lead-fallback">[\s\S]*?<\/p>/, contactForm);
+    if (!html.includes('id="lead-contact-form"')) throw new Error('Kontaktformular konnte nicht eingesetzt werden.');
+    html = html.replaceAll(`${legacyHost}/kontakt#lead-form`, '#leadformular');
+    html = html.replace('Zum bestehenden Anfrageformular →', 'Zum Anfrageformular →');
+    html = html.replace('Das Anfrageformular ist direkt eingebunden. Ihre Angaben laufen über die bestehende STRUKTIVA-Lead-Verarbeitung.', 'Ihre Anfrage wird direkt über die bestehende STRUKTIVA-Lead-Verarbeitung gesendet.');
+    return addLeadAssets(html);
+  }
+  if (route === '/digital-check') {
+    html = html.replaceAll(`${legacyHost}/digital-check#digital-check-anfrage`, '#digital-check-anfrage');
+    html = html.replace('Das passende Digital-Check-Formular nutzt die vorhandene STRUKTIVA-Lead-Verarbeitung. Es öffnet sich auf einer separaten, dauerhaft erreichbaren Adresse.', 'Das Formular nutzt die vorhandene STRUKTIVA-Lead-Verarbeitung. Ihre Anfrage wird persönlich geprüft.');
+    html = html.replace(/(<div class="sub-callout">[\s\S]*?<\/div>)(<\/div><\/section>)/, (_, callout, closing) => `${callout}${digitalCheckForm}${closing}`);
+    if (!html.includes('id="digital-check-anfrage"')) throw new Error('Digital-Check-Formular konnte nicht eingesetzt werden.');
+    return addLeadAssets(html);
+  }
+  return html;
+}
+
 function copyPages(directory, target, route = '') {
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
     if (entry.isDirectory()) {
@@ -43,7 +70,9 @@ function copyPages(directory, target, route = '') {
       copyPages(join(directory, entry.name), join(target, entry.name), `${route}/${entry.name}`);
     } else if (entry.name === 'index.html') {
       mkdirSync(target, { recursive: true });
-      const html = preserveLocalSeo(readFileSync(join(directory, entry.name), 'utf8'), route);
+      let html = readFileSync(join(directory, entry.name), 'utf8');
+      html = preserveLocalSeo(html, route);
+      html = installLeadForm(html, route);
       writeFileSync(join(target, entry.name), html);
     }
   }

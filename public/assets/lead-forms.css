@@ -1,0 +1,22 @@
+.lead-form{position:relative;margin-top:28px;padding:clamp(24px,4vw,48px);background:#fffefa;border:1px solid #d7d9d5;box-shadow:0 20px 50px #07111d0c}
+.lead-form--check{margin-top:30px}
+.lead-form__heading{max-width:760px;margin-bottom:28px}
+.lead-form__heading h2{margin:0 0 12px;font:800 clamp(30px,4vw,48px)/1.08 Manrope,sans-serif;letter-spacing:-.055em}
+.lead-form__heading>p:last-child{max-width:600px;margin:0;color:#596779;line-height:1.6}
+.lead-form__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px;margin-bottom:22px}
+.lead-form label:not(.lead-form__consent){display:grid;gap:9px;color:#14263b;font-size:12px;font-weight:800;letter-spacing:.015em}
+.lead-form label>span[aria-hidden]{color:#3d6cff}
+.lead-form input:not([type=checkbox]),.lead-form select,.lead-form textarea{width:100%;min-height:48px;padding:12px 14px;border:1px solid #c9cfda;border-radius:4px;background:#fff;color:#07111d;font:500 15px/1.5 'DM Sans',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.lead-form textarea{display:block;min-height:130px;resize:vertical}
+.lead-form input:focus-visible,.lead-form select:focus-visible,.lead-form textarea:focus-visible{border-color:#3d6cff;box-shadow:0 0 0 3px #3d6cff22}
+.lead-form__consent{display:flex;align-items:flex-start;gap:10px;margin-top:25px;color:#4e5b6d;font-size:12px;line-height:1.6;cursor:pointer}
+.lead-form__consent input{width:18px;height:18px;margin:1px 0 0;flex:none;accent-color:#3d6cff}
+.lead-form__consent a{color:#315bd0;text-decoration:underline;text-underline-offset:3px}
+.lead-form__trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.lead-form__footer{display:flex;align-items:center;gap:22px;margin-top:24px}
+.lead-form__footer button{cursor:pointer;white-space:nowrap}
+.lead-form__footer button:disabled{opacity:.6;cursor:wait}
+.lead-form__footer p{margin:0;color:#697486;font-size:12px;line-height:1.5}
+.lead-form__status{min-height:1.5em;margin:16px 0 0;color:#a53636;font-size:13px;font-weight:700}
+.lead-form__status[data-success=true]{color:#227448}
+@media(max-width:760px){.lead-form__grid{grid-template-columns:1fr;gap:17px}.lead-form__footer{align-items:flex-start;flex-direction:column;gap:12px}.lead-form__footer button{width:100%}}
