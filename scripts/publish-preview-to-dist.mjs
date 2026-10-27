@@ -129,7 +129,7 @@ function improvePageMessaging(html, route) {
     html = addPackageScopes(html);
   }
   if (route === '/praxisbeispiele/salon-karola') {
-    html = html.replace('Ein digitaler Auftritt, der Leistungen, Standort und Kontaktmöglichkeiten verbindet und Interessierten die Orientierung erleichtert.', 'Website, Google-Präsenz, Kontakt- und Bewertungswege, mobile Kundenkarte und interne Anwendung – als zusammenhängende digitale Unterstützung für den Salonalltag.');
+    html = html.replace(/(<p class="hero__lead">)[\s\S]*?(<\/p>)/, '$1Website, Google-Präsenz, Kontakt- und Bewertungswege, mobile Kundenkarte und interne Anwendung – als zusammenhängende digitale Unterstützung für den Salonalltag.$2');
     html = html.replace('Für Salon Karola entstand eine Website, auf der Besucher Leistungen, Standort und Kontaktmöglichkeiten schnell erfassen können. Der Terminwunsch führt über einen nachvollziehbaren nächsten Schritt.', 'Die Website auf salonkarola.de bündelt Leistungen, Standort und Kontakt. Telefon, WhatsApp, digitale Anfragen sowie Bewertungs- und QR-Wege ergänzen den öffentlichen Kundenweg.');
     html = html.replace('<strong>Aufgabe</strong><span>Eine mobil nutzbare Präsenz mit einfachen Kontaktwegen.</span>', '<strong>Website &amp; Auffindbarkeit</strong><span>Mobile Website, Leistungsinformationen, Standort, Google-Präsenz und Bewertungswege.</span>');
     html = html.replace('<strong>Umsetzung</strong><span>Leistungen und wichtige Informationen übersichtlich gebündelt.</span>', '<strong>Kontakt &amp; Kundenbindung</strong><span>Telefon, WhatsApp, digitale Anfrage sowie mobile Kundenkarte mit Bonusstruktur.</span>');
