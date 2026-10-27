@@ -110,9 +110,9 @@ const softwareRouteMeta = Object.fromEntries(softwareGuideList.map((guide) => [g
 
 export const ACTIVE_ROUTE_META = {
   '/': {
-    title: 'STRUKTIVA Calw | Websites, Sichtbarkeit und Kundenwege',
+    title: 'STRUKTIVA | Websites, Sichtbarkeit und digitale Abläufe für Unternehmen',
     description:
-      'Mehr Anfragen, bessere Sichtbarkeit und weniger Verwaltungsarbeit für kleine lokale Betriebe. Websites ab 490 € netto. Kostenlosen Digital-Check anfragen.',
+      'Mehr Anfragen, bessere Sichtbarkeit und klare digitale Abläufe für Unternehmen. Persönliche Beratung aus Calw, digitale Zusammenarbeit deutschlandweit. Kostenlosen Digital-Check anfragen.',
     canonicalPath: '/',
     isHomeRoute: true,
     isPricingRoute: true,
@@ -149,12 +149,12 @@ export const ACTIVE_ROUTE_META = {
     canonicalPath: '/praxisbeispiele/salon-karola',
   },
   '/digital-check': {
-    title: 'Digital-Check für lokale Betriebe | STRUKTIVA Calw',
-    description: 'Website, Google-Unternehmensprofil, Kontaktwege und Bewertungen kostenlos prüfen lassen: persönlicher STRUKTIVA Digital-Check für lokale Betriebe.',
+    title: 'Digital-Check für Unternehmen | STRUKTIVA',
+    description: 'Website, digitale Sichtbarkeit, Kontaktwege und Kundenprozesse persönlich einordnen lassen: der kostenlose STRUKTIVA Digital-Check für Unternehmen.',
     canonicalPath: '/digital-check',
     layout: 'campaign',
-    ogTitle: 'STRUKTIVA Digital-Check für lokale Betriebe – kostenlos',
-    ogDescription: 'Persönliche Prüfung, klar priorisierter Maßnahmenplan und Ergebnisgespräch für lokale Betriebe – kostenlos.',
+    ogTitle: 'STRUKTIVA Digital-Check für Unternehmen – kostenlos',
+    ogDescription: 'Persönliche Prüfung, klar priorisierte Empfehlungen und ein nächster Schritt, der zu Ihrem Unternehmen passt – kostenlos.',
     socialImage: '/images/inhaber-sven-jessica.webp',
     structuredData: {
       '@context': 'https://schema.org',
@@ -347,18 +347,18 @@ export const currentNavigation = {
   ],
   desktop: [
     { label: 'Leistungen', href: '/leistungen' },
+    { label: 'Lösungen', href: '/loesungen' },
     { label: 'Pakete', href: '/pakete' },
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
-    { label: 'Ratgeber', href: '/software-tools#ratgeber' },
-    { label: 'Software & Tools', href: '/software-tools' },
+    { label: 'Ratgeber', href: '/software-tools' },
   ],
   mobile: [
     { label: 'Start', href: '/' },
     { label: 'Leistungen', href: '/leistungen' },
+    { label: 'Lösungen', href: '/loesungen' },
     { label: 'Pakete', href: '/pakete' },
     { label: 'Praxisbeispiele', href: '/praxisbeispiele', transitionFor: '/praxisbeispiele' },
-    { label: 'Ratgeber', href: '/software-tools#ratgeber' },
-    { label: 'Software & Tools', href: '/software-tools' },
+    { label: 'Ratgeber', href: '/software-tools' },
     { label: 'Digital-Check', href: '/digital-check', transitionFor: '/digital-check', ctaRole: 'primary' },
     { label: 'Über STRUKTIVA', href: '/ueber-uns' },
     { label: 'Kontakt', href: '/kontakt' },

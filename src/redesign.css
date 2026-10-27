@@ -41,7 +41,13 @@ body { overflow-x: clip; }
 .rd-text-link svg { width: 1rem; height: 1rem; }
 
 /* Poster-like first viewport with a quiet, self-contained interface sequence. */
-.rd-hero { position: relative; display: grid; align-items: center; min-height: calc(100svh - 82px); padding: clamp(3.6rem, 7vw, 6rem) 0; background: radial-gradient(circle at 74% 48%, #deebff 0, transparent 34%), var(--rd-gradient); }
+.rd-hero { position: relative; display: grid; align-items: center; min-height: calc(100svh - 82px); padding: 0 0 clamp(3.6rem, 7vw, 6rem); background: radial-gradient(circle at 74% 48%, #deebff 0, transparent 34%), var(--rd-gradient); }
+.rd-announcement { position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; gap: .65rem; min-height: 46px; padding: .6rem 1rem; background: var(--rd-blue); color: #fff !important; font-size: .83rem; font-weight: 800; text-align: center; transition: background .2s ease; }
+.rd-announcement:hover { background: var(--rd-blue-hover); }
+.rd-announcement svg { width: 1rem; height: 1rem; }
+.rd-announcement__pulse { width: 8px; height: 8px; border-radius: 50%; background: #b9f8df; box-shadow: 0 0 0 4px #ffffff25; animation: rdPulse 2.2s ease-out infinite; }
+.rd-hero__visual { min-width: 0; }
+.rd-hero__copy { animation: rdCopyGlow 8s ease-in-out infinite; }
 .rd-hero__grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(2rem, 5vw, 5rem); }
 .rd-hero__copy { position: relative; z-index: 1; }
 .rd-hero h1 { max-width: 13ch; margin-bottom: 1.3rem; font-size: clamp(3rem, 5.3vw, 5.2rem); line-height: 1.04; letter-spacing: -.07em; font-weight: 800; }
@@ -71,6 +77,8 @@ body { overflow-x: clip; }
 @keyframes rdFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @keyframes rdTrace { 0%,8% { transform: scaleX(0); } 80%,100% { transform: scaleX(1); } }
 @keyframes rdStage { 0%,15%,100% { opacity: .55; transform: translateY(0); } 25%,48% { opacity: 1; transform: translateY(-3px); } }
+@keyframes rdPulse { 0%,100% { box-shadow: 0 0 0 4px #ffffff25; } 50% { box-shadow: 0 0 0 7px #ffffff16; } }
+@keyframes rdCopyGlow { 0%,100% { filter: drop-shadow(0 0 0 #2563eb00); } 50% { filter: drop-shadow(0 8px 22px #2563eb0b); } }
 
 .rd-proof { border-block: 1px solid var(--rd-line); background: #fff; }
 .rd-proof .rd-container { display: flex; justify-content: space-between; align-items: center; gap: 1rem 2rem; min-height: 78px; color: var(--rd-muted); font-size: .87rem; font-weight: 800; }
@@ -154,6 +162,7 @@ body { overflow-x: clip; }
 @media (max-width: 900px) {
   .rd-hero__grid, .rd-prices__grid, .rd-case__grid, .rd-about__grid, .rd-check__grid { grid-template-columns: 1fr; }
   .rd-hero { min-height: auto; }
+  .rd-announcement { padding-inline: 1.2rem; font-size: .77rem; }
   .rd-flow { max-width: 620px; }
   .rd-case__media { max-width: 630px; }
   .rd-solutions__grid, .rd-problems__grid { grid-template-columns: 1fr; }
@@ -164,6 +173,7 @@ body { overflow-x: clip; }
   .rd-container { width: min(100% - 2rem, 1180px); }
   .rd-section { padding: 4rem 0; }
   .rd-hero { padding: 3rem 0 4rem; }
+  .rd-hero { padding-top: 0; }
   .rd-hero h1 { font-size: clamp(2.5rem, 9.5vw, 3.55rem); }
   .rd-flow { min-height: 280px; padding: 1rem; }
   .rd-flow__browser { width: 90%; animation: none; }
