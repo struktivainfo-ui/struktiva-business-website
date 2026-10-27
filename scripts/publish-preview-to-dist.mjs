@@ -37,6 +37,15 @@ function preserveLocalSeo(html, route) {
   return html;
 }
 
+function setPublicIndexing(html, route) {
+  if (route === '/digital-check/danke') return html;
+  const canonical = `https://struktiva.de${route || '/'}`;
+  if (route === '') {
+    html = replaceHeadTag(html, /<meta\s+name="robots"[^>]*>/i, '<meta name="robots" content="index, follow">');
+  }
+  return replaceHeadTag(html, /<link\s+rel="canonical"[^>]*>/i, `<link rel="canonical" href="${canonical}">`);
+}
+
 function addLeadAssets(html) {
   return html
     .replace('</head>', '<link rel="stylesheet" href="/assets/lead-forms.css"></head>')
@@ -97,6 +106,7 @@ function copyPages(directory, target, route = '') {
       mkdirSync(target, { recursive: true });
       let html = readFileSync(join(directory, entry.name), 'utf8');
       html = preserveLocalSeo(html, route);
+      html = setPublicIndexing(html, route);
       html = installLeadForm(html, route);
       html = addShowcase(html, route);
       writeFileSync(join(target, entry.name), html);
