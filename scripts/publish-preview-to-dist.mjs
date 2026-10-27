@@ -63,6 +63,31 @@ function installLeadForm(html, route) {
   return html;
 }
 
+const zerionProject = `<section class="showcase showcase--dark" aria-labelledby="zerion-title"><div class="wrap showcase__layout"><div class="showcase__copy"><p class="eyebrow">Weiteres Projekt · ZERION Beyond</p><h2 id="zerion-title">Eine Marke mit<br><em>eigenem Charakter.</em></h2><p>Für ZERION Beyond entstand ein eigenständiger Webauftritt mit klarer Informationsstruktur, hochwertiger Markenwelt und direkten Kontaktwegen. Die Website ist unter eigener Domain erreichbar.</p><a class="showcase__link" href="https://zerion-beyond.de/" target="_blank" rel="noopener noreferrer">ZERION Beyond ansehen <span aria-hidden="true">↗</span></a></div><div class="showcase__visual showcase__visual--zerion" aria-hidden="true"><span class="showcase__visual-kicker">Science · Performance · Longevity</span><strong>ZERION<br><i>BEYOND</i></strong><span class="showcase__visual-line"></span><small>Digitaler Markenauftritt</small></div></div></section>`;
+
+const salonAppProject = `<section class="showcase showcase--light" aria-labelledby="salon-app-title"><div class="wrap showcase__layout"><div class="showcase__visual showcase__visual--app" aria-hidden="true"><span class="showcase__visual-kicker">Salon Karola · Web-App</span><strong>Ein digitaler<br><i>Kundenbereich.</i></strong><span class="showcase__visual-line"></span><small>Anmelden · Registrieren · Termine</small></div><div class="showcase__copy"><p class="eyebrow eyebrow--blue">Entwickelte Anwendung</p><h2 id="salon-app-title">Salon Karola:<br><em>mehr als eine Website.</em></h2><p>Zum Salon-Projekt gehört auch eine eigenständige Web-App. Ihr öffentlich zugänglicher Bereich bietet Anmeldung, Registrierung und einen Einstieg rund um Termine. So wird sichtbar, dass STRUKTIVA neben Websites auch digitale Anwendungen entwickelt.</p><a class="showcase__link" href="https://salon-karola-crm.onrender.com/" target="_blank" rel="noopener noreferrer">Salon-App öffnen <span aria-hidden="true">↗</span></a></div></div></section>`;
+
+const customerReview = `<section class="showcase-review" aria-labelledby="review-title"><div class="wrap showcase-review__layout"><div><p class="eyebrow eyebrow--blue">Echte Rückmeldung</p><h2 id="review-title">Was die Zusammenarbeit<br><em>ausmacht.</em></h2></div><figure><div class="showcase-review__stars" aria-label="5 von 5 Sternen">★★★★★</div><blockquote>„Ich kann Struktiva wirklich nur weiterempfehlen. Meine Webseite ist richtig toll geworden und genauso, wie ich sie mir vorgestellt habe.“</blockquote><figcaption>Dennis Forschner · <a href="https://www.google.com/maps/contrib/103331501915897155785/reviews?hl=de" target="_blank" rel="noopener noreferrer">Originalbewertung auf Google ansehen ↗</a></figcaption></figure></div></section>`;
+
+function addShowcase(html, route) {
+  if (route === '' || route === '/praxisbeispiele') {
+    const marker = '<section class="section section--paper" id="team">';
+    const overviewMarker = '<section class="section section--paper"><div class="wrap"><div class="section-head"><div><p class="eyebrow eyebrow--blue">Eigenes STRUKTIVA-Projekt</p>';
+    const target = route === '' ? marker : overviewMarker;
+    if (!html.includes(target)) throw new Error(`Projekt-Einfügepunkt fehlt: ${route || '/'}`);
+    html = html.replace(target, `${zerionProject}${salonAppProject}${customerReview}${target}`);
+  }
+  if (route === '/praxisbeispiele/salon-karola') {
+    const marker = '<section class="cta">';
+    if (!html.includes(marker)) throw new Error('Salon-App-Einfügepunkt fehlt.');
+    html = html.replace(marker, `${salonAppProject}${marker}`);
+  }
+  if (route === '' || route === '/praxisbeispiele' || route === '/praxisbeispiele/salon-karola') {
+    html = html.replace('</head>', '<link rel="stylesheet" href="/assets/project-showcase.css"></head>');
+  }
+  return html;
+}
+
 function copyPages(directory, target, route = '') {
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
     if (entry.isDirectory()) {
@@ -73,6 +98,7 @@ function copyPages(directory, target, route = '') {
       let html = readFileSync(join(directory, entry.name), 'utf8');
       html = preserveLocalSeo(html, route);
       html = installLeadForm(html, route);
+      html = addShowcase(html, route);
       writeFileSync(join(target, entry.name), html);
     }
   }
