@@ -86,7 +86,6 @@ function replaceCardLinks(html, route, specs) {
 function improvePageMessaging(html, route) {
   if (route === '') {
     html = html.replace('Digitale Unternehmensberatung · Calw &amp; deutschlandweit', 'Für kleine Unternehmen und Betriebe · Calw &amp; deutschlandweit');
-    html = html.replace('Wir verbinden Websites, Sichtbarkeit, Kundenkontakt und interne Abläufe zu einer digitalen Struktur, die zu Ihrem Unternehmen passt – branchenübergreifend und Schritt für Schritt.', 'Für kleine Unternehmen und Betriebe, die digital klarer auftreten und Abläufe vereinfachen wollen. Wir verbinden Website, Sichtbarkeit und Kundenkontakt zu einem nachvollziehbaren Weg – branchenübergreifend und deutschlandweit.');
   }
   if (route === '/leistungen') {
     html = replaceCardLinks(html, route, [
