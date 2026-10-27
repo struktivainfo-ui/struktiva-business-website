@@ -20,41 +20,21 @@
     }
   ],
   "rewrites": [
-    { "source": "/pakete", "destination": "/pakete/index.html" },
-    { "source": "/software-tools", "destination": "/software-tools/index.html" },
-    { "source": "/software-tools/getresponse-kleine-unternehmen", "destination": "/software-tools/getresponse-kleine-unternehmen/index.html" },
-    { "source": "/software-tools/getresponse-automatisierung-newsletter", "destination": "/software-tools/getresponse-automatisierung-newsletter/index.html" },
-    { "source": "/software-tools/getresponse-kosten-preise", "destination": "/software-tools/getresponse-kosten-preise/index.html" },
-    { "source": "/software-tools/getresponse-vs-brevo", "destination": "/software-tools/getresponse-vs-brevo/index.html" },
-    { "source": "/software-tools/newsletter-software-kleine-unternehmen", "destination": "/software-tools/newsletter-software-kleine-unternehmen/index.html" },
-    { "source": "/software-tools/newsletter-friseursalon", "destination": "/software-tools/newsletter-friseursalon/index.html" },
-    { "source": "/software-tools/email-marketing-kleine-unternehmen", "destination": "/software-tools/email-marketing-kleine-unternehmen/index.html" },
-    { "source": "/software-tools/email-marketing-lokale-dienstleister", "destination": "/software-tools/email-marketing-lokale-dienstleister/index.html" },
-    { "source": "/software-tools/crm-kleine-unternehmen", "destination": "/software-tools/crm-kleine-unternehmen/index.html" },
-    { "source": "/werbekennzeichnung", "destination": "/werbekennzeichnung/index.html" },
     {
-      "source": "/digital-check/danke",
-      "destination": "/digital-check/danke/index.html"
+      "source": "/datenschutz",
+      "destination": "/datenschutz/index.html"
     },
     {
       "source": "/digital-check",
       "destination": "/digital-check/index.html"
     },
     {
-      "source": "/schoen-und-praktisch",
-      "destination": "/schoen-und-praktisch/index.html"
+      "source": "/digital-check/danke",
+      "destination": "/digital-check/danke/index.html"
     },
     {
-      "source": "/schoen-und-praktisch/kleiner-flur",
-      "destination": "/schoen-und-praktisch/kleiner-flur/index.html"
-    },
-    {
-      "source": "/schoen-und-praktisch/kleines-wohnzimmer",
-      "destination": "/schoen-und-praktisch/kleines-wohnzimmer/index.html"
-    },
-    {
-      "source": "/schoen-und-praktisch/dachschraege",
-      "destination": "/schoen-und-praktisch/dachschraege/index.html"
+      "source": "/digitale-kundenprozesse-calw",
+      "destination": "/digitale-kundenprozesse-calw/index.html"
     },
     {
       "source": "/digitale-unternehmensberatung-calw",
@@ -65,20 +45,112 @@
       "destination": "/digitalisierung-calw/index.html"
     },
     {
-      "source": "/website-handwerker-calw",
-      "destination": "/website-handwerker-calw/index.html"
-    },
-    {
-      "source": "/digitale-kundenprozesse-calw",
-      "destination": "/digitale-kundenprozesse-calw/index.html"
-    },
-    {
       "source": "/google-sichtbarkeit-calw",
       "destination": "/google-sichtbarkeit-calw/index.html"
     },
     {
+      "source": "/impressum",
+      "destination": "/impressum/index.html"
+    },
+    {
       "source": "/ki-automatisierung-calw",
       "destination": "/ki-automatisierung-calw/index.html"
+    },
+    {
+      "source": "/kontakt",
+      "destination": "/kontakt/index.html"
+    },
+    {
+      "source": "/leistungen",
+      "destination": "/leistungen/index.html"
+    },
+    {
+      "source": "/loesungen",
+      "destination": "/loesungen/index.html"
+    },
+    {
+      "source": "/pakete",
+      "destination": "/pakete/index.html"
+    },
+    {
+      "source": "/praxisbeispiele",
+      "destination": "/praxisbeispiele/index.html"
+    },
+    {
+      "source": "/praxisbeispiele/salon-karola",
+      "destination": "/praxisbeispiele/salon-karola/index.html"
+    },
+    {
+      "source": "/praxisbeispiele/schoen-und-praktisch",
+      "destination": "/praxisbeispiele/schoen-und-praktisch/index.html"
+    },
+    {
+      "source": "/schoen-und-praktisch",
+      "destination": "/schoen-und-praktisch/index.html"
+    },
+    {
+      "source": "/schoen-und-praktisch/dachschraege",
+      "destination": "/schoen-und-praktisch/dachschraege/index.html"
+    },
+    {
+      "source": "/schoen-und-praktisch/kleiner-flur",
+      "destination": "/schoen-und-praktisch/kleiner-flur/index.html"
+    },
+    {
+      "source": "/schoen-und-praktisch/kleines-wohnzimmer",
+      "destination": "/schoen-und-praktisch/kleines-wohnzimmer/index.html"
+    },
+    {
+      "source": "/software-tools",
+      "destination": "/software-tools/index.html"
+    },
+    {
+      "source": "/software-tools/crm-kleine-unternehmen",
+      "destination": "/software-tools/crm-kleine-unternehmen/index.html"
+    },
+    {
+      "source": "/software-tools/email-marketing-kleine-unternehmen",
+      "destination": "/software-tools/email-marketing-kleine-unternehmen/index.html"
+    },
+    {
+      "source": "/software-tools/email-marketing-lokale-dienstleister",
+      "destination": "/software-tools/email-marketing-lokale-dienstleister/index.html"
+    },
+    {
+      "source": "/software-tools/getresponse-automatisierung-newsletter",
+      "destination": "/software-tools/getresponse-automatisierung-newsletter/index.html"
+    },
+    {
+      "source": "/software-tools/getresponse-kleine-unternehmen",
+      "destination": "/software-tools/getresponse-kleine-unternehmen/index.html"
+    },
+    {
+      "source": "/software-tools/getresponse-kosten-preise",
+      "destination": "/software-tools/getresponse-kosten-preise/index.html"
+    },
+    {
+      "source": "/software-tools/getresponse-vs-brevo",
+      "destination": "/software-tools/getresponse-vs-brevo/index.html"
+    },
+    {
+      "source": "/software-tools/newsletter-friseursalon",
+      "destination": "/software-tools/newsletter-friseursalon/index.html"
+    },
+    {
+      "source": "/software-tools/newsletter-software-kleine-unternehmen",
+      "destination": "/software-tools/newsletter-software-kleine-unternehmen/index.html"
+    },
+    {
+      "source": "/ueber-uns",
+      "destination": "/ueber-uns/index.html"
+    },
+    {
+      "source": "/website-handwerker-calw",
+      "destination": "/website-handwerker-calw/index.html"
+    },
+    {
+      "source": "/werbekennzeichnung",
+      "destination": "/werbekennzeichnung/index.html"
     },
     {
       "source": "/demos/handwerker",

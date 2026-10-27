@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build && node scripts/prerender-campaign-routes.mjs",
+    "build": "vite build && node scripts/prerender-campaign-routes.mjs && node scripts/publish-preview-to-dist.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "test:website-check": "node --test tests/website-check-phase-a.test.mjs tests/website-check-phase-b.test.mjs tests/website-check-phase-c.test.mjs tests/website-check-phase-d.test.mjs tests/digital-check-website.test.mjs",
     "test:seo": "node --test tests/local-seo-pages.test.mjs",

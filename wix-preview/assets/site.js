@@ -1,0 +1,7 @@
+const menuButton=document.querySelector('.menu-toggle');
+const menu=document.querySelector('.nav-links');
+menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));menuButton.setAttribute('aria-label',open?'Menü öffnen':'Menü schließen');menu.classList.toggle('is-open',!open)});
+menu.addEventListener('click',event=>{if(event.target.closest('a')){menu.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Menü öffnen')}});
+document.getElementById('year').textContent=new Date().getFullYear();
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if('IntersectionObserver'in window&&!reduced){const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(item=>revealObserver.observe(item));const processObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');processObserver.unobserve(entry.target)}}),{threshold:.2});document.querySelectorAll('.process__list').forEach(item=>processObserver.observe(item))}else{document.querySelectorAll('.reveal,.process__list').forEach(item=>item.classList.add('is-visible'))}
