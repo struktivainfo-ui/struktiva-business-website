@@ -53,6 +53,12 @@ function addLeadAssets(html) {
     .replace('</body>', '<script src="/assets/lead-forms.js" defer></script></body>');
 }
 
+function addFontAssets(html) {
+  if (!html.includes('/assets/site.css')) return html;
+  const fontAssets = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">';
+  return html.replace('</head>', `${fontAssets}</head>`);
+}
+
 function installLeadForm(html, route) {
   const legacyHost = 'https://struktiva-business-website-q6bkodgw2-struktivainfo-uis-projects.vercel.app';
   if (route === '/kontakt') {
@@ -197,6 +203,7 @@ function copyPages(directory, target, route = '') {
       html = installLeadForm(html, route);
       html = improvePageMessaging(html, route);
       html = addShowcase(html, route);
+      html = addFontAssets(html);
       writeFileSync(join(target, entry.name), html);
     }
   }
@@ -204,4 +211,9 @@ function copyPages(directory, target, route = '') {
 
 copyPages(source, output);
 cpSync(join(source, 'assets'), join(output, 'assets'), { recursive: true, force: true });
+const siteCssPath = join(output, 'assets', 'site.css');
+const siteCss = readFileSync(siteCssPath, 'utf8');
+const optimizedSiteCss = siteCss.replace(/^@import url\('https:\/\/fonts\.googleapis\.com\/css2\?family=DM\+Sans:[^']+'\);\s*/, '');
+if (optimizedSiteCss === siteCss) throw new Error('Der Google-Fonts-CSS-Import konnte nicht aus dem Build entfernt werden.');
+writeFileSync(siteCssPath, optimizedSiteCss);
 console.log('STRUKTIVA Vorschau-Seiten in den Vercel-Build übernommen.');
