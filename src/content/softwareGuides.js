@@ -39,16 +39,19 @@ export const softwareGuides = {
   },
   getresponsePricing: {
     path: '/software-tools/getresponse-kosten-preise',
-    title: 'GetResponse Kosten und Preise: Tarife richtig einordnen',
-    metaTitle: 'GetResponse Kosten & Preise 2026: Tarife erklärt | STRUKTIVA',
-    description: 'GetResponse Kosten verständlich erklärt: Starter, Marketer und Creator, Kontaktgrößen, Abrechnung und wichtige Prüfpunkte für kleine Unternehmen.',
-    lead: 'Der passende GetResponse-Tarif hängt vor allem von der Kontaktzahl, den benötigten Funktionen und dem Abrechnungszeitraum ab.',
+    title: 'GetResponse Preise: Tarife und Kosten für kleine Unternehmen',
+    metaTitle: 'GetResponse Preise 2026: Tarife & Kosten | STRUKTIVA',
+    description: 'GetResponse-Preise 2026: Starter 16 €, Marketer 54 € und Creator 62 € pro Monat laut Anbieterübersicht. Nettopreise, Kontaktgröße und Jahreszahlung erklärt.',
+    lead: 'Die GetResponse-Preisseite zeigt unterschiedliche Beträge je Tarif und Abrechnungszeitraum. Entscheidend für Ihren tatsächlichen Preis sind außerdem die Kontaktgröße und die Funktionen, die Sie benötigen.',
+    reviewedAt: '27. Oktober 2026',
+    updatedAt: '2026-10-27',
     readingTime: '8 Minuten',
     affiliate: true,
     topAffiliateCta: true,
     ctaText: 'Aktuelle GetResponse-Preise prüfen',
     sections: [
       { heading: 'Wie setzt sich der GetResponse-Preis zusammen?', paragraphs: ['GetResponse staffelt seine Standardtarife nach Paket und Listengröße. Nach Angaben des Anbieters sind Starter, Marketer und Creator für verschiedene Kontaktgrößen verfügbar. Zusätzlich beeinflusst der gewählte Abrechnungszeitraum den angezeigten Preis.', 'Deshalb gibt es keinen einzigen GetResponse-Preis, der für jedes Unternehmen gilt. Für einen belastbaren Vergleich sollten Sie dieselbe Kontaktzahl, dieselbe Zahlungsweise und die tatsächlich benötigten Funktionen gegenüberstellen.'], source: { label: 'GetResponse: So funktioniert die Preisgestaltung', url: 'https://www.getresponse.com/de/hilfe/wie-funktioniert-die-preisgestaltung-in-getresponse.html' } },
+      { heading: 'GetResponse-Preise auf einen Blick', paragraphs: ['Beim Abgleich der offiziellen Preisseite am 27. Oktober 2026 wurden folgende Beträge angezeigt: Starter 16 € monatlich oder 13,12 € pro Monat bei jährlicher Abrechnung; Marketer 54 € monatlich oder 44,28 € pro Monat bei jährlicher Abrechnung; Creator 62 € monatlich oder 50,84 € pro Monat bei jährlicher Abrechnung.', 'Das sind Nettobeträge aus der aktuellen Tarifübersicht. Der konkrete Preis hängt von der ausgewählten Kontaktgröße ab; bei jährlicher Zahlung wird der Gesamtbetrag im Voraus fällig. Prüfen Sie deshalb vor der Anmeldung dieselbe Listengröße und Abrechnungsart direkt beim Anbieter.'], source: { label: 'GetResponse: aktuelle Preise und Tarifvergleich', url: 'https://www.getresponse.com/de/pricing' }, affiliateCta: true, ctaText: 'Aktuelle GetResponse-Preise beim Anbieter prüfen' },
       { heading: 'Die drei Standardtarife einordnen', subsections: [
         { heading: 'Starter', paragraphs: ['Der Starter-Tarif richtet sich laut GetResponse an E-Mail-Marketer und wachsende Unternehmen. Auf der Funktionsseite nennt der Anbieter unter anderem Newsletter, Autoresponder, Websites, Landingpages sowie Anmeldeformulare und Pop-ups als Bestandteile der Standardpläne. Prüfen Sie die aktuelle Tarifansicht, weil einzelne Grenzen und Zusatzoptionen geändert werden können.'] },
         { heading: 'Marketer', paragraphs: ['Marketer ist für Unternehmen gedacht, die weiterführende Marketingfunktionen benötigen. GetResponse nennt für diesen Plan unter anderem einen Multi-User-Zugang für bis zu fünf Benutzer. Für kleine Betriebe lohnt sich der Aufpreis nur, wenn die zusätzlichen Funktionen und Zugänge im Alltag wirklich genutzt werden.'] },
