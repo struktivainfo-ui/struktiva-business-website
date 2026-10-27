@@ -63,7 +63,7 @@ test('visible Digital-Check locations consistently communicate that it is free',
 test('Service structured data and visible offer use the same free price', () => {
   const routeMeta = getRouteMeta('/digital-check')
   const structuredData = routeMeta.structuredData
-  assert.match(routeMeta.description, /kostenlos prüfen lassen/)
+  assert.match(routeMeta.description, /kostenlose STRUKTIVA Digital-Check für Unternehmen/)
   assert.match(routeMeta.ogDescription, /kostenlos\.$/)
   assert.equal(structuredData.url, 'https://struktiva.de/digital-check')
   assert.equal(structuredData.provider.name, 'STRUKTIVA Digitale Unternehmensberatung')
@@ -123,7 +123,7 @@ test('dedicated form uses companyWebsite and contactTrap with required campaign 
 test('campaign shell excludes global navigation and floating WhatsApp', async () => {
   const shell = await read('src/components/layout/AppShell.jsx')
   assert.match(shell, /isCampaignRoute \? <CampaignHeader/)
-  assert.match(shell, /!isCampaignRoute \? <FloatingWhatsAppButton/)
+  assert.match(shell, /!isCampaignRoute && !isEditorialRoute \? <FloatingWhatsAppButton/)
 })
 
 test('all primary Digital-Check CTAs use the dedicated form target', async () => {
